@@ -682,15 +682,15 @@ When the system was installed, all of those device files were created by the mkn
 
 I would like to make a few last points which are implicit from the above discussion, but I'd like to make them explicit just in case. When a device file is accessed, the kernel uses the major number of the file to determine which driver should be used to handle the access. This means that the kernel doesn't really need to use or even know about the minor number. The driver itself is the only thing that cares about the minor number. It uses the minor number to distinguish between different pieces of hardware.
 
-By the way, when I say `hardware', I mean something a bit more abstract than a PCI card that you can hold in your hand. Look at these two device files:
+By the way, when I say /"hardware"/, I mean something a bit more abstract than a PCI card that you can hold in your hand. Look at these two device files:
 
 #+BEGIN_SRC sh
-% ls -l /dev/fd0 /dev/fd0u1680
-brwxrwxrwx   1 root  floppy   2,  0 Jul  5  2000 /dev/fd0
-brw-rw----   1 root  floppy   2, 44 Jul  5  2000 /dev/fd0u1680
+% ls -l /dev/sda /dev/sdb
+brw-rw---- 1 root disk 8,  0 Jan  3 09:02 /dev/sda
+brw-rw---- 1 root disk 8, 16 Jan  3 09:02 /dev/sdb
 #+END_SRC
 
-By now you can look at these two device files and know instantly that they are block devices and are handled by same driver (block major 2). You might even be aware that these both represent your floppy drive, even if you only have one floppy drive. Why two files? One represents the floppy drive with 1.44 MB of storage. The other is the same floppy drive with 1.68 MB of storage, and corresponds to what some people call a `superformatted' disk. One that holds more data than a standard formatted floppy. So here's a case where two device files with different minor number actually represent the same piece of physical hardware. So just be aware that the word `hardware' in our discussion can mean something very abstract.
+By now you can look at these two device files and know instantly that they are block devices and are handled by same driver (block major 8). Sometimes two device files with the same major but different minor number can actually represent the same piece of physical hardware. So just be aware that the word "hardware" in our discussion can mean something very abstract.
 
 * Character Device drivers
 ** The file_operations Structure
