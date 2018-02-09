@@ -15,6 +15,8 @@
 #include <linux/poll.h>
 #include <linux/cdev.h>
 
+MODULE_LICENSE("GPL");
+
 #include "chardev.h"
 #define SUCCESS 0
 #define DEVICE_NAME "char_dev"
