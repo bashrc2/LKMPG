@@ -22,6 +22,7 @@ obj-m += cryptosha256.o
 obj-m += cryptoapi.o
 obj-m += completions.o
 obj-m += example_tasklet.o
+obj-m += devicemodel.o
 obj-m += example_spinlock.o
 obj-m += example_rwlock.o
 obj-m += example_atomic.o
