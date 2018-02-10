@@ -16,6 +16,8 @@
 #include <linux/poll.h>
 #include <linux/cdev.h>
 
+MODULE_LICENSE("GPL");
+
 /*
  *  Prototypes - this would normally go in a .h file
  */
