@@ -16,8 +16,6 @@
 #include <linux/poll.h>
 #include <linux/cdev.h>
 
-MODULE_LICENSE("GPL");
-
 /*
  *  Prototypes - this would normally go in a .h file
  */
@@ -181,3 +179,5 @@ static ssize_t device_write(struct file *filp,
     pr_alert("Sorry, this operation isn't supported.\n");
     return -EINVAL;
 }
+
+MODULE_LICENSE("GPL");

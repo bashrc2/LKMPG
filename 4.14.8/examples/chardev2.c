@@ -15,8 +15,6 @@
 #include <linux/poll.h>
 #include <linux/cdev.h>
 
-MODULE_LICENSE("GPL");
-
 #include "chardev.h"
 #define SUCCESS 0
 #define DEVICE_NAME "char_dev"
@@ -287,3 +285,5 @@ void cleanup_module()
      */
     unregister_chrdev(Major, DEVICE_NAME);
 }
+
+MODULE_LICENSE("GPL");
