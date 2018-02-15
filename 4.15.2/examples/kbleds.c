@@ -74,9 +74,7 @@ static int __init kbleds_init(void)
     /*
      * Set up the LED blink timer the first time
      */
-    init_timer(&my_timer);
-    my_timer.function = &my_timer_func;
-    my_timer.data = (unsigned long)&kbledstatus;
+    timer_setup(&my_timer, (void*)&my_timer_func, (unsigned long)&kbledstatus);
     my_timer.expires = jiffies + BLINK_DELAY;
     add_timer(&my_timer);
 
