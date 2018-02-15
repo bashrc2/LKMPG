@@ -9,3 +9,5 @@ void cleanup_module()
 {
     pr_info("Short is the life of a kernel module\n");
 }
+
+MODULE_LICENSE("GPL");

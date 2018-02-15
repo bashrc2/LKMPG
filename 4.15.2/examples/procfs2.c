@@ -96,3 +96,5 @@ void cleanup_module()
     proc_remove(Our_Proc_File);
     pr_info("/proc/%s removed\n", PROCFS_NAME);
 }
+
+MODULE_LICENSE("GPL");

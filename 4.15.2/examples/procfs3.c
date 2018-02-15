@@ -81,3 +81,5 @@ void cleanup_module()
     remove_proc_entry(PROCFS_ENTRY_FILENAME, NULL);
     pr_debug("/proc/%s removed\n", PROCFS_ENTRY_FILENAME);
 }
+
+MODULE_LICENSE("GPL");

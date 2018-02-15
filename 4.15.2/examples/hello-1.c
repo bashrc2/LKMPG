@@ -18,3 +18,5 @@ void cleanup_module(void)
 {
     pr_info("Goodbye world 1.\n");
 }
+
+MODULE_LICENSE("GPL");

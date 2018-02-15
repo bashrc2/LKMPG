@@ -263,3 +263,5 @@ void cleanup_module()
     remove_proc_entry(PROC_ENTRY_FILENAME, NULL);
     pr_debug("/proc/%s removed\n", PROC_ENTRY_FILENAME);
 }
+
+MODULE_LICENSE("GPL");
