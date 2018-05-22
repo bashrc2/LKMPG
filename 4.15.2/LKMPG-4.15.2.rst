@@ -21,105 +21,101 @@
 
    <div id="text-table-of-contents">
 
--  `Introduction <#org1785162>`__
+-  `Introduction <#sec-1>`__
 
-   -  `Authorship <#org63a1b37>`__
-   -  `Versioning and Notes <#org10863e7>`__
-   -  `Acknowledgements <#org49d4e59>`__
-   -  `What Is A Kernel Module? <#org0a5ce13>`__
-   -  `Kernel module package <#org1cb0938>`__
-   -  `What Modules are in my Kernel? <#org878e43e>`__
-   -  `Do I need to download and compile the kernel? <#orgb530dfd>`__
-   -  `Before We Begin <#org2583533>`__
+   -  `Authorship <#sec-1-1>`__
+   -  `Versioning and Notes <#sec-1-2>`__
+   -  `Acknowledgements <#sec-1-3>`__
+   -  `What Is A Kernel Module? <#sec-1-4>`__
+   -  `Kernel module package <#sec-1-5>`__
+   -  `What Modules are in my Kernel? <#sec-1-6>`__
+   -  `Do I need to download and compile the kernel? <#sec-1-7>`__
+   -  `Before We Begin <#sec-1-8>`__
 
--  `Headers <#org46d2b5f>`__
--  `Examples <#orgdd7dd5d>`__
--  `Hello World <#org92f8539>`__
+-  `Headers <#sec-2>`__
+-  `Examples <#sec-3>`__
+-  `Hello World <#sec-4>`__
 
-   -  `The Simplest Module <#org5ae5562>`__
-   -  `Hello and Goodbye <#org5c5dd06>`__
-   -  `The \__init and \__exit Macros <#org7fd362f>`__
-   -  `Licensing and Module Documentation <#orga52c864>`__
-   -  `Passing Command Line Arguments to a Module <#org6976bc8>`__
-   -  `Modules Spanning Multiple Files <#org5a97220>`__
-   -  `Building modules for a precompiled kernel <#org65d6819>`__
+   -  `The Simplest Module <#sec-4-1>`__
+   -  `Hello and Goodbye <#sec-4-2>`__
+   -  `The \__init and \__exit Macros <#sec-4-3>`__
+   -  `Licensing and Module Documentation <#sec-4-4>`__
+   -  `Passing Command Line Arguments to a Module <#sec-4-5>`__
+   -  `Modules Spanning Multiple Files <#sec-4-6>`__
+   -  `Building modules for a precompiled kernel <#sec-4-7>`__
 
--  `Preliminaries <#orgb5adf2b>`__
+-  `Preliminaries <#sec-5>`__
 
-   -  `How modules begin and end <#org4cf9365>`__
-   -  `Functions available to modules <#orgcb5e2da>`__
-   -  `User Space vs Kernel Space <#orgab9f1d1>`__
-   -  `Name Space <#org9d3f3fc>`__
-   -  `Code space <#orga3691e9>`__
-   -  `Device Drivers <#org382352c>`__
+   -  `How modules begin and end <#sec-5-1>`__
+   -  `Functions available to modules <#sec-5-2>`__
+   -  `User Space vs Kernel Space <#sec-5-3>`__
+   -  `Name Space <#sec-5-4>`__
+   -  `Code space <#sec-5-5>`__
+   -  `Device Drivers <#sec-5-6>`__
 
--  `Character Device drivers <#orgf1744e4>`__
+-  `Character Device drivers <#sec-6>`__
 
-   -  `The file_operations Structure <#org07ed5b3>`__
-   -  `The file structure <#orgf283636>`__
-   -  `Registering A Device <#orgab1c63f>`__
-   -  `Unregistering A Device <#org85bc5ea>`__
-   -  `chardev.c <#orgdbd100e>`__
-   -  `Writing Modules for Multiple Kernel Versions <#org130321b>`__
+   -  `The file_operations Structure <#sec-6-1>`__
+   -  `The file structure <#sec-6-2>`__
+   -  `Registering A Device <#sec-6-3>`__
+   -  `Unregistering A Device <#sec-6-4>`__
+   -  `chardev.c <#sec-6-5>`__
+   -  `Writing Modules for Multiple Kernel Versions <#sec-6-6>`__
 
--  `The /proc File System <#org44e86f2>`__
+-  `The /proc File System <#sec-7>`__
 
-   -  `Read and Write a /proc File <#org330f61f>`__
-   -  `Manage /proc file with standard filesystem <#orgaae8b16>`__
-   -  `Manage /proc file with seq_file <#org688df35>`__
+   -  `Read and Write a /proc File <#sec-7-1>`__
+   -  `Manage /proc file with standard filesystem <#sec-7-2>`__
+   -  `Manage /proc file with seq_file <#sec-7-3>`__
 
--  `sysfs: Interacting with your module <#orgbd8ce69>`__
--  `Talking To Device Files <#orga1b8e31>`__
--  `System Calls <#orgdf0ab54>`__
--  `Blocking Processes and threads <#org83613ec>`__
+-  `sysfs: Interacting with your module <#sec-8>`__
+-  `Talking To Device Files <#sec-9>`__
+-  `System Calls <#sec-10>`__
+-  `Blocking Processes and threads <#sec-11>`__
 
-   -  `Sleep <#org36ce43a>`__
-   -  `Completions <#orgcfa6577>`__
+   -  `Sleep <#sec-11-1>`__
+   -  `Completions <#sec-11-2>`__
 
--  `Avoiding Collisions and Deadlocks <#org3ffdc76>`__
+-  `Avoiding Collisions and Deadlocks <#sec-12>`__
 
-   -  `Mutex <#org89ec2e6>`__
-   -  `Spinlocks <#org9889db8>`__
-   -  `Read and write locks <#orge2dc3e1>`__
-   -  `Atomic operations <#org1316854>`__
+   -  `Mutex <#sec-12-1>`__
+   -  `Spinlocks <#sec-12-2>`__
+   -  `Read and write locks <#sec-12-3>`__
+   -  `Atomic operations <#sec-12-4>`__
 
--  `Replacing Print Macros <#orgbdec3ca>`__
+-  `Replacing Print Macros <#sec-13>`__
 
-   -  `Replacement <#org4579c68>`__
-   -  `Flashing keyboard LEDs <#orgc9bd69e>`__
+   -  `Replacement <#sec-13-1>`__
+   -  `Flashing keyboard LEDs <#sec-13-2>`__
 
--  `Scheduling Tasks <#orgf1f1faf>`__
+-  `Scheduling Tasks <#sec-14>`__
 
-   -  `Tasklets <#orgd815b3b>`__
-   -  `Work queues <#org9b5b18e>`__
+   -  `Tasklets <#sec-14-1>`__
+   -  `Work queues <#sec-14-2>`__
 
--  `Interrupt Handlers <#org1cdf533>`__
+-  `Interrupt Handlers <#sec-15>`__
 
-   -  `Interrupt Handlers <#org5db45ad>`__
-   -  `Detecting button presses <#org9ca1a6c>`__
-   -  `Bottom Half <#org575eebf>`__
+   -  `Interrupt Handlers <#sec-15-1>`__
+   -  `Detecting button presses <#sec-15-2>`__
+   -  `Bottom Half <#sec-15-3>`__
 
--  `Crypto <#org004956f>`__
+-  `Crypto <#sec-16>`__
 
-   -  `Hash functions <#org8f45455>`__
-   -  `Symmetric key encryption <#orgcf62e2d>`__
+   -  `Hash functions <#sec-16-1>`__
+   -  `Symmetric key encryption <#sec-16-2>`__
 
--  `Standardising the interfaces: The Device Model <#org161334f>`__
--  `Optimisations <#org8639895>`__
+-  `Standardising the interfaces: The Device Model <#sec-17>`__
+-  `Optimisations <#sec-18>`__
 
-   -  `Likely and Unlikely conditions <#orgb775e92>`__
+   -  `Likely and Unlikely conditions <#sec-18-1>`__
 
--  `Common Pitfalls <#org1cf3372>`__
+-  `Common Pitfalls <#sec-19>`__
 
-   -  `Using standard libraries <#org8e71ecd>`__
-   -  `Disabling interrupts <#org9ff7def>`__
-   -  `Sticking your head inside a large carnivore <#orgdd651cd>`__
+   -  `Using standard libraries <#sec-19-1>`__
+   -  `Disabling interrupts <#sec-19-2>`__
+   -  `Sticking your head inside a large carnivore <#sec-19-3>`__
 
--  `Where To Go From Here? <#orgcf6e3aa>`__
-
-.. raw:: html
-
-   </div>
+-  `Where To Go From Here? <#sec-20>`__
 
 .. raw:: html
 
@@ -127,14 +123,18 @@
 
 .. raw:: html
 
-   <div id="outline-container-org1785162" class="outline-2">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-1" class="outline-2">
 
 .. rubric:: Introduction
-   :name: org1785162
+   :name: sec-1
 
 .. raw:: html
 
-   <div id="text-org1785162" class="outline-text-2">
+   <div id="text-1" class="outline-text-2">
 
 The Linux Kernel Module Programming Guide is a free book; you may
 reproduce and/or modify it under the terms of the Open Software License,
@@ -172,14 +172,14 @@ above.
 
 .. raw:: html
 
-   <div id="outline-container-org63a1b37" class="outline-3">
+   <div id="outline-container-sec-1-1" class="outline-3">
 
 .. rubric:: Authorship
-   :name: org63a1b37
+   :name: sec-1-1
 
 .. raw:: html
 
-   <div id="text-org63a1b37" class="outline-text-3">
+   <div id="text-1-1" class="outline-text-3">
 
 The Linux Kernel Module Programming Guide was originally written for the
 2.2 kernels by Ori Pomerantz. Eventually, Ori no longer had time to
@@ -201,14 +201,14 @@ other chapters.
 
 .. raw:: html
 
-   <div id="outline-container-org10863e7" class="outline-3">
+   <div id="outline-container-sec-1-2" class="outline-3">
 
 .. rubric:: Versioning and Notes
-   :name: org10863e7
+   :name: sec-1-2
 
 .. raw:: html
 
-   <div id="text-org10863e7" class="outline-text-3">
+   <div id="text-1-2" class="outline-text-3">
 
 The Linux kernel is a moving target. There has always been a question
 whether the LKMPG should remove deprecated information or keep it around
@@ -232,14 +232,14 @@ I can't promise anything.
 
 .. raw:: html
 
-   <div id="outline-container-org49d4e59" class="outline-3">
+   <div id="outline-container-sec-1-3" class="outline-3">
 
 .. rubric:: Acknowledgements
-   :name: org49d4e59
+   :name: sec-1-3
 
 .. raw:: html
 
-   <div id="text-org49d4e59" class="outline-text-3">
+   <div id="text-1-3" class="outline-text-3">
 
 The following people have contributed corrections or good suggestions:
 Ignacio Martin, David Porter, Daniele Paolo Scarpazza, Dimo Velev,
@@ -255,14 +255,14 @@ Francois Audeon, Horst Schirmeier, Bob Mottram and Roman Lakeev.
 
 .. raw:: html
 
-   <div id="outline-container-org0a5ce13" class="outline-3">
+   <div id="outline-container-sec-1-4" class="outline-3">
 
 .. rubric:: What Is A Kernel Module?
-   :name: org0a5ce13
+   :name: sec-1-4
 
 .. raw:: html
 
-   <div id="text-org0a5ce13" class="outline-text-3">
+   <div id="text-1-4" class="outline-text-3">
 
 So, you want to write a kernel module. You know C, you've written a few
 normal programs to run as processes, and now you want to get to where
@@ -289,14 +289,14 @@ time we want new functionality.
 
 .. raw:: html
 
-   <div id="outline-container-org1cb0938" class="outline-3">
+   <div id="outline-container-sec-1-5" class="outline-3">
 
 .. rubric:: Kernel module package
-   :name: org1cb0938
+   :name: sec-1-5
 
 .. raw:: html
 
-   <div id="text-org1cb0938" class="outline-text-3">
+   <div id="text-1-5" class="outline-text-3">
 
 Linux distros provide the commands *modprobe*, *insmod* and *depmod*
 within a package.
@@ -309,7 +309,7 @@ On Debian:
 
 .. code:: src
 
-    sudo apt-get install build-essential kmod
+   sudo apt-get install build-essential kmod
 
 .. raw:: html
 
@@ -323,7 +323,7 @@ On Parabola:
 
 .. code:: src
 
-    sudo pacman -S gcc kmod
+   sudo pacman -S gcc kmod
 
 .. raw:: html
 
@@ -339,14 +339,14 @@ On Parabola:
 
 .. raw:: html
 
-   <div id="outline-container-org878e43e" class="outline-3">
+   <div id="outline-container-sec-1-6" class="outline-3">
 
 .. rubric:: What Modules are in my Kernel?
-   :name: org878e43e
+   :name: sec-1-6
 
 .. raw:: html
 
-   <div id="text-org878e43e" class="outline-text-3">
+   <div id="text-1-6" class="outline-text-3">
 
 To discover what modules are already loaded within your current kernel
 use the command **lsmod**.
@@ -357,7 +357,7 @@ use the command **lsmod**.
 
 .. code:: src
 
-    sudo lsmod
+   sudo lsmod
 
 .. raw:: html
 
@@ -372,7 +372,7 @@ them with:
 
 .. code:: src
 
-    sudo cat /proc/modules
+   sudo cat /proc/modules
 
 .. raw:: html
 
@@ -387,7 +387,7 @@ particular. To search for the *fat* module:
 
 .. code:: src
 
-    sudo lsmod | grep fat
+   sudo lsmod | grep fat
 
 .. raw:: html
 
@@ -403,14 +403,14 @@ particular. To search for the *fat* module:
 
 .. raw:: html
 
-   <div id="outline-container-orgb530dfd" class="outline-3">
+   <div id="outline-container-sec-1-7" class="outline-3">
 
 .. rubric:: Do I need to download and compile the kernel?
-   :name: orgb530dfd
+   :name: sec-1-7
 
 .. raw:: html
 
-   <div id="text-orgb530dfd" class="outline-text-3">
+   <div id="text-1-7" class="outline-text-3">
 
 For the purposes of following this guide you don't necessarily need to
 do that. However, it would be wise to run the examples within a test
@@ -427,14 +427,14 @@ messing up your system.
 
 .. raw:: html
 
-   <div id="outline-container-org2583533" class="outline-3">
+   <div id="outline-container-sec-1-8" class="outline-3">
 
 .. rubric:: Before We Begin
-   :name: org2583533
+   :name: sec-1-8
 
 .. raw:: html
 
-   <div id="text-org2583533" class="outline-text-3">
+   <div id="text-1-8" class="outline-text-3">
 
 Before we delve into code, there are a few issues we need to cover.
 Everyone's system is different and everyone has their own groove.
@@ -448,7 +448,7 @@ thereafter.
    </div>
 
 -  | Modversioning
-   | ::: {#text-org4517450 .outline-text-5} A module compiled for one
+   | ::: {#text-1-8-0-1 .outline-text-5} A module compiled for one
      kernel won't load if you boot a different kernel unless you enable
      CONFIG_MODVERSIONS in the kernel. We won't go into module
      versioning until later in this guide. Until we cover modversions,
@@ -461,8 +461,8 @@ thereafter.
    :::
 
 -  | Using X
-   | ::: {#text-orgdc404d5 .outline-text-5} It is highly recommended
-     that you type in, compile and load all the examples this guide
+   | ::: {#text-1-8-0-2 .outline-text-5} It is highly recommended that
+     you type in, compile and load all the examples this guide
      discusses. It's also highly recommended you do this from a console.
      You should not be working on this stuff in X.
 
@@ -486,14 +486,14 @@ thereafter.
 
 .. raw:: html
 
-   <div id="outline-container-org46d2b5f" class="outline-2">
+   <div id="outline-container-sec-2" class="outline-2">
 
 .. rubric:: Headers
-   :name: org46d2b5f
+   :name: sec-2
 
 .. raw:: html
 
-   <div id="text-org46d2b5f" class="outline-text-2">
+   <div id="text-2" class="outline-text-2">
 
 Before you can build anything you'll need to install the header files
 for your kernel. On Parabola GNU/Linux:
@@ -504,7 +504,7 @@ for your kernel. On Parabola GNU/Linux:
 
 .. code:: src
 
-    sudo pacman -S linux-libre-headers
+   sudo pacman -S linux-libre-headers
 
 .. raw:: html
 
@@ -518,8 +518,8 @@ On Debian:
 
 .. code:: src
 
-    sudo apt-get update
-    apt-cache search linux-headers-$(uname -r)
+   sudo apt-get update
+   apt-cache search linux-headers-$(uname -r)
 
 .. raw:: html
 
@@ -534,7 +534,7 @@ example:
 
 .. code:: src
 
-    sudo apt-get install kmod linux-headers-4.15.2-1-amd64
+   sudo apt-get install kmod linux-headers-4.15.2-1-amd64
 
 .. raw:: html
 
@@ -550,14 +550,14 @@ example:
 
 .. raw:: html
 
-   <div id="outline-container-orgdd7dd5d" class="outline-2">
+   <div id="outline-container-sec-3" class="outline-2">
 
 .. rubric:: Examples
-   :name: orgdd7dd5d
+   :name: sec-3
 
 .. raw:: html
 
-   <div id="text-orgdd7dd5d" class="outline-text-2">
+   <div id="text-3" class="outline-text-2">
 
 All the examples from this document are available within the *examples*
 subdirectory. To test that they compile:
@@ -568,8 +568,8 @@ subdirectory. To test that they compile:
 
 .. code:: src
 
-    cd examples
-    make
+   cd examples
+   make
 
 .. raw:: html
 
@@ -588,14 +588,14 @@ version or need to install the corresponding kernel header files.
 
 .. raw:: html
 
-   <div id="outline-container-org92f8539" class="outline-2">
+   <div id="outline-container-sec-4" class="outline-2">
 
 .. rubric:: Hello World
-   :name: org92f8539
+   :name: sec-4
 
 .. raw:: html
 
-   <div id="text-org92f8539" class="outline-text-2">
+   <div id="text-4" class="outline-text-2">
 
 .. raw:: html
 
@@ -603,14 +603,14 @@ version or need to install the corresponding kernel header files.
 
 .. raw:: html
 
-   <div id="outline-container-org5ae5562" class="outline-3">
+   <div id="outline-container-sec-4-1" class="outline-3">
 
 .. rubric:: The Simplest Module
-   :name: org5ae5562
+   :name: sec-4-1
 
 .. raw:: html
 
-   <div id="text-org5ae5562" class="outline-text-3">
+   <div id="text-4-1" class="outline-text-3">
 
 Most people learning programming start out with some sort of "*hello
 world*" example. I don't know what happens to people who break with this
@@ -628,8 +628,8 @@ Make a test directory:
 
 .. code:: src
 
-    mkdir -p ~/develop/kernel/hello-1
-    cd ~/develop/kernel/hello-1
+   mkdir -p ~/develop/kernel/hello-1
+   cd ~/develop/kernel/hello-1
 
 .. raw:: html
 
@@ -643,26 +643,26 @@ Paste this into you favourite editor and save it as **hello-1.c**:
 
 .. code:: src
 
-    /*
-     *  hello-1.c - The simplest kernel module.
-     */
-    #include <linux/module.h>       /* Needed by all modules */
-    #include <linux/kernel.h>       /* Needed for KERN_INFO */
+   /*
+    *  hello-1.c - The simplest kernel module.
+    */
+   #include <linux/module.h>       /* Needed by all modules */
+   #include <linux/kernel.h>       /* Needed for KERN_INFO */
 
-    int init_module(void)
-    {
-        pr_info("Hello world 1.\n");
+   int init_module(void)
+   {
+       pr_info("Hello world 1.\n");
 
-        /*
-         * A non 0 return means init_module failed; module can't be loaded.
-         */
-        return 0;
-    }
+       /*
+        * A non 0 return means init_module failed; module can't be loaded.
+        */
+       return 0;
+   }
 
-    void cleanup_module(void)
-    {
-        pr_info("Goodbye world 1.\n");
-    }
+   void cleanup_module(void)
+   {
+       pr_info("Goodbye world 1.\n");
+   }
 
 .. raw:: html
 
@@ -677,13 +677,13 @@ indentation to use tabs, not spaces.
 
 .. code:: src
 
-    obj-m += hello-1.o
+   obj-m += hello-1.o
 
-    all:
-            make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+   all:
+           make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 
-    clean:
-            make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+   clean:
+           make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 
 .. raw:: html
 
@@ -697,7 +697,7 @@ And finally just:
 
 .. code:: src
 
-    make
+   make
 
 .. raw:: html
 
@@ -712,7 +712,7 @@ If all goes smoothly you should then find that you have a compiled
 
 .. code:: src
 
-    sudo modinfo hello-1.ko
+   sudo modinfo hello-1.ko
 
 .. raw:: html
 
@@ -726,7 +726,7 @@ At this point the command:
 
 .. code:: src
 
-    sudo lsmod | grep hello
+   sudo lsmod | grep hello
 
 .. raw:: html
 
@@ -740,7 +740,7 @@ should return nothing. You can try loading your shiny new module with:
 
 .. code:: src
 
-    sudo insmod hello-1.ko
+   sudo insmod hello-1.ko
 
 .. raw:: html
 
@@ -755,7 +755,7 @@ again try:
 
 .. code:: src
 
-    sudo lsmod | grep hello
+   sudo lsmod | grep hello
 
 .. raw:: html
 
@@ -769,7 +769,7 @@ you should now see your loaded module. It can be removed again with:
 
 .. code:: src
 
-    sudo rmmod hello_1
+   sudo rmmod hello_1
 
 .. raw:: html
 
@@ -784,7 +784,7 @@ happened in the logs:
 
 .. code:: src
 
-    journalctl --since "1 hour ago" | grep kernel
+   journalctl --since "1 hour ago" | grep kernel
 
 .. raw:: html
 
@@ -818,8 +818,8 @@ pr_alert() log level, which you'll learn about in Section 2.1.1.
    </div>
 
 -  | A point about coding style
-   | ::: {#text-org8e886ba .outline-text-5} Another thing which may not
-     be immediately obvious to anyone getting started with kernel
+   | ::: {#text-4-1-0-1 .outline-text-5} Another thing which may not be
+     immediately obvious to anyone getting started with kernel
      programming is that indentation within your code should be using
      **tabs** and **not spaces**. It's one of the coding conventions of
      the kernel. You may not like it, but you'll need to get used to it
@@ -828,7 +828,7 @@ pr_alert() log level, which you'll learn about in Section 2.1.1.
    :::
 
 -  | Introducing print macros
-   | ::: {#text-org912c90e .outline-text-5} In the beginning there was
+   | ::: {#text-4-1-0-2 .outline-text-5} In the beginning there was
      **printk**, usually followed by a priority such as KERN_INFO or
      KERN_DEBUG. More recently this can also be expressed in abbreviated
      form using a set of print macros, such as **pr_info** and
@@ -839,7 +839,7 @@ pr_alert() log level, which you'll learn about in Section 2.1.1.
    :::
 
 -  | About Compiling
-   | ::: {#text-org9ba89c7 .outline-text-5} Kernel modules need to be
+   | ::: {#text-4-1-0-3 .outline-text-5} Kernel modules need to be
      compiled a bit differently from regular userspace apps. Former
      kernel versions required us to care much about these settings,
      which are usually stored in Makefiles. Although hierarchically
@@ -857,10 +857,10 @@ pr_alert() log level, which you'll learn about in Section 2.1.1.
    and the related files before starting to hack Makefiles. It'll
    probably save you lots of work.
 
-       Here's another exercise for the reader. See that comment above
-       the return statement in init_module()? Change the return value to
-       something negative, recompile and load the module again. What
-       happens?
+      Here's another exercise for the reader. See that comment above the
+      return statement in init_module()? Change the return value to
+      something negative, recompile and load the module again. What
+      happens?
 
    :::
 
@@ -870,14 +870,14 @@ pr_alert() log level, which you'll learn about in Section 2.1.1.
 
 .. raw:: html
 
-   <div id="outline-container-org5c5dd06" class="outline-3">
+   <div id="outline-container-sec-4-2" class="outline-3">
 
 .. rubric:: Hello and Goodbye
-   :name: org5c5dd06
+   :name: sec-4-2
 
 .. raw:: html
 
-   <div id="text-org5c5dd06" class="outline-text-3">
+   <div id="text-4-2" class="outline-text-3">
 
 In early kernel versions you had to use the **init_module** and
 **cleanup_module** functions, as in the first hello world example, but
@@ -893,27 +893,27 @@ you'll get compilation errors. Here's an example of this technique:
 
 .. code:: src
 
-    /*
-     *  hello-2.c - Demonstrating the module_init() and module_exit() macros.
-     *  This is preferred over using init_module() and cleanup_module().
-     */
-    #include <linux/module.h>       /* Needed by all modules */
-    #include <linux/kernel.h>       /* Needed for KERN_INFO */
-    #include <linux/init.h>         /* Needed for the macros */
+   /*
+    *  hello-2.c - Demonstrating the module_init() and module_exit() macros.
+    *  This is preferred over using init_module() and cleanup_module().
+    */
+   #include <linux/module.h>       /* Needed by all modules */
+   #include <linux/kernel.h>       /* Needed for KERN_INFO */
+   #include <linux/init.h>         /* Needed for the macros */
 
-    static int __init hello_2_init(void)
-    {
-        pr_info("Hello, world 2\n");
-        return 0;
-    }
+   static int __init hello_2_init(void)
+   {
+       pr_info("Hello, world 2\n");
+       return 0;
+   }
 
-    static void __exit hello_2_exit(void)
-    {
-        pr_info("Goodbye, world 2\n");
-    }
+   static void __exit hello_2_exit(void)
+   {
+       pr_info("Goodbye, world 2\n");
+   }
 
-    module_init(hello_2_init);
-    module_exit(hello_2_exit);
+   module_init(hello_2_init);
+   module_exit(hello_2_exit);
 
 .. raw:: html
 
@@ -928,14 +928,14 @@ module is as simple as this:
 
 .. code:: src
 
-    obj-m += hello-1.o
-    obj-m += hello-2.o
+   obj-m += hello-1.o
+   obj-m += hello-2.o
 
-    all:
-        make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+   all:
+       make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 
-    clean:
-        make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+   clean:
+       make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 
 .. raw:: html
 
@@ -961,14 +961,14 @@ something like that.
 
 .. raw:: html
 
-   <div id="outline-container-org7fd362f" class="outline-3">
+   <div id="outline-container-sec-4-3" class="outline-3">
 
 .. rubric:: The \__init and \__exit Macros
-   :name: org7fd362f
+   :name: sec-4-3
 
 .. raw:: html
 
-   <div id="text-org7fd362f" class="outline-text-3">
+   <div id="text-4-3" class="outline-text-3">
 
 This demonstrates a feature of kernel 2.2 and later. Notice the change
 in the definitions of the init and cleanup functions. The **\__init**
@@ -996,32 +996,28 @@ kernel memory: 236k freed, this is precisely what the kernel is freeing.
 
 .. code:: src
 
-    /*
-     *  hello-3.c - Illustrating the __init, __initdata and __exit macros.
-     */
-    #include <linux/module.h>       /* Needed by all modules */
-    #include <linux/kernel.h>       /* Needed for KERN_INFO */
-    #include <linux/init.h>         /* Needed for the macros */
+   /*
+    *  hello-3.c - Illustrating the __init, __initdata and __exit macros.
+    */
+   #include <linux/module.h>       /* Needed by all modules */
+   #include <linux/kernel.h>       /* Needed for KERN_INFO */
+   #include <linux/init.h>         /* Needed for the macros */
 
-    static int hello3_data __initdata = 3;
+   static int hello3_data __initdata = 3;
 
-    static int __init hello_3_init(void)
-    {
-        pr_info("Hello, world %d\n", hello3_data);
-        return 0;
-    }
+   static int __init hello_3_init(void)
+   {
+       pr_info("Hello, world %d\n", hello3_data);
+       return 0;
+   }
 
-    static void __exit hello_3_exit(void)
-    {
-        pr_info("Goodbye, world 3\n");
-    }
+   static void __exit hello_3_exit(void)
+   {
+       pr_info("Goodbye, world 3\n");
+   }
 
-    module_init(hello_3_init);
-    module_exit(hello_3_exit);
-
-.. raw:: html
-
-   </div>
+   module_init(hello_3_init);
+   module_exit(hello_3_exit);
 
 .. raw:: html
 
@@ -1033,14 +1029,18 @@ kernel memory: 236k freed, this is precisely what the kernel is freeing.
 
 .. raw:: html
 
-   <div id="outline-container-orga52c864" class="outline-3">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-4-4" class="outline-3">
 
 .. rubric:: Licensing and Module Documentation
-   :name: orga52c864
+   :name: sec-4-4
 
 .. raw:: html
 
-   <div id="text-orga52c864" class="outline-text-3">
+   <div id="text-4-4" class="outline-text-3">
 
 Honestly, who loads or even cares about proprietary modules? If you do
 then you might have seen something like this:
@@ -1051,10 +1051,10 @@ then you might have seen something like this:
 
 .. code:: src
 
-    # insmod xxxxxx.o
-    Warning: loading xxxxxx.ko will taint the kernel: no license
-      See http://www.tux.org/lkml/#export-tainted for information about tainted modules
-    Module xxxxxx loaded, with warnings
+   # insmod xxxxxx.o
+   Warning: loading xxxxxx.ko will taint the kernel: no license
+     See http://www.tux.org/lkml/#export-tainted for information about tainted modules
+   Module xxxxxx loaded, with warnings
 
 .. raw:: html
 
@@ -1075,35 +1075,31 @@ are illustrated in the below example.
 
 .. code:: src
 
-    /*
-     *  hello-4.c - Demonstrates module documentation.
-     */
-    #include <linux/module.h>       /* Needed by all modules */
-    #include <linux/kernel.h>       /* Needed for KERN_INFO */
-    #include <linux/init.h>         /* Needed for the macros */
+   /*
+    *  hello-4.c - Demonstrates module documentation.
+    */
+   #include <linux/module.h>       /* Needed by all modules */
+   #include <linux/kernel.h>       /* Needed for KERN_INFO */
+   #include <linux/init.h>         /* Needed for the macros */
 
-    MODULE_LICENSE("GPL");
-    MODULE_AUTHOR("Bob Mottram");
-    MODULE_DESCRIPTION("A sample driver");
-    MODULE_SUPPORTED_DEVICE("testdevice");
+   MODULE_LICENSE("GPL");
+   MODULE_AUTHOR("Bob Mottram");
+   MODULE_DESCRIPTION("A sample driver");
+   MODULE_SUPPORTED_DEVICE("testdevice");
 
-    static int __init init_hello_4(void)
-    {
-            pr_info("Hello, world 4\n");
-            return 0;
-    }
+   static int __init init_hello_4(void)
+   {
+           pr_info("Hello, world 4\n");
+           return 0;
+   }
 
-    static void __exit cleanup_hello_4(void)
-    {
-            pr_info("Goodbye, world 4\n");
-    }
+   static void __exit cleanup_hello_4(void)
+   {
+           pr_info("Goodbye, world 4\n");
+   }
 
-    module_init(init_hello_4);
-    module_exit(cleanup_hello_4);
-
-.. raw:: html
-
-   </div>
+   module_init(init_hello_4);
+   module_exit(cleanup_hello_4);
 
 .. raw:: html
 
@@ -1115,14 +1111,18 @@ are illustrated in the below example.
 
 .. raw:: html
 
-   <div id="outline-container-org6976bc8" class="outline-3">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-4-5" class="outline-3">
 
 .. rubric:: Passing Command Line Arguments to a Module
-   :name: org6976bc8
+   :name: sec-4-5
 
 .. raw:: html
 
-   <div id="text-org6976bc8" class="outline-text-3">
+   <div id="text-4-5" class="outline-text-3">
 
 Modules can take command line arguments, but not with the argc/argv you
 might be used to.
@@ -1147,8 +1147,8 @@ integers or strings see module_param_array() and module_param_string().
 
 .. code:: src
 
-    int myint = 3;
-    module_param(myint, int, 0);
+   int myint = 3;
+   module_param(myint, int, 0);
 
 .. raw:: html
 
@@ -1166,12 +1166,12 @@ both possibilities here:
 
 .. code:: src
 
-    int myintarray[2];
-    module_param_array(myintarray, int, NULL, 0); /* not interested in count */
+   int myintarray[2];
+   module_param_array(myintarray, int, NULL, 0); /* not interested in count */
 
-    short myshortarray[4];
-    int count;
-    module_parm_array(myshortarray, short, &count, 0); /* put count into "count" variable */
+   short myshortarray[4];
+   int count;
+   module_param_array(myshortarray, short, &count, 0); /* put count into "count" variable */
 
 .. raw:: html
 
@@ -1192,76 +1192,76 @@ a variable name and a free form string describing that variable.
 
 .. code:: src
 
-    /*
-     *  hello-5.c - Demonstrates command line argument passing to a module.
-     */
-    #include <linux/module.h>
-    #include <linux/moduleparam.h>
-    #include <linux/kernel.h>
-    #include <linux/init.h>
-    #include <linux/stat.h>
+   /*
+    *  hello-5.c - Demonstrates command line argument passing to a module.
+    */
+   #include <linux/module.h>
+   #include <linux/moduleparam.h>
+   #include <linux/kernel.h>
+   #include <linux/init.h>
+   #include <linux/stat.h>
 
-    MODULE_LICENSE("GPL");
-    MODULE_AUTHOR("Peter Jay Salzman");
+   MODULE_LICENSE("GPL");
+   MODULE_AUTHOR("Peter Jay Salzman");
 
-    static short int myshort = 1;
-    static int myint = 420;
-    static long int mylong = 9999;
-    static char *mystring = "blah";
-    static int myintArray[2] = { -1, -1 };
-    static int arr_argc = 0;
+   static short int myshort = 1;
+   static int myint = 420;
+   static long int mylong = 9999;
+   static char *mystring = "blah";
+   static int myintArray[2] = { -1, -1 };
+   static int arr_argc = 0;
 
-    /*
-     * module_param(foo, int, 0000)
-     * The first param is the parameters name
-     * The second param is it's data type
-     * The final argument is the permissions bits,
-     * for exposing parameters in sysfs (if non-zero) at a later stage.
-     */
+   /*
+    * module_param(foo, int, 0000)
+    * The first param is the parameters name
+    * The second param is it's data type
+    * The final argument is the permissions bits,
+    * for exposing parameters in sysfs (if non-zero) at a later stage.
+    */
 
-    module_param(myshort, short, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
-    MODULE_PARM_DESC(myshort, "A short integer");
-    module_param(myint, int, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-    MODULE_PARM_DESC(myint, "An integer");
-    module_param(mylong, long, S_IRUSR);
-    MODULE_PARM_DESC(mylong, "A long integer");
-    module_param(mystring, charp, 0000);
-    MODULE_PARM_DESC(mystring, "A character string");
+   module_param(myshort, short, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
+   MODULE_PARM_DESC(myshort, "A short integer");
+   module_param(myint, int, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+   MODULE_PARM_DESC(myint, "An integer");
+   module_param(mylong, long, S_IRUSR);
+   MODULE_PARM_DESC(mylong, "A long integer");
+   module_param(mystring, charp, 0000);
+   MODULE_PARM_DESC(mystring, "A character string");
 
-    /*
-     * module_param_array(name, type, num, perm);
-     * The first param is the parameter's (in this case the array's) name
-     * The second param is the data type of the elements of the array
-     * The third argument is a pointer to the variable that will store the number
-     * of elements of the array initialized by the user at module loading time
-     * The fourth argument is the permission bits
-     */
-    module_param_array(myintArray, int, &arr_argc, 0000);
-    MODULE_PARM_DESC(myintArray, "An array of integers");
+   /*
+    * module_param_array(name, type, num, perm);
+    * The first param is the parameter's (in this case the array's) name
+    * The second param is the data type of the elements of the array
+    * The third argument is a pointer to the variable that will store the number
+    * of elements of the array initialized by the user at module loading time
+    * The fourth argument is the permission bits
+    */
+   module_param_array(myintArray, int, &arr_argc, 0000);
+   MODULE_PARM_DESC(myintArray, "An array of integers");
 
-    static int __init hello_5_init(void)
-    {
-        int i;
-        pr_info("Hello, world 5\n=============\n");
-        pr_info("myshort is a short integer: %hd\n", myshort);
-        pr_info("myint is an integer: %d\n", myint);
-        pr_info("mylong is a long integer: %ld\n", mylong);
-        pr_info("mystring is a string: %s\n", mystring);
-        for (i = 0; i < (sizeof myintArray / sizeof (int)); i++)
-        {
-            pr_info("myintArray[%d] = %d\n", i, myintArray[i]);
-        }
-        pr_info("got %d arguments for myintArray.\n", arr_argc);
-        return 0;
-    }
+   static int __init hello_5_init(void)
+   {
+       int i;
+       pr_info("Hello, world 5\n=============\n");
+       pr_info("myshort is a short integer: %hd\n", myshort);
+       pr_info("myint is an integer: %d\n", myint);
+       pr_info("mylong is a long integer: %ld\n", mylong);
+       pr_info("mystring is a string: %s\n", mystring);
+       for (i = 0; i < (sizeof myintArray / sizeof (int)); i++)
+       {
+           pr_info("myintArray[%d] = %d\n", i, myintArray[i]);
+       }
+       pr_info("got %d arguments for myintArray.\n", arr_argc);
+       return 0;
+   }
 
-    static void __exit hello_5_exit(void)
-    {
-        pr_info("Goodbye, world 5\n");
-    }
+   static void __exit hello_5_exit(void)
+   {
+       pr_info("Goodbye, world 5\n");
+   }
 
-    module_init(hello_5_init);
-    module_exit(hello_5_exit);
+   module_init(hello_5_init);
+   module_exit(hello_5_exit);
 
 .. raw:: html
 
@@ -1275,35 +1275,31 @@ I would recommend playing around with this code:
 
 .. code:: src
 
-    # sudo insmod hello-5.ko mystring="bebop" mybyte=255 myintArray=-1
-    mybyte is an 8 bit integer: 255
-    myshort is a short integer: 1
-    myint is an integer: 20
-    mylong is a long integer: 9999
-    mystring is a string: bebop
-    myintArray is -1 and 420
+   # sudo insmod hello-5.ko mystring="bebop" mybyte=255 myintArray=-1
+   mybyte is an 8 bit integer: 255
+   myshort is a short integer: 1
+   myint is an integer: 20
+   mylong is a long integer: 9999
+   mystring is a string: bebop
+   myintArray is -1 and 420
 
-    # rmmod hello-5
-    Goodbye, world 5
+   # rmmod hello-5
+   Goodbye, world 5
 
-    # sudo insmod hello-5.ko mystring="supercalifragilisticexpialidocious" \
-    > mybyte=256 myintArray=-1,-1
-    mybyte is an 8 bit integer: 0
-    myshort is a short integer: 1
-    myint is an integer: 20
-    mylong is a long integer: 9999
-    mystring is a string: supercalifragilisticexpialidocious
-    myintArray is -1 and -1
+   # sudo insmod hello-5.ko mystring="supercalifragilisticexpialidocious" \
+   > mybyte=256 myintArray=-1,-1
+   mybyte is an 8 bit integer: 0
+   myshort is a short integer: 1
+   myint is an integer: 20
+   mylong is a long integer: 9999
+   mystring is a string: supercalifragilisticexpialidocious
+   myintArray is -1 and -1
 
-    # rmmod hello-5
-    Goodbye, world 5
+   # rmmod hello-5
+   Goodbye, world 5
 
-    # sudo insmod hello-5.ko mylong=hello
-    hello-5.o: invalid argument syntax for mylong: 'h'
-
-.. raw:: html
-
-   </div>
+   # sudo insmod hello-5.ko mylong=hello
+   hello-5.o: invalid argument syntax for mylong: 'h'
 
 .. raw:: html
 
@@ -1315,14 +1311,18 @@ I would recommend playing around with this code:
 
 .. raw:: html
 
-   <div id="outline-container-org5a97220" class="outline-3">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-4-6" class="outline-3">
 
 .. rubric:: Modules Spanning Multiple Files
-   :name: org5a97220
+   :name: sec-4-6
 
 .. raw:: html
 
-   <div id="text-org5a97220" class="outline-text-3">
+   <div id="text-4-6" class="outline-text-3">
 
 Sometimes it makes sense to divide a kernel module between several
 source files.
@@ -1335,18 +1335,18 @@ Here's an example of such a kernel module.
 
 .. code:: src
 
-    /*
-     *  start.c - Illustration of multi filed modules
-     */
+   /*
+    *  start.c - Illustration of multi filed modules
+    */
 
-    #include <linux/kernel.h>       /* We're doing kernel work */
-    #include <linux/module.h>       /* Specifically, a module */
+   #include <linux/kernel.h>       /* We're doing kernel work */
+   #include <linux/module.h>       /* Specifically, a module */
 
-    int init_module(void)
-    {
-        pr_info("Hello, world - this is the kernel speaking\n");
-        return 0;
-    }
+   int init_module(void)
+   {
+       pr_info("Hello, world - this is the kernel speaking\n");
+       return 0;
+   }
 
 .. raw:: html
 
@@ -1360,17 +1360,17 @@ The next file:
 
 .. code:: src
 
-    /*
-     *  stop.c - Illustration of multi filed modules
-     */
+   /*
+    *  stop.c - Illustration of multi filed modules
+    */
 
-    #include <linux/kernel.h>       /* We're doing kernel work */
-    #include <linux/module.h>       /* Specifically, a module  */
+   #include <linux/kernel.h>       /* We're doing kernel work */
+   #include <linux/module.h>       /* Specifically, a module  */
 
-    void cleanup_module()
-    {
-        pr_info("Short is the life of a kernel module\n");
-    }
+   void cleanup_module()
+   {
+       pr_info("Short is the life of a kernel module\n");
+   }
 
 .. raw:: html
 
@@ -1384,19 +1384,19 @@ And finally, the makefile:
 
 .. code:: src
 
-    obj-m += hello-1.o
-    obj-m += hello-2.o
-    obj-m += hello-3.o
-    obj-m += hello-4.o
-    obj-m += hello-5.o
-    obj-m += startstop.o
-    startstop-objs := start.o stop.o
+   obj-m += hello-1.o
+   obj-m += hello-2.o
+   obj-m += hello-3.o
+   obj-m += hello-4.o
+   obj-m += hello-5.o
+   obj-m += startstop.o
+   startstop-objs := start.o stop.o
 
-    all:
-        make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+   all:
+       make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 
-    clean:
-        make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+   clean:
+       make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 
 .. raw:: html
 
@@ -1417,14 +1417,14 @@ second we tell make what object files are part of that module.
 
 .. raw:: html
 
-   <div id="outline-container-org65d6819" class="outline-3">
+   <div id="outline-container-sec-4-7" class="outline-3">
 
 .. rubric:: Building modules for a precompiled kernel
-   :name: org65d6819
+   :name: sec-4-7
 
 .. raw:: html
 
-   <div id="text-org65d6819" class="outline-text-3">
+   <div id="text-4-7" class="outline-text-3">
 
 Obviously, we strongly suggest you to recompile your kernel, so that you
 can enable a number of useful debugging features, such as forced module
@@ -1455,7 +1455,7 @@ cases you would obtain an error as follows:
 
 .. code:: src
 
-    insmod: error inserting 'poet_atkm.ko': -1 Invalid module format
+   insmod: error inserting 'poet_atkm.ko': -1 Invalid module format
 
 .. raw:: html
 
@@ -1469,8 +1469,8 @@ Less cryptical information are logged to the systemd journal:
 
 .. code:: src
 
-    Jun  4 22:07:54 localhost kernel: poet_atkm: version magic '2.6.5-1.358custom 686
-    REGPARM 4KSTACKS gcc-3.3' should be '2.6.5-1.358 686 REGPARM 4KSTACKS gcc-3.3'
+   Jun  4 22:07:54 localhost kernel: poet_atkm: version magic '2.6.5-1.358custom 686
+   REGPARM 4KSTACKS gcc-3.3' should be '2.6.5-1.358 686 REGPARM 4KSTACKS gcc-3.3'
 
 .. raw:: html
 
@@ -1490,12 +1490,12 @@ issue the modinfo module.ko command:
 
 .. code:: src
 
-    # sudo modinfo hello-4.ko
-    license:        GPL
-    author:         Bob Mottram <bob@freedombone.net>
-    description:    A sample driver
-    vermagic:       4.15.2-1.358 amd64 REGPARM 4KSTACKS gcc-4.9.2
-    depends:
+   # sudo modinfo hello-4.ko
+   license:        GPL
+   author:         Bob Mottram <bob@freedombone.net>
+   description:    A sample driver
+   vermagic:       4.15.2-1.358 amd64 REGPARM 4KSTACKS gcc-4.9.2
+   depends:
 
 .. raw:: html
 
@@ -1533,10 +1533,10 @@ example, you makefile could start as follows:
 
 .. code:: src
 
-    VERSION = 4
-    PATCHLEVEL = 7
-    SUBLEVEL = 4
-    EXTRAVERSION = -1.358custom
+   VERSION = 4
+   PATCHLEVEL = 7
+   SUBLEVEL = 4
+   EXTRAVERSION = -1.358custom
 
 .. raw:: html
 
@@ -1562,17 +1562,17 @@ objects:
 
 .. code:: src
 
-    # make
-    CHK     include/linux/version.h
-    UPD     include/linux/version.h
-    SYMLINK include/asm -> include/asm-i386
-    SPLIT   include/linux/autoconf.h -> include/config/*
-    HOSTCC  scripts/basic/fixdep
-    HOSTCC  scripts/basic/split-include
-    HOSTCC  scripts/basic/docproc
-    HOSTCC  scripts/conmakehash
-    HOSTCC  scripts/kallsyms
-    CC      scripts/empty.o
+   # make
+   CHK     include/linux/version.h
+   UPD     include/linux/version.h
+   SYMLINK include/asm -> include/asm-i386
+   SPLIT   include/linux/autoconf.h -> include/config/*
+   HOSTCC  scripts/basic/fixdep
+   HOSTCC  scripts/basic/split-include
+   HOSTCC  scripts/basic/docproc
+   HOSTCC  scripts/conmakehash
+   HOSTCC  scripts/kallsyms
+   CC      scripts/empty.o
 
 .. raw:: html
 
@@ -1599,14 +1599,14 @@ any errors.
 
 .. raw:: html
 
-   <div id="outline-container-orgb5adf2b" class="outline-2">
+   <div id="outline-container-sec-5" class="outline-2">
 
 .. rubric:: Preliminaries
-   :name: orgb5adf2b
+   :name: sec-5
 
 .. raw:: html
 
-   <div id="text-orgb5adf2b" class="outline-text-2">
+   <div id="text-5" class="outline-text-2">
 
 .. raw:: html
 
@@ -1614,14 +1614,14 @@ any errors.
 
 .. raw:: html
 
-   <div id="outline-container-org4cf9365" class="outline-3">
+   <div id="outline-container-sec-5-1" class="outline-3">
 
 .. rubric:: How modules begin and end
-   :name: org4cf9365
+   :name: sec-5-1
 
 .. raw:: html
 
-   <div id="text-org4cf9365" class="outline-text-3">
+   <div id="text-5-1" class="outline-text-3">
 
 A program usually begins with a **main()** function, executes a bunch of
 instructions and terminates upon completion of those instructions.
@@ -1654,14 +1654,14 @@ think you'll know what I mean.
 
 .. raw:: html
 
-   <div id="outline-container-orgcb5e2da" class="outline-3">
+   <div id="outline-container-sec-5-2" class="outline-3">
 
 .. rubric:: Functions available to modules
-   :name: orgcb5e2da
+   :name: sec-5-2
 
 .. raw:: html
 
-   <div id="text-orgcb5e2da" class="outline-text-3">
+   <div id="text-5-2" class="outline-text-3">
 
 Programmers use functions they don't define all the time. A prime
 example of this is **printf()**. You use these library functions which
@@ -1698,13 +1698,13 @@ Compile the following program:
 
 .. code:: src
 
-    #include <stdio.h>
+   #include <stdio.h>
 
-    int main(void)
-    {
-        printf("hello");
-        return 0;
-    }
+   int main(void)
+   {
+       printf("hello");
+       return 0;
+   }
 
 .. raw:: html
 
@@ -1741,14 +1741,14 @@ everytime someone tries to delete a file on your system.
 
 .. raw:: html
 
-   <div id="outline-container-orgab9f1d1" class="outline-3">
+   <div id="outline-container-sec-5-3" class="outline-3">
 
 .. rubric:: User Space vs Kernel Space
-   :name: orgab9f1d1
+   :name: sec-5-3
 
 .. raw:: html
 
-   <div id="text-orgab9f1d1" class="outline-text-3">
+   <div id="text-5-3" class="outline-text-3">
 
 A kernel is all about access to resources, whether the resource in
 question happens to be a video card, a hard drive or even memory.
@@ -1780,14 +1780,14 @@ returns and execution gets transfered back to user mode.
 
 .. raw:: html
 
-   <div id="outline-container-org9d3f3fc" class="outline-3">
+   <div id="outline-container-sec-5-4" class="outline-3">
 
 .. rubric:: Name Space
-   :name: org9d3f3fc
+   :name: sec-5-4
 
 .. raw:: html
 
-   <div id="text-org9d3f3fc" class="outline-text-3">
+   <div id="text-5-4" class="outline-text-3">
 
 When you write a small C program, you use variables which are convenient
 and make sense to the reader. If, on the other hand, you're writing
@@ -1821,14 +1821,14 @@ share the kernel's codespace.
 
 .. raw:: html
 
-   <div id="outline-container-orga3691e9" class="outline-3">
+   <div id="outline-container-sec-5-5" class="outline-3">
 
 .. rubric:: Code space
-   :name: orga3691e9
+   :name: sec-5-5
 
 .. raw:: html
 
-   <div id="text-orga3691e9" class="outline-text-3">
+   <div id="text-5-5" class="outline-text-3">
 
 Memory management is a very complicated subject and the majority of
 O'Reilly's "*Understanding The Linux Kernel*" exclusively covers memory
@@ -1861,7 +1861,7 @@ worse than it sounds, so try your best to be careful.
 
 By the way, I would like to point out that the above discussion is true
 for any operating system which uses a monolithic kernel. This isn't
-quite the same thing as *"building all your modules into the kernel"*,
+quite the same thing as /"building all your modules into the kernel"/,
 although the idea is the same. There are things called microkernels
 which have modules which get their own codespace. The GNU Hurd and the
 Magenta kernel of Google Fuchsia are two examples of a microkernel.
@@ -1876,14 +1876,14 @@ Magenta kernel of Google Fuchsia are two examples of a microkernel.
 
 .. raw:: html
 
-   <div id="outline-container-org382352c" class="outline-3">
+   <div id="outline-container-sec-5-6" class="outline-3">
 
 .. rubric:: Device Drivers
-   :name: org382352c
+   :name: sec-5-6
 
 .. raw:: html
 
-   <div id="text-org382352c" class="outline-text-3">
+   <div id="text-5-6" class="outline-text-3">
 
 One class of module is the device driver, which provides functionality
 for hardware like a serial port. On unix, each piece of hardware is
@@ -1899,7 +1899,7 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
    </div>
 
 -  | Major and Minor Numbers
-   | ::: {#text-org4e199a6 .outline-text-5} Let's look at some device
+   | ::: {#text-5-6-0-1 .outline-text-5} Let's look at some device
      files. Here are device files which represent the first three
      partitions on the primary master IDE hard drive:
 
@@ -1909,10 +1909,10 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
 
    .. code:: src
 
-       # ls -l /dev/hda[1-3]
-       brw-rw----  1 root  disk  3, 1 Jul  5  2000 /dev/hda1
-       brw-rw----  1 root  disk  3, 2 Jul  5  2000 /dev/hda2
-       brw-rw----  1 root  disk  3, 3 Jul  5  2000 /dev/hda3
+      # ls -l /dev/hda[1-3]
+      brw-rw----  1 root  disk  3, 1 Jul  5  2000 /dev/hda1
+      brw-rw----  1 root  disk  3, 2 Jul  5  2000 /dev/hda2
+      brw-rw----  1 root  disk  3, 3 Jul  5  2000 /dev/hda3
 
    .. raw:: html
 
@@ -1955,10 +1955,10 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
 
    .. code:: src
 
-       crw-rw----  1 root  dial 4, 64 Feb 18 23:34 /dev/ttyS0
-       crw-r-----  1 root  dial 4, 65 Nov 17 10:26 /dev/ttyS1
-       crw-rw----  1 root  dial 4, 66 Jul  5  2000 /dev/ttyS2
-       crw-rw----  1 root  dial 4, 67 Jul  5  2000 /dev/ttyS3
+      crw-rw----  1 root  dial 4, 64 Feb 18 23:34 /dev/ttyS0
+      crw-r-----  1 root  dial 4, 65 Nov 17 10:26 /dev/ttyS1
+      crw-rw----  1 root  dial 4, 66 Jul  5  2000 /dev/ttyS2
+      crw-rw----  1 root  dial 4, 67 Jul  5  2000 /dev/ttyS3
 
    .. raw:: html
 
@@ -1986,7 +1986,7 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
    cares about the minor number. It uses the minor number to distinguish
    between different pieces of hardware.
 
-   By the way, when I say *"hardware"*, I mean something a bit more
+   By the way, when I say /"hardware"/, I mean something a bit more
    abstract than a PCI card that you can hold in your hand. Look at
    these two device files:
 
@@ -1996,9 +1996,9 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
 
    .. code:: src
 
-       % ls -l /dev/sda /dev/sdb
-       brw-rw---- 1 root disk 8,  0 Jan  3 09:02 /dev/sda
-       brw-rw---- 1 root disk 8, 16 Jan  3 09:02 /dev/sdb
+      % ls -l /dev/sda /dev/sdb
+      brw-rw---- 1 root disk 8,  0 Jan  3 09:02 /dev/sda
+      brw-rw---- 1 root disk 8, 16 Jan  3 09:02 /dev/sdb
 
    .. raw:: html
 
@@ -2023,14 +2023,14 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
 
 .. raw:: html
 
-   <div id="outline-container-orgf1744e4" class="outline-2">
+   <div id="outline-container-sec-6" class="outline-2">
 
 .. rubric:: Character Device drivers
-   :name: orgf1744e4
+   :name: sec-6
 
 .. raw:: html
 
-   <div id="text-orgf1744e4" class="outline-text-2">
+   <div id="text-6" class="outline-text-2">
 
 .. raw:: html
 
@@ -2038,14 +2038,14 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
 
 .. raw:: html
 
-   <div id="outline-container-org07ed5b3" class="outline-3">
+   <div id="outline-container-sec-6-1" class="outline-3">
 
 .. rubric:: The file_operations Structure
-   :name: org07ed5b3
+   :name: sec-6-1
 
 .. raw:: html
 
-   <div id="text-org07ed5b3" class="outline-text-3">
+   <div id="text-6-1" class="outline-text-3">
 
 The file_operations structure is defined in **/usr/include/linux/fs.h**,
 and holds pointers to functions defined by the driver that perform
@@ -2064,36 +2064,36 @@ definition looks like for kernel 3.0:
 
 .. code:: src
 
-    struct file_operations {
-        struct module *owner;
-        loff_t (*llseek) (struct file *, loff_t, int);
-        ssize_t (*read) (struct file *, char __user *, size_t, loff_t *);
-        ssize_t (*write) (struct file *, const char __user *, size_t, loff_t *);
-        ssize_t (*aio_read) (struct kiocb *, const struct iovec *, unsigned long, loff_t);
-        ssize_t (*aio_write) (struct kiocb *, const struct iovec *, unsigned long, loff_t);
-        int (*iterate) (struct file *, struct dir_context *);
-        unsigned int (*poll) (struct file *, struct poll_table_struct *);
-        long (*unlocked_ioctl) (struct file *, unsigned int, unsigned long);
-        long (*compat_ioctl) (struct file *, unsigned int, unsigned long);
-        int (*mmap) (struct file *, struct vm_area_struct *);
-        int (*open) (struct inode *, struct file *);
-        int (*flush) (struct file *, fl_owner_t id);
-        int (*release) (struct inode *, struct file *);
-        int (*fsync) (struct file *, loff_t, loff_t, int datasync);
-        int (*aio_fsync) (struct kiocb *, int datasync);
-        int (*fasync) (int, struct file *, int);
-        int (*lock) (struct file *, int, struct file_lock *);
-        ssize_t (*sendpage) (struct file *, struct page *, int, size_t, loff_t *, int);
-        unsigned long (*get_unmapped_area)(struct file *, unsigned long, unsigned long, unsigned long, unsigned long);
-        int (*check_flags)(int);
-        int (*flock) (struct file *, int, struct file_lock *);
-        ssize_t (*splice_write)(struct pipe_inode_info *, struct file *, loff_t *, size_t, unsigned int);
-        ssize_t (*splice_read)(struct file *, loff_t *, struct pipe_inode_info *, size_t, unsigned int);
-        int (*setlease)(struct file *, long, struct file_lock **);
-        long (*fallocate)(struct file *file, int mode, loff_t offset,
-                  loff_t len);
-        int (*show_fdinfo)(struct seq_file *m, struct file *f);
-    };
+   struct file_operations {
+       struct module *owner;
+       loff_t (*llseek) (struct file *, loff_t, int);
+       ssize_t (*read) (struct file *, char __user *, size_t, loff_t *);
+       ssize_t (*write) (struct file *, const char __user *, size_t, loff_t *);
+       ssize_t (*aio_read) (struct kiocb *, const struct iovec *, unsigned long, loff_t);
+       ssize_t (*aio_write) (struct kiocb *, const struct iovec *, unsigned long, loff_t);
+       int (*iterate) (struct file *, struct dir_context *);
+       unsigned int (*poll) (struct file *, struct poll_table_struct *);
+       long (*unlocked_ioctl) (struct file *, unsigned int, unsigned long);
+       long (*compat_ioctl) (struct file *, unsigned int, unsigned long);
+       int (*mmap) (struct file *, struct vm_area_struct *);
+       int (*open) (struct inode *, struct file *);
+       int (*flush) (struct file *, fl_owner_t id);
+       int (*release) (struct inode *, struct file *);
+       int (*fsync) (struct file *, loff_t, loff_t, int datasync);
+       int (*aio_fsync) (struct kiocb *, int datasync);
+       int (*fasync) (int, struct file *, int);
+       int (*lock) (struct file *, int, struct file_lock *);
+       ssize_t (*sendpage) (struct file *, struct page *, int, size_t, loff_t *, int);
+       unsigned long (*get_unmapped_area)(struct file *, unsigned long, unsigned long, unsigned long, unsigned long);
+       int (*check_flags)(int);
+       int (*flock) (struct file *, int, struct file_lock *);
+       ssize_t (*splice_write)(struct pipe_inode_info *, struct file *, loff_t *, size_t, unsigned int);
+       ssize_t (*splice_read)(struct file *, loff_t *, struct pipe_inode_info *, size_t, unsigned int);
+       int (*setlease)(struct file *, long, struct file_lock **);
+       long (*fallocate)(struct file *file, int mode, loff_t offset,
+                 loff_t len);
+       int (*show_fdinfo)(struct seq_file *m, struct file *f);
+   };
 
 .. raw:: html
 
@@ -2115,12 +2115,12 @@ like:
 
 .. code:: src
 
-    struct file_operations fops = {
-            read: device_read,
-            write: device_write,
-            open: device_open,
-            release: device_release
-    };
+   struct file_operations fops = {
+           read: device_read,
+           write: device_write,
+           open: device_open,
+           release: device_release
+   };
 
 .. raw:: html
 
@@ -2138,12 +2138,12 @@ your driver. It will help with compatibility:
 
 .. code:: src
 
-    struct file_operations fops = {
-            .read = device_read,
-            .write = device_write,
-            .open = device_open,
-            .release = device_release
-    };
+   struct file_operations fops = {
+           .read = device_read,
+           .write = device_write,
+           .open = device_open,
+           .release = device_release
+   };
 
 .. raw:: html
 
@@ -2167,14 +2167,14 @@ named fops.
 
 .. raw:: html
 
-   <div id="outline-container-orgf283636" class="outline-3">
+   <div id="outline-container-sec-6-2" class="outline-3">
 
 .. rubric:: The file structure
-   :name: orgf283636
+   :name: sec-6-2
 
 .. raw:: html
 
-   <div id="text-orgf283636" class="outline-text-3">
+   <div id="text-6-2" class="outline-text-3">
 
 Each device is represented in the kernel by a file structure, which is
 defined in **linux/fs.h**. Be aware that a file is a kernel level
@@ -2202,14 +2202,14 @@ use structures contained in file which are created elsewhere.
 
 .. raw:: html
 
-   <div id="outline-container-orgab1c63f" class="outline-3">
+   <div id="outline-container-sec-6-3" class="outline-3">
 
 .. rubric:: Registering A Device
-   :name: orgab1c63f
+   :name: sec-6-3
 
 .. raw:: html
 
-   <div id="text-orgab1c63f" class="outline-text-3">
+   <div id="text-6-3" class="outline-text-3">
 
 As discussed earlier, char devices are accessed through device files,
 usually located in /dev. This is by convention. When writing a driver,
@@ -2230,7 +2230,7 @@ defined by linux/fs.h.
 
 .. code:: src
 
-    int register_chrdev(unsigned int major, const char *name, struct file_operations *fops);
+   int register_chrdev(unsigned int major, const char *name, struct file_operations *fops);
 
 .. raw:: html
 
@@ -2273,14 +2273,14 @@ the **device_create** function after a successful registration and
 
 .. raw:: html
 
-   <div id="outline-container-org85bc5ea" class="outline-3">
+   <div id="outline-container-sec-6-4" class="outline-3">
 
 .. rubric:: Unregistering A Device
-   :name: org85bc5ea
+   :name: sec-6-4
 
 .. raw:: html
 
-   <div id="text-org85bc5ea" class="outline-text-3">
+   <div id="text-6-4" class="outline-text-3">
 
 We can't allow the kernel module to be rmmod'ed whenever root feels like
 it. If the device file is opened by a process and then we remove the
@@ -2322,14 +2322,14 @@ sooner or later during a module's development.
 
 .. raw:: html
 
-   <div id="outline-container-orgdbd100e" class="outline-3">
+   <div id="outline-container-sec-6-5" class="outline-3">
 
 .. rubric:: chardev.c
-   :name: orgdbd100e
+   :name: sec-6-5
 
 .. raw:: html
 
-   <div id="text-orgdbd100e" class="outline-text-3">
+   <div id="text-6-5" class="outline-text-3">
 
 The next code sample creates a char driver named chardev. You can cat
 its device file.
@@ -2340,7 +2340,7 @@ its device file.
 
 .. code:: src
 
-    cat /proc/devices
+   cat /proc/devices
 
 .. raw:: html
 
@@ -2360,191 +2360,187 @@ acknowledging that we received it.
 
 .. code:: src
 
-    /*
-     *  chardev.c: Creates a read-only char device that says how many times
-     *  you've read from the dev file
-     */
+   /*
+    *  chardev.c: Creates a read-only char device that says how many times
+    *  you've read from the dev file
+    */
 
-    #include <linux/kernel.h>
-    #include <linux/module.h>
-    #include <linux/fs.h>
-    #include <linux/init.h>
-    #include <linux/delay.h>
-    #include <linux/device.h>
-    #include <linux/irq.h>
-    #include <asm/uaccess.h>
-    #include <asm/irq.h>
-    #include <asm/io.h>
-    #include <linux/poll.h>
-    #include <linux/cdev.h>
+   #include <linux/kernel.h>
+   #include <linux/module.h>
+   #include <linux/fs.h>
+   #include <linux/init.h>
+   #include <linux/delay.h>
+   #include <linux/device.h>
+   #include <linux/irq.h>
+   #include <asm/uaccess.h>
+   #include <asm/irq.h>
+   #include <asm/io.h>
+   #include <linux/poll.h>
+   #include <linux/cdev.h>
 
-    /*
-     *  Prototypes - this would normally go in a .h file
-     */
-    int init_module(void);
-    void cleanup_module(void);
-    static int device_open(struct inode *, struct file *);
-    static int device_release(struct inode *, struct file *);
-    static ssize_t device_read(struct file *, char *, size_t, loff_t *);
-    static ssize_t device_write(struct file *, const char *, size_t, loff_t *);
+   /*
+    *  Prototypes - this would normally go in a .h file
+    */
+   int init_module(void);
+   void cleanup_module(void);
+   static int device_open(struct inode *, struct file *);
+   static int device_release(struct inode *, struct file *);
+   static ssize_t device_read(struct file *, char *, size_t, loff_t *);
+   static ssize_t device_write(struct file *, const char *, size_t, loff_t *);
 
-    #define SUCCESS 0
-    #define DEVICE_NAME "chardev"   /* Dev name as it appears in /proc/devices   */
-    #define BUF_LEN 80              /* Max length of the message from the device */
+   #define SUCCESS 0
+   #define DEVICE_NAME "chardev"   /* Dev name as it appears in /proc/devices   */
+   #define BUF_LEN 80              /* Max length of the message from the device */
 
-    /*
-     * Global variables are declared as static, so are global within the file.
-     */
+   /*
+    * Global variables are declared as static, so are global within the file.
+    */
 
-    static int Major;               /* Major number assigned to our device driver */
-    static int Device_Open = 0;     /* Is device open?
-                                     * Used to prevent multiple access to device */
-    static char msg[BUF_LEN];       /* The msg the device will give when asked */
-    static char *msg_Ptr;
+   static int Major;               /* Major number assigned to our device driver */
+   static int Device_Open = 0;     /* Is device open?
+                                    * Used to prevent multiple access to device */
+   static char msg[BUF_LEN];       /* The msg the device will give when asked */
+   static char *msg_Ptr;
 
-    static struct class *cls;
+   static struct class *cls;
 
-    static struct file_operations chardev_fops = {
-        .read = device_read,
-        .write = device_write,
-        .open = device_open,
-        .release = device_release
-    };
+   static struct file_operations chardev_fops = {
+       .read = device_read,
+       .write = device_write,
+       .open = device_open,
+       .release = device_release
+   };
 
-    /*
-     * This function is called when the module is loaded
-     */
-    int init_module(void)
-    {
-        Major = register_chrdev(0, DEVICE_NAME, &chardev_fops);
+   /*
+    * This function is called when the module is loaded
+    */
+   int init_module(void)
+   {
+       Major = register_chrdev(0, DEVICE_NAME, &chardev_fops);
 
-        if (Major < 0) {
-            pr_alert("Registering char device failed with %d\n", Major);
-            return Major;
-        }
+       if (Major < 0) {
+           pr_alert("Registering char device failed with %d\n", Major);
+           return Major;
+       }
 
-        pr_info("I was assigned major number %d.\n", Major);
+       pr_info("I was assigned major number %d.\n", Major);
 
-        cls = class_create(THIS_MODULE, DEVICE_NAME);
-        device_create(cls, NULL, MKDEV(Major, 0), NULL, DEVICE_NAME);
+       cls = class_create(THIS_MODULE, DEVICE_NAME);
+       device_create(cls, NULL, MKDEV(Major, 0), NULL, DEVICE_NAME);
 
-        pr_info("Device created on /dev/%s\n", DEVICE_NAME);
+       pr_info("Device created on /dev/%s\n", DEVICE_NAME);
 
-        return SUCCESS;
-    }
+       return SUCCESS;
+   }
 
-    /*
-     * This function is called when the module is unloaded
-     */
-    void cleanup_module(void)
-    {
-        device_destroy(cls, MKDEV(Major, 0));
-        class_destroy(cls);
+   /*
+    * This function is called when the module is unloaded
+    */
+   void cleanup_module(void)
+   {
+       device_destroy(cls, MKDEV(Major, 0));
+       class_destroy(cls);
 
-        /*
-         * Unregister the device
-         */
-        unregister_chrdev(Major, DEVICE_NAME);
-    }
+       /*
+        * Unregister the device
+        */
+       unregister_chrdev(Major, DEVICE_NAME);
+   }
 
-    /*
-     * Methods
-     */
+   /*
+    * Methods
+    */
 
-    /*
-     * Called when a process tries to open the device file, like
-     * "cat /dev/mycharfile"
-     */
-    static int device_open(struct inode *inode, struct file *file)
-    {
-        static int counter = 0;
+   /*
+    * Called when a process tries to open the device file, like
+    * "cat /dev/mycharfile"
+    */
+   static int device_open(struct inode *inode, struct file *file)
+   {
+       static int counter = 0;
 
-        if (Device_Open)
-            return -EBUSY;
+       if (Device_Open)
+           return -EBUSY;
 
-        Device_Open++;
-        sprintf(msg, "I already told you %d times Hello world!\n", counter++);
-        msg_Ptr = msg;
-        try_module_get(THIS_MODULE);
+       Device_Open++;
+       sprintf(msg, "I already told you %d times Hello world!\n", counter++);
+       msg_Ptr = msg;
+       try_module_get(THIS_MODULE);
 
-        return SUCCESS;
-    }
+       return SUCCESS;
+   }
 
-    /*
-     * Called when a process closes the device file.
-     */
-    static int device_release(struct inode *inode, struct file *file)
-    {
-        Device_Open--;          /* We're now ready for our next caller */
+   /*
+    * Called when a process closes the device file.
+    */
+   static int device_release(struct inode *inode, struct file *file)
+   {
+       Device_Open--;          /* We're now ready for our next caller */
 
-        /*
-         * Decrement the usage count, or else once you opened the file, you'll
-         * never get get rid of the module.
-         */
-        module_put(THIS_MODULE);
+       /*
+        * Decrement the usage count, or else once you opened the file, you'll
+        * never get get rid of the module.
+        */
+       module_put(THIS_MODULE);
 
-        return SUCCESS;
-    }
+       return SUCCESS;
+   }
 
-    /*
-     * Called when a process, which already opened the dev file, attempts to
-     * read from it.
-     */
-    static ssize_t device_read(struct file *filp,   /* see include/linux/fs.h   */
-                               char *buffer,        /* buffer to fill with data */
-                               size_t length,       /* length of the buffer     */
-                               loff_t * offset)
-    {
-        /*
-         * Number of bytes actually written to the buffer
-         */
-        int bytes_read = 0;
+   /*
+    * Called when a process, which already opened the dev file, attempts to
+    * read from it.
+    */
+   static ssize_t device_read(struct file *filp,   /* see include/linux/fs.h   */
+                              char *buffer,        /* buffer to fill with data */
+                              size_t length,       /* length of the buffer     */
+                              loff_t * offset)
+   {
+       /*
+        * Number of bytes actually written to the buffer
+        */
+       int bytes_read = 0;
 
-        /*
-         * If we're at the end of the message,
-         * return 0 signifying end of file
-         */
-        if (*msg_Ptr == 0)
-            return 0;
+       /*
+        * If we're at the end of the message,
+        * return 0 signifying end of file
+        */
+       if (*msg_Ptr == 0)
+           return 0;
 
-        /*
-         * Actually put the data into the buffer
-         */
-        while (length && *msg_Ptr) {
+       /*
+        * Actually put the data into the buffer
+        */
+       while (length && *msg_Ptr) {
 
-            /*
-             * The buffer is in the user data segment, not the kernel
-             * segment so "*" assignment won't work.  We have to use
-             * put_user which copies data from the kernel data segment to
-             * the user data segment.
-             */
-            put_user(*(msg_Ptr++), buffer++);
+           /*
+            * The buffer is in the user data segment, not the kernel
+            * segment so "*" assignment won't work.  We have to use
+            * put_user which copies data from the kernel data segment to
+            * the user data segment.
+            */
+           put_user(*(msg_Ptr++), buffer++);
 
-            length--;
-            bytes_read++;
-        }
+           length--;
+           bytes_read++;
+       }
 
-        /*
-         * Most read functions return the number of bytes put into the buffer
-         */
-        return bytes_read;
-    }
+       /*
+        * Most read functions return the number of bytes put into the buffer
+        */
+       return bytes_read;
+   }
 
-    /*
-     * Called when a process writes to dev file: echo "hi" > /dev/hello
-     */
-    static ssize_t device_write(struct file *filp,
-                                const char *buff,
-                                size_t len,
-                                loff_t * off)
-    {
-        pr_alert("Sorry, this operation isn't supported.\n");
-        return -EINVAL;
-    }
-
-.. raw:: html
-
-   </div>
+   /*
+    * Called when a process writes to dev file: echo "hi" > /dev/hello
+    */
+   static ssize_t device_write(struct file *filp,
+                               const char *buff,
+                               size_t len,
+                               loff_t * off)
+   {
+       pr_alert("Sorry, this operation isn't supported.\n");
+       return -EINVAL;
+   }
 
 .. raw:: html
 
@@ -2556,14 +2552,18 @@ acknowledging that we received it.
 
 .. raw:: html
 
-   <div id="outline-container-org130321b" class="outline-3">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-6-6" class="outline-3">
 
 .. rubric:: Writing Modules for Multiple Kernel Versions
-   :name: org130321b
+   :name: sec-6-6
 
 .. raw:: html
 
-   <div id="text-org130321b" class="outline-text-3">
+   <div id="text-6-6" class="outline-text-3">
 
 The system calls, which are the major interface the kernel shows to the
 processes, generally stay the same across versions. A new system call
@@ -2621,14 +2621,14 @@ archives if you're interested in the full story.
 
 .. raw:: html
 
-   <div id="outline-container-org44e86f2" class="outline-2">
+   <div id="outline-container-sec-7" class="outline-2">
 
 .. rubric:: The /proc File System
-   :name: org44e86f2
+   :name: sec-7
 
 .. raw:: html
 
-   <div id="text-org44e86f2" class="outline-text-2">
+   <div id="text-7" class="outline-text-2">
 
 In Linux, there is an additional mechanism for the kernel and kernel
 modules to send information to processes — the **/proc** file system.
@@ -2659,8 +2659,8 @@ to avoid the consequences.
 
 Here a simple example showing how to use a **/proc** file. This is the
 HelloWorld for the **/proc** filesystem. There are three parts: create
-the file ***proc* helloworld** in the function init_module, return a
-value (and a buffer) when the file **/proc/helloworld** is read in the
+the file **proc helloworld** in the function init_module, return a value
+(and a buffer) when the file **/proc/helloworld** is read in the
 callback function **procfile_read**, and delete the file
 **/proc/helloworld** in the function cleanup_module.
 
@@ -2685,8 +2685,8 @@ it never returns zero, the read function is called endlessly.
 
 .. code:: src
 
-    # cat /proc/helloworld
-    HelloWorld!
+   # cat /proc/helloworld
+   HelloWorld!
 
 .. raw:: html
 
@@ -2698,60 +2698,56 @@ it never returns zero, the read function is called endlessly.
 
 .. code:: src
 
-    /*
-     procfs1.c
-    */
+   /*
+    procfs1.c
+   */
 
-    #include <linux/module.h>
-    #include <linux/kernel.h>
-    #include <linux/proc_fs.h>
-    #include <linux/uaccess.h>
+   #include <linux/module.h>
+   #include <linux/kernel.h>
+   #include <linux/proc_fs.h>
+   #include <linux/uaccess.h>
 
-    #define procfs_name "helloworld"
+   #define procfs_name "helloworld"
 
-    struct proc_dir_entry *Our_Proc_File;
+   struct proc_dir_entry *Our_Proc_File;
 
 
-    ssize_t procfile_read(struct file *filePointer,char *buffer,
-                          size_t buffer_length, loff_t * offset)
-    {
-        int ret=0;
-        if(strlen(buffer) ==0) {
-            pr_info("procfile read %s\n",filePointer->f_path.dentry->d_name.name);
-            ret=copy_to_user(buffer,"HelloWorld!\n",sizeof("HelloWorld!\n"));
-            ret=sizeof("HelloWorld!\n");
-        }
-        return ret;
+   ssize_t procfile_read(struct file *filePointer,char *buffer,
+                         size_t buffer_length, loff_t * offset)
+   {
+       int ret=0;
+       if(strlen(buffer) ==0) {
+           pr_info("procfile read %s\n",filePointer->f_path.dentry->d_name.name);
+           ret=copy_to_user(buffer,"HelloWorld!\n",sizeof("HelloWorld!\n"));
+           ret=sizeof("HelloWorld!\n");
+       }
+       return ret;
 
-    }
+   }
 
-    static const struct file_operations proc_file_fops = {
-        .owner = THIS_MODULE,
-        .read  = procfile_read,
-    };
+   static const struct file_operations proc_file_fops = {
+       .owner = THIS_MODULE,
+       .read  = procfile_read,
+   };
 
-    int init_module()
-    {
-        Our_Proc_File = proc_create(procfs_name,0644,NULL,&proc_file_fops);
-        if(NULL==Our_Proc_File) {
-            proc_remove(Our_Proc_File);
-            pr_alert("Error:Could not initialize /proc/%s\n",procfs_name);
-            return -ENOMEM;
-        }
+   int init_module()
+   {
+       Our_Proc_File = proc_create(procfs_name,0644,NULL,&proc_file_fops);
+       if(NULL==Our_Proc_File) {
+           proc_remove(Our_Proc_File);
+           pr_alert("Error:Could not initialize /proc/%s\n",procfs_name);
+           return -ENOMEM;
+       }
 
-        pr_info("/proc/%s created\n", procfs_name);
-        return 0;
-    }
+       pr_info("/proc/%s created\n", procfs_name);
+       return 0;
+   }
 
-    void cleanup_module()
-    {
-        proc_remove(Our_Proc_File);
-        pr_info("/proc/%s removed\n", procfs_name);
-    }
-
-.. raw:: html
-
-   </div>
+   void cleanup_module()
+   {
+       proc_remove(Our_Proc_File);
+       pr_info("/proc/%s removed\n", procfs_name);
+   }
 
 .. raw:: html
 
@@ -2759,14 +2755,18 @@ it never returns zero, the read function is called endlessly.
 
 .. raw:: html
 
-   <div id="outline-container-org330f61f" class="outline-3">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-7-1" class="outline-3">
 
 .. rubric:: Read and Write a /proc File
-   :name: org330f61f
+   :name: sec-7-1
 
 .. raw:: html
 
-   <div id="text-org330f61f" class="outline-text-3">
+   <div id="text-7-1" class="outline-text-3">
 
 We have seen a very simple example for a /proc file where we only read
 the file /proc/helloworld. It's also possible to write in a /proc file.
@@ -2802,108 +2802,104 @@ function because data is already in kernel space.
 
 .. code:: src
 
-    /**
-     *  procfs2.c -  create a "file" in /proc
-     *
-     */
+   /**
+    *  procfs2.c -  create a "file" in /proc
+    *
+    */
 
-    #include <linux/module.h>       /* Specifically, a module */
-    #include <linux/kernel.h>       /* We're doing kernel work */
-    #include <linux/proc_fs.h>      /* Necessary because we use the proc fs */
-    #include <linux/uaccess.h>        /* for copy_from_user */
+   #include <linux/module.h>       /* Specifically, a module */
+   #include <linux/kernel.h>       /* We're doing kernel work */
+   #include <linux/proc_fs.h>      /* Necessary because we use the proc fs */
+   #include <linux/uaccess.h>        /* for copy_from_user */
 
-    #define PROCFS_MAX_SIZE         1024
-    #define PROCFS_NAME             "buffer1k"
+   #define PROCFS_MAX_SIZE         1024
+   #define PROCFS_NAME             "buffer1k"
 
-    /**
-     * This structure hold information about the /proc file
-     *
-     */
-    static struct proc_dir_entry *Our_Proc_File;
+   /**
+    * This structure hold information about the /proc file
+    *
+    */
+   static struct proc_dir_entry *Our_Proc_File;
 
-    /**
-     * The buffer used to store character for this module
-     *
-     */
-    static char procfs_buffer[PROCFS_MAX_SIZE];
+   /**
+    * The buffer used to store character for this module
+    *
+    */
+   static char procfs_buffer[PROCFS_MAX_SIZE];
 
-    /**
-     * The size of the buffer
-     *
-     */
-    static unsigned long procfs_buffer_size = 0;
+   /**
+    * The size of the buffer
+    *
+    */
+   static unsigned long procfs_buffer_size = 0;
 
-    /**
-     * This function is called then the /proc file is read
-     *
-     */
-    ssize_t procfile_read(struct file *filePointer,char *buffer,
-                          size_t buffer_length, loff_t * offset)
-    {
-        int ret=0;
-        if(strlen(buffer) ==0) {
-            pr_info("procfile read %s\n",filePointer->f_path.dentry->d_name.name);
-            ret=copy_to_user(buffer,"HelloWorld!\n",sizeof("HelloWorld!\n"));
-            ret=sizeof("HelloWorld!\n");
-        }
-        return ret;
-    }
+   /**
+    * This function is called then the /proc file is read
+    *
+    */
+   ssize_t procfile_read(struct file *filePointer,char *buffer,
+                         size_t buffer_length, loff_t * offset)
+   {
+       int ret=0;
+       if(strlen(buffer) ==0) {
+           pr_info("procfile read %s\n",filePointer->f_path.dentry->d_name.name);
+           ret=copy_to_user(buffer,"HelloWorld!\n",sizeof("HelloWorld!\n"));
+           ret=sizeof("HelloWorld!\n");
+       }
+       return ret;
+   }
 
 
-    /**
-     * This function is called with the /proc file is written
-     *
-     */
-    static ssize_t procfile_write(struct file *file, const char *buff,
-                                  size_t len, loff_t *off)
-    {
-        procfs_buffer_size = len;
-        if (procfs_buffer_size > PROCFS_MAX_SIZE)
-            procfs_buffer_size = PROCFS_MAX_SIZE;
+   /**
+    * This function is called with the /proc file is written
+    *
+    */
+   static ssize_t procfile_write(struct file *file, const char *buff,
+                                 size_t len, loff_t *off)
+   {
+       procfs_buffer_size = len;
+       if (procfs_buffer_size > PROCFS_MAX_SIZE)
+           procfs_buffer_size = PROCFS_MAX_SIZE;
 
-        if (copy_from_user(procfs_buffer, buff, procfs_buffer_size))
-            return -EFAULT;
+       if (copy_from_user(procfs_buffer, buff, procfs_buffer_size))
+           return -EFAULT;
 
-        procfs_buffer[procfs_buffer_size] = '\0';
-        return procfs_buffer_size;
-    }
+       procfs_buffer[procfs_buffer_size] = '\0';
+       return procfs_buffer_size;
+   }
 
-    static const struct file_operations proc_file_fops = {
-        .owner = THIS_MODULE,
-        .read  = procfile_read,
-        .write  = procfile_write,
-    };
+   static const struct file_operations proc_file_fops = {
+       .owner = THIS_MODULE,
+       .read  = procfile_read,
+       .write  = procfile_write,
+   };
 
-    /**
-     *This function is called when the module is loaded
-     *
-     */
-    int init_module()
-    {
-        Our_Proc_File = proc_create(PROCFS_NAME,0644,NULL,&proc_file_fops);
-        if(NULL==Our_Proc_File) {
-            proc_remove(Our_Proc_File);
-            pr_alert("Error:Could not initialize /proc/%s\n",PROCFS_NAME);
-            return -ENOMEM;
-        }
+   /**
+    *This function is called when the module is loaded
+    *
+    */
+   int init_module()
+   {
+       Our_Proc_File = proc_create(PROCFS_NAME,0644,NULL,&proc_file_fops);
+       if(NULL==Our_Proc_File) {
+           proc_remove(Our_Proc_File);
+           pr_alert("Error:Could not initialize /proc/%s\n",PROCFS_NAME);
+           return -ENOMEM;
+       }
 
-        pr_info("/proc/%s created\n", PROCFS_NAME);
-        return 0;
-    }
+       pr_info("/proc/%s created\n", PROCFS_NAME);
+       return 0;
+   }
 
-    /**
-     *This function is called when the module is unloaded
-     *
-     */
-    void cleanup_module()
-    {
-        proc_remove(Our_Proc_File);
-        pr_info("/proc/%s removed\n", PROCFS_NAME);
-    }
-
-.. raw:: html
-
-   </div>
+   /**
+    *This function is called when the module is unloaded
+    *
+    */
+   void cleanup_module()
+   {
+       proc_remove(Our_Proc_File);
+       pr_info("/proc/%s removed\n", PROCFS_NAME);
+   }
 
 .. raw:: html
 
@@ -2915,14 +2911,18 @@ function because data is already in kernel space.
 
 .. raw:: html
 
-   <div id="outline-container-orgaae8b16" class="outline-3">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-7-2" class="outline-3">
 
 .. rubric:: Manage /proc file with standard filesystem
-   :name: orgaae8b16
+   :name: sec-7-2
 
 .. raw:: html
 
-   <div id="text-orgaae8b16" class="outline-text-3">
+   <div id="text-7-2" class="outline-text-3">
 
 We have seen how to read and write a /proc file with the /proc
 interface. But it's also possible to manage /proc file with inodes. The
@@ -2966,89 +2966,89 @@ writes something to the kernel, then the kernel receives it as input.
 
 .. code:: src
 
-    /*
-        procfs3.c
-    */
+   /*
+       procfs3.c
+   */
 
-    #include <linux/kernel.h>
-    #include <linux/module.h>
-    #include <linux/proc_fs.h>
-    #include <linux/sched.h>
-    #include <linux/uaccess.h>
+   #include <linux/kernel.h>
+   #include <linux/module.h>
+   #include <linux/proc_fs.h>
+   #include <linux/sched.h>
+   #include <linux/uaccess.h>
 
-    #define PROCFS_MAX_SIZE         2048
-    #define PROCFS_ENTRY_FILENAME   "buffer2k"
+   #define PROCFS_MAX_SIZE         2048
+   #define PROCFS_ENTRY_FILENAME   "buffer2k"
 
-    struct proc_dir_entry *Our_Proc_File;
-    static char procfs_buffer[PROCFS_MAX_SIZE];
-    static unsigned long procfs_buffer_size = 0;
+   struct proc_dir_entry *Our_Proc_File;
+   static char procfs_buffer[PROCFS_MAX_SIZE];
+   static unsigned long procfs_buffer_size = 0;
 
-    static ssize_t procfs_read(struct file *filp, char *buffer,
-                               size_t length, loff_t *offset)
-    {
-        static int finished = 0;
-        if(finished)
-        {
-            pr_debug("procfs_read: END\n");
-            finished = 0;
-            return 0;
-        }
-        finished = 1;
-        if(copy_to_user(buffer, procfs_buffer, procfs_buffer_size))
-            return -EFAULT;
-        pr_debug("procfs_read: read %lu bytes\n", procfs_buffer_size);
-        return procfs_buffer_size;
-    }
-    static ssize_t procfs_write(struct file *file,  const char *buffer,
-                                size_t len, loff_t *off)
-    {
-        if(len>PROCFS_MAX_SIZE)
-            procfs_buffer_size = PROCFS_MAX_SIZE;
-        else
-            procfs_buffer_size = len;
-        if(copy_from_user(procfs_buffer, buffer, procfs_buffer_size))
-            return -EFAULT;
-        pr_debug("procfs_write: write %lu bytes\n", procfs_buffer_size);
-        return procfs_buffer_size;
-    }
-    int procfs_open(struct inode *inode, struct file *file)
-    {
-        try_module_get(THIS_MODULE);
-        return 0;
-    }
-    int procfs_close(struct inode *inode, struct file *file)
-    {
-        module_put(THIS_MODULE);
-        return 0;
-    }
+   static ssize_t procfs_read(struct file *filp, char *buffer,
+                              size_t length, loff_t *offset)
+   {
+       static int finished = 0;
+       if(finished)
+       {
+           pr_debug("procfs_read: END\n");
+           finished = 0;
+           return 0;
+       }
+       finished = 1;
+       if(copy_to_user(buffer, procfs_buffer, procfs_buffer_size))
+           return -EFAULT;
+       pr_debug("procfs_read: read %lu bytes\n", procfs_buffer_size);
+       return procfs_buffer_size;
+   }
+   static ssize_t procfs_write(struct file *file,  const char *buffer,
+                               size_t len, loff_t *off)
+   {
+       if(len>PROCFS_MAX_SIZE)
+           procfs_buffer_size = PROCFS_MAX_SIZE;
+       else
+           procfs_buffer_size = len;
+       if(copy_from_user(procfs_buffer, buffer, procfs_buffer_size))
+           return -EFAULT;
+       pr_debug("procfs_write: write %lu bytes\n", procfs_buffer_size);
+       return procfs_buffer_size;
+   }
+   int procfs_open(struct inode *inode, struct file *file)
+   {
+       try_module_get(THIS_MODULE);
+       return 0;
+   }
+   int procfs_close(struct inode *inode, struct file *file)
+   {
+       module_put(THIS_MODULE);
+       return 0;
+   }
 
-    static struct file_operations File_Ops_4_Our_Proc_File = {
-        .read       = procfs_read,
-        .write      = procfs_write,
-        .open       = procfs_open,
-        .release    = procfs_close,
-    };
+   static struct file_operations File_Ops_4_Our_Proc_File = {
+       .read       = procfs_read,
+       .write      = procfs_write,
+       .open       = procfs_open,
+       .release    = procfs_close,
+   };
 
-    int init_module()
-    {
-        Our_Proc_File = proc_create(PROCFS_ENTRY_FILENAME, 0644, NULL,&File_Ops_4_Our_Proc_File);
-        if(Our_Proc_File == NULL)
-        {
-            remove_proc_entry(PROCFS_ENTRY_FILENAME, NULL);
-            pr_debug("Error: Could not initialize /proc/%s\n", PROCFS_ENTRY_FILENAME);
-            return -ENOMEM;
-        }
-        proc_set_size(Our_Proc_File, 80);
-        proc_set_user(Our_Proc_File,  GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
+   int init_module()
+   {
+       Our_Proc_File = proc_create(PROCFS_ENTRY_FILENAME, 0644, NULL,&File_Ops_4_Our_Proc_File);
+       if(Our_Proc_File == NULL)
+       {
+           remove_proc_entry(PROCFS_ENTRY_FILENAME, NULL);
+           pr_debug("Error: Could not initialize /proc/%s\n", PROCFS_ENTRY_FILENAME);
+           return -ENOMEM;
+       }
+       proc_set_size(Our_Proc_File, 80);
+       proc_set_user(Our_Proc_File,  GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
 
-        pr_debug("/proc/%s created\n", PROCFS_ENTRY_FILENAME);
-        return 0;
-    }
-    void cleanup_module()
-    {
-        remove_proc_entry(PROCFS_ENTRY_FILENAME, NULL);
-        pr_debug("/proc/%s removed\n", PROCFS_ENTRY_FILENAME);
-    }
+       pr_debug("/proc/%s created\n", PROCFS_ENTRY_FILENAME);
+       return 0;
+   }
+   void cleanup_module()
+   {
+       remove_proc_entry(PROCFS_ENTRY_FILENAME, NULL);
+       pr_debug("/proc/%s removed\n", PROCFS_ENTRY_FILENAME);
+   }
 
 .. raw:: html
 
@@ -3073,14 +3073,14 @@ you want to document something kernel related yourself.
 
 .. raw:: html
 
-   <div id="outline-container-org688df35" class="outline-3">
+   <div id="outline-container-sec-7-3" class="outline-3">
 
 .. rubric:: Manage /proc file with seq_file
-   :name: org688df35
+   :name: sec-7-3
 
 .. raw:: html
 
-   <div id="text-org688df35" class="outline-text-3">
+   <div id="text-7-3" class="outline-text-3">
 
 As we have seen, writing a /proc file may be quite "complex". So to help
 people writting /proc file, there is an API named seq_file that helps
@@ -3124,140 +3124,140 @@ course, you can still use the same way as in the previous example.
 
 .. code:: src
 
-    /**
-     *  procfs4.c -  create a "file" in /proc
-     *      This program uses the seq_file library to manage the /proc file.
-     *
-     */
+   /**
+    *  procfs4.c -  create a "file" in /proc
+    *      This program uses the seq_file library to manage the /proc file.
+    *
+    */
 
-    #include <linux/kernel.h>       /* We're doing kernel work */
-    #include <linux/module.h>       /* Specifically, a module */
-    #include <linux/proc_fs.h>      /* Necessary because we use proc fs */
-    #include <linux/seq_file.h>     /* for seq_file */
+   #include <linux/kernel.h>       /* We're doing kernel work */
+   #include <linux/module.h>       /* Specifically, a module */
+   #include <linux/proc_fs.h>      /* Necessary because we use proc fs */
+   #include <linux/seq_file.h>     /* for seq_file */
 
-    #define PROC_NAME       "iter"
+   #define PROC_NAME       "iter"
 
-    MODULE_AUTHOR("Philippe Reynes");
-    MODULE_LICENSE("GPL");
+   MODULE_AUTHOR("Philippe Reynes");
+   MODULE_LICENSE("GPL");
 
-    /**
-     * This function is called at the beginning of a sequence.
-     * ie, when:
-     *      - the /proc file is read (first time)
-     *      - after the function stop (end of sequence)
-     *
-     */
-    static void *my_seq_start(struct seq_file *s, loff_t *pos)
-    {
-        static unsigned long counter = 0;
+   /**
+    * This function is called at the beginning of a sequence.
+    * ie, when:
+    *      - the /proc file is read (first time)
+    *      - after the function stop (end of sequence)
+    *
+    */
+   static void *my_seq_start(struct seq_file *s, loff_t *pos)
+   {
+       static unsigned long counter = 0;
 
-        /* beginning a new sequence ? */
-        if ( *pos == 0 ) {
-            /* yes => return a non null value to begin the sequence */
-            return &counter;
-        }
-        else {
-            /* no => it's the end of the sequence, return end to stop reading */
-            *pos = 0;
-            return NULL;
-        }
-    }
+       /* beginning a new sequence ? */
+       if ( *pos == 0 ) {
+           /* yes => return a non null value to begin the sequence */
+           return &counter;
+       }
+       else {
+           /* no => it's the end of the sequence, return end to stop reading */
+           *pos = 0;
+           return NULL;
+       }
+   }
 
-    /**
-     * This function is called after the beginning of a sequence.
-     * It's called untill the return is NULL (this ends the sequence).
-     *
-     */
-    static void *my_seq_next(struct seq_file *s, void *v, loff_t *pos)
-    {
-        unsigned long *tmp_v = (unsigned long *)v;
-        (*tmp_v)++;
-        (*pos)++;
-        return NULL;
-    }
+   /**
+    * This function is called after the beginning of a sequence.
+    * It's called untill the return is NULL (this ends the sequence).
+    *
+    */
+   static void *my_seq_next(struct seq_file *s, void *v, loff_t *pos)
+   {
+       unsigned long *tmp_v = (unsigned long *)v;
+       (*tmp_v)++;
+       (*pos)++;
+       return NULL;
+   }
 
-    /**
-     * This function is called at the end of a sequence
-     *
-     */
-    static void my_seq_stop(struct seq_file *s, void *v)
-    {
-        /* nothing to do, we use a static value in start() */
-    }
+   /**
+    * This function is called at the end of a sequence
+    *
+    */
+   static void my_seq_stop(struct seq_file *s, void *v)
+   {
+       /* nothing to do, we use a static value in start() */
+   }
 
-    /**
-     * This function is called for each "step" of a sequence
-     *
-     */
-    static int my_seq_show(struct seq_file *s, void *v)
-    {
-        loff_t *spos = (loff_t *) v;
+   /**
+    * This function is called for each "step" of a sequence
+    *
+    */
+   static int my_seq_show(struct seq_file *s, void *v)
+   {
+       loff_t *spos = (loff_t *) v;
 
-        seq_printf(s, "%Ld\n", *spos);
-        return 0;
-    }
+       seq_printf(s, "%Ld\n", *spos);
+       return 0;
+   }
 
-    /**
-     * This structure gather "function" to manage the sequence
-     *
-     */
-    static struct seq_operations my_seq_ops = {
-            .start = my_seq_start,
-            .next  = my_seq_next,
-            .stop  = my_seq_stop,
-            .show  = my_seq_show
-    };
+   /**
+    * This structure gather "function" to manage the sequence
+    *
+    */
+   static struct seq_operations my_seq_ops = {
+           .start = my_seq_start,
+           .next  = my_seq_next,
+           .stop  = my_seq_stop,
+           .show  = my_seq_show
+   };
 
-    /**
-     * This function is called when the /proc file is open.
-     *
-     */
-    static int my_open(struct inode *inode, struct file *file)
-    {
-        return seq_open(file, &my_seq_ops);
-    };
+   /**
+    * This function is called when the /proc file is open.
+    *
+    */
+   static int my_open(struct inode *inode, struct file *file)
+   {
+       return seq_open(file, &my_seq_ops);
+   };
 
-    /**
-     * This structure gather "function" that manage the /proc file
-     *
-     */
-    static struct file_operations my_file_ops = {
-        .owner   = THIS_MODULE,
-        .open    = my_open,
-        .read    = seq_read,
-        .llseek  = seq_lseek,
-        .release = seq_release
-    };
+   /**
+    * This structure gather "function" that manage the /proc file
+    *
+    */
+   static struct file_operations my_file_ops = {
+       .owner   = THIS_MODULE,
+       .open    = my_open,
+       .read    = seq_read,
+       .llseek  = seq_lseek,
+       .release = seq_release
+   };
 
 
-    /**
-     * This function is called when the module is loaded
-     *
-     */
-    int init_module(void)
-    {
-        struct proc_dir_entry *entry;
+   /**
+    * This function is called when the module is loaded
+    *
+    */
+   int init_module(void)
+   {
+       struct proc_dir_entry *entry;
 
-        entry = proc_create(PROC_NAME, 0, NULL, &my_file_ops);
-        if(entry == NULL)
-        {
-            remove_proc_entry(PROC_NAME, NULL);
-            pr_debug("Error: Could not initialize /proc/%s\n", PROC_NAME);
-            return -ENOMEM;
-        }
+       entry = proc_create(PROC_NAME, 0, NULL, &my_file_ops);
+       if(entry == NULL)
+       {
+           remove_proc_entry(PROC_NAME, NULL);
+           pr_debug("Error: Could not initialize /proc/%s\n", PROC_NAME);
+           return -ENOMEM;
+       }
 
-        return 0;
-    }
+       return 0;
+   }
 
-    /**
-     * This function is called when the module is unloaded.
-     *
-     */
-    void cleanup_module(void)
-    {
-        remove_proc_entry(PROC_NAME, NULL);
-        pr_debug("/proc/%s removed\n", PROC_NAME);
-    }
+   /**
+    * This function is called when the module is unloaded.
+    *
+    */
+   void cleanup_module(void)
+   {
+       remove_proc_entry(PROC_NAME, NULL);
+       pr_debug("/proc/%s removed\n", PROC_NAME);
+   }
 
 .. raw:: html
 
@@ -3284,14 +3284,14 @@ You can also read the code of fs/seq_file.c in the linux kernel.
 
 .. raw:: html
 
-   <div id="outline-container-orgbd8ce69" class="outline-2">
+   <div id="outline-container-sec-8" class="outline-2">
 
 .. rubric:: sysfs: Interacting with your module
-   :name: orgbd8ce69
+   :name: sec-8
 
 .. raw:: html
 
-   <div id="text-orgbd8ce69" class="outline-text-2">
+   <div id="text-8" class="outline-text-2">
 
 *sysfs* allows you to interact with the running kernel from userspace by
 reading or setting variables inside of modules. This can be useful for
@@ -3305,7 +3305,7 @@ your system.
 
 .. code:: src
 
-    ls -l /sys
+   ls -l /sys
 
 .. raw:: html
 
@@ -3318,75 +3318,7 @@ variable accessible via sysfs is given below.
 
    <div class="org-src-container">
 
-.. code:: src
-
-    /*
-     * hello-sysfs.c sysfs example
-     */
-
-    #include <linux/module.h>
-    #include <linux/kobject.h>
-    #include <linux/sysfs.h>
-    #include <linux/init.h>
-    #include <linux/fs.h>
-    #include <linux/string.h>
-
-    MODULE_LICENSE("GPL");
-    MODULE_AUTHOR("Bob Mottram");
-
-    static struct kobject *mymodule;
-
-    /* the variable you want to be able to change */
-    static int myvariable = 0;
-
-    static ssize_t myvariable_show(struct kobject *kobj,
-                                   struct kobj_attribute *attr,
-                                   char *buf)
-    {
-        return sprintf(buf, "%d\n", myvariable);
-    }
-
-    static ssize_t myvariable_store(struct kobject *kobj,
-                                    struct kobj_attribute *attr,
-                                    char *buf, size_t count)
-    {
-        sscanf(buf, "%du", &myvariable);
-        return count;
-    }
-
-
-    static struct kobj_attribute myvariable_attribute =
-        __ATTR(myvariable, 0660, myvariable_show,
-               (void*)myvariable_store);
-
-    static int __init mymodule_init (void)
-    {
-        int error = 0;
-
-        pr_info("mymodule: initialised\n");
-
-        mymodule =
-            kobject_create_and_add("mymodule", kernel_kobj);
-        if (!mymodule)
-            return -ENOMEM;
-
-        error = sysfs_create_file(mymodule, &myvariable_attribute.attr);
-        if (error) {
-            pr_info("failed to create the myvariable file " \
-                   "in /sys/kernel/mymodule\n");
-        }
-
-        return error;
-    }
-
-    static void __exit mymodule_exit (void)
-    {
-        pr_info("mymodule: Exit success\n");
-        kobject_put(mymodule);
-    }
-
-    module_init(mymodule_init);
-    module_exit(mymodule_exit);
+``{.src .src- hello-sysfs.c"lang"hello-sysfs.c"switches"hello-sysfs.c"flags"=""} "hello-sysfs.c"body``
 
 .. raw:: html
 
@@ -3400,8 +3332,8 @@ Make and install the module:
 
 .. code:: src
 
-    make
-    sudo insmod hello-sysfs.ko
+   make
+   sudo insmod hello-sysfs.ko
 
 .. raw:: html
 
@@ -3415,7 +3347,7 @@ Check that it exists:
 
 .. code:: src
 
-    sudo lsmod | grep hello_sysfs
+   sudo lsmod | grep hello_sysfs
 
 .. raw:: html
 
@@ -3429,7 +3361,7 @@ What is the current value of *myvariable* ?
 
 .. code:: src
 
-    cat /sys/kernel/mymodule/myvariable
+   cat /sys/kernel/mymodule/myvariable
 
 .. raw:: html
 
@@ -3443,8 +3375,8 @@ Set the value of *myvariable* and check that it changed.
 
 .. code:: src
 
-    echo "32" > /sys/kernel/mymodule/myvariable
-    cat /sys/kernel/mymodule/myvariable
+   echo "32" > /sys/kernel/mymodule/myvariable
+   cat /sys/kernel/mymodule/myvariable
 
 .. raw:: html
 
@@ -3458,7 +3390,7 @@ Finally, remove the test module:
 
 .. code:: src
 
-    sudo rmmod hello_sysfs
+   sudo rmmod hello_sysfs
 
 .. raw:: html
 
@@ -3474,14 +3406,14 @@ Finally, remove the test module:
 
 .. raw:: html
 
-   <div id="outline-container-orga1b8e31" class="outline-2">
+   <div id="outline-container-sec-9" class="outline-2">
 
 .. rubric:: Talking To Device Files
-   :name: orga1b8e31
+   :name: sec-9
 
 .. raw:: html
 
-   <div id="text-orga1b8e31" class="outline-text-2">
+   <div id="text-9" class="outline-text-2">
 
 Device files are supposed to represent physical devices. Most physical
 devices are used for output as well as input, so there has to be some
@@ -3536,293 +3468,293 @@ Documentation/ioctl-number.txt.
 
 .. code:: src
 
-    /*
-     *  chardev2.c - Create an input/output character device
-     */
+   /*
+    *  chardev2.c - Create an input/output character device
+    */
 
-    #include <linux/kernel.h>       /* We're doing kernel work */
-    #include <linux/module.h>       /* Specifically, a module */
-    #include <linux/fs.h>
-    #include <linux/init.h>
-    #include <linux/delay.h>
-    #include <linux/device.h>
-    #include <linux/irq.h>
-    #include <asm/uaccess.h>
-    #include <asm/irq.h>
-    #include <asm/io.h>
-    #include <linux/poll.h>
-    #include <linux/cdev.h>
+   #include <linux/kernel.h>       /* We're doing kernel work */
+   #include <linux/module.h>       /* Specifically, a module */
+   #include <linux/fs.h>
+   #include <linux/init.h>
+   #include <linux/delay.h>
+   #include <linux/device.h>
+   #include <linux/irq.h>
+   #include <asm/uaccess.h>
+   #include <asm/irq.h>
+   #include <asm/io.h>
+   #include <linux/poll.h>
+   #include <linux/cdev.h>
 
-    #include "chardev.h"
-    #define SUCCESS 0
-    #define DEVICE_NAME "char_dev"
-    #define BUF_LEN 80
+   #include "chardev.h"
+   #define SUCCESS 0
+   #define DEVICE_NAME "char_dev"
+   #define BUF_LEN 80
 
-    /*
-     * Is the device open right now? Used to prevent
-     * concurent access into the same device
-     */
-    static int Device_Open = 0;
+   /*
+    * Is the device open right now? Used to prevent
+    * concurent access into the same device
+    */
+   static int Device_Open = 0;
 
-    /*
-     * The message the device will give when asked
-     */
-    static char Message[BUF_LEN];
+   /*
+    * The message the device will give when asked
+    */
+   static char Message[BUF_LEN];
 
-    /*
-     * How far did the process reading the message get?
-     * Useful if the message is larger than the size of the
-     * buffer we get to fill in device_read.
-     */
-    static char *Message_Ptr;
+   /*
+    * How far did the process reading the message get?
+    * Useful if the message is larger than the size of the
+    * buffer we get to fill in device_read.
+    */
+   static char *Message_Ptr;
 
-    static int Major;               /* Major number assigned to our device driver */
-    static struct class *cls;
+   static int Major;               /* Major number assigned to our device driver */
+   static struct class *cls;
 
-    /*
-     * This is called whenever a process attempts to open the device file
-     */
-    static int device_open(struct inode *inode, struct file *file)
-    {
-    #ifdef DEBUG
-            pr_info("device_open(%p)\n", file);
-    #endif
+   /*
+    * This is called whenever a process attempts to open the device file
+    */
+   static int device_open(struct inode *inode, struct file *file)
+   {
+   #ifdef DEBUG
+           pr_info("device_open(%p)\n", file);
+   #endif
 
-        /*
-         * We don't want to talk to two processes at the same time
-         */
-        if (Device_Open)
-            return -EBUSY;
+       /*
+        * We don't want to talk to two processes at the same time
+        */
+       if (Device_Open)
+           return -EBUSY;
 
-        Device_Open++;
-        /*
-         * Initialize the message
-         */
-        Message_Ptr = Message;
-        try_module_get(THIS_MODULE);
-        return SUCCESS;
-    }
+       Device_Open++;
+       /*
+        * Initialize the message
+        */
+       Message_Ptr = Message;
+       try_module_get(THIS_MODULE);
+       return SUCCESS;
+   }
 
-    static int device_release(struct inode *inode, struct file *file)
-    {
-    #ifdef DEBUG
-        pr_info("device_release(%p,%p)\n", inode, file);
-    #endif
+   static int device_release(struct inode *inode, struct file *file)
+   {
+   #ifdef DEBUG
+       pr_info("device_release(%p,%p)\n", inode, file);
+   #endif
 
-        /*
-         * We're now ready for our next caller
-         */
-        Device_Open--;
+       /*
+        * We're now ready for our next caller
+        */
+       Device_Open--;
 
-        module_put(THIS_MODULE);
-        return SUCCESS;
-    }
+       module_put(THIS_MODULE);
+       return SUCCESS;
+   }
 
-    /*
-     * This function is called whenever a process which has already opened the
-     * device file attempts to read from it.
-     */
-    static ssize_t device_read(struct file *file,   /* see include/linux/fs.h   */
-                               char __user * buffer,        /* buffer to be
-                                                             * filled with data */
-                               size_t length,       /* length of the buffer     */
-                               loff_t * offset)
-    {
-        /*
-         * Number of bytes actually written to the buffer
-         */
-        int bytes_read = 0;
+   /*
+    * This function is called whenever a process which has already opened the
+    * device file attempts to read from it.
+    */
+   static ssize_t device_read(struct file *file,   /* see include/linux/fs.h   */
+                              char __user * buffer,        /* buffer to be
+                                                            * filled with data */
+                              size_t length,       /* length of the buffer     */
+                              loff_t * offset)
+   {
+       /*
+        * Number of bytes actually written to the buffer
+        */
+       int bytes_read = 0;
 
-    #ifdef DEBUG
-        pr_info("device_read(%p,%p,%d)\n", file, buffer, length);
-    #endif
+   #ifdef DEBUG
+       pr_info("device_read(%p,%p,%d)\n", file, buffer, length);
+   #endif
 
-        /*
-         * If we're at the end of the message, return 0
-         * (which signifies end of file)
-         */
-        if (*Message_Ptr == 0)
-            return 0;
+       /*
+        * If we're at the end of the message, return 0
+        * (which signifies end of file)
+        */
+       if (*Message_Ptr == 0)
+           return 0;
 
-        /*
-         * Actually put the data into the buffer
-         */
-        while (length && *Message_Ptr) {
+       /*
+        * Actually put the data into the buffer
+        */
+       while (length && *Message_Ptr) {
 
-        /*
-         * Because the buffer is in the user data segment,
-         * not the kernel data segment, assignment wouldn't
-         * work. Instead, we have to use put_user which
-         * copies data from the kernel data segment to the
-         * user data segment.
-         */
-         put_user(*(Message_Ptr++), buffer++);
-         length--;
-         bytes_read++;
-    }
+       /*
+        * Because the buffer is in the user data segment,
+        * not the kernel data segment, assignment wouldn't
+        * work. Instead, we have to use put_user which
+        * copies data from the kernel data segment to the
+        * user data segment.
+        */
+        put_user(*(Message_Ptr++), buffer++);
+        length--;
+        bytes_read++;
+   }
 
-    #ifdef DEBUG
-        pr_info("Read %d bytes, %d left\n", bytes_read, length);
-    #endif
+   #ifdef DEBUG
+       pr_info("Read %d bytes, %d left\n", bytes_read, length);
+   #endif
 
-        /*
-         * Read functions are supposed to return the number
-         * of bytes actually inserted into the buffer
-         */
-        return bytes_read;
-    }
+       /*
+        * Read functions are supposed to return the number
+        * of bytes actually inserted into the buffer
+        */
+       return bytes_read;
+   }
 
-    /*
-     * This function is called when somebody tries to
-     * write into our device file.
-     */
-    static ssize_t
-    device_write(struct file *file,
-                 const char __user * buffer, size_t length, loff_t * offset)
-    {
-        int i;
+   /*
+    * This function is called when somebody tries to
+    * write into our device file.
+    */
+   static ssize_t
+   device_write(struct file *file,
+                const char __user * buffer, size_t length, loff_t * offset)
+   {
+       int i;
 
-    #ifdef DEBUG
-        pr_info("device_write(%p,%s,%d)", file, buffer, length);
-    #endif
+   #ifdef DEBUG
+       pr_info("device_write(%p,%s,%d)", file, buffer, length);
+   #endif
 
-        for (i = 0; i < length && i < BUF_LEN; i++)
-            get_user(Message[i], buffer + i);
+       for (i = 0; i < length && i < BUF_LEN; i++)
+           get_user(Message[i], buffer + i);
 
-        Message_Ptr = Message;
+       Message_Ptr = Message;
 
-        /*
-         * Again, return the number of input characters used
-         */
-        return i;
-    }
+       /*
+        * Again, return the number of input characters used
+        */
+       return i;
+   }
 
-    /*
-     * This function is called whenever a process tries to do an ioctl on our
-     * device file. We get two extra parameters (additional to the inode and file
-     * structures, which all device functions get): the number of the ioctl called
-     * and the parameter given to the ioctl function.
-     *
-     * If the ioctl is write or read/write (meaning output is returned to the
-     * calling process), the ioctl call returns the output of this function.
-     *
-     */
-    long device_ioctl(struct file *file,             /* ditto */
-                      unsigned int ioctl_num,        /* number and param for ioctl */
-                      unsigned long ioctl_param)
-    {
-        int i;
-        char *temp;
-        char ch;
+   /*
+    * This function is called whenever a process tries to do an ioctl on our
+    * device file. We get two extra parameters (additional to the inode and file
+    * structures, which all device functions get): the number of the ioctl called
+    * and the parameter given to the ioctl function.
+    *
+    * If the ioctl is write or read/write (meaning output is returned to the
+    * calling process), the ioctl call returns the output of this function.
+    *
+    */
+   long device_ioctl(struct file *file,             /* ditto */
+                     unsigned int ioctl_num,        /* number and param for ioctl */
+                     unsigned long ioctl_param)
+   {
+       int i;
+       char *temp;
+       char ch;
 
-        /*
-         * Switch according to the ioctl called
-         */
-        switch (ioctl_num) {
-        case IOCTL_SET_MSG:
-            /*
-             * Receive a pointer to a message (in user space) and set that
-             * to be the device's message.  Get the parameter given to
-             * ioctl by the process.
-             */
-            temp = (char *)ioctl_param;
-
-             /*
-              * Find the length of the message
-              */
-             get_user(ch, temp);
-             for (i = 0; ch && i < BUF_LEN; i++, temp++)
-                 get_user(ch, temp);
-
-             device_write(file, (char *)ioctl_param, i, 0);
-             break;
-
-        case IOCTL_GET_MSG:
-            /*
-             * Give the current message to the calling process -
-             * the parameter we got is a pointer, fill it.
-             */
-            i = device_read(file, (char *)ioctl_param, 99, 0);
+       /*
+        * Switch according to the ioctl called
+        */
+       switch (ioctl_num) {
+       case IOCTL_SET_MSG:
+           /*
+            * Receive a pointer to a message (in user space) and set that
+            * to be the device's message.  Get the parameter given to
+            * ioctl by the process.
+            */
+           temp = (char *)ioctl_param;
 
             /*
-             * Put a zero at the end of the buffer, so it will be
-             * properly terminated
+             * Find the length of the message
              */
-            put_user('\0', (char *)ioctl_param + i);
+            get_user(ch, temp);
+            for (i = 0; ch && i < BUF_LEN; i++, temp++)
+                get_user(ch, temp);
+
+            device_write(file, (char *)ioctl_param, i, 0);
             break;
 
-        case IOCTL_GET_NTH_BYTE:
-            /*
-             * This ioctl is both input (ioctl_param) and
-             * output (the return value of this function)
-             */
-            return Message[ioctl_param];
-            break;
-        }
+       case IOCTL_GET_MSG:
+           /*
+            * Give the current message to the calling process -
+            * the parameter we got is a pointer, fill it.
+            */
+           i = device_read(file, (char *)ioctl_param, 99, 0);
 
-        return SUCCESS;
-    }
+           /*
+            * Put a zero at the end of the buffer, so it will be
+            * properly terminated
+            */
+           put_user('\0', (char *)ioctl_param + i);
+           break;
 
-    /* Module Declarations */
+       case IOCTL_GET_NTH_BYTE:
+           /*
+            * This ioctl is both input (ioctl_param) and
+            * output (the return value of this function)
+            */
+           return Message[ioctl_param];
+           break;
+       }
 
-    /*
-     * This structure will hold the functions to be called
-     * when a process does something to the device we
-     * created. Since a pointer to this structure is kept in
-     * the devices table, it can't be local to
-     * init_module. NULL is for unimplemented functions.
-     */
-    struct file_operations Fops = {
-            .read = device_read,
-            .write = device_write,
-            .unlocked_ioctl = device_ioctl,
-            .open = device_open,
-            .release = device_release,      /* a.k.a. close */
-    };
+       return SUCCESS;
+   }
 
-    /*
-     * Initialize the module - Register the character device
-     */
-    int init_module()
-    {
-        int ret_val;
-        /*
-         * Register the character device (atleast try)
-         */
-        ret_val = register_chrdev(MAJOR_NUM, DEVICE_NAME, &Fops);
+   /* Module Declarations */
 
-        /*
-         * Negative values signify an error
-         */
-        if (ret_val < 0) {
-            pr_alert("%s failed with %d\n",
-                     "Sorry, registering the character device ", ret_val);
-            return ret_val;
-        }
+   /*
+    * This structure will hold the functions to be called
+    * when a process does something to the device we
+    * created. Since a pointer to this structure is kept in
+    * the devices table, it can't be local to
+    * init_module. NULL is for unimplemented functions.
+    */
+   struct file_operations Fops = {
+           .read = device_read,
+           .write = device_write,
+           .unlocked_ioctl = device_ioctl,
+           .open = device_open,
+           .release = device_release,      /* a.k.a. close */
+   };
 
-        Major = ret_val;
+   /*
+    * Initialize the module - Register the character device
+    */
+   int init_module()
+   {
+       int ret_val;
+       /*
+        * Register the character device (atleast try)
+        */
+       ret_val = register_chrdev(MAJOR_NUM, DEVICE_NAME, &Fops);
 
-        cls = class_create(THIS_MODULE, DEVICE_FILE_NAME);
-        device_create(cls, NULL, MKDEV(Major, MAJOR_NUM), NULL, DEVICE_FILE_NAME);
+       /*
+        * Negative values signify an error
+        */
+       if (ret_val < 0) {
+           pr_alert("%s failed with %d\n",
+                    "Sorry, registering the character device ", ret_val);
+           return ret_val;
+       }
 
-        pr_info("Device created on /dev/%s\n", DEVICE_FILE_NAME);
+       Major = ret_val;
 
-        return 0;
-    }
+       cls = class_create(THIS_MODULE, DEVICE_FILE_NAME);
+       device_create(cls, NULL, MKDEV(Major, MAJOR_NUM), NULL, DEVICE_FILE_NAME);
 
-    /*
-     * Cleanup - unregister the appropriate file from /proc
-     */
-    void cleanup_module()
-    {
-        device_destroy(cls, MKDEV(Major, 0));
-        class_destroy(cls);
+       pr_info("Device created on /dev/%s\n", DEVICE_FILE_NAME);
 
-        /*
-         * Unregister the device
-         */
-        unregister_chrdev(Major, DEVICE_NAME);
-    }
+       return 0;
+   }
+
+   /*
+    * Cleanup - unregister the appropriate file from /proc
+    */
+   void cleanup_module()
+   {
+       device_destroy(cls, MKDEV(Major, 0));
+       class_destroy(cls);
+
+       /*
+        * Unregister the device
+        */
+       unregister_chrdev(Major, DEVICE_NAME);
+   }
 
 .. raw:: html
 
@@ -3834,72 +3766,72 @@ Documentation/ioctl-number.txt.
 
 .. code:: src
 
-    /*
-     *  chardev.h - the header file with the ioctl definitions.
-     *
-     *  The declarations here have to be in a header file, because
-     *  they need to be known both to the kernel module
-     *  (in chardev.c) and the process calling ioctl (ioctl.c)
-     */
+   /*
+    *  chardev.h - the header file with the ioctl definitions.
+    *
+    *  The declarations here have to be in a header file, because
+    *  they need to be known both to the kernel module
+    *  (in chardev.c) and the process calling ioctl (ioctl.c)
+    */
 
-    #ifndef CHARDEV_H
-    #define CHARDEV_H
+   #ifndef CHARDEV_H
+   #define CHARDEV_H
 
-    #include <linux/ioctl.h>
+   #include <linux/ioctl.h>
 
-    /*
-     * The major device number. We can't rely on dynamic
-     * registration any more, because ioctls need to know
-     * it.
-     */
-    #define MAJOR_NUM 100
+   /*
+    * The major device number. We can't rely on dynamic
+    * registration any more, because ioctls need to know
+    * it.
+    */
+   #define MAJOR_NUM 100
 
-    /*
-     * Set the message of the device driver
-     */
-    #define IOCTL_SET_MSG _IOW(MAJOR_NUM, 0, char *)
-    /*
-     * _IOW means that we're creating an ioctl command
-     * number for passing information from a user process
-     * to the kernel module.
-     *
-     * The first arguments, MAJOR_NUM, is the major device
-     * number we're using.
-     *
-     * The second argument is the number of the command
-     * (there could be several with different meanings).
-     *
-     * The third argument is the type we want to get from
-     * the process to the kernel.
-     */
+   /*
+    * Set the message of the device driver
+    */
+   #define IOCTL_SET_MSG _IOW(MAJOR_NUM, 0, char *)
+   /*
+    * _IOW means that we're creating an ioctl command
+    * number for passing information from a user process
+    * to the kernel module.
+    *
+    * The first arguments, MAJOR_NUM, is the major device
+    * number we're using.
+    *
+    * The second argument is the number of the command
+    * (there could be several with different meanings).
+    *
+    * The third argument is the type we want to get from
+    * the process to the kernel.
+    */
 
-    /*
-     * Get the message of the device driver
-     */
-    #define IOCTL_GET_MSG _IOR(MAJOR_NUM, 1, char *)
-    /*
-     * This IOCTL is used for output, to get the message
-     * of the device driver. However, we still need the
-     * buffer to place the message in to be input,
-     * as it is allocated by the process.
-     */
+   /*
+    * Get the message of the device driver
+    */
+   #define IOCTL_GET_MSG _IOR(MAJOR_NUM, 1, char *)
+   /*
+    * This IOCTL is used for output, to get the message
+    * of the device driver. However, we still need the
+    * buffer to place the message in to be input,
+    * as it is allocated by the process.
+    */
 
-    /*
-     * Get the n'th byte of the message
-     */
-    #define IOCTL_GET_NTH_BYTE _IOWR(MAJOR_NUM, 2, int)
-    /*
-     * The IOCTL is used for both input and output. It
-     * receives from the user a number, n, and returns
-     * Message[n].
-     */
+   /*
+    * Get the n'th byte of the message
+    */
+   #define IOCTL_GET_NTH_BYTE _IOWR(MAJOR_NUM, 2, int)
+   /*
+    * The IOCTL is used for both input and output. It
+    * receives from the user a number, n, and returns
+    * Message[n].
+    */
 
-    /*
-     * The name of the device file
-     */
-    #define DEVICE_FILE_NAME "char_dev"
+   /*
+    * The name of the device file
+    */
+   #define DEVICE_FILE_NAME "char_dev"
 
-    #endif
+   #endif
 
 .. raw:: html
 
@@ -3911,114 +3843,110 @@ Documentation/ioctl-number.txt.
 
 .. code:: src
 
-    /*
-     *  ioctl.c - the process to use ioctl's to control the kernel module
-     *
-     *  Until now we could have used cat for input and output.  But now
-     *  we need to do ioctl's, which require writing our own process.
-     */
+   /*
+    *  ioctl.c - the process to use ioctl's to control the kernel module
+    *
+    *  Until now we could have used cat for input and output.  But now
+    *  we need to do ioctl's, which require writing our own process.
+    */
 
-    /*
-     * device specifics, such as ioctl numbers and the
-     * major device file.
-     */
-    #include "../chardev.h"
+   /*
+    * device specifics, such as ioctl numbers and the
+    * major device file.
+    */
+   #include "../chardev.h"
 
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <fcntl.h>              /* open */
-    #include <unistd.h>             /* exit */
-    #include <sys/ioctl.h>          /* ioctl */
+   #include <stdio.h>
+   #include <stdlib.h>
+   #include <fcntl.h>              /* open */
+   #include <unistd.h>             /* exit */
+   #include <sys/ioctl.h>          /* ioctl */
 
-    /*
-     * Functions for the ioctl calls
-     */
+   /*
+    * Functions for the ioctl calls
+    */
 
-    int ioctl_set_msg(int file_desc, char *message)
-    {
-        int ret_val;
+   int ioctl_set_msg(int file_desc, char *message)
+   {
+       int ret_val;
 
-        ret_val = ioctl(file_desc, IOCTL_SET_MSG, message);
+       ret_val = ioctl(file_desc, IOCTL_SET_MSG, message);
 
-        if (ret_val < 0) {
-            printf("ioctl_set_msg failed:%d\n", ret_val);
-            exit(-1);
-        }
-        return 0;
-    }
+       if (ret_val < 0) {
+           printf("ioctl_set_msg failed:%d\n", ret_val);
+           exit(-1);
+       }
+       return 0;
+   }
 
-    int ioctl_get_msg(int file_desc)
-    {
-        int ret_val;
-        char message[100];
+   int ioctl_get_msg(int file_desc)
+   {
+       int ret_val;
+       char message[100];
 
-        /*
-         * Warning - this is dangerous because we don't tell
-         * the kernel how far it's allowed to write, so it
-         * might overflow the buffer. In a real production
-         * program, we would have used two ioctls - one to tell
-         * the kernel the buffer length and another to give
-         * it the buffer to fill
-         */
-        ret_val = ioctl(file_desc, IOCTL_GET_MSG, message);
+       /*
+        * Warning - this is dangerous because we don't tell
+        * the kernel how far it's allowed to write, so it
+        * might overflow the buffer. In a real production
+        * program, we would have used two ioctls - one to tell
+        * the kernel the buffer length and another to give
+        * it the buffer to fill
+        */
+       ret_val = ioctl(file_desc, IOCTL_GET_MSG, message);
 
-        if (ret_val < 0) {
-            printf("ioctl_get_msg failed:%d\n", ret_val);
-            exit(-1);
-        }
+       if (ret_val < 0) {
+           printf("ioctl_get_msg failed:%d\n", ret_val);
+           exit(-1);
+       }
 
-        printf("get_msg message:%s\n", message);
-        return 0;
-    }
+       printf("get_msg message:%s\n", message);
+       return 0;
+   }
 
-    int ioctl_get_nth_byte(int file_desc)
-    {
-        int i;
-        char c;
+   int ioctl_get_nth_byte(int file_desc)
+   {
+       int i;
+       char c;
 
-        printf("get_nth_byte message:");
+       printf("get_nth_byte message:");
 
-        i = 0;
-        do {
-            c = ioctl(file_desc, IOCTL_GET_NTH_BYTE, i++);
+       i = 0;
+       do {
+           c = ioctl(file_desc, IOCTL_GET_NTH_BYTE, i++);
 
-            if (c < 0) {
-                printf("ioctl_get_nth_byte failed at the %d'th byte:\n",
-                       i);
-                exit(-1);
-            }
+           if (c < 0) {
+               printf("ioctl_get_nth_byte failed at the %d'th byte:\n",
+                      i);
+               exit(-1);
+           }
 
-            putchar(c);
-        } while (c != 0);
-        putchar('\n');
-        return 0;
-    }
+           putchar(c);
+       } while (c != 0);
+       putchar('\n');
+       return 0;
+   }
 
-    /*
-     * Main - Call the ioctl functions
-     */
-    int main()
-    {
-        int file_desc, ret_val;
-        char *msg = "Message passed by ioctl\n";
+   /*
+    * Main - Call the ioctl functions
+    */
+   int main()
+   {
+       int file_desc, ret_val;
+       char *msg = "Message passed by ioctl\n";
 
-        file_desc = open(DEVICE_FILE_NAME, 0);
-        if (file_desc < 0) {
-            printf("Can't open device file: %s\n", DEVICE_FILE_NAME);
-            exit(-1);
-        }
+       file_desc = open(DEVICE_FILE_NAME, 0);
+       if (file_desc < 0) {
+           printf("Can't open device file: %s\n", DEVICE_FILE_NAME);
+           exit(-1);
+       }
 
-        ioctl_get_nth_byte(file_desc);
-        ioctl_get_msg(file_desc);
-        ioctl_set_msg(file_desc, msg);
+       ioctl_get_nth_byte(file_desc);
+       ioctl_get_msg(file_desc);
+       ioctl_set_msg(file_desc, msg);
 
-        close(file_desc);
-        return 0;
-    }
-
-.. raw:: html
-
-   </div>
+       close(file_desc);
+       return 0;
+   }
 
 .. raw:: html
 
@@ -4030,14 +3958,18 @@ Documentation/ioctl-number.txt.
 
 .. raw:: html
 
-   <div id="outline-container-orgdf0ab54" class="outline-2">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-10" class="outline-2">
 
 .. rubric:: System Calls
-   :name: orgdf0ab54
+   :name: sec-10
 
 .. raw:: html
 
-   <div id="text-orgdf0ab54" class="outline-text-2">
+   <div id="text-10" class="outline-text-2">
 
 So far, the only thing we've done was to use well defined kernel
 mechanisms to register **/proc** files and device handlers. This is fine
@@ -4156,165 +4088,161 @@ hacker, this would be the first thing he'd try. ;)
 
 .. code:: src
 
-    /*
-     *  syscall.c
-     *
-     *  System call "stealing" sample.
-     *
-     *  Disables page protection at a processor level by
-     *  changing the 16th bit in the cr0 register (could be Intel specific)
-     *
-     *  Based on example by Peter Jay Salzman and
-     *  https://bbs.archlinux.org/viewtopic.php?id=139406
-     */
+   /*
+    *  syscall.c
+    *
+    *  System call "stealing" sample.
+    *
+    *  Disables page protection at a processor level by
+    *  changing the 16th bit in the cr0 register (could be Intel specific)
+    *
+    *  Based on example by Peter Jay Salzman and
+    *  https://bbs.archlinux.org/viewtopic.php?id=139406
+    */
 
-    #include <linux/module.h>
-    #include <linux/kernel.h>
-    #include <linux/syscalls.h>
-    #include <linux/delay.h>
-    #include <asm/paravirt.h>
-    #include <linux/moduleparam.h>  /* which will have params */
-    #include <linux/unistd.h>       /* The list of system calls */
+   #include <linux/module.h>
+   #include <linux/kernel.h>
+   #include <linux/syscalls.h>
+   #include <linux/delay.h>
+   #include <asm/paravirt.h>
+   #include <linux/moduleparam.h>  /* which will have params */
+   #include <linux/unistd.h>       /* The list of system calls */
 
-    /*
-     * For the current (process) structure, we need
-     * this to know who the current user is.
-     */
-    #include <linux/sched.h>
-    #include <linux/uaccess.h>
+   /*
+    * For the current (process) structure, we need
+    * this to know who the current user is.
+    */
+   #include <linux/sched.h>
+   #include <linux/uaccess.h>
 
-    unsigned long **sys_call_table;
-    unsigned long original_cr0;
+   unsigned long **sys_call_table;
+   unsigned long original_cr0;
 
-    /*
-     * UID we want to spy on - will be filled from the
-     * command line
-     */
-    static int uid;
-    module_param(uid, int, 0644);
+   /*
+    * UID we want to spy on - will be filled from the
+    * command line
+    */
+   static int uid;
+   module_param(uid, int, 0644);
 
-    /*
-     * A pointer to the original system call. The reason
-     * we keep this, rather than call the original function
-     * (sys_open), is because somebody else might have
-     * replaced the system call before us. Note that this
-     * is not 100% safe, because if another module
-     * replaced sys_open before us, then when we're inserted
-     * we'll call the function in that module - and it
-     * might be removed before we are.
-     *
-     * Another reason for this is that we can't get sys_open.
-     * It's a static variable, so it is not exported.
-     */
-    asmlinkage int (*original_call) (const char *, int, int);
+   /*
+    * A pointer to the original system call. The reason
+    * we keep this, rather than call the original function
+    * (sys_open), is because somebody else might have
+    * replaced the system call before us. Note that this
+    * is not 100% safe, because if another module
+    * replaced sys_open before us, then when we're inserted
+    * we'll call the function in that module - and it
+    * might be removed before we are.
+    *
+    * Another reason for this is that we can't get sys_open.
+    * It's a static variable, so it is not exported.
+    */
+   asmlinkage int (*original_call) (const char *, int, int);
 
-    /*
-     * The function we'll replace sys_open (the function
-     * called when you call the open system call) with. To
-     * find the exact prototype, with the number and type
-     * of arguments, we find the original function first
-     * (it's at fs/open.c).
-     *
-     * In theory, this means that we're tied to the
-     * current version of the kernel. In practice, the
-     * system calls almost never change (it would wreck havoc
-     * and require programs to be recompiled, since the system
-     * calls are the interface between the kernel and the
-     * processes).
-     */
-    asmlinkage int our_sys_open(const char *filename, int flags, int mode)
-    {
-        int i = 0;
-        char ch;
+   /*
+    * The function we'll replace sys_open (the function
+    * called when you call the open system call) with. To
+    * find the exact prototype, with the number and type
+    * of arguments, we find the original function first
+    * (it's at fs/open.c).
+    *
+    * In theory, this means that we're tied to the
+    * current version of the kernel. In practice, the
+    * system calls almost never change (it would wreck havoc
+    * and require programs to be recompiled, since the system
+    * calls are the interface between the kernel and the
+    * processes).
+    */
+   asmlinkage int our_sys_open(const char *filename, int flags, int mode)
+   {
+       int i = 0;
+       char ch;
 
-        /*
-         * Report the file, if relevant
-         */
-        pr_info("Opened file by %d: ", uid);
-        do {
-            get_user(ch, filename + i);
-            i++;
-            pr_info("%c", ch);
-        } while (ch != 0);
-        pr_info("\n");
+       /*
+        * Report the file, if relevant
+        */
+       pr_info("Opened file by %d: ", uid);
+       do {
+           get_user(ch, filename + i);
+           i++;
+           pr_info("%c", ch);
+       } while (ch != 0);
+       pr_info("\n");
 
-        /*
-         * Call the original sys_open - otherwise, we lose
-         * the ability to open files
-         */
-        return original_call(filename, flags, mode);
-    }
+       /*
+        * Call the original sys_open - otherwise, we lose
+        * the ability to open files
+        */
+       return original_call(filename, flags, mode);
+   }
 
-    static unsigned long **aquire_sys_call_table(void)
-    {
-        unsigned long int offset = PAGE_OFFSET;
-        unsigned long **sct;
+   static unsigned long **aquire_sys_call_table(void)
+   {
+       unsigned long int offset = PAGE_OFFSET;
+       unsigned long **sct;
 
-        while (offset < ULLONG_MAX) {
-            sct = (unsigned long **)offset;
+       while (offset < ULLONG_MAX) {
+           sct = (unsigned long **)offset;
 
-            if (sct[__NR_close] == (unsigned long *) sys_close)
-                return sct;
+           if (sct[__NR_close] == (unsigned long *) sys_close)
+               return sct;
 
-            offset += sizeof(void *);
-        }
+           offset += sizeof(void *);
+       }
 
-        return NULL;
-    }
+       return NULL;
+   }
 
-    static int __init syscall_start(void)
-    {
-        if(!(sys_call_table = aquire_sys_call_table()))
-            return -1;
+   static int __init syscall_start(void)
+   {
+       if(!(sys_call_table = aquire_sys_call_table()))
+           return -1;
 
-        original_cr0 = read_cr0();
+       original_cr0 = read_cr0();
 
-        write_cr0(original_cr0 & ~0x00010000);
+       write_cr0(original_cr0 & ~0x00010000);
 
-        /* keep track of the original open function */
-        original_call = (void*)sys_call_table[__NR_open];
+       /* keep track of the original open function */
+       original_call = (void*)sys_call_table[__NR_open];
 
-        /* use our open function instead */
-        sys_call_table[__NR_open] = (unsigned long *)our_sys_open;
+       /* use our open function instead */
+       sys_call_table[__NR_open] = (unsigned long *)our_sys_open;
 
-        write_cr0(original_cr0);
+       write_cr0(original_cr0);
 
-        pr_info("Spying on UID:%d\n", uid);
+       pr_info("Spying on UID:%d\n", uid);
 
-        return 0;
-    }
+       return 0;
+   }
 
-    static void __exit syscall_end(void)
-    {
-        if(!sys_call_table) {
-            return;
-        }
+   static void __exit syscall_end(void)
+   {
+       if(!sys_call_table) {
+           return;
+       }
 
-        /*
-         * Return the system call back to normal
-         */
-        if (sys_call_table[__NR_open] != (unsigned long *)our_sys_open) {
-            pr_alert("Somebody else also played with the ");
-            pr_alert("open system call\n");
-            pr_alert("The system may be left in ");
-            pr_alert("an unstable state.\n");
-        }
+       /*
+        * Return the system call back to normal
+        */
+       if (sys_call_table[__NR_open] != (unsigned long *)our_sys_open) {
+           pr_alert("Somebody else also played with the ");
+           pr_alert("open system call\n");
+           pr_alert("The system may be left in ");
+           pr_alert("an unstable state.\n");
+       }
 
-        write_cr0(original_cr0 & ~0x00010000);
-        sys_call_table[__NR_open] = (unsigned long *)original_call;
-        write_cr0(original_cr0);
+       write_cr0(original_cr0 & ~0x00010000);
+       sys_call_table[__NR_open] = (unsigned long *)original_call;
+       write_cr0(original_cr0);
 
-        msleep(2000);
-    }
+       msleep(2000);
+   }
 
-    module_init(syscall_start);
-    module_exit(syscall_end);
+   module_init(syscall_start);
+   module_exit(syscall_end);
 
-    MODULE_LICENSE("GPL");
-
-.. raw:: html
-
-   </div>
+   MODULE_LICENSE("GPL");
 
 .. raw:: html
 
@@ -4326,14 +4254,18 @@ hacker, this would be the first thing he'd try. ;)
 
 .. raw:: html
 
-   <div id="outline-container-org83613ec" class="outline-2">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-11" class="outline-2">
 
 .. rubric:: Blocking Processes and threads
-   :name: org83613ec
+   :name: sec-11
 
 .. raw:: html
 
-   <div id="text-org83613ec" class="outline-text-2">
+   <div id="text-11" class="outline-text-2">
 
 .. raw:: html
 
@@ -4341,14 +4273,14 @@ hacker, this would be the first thing he'd try. ;)
 
 .. raw:: html
 
-   <div id="outline-container-org36ce43a" class="outline-3">
+   <div id="outline-container-sec-11-1" class="outline-3">
 
 .. rubric:: Sleep
-   :name: org36ce43a
+   :name: sec-11-1
 
 .. raw:: html
 
-   <div id="text-org36ce43a" class="outline-text-3">
+   <div id="text-11-1" class="outline-text-3">
 
 What do you do when somebody asks you for something you can't do right
 away? If you're a human being and you're bothered by a human being, the
@@ -4371,7 +4303,7 @@ it with:
 
 .. code:: src
 
-    tail -f
+   tail -f
 
 .. raw:: html
 
@@ -4438,26 +4370,26 @@ a file with **O_NONBLOCK**.
 
 .. code:: src
 
-    hostname:~/lkmpg-examples/09-BlockingProcesses# insmod sleep.ko
-    hostname:~/lkmpg-examples/09-BlockingProcesses# cat_noblock /proc/sleep
-    Last input:
-    hostname:~/lkmpg-examples/09-BlockingProcesses# tail -f /proc/sleep &
-    Last input:
-    Last input:
-    Last input:
-    Last input:
-    Last input:
-    Last input:
-    Last input:
-    tail: /proc/sleep: file truncated
-    [1] 6540
-    hostname:~/lkmpg-examples/09-BlockingProcesses# cat_noblock /proc/sleep
-    Open would block
-    hostname:~/lkmpg-examples/09-BlockingProcesses# kill %1
-    [1]+  Terminated              tail -f /proc/sleep
-    hostname:~/lkmpg-examples/09-BlockingProcesses# cat_noblock /proc/sleep
-    Last input:
-    hostname:~/lkmpg-examples/09-BlockingProcesses#
+   hostname:~/lkmpg-examples/09-BlockingProcesses# insmod sleep.ko
+   hostname:~/lkmpg-examples/09-BlockingProcesses# cat_noblock /proc/sleep
+   Last input:
+   hostname:~/lkmpg-examples/09-BlockingProcesses# tail -f /proc/sleep &
+   Last input:
+   Last input:
+   Last input:
+   Last input:
+   Last input:
+   Last input:
+   Last input:
+   tail: /proc/sleep: file truncated
+   [1] 6540
+   hostname:~/lkmpg-examples/09-BlockingProcesses# cat_noblock /proc/sleep
+   Open would block
+   hostname:~/lkmpg-examples/09-BlockingProcesses# kill %1
+   [1]+  Terminated              tail -f /proc/sleep
+   hostname:~/lkmpg-examples/09-BlockingProcesses# cat_noblock /proc/sleep
+   Last input:
+   hostname:~/lkmpg-examples/09-BlockingProcesses#
 
 .. raw:: html
 
@@ -4469,271 +4401,271 @@ a file with **O_NONBLOCK**.
 
 .. code:: src
 
-    /*
-     *  sleep.c - create a /proc file, and if several processes try to open it at
-     *  the same time, put all but one to sleep
-     */
+   /*
+    *  sleep.c - create a /proc file, and if several processes try to open it at
+    *  the same time, put all but one to sleep
+    */
 
-    #include <linux/kernel.h>       /* We're doing kernel work */
-    #include <linux/module.h>       /* Specifically, a module */
-    #include <linux/proc_fs.h>      /* Necessary because we use proc fs */
-    #include <linux/sched.h>        /* For putting processes to sleep and
-                                       waking them up */
-    #include <linux/uaccess.h>      /* for get_user and put_user */
+   #include <linux/kernel.h>       /* We're doing kernel work */
+   #include <linux/module.h>       /* Specifically, a module */
+   #include <linux/proc_fs.h>      /* Necessary because we use proc fs */
+   #include <linux/sched.h>        /* For putting processes to sleep and
+                                      waking them up */
+   #include <linux/uaccess.h>      /* for get_user and put_user */
 
-    /*
-     * The module's file functions
-     */
+   /*
+    * The module's file functions
+    */
 
-    /*
-     * Here we keep the last message received, to prove that we can process our
-     * input
-     */
-    #define MESSAGE_LENGTH 80
-    static char Message[MESSAGE_LENGTH];
+   /*
+    * Here we keep the last message received, to prove that we can process our
+    * input
+    */
+   #define MESSAGE_LENGTH 80
+   static char Message[MESSAGE_LENGTH];
 
-    static struct proc_dir_entry *Our_Proc_File;
-    #define PROC_ENTRY_FILENAME "sleep"
+   static struct proc_dir_entry *Our_Proc_File;
+   #define PROC_ENTRY_FILENAME "sleep"
 
-    /*
-     * Since we use the file operations struct, we can't use the special proc
-     * output provisions - we have to use a standard read function, which is this
-     * function
-     */
-    static ssize_t module_output(struct file *file, /* see include/linux/fs.h   */
-                                 char *buf, /* The buffer to put data to
-                                               (in the user segment)    */
-                                 size_t len,        /* The length of the buffer */
-                                 loff_t * offset)
-    {
-        static int finished = 0;
-        int i;
-        char message[MESSAGE_LENGTH + 30];
+   /*
+    * Since we use the file operations struct, we can't use the special proc
+    * output provisions - we have to use a standard read function, which is this
+    * function
+    */
+   static ssize_t module_output(struct file *file, /* see include/linux/fs.h   */
+                                char *buf, /* The buffer to put data to
+                                              (in the user segment)    */
+                                size_t len,        /* The length of the buffer */
+                                loff_t * offset)
+   {
+       static int finished = 0;
+       int i;
+       char message[MESSAGE_LENGTH + 30];
 
-        /*
-         * Return 0 to signify end of file - that we have nothing
-         * more to say at this point.
-         */
-        if (finished) {
-            finished = 0;
-            return 0;
-        }
+       /*
+        * Return 0 to signify end of file - that we have nothing
+        * more to say at this point.
+        */
+       if (finished) {
+           finished = 0;
+           return 0;
+       }
 
-        /*
-         * If you don't understand this by now, you're hopeless as a kernel
-         * programmer.
-         */
-        sprintf(message, "Last input:%s\n", Message);
-        for (i = 0; i < len && message[i]; i++)
-            put_user(message[i], buf + i);
+       /*
+        * If you don't understand this by now, you're hopeless as a kernel
+        * programmer.
+        */
+       sprintf(message, "Last input:%s\n", Message);
+       for (i = 0; i < len && message[i]; i++)
+           put_user(message[i], buf + i);
 
-        finished = 1;
-        return i;               /* Return the number of bytes "read" */
-    }
+       finished = 1;
+       return i;               /* Return the number of bytes "read" */
+   }
 
-    /*
-     * This function receives input from the user when the user writes to the /proc
-     * file.
-     */
-    static ssize_t module_input(struct file *file,  /* The file itself */
-                                const char *buf,    /* The buffer with input */
-                                size_t length,      /* The buffer's length */
-                                loff_t * offset)    /* offset to file - ignore */
-    {
-        int i;
+   /*
+    * This function receives input from the user when the user writes to the /proc
+    * file.
+    */
+   static ssize_t module_input(struct file *file,  /* The file itself */
+                               const char *buf,    /* The buffer with input */
+                               size_t length,      /* The buffer's length */
+                               loff_t * offset)    /* offset to file - ignore */
+   {
+       int i;
 
-        /*
-         * Put the input into Message, where module_output will later be
-         * able to use it
-         */
-        for (i = 0; i < MESSAGE_LENGTH - 1 && i < length; i++)
-            get_user(Message[i], buf + i);
-        /*
-         * we want a standard, zero terminated string
-         */
-        Message[i] = '\0';
+       /*
+        * Put the input into Message, where module_output will later be
+        * able to use it
+        */
+       for (i = 0; i < MESSAGE_LENGTH - 1 && i < length; i++)
+           get_user(Message[i], buf + i);
+       /*
+        * we want a standard, zero terminated string
+        */
+       Message[i] = '\0';
 
-        /*
-         * We need to return the number of input characters used
-         */
-        return i;
-    }
+       /*
+        * We need to return the number of input characters used
+        */
+       return i;
+   }
 
-    /*
-     * 1 if the file is currently open by somebody
-     */
-    int Already_Open = 0;
+   /*
+    * 1 if the file is currently open by somebody
+    */
+   int Already_Open = 0;
 
-    /*
-     * Queue of processes who want our file
-     */
-    DECLARE_WAIT_QUEUE_HEAD(WaitQ);
-    /*
-     * Called when the /proc file is opened
-     */
-    static int module_open(struct inode *inode, struct file *file)
-    {
-        /*
-         * If the file's flags include O_NONBLOCK, it means the process doesn't
-         * want to wait for the file.  In this case, if the file is already
-         * open, we should fail with -EAGAIN, meaning "you'll have to try
-         * again", instead of blocking a process which would rather stay awake.
-         */
-        if ((file->f_flags & O_NONBLOCK) && Already_Open)
-            return -EAGAIN;
+   /*
+    * Queue of processes who want our file
+    */
+   DECLARE_WAIT_QUEUE_HEAD(WaitQ);
+   /*
+    * Called when the /proc file is opened
+    */
+   static int module_open(struct inode *inode, struct file *file)
+   {
+       /*
+        * If the file's flags include O_NONBLOCK, it means the process doesn't
+        * want to wait for the file.  In this case, if the file is already
+        * open, we should fail with -EAGAIN, meaning "you'll have to try
+        * again", instead of blocking a process which would rather stay awake.
+        */
+       if ((file->f_flags & O_NONBLOCK) && Already_Open)
+           return -EAGAIN;
 
-        /*
-         * This is the correct place for try_module_get(THIS_MODULE) because
-         * if a process is in the loop, which is within the kernel module,
-         * the kernel module must not be removed.
-         */
-        try_module_get(THIS_MODULE);
+       /*
+        * This is the correct place for try_module_get(THIS_MODULE) because
+        * if a process is in the loop, which is within the kernel module,
+        * the kernel module must not be removed.
+        */
+       try_module_get(THIS_MODULE);
 
-        /*
-         * If the file is already open, wait until it isn't
-         */
+       /*
+        * If the file is already open, wait until it isn't
+        */
 
-        while (Already_Open) {
-            int i, is_sig = 0;
+       while (Already_Open) {
+           int i, is_sig = 0;
 
-            /*
-             * This function puts the current process, including any system
-             * calls, such as us, to sleep.  Execution will be resumed right
-             * after the function call, either because somebody called
-             * wake_up(&WaitQ) (only module_close does that, when the file
-             * is closed) or when a signal, such as Ctrl-C, is sent
-             * to the process
-             */
-            wait_event_interruptible(WaitQ, !Already_Open);
+           /*
+            * This function puts the current process, including any system
+            * calls, such as us, to sleep.  Execution will be resumed right
+            * after the function call, either because somebody called
+            * wake_up(&WaitQ) (only module_close does that, when the file
+            * is closed) or when a signal, such as Ctrl-C, is sent
+            * to the process
+            */
+           wait_event_interruptible(WaitQ, !Already_Open);
 
-            /*
-             * If we woke up because we got a signal we're not blocking,
-             * return -EINTR (fail the system call).  This allows processes
-             * to be killed or stopped.
-             */
+           /*
+            * If we woke up because we got a signal we're not blocking,
+            * return -EINTR (fail the system call).  This allows processes
+            * to be killed or stopped.
+            */
 
-            /*
-             * Emmanuel Papirakis:
-             *
-             * This is a little update to work with 2.2.*.  Signals now are contained in
-             * two words (64 bits) and are stored in a structure that contains an array of
-             * two unsigned longs.  We now have to make 2 checks in our if.
-             *
-             * Ori Pomerantz:
-             *
-             * Nobody promised me they'll never use more than 64 bits, or that this book
-             * won't be used for a version of Linux with a word size of 16 bits.  This code
-             * would work in any case.
-             */
-            for (i = 0; i < _NSIG_WORDS && !is_sig; i++)
-                is_sig =
-                    current->pending.signal.sig[i] & ~current->
-                    blocked.sig[i];
+           /*
+            * Emmanuel Papirakis:
+            *
+            * This is a little update to work with 2.2.*.  Signals now are contained in
+            * two words (64 bits) and are stored in a structure that contains an array of
+            * two unsigned longs.  We now have to make 2 checks in our if.
+            *
+            * Ori Pomerantz:
+            *
+            * Nobody promised me they'll never use more than 64 bits, or that this book
+            * won't be used for a version of Linux with a word size of 16 bits.  This code
+            * would work in any case.
+            */
+           for (i = 0; i < _NSIG_WORDS && !is_sig; i++)
+               is_sig =
+                   current->pending.signal.sig[i] & ~current->
+                   blocked.sig[i];
 
-            if (is_sig) {
-                /*
-                 * It's important to put module_put(THIS_MODULE) here,
-                 * because for processes where the open is interrupted
-                 * there will never be a corresponding close. If we
-                 * don't decrement the usage count here, we will be
-                 * left with a positive usage count which we'll have no
-                 * way to bring down to zero, giving us an immortal
-                 * module, which can only be killed by rebooting
-                 * the machine.
-                 */
-                module_put(THIS_MODULE);
-                return -EINTR;
-            }
-        }
+           if (is_sig) {
+               /*
+                * It's important to put module_put(THIS_MODULE) here,
+                * because for processes where the open is interrupted
+                * there will never be a corresponding close. If we
+                * don't decrement the usage count here, we will be
+                * left with a positive usage count which we'll have no
+                * way to bring down to zero, giving us an immortal
+                * module, which can only be killed by rebooting
+                * the machine.
+                */
+               module_put(THIS_MODULE);
+               return -EINTR;
+           }
+       }
 
-        /*
-         * If we got here, Already_Open must be zero
-         */
+       /*
+        * If we got here, Already_Open must be zero
+        */
 
-        /*
-         * Open the file
-         */
-        Already_Open = 1;
-        return 0;               /* Allow the access */
-    }
+       /*
+        * Open the file
+        */
+       Already_Open = 1;
+       return 0;               /* Allow the access */
+   }
 
-    /*
-     * Called when the /proc file is closed
-     */
-    int module_close(struct inode *inode, struct file *file)
-    {
-        /*
-         * Set Already_Open to zero, so one of the processes in the WaitQ will
-         * be able to set Already_Open back to one and to open the file. All
-         * the other processes will be called when Already_Open is back to one,
-         * so they'll go back to sleep.
-         */
-        Already_Open = 0;
+   /*
+    * Called when the /proc file is closed
+    */
+   int module_close(struct inode *inode, struct file *file)
+   {
+       /*
+        * Set Already_Open to zero, so one of the processes in the WaitQ will
+        * be able to set Already_Open back to one and to open the file. All
+        * the other processes will be called when Already_Open is back to one,
+        * so they'll go back to sleep.
+        */
+       Already_Open = 0;
 
-        /*
-         * Wake up all the processes in WaitQ, so if anybody is waiting for the
-         * file, they can have it.
-         */
-        wake_up(&WaitQ);
+       /*
+        * Wake up all the processes in WaitQ, so if anybody is waiting for the
+        * file, they can have it.
+        */
+       wake_up(&WaitQ);
 
-        module_put(THIS_MODULE);
+       module_put(THIS_MODULE);
 
-        return 0;               /* success */
-    }
+       return 0;               /* success */
+   }
 
-    /*
-     * Structures to register as the /proc file, with pointers to all the relevant
-     * functions.
-     */
+   /*
+    * Structures to register as the /proc file, with pointers to all the relevant
+    * functions.
+    */
 
-    /*
-     * File operations for our proc file. This is where we place pointers to all
-     * the functions called when somebody tries to do something to our file. NULL
-     * means we don't want to deal with something.
-     */
-    static struct file_operations File_Ops_4_Our_Proc_File = {
-        .read = module_output,  /* "read" from the file */
-        .write = module_input,  /* "write" to the file */
-        .open = module_open,    /* called when the /proc file is opened */
-        .release = module_close,        /* called when it's closed */
-    };
+   /*
+    * File operations for our proc file. This is where we place pointers to all
+    * the functions called when somebody tries to do something to our file. NULL
+    * means we don't want to deal with something.
+    */
+   static struct file_operations File_Ops_4_Our_Proc_File = {
+       .read = module_output,  /* "read" from the file */
+       .write = module_input,  /* "write" to the file */
+       .open = module_open,    /* called when the /proc file is opened */
+       .release = module_close,        /* called when it's closed */
+   };
 
-    /*
-     * Module initialization and cleanup
-     */
+   /*
+    * Module initialization and cleanup
+    */
 
-    /*
-     * Initialize the module - register the proc file
-     */
+   /*
+    * Initialize the module - register the proc file
+    */
 
-    int init_module()
-    {
-        Our_Proc_File = proc_create(PROC_ENTRY_FILENAME, 0644, NULL, &File_Ops_4_Our_Proc_File);
-        if(Our_Proc_File == NULL)
-        {
-            remove_proc_entry(PROC_ENTRY_FILENAME, NULL);
-            pr_debug("Error: Could not initialize /proc/%s\n", PROC_ENTRY_FILENAME);
-            return -ENOMEM;
-        }
-        proc_set_size(Our_Proc_File, 80);
-        proc_set_user(Our_Proc_File,  GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
+   int init_module()
+   {
+       Our_Proc_File = proc_create(PROC_ENTRY_FILENAME, 0644, NULL, &File_Ops_4_Our_Proc_File);
+       if(Our_Proc_File == NULL)
+       {
+           remove_proc_entry(PROC_ENTRY_FILENAME, NULL);
+           pr_debug("Error: Could not initialize /proc/%s\n", PROC_ENTRY_FILENAME);
+           return -ENOMEM;
+       }
+       proc_set_size(Our_Proc_File, 80);
+       proc_set_user(Our_Proc_File,  GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
 
-        pr_info("/proc/test created\n");
+       pr_info("/proc/test created\n");
 
-        return 0;
-    }
+       return 0;
+   }
 
-    /*
-     * Cleanup - unregister our file from /proc.  This could get dangerous if
-     * there are still processes waiting in WaitQ, because they are inside our
-     * open function, which will get unloaded. I'll explain how to avoid removal
-     * of a kernel module in such a case in chapter 10.
-     */
-    void cleanup_module()
-    {
-        remove_proc_entry(PROC_ENTRY_FILENAME, NULL);
-        pr_debug("/proc/%s removed\n", PROC_ENTRY_FILENAME);
-    }
+   /*
+    * Cleanup - unregister our file from /proc.  This could get dangerous if
+    * there are still processes waiting in WaitQ, because they are inside our
+    * open function, which will get unloaded. I'll explain how to avoid removal
+    * of a kernel module in such a case in chapter 10.
+    */
+   void cleanup_module()
+   {
+       remove_proc_entry(PROC_ENTRY_FILENAME, NULL);
+       pr_debug("/proc/%s removed\n", PROC_ENTRY_FILENAME);
+   }
 
 .. raw:: html
 
@@ -4745,75 +4677,71 @@ a file with **O_NONBLOCK**.
 
 .. code:: src
 
-    /* cat_noblock.c - open a file and display its contents, but exit rather than
-     * wait for input */
-    /* Copyright (C) 1998 by Ori Pomerantz */
+   /* cat_noblock.c - open a file and display its contents, but exit rather than
+    * wait for input */
+   /* Copyright (C) 1998 by Ori Pomerantz */
 
-    #include <stdio.h>    /* standard I/O */
-    #include <fcntl.h>    /* for open */
-    #include <unistd.h>   /* for read */
-    #include <stdlib.h>   /* for exit */
-    #include <errno.h>    /* for errno */
+   #include <stdio.h>    /* standard I/O */
+   #include <fcntl.h>    /* for open */
+   #include <unistd.h>   /* for read */
+   #include <stdlib.h>   /* for exit */
+   #include <errno.h>    /* for errno */
 
-    #define MAX_BYTES 1024*4
-
-
-    int main(int argc, char *argv[])
-    {
-        int    fd;  /* The file descriptor for the file to read */
-        size_t bytes; /* The number of bytes read */
-        char   buffer[MAX_BYTES]; /* The buffer for the bytes */
+   #define MAX_BYTES 1024*4
 
 
-        /* Usage */
-        if (argc != 2) {
-            printf("Usage: %s <filename>\n", argv[0]);
-            puts("Reads the content of a file, but doesn't wait for input");
-            exit(-1);
-        }
+   int main(int argc, char *argv[])
+   {
+       int    fd;  /* The file descriptor for the file to read */
+       size_t bytes; /* The number of bytes read */
+       char   buffer[MAX_BYTES]; /* The buffer for the bytes */
 
-        /* Open the file for reading in non blocking mode */
-        fd = open(argv[1], O_RDONLY | O_NONBLOCK);
 
-        /* If open failed */
-        if (fd == -1) {
-            if (errno = EAGAIN)
-                puts("Open would block");
-            else
-                puts("Open failed");
-            exit(-1);
-        }
+       /* Usage */
+       if (argc != 2) {
+           printf("Usage: %s <filename>\n", argv[0]);
+           puts("Reads the content of a file, but doesn't wait for input");
+           exit(-1);
+       }
 
-        /* Read the file and output its contents */
-        do {
-            int i;
+       /* Open the file for reading in non blocking mode */
+       fd = open(argv[1], O_RDONLY | O_NONBLOCK);
 
-            /* Read characters from the file */
-            bytes = read(fd, buffer, MAX_BYTES);
+       /* If open failed */
+       if (fd == -1) {
+           if (errno = EAGAIN)
+               puts("Open would block");
+           else
+               puts("Open failed");
+           exit(-1);
+       }
 
-            /* If there's an error, report it and die */
-            if (bytes == -1) {
-                if (errno = EAGAIN)
-                    puts("Normally I'd block, but you told me not to");
-                else
-                    puts("Another read error");
-                exit(-1);
-            }
+       /* Read the file and output its contents */
+       do {
+           int i;
 
-            /* Print the characters */
-            if (bytes > 0) {
-                for(i=0; i<bytes; i++)
-                    putchar(buffer[i]);
-            }
+           /* Read characters from the file */
+           bytes = read(fd, buffer, MAX_BYTES);
 
-            /* While there are no errors and the file isn't over */
-        } while (bytes > 0);
-        return 0;
-    }
+           /* If there's an error, report it and die */
+           if (bytes == -1) {
+               if (errno = EAGAIN)
+                   puts("Normally I'd block, but you told me not to");
+               else
+                   puts("Another read error");
+               exit(-1);
+           }
 
-.. raw:: html
+           /* Print the characters */
+           if (bytes > 0) {
+               for(i=0; i<bytes; i++)
+                   putchar(buffer[i]);
+           }
 
-   </div>
+           /* While there are no errors and the file isn't over */
+       } while (bytes > 0);
+       return 0;
+   }
 
 .. raw:: html
 
@@ -4825,14 +4753,18 @@ a file with **O_NONBLOCK**.
 
 .. raw:: html
 
-   <div id="outline-container-orgcfa6577" class="outline-3">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-11-2" class="outline-3">
 
 .. rubric:: Completions
-   :name: orgcfa6577
+   :name: sec-11-2
 
 .. raw:: html
 
-   <div id="text-orgcfa6577" class="outline-text-3">
+   <div id="text-11-2" class="outline-text-3">
 
 Sometimes one thing should happen before another within a module having
 multiple threads. Rather than using **/proc/sleep** commands the kernel
@@ -4848,83 +4780,83 @@ before another.
 
 .. code:: src
 
-    #include <linux/init.h>
-    #include <linux/module.h>
-    #include <linux/kernel.h>
-    #include <linux/kthread.h>
-    #include <linux/completion.h>
+   #include <linux/init.h>
+   #include <linux/module.h>
+   #include <linux/kernel.h>
+   #include <linux/kthread.h>
+   #include <linux/completion.h>
 
-    static struct {
-        struct completion crank_comp;
-        struct completion flywheel_comp;
-    } machine;
+   static struct {
+       struct completion crank_comp;
+       struct completion flywheel_comp;
+   } machine;
 
-    static int machine_crank_thread(void* arg)
-    {
-        pr_info("Turn the crank\n");
+   static int machine_crank_thread(void* arg)
+   {
+       pr_info("Turn the crank\n");
 
-        complete_all(&machine.crank_comp);
-        complete_and_exit(&machine.crank_comp, 0);
-    }
+       complete_all(&machine.crank_comp);
+       complete_and_exit(&machine.crank_comp, 0);
+   }
 
-    static int machine_flywheel_spinup_thread(void* arg)
-    {
-        wait_for_completion(&machine.crank_comp);
+   static int machine_flywheel_spinup_thread(void* arg)
+   {
+       wait_for_completion(&machine.crank_comp);
 
-        pr_info("Flywheel spins up\n");
+       pr_info("Flywheel spins up\n");
 
-        complete_all(&machine.flywheel_comp);
-        complete_and_exit(&machine.flywheel_comp, 0);
-    }
+       complete_all(&machine.flywheel_comp);
+       complete_and_exit(&machine.flywheel_comp, 0);
+   }
 
-    static int completions_init(void)
-    {
-        struct task_struct* crank_thread;
-        struct task_struct* flywheel_thread;
+   static int completions_init(void)
+   {
+       struct task_struct* crank_thread;
+       struct task_struct* flywheel_thread;
 
-        pr_info("completions example\n");
+       pr_info("completions example\n");
 
-        init_completion(&machine.crank_comp);
-        init_completion(&machine.flywheel_comp);
+       init_completion(&machine.crank_comp);
+       init_completion(&machine.flywheel_comp);
 
-        crank_thread =
-            kthread_create(machine_crank_thread,
-                           NULL, "KThread Crank");
-        if (IS_ERR(crank_thread))
-            goto ERROR_THREAD_1;
+       crank_thread =
+           kthread_create(machine_crank_thread,
+                          NULL, "KThread Crank");
+       if (IS_ERR(crank_thread))
+           goto ERROR_THREAD_1;
 
-        flywheel_thread =
-            kthread_create(machine_flywheel_spinup_thread,
-                           NULL, "KThread Flywheel");
-        if (IS_ERR(flywheel_thread))
-            goto ERROR_THREAD_2;
+       flywheel_thread =
+           kthread_create(machine_flywheel_spinup_thread,
+                          NULL, "KThread Flywheel");
+       if (IS_ERR(flywheel_thread))
+           goto ERROR_THREAD_2;
 
-        wake_up_process(flywheel_thread);
-        wake_up_process(crank_thread);
+       wake_up_process(flywheel_thread);
+       wake_up_process(crank_thread);
 
-        return 0;
+       return 0;
 
-    ERROR_THREAD_2:
-        kthread_stop(crank_thread);
-    ERROR_THREAD_1:
+   ERROR_THREAD_2:
+       kthread_stop(crank_thread);
+   ERROR_THREAD_1:
 
-        return -1;
-    }
+       return -1;
+   }
 
-    void completions_exit(void)
-    {
-        wait_for_completion(&machine.crank_comp);
-        wait_for_completion(&machine.flywheel_comp);
+   void completions_exit(void)
+   {
+       wait_for_completion(&machine.crank_comp);
+       wait_for_completion(&machine.flywheel_comp);
 
-        pr_info("completions exit\n");
-    }
+       pr_info("completions exit\n");
+   }
 
-    module_init(completions_init);
-    module_exit(completions_exit);
+   module_init(completions_init);
+   module_exit(completions_exit);
 
-    MODULE_AUTHOR("Bob Mottram");
-    MODULE_DESCRIPTION("Completions example");
-    MODULE_LICENSE("GPL");
+   MODULE_AUTHOR("Bob Mottram");
+   MODULE_DESCRIPTION("Completions example");
+   MODULE_LICENSE("GPL");
 
 .. raw:: html
 
@@ -4957,14 +4889,14 @@ enough for many common situations without adding a lot of complexity.
 
 .. raw:: html
 
-   <div id="outline-container-org3ffdc76" class="outline-2">
+   <div id="outline-container-sec-12" class="outline-2">
 
 .. rubric:: Avoiding Collisions and Deadlocks
-   :name: org3ffdc76
+   :name: sec-12
 
 .. raw:: html
 
-   <div id="text-org3ffdc76" class="outline-text-2">
+   <div id="text-12" class="outline-text-2">
 
 If processes running on different CPUs or in different threads try to
 access the same memory then it's possible that strange things can happen
@@ -4979,14 +4911,14 @@ can't happen.
 
 .. raw:: html
 
-   <div id="outline-container-org89ec2e6" class="outline-3">
+   <div id="outline-container-sec-12-1" class="outline-3">
 
 .. rubric:: Mutex
-   :name: org89ec2e6
+   :name: sec-12-1
 
 .. raw:: html
 
-   <div id="text-org89ec2e6" class="outline-text-3">
+   <div id="text-12-1" class="outline-text-3">
 
 You can use kernel mutexes (mutual exclusions) in much the same manner
 that you might deploy them in userland. This may be all that's needed to
@@ -4998,50 +4930,46 @@ avoid collisions in most cases.
 
 .. code:: src
 
-    #include <linux/kernel.h>
-    #include <linux/module.h>
-    #include <linux/init.h>
-    #include <linux/mutex.h>
+   #include <linux/kernel.h>
+   #include <linux/module.h>
+   #include <linux/init.h>
+   #include <linux/mutex.h>
 
-    DEFINE_MUTEX(mymutex);
+   DEFINE_MUTEX(mymutex);
 
-    static int example_mutex_init(void)
-    {
-        int ret;
+   static int example_mutex_init(void)
+   {
+       int ret;
 
-        pr_info("example_mutex init\n");
+       pr_info("example_mutex init\n");
 
-        ret = mutex_trylock(&mymutex);
-        if (ret != 0) {
-            pr_info("mutex is locked\n");
+       ret = mutex_trylock(&mymutex);
+       if (ret != 0) {
+           pr_info("mutex is locked\n");
 
-            if (mutex_is_locked(&mymutex) == 0)
-                pr_info("The mutex failed to lock!\n");
+           if (mutex_is_locked(&mymutex) == 0)
+               pr_info("The mutex failed to lock!\n");
 
-            mutex_unlock(&mymutex);
-            pr_info("mutex is unlocked\n");
-        }
-        else
-            pr_info("Failed to lock\n");
+           mutex_unlock(&mymutex);
+           pr_info("mutex is unlocked\n");
+       }
+       else
+           pr_info("Failed to lock\n");
 
-        return 0;
-    }
+       return 0;
+   }
 
-    static void example_mutex_exit(void)
-    {
-        pr_info("example_mutex exit\n");
-    }
+   static void example_mutex_exit(void)
+   {
+       pr_info("example_mutex exit\n");
+   }
 
-    module_init(example_mutex_init);
-    module_exit(example_mutex_exit);
+   module_init(example_mutex_init);
+   module_exit(example_mutex_exit);
 
-    MODULE_AUTHOR("Bob Mottram");
-    MODULE_DESCRIPTION("Mutex example");
-    MODULE_LICENSE("GPL");
-
-.. raw:: html
-
-   </div>
+   MODULE_AUTHOR("Bob Mottram");
+   MODULE_DESCRIPTION("Mutex example");
+   MODULE_LICENSE("GPL");
 
 .. raw:: html
 
@@ -5053,14 +4981,18 @@ avoid collisions in most cases.
 
 .. raw:: html
 
-   <div id="outline-container-org9889db8" class="outline-3">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-12-2" class="outline-3">
 
 .. rubric:: Spinlocks
-   :name: org9889db8
+   :name: sec-12-2
 
 .. raw:: html
 
-   <div id="text-org9889db8" class="outline-text-3">
+   <div id="text-12-2" class="outline-text-3">
 
 As the name suggests, spinlocks lock up the CPU that the code is running
 on, taking 100% of its resources. Because of this you should only use
@@ -5068,7 +5000,7 @@ the spinlock mechanism around code which is likely to take no more than
 a few milliseconds to run and so won't noticably slow anything down from
 the user's point of view.
 
-The example here is *"irq safe"* in that if interrupts happen during the
+The example here is /"irq safe"/ in that if interrupts happen during the
 lock then they won't be forgotten and will activate when the unlock
 happens, using the *flags* variable to retain their state.
 
@@ -5078,73 +5010,69 @@ happens, using the *flags* variable to retain their state.
 
 .. code:: src
 
-    #include <linux/kernel.h>
-    #include <linux/module.h>
-    #include <linux/init.h>
-    #include <linux/spinlock.h>
-    #include <linux/interrupt.h>
+   #include <linux/kernel.h>
+   #include <linux/module.h>
+   #include <linux/init.h>
+   #include <linux/spinlock.h>
+   #include <linux/interrupt.h>
 
-    DEFINE_SPINLOCK(sl_static);
-    spinlock_t sl_dynamic;
+   DEFINE_SPINLOCK(sl_static);
+   spinlock_t sl_dynamic;
 
-    static void example_spinlock_static(void)
-    {
-        unsigned long flags;
+   static void example_spinlock_static(void)
+   {
+       unsigned long flags;
 
-        spin_lock_irqsave(&sl_static, flags);
-        pr_info("Locked static spinlock\n");
+       spin_lock_irqsave(&sl_static, flags);
+       pr_info("Locked static spinlock\n");
 
-        /* Do something or other safely.
-           Because this uses 100% CPU time this
-           code should take no more than a few
-           milliseconds to run */
+       /* Do something or other safely.
+          Because this uses 100% CPU time this
+          code should take no more than a few
+          milliseconds to run */
 
-        spin_unlock_irqrestore(&sl_static, flags);
-        pr_info("Unlocked static spinlock\n");
-    }
+       spin_unlock_irqrestore(&sl_static, flags);
+       pr_info("Unlocked static spinlock\n");
+   }
 
-    static void example_spinlock_dynamic(void)
-    {
-        unsigned long flags;
+   static void example_spinlock_dynamic(void)
+   {
+       unsigned long flags;
 
-        spin_lock_init(&sl_dynamic);
-        spin_lock_irqsave(&sl_dynamic, flags);
-        pr_info("Locked dynamic spinlock\n");
+       spin_lock_init(&sl_dynamic);
+       spin_lock_irqsave(&sl_dynamic, flags);
+       pr_info("Locked dynamic spinlock\n");
 
-        /* Do something or other safely.
-           Because this uses 100% CPU time this
-           code should take no more than a few
-           milliseconds to run */
+       /* Do something or other safely.
+          Because this uses 100% CPU time this
+          code should take no more than a few
+          milliseconds to run */
 
-        spin_unlock_irqrestore(&sl_dynamic, flags);
-        pr_info("Unlocked dynamic spinlock\n");
-    }
+       spin_unlock_irqrestore(&sl_dynamic, flags);
+       pr_info("Unlocked dynamic spinlock\n");
+   }
 
-    static int example_spinlock_init(void)
-    {
-        pr_info("example spinlock started\n");
+   static int example_spinlock_init(void)
+   {
+       pr_info("example spinlock started\n");
 
-        example_spinlock_static();
-        example_spinlock_dynamic();
+       example_spinlock_static();
+       example_spinlock_dynamic();
 
-        return 0;
-    }
+       return 0;
+   }
 
-    static void example_spinlock_exit(void)
-    {
-        pr_info("example spinlock exit\n");
-    }
+   static void example_spinlock_exit(void)
+   {
+       pr_info("example spinlock exit\n");
+   }
 
-    module_init(example_spinlock_init);
-    module_exit(example_spinlock_exit);
+   module_init(example_spinlock_init);
+   module_exit(example_spinlock_exit);
 
-    MODULE_AUTHOR("Bob Mottram");
-    MODULE_DESCRIPTION("Spinlock example");
-    MODULE_LICENSE("GPL");
-
-.. raw:: html
-
-   </div>
+   MODULE_AUTHOR("Bob Mottram");
+   MODULE_DESCRIPTION("Spinlock example");
+   MODULE_LICENSE("GPL");
 
 .. raw:: html
 
@@ -5156,14 +5084,18 @@ happens, using the *flags* variable to retain their state.
 
 .. raw:: html
 
-   <div id="outline-container-orge2dc3e1" class="outline-3">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-12-3" class="outline-3">
 
 .. rubric:: Read and write locks
-   :name: orge2dc3e1
+   :name: sec-12-3
 
 .. raw:: html
 
-   <div id="text-orge2dc3e1" class="outline-text-3">
+   <div id="text-12-3" class="outline-text-3">
 
 Read and write locks are specialised kinds of spinlocks so that you can
 exclusively read from something or write to something. Like the earlier
@@ -5180,59 +5112,59 @@ users to start revolting against the tyranny of your module.
 
 .. code:: src
 
-    #include <linux/kernel.h>
-    #include <linux/module.h>
-    #include <linux/interrupt.h>
+   #include <linux/kernel.h>
+   #include <linux/module.h>
+   #include <linux/interrupt.h>
 
-    DEFINE_RWLOCK(myrwlock);
+   DEFINE_RWLOCK(myrwlock);
 
-    static void example_read_lock(void)
-    {
-        unsigned long flags;
+   static void example_read_lock(void)
+   {
+       unsigned long flags;
 
-        read_lock_irqsave(&myrwlock, flags);
-        pr_info("Read Locked\n");
+       read_lock_irqsave(&myrwlock, flags);
+       pr_info("Read Locked\n");
 
-        /* Read from something */
+       /* Read from something */
 
-        read_unlock_irqrestore(&myrwlock, flags);
-        pr_info("Read Unlocked\n");
-    }
+       read_unlock_irqrestore(&myrwlock, flags);
+       pr_info("Read Unlocked\n");
+   }
 
-    static void example_write_lock(void)
-    {
-        unsigned long flags;
+   static void example_write_lock(void)
+   {
+       unsigned long flags;
 
-        write_lock_irqsave(&myrwlock, flags);
-        pr_info("Write Locked\n");
+       write_lock_irqsave(&myrwlock, flags);
+       pr_info("Write Locked\n");
 
-        /* Write to something */
+       /* Write to something */
 
-        write_unlock_irqrestore(&myrwlock, flags);
-        pr_info("Write Unlocked\n");
-    }
+       write_unlock_irqrestore(&myrwlock, flags);
+       pr_info("Write Unlocked\n");
+   }
 
-    static int example_rwlock_init(void)
-    {
-        pr_info("example_rwlock started\n");
+   static int example_rwlock_init(void)
+   {
+       pr_info("example_rwlock started\n");
 
-        example_read_lock();
-        example_write_lock();
+       example_read_lock();
+       example_write_lock();
 
-        return 0;
-    }
+       return 0;
+   }
 
-    static void example_rwlock_exit(void)
-    {
-        pr_info("example_rwlock exit\n");
-    }
+   static void example_rwlock_exit(void)
+   {
+       pr_info("example_rwlock exit\n");
+   }
 
-    module_init(example_rwlock_init);
-    module_exit(example_rwlock_exit);
+   module_init(example_rwlock_init);
+   module_exit(example_rwlock_exit);
 
-    MODULE_AUTHOR("Bob Mottram");
-    MODULE_DESCRIPTION("Read/Write locks example");
-    MODULE_LICENSE("GPL");
+   MODULE_AUTHOR("Bob Mottram");
+   MODULE_DESCRIPTION("Read/Write locks example");
+   MODULE_LICENSE("GPL");
 
 .. raw:: html
 
@@ -5253,14 +5185,14 @@ corresponding write functions.
 
 .. raw:: html
 
-   <div id="outline-container-org1316854" class="outline-3">
+   <div id="outline-container-sec-12-4" class="outline-3">
 
 .. rubric:: Atomic operations
-   :name: org1316854
+   :name: sec-12-4
 
 .. raw:: html
 
-   <div id="text-org1316854" class="outline-text-3">
+   <div id="text-12-4" class="outline-text-3">
 
 If you're doing simple arithmetic: adding, subtracting or bitwise
 operations then there's another way in the multi-CPU and
@@ -5275,86 +5207,82 @@ overwritten by some other shenanigans. An example is shown below.
 
 .. code:: src
 
-    #include <linux/kernel.h>
-    #include <linux/module.h>
-    #include <linux/interrupt.h>
+   #include <linux/kernel.h>
+   #include <linux/module.h>
+   #include <linux/interrupt.h>
 
-    #define BYTE_TO_BINARY_PATTERN "%c%c%c%c%c%c%c%c"
-    #define BYTE_TO_BINARY(byte)  \
-      (byte & 0x80 ? '1' : '0'), \
-      (byte & 0x40 ? '1' : '0'), \
-      (byte & 0x20 ? '1' : '0'), \
-      (byte & 0x10 ? '1' : '0'), \
-      (byte & 0x08 ? '1' : '0'), \
-      (byte & 0x04 ? '1' : '0'), \
-      (byte & 0x02 ? '1' : '0'), \
-      (byte & 0x01 ? '1' : '0')
+   #define BYTE_TO_BINARY_PATTERN "%c%c%c%c%c%c%c%c"
+   #define BYTE_TO_BINARY(byte)  \
+     (byte & 0x80 ? '1' : '0'), \
+     (byte & 0x40 ? '1' : '0'), \
+     (byte & 0x20 ? '1' : '0'), \
+     (byte & 0x10 ? '1' : '0'), \
+     (byte & 0x08 ? '1' : '0'), \
+     (byte & 0x04 ? '1' : '0'), \
+     (byte & 0x02 ? '1' : '0'), \
+     (byte & 0x01 ? '1' : '0')
 
-    static void atomic_add_subtract(void)
-    {
-        atomic_t debbie;
-        atomic_t chris = ATOMIC_INIT(50);
+   static void atomic_add_subtract(void)
+   {
+       atomic_t debbie;
+       atomic_t chris = ATOMIC_INIT(50);
 
-        atomic_set(&debbie, 45);
+       atomic_set(&debbie, 45);
 
-        /* subtract one */
-        atomic_dec(&debbie);
+       /* subtract one */
+       atomic_dec(&debbie);
 
-        atomic_add(7, &debbie);
+       atomic_add(7, &debbie);
 
-        /* add one */
-        atomic_inc(&debbie);
+       /* add one */
+       atomic_inc(&debbie);
 
-        pr_info("chris: %d, debbie: %d\n",
-               atomic_read(&chris), atomic_read(&debbie));
-    }
+       pr_info("chris: %d, debbie: %d\n",
+              atomic_read(&chris), atomic_read(&debbie));
+   }
 
-    static void atomic_bitwise(void)
-    {
-        unsigned long word = 0;
+   static void atomic_bitwise(void)
+   {
+       unsigned long word = 0;
 
-        pr_info("Bits 0: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
-        set_bit(3, &word);
-        set_bit(5, &word);
-        pr_info("Bits 1: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
-        clear_bit(5, &word);
-        pr_info("Bits 2: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
-        change_bit(3, &word);
+       pr_info("Bits 0: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
+       set_bit(3, &word);
+       set_bit(5, &word);
+       pr_info("Bits 1: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
+       clear_bit(5, &word);
+       pr_info("Bits 2: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
+       change_bit(3, &word);
 
-        pr_info("Bits 3: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
-        if (test_and_set_bit(3, &word))
-            pr_info("wrong\n");
-        pr_info("Bits 4: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
+       pr_info("Bits 3: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
+       if (test_and_set_bit(3, &word))
+           pr_info("wrong\n");
+       pr_info("Bits 4: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
 
-        word = 255;
-        pr_info("Bits 5: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
-    }
+       word = 255;
+       pr_info("Bits 5: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
+   }
 
-    static int example_atomic_init(void)
-    {
-        pr_info("example_atomic started\n");
+   static int example_atomic_init(void)
+   {
+       pr_info("example_atomic started\n");
 
-        atomic_add_subtract();
-        atomic_bitwise();
+       atomic_add_subtract();
+       atomic_bitwise();
 
-        return 0;
-    }
+       return 0;
+   }
 
-    static void example_atomic_exit(void)
-    {
-        pr_info("example_atomic exit\n");
-    }
+   static void example_atomic_exit(void)
+   {
+       pr_info("example_atomic exit\n");
+   }
 
-    module_init(example_atomic_init);
-    module_exit(example_atomic_exit);
+   module_init(example_atomic_init);
+   module_exit(example_atomic_exit);
 
-    MODULE_AUTHOR("Bob Mottram");
-    MODULE_DESCRIPTION("Atomic operations example");
-    MODULE_LICENSE("GPL");
-
-.. raw:: html
-
-   </div>
+   MODULE_AUTHOR("Bob Mottram");
+   MODULE_DESCRIPTION("Atomic operations example");
+   MODULE_LICENSE("GPL");
 
 .. raw:: html
 
@@ -5370,14 +5298,18 @@ overwritten by some other shenanigans. An example is shown below.
 
 .. raw:: html
 
-   <div id="outline-container-orgbdec3ca" class="outline-2">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-13" class="outline-2">
 
 .. rubric:: Replacing Print Macros
-   :name: orgbdec3ca
+   :name: sec-13
 
 .. raw:: html
 
-   <div id="text-orgbdec3ca" class="outline-text-2">
+   <div id="text-13" class="outline-text-2">
 
 .. raw:: html
 
@@ -5385,14 +5317,14 @@ overwritten by some other shenanigans. An example is shown below.
 
 .. raw:: html
 
-   <div id="outline-container-org4579c68" class="outline-3">
+   <div id="outline-container-sec-13-1" class="outline-3">
 
 .. rubric:: Replacement
-   :name: org4579c68
+   :name: sec-13-1
 
 .. raw:: html
 
-   <div id="text-org4579c68" class="outline-text-3">
+   <div id="text-13-1" class="outline-text-3">
 
 In Section 1.2.1.2, I said that X and kernel module programming don't
 mix. That's true for developing kernel modules, but in actual use, you
@@ -5416,118 +5348,114 @@ which we use to write a string to the tty.
 
 .. code:: src
 
-    /*
-     *  print_string.c - Send output to the tty we're running on, regardless if it's
-     *  through X11, telnet, etc.  We do this by printing the string to the tty
-     *  associated with the current task.
-     */
-    #include <linux/kernel.h>
-    #include <linux/module.h>
-    #include <linux/init.h>
-    #include <linux/sched.h>        /* For current */
-    #include <linux/tty.h>          /* For the tty declarations */
-    #include <linux/version.h>      /* For LINUX_VERSION_CODE */
+   /*
+    *  print_string.c - Send output to the tty we're running on, regardless if it's
+    *  through X11, telnet, etc.  We do this by printing the string to the tty
+    *  associated with the current task.
+    */
+   #include <linux/kernel.h>
+   #include <linux/module.h>
+   #include <linux/init.h>
+   #include <linux/sched.h>        /* For current */
+   #include <linux/tty.h>          /* For the tty declarations */
+   #include <linux/version.h>      /* For LINUX_VERSION_CODE */
 
-    MODULE_LICENSE("GPL");
-    MODULE_AUTHOR("Peter Jay Salzman");
+   MODULE_LICENSE("GPL");
+   MODULE_AUTHOR("Peter Jay Salzman");
 
-    static void print_string(char *str)
-    {
-        struct tty_struct *my_tty;
-        const struct tty_operations *ttyops;
+   static void print_string(char *str)
+   {
+       struct tty_struct *my_tty;
+       const struct tty_operations *ttyops;
 
-        /*
-         * tty struct went into signal struct in 2.6.6
-         */
-    #if ( LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,5) )
-        /*
-         * The tty for the current task
-         */
-        my_tty = current->tty;
-    #else
-        /*
-         * The tty for the current task, for 2.6.6+ kernels
-         */
-        my_tty = get_current_tty();
-    #endif
-        ttyops = my_tty->driver->ops;
+       /*
+        * tty struct went into signal struct in 2.6.6
+        */
+   #if ( LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,5) )
+       /*
+        * The tty for the current task
+        */
+       my_tty = current->tty;
+   #else
+       /*
+        * The tty for the current task, for 2.6.6+ kernels
+        */
+       my_tty = get_current_tty();
+   #endif
+       ttyops = my_tty->driver->ops;
 
-        /*
-         * If my_tty is NULL, the current task has no tty you can print to
-         * (ie, if it's a daemon).  If so, there's nothing we can do.
-         */
-        if (my_tty != NULL) {
+       /*
+        * If my_tty is NULL, the current task has no tty you can print to
+        * (ie, if it's a daemon).  If so, there's nothing we can do.
+        */
+       if (my_tty != NULL) {
 
-            /*
-             * my_tty->driver is a struct which holds the tty's functions,
-             * one of which (write) is used to write strings to the tty.
-             * It can be used to take a string either from the user's or
-             * kernel's memory segment.
-             *
-             * The function's 1st parameter is the tty to write to,
-             * because the same function would normally be used for all
-             * tty's of a certain type.  The 2nd parameter controls
-             * whether the function receives a string from kernel
-             * memory (false, 0) or from user memory (true, non zero).
-             * BTW: this param has been removed in Kernels > 2.6.9
-             * The (2nd) 3rd parameter is a pointer to a string.
-             * The (3rd) 4th parameter is the length of the string.
-             *
-             * As you will see below, sometimes it's necessary to use
-             * preprocessor stuff to create code that works for different
-             * kernel versions. The (naive) approach we've taken here
-             * does not scale well. The right way to deal with this
-             * is described in section 2 of
-             * linux/Documentation/SubmittingPatches
-             */
-            (ttyops->write) (my_tty,      /* The tty itself */
-    #if ( LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,9) )
-                             0,   /* Don't take the string
-                                     from user space        */
-    #endif
-                             str, /* String                 */
-                             strlen(str));        /* Length */
+           /*
+            * my_tty->driver is a struct which holds the tty's functions,
+            * one of which (write) is used to write strings to the tty.
+            * It can be used to take a string either from the user's or
+            * kernel's memory segment.
+            *
+            * The function's 1st parameter is the tty to write to,
+            * because the same function would normally be used for all
+            * tty's of a certain type.  The 2nd parameter controls
+            * whether the function receives a string from kernel
+            * memory (false, 0) or from user memory (true, non zero).
+            * BTW: this param has been removed in Kernels > 2.6.9
+            * The (2nd) 3rd parameter is a pointer to a string.
+            * The (3rd) 4th parameter is the length of the string.
+            *
+            * As you will see below, sometimes it's necessary to use
+            * preprocessor stuff to create code that works for different
+            * kernel versions. The (naive) approach we've taken here
+            * does not scale well. The right way to deal with this
+            * is described in section 2 of
+            * linux/Documentation/SubmittingPatches
+            */
+           (ttyops->write) (my_tty,      /* The tty itself */
+   #if ( LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,9) )
+                            0,   /* Don't take the string
+                                    from user space        */
+   #endif
+                            str, /* String                 */
+                            strlen(str));        /* Length */
 
-            /*
-             * ttys were originally hardware devices, which (usually)
-             * strictly followed the ASCII standard.  In ASCII, to move to
-             * a new line you need two characters, a carriage return and a
-             * line feed.  On Unix, the ASCII line feed is used for both
-             * purposes - so we can't just use \n, because it wouldn't have
-             * a carriage return and the next line will start at the
-             * column right after the line feed.
-             *
-             * This is why text files are different between Unix and
-             * MS Windows.  In CP/M and derivatives, like MS-DOS and
-             * MS Windows, the ASCII standard was strictly adhered to,
-             * and therefore a newline requirs both a LF and a CR.
-             */
+           /*
+            * ttys were originally hardware devices, which (usually)
+            * strictly followed the ASCII standard.  In ASCII, to move to
+            * a new line you need two characters, a carriage return and a
+            * line feed.  On Unix, the ASCII line feed is used for both
+            * purposes - so we can't just use \n, because it wouldn't have
+            * a carriage return and the next line will start at the
+            * column right after the line feed.
+            *
+            * This is why text files are different between Unix and
+            * MS Windows.  In CP/M and derivatives, like MS-DOS and
+            * MS Windows, the ASCII standard was strictly adhered to,
+            * and therefore a newline requirs both a LF and a CR.
+            */
 
-    #if ( LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,9) )
-            (ttyops->write) (my_tty, 0, "\015\012", 2);
-    #else
-            (ttyops->write) (my_tty, "\015\012", 2);
-    #endif
-        }
-    }
+   #if ( LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,9) )
+           (ttyops->write) (my_tty, 0, "\015\012", 2);
+   #else
+           (ttyops->write) (my_tty, "\015\012", 2);
+   #endif
+       }
+   }
 
-    static int __init print_string_init(void)
-    {
-        print_string("The module has been inserted.  Hello world!");
-        return 0;
-    }
+   static int __init print_string_init(void)
+   {
+       print_string("The module has been inserted.  Hello world!");
+       return 0;
+   }
 
-    static void __exit print_string_exit(void)
-    {
-        print_string("The module has been removed.  Farewell world!");
-    }
+   static void __exit print_string_exit(void)
+   {
+       print_string("The module has been removed.  Farewell world!");
+   }
 
-    module_init(print_string_init);
-    module_exit(print_string_exit);
-
-.. raw:: html
-
-   </div>
+   module_init(print_string_init);
+   module_exit(print_string_exit);
 
 .. raw:: html
 
@@ -5539,14 +5467,18 @@ which we use to write a string to the tty.
 
 .. raw:: html
 
-   <div id="outline-container-orgc9bd69e" class="outline-3">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-13-2" class="outline-3">
 
 .. rubric:: Flashing keyboard LEDs
-   :name: orgc9bd69e
+   :name: sec-13-2
 
 .. raw:: html
 
-   <div id="text-orgc9bd69e" class="outline-text-3">
+   <div id="text-13-2" class="outline-text-3">
 
 In certain conditions, you may desire a simpler and more direct way to
 communicate to the external world. Flashing keyboard LEDs can be such a
@@ -5564,99 +5496,99 @@ when loaded, starts blinking the keyboard LEDs until it is unloaded.
 
 .. code:: src
 
-    /*
-     *  kbleds.c - Blink keyboard leds until the module is unloaded.
-     */
+   /*
+    *  kbleds.c - Blink keyboard leds until the module is unloaded.
+    */
 
-    #include <linux/module.h>
-    #include <linux/init.h>
-    #include <linux/vt_kern.h>      /* for fg_console */
-    #include <linux/tty.h>          /* For fg_console, MAX_NR_CONSOLES */
-    #include <linux/kd.h>           /* For KDSETLED */
-    #include <linux/vt.h>
-    #include <linux/console_struct.h>       /* For vc_cons */
+   #include <linux/module.h>
+   #include <linux/init.h>
+   #include <linux/vt_kern.h>      /* for fg_console */
+   #include <linux/tty.h>          /* For fg_console, MAX_NR_CONSOLES */
+   #include <linux/kd.h>           /* For KDSETLED */
+   #include <linux/vt.h>
+   #include <linux/console_struct.h>       /* For vc_cons */
 
-    MODULE_DESCRIPTION("Example module illustrating the use of Keyboard LEDs.");
-    MODULE_AUTHOR("Daniele Paolo Scarpazza");
-    MODULE_LICENSE("GPL");
+   MODULE_DESCRIPTION("Example module illustrating the use of Keyboard LEDs.");
+   MODULE_AUTHOR("Daniele Paolo Scarpazza");
+   MODULE_LICENSE("GPL");
 
-    struct timer_list my_timer;
-    struct tty_driver *my_driver;
-    char kbledstatus = 0;
+   struct timer_list my_timer;
+   struct tty_driver *my_driver;
+   char kbledstatus = 0;
 
-    #define BLINK_DELAY   HZ/5
-    #define ALL_LEDS_ON   0x07
-    #define RESTORE_LEDS  0xFF
+   #define BLINK_DELAY   HZ/5
+   #define ALL_LEDS_ON   0x07
+   #define RESTORE_LEDS  0xFF
 
-    /*
-     * Function my_timer_func blinks the keyboard LEDs periodically by invoking
-     * command KDSETLED of ioctl() on the keyboard driver. To learn more on virtual
-     * terminal ioctl operations, please see file:
-     *     /usr/src/linux/drivers/char/vt_ioctl.c, function vt_ioctl().
-     *
-     * The argument to KDSETLED is alternatively set to 7 (thus causing the led
-     * mode to be set to LED_SHOW_IOCTL, and all the leds are lit) and to 0xFF
-     * (any value above 7 switches back the led mode to LED_SHOW_FLAGS, thus
-     * the LEDs reflect the actual keyboard status).  To learn more on this,
-     * please see file:
-     *     /usr/src/linux/drivers/char/keyboard.c, function setledstate().
-     *
-     */
+   /*
+    * Function my_timer_func blinks the keyboard LEDs periodically by invoking
+    * command KDSETLED of ioctl() on the keyboard driver. To learn more on virtual
+    * terminal ioctl operations, please see file:
+    *     /usr/src/linux/drivers/char/vt_ioctl.c, function vt_ioctl().
+    *
+    * The argument to KDSETLED is alternatively set to 7 (thus causing the led
+    * mode to be set to LED_SHOW_IOCTL, and all the leds are lit) and to 0xFF
+    * (any value above 7 switches back the led mode to LED_SHOW_FLAGS, thus
+    * the LEDs reflect the actual keyboard status).  To learn more on this,
+    * please see file:
+    *     /usr/src/linux/drivers/char/keyboard.c, function setledstate().
+    *
+    */
 
-    static void my_timer_func(unsigned long ptr)
-    {
-        unsigned long *pstatus = (unsigned long *)ptr;
-        struct tty_struct* t = vc_cons[fg_console].d->port.tty;
+   static void my_timer_func(unsigned long ptr)
+   {
+       unsigned long *pstatus = (unsigned long *)ptr;
+       struct tty_struct* t = vc_cons[fg_console].d->port.tty;
 
-        if (*pstatus == ALL_LEDS_ON)
-            *pstatus = RESTORE_LEDS;
-        else
-            *pstatus = ALL_LEDS_ON;
+       if (*pstatus == ALL_LEDS_ON)
+           *pstatus = RESTORE_LEDS;
+       else
+           *pstatus = ALL_LEDS_ON;
 
-        (my_driver->ops->ioctl) (t, KDSETLED, *pstatus);
+       (my_driver->ops->ioctl) (t, KDSETLED, *pstatus);
 
-        my_timer.expires = jiffies + BLINK_DELAY;
-        add_timer(&my_timer);
-    }
+       my_timer.expires = jiffies + BLINK_DELAY;
+       add_timer(&my_timer);
+   }
 
-    static int __init kbleds_init(void)
-    {
-        int i;
+   static int __init kbleds_init(void)
+   {
+       int i;
 
-        pr_info("kbleds: loading\n");
-        pr_info("kbleds: fgconsole is %x\n", fg_console);
-        for (i = 0; i < MAX_NR_CONSOLES; i++) {
-            if (!vc_cons[i].d)
-                break;
-            pr_info("poet_atkm: console[%i/%i] #%i, tty %lx\n", i,
-                   MAX_NR_CONSOLES, vc_cons[i].d->vc_num,
-                   (unsigned long)vc_cons[i].d->port.tty);
-        }
-        pr_info("kbleds: finished scanning consoles\n");
+       pr_info("kbleds: loading\n");
+       pr_info("kbleds: fgconsole is %x\n", fg_console);
+       for (i = 0; i < MAX_NR_CONSOLES; i++) {
+           if (!vc_cons[i].d)
+               break;
+           pr_info("poet_atkm: console[%i/%i] #%i, tty %lx\n", i,
+                  MAX_NR_CONSOLES, vc_cons[i].d->vc_num,
+                  (unsigned long)vc_cons[i].d->port.tty);
+       }
+       pr_info("kbleds: finished scanning consoles\n");
 
-        my_driver = vc_cons[fg_console].d->port.tty->driver;
-        pr_info("kbleds: tty driver magic %x\n", my_driver->magic);
+       my_driver = vc_cons[fg_console].d->port.tty->driver;
+       pr_info("kbleds: tty driver magic %x\n", my_driver->magic);
 
-        /*
-         * Set up the LED blink timer the first time
-         */
-        timer_setup(&my_timer, (void*)&my_timer_func, (unsigned long)&kbledstatus);
-        my_timer.expires = jiffies + BLINK_DELAY;
-        add_timer(&my_timer);
+       /*
+        * Set up the LED blink timer the first time
+        */
+       timer_setup(&my_timer, (void*)&my_timer_func, (unsigned long)&kbledstatus);
+       my_timer.expires = jiffies + BLINK_DELAY;
+       add_timer(&my_timer);
 
-        return 0;
-    }
+       return 0;
+   }
 
-    static void __exit kbleds_cleanup(void)
-    {
-        pr_info("kbleds: unloading...\n");
-        del_timer(&my_timer);
-        (my_driver->ops->ioctl) (vc_cons[fg_console].d->port.tty,
-                                 KDSETLED, RESTORE_LEDS);
-    }
+   static void __exit kbleds_cleanup(void)
+   {
+       pr_info("kbleds: unloading...\n");
+       del_timer(&my_timer);
+       (my_driver->ops->ioctl) (vc_cons[fg_console].d->port.tty,
+                                KDSETLED, RESTORE_LEDS);
+   }
 
-    module_init(kbleds_init);
-    module_exit(kbleds_cleanup);
+   module_init(kbleds_init);
+   module_exit(kbleds_cleanup);
 
 .. raw:: html
 
@@ -5693,14 +5625,14 @@ minimum and make sure it does not show up in production code.
 
 .. raw:: html
 
-   <div id="outline-container-orgf1f1faf" class="outline-2">
+   <div id="outline-container-sec-14" class="outline-2">
 
 .. rubric:: Scheduling Tasks
-   :name: orgf1f1faf
+   :name: sec-14
 
 .. raw:: html
 
-   <div id="text-orgf1f1faf" class="outline-text-2">
+   <div id="text-14" class="outline-text-2">
 
 There are two main ways of running tasks: tasklets and work queues.
 Tasklets are a quick and easy way of scheduling a single function to be
@@ -5714,14 +5646,14 @@ in a sequence.
 
 .. raw:: html
 
-   <div id="outline-container-orgd815b3b" class="outline-3">
+   <div id="outline-container-sec-14-1" class="outline-3">
 
 .. rubric:: Tasklets
-   :name: orgd815b3b
+   :name: sec-14-1
 
 .. raw:: html
 
-   <div id="text-orgd815b3b" class="outline-text-3">
+   <div id="text-14-1" class="outline-text-3">
 
 Here's an example tasklet module. The *tasklet_fn* function runs for a
 few seconds and in the mean time execution of the *example_tasklet_init*
@@ -5733,41 +5665,41 @@ function continues to the exit point.
 
 .. code:: src
 
-    #include <linux/kernel.h>
-    #include <linux/module.h>
-    #include <linux/delay.h>
-    #include <linux/interrupt.h>
+   #include <linux/kernel.h>
+   #include <linux/module.h>
+   #include <linux/delay.h>
+   #include <linux/interrupt.h>
 
-    static void tasklet_fn(unsigned long data)
-    {
-        pr_info("Example tasklet starts\n");
-        mdelay(5000);
-        pr_info("Example tasklet ends\n");
-    }
+   static void tasklet_fn(unsigned long data)
+   {
+       pr_info("Example tasklet starts\n");
+       mdelay(5000);
+       pr_info("Example tasklet ends\n");
+   }
 
-    DECLARE_TASKLET(mytask, tasklet_fn, 0L);
+   DECLARE_TASKLET(mytask, tasklet_fn, 0L);
 
-    static int example_tasklet_init(void)
-    {
-        pr_info("tasklet example init\n");
-        tasklet_schedule(&mytask);
-        mdelay(200);
-        pr_info("Example tasklet init continues...\n");
-        return 0;
-    }
+   static int example_tasklet_init(void)
+   {
+       pr_info("tasklet example init\n");
+       tasklet_schedule(&mytask);
+       mdelay(200);
+       pr_info("Example tasklet init continues...\n");
+       return 0;
+   }
 
-    static void example_tasklet_exit(void)
-    {
-        pr_info("tasklet example exit\n");
-        tasklet_kill(&mytask);
-    }
+   static void example_tasklet_exit(void)
+   {
+       pr_info("tasklet example exit\n");
+       tasklet_kill(&mytask);
+   }
 
-    module_init(example_tasklet_init);
-    module_exit(example_tasklet_exit);
+   module_init(example_tasklet_init);
+   module_exit(example_tasklet_exit);
 
-    MODULE_AUTHOR("Bob Mottram");
-    MODULE_DESCRIPTION("Tasklet example");
-    MODULE_LICENSE("GPL");
+   MODULE_AUTHOR("Bob Mottram");
+   MODULE_DESCRIPTION("Tasklet example");
+   MODULE_LICENSE("GPL");
 
 .. raw:: html
 
@@ -5781,10 +5713,10 @@ So with this example loaded *dmesg* should show:
 
 .. code:: src
 
-    tasklet example init
-    Example tasklet starts
-    Example tasklet init continues...
-    Example tasklet ends
+   tasklet example init
+   Example tasklet starts
+   Example tasklet init continues...
+   Example tasklet ends
 
 .. raw:: html
 
@@ -5800,14 +5732,14 @@ So with this example loaded *dmesg* should show:
 
 .. raw:: html
 
-   <div id="outline-container-org9b5b18e" class="outline-3">
+   <div id="outline-container-sec-14-2" class="outline-3">
 
 .. rubric:: Work queues
-   :name: org9b5b18e
+   :name: sec-14-2
 
 .. raw:: html
 
-   <div id="text-org9b5b18e" class="outline-text-3">
+   <div id="text-14-2" class="outline-text-3">
 
 To add a task to the scheduler we can use a workqueue. The kernel then
 uses the Completely Fair Scheduler (CFS) to execute work within the
@@ -5819,40 +5751,36 @@ queue.
 
 .. code:: src
 
-    #include <linux/module.h>
-    #include <linux/init.h>
-    #include <linux/workqueue.h>
+   #include <linux/module.h>
+   #include <linux/init.h>
+   #include <linux/workqueue.h>
 
-    static struct workqueue_struct *queue=NULL;
-    static struct work_struct work;
+   static struct workqueue_struct *queue=NULL;
+   static struct work_struct work;
 
-    static void work_handler(struct work_struct *data)
-    {
-        pr_info ("work handler function.\n");
-    }
+   static void work_handler(struct work_struct *data)
+   {
+       pr_info ("work handler function.\n");
+   }
 
-    int init_module()
-    {
-        queue = alloc_workqueue("HELLOWORLD", WQ_UNBOUND, 1);
-        INIT_WORK(&work, work_handler);
-        schedule_work(&work);
+   int init_module()
+   {
+       queue = alloc_workqueue("HELLOWORLD", WQ_UNBOUND, 1);
+       INIT_WORK(&work, work_handler);
+       schedule_work(&work);
 
-        return 0;
+       return 0;
 
-    }
+   }
 
-    void cleanup_module()
-    {
-        destroy_workqueue(queue);
-    }
+   void cleanup_module()
+   {
+       destroy_workqueue(queue);
+   }
 
-    MODULE_LICENSE("GPL");
-    MODULE_AUTHOR("Bob Mottram");
-    MODULE_DESCRIPTION("Workqueue example");
-
-.. raw:: html
-
-   </div>
+   MODULE_LICENSE("GPL");
+   MODULE_AUTHOR("Bob Mottram");
+   MODULE_DESCRIPTION("Workqueue example");
 
 .. raw:: html
 
@@ -5868,14 +5796,18 @@ queue.
 
 .. raw:: html
 
-   <div id="outline-container-org1cdf533" class="outline-2">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-15" class="outline-2">
 
 .. rubric:: Interrupt Handlers
-   :name: org1cdf533
+   :name: sec-15
 
 .. raw:: html
 
-   <div id="text-org1cdf533" class="outline-text-2">
+   <div id="text-15" class="outline-text-2">
 
 .. raw:: html
 
@@ -5883,14 +5815,14 @@ queue.
 
 .. raw:: html
 
-   <div id="outline-container-org5db45ad" class="outline-3">
+   <div id="outline-container-sec-15-1" class="outline-3">
 
 .. rubric:: Interrupt Handlers
-   :name: org5db45ad
+   :name: sec-15-1
 
 .. raw:: html
 
-   <div id="text-org5db45ad" class="outline-text-3">
+   <div id="text-15-1" class="outline-text-3">
 
 Except for the last chapter, everything we did in the kernel so far
 we've done as a response to a process asking for it, either by dealing
@@ -5966,14 +5898,14 @@ both willing to share.
 
 .. raw:: html
 
-   <div id="outline-container-org9ca1a6c" class="outline-3">
+   <div id="outline-container-sec-15-2" class="outline-3">
 
 .. rubric:: Detecting button presses
-   :name: org9ca1a6c
+   :name: sec-15-2
 
 .. raw:: html
 
-   <div id="text-org9ca1a6c" class="outline-text-3">
+   <div id="text-15-2" class="outline-text-3">
 
 Many popular single board computers, such as Raspberry Pis or
 Beagleboards, have a bunch of GPIO pins. Attaching buttons to those and
@@ -5993,161 +5925,157 @@ whatever is appropriate for your board.
 
 .. code:: src
 
-    /*
-     *  intrpt.c - Handling GPIO with interrupts
-     *
-     *  Copyright (C) 2017 by Bob Mottram
-     *  Based upon the Rpi example by Stefan Wendler (devnull@kaltpost.de)
-     *  from:
-     *    https://github.com/wendlers/rpi-kmod-samples
-     *
-     *  Press one button to turn on a LED and another to turn it off
-     */
+   /*
+    *  intrpt.c - Handling GPIO with interrupts
+    *
+    *  Copyright (C) 2017 by Bob Mottram
+    *  Based upon the Rpi example by Stefan Wendler (devnull@kaltpost.de)
+    *  from:
+    *    https://github.com/wendlers/rpi-kmod-samples
+    *
+    *  Press one button to turn on a LED and another to turn it off
+    */
 
-    #include <linux/module.h>
-    #include <linux/kernel.h>
-    #include <linux/gpio.h>
-    #include <linux/interrupt.h>
+   #include <linux/module.h>
+   #include <linux/kernel.h>
+   #include <linux/gpio.h>
+   #include <linux/interrupt.h>
 
-    static int button_irqs[] = { -1, -1 };
+   static int button_irqs[] = { -1, -1 };
 
-    /* Define GPIOs for LEDs.
-       Change the numbers for the GPIO on your board. */
-    static struct gpio leds[] = {
-            {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
-    };
+   /* Define GPIOs for LEDs.
+      Change the numbers for the GPIO on your board. */
+   static struct gpio leds[] = {
+           {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
+   };
 
-    /* Define GPIOs for BUTTONS
-       Change the numbers for the GPIO on your board. */
-    static struct gpio buttons[] = {
-            { 17, GPIOF_IN, "LED 1 ON BUTTON" },
-            { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
-    };
+   /* Define GPIOs for BUTTONS
+      Change the numbers for the GPIO on your board. */
+   static struct gpio buttons[] = {
+           { 17, GPIOF_IN, "LED 1 ON BUTTON" },
+           { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
+   };
 
-    /*
-     * interrupt function triggered when a button is pressed
-     */
-    static irqreturn_t button_isr(int irq, void *data)
-    {
-        /* first button */
-        if (irq == button_irqs[0] && !gpio_get_value(leds[0].gpio))
-                gpio_set_value(leds[0].gpio, 1);
-        /* second button */
-        else if(irq == button_irqs[1] && gpio_get_value(leds[0].gpio))
-                gpio_set_value(leds[0].gpio, 0);
+   /*
+    * interrupt function triggered when a button is pressed
+    */
+   static irqreturn_t button_isr(int irq, void *data)
+   {
+       /* first button */
+       if (irq == button_irqs[0] && !gpio_get_value(leds[0].gpio))
+               gpio_set_value(leds[0].gpio, 1);
+       /* second button */
+       else if(irq == button_irqs[1] && gpio_get_value(leds[0].gpio))
+               gpio_set_value(leds[0].gpio, 0);
 
-        return IRQ_HANDLED;
-    }
+       return IRQ_HANDLED;
+   }
 
-    int init_module()
-    {
-        int ret = 0;
+   int init_module()
+   {
+       int ret = 0;
 
-        pr_info("%s\n", __func__);
+       pr_info("%s\n", __func__);
 
-        /* register LED gpios */
-        ret = gpio_request_array(leds, ARRAY_SIZE(leds));
+       /* register LED gpios */
+       ret = gpio_request_array(leds, ARRAY_SIZE(leds));
 
-        if (ret) {
-            pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
-            return ret;
-        }
+       if (ret) {
+           pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
+           return ret;
+       }
 
-        /* register BUTTON gpios */
-        ret = gpio_request_array(buttons, ARRAY_SIZE(buttons));
+       /* register BUTTON gpios */
+       ret = gpio_request_array(buttons, ARRAY_SIZE(buttons));
 
-        if (ret) {
-            pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
-            goto fail1;
-        }
+       if (ret) {
+           pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
+           goto fail1;
+       }
 
-        pr_info("Current button1 value: %d\n",
-               gpio_get_value(buttons[0].gpio));
+       pr_info("Current button1 value: %d\n",
+              gpio_get_value(buttons[0].gpio));
 
-        ret = gpio_to_irq(buttons[0].gpio);
+       ret = gpio_to_irq(buttons[0].gpio);
 
-        if (ret < 0) {
-            pr_err("Unable to request IRQ: %d\n", ret);
-            goto fail2;
-        }
+       if (ret < 0) {
+           pr_err("Unable to request IRQ: %d\n", ret);
+           goto fail2;
+       }
 
-        button_irqs[0] = ret;
+       button_irqs[0] = ret;
 
-        pr_info("Successfully requested BUTTON1 IRQ # %d\n",
-               button_irqs[0]);
+       pr_info("Successfully requested BUTTON1 IRQ # %d\n",
+              button_irqs[0]);
 
-        ret = request_irq(button_irqs[0], button_isr,
-                          IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                          "gpiomod#button1", NULL);
+       ret = request_irq(button_irqs[0], button_isr,
+                         IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                         "gpiomod#button1", NULL);
 
-        if (ret) {
-            pr_err("Unable to request IRQ: %d\n", ret);
-            goto fail2;
-        }
+       if (ret) {
+           pr_err("Unable to request IRQ: %d\n", ret);
+           goto fail2;
+       }
 
 
-        ret = gpio_to_irq(buttons[1].gpio);
+       ret = gpio_to_irq(buttons[1].gpio);
 
-        if (ret < 0) {
-            pr_err("Unable to request IRQ: %d\n", ret);
-            goto fail2;
-        }
+       if (ret < 0) {
+           pr_err("Unable to request IRQ: %d\n", ret);
+           goto fail2;
+       }
 
-        button_irqs[1] = ret;
+       button_irqs[1] = ret;
 
-        pr_info("Successfully requested BUTTON2 IRQ # %d\n",
-               button_irqs[1]);
+       pr_info("Successfully requested BUTTON2 IRQ # %d\n",
+              button_irqs[1]);
 
-        ret = request_irq(button_irqs[1], button_isr,
-                          IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                          "gpiomod#button2", NULL);
+       ret = request_irq(button_irqs[1], button_isr,
+                         IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                         "gpiomod#button2", NULL);
 
-        if (ret) {
-            pr_err("Unable to request IRQ: %d\n", ret);
-            goto fail3;
-        }
+       if (ret) {
+           pr_err("Unable to request IRQ: %d\n", ret);
+           goto fail3;
+       }
 
-        return 0;
+       return 0;
 
-    /* cleanup what has been setup so far */
-    fail3:
-        free_irq(button_irqs[0], NULL);
+   /* cleanup what has been setup so far */
+   fail3:
+       free_irq(button_irqs[0], NULL);
 
-    fail2:
-        gpio_free_array(buttons, ARRAY_SIZE(leds));
+   fail2:
+       gpio_free_array(buttons, ARRAY_SIZE(leds));
 
-    fail1:
-        gpio_free_array(leds, ARRAY_SIZE(leds));
+   fail1:
+       gpio_free_array(leds, ARRAY_SIZE(leds));
 
-        return ret;
-    }
+       return ret;
+   }
 
-    void cleanup_module()
-    {
-        int i;
+   void cleanup_module()
+   {
+       int i;
 
-        pr_info("%s\n", __func__);
+       pr_info("%s\n", __func__);
 
-        /* free irqs */
-        free_irq(button_irqs[0], NULL);
-        free_irq(button_irqs[1], NULL);
+       /* free irqs */
+       free_irq(button_irqs[0], NULL);
+       free_irq(button_irqs[1], NULL);
 
-        /* turn all LEDs off */
-        for (i = 0; i < ARRAY_SIZE(leds); i++)
-            gpio_set_value(leds[i].gpio, 0);
+       /* turn all LEDs off */
+       for (i = 0; i < ARRAY_SIZE(leds); i++)
+           gpio_set_value(leds[i].gpio, 0);
 
-        /* unregister */
-        gpio_free_array(leds, ARRAY_SIZE(leds));
-        gpio_free_array(buttons, ARRAY_SIZE(buttons));
-    }
+       /* unregister */
+       gpio_free_array(leds, ARRAY_SIZE(leds));
+       gpio_free_array(buttons, ARRAY_SIZE(buttons));
+   }
 
-    MODULE_LICENSE("GPL");
-    MODULE_AUTHOR("Bob Mottram");
-    MODULE_DESCRIPTION("Handle some GPIO interrupts");
-
-.. raw:: html
-
-   </div>
+   MODULE_LICENSE("GPL");
+   MODULE_AUTHOR("Bob Mottram");
+   MODULE_DESCRIPTION("Handle some GPIO interrupts");
 
 .. raw:: html
 
@@ -6159,14 +6087,18 @@ whatever is appropriate for your board.
 
 .. raw:: html
 
-   <div id="outline-container-org575eebf" class="outline-3">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-15-3" class="outline-3">
 
 .. rubric:: Bottom Half
-   :name: org575eebf
+   :name: sec-15-3
 
 .. raw:: html
 
-   <div id="text-org575eebf" class="outline-text-3">
+   <div id="text-15-3" class="outline-text-3">
 
 Suppose you want to do a bunch of stuff inside of an interrupt routine.
 A common way to do that without rendering the interrupt unavailable for
@@ -6182,175 +6114,171 @@ additional task when an interrupt is triggered.
 
 .. code:: src
 
-    /*
-     * bottomhalf.c - Top and bottom half interrupt handling
-     *
-     *  Copyright (C) 2017 by Bob Mottram
-     *  Based upon the Rpi example by Stefan Wendler (devnull@kaltpost.de)
-     *  from:
-     *    https://github.com/wendlers/rpi-kmod-samples
-     *
-     *  Press one button to turn on a LED and another to turn it off
-     */
+   /*
+    * bottomhalf.c - Top and bottom half interrupt handling
+    *
+    *  Copyright (C) 2017 by Bob Mottram
+    *  Based upon the Rpi example by Stefan Wendler (devnull@kaltpost.de)
+    *  from:
+    *    https://github.com/wendlers/rpi-kmod-samples
+    *
+    *  Press one button to turn on a LED and another to turn it off
+    */
 
-    #include <linux/module.h>
-    #include <linux/kernel.h>
-    #include <linux/gpio.h>
-    #include <linux/delay.h>
-    #include <linux/interrupt.h>
+   #include <linux/module.h>
+   #include <linux/kernel.h>
+   #include <linux/gpio.h>
+   #include <linux/delay.h>
+   #include <linux/interrupt.h>
 
-    static int button_irqs[] = { -1, -1 };
+   static int button_irqs[] = { -1, -1 };
 
-    /* Define GPIOs for LEDs.
-       Change the numbers for the GPIO on your board. */
-    static struct gpio leds[] = {
-            {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
-    };
+   /* Define GPIOs for LEDs.
+      Change the numbers for the GPIO on your board. */
+   static struct gpio leds[] = {
+           {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
+   };
 
-    /* Define GPIOs for BUTTONS
-       Change the numbers for the GPIO on your board. */
-    static struct gpio buttons[] = {
-            { 17, GPIOF_IN, "LED 1 ON BUTTON" },
-            { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
-    };
+   /* Define GPIOs for BUTTONS
+      Change the numbers for the GPIO on your board. */
+   static struct gpio buttons[] = {
+           { 17, GPIOF_IN, "LED 1 ON BUTTON" },
+           { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
+   };
 
-    /* Tasklet containing some non-trivial amount of processing */
-    static void bottomhalf_tasklet_fn(unsigned long data)
-    {
-        pr_info("Bottom half tasklet starts\n");
-        /* do something which takes a while */
-        mdelay(500);
-        pr_info("Bottom half tasklet ends\n");
-    }
+   /* Tasklet containing some non-trivial amount of processing */
+   static void bottomhalf_tasklet_fn(unsigned long data)
+   {
+       pr_info("Bottom half tasklet starts\n");
+       /* do something which takes a while */
+       mdelay(500);
+       pr_info("Bottom half tasklet ends\n");
+   }
 
-    DECLARE_TASKLET(buttontask, bottomhalf_tasklet_fn, 0L);
+   DECLARE_TASKLET(buttontask, bottomhalf_tasklet_fn, 0L);
 
-    /*
-     * interrupt function triggered when a button is pressed
-     */
-    static irqreturn_t button_isr(int irq, void *data)
-    {
-        /* Do something quickly right now */
-        if (irq == button_irqs[0] && !gpio_get_value(leds[0].gpio))
-                gpio_set_value(leds[0].gpio, 1);
-        else if(irq == button_irqs[1] && gpio_get_value(leds[0].gpio))
-                gpio_set_value(leds[0].gpio, 0);
+   /*
+    * interrupt function triggered when a button is pressed
+    */
+   static irqreturn_t button_isr(int irq, void *data)
+   {
+       /* Do something quickly right now */
+       if (irq == button_irqs[0] && !gpio_get_value(leds[0].gpio))
+               gpio_set_value(leds[0].gpio, 1);
+       else if(irq == button_irqs[1] && gpio_get_value(leds[0].gpio))
+               gpio_set_value(leds[0].gpio, 0);
 
-        /* Do the rest at leisure via the scheduler */
-        tasklet_schedule(&buttontask);
+       /* Do the rest at leisure via the scheduler */
+       tasklet_schedule(&buttontask);
 
-        return IRQ_HANDLED;
-    }
+       return IRQ_HANDLED;
+   }
 
-    int init_module()
-    {
-        int ret = 0;
+   int init_module()
+   {
+       int ret = 0;
 
-        pr_info("%s\n", __func__);
+       pr_info("%s\n", __func__);
 
-        /* register LED gpios */
-        ret = gpio_request_array(leds, ARRAY_SIZE(leds));
+       /* register LED gpios */
+       ret = gpio_request_array(leds, ARRAY_SIZE(leds));
 
-        if (ret) {
-            pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
-            return ret;
-        }
+       if (ret) {
+           pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
+           return ret;
+       }
 
-        /* register BUTTON gpios */
-        ret = gpio_request_array(buttons, ARRAY_SIZE(buttons));
+       /* register BUTTON gpios */
+       ret = gpio_request_array(buttons, ARRAY_SIZE(buttons));
 
-        if (ret) {
-            pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
-            goto fail1;
-        }
+       if (ret) {
+           pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
+           goto fail1;
+       }
 
-        pr_info("Current button1 value: %d\n",
-               gpio_get_value(buttons[0].gpio));
+       pr_info("Current button1 value: %d\n",
+              gpio_get_value(buttons[0].gpio));
 
-        ret = gpio_to_irq(buttons[0].gpio);
+       ret = gpio_to_irq(buttons[0].gpio);
 
-        if (ret < 0) {
-            pr_err("Unable to request IRQ: %d\n", ret);
-            goto fail2;
-        }
+       if (ret < 0) {
+           pr_err("Unable to request IRQ: %d\n", ret);
+           goto fail2;
+       }
 
-        button_irqs[0] = ret;
+       button_irqs[0] = ret;
 
-        pr_info("Successfully requested BUTTON1 IRQ # %d\n",
-               button_irqs[0]);
+       pr_info("Successfully requested BUTTON1 IRQ # %d\n",
+              button_irqs[0]);
 
-        ret = request_irq(button_irqs[0], button_isr,
-                          IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                          "gpiomod#button1", NULL);
+       ret = request_irq(button_irqs[0], button_isr,
+                         IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                         "gpiomod#button1", NULL);
 
-        if (ret) {
-            pr_err("Unable to request IRQ: %d\n", ret);
-            goto fail2;
-        }
+       if (ret) {
+           pr_err("Unable to request IRQ: %d\n", ret);
+           goto fail2;
+       }
 
 
-        ret = gpio_to_irq(buttons[1].gpio);
+       ret = gpio_to_irq(buttons[1].gpio);
 
-        if (ret < 0) {
-            pr_err("Unable to request IRQ: %d\n", ret);
-            goto fail2;
-        }
+       if (ret < 0) {
+           pr_err("Unable to request IRQ: %d\n", ret);
+           goto fail2;
+       }
 
-        button_irqs[1] = ret;
+       button_irqs[1] = ret;
 
-        pr_info("Successfully requested BUTTON2 IRQ # %d\n",
-               button_irqs[1]);
+       pr_info("Successfully requested BUTTON2 IRQ # %d\n",
+              button_irqs[1]);
 
-        ret = request_irq(button_irqs[1], button_isr,
-                          IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                          "gpiomod#button2", NULL);
+       ret = request_irq(button_irqs[1], button_isr,
+                         IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                         "gpiomod#button2", NULL);
 
-        if (ret) {
-            pr_err("Unable to request IRQ: %d\n", ret);
-            goto fail3;
-        }
+       if (ret) {
+           pr_err("Unable to request IRQ: %d\n", ret);
+           goto fail3;
+       }
 
-        return 0;
+       return 0;
 
-    /* cleanup what has been setup so far */
-    fail3:
-        free_irq(button_irqs[0], NULL);
+   /* cleanup what has been setup so far */
+   fail3:
+       free_irq(button_irqs[0], NULL);
 
-    fail2:
-        gpio_free_array(buttons, ARRAY_SIZE(leds));
+   fail2:
+       gpio_free_array(buttons, ARRAY_SIZE(leds));
 
-    fail1:
-        gpio_free_array(leds, ARRAY_SIZE(leds));
+   fail1:
+       gpio_free_array(leds, ARRAY_SIZE(leds));
 
-        return ret;
-    }
+       return ret;
+   }
 
-    void cleanup_module()
-    {
-        int i;
+   void cleanup_module()
+   {
+       int i;
 
-        pr_info("%s\n", __func__);
+       pr_info("%s\n", __func__);
 
-        /* free irqs */
-        free_irq(button_irqs[0], NULL);
-        free_irq(button_irqs[1], NULL);
+       /* free irqs */
+       free_irq(button_irqs[0], NULL);
+       free_irq(button_irqs[1], NULL);
 
-        /* turn all LEDs off */
-        for (i = 0; i < ARRAY_SIZE(leds); i++)
-            gpio_set_value(leds[i].gpio, 0);
+       /* turn all LEDs off */
+       for (i = 0; i < ARRAY_SIZE(leds); i++)
+           gpio_set_value(leds[i].gpio, 0);
 
-        /* unregister */
-        gpio_free_array(leds, ARRAY_SIZE(leds));
-        gpio_free_array(buttons, ARRAY_SIZE(buttons));
-    }
+       /* unregister */
+       gpio_free_array(leds, ARRAY_SIZE(leds));
+       gpio_free_array(buttons, ARRAY_SIZE(buttons));
+   }
 
-    MODULE_LICENSE("GPL");
-    MODULE_AUTHOR("Bob Mottram");
-    MODULE_DESCRIPTION("Interrupt with top and bottom half");
-
-.. raw:: html
-
-   </div>
+   MODULE_LICENSE("GPL");
+   MODULE_AUTHOR("Bob Mottram");
+   MODULE_DESCRIPTION("Interrupt with top and bottom half");
 
 .. raw:: html
 
@@ -6366,14 +6294,18 @@ additional task when an interrupt is triggered.
 
 .. raw:: html
 
-   <div id="outline-container-org004956f" class="outline-2">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-16" class="outline-2">
 
 .. rubric:: Crypto
-   :name: org004956f
+   :name: sec-16
 
 .. raw:: html
 
-   <div id="text-org004956f" class="outline-text-2">
+   <div id="text-16" class="outline-text-2">
 
 At the dawn of the internet everybody trusted everybody completely…but
 that didn't work out so well. When this guide was originally written it
@@ -6389,14 +6321,14 @@ hash functions.
 
 .. raw:: html
 
-   <div id="outline-container-org8f45455" class="outline-3">
+   <div id="outline-container-sec-16-1" class="outline-3">
 
 .. rubric:: Hash functions
-   :name: org8f45455
+   :name: sec-16-1
 
 .. raw:: html
 
-   <div id="text-org8f45455" class="outline-text-3">
+   <div id="text-16-1" class="outline-text-3">
 
 Calculating and checking the hashes of things is a common operation.
 Here is a demonstration of how to calculate a sha256 hash within a
@@ -6408,70 +6340,70 @@ kernel module.
 
 .. code:: src
 
-    #include <linux/module.h>
-    #include <crypto/internal/hash.h>
+   #include <linux/module.h>
+   #include <crypto/internal/hash.h>
 
-    #define SHA256_LENGTH (256/8)
+   #define SHA256_LENGTH (256/8)
 
-    static void show_hash_result(char * plaintext, char * hash_sha256)
-    {
-        int i;
-        char str[SHA256_LENGTH*2 + 1];
+   static void show_hash_result(char * plaintext, char * hash_sha256)
+   {
+       int i;
+       char str[SHA256_LENGTH*2 + 1];
 
-        pr_info("sha256 test for string: \"%s\"\n", plaintext);
-        for (i = 0; i < SHA256_LENGTH ; i++)
-            sprintf(&str[i*2],"%02x", (unsigned char)hash_sha256[i]);
-        str[i*2] = 0;
-        pr_info("%s\n", str);
-    }
+       pr_info("sha256 test for string: \"%s\"\n", plaintext);
+       for (i = 0; i < SHA256_LENGTH ; i++)
+           sprintf(&str[i*2],"%02x", (unsigned char)hash_sha256[i]);
+       str[i*2] = 0;
+       pr_info("%s\n", str);
+   }
 
-    int cryptosha256_init(void)
-    {
-        char * plaintext = "This is a test";
-        char hash_sha256[SHA256_LENGTH];
-        struct crypto_shash *sha256;
-        struct shash_desc *shash;
+   int cryptosha256_init(void)
+   {
+       char * plaintext = "This is a test";
+       char hash_sha256[SHA256_LENGTH];
+       struct crypto_shash *sha256;
+       struct shash_desc *shash;
 
-        sha256 = crypto_alloc_shash("sha256", 0, 0);
-        if (IS_ERR(sha256))
-            return -1;
+       sha256 = crypto_alloc_shash("sha256", 0, 0);
+       if (IS_ERR(sha256))
+           return -1;
 
-        shash =
-            kmalloc(sizeof(struct shash_desc) + crypto_shash_descsize(sha256),
-                    GFP_KERNEL);
-        if (!shash)
-            return -ENOMEM;
+       shash =
+           kmalloc(sizeof(struct shash_desc) + crypto_shash_descsize(sha256),
+                   GFP_KERNEL);
+       if (!shash)
+           return -ENOMEM;
 
-        shash->tfm = sha256;
-        shash->flags = 0;
+       shash->tfm = sha256;
+       shash->flags = 0;
 
-        if (crypto_shash_init(shash))
-            return -1;
+       if (crypto_shash_init(shash))
+           return -1;
 
-        if (crypto_shash_update(shash, plaintext, strlen(plaintext)))
-            return -1;
+       if (crypto_shash_update(shash, plaintext, strlen(plaintext)))
+           return -1;
 
-        if (crypto_shash_final(shash, hash_sha256))
-            return -1;
+       if (crypto_shash_final(shash, hash_sha256))
+           return -1;
 
-        kfree(shash);
-        crypto_free_shash(sha256);
+       kfree(shash);
+       crypto_free_shash(sha256);
 
-        show_hash_result(plaintext, hash_sha256);
+       show_hash_result(plaintext, hash_sha256);
 
-        return 0;
-    }
+       return 0;
+   }
 
-    void cryptosha256_exit(void)
-    {
-    }
+   void cryptosha256_exit(void)
+   {
+   }
 
-    module_init(cryptosha256_init);
-    module_exit(cryptosha256_exit);
+   module_init(cryptosha256_init);
+   module_exit(cryptosha256_exit);
 
-    MODULE_AUTHOR("Bob Mottram");
-    MODULE_DESCRIPTION("sha256 hash test");
-    MODULE_LICENSE("GPL");
+   MODULE_AUTHOR("Bob Mottram");
+   MODULE_DESCRIPTION("sha256 hash test");
+   MODULE_LICENSE("GPL");
 
 .. raw:: html
 
@@ -6485,9 +6417,9 @@ Make and install the module:
 
 .. code:: src
 
-    make
-    sudo insmod cryptosha256.ko
-    dmesg
+   make
+   sudo insmod cryptosha256.ko
+   dmesg
 
 .. raw:: html
 
@@ -6503,7 +6435,7 @@ Finally, remove the test module:
 
 .. code:: src
 
-    sudo rmmod cryptosha256
+   sudo rmmod cryptosha256
 
 .. raw:: html
 
@@ -6519,14 +6451,14 @@ Finally, remove the test module:
 
 .. raw:: html
 
-   <div id="outline-container-orgcf62e2d" class="outline-3">
+   <div id="outline-container-sec-16-2" class="outline-3">
 
 .. rubric:: Symmetric key encryption
-   :name: orgcf62e2d
+   :name: sec-16-2
 
 .. raw:: html
 
-   <div id="text-orgcf62e2d" class="outline-text-3">
+   <div id="text-16-2" class="outline-text-3">
 
 Here is an example of symmetrically encrypting a string using the AES
 algorithm and a password.
@@ -6537,190 +6469,186 @@ algorithm and a password.
 
 .. code:: src
 
-    #include <crypto/internal/skcipher.h>
-    #include <linux/module.h>
-    #include <linux/crypto.h>
+   #include <crypto/internal/skcipher.h>
+   #include <linux/module.h>
+   #include <linux/crypto.h>
 
-    #define SYMMETRIC_KEY_LENGTH 32
-    #define CIPHER_BLOCK_SIZE    16
+   #define SYMMETRIC_KEY_LENGTH 32
+   #define CIPHER_BLOCK_SIZE    16
 
-    struct tcrypt_result {
-        struct completion completion;
-        int err;
-    };
+   struct tcrypt_result {
+       struct completion completion;
+       int err;
+   };
 
-    struct skcipher_def {
-        struct scatterlist sg;
-        struct crypto_skcipher * tfm;
-        struct skcipher_request * req;
-        struct tcrypt_result result;
-        char * scratchpad;
-        char * ciphertext;
-        char * ivdata;
-    };
+   struct skcipher_def {
+       struct scatterlist sg;
+       struct crypto_skcipher * tfm;
+       struct skcipher_request * req;
+       struct tcrypt_result result;
+       char * scratchpad;
+       char * ciphertext;
+       char * ivdata;
+   };
 
-    static struct skcipher_def sk;
+   static struct skcipher_def sk;
 
-    static void test_skcipher_finish(struct skcipher_def * sk)
-    {
-        if (sk->tfm)
-            crypto_free_skcipher(sk->tfm);
-        if (sk->req)
-            skcipher_request_free(sk->req);
-        if (sk->ivdata)
-            kfree(sk->ivdata);
-        if (sk->scratchpad)
-            kfree(sk->scratchpad);
-        if (sk->ciphertext)
-            kfree(sk->ciphertext);
-    }
+   static void test_skcipher_finish(struct skcipher_def * sk)
+   {
+       if (sk->tfm)
+           crypto_free_skcipher(sk->tfm);
+       if (sk->req)
+           skcipher_request_free(sk->req);
+       if (sk->ivdata)
+           kfree(sk->ivdata);
+       if (sk->scratchpad)
+           kfree(sk->scratchpad);
+       if (sk->ciphertext)
+           kfree(sk->ciphertext);
+   }
 
-    static int test_skcipher_result(struct skcipher_def * sk, int rc)
-    {
-        switch (rc) {
-        case 0:
-            break;
-        case -EINPROGRESS:
-        case -EBUSY:
-            rc = wait_for_completion_interruptible(
-                &sk->result.completion);
-            if (!rc && !sk->result.err) {
-                reinit_completion(&sk->result.completion);
-                break;
-            }
-        default:
-            pr_info("skcipher encrypt returned with %d result %d\n",
-                rc, sk->result.err);
-            break;
-        }
+   static int test_skcipher_result(struct skcipher_def * sk, int rc)
+   {
+       switch (rc) {
+       case 0:
+           break;
+       case -EINPROGRESS:
+       case -EBUSY:
+           rc = wait_for_completion_interruptible(
+               &sk->result.completion);
+           if (!rc && !sk->result.err) {
+               reinit_completion(&sk->result.completion);
+               break;
+           }
+       default:
+           pr_info("skcipher encrypt returned with %d result %d\n",
+               rc, sk->result.err);
+           break;
+       }
 
-        init_completion(&sk->result.completion);
+       init_completion(&sk->result.completion);
 
-        return rc;
-    }
+       return rc;
+   }
 
-    static void test_skcipher_callback(struct crypto_async_request *req, int error)
-    {
-        struct tcrypt_result *result = req->data;
-        int ret;
+   static void test_skcipher_callback(struct crypto_async_request *req, int error)
+   {
+       struct tcrypt_result *result = req->data;
+       int ret;
 
-        if (error == -EINPROGRESS)
-            return;
+       if (error == -EINPROGRESS)
+           return;
 
-        result->err = error;
-        complete(&result->completion);
-        pr_info("Encryption finished successfully\n");
-    }
+       result->err = error;
+       complete(&result->completion);
+       pr_info("Encryption finished successfully\n");
+   }
 
-    static int test_skcipher_encrypt(char * plaintext, char * password,
-                                     struct skcipher_def * sk)
-    {
-        int ret = -EFAULT;
-        unsigned char key[SYMMETRIC_KEY_LENGTH];
+   static int test_skcipher_encrypt(char * plaintext, char * password,
+                                    struct skcipher_def * sk)
+   {
+       int ret = -EFAULT;
+       unsigned char key[SYMMETRIC_KEY_LENGTH];
 
-        if (!sk->tfm) {
-            sk->tfm = crypto_alloc_skcipher("cbc-aes-aesni", 0, 0);
-            if (IS_ERR(sk->tfm)) {
-                pr_info("could not allocate skcipher handle\n");
-                return PTR_ERR(sk->tfm);
-            }
-        }
+       if (!sk->tfm) {
+           sk->tfm = crypto_alloc_skcipher("cbc-aes-aesni", 0, 0);
+           if (IS_ERR(sk->tfm)) {
+               pr_info("could not allocate skcipher handle\n");
+               return PTR_ERR(sk->tfm);
+           }
+       }
 
-        if (!sk->req) {
-            sk->req = skcipher_request_alloc(sk->tfm, GFP_KERNEL);
-            if (!sk->req) {
-                pr_info("could not allocate skcipher request\n");
-                ret = -ENOMEM;
-                goto out;
-            }
-        }
+       if (!sk->req) {
+           sk->req = skcipher_request_alloc(sk->tfm, GFP_KERNEL);
+           if (!sk->req) {
+               pr_info("could not allocate skcipher request\n");
+               ret = -ENOMEM;
+               goto out;
+           }
+       }
 
-        skcipher_request_set_callback(sk->req, CRYPTO_TFM_REQ_MAY_BACKLOG,
-                                      test_skcipher_callback,
-                                      &sk->result);
+       skcipher_request_set_callback(sk->req, CRYPTO_TFM_REQ_MAY_BACKLOG,
+                                     test_skcipher_callback,
+                                     &sk->result);
 
-        /* clear the key */
-        memset((void*)key,'\0',SYMMETRIC_KEY_LENGTH);
+       /* clear the key */
+       memset((void*)key,'\0',SYMMETRIC_KEY_LENGTH);
 
-        /* Use the world's favourite password */
-        sprintf((char*)key,"%s",password);
+       /* Use the world's favourite password */
+       sprintf((char*)key,"%s",password);
 
-        /* AES 256 with given symmetric key */
-        if (crypto_skcipher_setkey(sk->tfm, key, SYMMETRIC_KEY_LENGTH)) {
-            pr_info("key could not be set\n");
-            ret = -EAGAIN;
-            goto out;
-        }
-        pr_info("Symmetric key: %s\n", key);
-        pr_info("Plaintext: %s\n", plaintext);
+       /* AES 256 with given symmetric key */
+       if (crypto_skcipher_setkey(sk->tfm, key, SYMMETRIC_KEY_LENGTH)) {
+           pr_info("key could not be set\n");
+           ret = -EAGAIN;
+           goto out;
+       }
+       pr_info("Symmetric key: %s\n", key);
+       pr_info("Plaintext: %s\n", plaintext);
 
-        if (!sk->ivdata) {
-            /* see https://en.wikipedia.org/wiki/Initialization_vector */
-            sk->ivdata = kmalloc(CIPHER_BLOCK_SIZE, GFP_KERNEL);
-            if (!sk->ivdata) {
-                pr_info("could not allocate ivdata\n");
-                goto out;
-            }
-            get_random_bytes(sk->ivdata, CIPHER_BLOCK_SIZE);
-        }
+       if (!sk->ivdata) {
+           /* see https://en.wikipedia.org/wiki/Initialization_vector */
+           sk->ivdata = kmalloc(CIPHER_BLOCK_SIZE, GFP_KERNEL);
+           if (!sk->ivdata) {
+               pr_info("could not allocate ivdata\n");
+               goto out;
+           }
+           get_random_bytes(sk->ivdata, CIPHER_BLOCK_SIZE);
+       }
 
-        if (!sk->scratchpad) {
-            /* The text to be encrypted */
-            sk->scratchpad = kmalloc(CIPHER_BLOCK_SIZE, GFP_KERNEL);
-            if (!sk->scratchpad) {
-                pr_info("could not allocate scratchpad\n");
-                goto out;
-            }
-        }
-        sprintf((char*)sk->scratchpad,"%s",plaintext);
+       if (!sk->scratchpad) {
+           /* The text to be encrypted */
+           sk->scratchpad = kmalloc(CIPHER_BLOCK_SIZE, GFP_KERNEL);
+           if (!sk->scratchpad) {
+               pr_info("could not allocate scratchpad\n");
+               goto out;
+           }
+       }
+       sprintf((char*)sk->scratchpad,"%s",plaintext);
 
-        sg_init_one(&sk->sg, sk->scratchpad, CIPHER_BLOCK_SIZE);
-        skcipher_request_set_crypt(sk->req, &sk->sg, &sk->sg,
-                                   CIPHER_BLOCK_SIZE, sk->ivdata);
-        init_completion(&sk->result.completion);
+       sg_init_one(&sk->sg, sk->scratchpad, CIPHER_BLOCK_SIZE);
+       skcipher_request_set_crypt(sk->req, &sk->sg, &sk->sg,
+                                  CIPHER_BLOCK_SIZE, sk->ivdata);
+       init_completion(&sk->result.completion);
 
-        /* encrypt data */
-        ret = crypto_skcipher_encrypt(sk->req);
-        ret = test_skcipher_result(sk, ret);
-        if (ret)
-            goto out;
+       /* encrypt data */
+       ret = crypto_skcipher_encrypt(sk->req);
+       ret = test_skcipher_result(sk, ret);
+       if (ret)
+           goto out;
 
-        pr_info("Encryption request successful\n");
+       pr_info("Encryption request successful\n");
 
-    out:
-        return ret;
-    }
+   out:
+       return ret;
+   }
 
-    int cryptoapi_init(void)
-    {
-        /* The world's favourite password */
-        char * password = "password123";
+   int cryptoapi_init(void)
+   {
+       /* The world's favourite password */
+       char * password = "password123";
 
-        sk.tfm = NULL;
-        sk.req = NULL;
-        sk.scratchpad = NULL;
-        sk.ciphertext = NULL;
-        sk.ivdata = NULL;
+       sk.tfm = NULL;
+       sk.req = NULL;
+       sk.scratchpad = NULL;
+       sk.ciphertext = NULL;
+       sk.ivdata = NULL;
 
-        test_skcipher_encrypt("Testing", password, &sk);
-        return 0;
-    }
+       test_skcipher_encrypt("Testing", password, &sk);
+       return 0;
+   }
 
-    void cryptoapi_exit(void)
-    {
-        test_skcipher_finish(&sk);
-    }
+   void cryptoapi_exit(void)
+   {
+       test_skcipher_finish(&sk);
+   }
 
-    module_init(cryptoapi_init);
-    module_exit(cryptoapi_exit);
+   module_init(cryptoapi_init);
+   module_exit(cryptoapi_exit);
 
-    MODULE_AUTHOR("Bob Mottram");
-    MODULE_DESCRIPTION("Symmetric key encryption example");
-    MODULE_LICENSE("GPL");
-
-.. raw:: html
-
-   </div>
+   MODULE_AUTHOR("Bob Mottram");
+   MODULE_DESCRIPTION("Symmetric key encryption example");
+   MODULE_LICENSE("GPL");
 
 .. raw:: html
 
@@ -6736,14 +6664,18 @@ algorithm and a password.
 
 .. raw:: html
 
-   <div id="outline-container-org161334f" class="outline-2">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-17" class="outline-2">
 
 .. rubric:: Standardising the interfaces: The Device Model
-   :name: org161334f
+   :name: sec-17
 
 .. raw:: html
 
-   <div id="text-org161334f" class="outline-text-2">
+   <div id="text-17" class="outline-text-2">
 
 Up to this point we've seen all kinds of modules doing all kinds of
 things, but there was no consistency in their interfaces with the rest
@@ -6758,106 +6690,102 @@ to add your own suspend, resume or other interface functions.
 
 .. code:: src
 
-    #include <linux/kernel.h>
-    #include <linux/module.h>
-    #include <linux/platform_device.h>
+   #include <linux/kernel.h>
+   #include <linux/module.h>
+   #include <linux/platform_device.h>
 
-    struct devicemodel_data {
-        char *greeting;
-        int   number;
-    };
+   struct devicemodel_data {
+       char *greeting;
+       int   number;
+   };
 
-    static int devicemodel_probe(struct platform_device *dev)
-    {
-        struct devicemodel_data *pd = (struct devicemodel_data *)(dev->dev.platform_data);
+   static int devicemodel_probe(struct platform_device *dev)
+   {
+       struct devicemodel_data *pd = (struct devicemodel_data *)(dev->dev.platform_data);
 
-        pr_info("devicemodel probe\n");
-        pr_info("devicemodel greeting: %s; %d\n", pd->greeting, pd->number);
+       pr_info("devicemodel probe\n");
+       pr_info("devicemodel greeting: %s; %d\n", pd->greeting, pd->number);
 
-        /* Your device initialisation code */
+       /* Your device initialisation code */
 
-        return 0;
-    }
+       return 0;
+   }
 
-    static int devicemodel_remove(struct platform_device *dev)
-    {
-        pr_info("devicemodel example removed\n");
+   static int devicemodel_remove(struct platform_device *dev)
+   {
+       pr_info("devicemodel example removed\n");
 
-        /* Your device removal code */
+       /* Your device removal code */
 
-        return 0;
-    }
+       return 0;
+   }
 
-    static int devicemodel_suspend(struct device *dev)
-    {
-        pr_info("devicemodel example suspend\n");
+   static int devicemodel_suspend(struct device *dev)
+   {
+       pr_info("devicemodel example suspend\n");
 
-        /* Your device suspend code */
+       /* Your device suspend code */
 
-        return 0;
-    }
+       return 0;
+   }
 
-    static int devicemodel_resume(struct device *dev)
-    {
-        pr_info("devicemodel example resume\n");
+   static int devicemodel_resume(struct device *dev)
+   {
+       pr_info("devicemodel example resume\n");
 
-        /* Your device resume code */
+       /* Your device resume code */
 
-        return 0;
-    }
+       return 0;
+   }
 
-    static const struct dev_pm_ops devicemodel_pm_ops =
-    {
-        .suspend = devicemodel_suspend,
-        .resume = devicemodel_resume,
-        .poweroff = devicemodel_suspend,
-        .freeze = devicemodel_suspend,
-        .thaw = devicemodel_resume,
-        .restore = devicemodel_resume
-    };
+   static const struct dev_pm_ops devicemodel_pm_ops =
+   {
+       .suspend = devicemodel_suspend,
+       .resume = devicemodel_resume,
+       .poweroff = devicemodel_suspend,
+       .freeze = devicemodel_suspend,
+       .thaw = devicemodel_resume,
+       .restore = devicemodel_resume
+   };
 
-    static struct platform_driver devicemodel_driver = {
-        .driver     = {
-            .name   = "devicemodel_example",
-            .owner  = THIS_MODULE,
-            .pm     = &devicemodel_pm_ops,
-        },
-        .probe      = devicemodel_probe,
-        .remove     = devicemodel_remove,
-    };
+   static struct platform_driver devicemodel_driver = {
+       .driver     = {
+           .name   = "devicemodel_example",
+           .owner  = THIS_MODULE,
+           .pm     = &devicemodel_pm_ops,
+       },
+       .probe      = devicemodel_probe,
+       .remove     = devicemodel_remove,
+   };
 
-    static int devicemodel_init(void)
-    {
-        int ret;
+   static int devicemodel_init(void)
+   {
+       int ret;
 
-        pr_info("devicemodel init\n");
+       pr_info("devicemodel init\n");
 
-        ret = platform_driver_register(&devicemodel_driver);
+       ret = platform_driver_register(&devicemodel_driver);
 
-        if (ret) {
-            pr_err("Unable to register driver\n");
-            return ret;
-        }
+       if (ret) {
+           pr_err("Unable to register driver\n");
+           return ret;
+       }
 
-        return 0;
-    }
+       return 0;
+   }
 
-    static void devicemodel_exit(void)
-    {
-        pr_info("devicemodel exit\n");
-        platform_driver_unregister(&devicemodel_driver);
-    }
+   static void devicemodel_exit(void)
+   {
+       pr_info("devicemodel exit\n");
+       platform_driver_unregister(&devicemodel_driver);
+   }
 
-    MODULE_LICENSE("GPL");
-    MODULE_AUTHOR("Bob Mottram");
-    MODULE_DESCRIPTION("Linux Device Model example");
+   MODULE_LICENSE("GPL");
+   MODULE_AUTHOR("Bob Mottram");
+   MODULE_DESCRIPTION("Linux Device Model example");
 
-    module_init(devicemodel_init);
-    module_exit(devicemodel_exit);
-
-.. raw:: html
-
-   </div>
+   module_init(devicemodel_init);
+   module_exit(devicemodel_exit);
 
 .. raw:: html
 
@@ -6869,14 +6797,18 @@ to add your own suspend, resume or other interface functions.
 
 .. raw:: html
 
-   <div id="outline-container-org8639895" class="outline-2">
+   </div>
+
+.. raw:: html
+
+   <div id="outline-container-sec-18" class="outline-2">
 
 .. rubric:: Optimisations
-   :name: org8639895
+   :name: sec-18
 
 .. raw:: html
 
-   <div id="text-org8639895" class="outline-text-2">
+   <div id="text-18" class="outline-text-2">
 
 .. raw:: html
 
@@ -6884,14 +6816,14 @@ to add your own suspend, resume or other interface functions.
 
 .. raw:: html
 
-   <div id="outline-container-orgb775e92" class="outline-3">
+   <div id="outline-container-sec-18-1" class="outline-3">
 
 .. rubric:: Likely and Unlikely conditions
-   :name: orgb775e92
+   :name: sec-18-1
 
 .. raw:: html
 
-   <div id="text-orgb775e92" class="outline-text-3">
+   <div id="text-18-1" class="outline-text-3">
 
 Sometimes you might want your code to run as quickly as possible,
 especially if it's handling an interrupt or doing something which might
@@ -6909,12 +6841,12 @@ to succeed.
 
 .. code:: src
 
-    bvl = bvec_alloc(gfp_mask, nr_iovecs, &idx);
-    if (unlikely(!bvl)) {
-      mempool_free(bio, bio_pool);
-      bio = NULL;
-      goto out;
-    }
+   bvl = bvec_alloc(gfp_mask, nr_iovecs, &idx);
+   if (unlikely(!bvl)) {
+     mempool_free(bio, bio_pool);
+     bio = NULL;
+     goto out;
+   }
 
 .. raw:: html
 
@@ -6939,14 +6871,14 @@ pipeline. The opposite happens if you use the *likely* macro.
 
 .. raw:: html
 
-   <div id="outline-container-org1cf3372" class="outline-2">
+   <div id="outline-container-sec-19" class="outline-2">
 
 .. rubric:: Common Pitfalls
-   :name: org1cf3372
+   :name: sec-19
 
 .. raw:: html
 
-   <div id="text-org1cf3372" class="outline-text-2">
+   <div id="text-19" class="outline-text-2">
 
 Before I send you on your way to go out into the world and write kernel
 modules, there are a few things I need to warn you about. If I fail to
@@ -6959,14 +6891,14 @@ a full refund of the amount I was paid for your copy of the book.
 
 .. raw:: html
 
-   <div id="outline-container-org8e71ecd" class="outline-3">
+   <div id="outline-container-sec-19-1" class="outline-3">
 
 .. rubric:: Using standard libraries
-   :name: org8e71ecd
+   :name: sec-19-1
 
 .. raw:: html
 
-   <div id="text-org8e71ecd" class="outline-text-3">
+   <div id="text-19-1" class="outline-text-3">
 
 You can't do that. In a kernel module you can only use kernel functions,
 which are the functions you can see in /proc/kallsyms.
@@ -6981,14 +6913,14 @@ which are the functions you can see in /proc/kallsyms.
 
 .. raw:: html
 
-   <div id="outline-container-org9ff7def" class="outline-3">
+   <div id="outline-container-sec-19-2" class="outline-3">
 
 .. rubric:: Disabling interrupts
-   :name: org9ff7def
+   :name: sec-19-2
 
 .. raw:: html
 
-   <div id="text-org9ff7def" class="outline-text-3">
+   <div id="text-19-2" class="outline-text-3">
 
 You might need to do this for a short time and that is OK, but if you
 don't enable them afterwards, your system will be stuck and you'll have
@@ -7004,14 +6936,14 @@ to power it off.
 
 .. raw:: html
 
-   <div id="outline-container-orgdd651cd" class="outline-3">
+   <div id="outline-container-sec-19-3" class="outline-3">
 
 .. rubric:: Sticking your head inside a large carnivore
-   :name: orgdd651cd
+   :name: sec-19-3
 
 .. raw:: html
 
-   <div id="text-orgdd651cd" class="outline-text-3">
+   <div id="text-19-3" class="outline-text-3">
 
 I probably don't have to warn you about this, but I figured I will
 anyway, just in case.
@@ -7030,14 +6962,14 @@ anyway, just in case.
 
 .. raw:: html
 
-   <div id="outline-container-orgcf6e3aa" class="outline-2">
+   <div id="outline-container-sec-20" class="outline-2">
 
 .. rubric:: Where To Go From Here?
-   :name: orgcf6e3aa
+   :name: sec-20
 
 .. raw:: html
 
-   <div id="text-orgcf6e3aa" class="outline-text-2">
+   <div id="text-20" class="outline-text-2">
 
 I could easily have squeezed a few more chapters into this book. I could
 have added a chapter about creating new file systems, or about adding
