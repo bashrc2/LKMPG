@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # That function read the LKMPG.org file and create examples code according
-# to the code that can be red in the guide
+# to the code that can be read in the guide
 
 main=LKMPG-4.17.2.org
 copy=/tmp/lkmpg_examples
