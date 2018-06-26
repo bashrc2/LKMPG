@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>The Linux Kernel Module Programming Guide</title>
-<!-- 2018-06-26 Tue 10:13 -->
+<!-- 2018-06-26 Tue 10:17 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Peter Jay Salzman, Michael Burian, Ori Pomerantz, Bob Mottram" />
@@ -3044,7 +3044,7 @@ asmlinkage <span class="org-type">int</span> <span class="org-function-name">our
     <span class="org-keyword">while</span> (offset &lt; ULLONG_MAX) {
         sct = (<span class="org-type">unsigned</span> <span class="org-type">long</span> **)offset;
 
-        <span class="org-keyword">if</span> (sct[__NR_close] == (<span class="org-type">unsigned</span> <span class="org-type">long</span> *) sys_close)
+        <span class="org-keyword">if</span> (sct[__NR_close] == (<span class="org-type">unsigned</span> <span class="org-type">long</span> *) ksys_close)
             <span class="org-keyword">return</span> sct;
 
         offset += <span class="org-keyword">sizeof</span>(<span class="org-type">void</span> *);

@@ -1,4 +1,4 @@
-% Created 2018-06-26 Tue 10:13
+% Created 2018-06-26 Tue 10:18
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -2169,7 +2169,7 @@ static unsigned long **aquire_sys_call_table(void)
     while (offset < ULLONG_MAX) {
         sct = (unsigned long **)offset;
 
-        if (sct[__NR_close] == (unsigned long *) sys_close)
+        if (sct[__NR_close] == (unsigned long *) ksys_close)
             return sct;
 
         offset += sizeof(void *);

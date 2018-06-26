@@ -95,7 +95,7 @@ static unsigned long **aquire_sys_call_table(void)
     while (offset < ULLONG_MAX) {
         sct = (unsigned long **)offset;
 
-        if (sct[__NR_close] == (unsigned long *) sys_close)
+        if (sct[__NR_close] == (unsigned long *) ksys_close)
             return sct;
 
         offset += sizeof(void *);
