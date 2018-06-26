@@ -1470,7 +1470,7 @@ ls -l /sys
 
 An example of a hello world module which includes the creation of a variable accessible via sysfs is given below.
 
-#+BEGIN_SRC c file: hello-sysfs.c
+#+BEGIN_SRC c :file hello-sysfs.c
 /*
  * hello-sysfs.c sysfs example
  */
@@ -2622,7 +2622,7 @@ Sometimes one thing should happen before another within a module having multiple
 
 In the following example two threads are started, but one needs to start before another.
 
-#+begin_src C file:completions.c
+#+begin_src C :file completions.c
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/kernel.h>
@@ -2713,7 +2713,7 @@ If processes running on different CPUs or in different threads try to access the
 ** Mutex
 You can use kernel mutexes (mutual exclusions) in much the same manner that you might deploy them in userland. This may be all that's needed to avoid collisions in most cases.
 
-#+begin_src C file:example_mutex.c
+#+begin_src C :file example_mutex.c
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/init.h>
@@ -2760,7 +2760,7 @@ As the name suggests, spinlocks lock up the CPU that the code is running on, tak
 
 The example here is /"irq safe"/ in that if interrupts happen during the lock then they won't be forgotten and will activate when the unlock happens, using the /flags/ variable to retain their state.
 
-#+begin_src C file:example_spinlock.c
+#+begin_src C :file example_spinlock.c
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/init.h>
@@ -2829,7 +2829,7 @@ MODULE_LICENSE("GPL");
 ** Read and write locks
 Read and write locks are specialised kinds of spinlocks so that you can exclusively read from something or write to something. Like the earlier spinlocks example the one below shows an "irq safe" situation in which if other functions were triggered from irqs which might also read and write to whatever you are concerned with then they wouldn't disrupt the logic. As before it's a good idea to keep anything done within the lock as short as possible so that it doesn't hang up the system and cause users to start revolting against the tyranny of your module.
 
-#+begin_src C file:example_rwlock.c
+#+begin_src C :file example_rwlock.c
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/interrupt.h>
@@ -2889,7 +2889,7 @@ Of course if you know for sure that there are no functions triggered by irqs whi
 ** Atomic operations
 If you're doing simple arithmetic: adding, subtracting or bitwise operations then there's another way in the multi-CPU and multi-hyperthreaded world to stop other parts of the system from messing with your mojo. By using atomic operations you can be confident that your addition, subtraction or bit flip did actually happen and wasn't overwritten by some other shenanigans. An example is shown below.
 
-#+begin_src C file:example_atomic.c
+#+begin_src C :file example_atomic.c
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/interrupt.h>
@@ -3197,7 +3197,7 @@ There are two main ways of running tasks: tasklets and work queues. Tasklets are
 ** Tasklets
 Here's an example tasklet module. The /tasklet_fn/ function runs for a few seconds and in the mean time execution of the /example_tasklet_init/ function continues to the exit point.
 
-#+begin_src C file:example_tasklet.c
+#+begin_src C :file example_tasklet.c
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/delay.h>
@@ -3459,7 +3459,7 @@ Suppose you want to do a bunch of stuff inside of an interrupt routine. A common
 
 The example below modifies the previous example to also run an additional task when an interrupt is triggered.
 
-#+begin_src C file:bottomhalf.c
+#+begin_src C :file bottomhalf.c
 /*
  * bottomhalf.c - Top and bottom half interrupt handling
  *
@@ -3718,7 +3718,7 @@ sudo rmmod cryptosha256
 ** Symmetric key encryption
 Here is an example of symmetrically encrypting a string using the AES algorithm and a password.
 
-#+begin_src C file:cryptosk.c
+#+begin_src C :file cryptosk.c
 #include <crypto/internal/skcipher.h>
 #include <linux/module.h>
 #include <linux/crypto.h>
@@ -3903,7 +3903,7 @@ MODULE_LICENSE("GPL");
 * Standardising the interfaces: The Device Model
 Up to this point we've seen all kinds of modules doing all kinds of things, but there was no consistency in their interfaces with the rest of the kernel. To impose some consistency such that there is at minimum a standardised way to start, suspend and resume a device a device model was added. An example is show below, and you can use this as a template to add your own suspend, resume or other interface functions.
 
-#+begin_src C file:devicemodel.c
+#+begin_src C :file devicemodel.c
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/platform_device.h>
