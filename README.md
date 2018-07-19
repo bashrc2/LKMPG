@@ -6,7 +6,13 @@ The text is in Emacs org-mode format with embedded C code examples, also exporte
 
 The original guide may be found at http://www.tldp.org/LDP/lkmpg/
 
-To extract and compile the examples:
+Install the kernel header files on Arch/Parabola:
+
+``` bash
+sudo pacman -S linux-libre-headers
+```
+
+Then extract and compile the examples:
 
 ``` bash
 cd [version directory]
