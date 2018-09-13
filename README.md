@@ -6,6 +6,8 @@ The text is in Emacs org-mode format with embedded C code examples, also exporte
 
 The original guide may be found at http://www.tldp.org/LDP/lkmpg/
 
+French translations for kernel 4.15.2 by Stéphane Burel.
+
 Install the kernel header files on Arch/Parabola:
 
 ``` bash
