@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>The Linux Kernel Module Programming Guide</title>
-<!-- 2018-06-26 Tue 10:17 -->
+<!-- 2019-05-08 Wed 12:53 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Peter Jay Salzman, Michael Burian, Ori Pomerantz, Bob Mottram" />
@@ -517,7 +517,8 @@ All the examples from this document are available within the <i>examples</i> sub
 
 <div class="org-src-container">
 
-<pre class="src src-sh"><span class="org-builtin">cd</span> examples
+<pre class="src src-sh">./create_examples.sh
+<span class="org-builtin">cd</span> examples
 make
 </pre>
 </div>
@@ -578,6 +579,8 @@ Paste this into you favourite editor and save it as <b>hello-1.c</b>:
 {
     pr_info(<span class="org-string">"Goodbye world 1.\n"</span>);
 }
+
+MODULE_LICENSE(<span class="org-string">"GPL"</span>);
 </pre>
 </div>
 
@@ -746,6 +749,8 @@ In early kernel versions you had to use the <b>init_module</b> and <b>cleanup_mo
 
 <span class="org-function-name">module_init</span>(hello_2_init);
 <span class="org-function-name">module_exit</span>(hello_2_exit);
+
+MODULE_LICENSE(<span class="org-string">"GPL"</span>);
 </pre>
 </div>
 
@@ -815,6 +820,8 @@ These macros are defined in <b>linux/init.h</b> and serve to free up kernel memo
 
 <span class="org-function-name">module_init</span>(hello_3_init);
 <span class="org-function-name">module_exit</span>(hello_3_exit);
+
+MODULE_LICENSE(<span class="org-string">"GPL"</span>);
 </pre>
 </div>
 </div>
@@ -860,13 +867,13 @@ MODULE_SUPPORTED_DEVICE(<span class="org-string">"testdevice"</span>);
 
 <span class="org-keyword">static</span> <span class="org-type">int</span> <span class="org-function-name">__init</span> init_hello_4(<span class="org-type">void</span>)
 {
-        pr_info(<span class="org-string">"Hello, world 4\n"</span>);
-        <span class="org-keyword">return</span> 0;
+    pr_info(<span class="org-string">"Hello, world 4\n"</span>);
+    <span class="org-keyword">return</span> 0;
 }
 
 <span class="org-keyword">static</span> <span class="org-type">void</span> <span class="org-function-name">__exit</span> cleanup_hello_4(<span class="org-type">void</span>)
 {
-        pr_info(<span class="org-string">"Goodbye, world 4\n"</span>);
+    pr_info(<span class="org-string">"Goodbye, world 4\n"</span>);
 }
 
 <span class="org-function-name">module_init</span>(init_hello_4);
@@ -978,10 +985,10 @@ MODULE_AUTHOR(<span class="org-string">"Peter Jay Salzman"</span>);
     pr_info(<span class="org-string">"myint is an integer: %d\n"</span>, myint);
     pr_info(<span class="org-string">"mylong is a long integer: %ld\n"</span>, mylong);
     pr_info(<span class="org-string">"mystring is a string: %s\n"</span>, mystring);
+
     <span class="org-keyword">for</span> (i = 0; i &lt; (<span class="org-keyword">sizeof</span> myintArray / <span class="org-keyword">sizeof</span> (<span class="org-type">int</span>)); i++)
-    {
         pr_info(<span class="org-string">"myintArray[%d] = %d\n"</span>, i, myintArray[i]);
-    }
+
     pr_info(<span class="org-string">"got %d arguments for myintArray.\n"</span>, arr_argc);
     <span class="org-keyword">return</span> 0;
 }
@@ -1057,6 +1064,8 @@ Here's an example of such a kernel module.
     pr_info(<span class="org-string">"Hello, world - this is the kernel speaking\n"</span>);
     <span class="org-keyword">return</span> 0;
 }
+
+MODULE_LICENSE(<span class="org-string">"GPL"</span>);
 </pre>
 </div>
 
@@ -1077,6 +1086,8 @@ The next file:
 {
     pr_info(<span class="org-string">"Short is the life of a kernel module\n"</span>);
 }
+
+MODULE_LICENSE(<span class="org-string">"GPL"</span>);
 </pre>
 </div>
 
@@ -1759,6 +1770,8 @@ The next code sample creates a char driver named chardev. You can cat its device
     pr_alert(<span class="org-string">"Sorry, this operation isn't supported.\n"</span>);
     <span class="org-keyword">return</span> -EINVAL;
 }
+
+MODULE_LICENSE(<span class="org-string">"GPL"</span>);
 </pre>
 </div>
 </div>
@@ -1880,6 +1893,8 @@ HelloWorld!
     proc_remove(Our_Proc_File);
     pr_info(<span class="org-string">"/proc/%s removed\n"</span>, procfs_name);
 }
+
+MODULE_LICENSE(<span class="org-string">"GPL"</span>);
 </pre>
 </div>
 </div>
@@ -1909,7 +1924,7 @@ The only memory segment accessible to a process is its own, so when writing regu
 <span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/module.h&gt;</span>       <span class="org-comment-delimiter">/* </span><span class="org-comment">Specifically, a module </span><span class="org-comment-delimiter">*/</span>
 <span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/kernel.h&gt;</span>       <span class="org-comment-delimiter">/* </span><span class="org-comment">We're doing kernel work </span><span class="org-comment-delimiter">*/</span>
 <span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/proc_fs.h&gt;</span>      <span class="org-comment-delimiter">/* </span><span class="org-comment">Necessary because we use the proc fs </span><span class="org-comment-delimiter">*/</span>
-<span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/uaccess.h&gt;</span>        <span class="org-comment-delimiter">/* </span><span class="org-comment">for copy_from_user </span><span class="org-comment-delimiter">*/</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/uaccess.h&gt;</span>      <span class="org-comment-delimiter">/* </span><span class="org-comment">for copy_from_user </span><span class="org-comment-delimiter">*/</span>
 
 <span class="org-preprocessor">#define</span> <span class="org-variable-name">PROCFS_MAX_SIZE</span>         1024
 <span class="org-preprocessor">#define</span> <span class="org-variable-name">PROCFS_NAME</span>             <span class="org-string">"buffer1k"</span>
@@ -1999,6 +2014,8 @@ The only memory segment accessible to a process is its own, so when writing regu
     proc_remove(Our_Proc_File);
     pr_info(<span class="org-string">"/proc/%s removed\n"</span>, PROCFS_NAME);
 }
+
+MODULE_LICENSE(<span class="org-string">"GPL"</span>);
 </pre>
 </div>
 </div>
@@ -2116,6 +2133,8 @@ It's important to note that the standard roles of read and write are reversed in
     remove_proc_entry(PROCFS_ENTRY_FILENAME, <span class="org-constant">NULL</span>);
     pr_debug(<span class="org-string">"/proc/%s removed\n"</span>, PROCFS_ENTRY_FILENAME);
 }
+
+MODULE_LICENSE(<span class="org-string">"GPL"</span>);
 </pre>
 </div>
 
@@ -2339,7 +2358,73 @@ An example of a hello world module which includes the creation of a variable acc
 
 <div class="org-src-container">
 
-<pre class="src src-"hello-sysfs.c"lang"hello-sysfs.c"switches"hello-sysfs.c"flags">"hello-sysfs.c"body
+<pre class="src src-c"><span class="org-comment-delimiter">/*</span>
+<span class="org-comment"> * hello-sysfs.c sysfs example</span>
+<span class="org-comment"> </span><span class="org-comment-delimiter">*/</span>
+
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/module.h&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/kobject.h&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/sysfs.h&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/init.h&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/fs.h&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/string.h&gt;</span>
+
+MODULE_LICENSE(<span class="org-string">"GPL"</span>);
+MODULE_AUTHOR(<span class="org-string">"Bob Mottram"</span>);
+
+<span class="org-keyword">static</span> <span class="org-keyword">struct</span> <span class="org-type">kobject</span> *<span class="org-variable-name">mymodule</span>;
+
+<span class="org-comment-delimiter">/* </span><span class="org-comment">the variable you want to be able to change </span><span class="org-comment-delimiter">*/</span>
+<span class="org-keyword">static</span> <span class="org-type">int</span> <span class="org-variable-name">myvariable</span> = 0;
+
+<span class="org-keyword">static</span> <span class="org-type">ssize_t</span> <span class="org-function-name">myvariable_show</span>(<span class="org-keyword">struct</span> <span class="org-type">kobject</span> *<span class="org-variable-name">kobj</span>,
+                               <span class="org-keyword">struct</span> <span class="org-type">kobj_attribute</span> *<span class="org-variable-name">attr</span>,
+                               <span class="org-type">char</span> *<span class="org-variable-name">buf</span>)
+{
+    <span class="org-keyword">return</span> sprintf(buf, <span class="org-string">"%d\n"</span>, myvariable);
+}
+
+<span class="org-keyword">static</span> <span class="org-type">ssize_t</span> <span class="org-function-name">myvariable_store</span>(<span class="org-keyword">struct</span> <span class="org-type">kobject</span> *<span class="org-variable-name">kobj</span>,
+                                <span class="org-keyword">struct</span> <span class="org-type">kobj_attribute</span> *<span class="org-variable-name">attr</span>,
+                                <span class="org-type">char</span> *<span class="org-variable-name">buf</span>, <span class="org-type">size_t</span> <span class="org-variable-name">count</span>)
+{
+    sscanf(buf, <span class="org-string">"%du"</span>, &amp;myvariable);
+    <span class="org-keyword">return</span> count;
+}
+
+
+<span class="org-keyword">static</span> <span class="org-keyword">struct</span> <span class="org-type">kobj_attribute</span> <span class="org-variable-name">myvariable_attribute</span> =
+    __ATTR(myvariable, 0660, myvariable_show,
+           (<span class="org-type">void</span>*)myvariable_store);
+
+<span class="org-keyword">static</span> <span class="org-type">int</span> <span class="org-function-name">__init</span> mymodule_init (<span class="org-type">void</span>)
+{
+    <span class="org-type">int</span> <span class="org-variable-name">error</span> = 0;
+
+    pr_info(<span class="org-string">"mymodule: initialised\n"</span>);
+
+    mymodule =
+        kobject_create_and_add(<span class="org-string">"mymodule"</span>, kernel_kobj);
+    <span class="org-keyword">if</span> (<span class="org-negation-char">!</span>mymodule)
+        <span class="org-keyword">return</span> -ENOMEM;
+
+    error = sysfs_create_file(mymodule, &amp;myvariable_attribute.attr);
+    <span class="org-keyword">if</span> (error) {
+        pr_info(<span class="org-string">"failed to create the myvariable file "</span> \
+                <span class="org-string">"in /sys/kernel/mymodule\n"</span>);
+    }
+
+    <span class="org-keyword">return</span> error;
+}
+
+<span class="org-keyword">static</span> <span class="org-type">void</span> <span class="org-function-name">__exit</span> mymodule_exit (<span class="org-type">void</span>)
+{
+    pr_info(<span class="org-string">"mymodule: Exit success\n"</span>);
+    kobject_put(mymodule);
+}
+
+<span class="org-function-name">module_init</span>(mymodule_init);
+<span class="org-function-name">module_exit</span>(mymodule_exit);
 </pre>
 </div>
 
@@ -2713,13 +2798,15 @@ If you want to use ioctls in your own kernel modules, it is best to receive an o
 <span class="org-comment">     </span><span class="org-comment-delimiter">*/</span>
     unregister_chrdev(Major, DEVICE_NAME);
 }
+
+MODULE_LICENSE(<span class="org-string">"GPL"</span>);
 </pre>
 </div>
 
 <div class="org-src-container">
 
 <pre class="src src-c"><span class="org-comment-delimiter">/*</span>
-<span class="org-comment"> *  chardev.h - the header file with the ioctl definitions.</span>
+<span class="org-comment"> *  chardev2.h - the header file with the ioctl definitions.</span>
 <span class="org-comment"> *</span>
 <span class="org-comment"> *  The declarations here have to be in a header file, because</span>
 <span class="org-comment"> *  they need to be known both to the kernel module</span>
@@ -2789,110 +2876,211 @@ If you want to use ioctls in your own kernel modules, it is best to receive an o
 
 <div class="org-src-container">
 
-<pre class="src src-c"><span class="org-comment-delimiter">/*</span>
-<span class="org-comment"> *  ioctl.c - the process to use ioctl's to control the kernel module</span>
-<span class="org-comment"> *</span>
-<span class="org-comment"> *  Until now we could have used cat for input and output.  But now</span>
-<span class="org-comment"> *  we need to do ioctl's, which require writing our own process.</span>
-<span class="org-comment"> </span><span class="org-comment-delimiter">*/</span>
+<pre class="src src-c"><span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/ioctl.h&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/init.h&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/module.h&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/fs.h&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/cdev.h&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/slab.h&gt;</span>
+<span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/uaccess.h&gt;</span>
 
-<span class="org-comment-delimiter">/*</span>
-<span class="org-comment"> * device specifics, such as ioctl numbers and the</span>
-<span class="org-comment"> * major device file.</span>
-<span class="org-comment"> </span><span class="org-comment-delimiter">*/</span>
-<span class="org-preprocessor">#include</span> <span class="org-string">"../chardev.h"</span>
+<span class="org-keyword">struct</span> <span class="org-type">ioctl_arg</span> {
+    <span class="org-type">unsigned</span> <span class="org-type">int</span> <span class="org-variable-name">reg</span>;
+    <span class="org-type">unsigned</span> <span class="org-type">int</span> <span class="org-variable-name">val</span>;
+};
 
-<span class="org-preprocessor">#include</span> <span class="org-string">&lt;stdio.h&gt;</span>
-<span class="org-preprocessor">#include</span> <span class="org-string">&lt;stdlib.h&gt;</span>
-<span class="org-preprocessor">#include</span> <span class="org-string">&lt;fcntl.h&gt;</span>              <span class="org-comment-delimiter">/* </span><span class="org-comment">open </span><span class="org-comment-delimiter">*/</span>
-<span class="org-preprocessor">#include</span> <span class="org-string">&lt;unistd.h&gt;</span>             <span class="org-comment-delimiter">/* </span><span class="org-comment">exit </span><span class="org-comment-delimiter">*/</span>
-<span class="org-preprocessor">#include</span> <span class="org-string">&lt;sys/ioctl.h&gt;</span>          <span class="org-comment-delimiter">/* </span><span class="org-comment">ioctl </span><span class="org-comment-delimiter">*/</span>
+<span class="org-comment-delimiter">/* </span><span class="org-comment">Documentation/ioctl/ioctl-number.txt </span><span class="org-comment-delimiter">*/</span>
+<span class="org-preprocessor">#define</span> <span class="org-variable-name">IOC_MAGIC</span> <span class="org-warning">'</span>\x66<span class="org-warning">'</span>
 
-<span class="org-comment-delimiter">/*</span>
-<span class="org-comment"> * Functions for the ioctl calls</span>
-<span class="org-comment"> </span><span class="org-comment-delimiter">*/</span>
+<span class="org-preprocessor">#define</span> <span class="org-variable-name">IOCTL_VALSET</span>      _IOW(IOC_MAGIC, 0, <span class="org-keyword">struct</span> <span class="org-type">ioctl_arg</span>)
+<span class="org-preprocessor">#define</span> <span class="org-variable-name">IOCTL_VALGET</span>      _IOR(IOC_MAGIC, 1, <span class="org-keyword">struct</span> <span class="org-type">ioctl_arg</span>)
+<span class="org-preprocessor">#define</span> <span class="org-variable-name">IOCTL_VALGET_NUM</span>  _IOR(IOC_MAGIC, 2, <span class="org-type">int</span>)
+<span class="org-preprocessor">#define</span> <span class="org-variable-name">IOCTL_VALSET_NUM</span>  _IOW(IOC_MAGIC, 3, <span class="org-type">int</span>)
 
-<span class="org-type">int</span> <span class="org-function-name">ioctl_set_msg</span>(<span class="org-type">int</span> <span class="org-variable-name">file_desc</span>, <span class="org-type">char</span> *<span class="org-variable-name">message</span>)
-{
-    <span class="org-type">int</span> <span class="org-variable-name">ret_val</span>;
+<span class="org-preprocessor">#define</span> <span class="org-variable-name">IOCTL_VAL_MAXNR</span> 3
+<span class="org-preprocessor">#define</span> <span class="org-variable-name">DRIVER_NAME</span> <span class="org-string">"ioctltest"</span>
 
-    ret_val = ioctl(file_desc, IOCTL_SET_MSG, message);
+<span class="org-keyword">static</span> <span class="org-type">unsigned</span> <span class="org-type">int</span> <span class="org-variable-name">test_ioctl_major</span> = 0;
+<span class="org-keyword">static</span> <span class="org-type">unsigned</span> <span class="org-type">int</span> <span class="org-variable-name">num_of_dev</span> = 1;
+<span class="org-keyword">static</span> <span class="org-keyword">struct</span> <span class="org-type">cdev</span> <span class="org-variable-name">test_ioctl_cdev</span>;
+<span class="org-keyword">static</span> <span class="org-type">int</span> <span class="org-variable-name">ioctl_num</span> = 0;
 
-    <span class="org-keyword">if</span> (ret_val &lt; 0) {
-        printf(<span class="org-string">"ioctl_set_msg failed:%d\n"</span>, ret_val);
-        exit(-1);
-    }
-    <span class="org-keyword">return</span> 0;
-}
+<span class="org-keyword">struct</span> <span class="org-type">test_ioctl_data</span> {
+    <span class="org-type">unsigned</span> <span class="org-type">char</span> <span class="org-variable-name">val</span>;
+    <span class="org-type">rwlock_t</span> <span class="org-variable-name">lock</span>;
+};
 
-<span class="org-type">int</span> <span class="org-function-name">ioctl_get_msg</span>(<span class="org-type">int</span> <span class="org-variable-name">file_desc</span>)
-{
-    <span class="org-type">int</span> <span class="org-variable-name">ret_val</span>;
-    <span class="org-type">char</span> <span class="org-variable-name">message</span>[100];
+<span class="org-keyword">static</span> <span class="org-type">long</span> <span class="org-function-name">test_ioctl_ioctl</span>(<span class="org-keyword">struct</span> <span class="org-type">file</span>* <span class="org-variable-name">filp</span>, <span class="org-type">unsigned</span> <span class="org-type">int</span> <span class="org-variable-name">cmd</span>, <span class="org-type">unsigned</span> <span class="org-type">long</span> <span class="org-variable-name">arg</span>) {
+    <span class="org-keyword">struct</span> <span class="org-type">test_ioctl_data</span>* <span class="org-variable-name">ioctl_data</span> = filp-&gt;private_data;
+    <span class="org-type">int</span> <span class="org-variable-name">retval</span> = 0;
+    <span class="org-type">unsigned</span> <span class="org-type">char</span> <span class="org-variable-name">val</span>;
+    <span class="org-keyword">struct</span> <span class="org-type">ioctl_arg</span> <span class="org-variable-name">data</span>;
+    memset(&amp;data, 0, <span class="org-keyword">sizeof</span>(data));
 
-    <span class="org-comment-delimiter">/*</span>
-<span class="org-comment">     * Warning - this is dangerous because we don't tell</span>
-<span class="org-comment">     * the kernel how far it's allowed to write, so it</span>
-<span class="org-comment">     * might overflow the buffer. In a real production</span>
-<span class="org-comment">     * program, we would have used two ioctls - one to tell</span>
-<span class="org-comment">     * the kernel the buffer length and another to give</span>
-<span class="org-comment">     * it the buffer to fill</span>
-<span class="org-comment">     </span><span class="org-comment-delimiter">*/</span>
-    ret_val = ioctl(file_desc, IOCTL_GET_MSG, message);
+    <span class="org-keyword">switch</span> (cmd) {
+    <span class="org-keyword">case</span> IOCTL_VALSET:
 
-    <span class="org-keyword">if</span> (ret_val &lt; 0) {
-        printf(<span class="org-string">"ioctl_get_msg failed:%d\n"</span>, ret_val);
-        exit(-1);
-    }
-
-    printf(<span class="org-string">"get_msg message:%s\n"</span>, message);
-    <span class="org-keyword">return</span> 0;
-}
-
-<span class="org-type">int</span> <span class="org-function-name">ioctl_get_nth_byte</span>(<span class="org-type">int</span> <span class="org-variable-name">file_desc</span>)
-{
-    <span class="org-type">int</span> <span class="org-variable-name">i</span>;
-    <span class="org-type">char</span> <span class="org-variable-name">c</span>;
-
-    printf(<span class="org-string">"get_nth_byte message:"</span>);
-
-    i = 0;
-    <span class="org-keyword">do</span> {
-        c = ioctl(file_desc, IOCTL_GET_NTH_BYTE, i++);
-
-        <span class="org-keyword">if</span> (c &lt; 0) {
-            printf(<span class="org-string">"ioctl_get_nth_byte failed at the %d'th byte:\n"</span>,
-                   i);
-            exit(-1);
+        <span class="org-comment-delimiter">/*</span>
+<span class="org-comment">        if (!capable(CAP_SYS_ADMIN)) {</span>
+<span class="org-comment">         retval = -EPERM;</span>
+<span class="org-comment">         goto done;</span>
+<span class="org-comment">        }</span>
+<span class="org-comment">        if (!access_ok(VERIFY_READ, (void __user *)arg, _IOC_SIZE(cmd))) {</span>
+<span class="org-comment">         retval = -EFAULT;</span>
+<span class="org-comment">         goto done;</span>
+<span class="org-comment">        }</span>
+<span class="org-comment">        </span><span class="org-comment-delimiter">*/</span>
+        <span class="org-keyword">if</span> (copy_from_user(&amp;data, (<span class="org-type">int</span> <span class="org-variable-name">__user</span>*)arg, <span class="org-keyword">sizeof</span>(data))) {
+            retval = -EFAULT;
+            <span class="org-keyword">goto</span> <span class="org-constant">done</span>;
         }
 
-        putchar(c);
-    } <span class="org-keyword">while</span> (c != 0);
-    putchar(<span class="org-string">'\n'</span>);
-    <span class="org-keyword">return</span> 0;
-}
+        pr_alert(<span class="org-string">"IOCTL set val:%x .\n"</span>, data.val);
+        write_lock(&amp;ioctl_data-&gt;lock);
+        ioctl_data-&gt;val = data.val;
+        write_unlock(&amp;ioctl_data-&gt;lock);
+        <span class="org-keyword">break</span>;
 
-<span class="org-comment-delimiter">/*</span>
-<span class="org-comment"> * Main - Call the ioctl functions</span>
-<span class="org-comment"> </span><span class="org-comment-delimiter">*/</span>
-<span class="org-type">int</span> <span class="org-function-name">main</span>()
-{
-    <span class="org-type">int</span> <span class="org-variable-name">file_desc</span>, <span class="org-variable-name">ret_val</span>;
-    <span class="org-type">char</span> *<span class="org-variable-name">msg</span> = <span class="org-string">"Message passed by ioctl\n"</span>;
+    <span class="org-keyword">case</span> IOCTL_VALGET:
+        <span class="org-comment-delimiter">/*</span>
+<span class="org-comment">        if (!access_ok(VERIFY_WRITE, (void __user *)arg, _IOC_SIZE(cmd))) {</span>
+<span class="org-comment">                                     retval = -EFAULT;</span>
+<span class="org-comment">                                     goto done;</span>
+<span class="org-comment">                             }</span>
+<span class="org-comment">        </span><span class="org-comment-delimiter">*/</span>
+        read_lock(&amp;ioctl_data-&gt;lock);
+        val = ioctl_data-&gt;val;
+        read_unlock(&amp;ioctl_data-&gt;lock);
+        data.val = val;
 
-    file_desc = open(DEVICE_FILE_NAME, 0);
-    <span class="org-keyword">if</span> (file_desc &lt; 0) {
-        printf(<span class="org-string">"Can't open device file: %s\n"</span>, DEVICE_FILE_NAME);
-        exit(-1);
+        <span class="org-keyword">if</span> (copy_to_user((<span class="org-type">int</span> <span class="org-variable-name">__user</span>*)arg, &amp;data, <span class="org-keyword">sizeof</span>(data))) {
+            retval = -EFAULT;
+            <span class="org-keyword">goto</span> <span class="org-constant">done</span>;
+        }
+
+        <span class="org-keyword">break</span>;
+
+    <span class="org-keyword">case</span> IOCTL_VALGET_NUM:
+        retval = __put_user(ioctl_num, (<span class="org-type">int</span> <span class="org-variable-name">__user</span>*)arg);
+        <span class="org-keyword">break</span>;
+
+    <span class="org-keyword">case</span> IOCTL_VALSET_NUM:
+        <span class="org-comment-delimiter">/*</span>
+<span class="org-comment">        if (!capable(CAP_SYS_ADMIN))</span>
+<span class="org-comment">         return -EPERM;</span>
+<span class="org-comment">        </span><span class="org-comment-delimiter">*/</span>
+        ioctl_num = arg;
+        <span class="org-keyword">break</span>;
+
+    <span class="org-keyword">default</span>:
+        retval = -ENOTTY;
     }
 
-    ioctl_get_nth_byte(file_desc);
-    ioctl_get_msg(file_desc);
-    ioctl_set_msg(file_desc, msg);
+<span class="org-constant">done</span>:
+    <span class="org-keyword">return</span> retval;
+}
 
-    close(file_desc);
+<span class="org-type">ssize_t</span> <span class="org-function-name">test_ioctl_read</span>(<span class="org-keyword">struct</span> <span class="org-type">file</span>* <span class="org-variable-name">filp</span>, <span class="org-type">char</span> <span class="org-variable-name">__user</span>* buf, <span class="org-type">size_t</span> <span class="org-variable-name">count</span>, <span class="org-type">loff_t</span>* <span class="org-variable-name">f_pos</span>) {
+    <span class="org-keyword">struct</span> <span class="org-type">test_ioctl_data</span>* <span class="org-variable-name">ioctl_data</span> = filp-&gt;private_data;
+    <span class="org-type">unsigned</span> <span class="org-type">char</span> <span class="org-variable-name">val</span>;
+    <span class="org-type">int</span> <span class="org-variable-name">retval</span>;
+    <span class="org-type">int</span> <span class="org-variable-name">i</span> = 0;
+    read_lock(&amp;ioctl_data-&gt;lock);
+    val = ioctl_data-&gt;val;
+    read_unlock(&amp;ioctl_data-&gt;lock);
+
+    <span class="org-keyword">for</span> (; i &lt; count ; i++) {
+        <span class="org-keyword">if</span> (copy_to_user(&amp;buf[i], &amp;val, 1)) {
+            retval = -EFAULT;
+            <span class="org-keyword">goto</span> <span class="org-constant">out</span>;
+        }
+    }
+
+    retval = count;
+<span class="org-constant">out</span>:
+    <span class="org-keyword">return</span> retval;
+}
+
+<span class="org-keyword">static</span> <span class="org-type">int</span> <span class="org-function-name">test_ioctl_close</span>(<span class="org-keyword">struct</span> <span class="org-type">inode</span>* <span class="org-variable-name">inode</span>, <span class="org-keyword">struct</span> <span class="org-type">file</span>* <span class="org-variable-name">filp</span>) {
+    pr_alert(<span class="org-string">"%s call.\n"</span>, __func__);
+
+    <span class="org-keyword">if</span> (filp-&gt;private_data) {
+        kfree(filp-&gt;private_data);
+        filp-&gt;private_data = <span class="org-constant">NULL</span>;
+    }
+
     <span class="org-keyword">return</span> 0;
 }
+
+<span class="org-keyword">static</span> <span class="org-type">int</span> <span class="org-function-name">test_ioctl_open</span>(<span class="org-keyword">struct</span> <span class="org-type">inode</span>* <span class="org-variable-name">inode</span>, <span class="org-keyword">struct</span> <span class="org-type">file</span>* <span class="org-variable-name">filp</span>) {
+    <span class="org-keyword">struct</span> <span class="org-type">test_ioctl_data</span>* <span class="org-variable-name">ioctl_data</span>;
+    pr_alert(<span class="org-string">"%s call.\n"</span>, __func__);
+    ioctl_data = kmalloc(<span class="org-keyword">sizeof</span>(<span class="org-keyword">struct</span> <span class="org-type">test_ioctl_data</span>), GFP_KERNEL);
+
+    <span class="org-keyword">if</span> (ioctl_data == <span class="org-constant">NULL</span>) {
+        <span class="org-keyword">return</span> -ENOMEM;
+    }
+
+    rwlock_init(&amp;ioctl_data-&gt;lock);
+    ioctl_data-&gt;val = 0xFF;
+    filp-&gt;private_data = ioctl_data;
+    <span class="org-keyword">return</span> 0;
+}
+
+<span class="org-keyword">struct</span> <span class="org-type">file_operations</span> <span class="org-variable-name">fops</span> = {
+    .owner = THIS_MODULE,
+    .open = test_ioctl_open,
+    .release = test_ioctl_close,
+    .read = test_ioctl_read,
+    .unlocked_ioctl = test_ioctl_ioctl,
+};
+
+<span class="org-keyword">static</span> <span class="org-type">int</span> <span class="org-function-name">ioctl_init</span>(<span class="org-type">void</span>) {
+    <span class="org-type">dev_t</span> <span class="org-variable-name">dev</span> = MKDEV(test_ioctl_major, 0);
+    <span class="org-type">int</span> <span class="org-variable-name">alloc_ret</span> = 0;
+    <span class="org-type">int</span> <span class="org-variable-name">cdev_ret</span> = 0;
+    alloc_ret = alloc_chrdev_region(&amp;dev, 0, num_of_dev, DRIVER_NAME);
+
+    <span class="org-keyword">if</span> (alloc_ret) {
+        <span class="org-keyword">goto</span> <span class="org-constant">error</span>;
+    }
+
+    test_ioctl_major = MAJOR(dev);
+    cdev_init(&amp;test_ioctl_cdev, &amp;fops);
+    cdev_ret = cdev_add(&amp;test_ioctl_cdev, dev, num_of_dev);
+
+    <span class="org-keyword">if</span> (cdev_ret) {
+        <span class="org-keyword">goto</span> <span class="org-constant">error</span>;
+    }
+
+    pr_alert(<span class="org-string">"%s driver(major: %d) installed.\n"</span>, DRIVER_NAME, test_ioctl_major);
+    <span class="org-keyword">return</span> 0;
+<span class="org-constant">error</span>:
+
+    <span class="org-keyword">if</span> (cdev_ret == 0) {
+        cdev_del(&amp;test_ioctl_cdev);
+    }
+
+    <span class="org-keyword">if</span> (alloc_ret == 0) {
+        unregister_chrdev_region(dev, num_of_dev);
+    }
+
+    <span class="org-keyword">return</span> -1;
+}
+
+<span class="org-keyword">static</span> <span class="org-type">void</span> <span class="org-function-name">ioctl_exit</span>(<span class="org-type">void</span>) {
+    <span class="org-type">dev_t</span> <span class="org-variable-name">dev</span> = MKDEV(test_ioctl_major, 0);
+    cdev_del(&amp;test_ioctl_cdev);
+    unregister_chrdev_region(dev, num_of_dev);
+    pr_alert(<span class="org-string">"%s driver removed.\n"</span>, DRIVER_NAME);
+}
+
+<span class="org-function-name">module_init</span>(ioctl_init);
+<span class="org-function-name">module_exit</span>(ioctl_exit);
+
+MODULE_LICENSE(<span class="org-string">"GPL"</span>);
+MODULE_AUTHOR(<span class="org-string">"Wang Chen Shu"</span>);
+MODULE_DESCRIPTION(<span class="org-string">"This is test_ioctl module"</span>);
 </pre>
 </div>
 </div>
@@ -3451,6 +3639,8 @@ hostname:~/lkmpg-examples/09-BlockingProcesses#
     remove_proc_entry(PROC_ENTRY_FILENAME, <span class="org-constant">NULL</span>);
     pr_debug(<span class="org-string">"/proc/%s removed\n"</span>, PROC_ENTRY_FILENAME);
 }
+
+MODULE_LICENSE(<span class="org-string">"GPL"</span>);
 </pre>
 </div>
 
@@ -3885,7 +4075,7 @@ If you're doing simple arithmetic: adding, subtracting or bitwise operations the
     atomic_inc(&amp;debbie);
 
     pr_info(<span class="org-string">"chris: %d, debbie: %d\n"</span>,
-           atomic_read(&amp;chris), atomic_read(&amp;debbie));
+            atomic_read(&amp;chris), atomic_read(&amp;debbie));
 }
 
 <span class="org-keyword">static</span> <span class="org-type">void</span> <span class="org-function-name">atomic_bitwise</span>(<span class="org-type">void</span>)
@@ -4146,8 +4336,8 @@ MODULE_LICENSE(<span class="org-string">"GPL"</span>);
         <span class="org-keyword">if</span> (<span class="org-negation-char">!</span>vc_cons[i].d)
             <span class="org-keyword">break</span>;
         pr_info(<span class="org-string">"poet_atkm: console[%i/%i] #%i, tty %lx\n"</span>, i,
-               MAX_NR_CONSOLES, vc_cons[i].d-&gt;vc_num,
-               (<span class="org-type">unsigned</span> <span class="org-type">long</span>)vc_cons[i].d-&gt;port.tty);
+                MAX_NR_CONSOLES, vc_cons[i].d-&gt;vc_num,
+                (<span class="org-type">unsigned</span> <span class="org-type">long</span>)vc_cons[i].d-&gt;port.tty);
     }
     pr_info(<span class="org-string">"kbleds: finished scanning consoles\n"</span>);
 
@@ -4420,7 +4610,7 @@ Here's an example where buttons are connected to GPIO numbers 17 and 18 and an L
     }
 
     pr_info(<span class="org-string">"Current button1 value: %d\n"</span>,
-           gpio_get_value(buttons[0].gpio));
+            gpio_get_value(buttons[0].gpio));
 
     ret = gpio_to_irq(buttons[0].gpio);
 
@@ -4432,7 +4622,7 @@ Here's an example where buttons are connected to GPIO numbers 17 and 18 and an L
     button_irqs[0] = ret;
 
     pr_info(<span class="org-string">"Successfully requested BUTTON1 IRQ # %d\n"</span>,
-           button_irqs[0]);
+            button_irqs[0]);
 
     ret = request_irq(button_irqs[0], button_isr,
                       IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
@@ -4454,7 +4644,7 @@ Here's an example where buttons are connected to GPIO numbers 17 and 18 and an L
     button_irqs[1] = ret;
 
     pr_info(<span class="org-string">"Successfully requested BUTTON2 IRQ # %d\n"</span>,
-           button_irqs[1]);
+            button_irqs[1]);
 
     ret = request_irq(button_irqs[1], button_isr,
                       IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
@@ -4710,7 +4900,7 @@ Calculating and checking the hashes of things is a common operation. Here is a d
 <pre class="src src-C"><span class="org-preprocessor">#include</span> <span class="org-string">&lt;linux/module.h&gt;</span>
 <span class="org-preprocessor">#include</span> <span class="org-string">&lt;crypto/internal/hash.h&gt;</span>
 
-<span class="org-preprocessor">#define</span> <span class="org-variable-name">SHA256_LENGTH</span> (256/8)
+<span class="org-preprocessor">#define</span> <span class="org-variable-name">SHA256_LENGTH</span> 32
 
 <span class="org-keyword">static</span> <span class="org-type">void</span> <span class="org-function-name">show_hash_result</span>(<span class="org-type">char</span> * <span class="org-variable-name">plaintext</span>, <span class="org-type">char</span> * <span class="org-variable-name">hash_sha256</span>)
 {
@@ -4875,7 +5065,7 @@ Here is an example of symmetrically encrypting a string using the AES algorithm 
 <span class="org-keyword">static</span> <span class="org-type">void</span> <span class="org-function-name">test_skcipher_callback</span>(<span class="org-keyword">struct</span> <span class="org-type">crypto_async_request</span> *<span class="org-variable-name">req</span>, <span class="org-type">int</span> <span class="org-variable-name">error</span>)
 {
     <span class="org-keyword">struct</span> <span class="org-type">tcrypt_result</span> *<span class="org-variable-name">result</span> = req-&gt;data;
-    <span class="org-type">int</span> <span class="org-variable-name">ret</span>;
+    <span class="org-comment-delimiter">/* </span><span class="org-comment">int ret; </span><span class="org-comment-delimiter">*/</span>
 
     <span class="org-keyword">if</span> (error == -EINPROGRESS)
         <span class="org-keyword">return</span>;
@@ -4883,6 +5073,21 @@ Here is an example of symmetrically encrypting a string using the AES algorithm 
     result-&gt;err = error;
     complete(&amp;result-&gt;completion);
     pr_info(<span class="org-string">"Encryption finished successfully\n"</span>);
+
+    <span class="org-comment-delimiter">/* </span><span class="org-comment">decrypt data </span><span class="org-comment-delimiter">*/</span>
+    <span class="org-comment-delimiter">/*</span>
+<span class="org-comment">    memset((void*)sk.scratchpad, '-', CIPHER_BLOCK_SIZE);</span>
+<span class="org-comment">    ret = crypto_skcipher_decrypt(sk.req);</span>
+<span class="org-comment">    ret = test_skcipher_result(&amp;sk, ret);</span>
+<span class="org-comment">    if (ret)</span>
+<span class="org-comment">        return;</span>
+
+<span class="org-comment">    sg_copy_from_buffer(&amp;sk.sg, 1, sk.scratchpad, CIPHER_BLOCK_SIZE);</span>
+<span class="org-comment">    sk.scratchpad[CIPHER_BLOCK_SIZE-1] = 0;</span>
+
+<span class="org-comment">    pr_info("Decryption request successful\n");</span>
+<span class="org-comment">    pr_info("Decrypted: %s\n", sk.scratchpad);</span>
+<span class="org-comment">    </span><span class="org-comment-delimiter">*/</span>
 }
 
 <span class="org-keyword">static</span> <span class="org-type">int</span> <span class="org-function-name">test_skcipher_encrypt</span>(<span class="org-type">char</span> * <span class="org-variable-name">plaintext</span>, <span class="org-type">char</span> * <span class="org-variable-name">password</span>,

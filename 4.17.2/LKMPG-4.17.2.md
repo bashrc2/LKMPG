@@ -335,6 +335,7 @@ subdirectory. To test that they compile:
 
 ::: {.org-src-container}
 ``` {.src .src-sh}
+./create_examples.sh
 cd examples
 make
 ```
@@ -397,6 +398,8 @@ void cleanup_module(void)
 {
     pr_info("Goodbye world 1.\n");
 }
+
+MODULE_LICENSE("GPL");
 ```
 :::
 
@@ -580,6 +583,8 @@ static void __exit hello_2_exit(void)
 
 module_init(hello_2_init);
 module_exit(hello_2_exit);
+
+MODULE_LICENSE("GPL");
 ```
 :::
 
@@ -659,6 +664,8 @@ static void __exit hello_3_exit(void)
 
 module_init(hello_3_init);
 module_exit(hello_3_exit);
+
+MODULE_LICENSE("GPL");
 ```
 :::
 :::
@@ -705,13 +712,13 @@ MODULE_SUPPORTED_DEVICE("testdevice");
 
 static int __init init_hello_4(void)
 {
-        pr_info("Hello, world 4\n");
-        return 0;
+    pr_info("Hello, world 4\n");
+    return 0;
 }
 
 static void __exit cleanup_hello_4(void)
 {
-        pr_info("Goodbye, world 4\n");
+    pr_info("Goodbye, world 4\n");
 }
 
 module_init(init_hello_4);
@@ -834,10 +841,10 @@ static int __init hello_5_init(void)
     pr_info("myint is an integer: %d\n", myint);
     pr_info("mylong is a long integer: %ld\n", mylong);
     pr_info("mystring is a string: %s\n", mystring);
+
     for (i = 0; i < (sizeof myintArray / sizeof (int)); i++)
-    {
         pr_info("myintArray[%d] = %d\n", i, myintArray[i]);
-    }
+
     pr_info("got %d arguments for myintArray.\n", arr_argc);
     return 0;
 }
@@ -909,6 +916,8 @@ int init_module(void)
     pr_info("Hello, world - this is the kernel speaking\n");
     return 0;
 }
+
+MODULE_LICENSE("GPL");
 ```
 :::
 
@@ -927,6 +936,8 @@ void cleanup_module()
 {
     pr_info("Short is the life of a kernel module\n");
 }
+
+MODULE_LICENSE("GPL");
 ```
 :::
 
@@ -1826,6 +1837,8 @@ static ssize_t device_write(struct file *filp,
     pr_alert("Sorry, this operation isn't supported.\n");
     return -EINVAL;
 }
+
+MODULE_LICENSE("GPL");
 ```
 :::
 :::
@@ -1995,6 +2008,8 @@ void cleanup_module()
     proc_remove(Our_Proc_File);
     pr_info("/proc/%s removed\n", procfs_name);
 }
+
+MODULE_LICENSE("GPL");
 ```
 :::
 :::
@@ -2041,7 +2056,7 @@ function because data is already in kernel space.
 #include <linux/module.h>       /* Specifically, a module */
 #include <linux/kernel.h>       /* We're doing kernel work */
 #include <linux/proc_fs.h>      /* Necessary because we use the proc fs */
-#include <linux/uaccess.h>        /* for copy_from_user */
+#include <linux/uaccess.h>      /* for copy_from_user */
 
 #define PROCFS_MAX_SIZE         1024
 #define PROCFS_NAME             "buffer1k"
@@ -2131,6 +2146,8 @@ void cleanup_module()
     proc_remove(Our_Proc_File);
     pr_info("/proc/%s removed\n", PROCFS_NAME);
 }
+
+MODULE_LICENSE("GPL");
 ```
 :::
 :::
@@ -2262,6 +2279,8 @@ void cleanup_module()
     remove_proc_entry(PROCFS_ENTRY_FILENAME, NULL);
     pr_debug("/proc/%s removed\n", PROCFS_ENTRY_FILENAME);
 }
+
+MODULE_LICENSE("GPL");
 ```
 :::
 
@@ -2477,8 +2496,74 @@ An example of a hello world module which includes the creation of a
 variable accessible via sysfs is given below.
 
 ::: {.org-src-container}
-``` {.src .src- hello-sysfs.c"lang"hello-sysfs.c"switches"hello-sysfs.c"flags"=""}
-"hello-sysfs.c"body
+``` {.src .src-c}
+/*
+ * hello-sysfs.c sysfs example
+ */
+
+#include <linux/module.h>
+#include <linux/kobject.h>
+#include <linux/sysfs.h>
+#include <linux/init.h>
+#include <linux/fs.h>
+#include <linux/string.h>
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Bob Mottram");
+
+static struct kobject *mymodule;
+
+/* the variable you want to be able to change */
+static int myvariable = 0;
+
+static ssize_t myvariable_show(struct kobject *kobj,
+                               struct kobj_attribute *attr,
+                               char *buf)
+{
+    return sprintf(buf, "%d\n", myvariable);
+}
+
+static ssize_t myvariable_store(struct kobject *kobj,
+                                struct kobj_attribute *attr,
+                                char *buf, size_t count)
+{
+    sscanf(buf, "%du", &myvariable);
+    return count;
+}
+
+
+static struct kobj_attribute myvariable_attribute =
+    __ATTR(myvariable, 0660, myvariable_show,
+           (void*)myvariable_store);
+
+static int __init mymodule_init (void)
+{
+    int error = 0;
+
+    pr_info("mymodule: initialised\n");
+
+    mymodule =
+        kobject_create_and_add("mymodule", kernel_kobj);
+    if (!mymodule)
+        return -ENOMEM;
+
+    error = sysfs_create_file(mymodule, &myvariable_attribute.attr);
+    if (error) {
+        pr_info("failed to create the myvariable file " \
+                "in /sys/kernel/mymodule\n");
+    }
+
+    return error;
+}
+
+static void __exit mymodule_exit (void)
+{
+    pr_info("mymodule: Exit success\n");
+    kobject_put(mymodule);
+}
+
+module_init(mymodule_init);
+module_exit(mymodule_exit);
 ```
 :::
 
@@ -2867,13 +2952,15 @@ void cleanup_module()
      */
     unregister_chrdev(Major, DEVICE_NAME);
 }
+
+MODULE_LICENSE("GPL");
 ```
 :::
 
 ::: {.org-src-container}
 ``` {.src .src-c}
 /*
- *  chardev.h - the header file with the ioctl definitions.
+ *  chardev2.h - the header file with the ioctl definitions.
  *
  *  The declarations here have to be in a header file, because
  *  they need to be known both to the kernel module
@@ -2943,110 +3030,211 @@ void cleanup_module()
 
 ::: {.org-src-container}
 ``` {.src .src-c}
-/*
- *  ioctl.c - the process to use ioctl's to control the kernel module
- *
- *  Until now we could have used cat for input and output.  But now
- *  we need to do ioctl's, which require writing our own process.
- */
+#include <linux/ioctl.h>
+#include <linux/init.h>
+#include <linux/module.h>
+#include <linux/fs.h>
+#include <linux/cdev.h>
+#include <linux/slab.h>
+#include <linux/uaccess.h>
 
-/*
- * device specifics, such as ioctl numbers and the
- * major device file.
- */
-#include "../chardev.h"
+struct ioctl_arg {
+    unsigned int reg;
+    unsigned int val;
+};
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>              /* open */
-#include <unistd.h>             /* exit */
-#include <sys/ioctl.h>          /* ioctl */
+/* Documentation/ioctl/ioctl-number.txt */
+#define IOC_MAGIC '\x66'
 
-/*
- * Functions for the ioctl calls
- */
+#define IOCTL_VALSET      _IOW(IOC_MAGIC, 0, struct ioctl_arg)
+#define IOCTL_VALGET      _IOR(IOC_MAGIC, 1, struct ioctl_arg)
+#define IOCTL_VALGET_NUM  _IOR(IOC_MAGIC, 2, int)
+#define IOCTL_VALSET_NUM  _IOW(IOC_MAGIC, 3, int)
 
-int ioctl_set_msg(int file_desc, char *message)
-{
-    int ret_val;
+#define IOCTL_VAL_MAXNR 3
+#define DRIVER_NAME "ioctltest"
 
-    ret_val = ioctl(file_desc, IOCTL_SET_MSG, message);
+static unsigned int test_ioctl_major = 0;
+static unsigned int num_of_dev = 1;
+static struct cdev test_ioctl_cdev;
+static int ioctl_num = 0;
 
-    if (ret_val < 0) {
-        printf("ioctl_set_msg failed:%d\n", ret_val);
-        exit(-1);
-    }
-    return 0;
-}
+struct test_ioctl_data {
+    unsigned char val;
+    rwlock_t lock;
+};
 
-int ioctl_get_msg(int file_desc)
-{
-    int ret_val;
-    char message[100];
+static long test_ioctl_ioctl(struct file* filp, unsigned int cmd, unsigned long arg) {
+    struct test_ioctl_data* ioctl_data = filp->private_data;
+    int retval = 0;
+    unsigned char val;
+    struct ioctl_arg data;
+    memset(&data, 0, sizeof(data));
 
-    /*
-     * Warning - this is dangerous because we don't tell
-     * the kernel how far it's allowed to write, so it
-     * might overflow the buffer. In a real production
-     * program, we would have used two ioctls - one to tell
-     * the kernel the buffer length and another to give
-     * it the buffer to fill
-     */
-    ret_val = ioctl(file_desc, IOCTL_GET_MSG, message);
+    switch (cmd) {
+    case IOCTL_VALSET:
 
-    if (ret_val < 0) {
-        printf("ioctl_get_msg failed:%d\n", ret_val);
-        exit(-1);
-    }
-
-    printf("get_msg message:%s\n", message);
-    return 0;
-}
-
-int ioctl_get_nth_byte(int file_desc)
-{
-    int i;
-    char c;
-
-    printf("get_nth_byte message:");
-
-    i = 0;
-    do {
-        c = ioctl(file_desc, IOCTL_GET_NTH_BYTE, i++);
-
-        if (c < 0) {
-            printf("ioctl_get_nth_byte failed at the %d'th byte:\n",
-                   i);
-            exit(-1);
+        /*
+        if (!capable(CAP_SYS_ADMIN)) {
+         retval = -EPERM;
+         goto done;
+        }
+        if (!access_ok(VERIFY_READ, (void __user *)arg, _IOC_SIZE(cmd))) {
+         retval = -EFAULT;
+         goto done;
+        }
+        */
+        if (copy_from_user(&data, (int __user*)arg, sizeof(data))) {
+            retval = -EFAULT;
+            goto done;
         }
 
-        putchar(c);
-    } while (c != 0);
-    putchar('\n');
-    return 0;
-}
+        pr_alert("IOCTL set val:%x .\n", data.val);
+        write_lock(&ioctl_data->lock);
+        ioctl_data->val = data.val;
+        write_unlock(&ioctl_data->lock);
+        break;
 
-/*
- * Main - Call the ioctl functions
- */
-int main()
-{
-    int file_desc, ret_val;
-    char *msg = "Message passed by ioctl\n";
+    case IOCTL_VALGET:
+        /*
+        if (!access_ok(VERIFY_WRITE, (void __user *)arg, _IOC_SIZE(cmd))) {
+                                     retval = -EFAULT;
+                                     goto done;
+                             }
+        */
+        read_lock(&ioctl_data->lock);
+        val = ioctl_data->val;
+        read_unlock(&ioctl_data->lock);
+        data.val = val;
 
-    file_desc = open(DEVICE_FILE_NAME, 0);
-    if (file_desc < 0) {
-        printf("Can't open device file: %s\n", DEVICE_FILE_NAME);
-        exit(-1);
+        if (copy_to_user((int __user*)arg, &data, sizeof(data))) {
+            retval = -EFAULT;
+            goto done;
+        }
+
+        break;
+
+    case IOCTL_VALGET_NUM:
+        retval = __put_user(ioctl_num, (int __user*)arg);
+        break;
+
+    case IOCTL_VALSET_NUM:
+        /*
+        if (!capable(CAP_SYS_ADMIN))
+         return -EPERM;
+        */
+        ioctl_num = arg;
+        break;
+
+    default:
+        retval = -ENOTTY;
     }
 
-    ioctl_get_nth_byte(file_desc);
-    ioctl_get_msg(file_desc);
-    ioctl_set_msg(file_desc, msg);
+done:
+    return retval;
+}
 
-    close(file_desc);
+ssize_t test_ioctl_read(struct file* filp, char __user* buf, size_t count, loff_t* f_pos) {
+    struct test_ioctl_data* ioctl_data = filp->private_data;
+    unsigned char val;
+    int retval;
+    int i = 0;
+    read_lock(&ioctl_data->lock);
+    val = ioctl_data->val;
+    read_unlock(&ioctl_data->lock);
+
+    for (; i < count ; i++) {
+        if (copy_to_user(&buf[i], &val, 1)) {
+            retval = -EFAULT;
+            goto out;
+        }
+    }
+
+    retval = count;
+out:
+    return retval;
+}
+
+static int test_ioctl_close(struct inode* inode, struct file* filp) {
+    pr_alert("%s call.\n", __func__);
+
+    if (filp->private_data) {
+        kfree(filp->private_data);
+        filp->private_data = NULL;
+    }
+
     return 0;
 }
+
+static int test_ioctl_open(struct inode* inode, struct file* filp) {
+    struct test_ioctl_data* ioctl_data;
+    pr_alert("%s call.\n", __func__);
+    ioctl_data = kmalloc(sizeof(struct test_ioctl_data), GFP_KERNEL);
+
+    if (ioctl_data == NULL) {
+        return -ENOMEM;
+    }
+
+    rwlock_init(&ioctl_data->lock);
+    ioctl_data->val = 0xFF;
+    filp->private_data = ioctl_data;
+    return 0;
+}
+
+struct file_operations fops = {
+    .owner = THIS_MODULE,
+    .open = test_ioctl_open,
+    .release = test_ioctl_close,
+    .read = test_ioctl_read,
+    .unlocked_ioctl = test_ioctl_ioctl,
+};
+
+static int ioctl_init(void) {
+    dev_t dev = MKDEV(test_ioctl_major, 0);
+    int alloc_ret = 0;
+    int cdev_ret = 0;
+    alloc_ret = alloc_chrdev_region(&dev, 0, num_of_dev, DRIVER_NAME);
+
+    if (alloc_ret) {
+        goto error;
+    }
+
+    test_ioctl_major = MAJOR(dev);
+    cdev_init(&test_ioctl_cdev, &fops);
+    cdev_ret = cdev_add(&test_ioctl_cdev, dev, num_of_dev);
+
+    if (cdev_ret) {
+        goto error;
+    }
+
+    pr_alert("%s driver(major: %d) installed.\n", DRIVER_NAME, test_ioctl_major);
+    return 0;
+error:
+
+    if (cdev_ret == 0) {
+        cdev_del(&test_ioctl_cdev);
+    }
+
+    if (alloc_ret == 0) {
+        unregister_chrdev_region(dev, num_of_dev);
+    }
+
+    return -1;
+}
+
+static void ioctl_exit(void) {
+    dev_t dev = MKDEV(test_ioctl_major, 0);
+    cdev_del(&test_ioctl_cdev);
+    unregister_chrdev_region(dev, num_of_dev);
+    pr_alert("%s driver removed.\n", DRIVER_NAME);
+}
+
+module_init(ioctl_init);
+module_exit(ioctl_exit);
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Wang Chen Shu");
+MODULE_DESCRIPTION("This is test_ioctl module");
 ```
 :::
 :::
@@ -3709,6 +3897,8 @@ void cleanup_module()
     remove_proc_entry(PROC_ENTRY_FILENAME, NULL);
     pr_debug("/proc/%s removed\n", PROC_ENTRY_FILENAME);
 }
+
+MODULE_LICENSE("GPL");
 ```
 :::
 
@@ -4168,7 +4358,7 @@ static void atomic_add_subtract(void)
     atomic_inc(&debbie);
 
     pr_info("chris: %d, debbie: %d\n",
-           atomic_read(&chris), atomic_read(&debbie));
+            atomic_read(&chris), atomic_read(&debbie));
 }
 
 static void atomic_bitwise(void)
@@ -4442,8 +4632,8 @@ static int __init kbleds_init(void)
         if (!vc_cons[i].d)
             break;
         pr_info("poet_atkm: console[%i/%i] #%i, tty %lx\n", i,
-               MAX_NR_CONSOLES, vc_cons[i].d->vc_num,
-               (unsigned long)vc_cons[i].d->port.tty);
+                MAX_NR_CONSOLES, vc_cons[i].d->vc_num,
+                (unsigned long)vc_cons[i].d->port.tty);
     }
     pr_info("kbleds: finished scanning consoles\n");
 
@@ -4776,7 +4966,7 @@ int init_module()
     }
 
     pr_info("Current button1 value: %d\n",
-           gpio_get_value(buttons[0].gpio));
+            gpio_get_value(buttons[0].gpio));
 
     ret = gpio_to_irq(buttons[0].gpio);
 
@@ -4788,7 +4978,7 @@ int init_module()
     button_irqs[0] = ret;
 
     pr_info("Successfully requested BUTTON1 IRQ # %d\n",
-           button_irqs[0]);
+            button_irqs[0]);
 
     ret = request_irq(button_irqs[0], button_isr,
                       IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
@@ -4810,7 +5000,7 @@ int init_module()
     button_irqs[1] = ret;
 
     pr_info("Successfully requested BUTTON2 IRQ # %d\n",
-           button_irqs[1]);
+            button_irqs[1]);
 
     ret = request_irq(button_irqs[1], button_isr,
                       IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
@@ -5075,7 +5265,7 @@ kernel module.
 #include <linux/module.h>
 #include <crypto/internal/hash.h>
 
-#define SHA256_LENGTH (256/8)
+#define SHA256_LENGTH 32
 
 static void show_hash_result(char * plaintext, char * hash_sha256)
 {
@@ -5235,7 +5425,7 @@ static int test_skcipher_result(struct skcipher_def * sk, int rc)
 static void test_skcipher_callback(struct crypto_async_request *req, int error)
 {
     struct tcrypt_result *result = req->data;
-    int ret;
+    /* int ret; */
 
     if (error == -EINPROGRESS)
         return;
@@ -5243,6 +5433,21 @@ static void test_skcipher_callback(struct crypto_async_request *req, int error)
     result->err = error;
     complete(&result->completion);
     pr_info("Encryption finished successfully\n");
+
+    /* decrypt data */
+    /*
+    memset((void*)sk.scratchpad, '-', CIPHER_BLOCK_SIZE);
+    ret = crypto_skcipher_decrypt(sk.req);
+    ret = test_skcipher_result(&sk, ret);
+    if (ret)
+        return;
+
+    sg_copy_from_buffer(&sk.sg, 1, sk.scratchpad, CIPHER_BLOCK_SIZE);
+    sk.scratchpad[CIPHER_BLOCK_SIZE-1] = 0;
+
+    pr_info("Decryption request successful\n");
+    pr_info("Decrypted: %s\n", sk.scratchpad);
+    */
 }
 
 static int test_skcipher_encrypt(char * plaintext, char * password,
