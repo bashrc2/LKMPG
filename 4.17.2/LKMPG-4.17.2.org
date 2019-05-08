@@ -109,6 +109,7 @@ sudo apt-get install kmod linux-headers-4.17.2-1-amd64
 All the examples from this document are available within the /examples/ subdirectory. To test that they compile:
 
 #+begin_src sh
+./create_examples.sh
 cd examples
 make
 #+end_src
