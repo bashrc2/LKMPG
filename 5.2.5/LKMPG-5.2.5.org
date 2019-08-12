@@ -103,7 +103,7 @@ apt-cache search linux-headers-$(uname -r)
 This will tell you what kernel header files are available. Then for example:
 
 #+BEGIN_SRC sh
-sudo apt-get install kmod linux-headers-4.17.2-1-amd64
+sudo apt-get install kmod linux-headers-5.2.5-1-amd64
 #+END_SRC
 * Examples
 All the examples from this document are available within the /examples/ subdirectory. To test that they compile:
@@ -571,7 +571,7 @@ In other words, your kernel refuses to accept your module because version string
 license:        GPL
 author:         Bob Mottram <bob@freedombone.net>
 description:    A sample driver
-vermagic:       4.17.2-1.358 amd64 REGPARM 4KSTACKS gcc-4.9.2
+vermagic:       5.2.5-1.358 amd64 REGPARM 4KSTACKS gcc-4.9.2
 depends:
 #+END_SRC
 
@@ -588,7 +588,7 @@ SUBLEVEL = 4
 EXTRAVERSION = -1.358custom
 #+END_SRC
 
-In this case, you need to restore the value of symbol *EXTRAVERSION* to -1.358. We suggest to keep a backup copy of the makefile used to compile your kernel available in */lib/modules/4.17.2-1.358/build*. A simple *cp /lib/modules/`uname-r`/build/Makefile /usr/src/linux-`uname -r`* should suffice. Additionally, if you already started a kernel build with the previous (wrong) Makefile, you should also rerun make, or directly modify symbol UTS_RELEASE in file */usr/src/linux-4.17.2/include/linux/version.h* according to contents of file */lib/modules/4.17.2/build/include/linux/version.h*, or overwrite the latter with the first.
+In this case, you need to restore the value of symbol *EXTRAVERSION* to -1.358. We suggest to keep a backup copy of the makefile used to compile your kernel available in */lib/modules/5.2.5-1.358/build*. A simple *cp /lib/modules/`uname-r`/build/Makefile /usr/src/linux-`uname -r`* should suffice. Additionally, if you already started a kernel build with the previous (wrong) Makefile, you should also rerun make, or directly modify symbol UTS_RELEASE in file */usr/src/linux-5.2.5/include/linux/version.h* according to contents of file */lib/modules/5.2.5/build/include/linux/version.h*, or overwrite the latter with the first.
 
 Now, please run make to update configuration and version headers and objects:
 
