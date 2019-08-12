@@ -1307,30 +1307,8 @@ non NULL value, the function next() is called. This function is an iterator, the
 
 BE CARREFUL: when a sequence is finished, another one starts. That means that at the end of function stop(), the function start() is called again. This loop finishes when the function start() returns NULL. You can see a scheme of this in the figure "How seq_file works".
 
-#+BEGIN_SRC dot :file img/seq_file.png
-digraph seq_file {
-    rankdir="LR";
-    yesnull [label="Yes" penwidth=0];
-    returnnull1 [label="return is NULL?" shape=diamond];
-    returnnull2 [label="return is NULL?" shape=diamond];
-    start [label="start() treatment" shape=box];
-    next [label="next() treatment" shape=box];
-    stop [label="stop() treatment" shape=box];
-
-    { rank=source; start; returnnull1; }
-    { rank=source; returnnull1; next; }
-    { rank=source; next; returnnull2; }
-    { rank=source; returnnull2; stop; }
-
-    start -> returnnull1;
-    returnnull1 -> next [label="No"];
-    returnnull1 -> yesnull;
-    next -> returnnull2;
-    returnnull2 -> next [label="No"];
-    returnnull2 -> stop [label="Yes"];
-    stop -> start;
-}
-#+END_SRC
+#+attr_html: :width 50% :height 10% :align center
+[[file:img/seq_file.png]]
                                                                              |
 Seq_file provides basic functions for file_operations, as seq_read, seq_lseek, and some others. But nothing to write in the /proc file. Of course, you can still use the same way as in the previous example.
 
