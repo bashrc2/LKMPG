@@ -3862,14 +3862,16 @@ static int test_skcipher_result(struct skcipher_def * sk, int rc)
     switch (rc) {
     case 0:
         break;
-    case -EINPROGRESS:
-    case -EBUSY:
+    case -EINPROGRESS || -EBUSY:
         rc = wait_for_completion_interruptible(
             &sk->result.completion);
         if (!rc && !sk->result.err) {
             reinit_completion(&sk->result.completion);
             break;
         }
+        pr_info("skcipher encrypt returned with %d result %d\n",
+            rc, sk->result.err);
+        break;
     default:
         pr_info("skcipher encrypt returned with %d result %d\n",
             rc, sk->result.err);
