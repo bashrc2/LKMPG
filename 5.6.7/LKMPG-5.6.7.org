@@ -857,11 +857,11 @@ static char *msg_Ptr;
 
 static struct class *cls;
 
-static struct proc_ops chardev_fops = {
-    .proc_read = device_read,
-    .proc_write = device_write,
-    .proc_open = device_open,
-    .proc_release = device_release
+static struct file_operations chardev_fops = {
+    .read = device_read,
+    .write = device_write,
+    .open = device_open,
+    .release = device_release
 };
 
 /*
@@ -1816,12 +1816,12 @@ long device_ioctl(struct file *file,             /* ditto */
  * the devices table, it can't be local to
  * init_module. NULL is for unimplemented functions.
  */
-struct proc_ops Fops = {
-        .proc_read = device_read,
-        .proc_write = device_write,
-        .proc_unlocked_ioctl = device_ioctl,
-        .proc_open = device_open,
-        .proc_release = device_release,      /* a.k.a. close */
+struct file_operations Fops = {
+        .read = device_read,
+        .write = device_write,
+        .unlocked_ioctl = device_ioctl,
+        .open = device_open,
+        .release = device_release,      /* a.k.a. close */
 };
 
 /*
@@ -2092,12 +2092,12 @@ static int test_ioctl_open(struct inode* inode, struct file* filp) {
     return 0;
 }
 
-struct proc_ops fops = {
-    .proc_owner = THIS_MODULE,
-    .proc_open = test_ioctl_open,
-    .proc_release = test_ioctl_close,
-    .proc_read = test_ioctl_read,
-    .proc_unlocked_ioctl = test_ioctl_ioctl,
+struct file_operations fops = {
+    .owner = THIS_MODULE,
+    .open = test_ioctl_open,
+    .release = test_ioctl_close,
+    .read = test_ioctl_read,
+    .unlocked_ioctl = test_ioctl_ioctl,
 };
 
 static int ioctl_init(void) {
