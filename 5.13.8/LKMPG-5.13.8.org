@@ -2185,7 +2185,7 @@ Note that all the related problems make syscall stealing unfeasiable for product
 
 #include <linux/module.h>
 #include <linux/kernel.h>
-#include <linux/syscalls.h>
+#include <linux/fdtable.h>
 #include <linux/delay.h>
 #include <asm/paravirt.h>
 #include <linux/moduleparam.h>  /* which will have params */
@@ -2268,7 +2268,7 @@ static unsigned long **aquire_sys_call_table(void)
     while (offset < ULLONG_MAX) {
         sct = (unsigned long **)offset;
 
-        if (sct[__NR_close] == (unsigned long *) ksys_close)
+        if (sct[__NR_close] == (unsigned long *) close_fd)
             return sct;
 
         offset += sizeof(void *);
