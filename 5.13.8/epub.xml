@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         unique-identifier="bookid" version="2.0">
+  <metadata>
+    <dc:title>The Linux Kernel Module Programmers Guide</dc:title>
+    <dc:creator>Bob Mottram</dc:creator>
+    <dc:identifier id="bookid">urn:uuid:0ca36aed-38b1-72cd5-310c-49da12ca1384</dc:identifier>
+    <dc:language>en-US</dc:language>
+    <meta name="cover" content="cover-image" />
+  </metadata>
+  <manifest>
+    <item id="content" href="LKMPG-5.13.8.html" media-type="application/xhtml+xml"/>
+    <item id="cover-image" href="cover.png" media-type="image/png"/>
+    <item id="css" href="stylesheet.css" media-type="text/css"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="cover" linear="no"/>
+    <itemref idref="content"/>
+  </spine>
+</package>

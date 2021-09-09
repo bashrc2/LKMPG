@@ -1,8 +1,7 @@
 ::: {#content}
-# The Linux Kernel Module Programming Guide {#the-linux-kernel-module-programming-guide .title}
-
 ::: {#table-of-contents}
-## Table of Contents
+Table of Contents
+-----------------
 
 ::: {#text-table-of-contents}
 -   [1. Introduction](#orgebfe063)
@@ -33,7 +32,7 @@
     -   [5.5. Code space](#orgb7b2579)
     -   [5.6. Device Drivers](#org4aa5435)
 -   [6. Character Device drivers](#org75a6a42)
-    -   [6.1. The proc_ops Structure](#org8552555)
+    -   [6.1. The proc\_ops Structure](#org8552555)
     -   [6.2. The file structure](#orgc00f983)
     -   [6.3. Registering A Device](#org4c12be8)
     -   [6.4. Unregistering A Device](#org02630db)
@@ -42,7 +41,7 @@
 -   [7. The /proc File System](#org8b00d43)
     -   [7.1. Read and Write a /proc File](#org1ec3ec9)
     -   [7.2. Manage /proc file with standard filesystem](#org2eadda1)
-    -   [7.3. Manage /proc file with seq_file](#orga3f45aa)
+    -   [7.3. Manage /proc file with seq\_file](#orga3f45aa)
 -   [8. sysfs: Interacting with your module](#org22d393c)
 -   [9. Talking To Device Files](#orgea7cb78)
 -   [10. System Calls](#org9f82c3a)
@@ -79,7 +78,8 @@
 :::
 
 ::: {#outline-container-orgebfe063 .outline-2}
-## [1]{.section-number-2} Introduction {#orgebfe063}
+[1]{.section-number-2} Introduction {#orgebfe063}
+-----------------------------------
 
 ::: {#text-1 .outline-text-2}
 The Linux Kernel Module Programming Guide is a free book; you may
@@ -102,7 +102,7 @@ the Open Software License, and the original copyright notice must remain
 intact. If you have contributed new material to this book, you must make
 the material and source code available for your revisions. Please make
 revisions and updates available directly to the document maintainer,
-Peter Jay Salzman \<p\@dirac.org>. This will allow for the merging of
+Peter Jay Salzman \<p\@dirac.org\>. This will allow for the merging of
 updates and provide consistent revisions to the Linux community.
 
 If you publish or distribute this book commercially, donations,
@@ -187,7 +187,7 @@ within a package.
 
 On Debian:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo apt-get install build-essential kmod
 ```
@@ -195,7 +195,7 @@ sudo apt-get install build-essential kmod
 
 On Parabola:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo pacman -S gcc kmod
 ```
@@ -210,7 +210,7 @@ sudo pacman -S gcc kmod
 To discover what modules are already loaded within your current kernel
 use the command **lsmod**.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo lsmod
 ```
@@ -219,7 +219,7 @@ sudo lsmod
 Modules are stored within the file /proc/modules, so you can also see
 them with:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo cat /proc/modules
 ```
@@ -228,7 +228,7 @@ sudo cat /proc/modules
 This can be a long list, and you might prefer to search for something
 particular. To search for the *fat* module:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo lsmod | grep fat
 ```
@@ -260,19 +260,17 @@ thereafter.
 :::
 
 1.  []{#orgbbad430}Modversioning\
-
     ::: {#text-1-8-0-1 .outline-text-5}
     A module compiled for one kernel won\'t load if you boot a different
-    kernel unless you enable CONFIG_MODVERSIONS in the kernel. We won\'t
-    go into module versioning until later in this guide. Until we cover
-    modversions, the examples in the guide may not work if you\'re
+    kernel unless you enable CONFIG\_MODVERSIONS in the kernel. We
+    won\'t go into module versioning until later in this guide. Until we
+    cover modversions, the examples in the guide may not work if you\'re
     running a kernel with modversioning turned on. However, most stock
     Linux distro kernels come with it turned on. If you\'re having
     trouble loading the modules because of versioning errors, compile a
     kernel with modversioning turned off.
     :::
 2.  []{#org4bdbf4f}Using X\
-
     ::: {#text-1-8-0-2 .outline-text-5}
     It is highly recommended that you extract, compile and load all the
     examples this guide discusses. It\'s also highly recommended you do
@@ -290,13 +288,14 @@ thereafter.
 :::
 
 ::: {#outline-container-org8774d36 .outline-2}
-## [2]{.section-number-2} Headers {#org8774d36}
+[2]{.section-number-2} Headers {#org8774d36}
+------------------------------
 
 ::: {#text-2 .outline-text-2}
 Before you can build anything you\'ll need to install the header files
 for your kernel. On Parabola GNU/Linux:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo pacman -S linux-libre-headers
 ```
@@ -304,7 +303,7 @@ sudo pacman -S linux-libre-headers
 
 On Debian:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo apt-get update
 apt-cache search linux-headers-$(uname -r)
@@ -314,7 +313,7 @@ apt-cache search linux-headers-$(uname -r)
 This will tell you what kernel header files are available. Then for
 example:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo apt-get install kmod linux-headers-5.13.8-1-amd64
 ```
@@ -323,14 +322,15 @@ sudo apt-get install kmod linux-headers-5.13.8-1-amd64
 :::
 
 ::: {#outline-container-org178280d .outline-2}
-## [3]{.section-number-2} Examples {#org178280d}
+[3]{.section-number-2} Examples {#org178280d}
+-------------------------------
 
 ::: {#text-3 .outline-text-2}
 All the examples from this document are available within the *examples*
 subdirectory. The directory is created by a script which pulls the
 source code out from the manual. To test that they compile:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 ./create_examples.sh
 cd examples
@@ -344,7 +344,8 @@ version or need to install the corresponding kernel header files.
 :::
 
 ::: {#outline-container-orgd516d3e .outline-2}
-## [4]{.section-number-2} Hello World {#orgd516d3e}
+[4]{.section-number-2} Hello World {#orgd516d3e}
+----------------------------------
 
 ::: {#text-4 .outline-text-2}
 :::
@@ -363,7 +364,7 @@ Here\'s the simplest module possible.
 
 Make a test directory:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 mkdir -p ~/develop/kernel/hello-1
 cd ~/develop/kernel/hello-1
@@ -372,7 +373,7 @@ cd ~/develop/kernel/hello-1
 
 Paste this into you favourite editor and save it as **hello-1.c**:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  hello-1.c - The simplest kernel module.
@@ -402,7 +403,7 @@ MODULE_LICENSE("GPL");
 Now you\'ll need a Makefile. If you copy and paste this change the
 indentation to use tabs, not spaces.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-makefile}
 obj-m += hello-1.o
 
@@ -416,7 +417,7 @@ clean:
 
 And finally just:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 make
 ```
@@ -425,7 +426,7 @@ make
 If all goes smoothly you should then find that you have a compiled
 **hello-1.ko** module. You can find info on it with the command:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo modinfo hello-1.ko
 ```
@@ -433,7 +434,7 @@ sudo modinfo hello-1.ko
 
 At this point the command:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo lsmod | grep hello
 ```
@@ -441,7 +442,7 @@ sudo lsmod | grep hello
 
 should return nothing. You can try loading your shiny new module with:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo insmod hello-1.ko
 ```
@@ -450,7 +451,7 @@ sudo insmod hello-1.ko
 The dash character will get converted to an underscore, so when you
 again try:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo lsmod | grep hello
 ```
@@ -458,7 +459,7 @@ sudo lsmod | grep hello
 
 you should now see your loaded module. It can be removed again with:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo rmmod hello_1
 ```
@@ -467,7 +468,7 @@ sudo rmmod hello_1
 Notice that the dash was replaced by an underscore. To see what just
 happened in the logs:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 journalctl --since "1 hour ago" | grep kernel
 ```
@@ -477,28 +478,27 @@ You now know the basics of creating, compiling, installing and removing
 modules. Now for more of a description of how this module works.
 
 Kernel modules must have at least two functions: a \"start\"
-(initialization) function called **init_module()** which is called when
+(initialization) function called **init\_module()** which is called when
 the module is insmoded into the kernel, and an \"end\" (cleanup)
-function called **cleanup_module()** which is called just before it is
+function called **cleanup\_module()** which is called just before it is
 rmmoded. Actually, things have changed starting with kernel 2.3.13. You
 can now use whatever name you like for the start and end functions of a
 module, and you\'ll learn how to do this in Section 2.3. In fact, the
 new method is the preferred method. However, many people still use
-init_module() and cleanup_module() for their start and end functions.
+init\_module() and cleanup\_module() for their start and end functions.
 
-Typically, init_module() either registers a handler for something with
+Typically, init\_module() either registers a handler for something with
 the kernel, or it replaces one of the kernel functions with its own code
 (usually code to do something and then call the original function). The
-cleanup_module() function is supposed to undo whatever init_module()
+cleanup\_module() function is supposed to undo whatever init\_module()
 did, so the module can be unloaded safely.
 
 Lastly, every kernel module needs to include linux/module.h. We needed
 to include **linux/kernel.h** only for the macro expansion for the
-pr_alert() log level, which you\'ll learn about in Section 2.1.1.
+pr\_alert() log level, which you\'ll learn about in Section 2.1.1.
 :::
 
 1.  []{#orgdfc221d}A point about coding style\
-
     ::: {#text-4-1-0-1 .outline-text-5}
     Another thing which may not be immediately obvious to anyone getting
     started with kernel programming is that indentation within your code
@@ -507,18 +507,16 @@ pr_alert() log level, which you\'ll learn about in Section 2.1.1.
     get used to it if you ever submit a patch upstream.
     :::
 2.  []{#org3bfcecd}Introducing print macros\
-
     ::: {#text-4-1-0-2 .outline-text-5}
     In the beginning there was **printk**, usually followed by a
-    priority such as KERN_INFO or KERN_DEBUG. More recently this can
+    priority such as KERN\_INFO or KERN\_DEBUG. More recently this can
     also be expressed in abbreviated form using a set of print macros,
-    such as **pr_info** and **pr_debug**. This just saves some mindless
-    keyboard bashing and looks a bit neater. They can be found within
-    **linux/printk.h**. Take time to read through the available priority
-    macros.
+    such as **pr\_info** and **pr\_debug**. This just saves some
+    mindless keyboard bashing and looks a bit neater. They can be found
+    within **linux/printk.h**. Take time to read through the available
+    priority macros.
     :::
 3.  []{#org6297399}About Compiling\
-
     ::: {#text-4-1-0-3 .outline-text-5}
     Kernel modules need to be compiled a bit differently from regular
     userspace apps. Former kernel versions required us to care much
@@ -539,7 +537,7 @@ pr_alert() log level, which you\'ll learn about in Section 2.1.1.
     probably save you lots of work.
 
     > Here\'s another exercise for the reader. See that comment above
-    > the return statement in init_module()? Change the return value to
+    > the return statement in init\_module()? Change the return value to
     > something negative, recompile and load the module again. What
     > happens?
     :::
@@ -549,15 +547,15 @@ pr_alert() log level, which you\'ll learn about in Section 2.1.1.
 ### [4.2]{.section-number-3} Hello and Goodbye {#org80b6e80}
 
 ::: {#text-4-2 .outline-text-3}
-In early kernel versions you had to use the **init_module** and
-**cleanup_module** functions, as in the first hello world example, but
+In early kernel versions you had to use the **init\_module** and
+**cleanup\_module** functions, as in the first hello world example, but
 these days you can name those anything you want by using the
-**module_init** and **module_exit** macros. These macros are defined in
-**linux/init.h**. The only requirement is that your init and cleanup
+**module\_init** and **module\_exit** macros. These macros are defined
+in **linux/init.h**. The only requirement is that your init and cleanup
 functions must be defined before calling the those macros, otherwise
 you\'ll get compilation errors. Here\'s an example of this technique:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  hello-2.c - Demonstrating the module_init() and module_exit() macros.
@@ -588,7 +586,7 @@ MODULE_LICENSE("GPL");
 So now we have two real kernel modules under our belt. Adding another
 module is as simple as this:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-makefile}
 obj-m += hello-1.o
 obj-m += hello-2.o
@@ -604,9 +602,9 @@ clean:
 Now have a look at linux/drivers/char/Makefile for a real world example.
 As you can see, some things get hardwired into the kernel (obj-y) but
 where are all those obj-m gone? Those familiar with shell scripts will
-easily be able to spot them. For those not, the obj-\$(CONFIG_FOO)
+easily be able to spot them. For those not, the obj-\$(CONFIG\_FOO)
 entries you see everywhere expand into obj-y or obj-m, depending on
-whether the CONFIG_FOO variable has been set to y or m. While we are at
+whether the CONFIG\_FOO variable has been set to y or m. While we are at
 it, those were exactly the kind of variables that you have set in the
 linux/.config file, the last time when you said make menuconfig or
 something like that.
@@ -637,7 +635,7 @@ These macros are defined in **linux/init.h** and serve to free up kernel
 memory. When you boot your kernel and see something like Freeing unused
 kernel memory: 236k freed, this is precisely what the kernel is freeing.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  hello-3.c - Illustrating the __init, __initdata and __exit macros.
@@ -675,7 +673,7 @@ MODULE_LICENSE("GPL");
 Honestly, who loads or even cares about proprietary modules? If you do
 then you might have seen something like this:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-txt}
 # insmod xxxxxx.o
 Warning: loading xxxxxx.ko will taint the kernel: no license
@@ -690,10 +688,10 @@ BSD/GPL\", \"Dual MIT/GPL\", \"Dual MPL/GPL\" and \"Proprietary\".
 They\'re defined within **linux/module.h**.
 
 To reference what license you\'re using a macro is available called
-**MODULE_LICENSE**. This and a few other macros describing the module
+**MODULE\_LICENSE**. This and a few other macros describing the module
 are illustrated in the below example.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  hello-4.c - Demonstrates module documentation.
@@ -733,20 +731,20 @@ might be used to.
 
 To allow arguments to be passed to your module, declare the variables
 that will take the values of the command line arguments as global and
-then use the module_param() macro, (defined in linux/moduleparam.h) to
+then use the module\_param() macro, (defined in linux/moduleparam.h) to
 set the mechanism up. At runtime, insmod will fill the variables with
 any command line arguments that are given, like ./insmod mymodule.ko
 myvariable=5. The variable declarations and macros should be placed at
 the beginning of the module for clarity. The example code should clear
 up my admittedly lousy explanation.
 
-The module_param() macro takes 3 arguments: the name of the variable,
+The module\_param() macro takes 3 arguments: the name of the variable,
 its type and permissions for the corresponding file in sysfs. Integer
 types can be signed as usual or unsigned. If you\'d like to use arrays
-of integers or strings see module_param_array() and
-module_param_string().
+of integers or strings see module\_param\_array() and
+module\_param\_string().
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 int myint = 3;
 module_param(myint, int, 0);
@@ -759,7 +757,7 @@ need to pass a pointer to a count variable as third parameter. At your
 option, you could also ignore the count and pass NULL instead. We show
 both possibilities here:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 int myintarray[2];
 module_param_array(myintarray, int, NULL, 0); /* not interested in count */
@@ -775,11 +773,12 @@ set, like an port or IO address. If the variables contain the default
 values, then perform autodetection (explained elsewhere). Otherwise,
 keep the current value. This will be made clear later on.
 
-Lastly, there\'s a macro function, **MODULE_PARM_DESC()**, that is used
-to document arguments that the module can take. It takes two parameters:
-a variable name and a free form string describing that variable.
+Lastly, there\'s a macro function, **MODULE\_PARM\_DESC()**, that is
+used to document arguments that the module can take. It takes two
+parameters: a variable name and a free form string describing that
+variable.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  hello-5.c - Demonstrates command line argument passing to a module.
@@ -856,7 +855,7 @@ module_exit(hello_5_exit);
 
 I would recommend playing around with this code:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-txt}
 # sudo insmod hello-5.ko mystring="bebop" mybyte=255 myintArray=-1
 mybyte is an 8 bit integer: 255
@@ -897,7 +896,7 @@ source files.
 
 Here\'s an example of such a kernel module.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  start.c - Illustration of multi filed modules
@@ -918,7 +917,7 @@ MODULE_LICENSE("GPL");
 
 The next file:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  stop.c - Illustration of multi filed modules
@@ -938,7 +937,7 @@ MODULE_LICENSE("GPL");
 
 And finally, the makefile:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-makefile}
 obj-m += hello-1.o
 obj-m += hello-2.o
@@ -969,7 +968,7 @@ module, second we tell make what object files are part of that module.
 ::: {#text-4-7 .outline-text-3}
 Obviously, we strongly suggest you to recompile your kernel, so that you
 can enable a number of useful debugging features, such as forced module
-unloading (**MODULE_FORCE_UNLOAD**): when this option is enabled, you
+unloading (**MODULE\_FORCE\_UNLOAD**): when this option is enabled, you
 can force the kernel to unload a module even when it believes it is
 unsafe, via a **sudo rmmod -f module** command. This option can save you
 a lot of time and a number of reboots during the development of a
@@ -990,7 +989,7 @@ Now, if you just install a kernel source tree, use it to compile your
 kernel module and you try to insert your module into the kernel, in most
 cases you would obtain an error as follows:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-txt}
 insmod: error inserting 'poet_atkm.ko': -1 Invalid module format
 ```
@@ -998,7 +997,7 @@ insmod: error inserting 'poet_atkm.ko': -1 Invalid module format
 
 Less cryptical information are logged to the systemd journal:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-txt}
 Jun  4 22:07:54 localhost kernel: poet_atkm: version magic '2.6.5-1.358custom 686
 REGPARM 4KSTACKS gcc-3.3' should be '2.6.5-1.358 686 REGPARM 4KSTACKS gcc-3.3'
@@ -1013,7 +1012,7 @@ in your module when it is linked against the **init/vermagic.o** file.
 To inspect version magics and other strings stored in a given module,
 issue the modinfo module.ko command:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-txt}
 # sudo modinfo hello-4.ko
 license:        GPL
@@ -1051,7 +1050,7 @@ makefile that some distribution include. Then, examine your
 information matches exactly the one used for your current kernel. For
 example, you makefile could start as follows:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-makefile}
 VERSION = 4
 PATCHLEVEL = 7
@@ -1066,7 +1065,7 @@ compile your kernel available in **/lib/modules/5.13.8-1.358/build**. A
 simple **cp /lib/modules/\`uname-r\`/build/Makefile
 /usr/src/linux-\`uname -r\`** should suffice. Additionally, if you
 already started a kernel build with the previous (wrong) Makefile, you
-should also rerun make, or directly modify symbol UTS_RELEASE in file
+should also rerun make, or directly modify symbol UTS\_RELEASE in file
 **/usr/src/linux-5.13.8/include/linux/version.h** according to contents
 of file **/lib/modules/5.13.8/build/include/linux/version.h**, or
 overwrite the latter with the first.
@@ -1074,7 +1073,7 @@ overwrite the latter with the first.
 Now, please run make to update configuration and version headers and
 objects:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-txt}
 # make
 CHK     include/linux/version.h
@@ -1101,7 +1100,8 @@ any errors.
 :::
 
 ::: {#outline-container-org69c4bac .outline-2}
-## [5]{.section-number-2} Preliminaries {#org69c4bac}
+[5]{.section-number-2} Preliminaries {#org69c4bac}
+------------------------------------
 
 ::: {#text-5 .outline-text-2}
 :::
@@ -1113,23 +1113,23 @@ any errors.
 A program usually begins with a **main()** function, executes a bunch of
 instructions and terminates upon completion of those instructions.
 Kernel modules work a bit differently. A module always begin with either
-the init_module or the function you specify with module_init call. This
-is the entry function for modules; it tells the kernel what
+the init\_module or the function you specify with module\_init call.
+This is the entry function for modules; it tells the kernel what
 functionality the module provides and sets up the kernel to run the
 module\'s functions when they\'re needed. Once it does this, entry
 function returns and the module does nothing until the kernel wants to
 do something with the code that the module provides.
 
-All modules end by calling either **cleanup_module** or the function you
-specify with the **module_exit** call. This is the exit function for
-modules; it undoes whatever entry function did. It unregisters the
+All modules end by calling either **cleanup\_module** or the function
+you specify with the **module\_exit** call. This is the exit function
+for modules; it undoes whatever entry function did. It unregisters the
 functionality that the entry function registered.
 
 Every module must have an entry function and an exit function. Since
 there\'s more than one way to specify entry and exit functions, I\'ll
 try my best to use the terms \`entry function\' and \`exit function\',
-but if I slip and simply refer to them as init_module and
-cleanup_module, I think you\'ll know what I mean.
+but if I slip and simply refer to them as init\_module and
+cleanup\_module, I think you\'ll know what I mean.
 :::
 :::
 
@@ -1145,7 +1145,7 @@ which insures that the code (for printf() for example) is available, and
 fixes the call instruction to point to that code.
 
 Kernel modules are different here, too. In the hello world example, you
-might have noticed that we used a function, **pr_info()** but didn\'t
+might have noticed that we used a function, **pr\_info()** but didn\'t
 include a standard I/O library. That\'s because modules are object files
 whose symbols get resolved upon insmod\'ing. The definition for the
 symbols comes from the kernel itself; the only external functions you
@@ -1166,7 +1166,7 @@ write(), which then sends the data to standard output.
 Would you like to see what system calls are made by printf()? It\'s
 easy! Compile the following program:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 #include <stdio.h>
 
@@ -1312,13 +1312,12 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
 :::
 
 1.  []{#orga24fef7}Major and Minor Numbers\
-
     ::: {#text-5-6-0-1 .outline-text-5}
     Let\'s look at some device files. Here are device files which
     represent the first three partitions on the primary master IDE hard
     drive:
 
-    ::: org-src-container
+    ::: {.org-src-container}
     ``` {.src .src-sh}
     # ls -l /dev/hda[1-3]
     brw-rw----  1 root  disk  3, 1 Jul  5  2000 /dev/hda1
@@ -1359,7 +1358,7 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
     are block devices. Here are some character devices (the serial
     ports):
 
-    ::: org-src-container
+    ::: {.org-src-container}
     ``` {.src .src-sh}
     crw-rw----  1 root  dial 4, 64 Feb 18 23:34 /dev/ttyS0
     crw-r-----  1 root  dial 4, 65 Nov 17 10:26 /dev/ttyS1
@@ -1394,7 +1393,7 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
     abstract than a PCI card that you can hold in your hand. Look at
     these two device files:
 
-    ::: org-src-container
+    ::: {.org-src-container}
     ``` {.src .src-sh}
     % ls -l /dev/sda /dev/sdb
     brw-rw---- 1 root disk 8,  0 Jan  3 09:02 /dev/sda
@@ -1413,27 +1412,28 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
 :::
 
 ::: {#outline-container-org75a6a42 .outline-2}
-## [6]{.section-number-2} Character Device drivers {#org75a6a42}
+[6]{.section-number-2} Character Device drivers {#org75a6a42}
+-----------------------------------------------
 
 ::: {#text-6 .outline-text-2}
 :::
 
 ::: {#outline-container-org8552555 .outline-3}
-### [6.1]{.section-number-3} The proc_ops Structure {#org8552555}
+### [6.1]{.section-number-3} The proc\_ops Structure {#org8552555}
 
 ::: {#text-6-1 .outline-text-3}
-The proc_ops structure is defined in **/usr/include/linux/fs.h**, and
+The proc\_ops structure is defined in **/usr/include/linux/fs.h**, and
 holds pointers to functions defined by the driver that perform various
 operations on the device. Each field of the structure corresponds to the
 address of some function defined by the driver to handle a requested
 operation.
 
 For example, every character driver needs to define a function that
-reads from the device. The proc_ops structure holds the address of the
+reads from the device. The proc\_ops structure holds the address of the
 module\'s function that performs that operation. Here is what the
 definition looks like for kernel 3.0:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 struct proc_ops {
     struct module *owner;
@@ -1470,15 +1470,15 @@ struct proc_ops {
 
 Some operations are not implemented by a driver. For example, a driver
 that handles a video card won\'t need to read from a directory
-structure. The corresponding entries in the proc_ops structure should be
-set to NULL.
+structure. The corresponding entries in the proc\_ops structure should
+be set to NULL.
 
 There is a gcc extension that makes assigning to this structure more
 convenient. You\'ll see it in modern drivers, and may catch you by
 surprise. This is what the new way of assigning to the structure looks
 like:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 struct proc_ops fops = {
     proc_read: device_read,
@@ -1495,7 +1495,7 @@ extension. The version of gcc the author used when writing this, 2.95,
 supports the new C99 syntax. You should use this syntax in case someone
 wants to port your driver. It will help with compatibility:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 struct proc_ops fops = {
     .proc_read = device_read,
@@ -1510,8 +1510,8 @@ The meaning is clear, and you should be aware that any member of the
 structure which you don\'t explicitly assign will be initialized to NULL
 by gcc.
 
-An instance of struct proc_ops containing pointers to functions that are
-used to implement read, write, open, ... syscalls is commonly named
+An instance of struct proc\_ops containing pointers to functions that
+are used to implement read, write, open, ... syscalls is commonly named
 fops.
 :::
 :::
@@ -1552,10 +1552,10 @@ operating on, just in case the driver handles more than one device.
 
 Adding a driver to your system means registering it with the kernel.
 This is synonymous with assigning it a major number during the module\'s
-initialization. You do this by using the register_chrdev function,
+initialization. You do this by using the register\_chrdev function,
 defined by linux/fs.h.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 int register_chrdev(unsigned int major, const char *name, struct proc_ops *fops);
 ```
@@ -1563,10 +1563,10 @@ int register_chrdev(unsigned int major, const char *name, struct proc_ops *fops)
 
 where unsigned int major is the major number you want to request, *const
 char \*name* is the name of the device as it\'ll appear in
-**/proc/devices** and *struct proc_ops \*fops* is a pointer to the
-proc_ops table for your driver. A negative return value means the
+**/proc/devices** and *struct proc\_ops \*fops* is a pointer to the
+proc\_ops table for your driver. A negative return value means the
 registration failed. Note that we didn\'t pass the minor number to
-register_chrdev. That\'s because the kernel doesn\'t care about the
+register\_chrdev. That\'s because the kernel doesn\'t care about the
 minor number; only our driver uses it.
 
 Now the question is, how do you get a major number without hijacking one
@@ -1576,7 +1576,7 @@ doing things because you\'ll never be sure if the number you picked will
 be assigned later. The answer is that you can ask the kernel to assign
 you a dynamic major number.
 
-If you pass a major number of 0 to register_chrdev, the return value
+If you pass a major number of 0 to register\_chrdev, the return value
 will be the dynamically allocated major number. The downside is that you
 can\'t make a device file in advance, since you don\'t know what the
 major number will be. There are a couple of ways to do this. First, the
@@ -1585,8 +1585,8 @@ device file by hand. Second, the newly registered device will have an
 entry in **/proc/devices**, and we can either make the device file by
 hand or write a shell script to read the file in and make the device
 file. The third method is we can have our driver make the the device
-file using the **device_create** function after a successful
-registration and **device_destroy** during the call to cleanup_module.
+file using the **device\_create** function after a successful
+registration and **device\_destroy** during the call to cleanup\_module.
 :::
 :::
 
@@ -1606,19 +1606,19 @@ predict, but they can\'t be very positive.
 
 Normally, when you don\'t want to allow something, you return an error
 code (a negative number) from the function which is supposed to do it.
-With cleanup_module that\'s impossible because it\'s a void function.
+With cleanup\_module that\'s impossible because it\'s a void function.
 However, there\'s a counter which keeps track of how many processes are
 using your module. You can see what it\'s value is by looking at the 3rd
 field of **/proc/modules**. If this number isn\'t zero, rmmod will fail.
 Note that you don\'t have to check the counter from within
-cleanup_module because the check will be performed for you by the system
-call sys_delete_module, defined in **linux/module.c**. You shouldn\'t
-use this counter directly, but there are functions defined in
+cleanup\_module because the check will be performed for you by the
+system call sys\_delete\_module, defined in **linux/module.c**. You
+shouldn\'t use this counter directly, but there are functions defined in
 **linux/module.h** which let you increase, decrease and display this
 counter:
 
--   try_module_get(THIS_MODULE): Increment the use count.
--   module_put(THIS_MODULE): Decrement the use count.
+-   try\_module\_get(THIS\_MODULE): Increment the use count.
+-   module\_put(THIS\_MODULE): Decrement the use count.
 
 It\'s important to keep the counter accurate; if you ever do lose track
 of the correct usage count, you\'ll never be able to unload the module;
@@ -1634,7 +1634,7 @@ sooner or later during a module\'s development.
 The next code sample creates a char driver named chardev. You can cat
 its device file.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-bash}
 cat /proc/devices
 ```
@@ -1648,7 +1648,7 @@ supported. Don\'t worry if you don\'t see what we do with the data we
 read into the buffer; we don\'t do much with it. We simply read in the
 data and print a message acknowledging that we received it.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  chardev.c: Creates a read-only char device that says how many times
@@ -1851,8 +1851,8 @@ device files will also remain the same. On the other hand, the internal
 interfaces within the kernel can and do change between versions.
 
 The Linux kernel versions are divided between the stable versions
-(n.\$\<\\(even number\\)>\$.m) and the development versions
-(n.\$\<\\(odd number\\)>\$.m). The development versions include all the
+(n.\$\<\\(even number\\)\>\$.m) and the development versions
+(n.\$\<\\(odd number\\)\>\$.m). The development versions include all the
 cool new ideas, including those which will be considered a mistake, or
 reimplemented, in the next version. As a result, you can\'t trust the
 interface to remain the same in those versions (which is why I don\'t
@@ -1864,7 +1864,7 @@ version (the m number).
 There are differences between different kernel versions, and if you want
 to support multiple kernel versions, you\'ll find yourself having to
 code conditional compilation directives. The way to do this to compare
-the macro LINUX_VERSION_CODE to the macro KERNEL_VERSION. In version
+the macro LINUX\_VERSION\_CODE to the macro KERNEL\_VERSION. In version
 a.b.c of the kernel, the value of this macro would be
 \\(2\^{16}a+2\^{8}b+c\\).
 
@@ -1890,7 +1890,8 @@ archives if you\'re interested in the full story.
 :::
 
 ::: {#outline-container-org8b00d43 .outline-2}
-## [7]{.section-number-2} The /proc File System {#org8b00d43}
+[7]{.section-number-2} The /proc File System {#org8b00d43}
+--------------------------------------------
 
 ::: {#text-7 .outline-text-2}
 In Linux, there is an additional mechanism for the kernel and kernel
@@ -1905,8 +1906,8 @@ The method to use the proc file system is very similar to the one used
 with device drivers --- a structure is created with all the information
 needed for the **/proc** file, including pointers to any handler
 functions (in our case there is only one, the one called when somebody
-attempts to read from the **/proc** file). Then, init_module registers
-the structure with the kernel and cleanup_module unregisters it.
+attempts to read from the **/proc** file). Then, init\_module registers
+the structure with the kernel and cleanup\_module unregisters it.
 
 Normal file systems are located on a disk, rather than just in memory
 (which is where **/proc** is), and in that case the inode number is a
@@ -1916,25 +1917,25 @@ example the file\'s permissions, together with a pointer to the disk
 location or locations where the file\'s data can be found.
 
 Because we don\'t get called when the file is opened or closed, there\'s
-nowhere for us to put try_module_get and try_module_put in this module,
-and if the file is opened and then the module is removed, there\'s no
-way to avoid the consequences.
+nowhere for us to put try\_module\_get and try\_module\_put in this
+module, and if the file is opened and then the module is removed,
+there\'s no way to avoid the consequences.
 
 Here a simple example showing how to use a **/proc** file. This is the
 HelloWorld for the **/proc** filesystem. There are three parts: create
-the file ***proc* helloworld** in the function init_module, return a
+the file ***proc* helloworld** in the function init\_module, return a
 value (and a buffer) when the file **/proc/helloworld** is read in the
-callback function **procfile_read**, and delete the file
-**/proc/helloworld** in the function cleanup_module.
+callback function **procfile\_read**, and delete the file
+**/proc/helloworld** in the function cleanup\_module.
 
 The **/proc/helloworld** is created when the module is loaded with the
-function **proc_create**. The return value is a **struct
-proc_dir_entry** , and it will be used to configure the file
+function **proc\_create**. The return value is a **struct
+proc\_dir\_entry** , and it will be used to configure the file
 **/proc/helloworld** (for example, the owner of this file). A null
 return value means that the creation has failed.
 
 Each time, everytime the file **/proc/helloworld** is read, the function
-**procfile_read** is called. Two parameters of this function are very
+**procfile\_read** is called. Two parameters of this function are very
 important: the buffer (the first parameter) and the offset (the third
 one). The content of the buffer will be returned to the application
 which read it (for example the cat command). The offset is the current
@@ -1942,14 +1943,14 @@ position in the file. If the return value of the function isn\'t null,
 then this function is called again. So be careful with this function, if
 it never returns zero, the read function is called endlessly.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-txt}
 # cat /proc/helloworld
 HelloWorld!
 ```
 :::
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  procfs1.c
@@ -2015,10 +2016,10 @@ the file /proc/helloworld. It\'s also possible to write in a /proc file.
 It works the same way as read, a function is called when the /proc file
 is written. But there is a little difference with read, data comes from
 user, so you have to import data from user space to kernel space (with
-copy_from_user or get_user)
+copy\_from\_user or get\_user)
 
-The reason for copy_from_user or get_user is that Linux memory (on Intel
-architecture, it may be different under some other processors) is
+The reason for copy\_from\_user or get\_user is that Linux memory (on
+Intel architecture, it may be different under some other processors) is
 segmented. This means that a pointer, by itself, does not reference a
 unique location in memory, only a location in a memory segment, and you
 need to know which memory segment it is to be able to use it. There is
@@ -2031,14 +2032,14 @@ access the kernel memory segment, which is handled automatically by the
 system. However, when the content of a memory buffer needs to be passed
 between the currently running process and the kernel, the kernel
 function receives a pointer to the memory buffer which is in the process
-segment. The put_user and get_user macros allow you to access that
+segment. The put\_user and get\_user macros allow you to access that
 memory. These functions handle only one caracter, you can handle several
-caracters with copy_to_user and copy_from_user. As the buffer (in read
-or write function) is in kernel space, for write function you need to
-import data because it comes from user space, but not for the read
+caracters with copy\_to\_user and copy\_from\_user. As the buffer (in
+read or write function) is in kernel space, for write function you need
+to import data because it comes from user space, but not for the read
 function because data is already in kernel space.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /**
  *  procfs2.c -  create a "file" in /proc
@@ -2155,20 +2156,20 @@ main concern is to use advanced functions, like permissions.
 In Linux, there is a standard mechanism for file system registration.
 Since every file system has to have its own functions to handle inode
 and file operations, there is a special structure to hold pointers to
-all those functions, struct **inode_operations**, which includes a
-pointer to struct proc_ops.
+all those functions, struct **inode\_operations**, which includes a
+pointer to struct proc\_ops.
 
 The difference between file and inode operations is that file operations
 deal with the file itself whereas inode operations deal with ways of
 referencing the file, such as creating links to it.
 
 In /proc, whenever we register a new file, we\'re allowed to specify
-which struct inode_operations will be used to access to it. This is the
-mechanism we use, a struct inode_operations which includes a pointer to
-a struct proc_ops which includes pointers to our procfs_read and
-procfs_write functions.
+which struct inode\_operations will be used to access to it. This is the
+mechanism we use, a struct inode\_operations which includes a pointer to
+a struct proc\_ops which includes pointers to our procfs\_read and
+procfs\_write functions.
 
-Another interesting point here is the module_permission function. This
+Another interesting point here is the module\_permission function. This
 function is called whenever a process tries to do something with the
 /proc file, and it can decide whether to allow access or not. Right now
 it is only based on the operation and the uid of the current user (as
@@ -2185,7 +2186,7 @@ something from the kernel, then the kernel needs to output it, and if a
 process writes something to the kernel, then the kernel receives it as
 input.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
     procfs3.c
@@ -2287,13 +2288,13 @@ you want to document something kernel related yourself.
 :::
 
 ::: {#outline-container-orga3f45aa .outline-3}
-### [7.3]{.section-number-3} Manage /proc file with seq_file {#orga3f45aa}
+### [7.3]{.section-number-3} Manage /proc file with seq\_file {#orga3f45aa}
 
 ::: {#text-7-3 .outline-text-3}
 As we have seen, writing a /proc file may be quite \"complex\". So to
-help people writting /proc file, there is an API named seq_file that
+help people writting /proc file, there is an API named seq\_file that
 helps formating a /proc file for output. It\'s based on sequence, which
-is composed of 3 functions: start(), next(), and stop(). The seq_file
+is composed of 3 functions: start(), next(), and stop(). The seq\_file
 API starts a sequence when a user read the /proc file.
 
 A sequence begins with the call of the function start(). If the return
@@ -2307,18 +2308,17 @@ stop() is called.
 BE CARREFUL: when a sequence is finished, another one starts. That means
 that at the end of function stop(), the function start() is called
 again. This loop finishes when the function start() returns NULL. You
-can see a scheme of this in the figure \"How seq_file works\".
+can see a scheme of this in the figure \"How seq\_file works\".
 
-::: figure
-![seq_file.png](img/seq_file.png){width="50%" height="10%"
-align="center"}
+::: {.figure}
+![seq\_file.png](img/seq_file.png){width="50%" height="10%"}
 :::
 
-Seq_file provides basic functions for proc_ops, as seq_read, seq_lseek,
-and some others. But nothing to write in the /proc file. Of course, you
-can still use the same way as in the previous example.
+Seq\_file provides basic functions for proc\_ops, as seq\_read,
+seq\_lseek, and some others. But nothing to write in the /proc file. Of
+course, you can still use the same way as in the previous example.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /**
  *  procfs4.c -  create a "file" in /proc
@@ -2461,13 +2461,14 @@ If you want more information, you can read this web page:
 -   <http://lwn.net/Articles/22355/>
 -   <http://www.kernelnewbies.org/documents/seq_file_howto.txt>
 
-You can also read the code of fs/seq_file.c in the linux kernel.
+You can also read the code of fs/seq\_file.c in the linux kernel.
 :::
 :::
 :::
 
 ::: {#outline-container-org22d393c .outline-2}
-## [8]{.section-number-2} sysfs: Interacting with your module {#org22d393c}
+[8]{.section-number-2} sysfs: Interacting with your module {#org22d393c}
+----------------------------------------------------------
 
 ::: {#text-8 .outline-text-2}
 *sysfs* allows you to interact with the running kernel from userspace by
@@ -2476,7 +2477,7 @@ debugging purposes, or just as an interface for applications or scripts.
 You can find sysfs directories and files under the *sys* directory on
 your system.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-bash}
 ls -l /sys
 ```
@@ -2485,7 +2486,7 @@ ls -l /sys
 An example of a hello world module which includes the creation of a
 variable accessible via sysfs is given below.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  * hello-sysfs.c sysfs example
@@ -2559,7 +2560,7 @@ module_exit(mymodule_exit);
 
 Make and install the module:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 make
 sudo insmod hello-sysfs.ko
@@ -2568,7 +2569,7 @@ sudo insmod hello-sysfs.ko
 
 Check that it exists:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo lsmod | grep hello_sysfs
 ```
@@ -2576,7 +2577,7 @@ sudo lsmod | grep hello_sysfs
 
 What is the current value of *myvariable* ?
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 cat /sys/kernel/mymodule/myvariable
 ```
@@ -2584,7 +2585,7 @@ cat /sys/kernel/mymodule/myvariable
 
 Set the value of *myvariable* and check that it changed.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 echo "32" > /sys/kernel/mymodule/myvariable
 cat /sys/kernel/mymodule/myvariable
@@ -2593,7 +2594,7 @@ cat /sys/kernel/mymodule/myvariable
 
 Finally, remove the test module:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo rmmod hello_sysfs
 ```
@@ -2602,7 +2603,8 @@ sudo rmmod hello_sysfs
 :::
 
 ::: {#outline-container-orgea7cb78 .outline-2}
-## [9]{.section-number-2} Talking To Device Files {#orgea7cb78}
+[9]{.section-number-2} Talking To Device Files {#orgea7cb78}
+----------------------------------------------
 
 ::: {#text-9 .outline-text-2}
 Device files are supposed to represent physical devices. Most physical
@@ -2610,7 +2612,7 @@ devices are used for output as well as input, so there has to be some
 mechanism for device drivers in the kernel to get the output to send to
 the device from processes. This is done by opening the device file for
 output and writing to it, just like writing to a file. In the following
-example, this is implemented by device_write.
+example, this is implemented by device\_write.
 
 This is not always enough. Imagine you had a serial port connected to a
 modem (even if you have an internal modem, it is still implemented from
@@ -2652,7 +2654,7 @@ somebody else\'s ioctls, or if they get yours, you\'ll know something is
 wrong. For more information, consult the kernel source tree at
 Documentation/ioctl-number.txt.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  chardev2.c - Create an input/output character device
@@ -2946,7 +2948,7 @@ MODULE_LICENSE("GPL");
 ```
 :::
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  chardev2.h - the header file with the ioctl definitions.
@@ -3017,7 +3019,7 @@ MODULE_LICENSE("GPL");
 ```
 :::
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 #include <linux/ioctl.h>
 #include <linux/init.h>
@@ -3230,7 +3232,8 @@ MODULE_DESCRIPTION("This is test_ioctl module");
 :::
 
 ::: {#outline-container-org9f82c3a .outline-2}
-## [10]{.section-number-2} System Calls {#org9f82c3a}
+[10]{.section-number-2} System Calls {#org9f82c3a}
+------------------------------------
 
 ::: {#text-10 .outline-text-2}
 So far, the only thing we\'ve done was to use well defined kernel
@@ -3258,7 +3261,7 @@ kernel (such as opening a file, forking to a new process, or requesting
 more memory), this is the mechanism used. If you want to change the
 behaviour of the kernel in interesting ways, this is the place to do it.
 By the way, if you want to see which system calls a program uses, run
-**strace \<arguments>**.
+**strace \<arguments\>**.
 
 In general, a process is not supposed to be able to access the kernel.
 It can\'t access kernel memory and it can\'t call kernel functions. The
@@ -3274,77 +3277,77 @@ interrupt 0x80. The hardware knows that once you jump to this location,
 you are no longer running in restricted user mode, but as the operating
 system kernel --- and therefore you\'re allowed to do whatever you want.
 
-The location in the kernel a process can jump to is called system_call.
+The location in the kernel a process can jump to is called system\_call.
 The procedure at that location checks the system call number, which
 tells the kernel what service the process requested. Then, it looks at
-the table of system calls (sys_call_table) to see the address of the
+the table of system calls (sys\_call\_table) to see the address of the
 kernel function to call. Then it calls the function, and after it
 returns, does a few system checks and then return back to the process
 (or to a different process, if the process time ran out). If you want to
 read this code, it\'s at the source file
-arch/\$\<\\(architecture\\)>\$/kernel/entry.S, after the line
-ENTRY(system_call).
+arch/\$\<\\(architecture\\)\>\$/kernel/entry.S, after the line
+ENTRY(system\_call).
 
 So, if we want to change the way a certain system call works, what we
 need to do is to write our own function to implement it (usually by
 adding a bit of our own code, and then calling the original function)
-and then change the pointer at sys_call_table to point to our function.
-Because we might be removed later and we don\'t want to leave the system
-in an unstable state, it\'s important for cleanup_module to restore the
-table to its original state.
+and then change the pointer at sys\_call\_table to point to our
+function. Because we might be removed later and we don\'t want to leave
+the system in an unstable state, it\'s important for cleanup\_module to
+restore the table to its original state.
 
 The source code here is an example of such a kernel module. We want to
-\"spy\" on a certain user, and to **pr_info()** a message whenever that
+\"spy\" on a certain user, and to **pr\_info()** a message whenever that
 user opens a file. Towards this end, we replace the system call to open
-a file with our own function, called **our_sys_open**. This function
+a file with our own function, called **our\_sys\_open**. This function
 checks the uid (user\'s id) of the current process, and if it\'s equal
-to the uid we spy on, it calls pr_info() to display the name of the file
-to be opened. Then, either way, it calls the original open() function
-with the same parameters, to actually open the file.
+to the uid we spy on, it calls pr\_info() to display the name of the
+file to be opened. Then, either way, it calls the original open()
+function with the same parameters, to actually open the file.
 
-The **init_module** function replaces the appropriate location in
-**sys_call_table** and keeps the original pointer in a variable. The
-cleanup_module function uses that variable to restore everything back to
-normal. This approach is dangerous, because of the possibility of two
+The **init\_module** function replaces the appropriate location in
+**sys\_call\_table** and keeps the original pointer in a variable. The
+cleanup\_module function uses that variable to restore everything back
+to normal. This approach is dangerous, because of the possibility of two
 kernel modules changing the same system call. Imagine we have two kernel
-modules, A and B. A\'s open system call will be A_open and B\'s will be
-B_open. Now, when A is inserted into the kernel, the system call is
-replaced with A_open, which will call the original sys_open when it\'s
+modules, A and B. A\'s open system call will be A\_open and B\'s will be
+B\_open. Now, when A is inserted into the kernel, the system call is
+replaced with A\_open, which will call the original sys\_open when it\'s
 done. Next, B is inserted into the kernel, which replaces the system
-call with B_open, which will call what it thinks is the original system
-call, A_open, when it\'s done.
+call with B\_open, which will call what it thinks is the original system
+call, A\_open, when it\'s done.
 
 Now, if B is removed first, everything will be well --- it will simply
-restore the system call to A_open, which calls the original. However, if
-A is removed and then B is removed, the system will crash. A\'s removal
-will restore the system call to the original, sys_open, cutting B out of
-the loop. Then, when B is removed, it will restore the system call to
-what it thinks is the original, **A_open**, which is no longer in
-memory. At first glance, it appears we could solve this particular
+restore the system call to A\_open, which calls the original. However,
+if A is removed and then B is removed, the system will crash. A\'s
+removal will restore the system call to the original, sys\_open, cutting
+B out of the loop. Then, when B is removed, it will restore the system
+call to what it thinks is the original, **A\_open**, which is no longer
+in memory. At first glance, it appears we could solve this particular
 problem by checking if the system call is equal to our open function and
 if so not changing it at all (so that B won\'t change the system call
 when it\'s removed), but that will cause an even worse problem. When A
-is removed, it sees that the system call was changed to **B_open** so
-that it is no longer pointing to **A_open**, so it won\'t restore it to
-**sys_open** before it is removed from memory. Unfortunately, **B_open**
-will still try to call **A_open** which is no longer there, so that even
-without removing B the system would crash.
+is removed, it sees that the system call was changed to **B\_open** so
+that it is no longer pointing to **A\_open**, so it won\'t restore it to
+**sys\_open** before it is removed from memory. Unfortunately,
+**B\_open** will still try to call **A\_open** which is no longer there,
+so that even without removing B the system would crash.
 
 Note that all the related problems make syscall stealing unfeasiable for
 production use. In order to keep people from doing potential harmful
-things **sys_call_table** is no longer exported. This means, if you want
-to do something more than a mere dry run of this example, you will have
-to patch your current kernel in order to have sys_call_table exported.
-In the example directory you will find a README and the patch. As you
-can imagine, such modifications are not to be taken lightly. Do not try
-this on valueable systems (ie systems that you do not own - or cannot
-restore easily). You\'ll need to get the complete sourcecode of this
-guide as a tarball in order to get the patch and the README. Depending
-on your kernel version, you might even need to hand apply the patch.
-Still here? Well, so is this chapter. If Wyle E. Coyote was a kernel
-hacker, this would be the first thing he\'d try. ;)
+things **sys\_call\_table** is no longer exported. This means, if you
+want to do something more than a mere dry run of this example, you will
+have to patch your current kernel in order to have sys\_call\_table
+exported. In the example directory you will find a README and the patch.
+As you can imagine, such modifications are not to be taken lightly. Do
+not try this on valueable systems (ie systems that you do not own - or
+cannot restore easily). You\'ll need to get the complete sourcecode of
+this guide as a tarball in order to get the patch and the README.
+Depending on your kernel version, you might even need to hand apply the
+patch. Still here? Well, so is this chapter. If Wyle E. Coyote was a
+kernel hacker, this would be the first thing he\'d try. ;)
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  syscall.c
@@ -3507,7 +3510,8 @@ MODULE_LICENSE("GPL");
 :::
 
 ::: {#outline-container-orga2fd0c2 .outline-2}
-## [11]{.section-number-2} Blocking Processes and threads {#orga2fd0c2}
+[11]{.section-number-2} Blocking Processes and threads {#orga2fd0c2}
+------------------------------------------------------
 
 ::: {#text-11 .outline-text-2}
 :::
@@ -3528,10 +3532,10 @@ run on the same time on a single CPU).
 This kernel module is an example of this. The file (called
 **/proc/sleep**) can only be opened by a single process at a time. If
 the file is already open, the kernel module calls
-wait_event_interruptible. The easiest way to keep a file open is to open
-it with:
+wait\_event\_interruptible. The easiest way to keep a file open is to
+open it with:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-bash}
 tail -f
 ```
@@ -3539,13 +3543,13 @@ tail -f
 
 This function changes the status of the task (a task is the kernel data
 structure which holds information about a process and the system call
-it\'s in, if any) to **TASK_INTERRUPTIBLE**, which means that the task
+it\'s in, if any) to **TASK\_INTERRUPTIBLE**, which means that the task
 will not run until it is woken up somehow, and adds it to WaitQ, the
 queue of tasks waiting to access the file. Then, the function calls the
 scheduler to context switch to a different process, one which has some
 use for the CPU.
 
-When a process is done with the file, it closes it, and module_close is
+When a process is done with the file, it closes it, and module\_close is
 called. That function wakes up all the processes in the queue (there\'s
 no mechanism to only wake up one of them). It then returns and the
 process which just closed the file can continue to run. In time, the
@@ -3553,7 +3557,7 @@ scheduler decides that that process has had enough and gives control of
 the CPU to another process. Eventually, one of the processes which was
 in the queue will be given control of the CPU by the scheduler. It
 starts at the point right after the call to
-**module_interruptible_sleep_on**.
+**module\_interruptible\_sleep\_on**.
 
 This means that the process is still in kernel mode - as far as the
 process is concerned, it issued the open system call and the system call
@@ -3572,12 +3576,12 @@ that we need not switch to a different vt). As soon as the first
 background process is killed with kill %1 , the second is woken up, is
 able to access the file and finally terminates.
 
-To make our life more interesting, **module_close** doesn\'t have a
+To make our life more interesting, **module\_close** doesn\'t have a
 monopoly on waking up the processes which wait to access the file. A
 signal, such as *Ctrl +c* (**SIGINT**) can also wake up a process. This
-is because we used **module_interruptible_sleep_on**. We could have used
-**module_sleep_on** instead, but that would have resulted in extremely
-angry users whose *Ctrl+c*\'s are ignored.
+is because we used **module\_interruptible\_sleep\_on**. We could have
+used **module\_sleep\_on** instead, but that would have resulted in
+extremely angry users whose *Ctrl+c*\'s are ignored.
 
 In that case, we want to return with **-EINTR** immediately. This is
 important so users can, for example, kill the process before it receives
@@ -3585,14 +3589,14 @@ the file.
 
 There is one more point to remember. Some times processes don\'t want to
 sleep, they want either to get what they want immediately, or to be told
-it cannot be done. Such processes use the **O_NONBLOCK** flag when
+it cannot be done. Such processes use the **O\_NONBLOCK** flag when
 opening the file. The kernel is supposed to respond by returning with
 the error code **-EAGAIN** from operations which would otherwise block,
-such as opening the file in this example. The program cat_noblock,
+such as opening the file in this example. The program cat\_noblock,
 available in the source directory for this chapter, can be used to open
-a file with **O_NONBLOCK**.
+a file with **O\_NONBLOCK**.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 hostname:~/lkmpg-examples/09-BlockingProcesses# insmod sleep.ko
 hostname:~/lkmpg-examples/09-BlockingProcesses# cat_noblock /proc/sleep
@@ -3617,7 +3621,7 @@ hostname:~/lkmpg-examples/09-BlockingProcesses#
 ```
 :::
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  sleep.c - create a /proc file, and if several processes try to open it at
@@ -3889,7 +3893,7 @@ MODULE_LICENSE("GPL");
 ```
 :::
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /* cat_noblock.c - open a file and display its contents, but exit rather than
  * wait for input */
@@ -3973,7 +3977,7 @@ happen.
 In the following example two threads are started, but one needs to start
 before another.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-C}
 #include <linux/init.h>
 #include <linux/module.h>
@@ -4057,14 +4061,14 @@ MODULE_LICENSE("GPL");
 
 The *machine* structure stores the completion states for the two
 threads. At the exit point of each thread the respective completion
-state is updated, and *wait_for_completion* is used by the flywheel
+state is updated, and *wait\_for\_completion* is used by the flywheel
 thread to ensure that it doesn\'t begin prematurely.
 
-So even though *flywheel_thread* is started first you should notice if
+So even though *flywheel\_thread* is started first you should notice if
 you load this module and run *dmesg* that turning the crank always
 happens first because the flywheel thread waits for it to complete.
 
-There are other variations upon the *wait_for_completion* function,
+There are other variations upon the *wait\_for\_completion* function,
 which include timeouts or being interrupted, but this basic mechanism is
 enough for many common situations without adding a lot of complexity.
 :::
@@ -4072,7 +4076,8 @@ enough for many common situations without adding a lot of complexity.
 :::
 
 ::: {#outline-container-org78193ce .outline-2}
-## [12]{.section-number-2} Avoiding Collisions and Deadlocks {#org78193ce}
+[12]{.section-number-2} Avoiding Collisions and Deadlocks {#org78193ce}
+---------------------------------------------------------
 
 ::: {#text-12 .outline-text-2}
 If processes running on different CPUs or in different threads try to
@@ -4091,7 +4096,7 @@ You can use kernel mutexes (mutual exclusions) in much the same manner
 that you might deploy them in userland. This may be all that\'s needed
 to avoid collisions in most cases.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-C}
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -4152,7 +4157,7 @@ The example here is *\"irq safe\"* in that if interrupts happen during
 the lock then they won\'t be forgotten and will activate when the unlock
 happens, using the *flags* variable to retain their state.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-C}
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -4235,7 +4240,7 @@ logic. As before it\'s a good idea to keep anything done within the lock
 as short as possible so that it doesn\'t hang up the system and cause
 users to start revolting against the tyranny of your module.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-C}
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -4295,7 +4300,7 @@ MODULE_LICENSE("GPL");
 
 Of course if you know for sure that there are no functions triggered by
 irqs which could possibly interfere with your logic then you can use the
-simpler *read_lock(&myrwlock)* and *read_unlock(&myrwlock)* or the
+simpler *read\_lock(&myrwlock)* and *read\_unlock(&myrwlock)* or the
 corresponding write functions.
 :::
 :::
@@ -4311,7 +4316,7 @@ with your mojo. By using atomic operations you can be confident that
 your addition, subtraction or bit flip did actually happen and wasn\'t
 overwritten by some other shenanigans. An example is shown below.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-C}
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -4396,7 +4401,8 @@ MODULE_LICENSE("GPL");
 :::
 
 ::: {#outline-container-org0241a39 .outline-2}
-## [13]{.section-number-2} Replacing Print Macros {#org0241a39}
+[13]{.section-number-2} Replacing Print Macros {#org0241a39}
+----------------------------------------------
 
 ::: {#text-13 .outline-text-2}
 :::
@@ -4421,7 +4427,7 @@ running task, to get the current task\'s tty structure. Then, we look
 inside that tty structure to find a pointer to a string write function,
 which we use to write a string to the tty.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  print_string.c - Send output to the tty we're running on, regardless if it's
@@ -4550,7 +4556,7 @@ simple and non-intrusive, compared to writing to a tty or a file.
 The following source code illustrates a minimal kernel module which,
 when loaded, starts blinking the keyboard LEDs until it is unloaded.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  kbleds.c - Blink keyboard leds until the module is unloaded.
@@ -4650,9 +4656,9 @@ module_exit(kbleds_cleanup);
 
 If none of the examples in this chapter fit your debugging needs there
 might yet be some other tricks to try. Ever wondered what
-CONFIG_LL_DEBUG in make menuconfig is good for? If you activate that you
-get low level access to the serial port. While this might not sound very
-powerful by itself, you can patch **kernel/printk.c** or any other
+CONFIG\_LL\_DEBUG in make menuconfig is good for? If you activate that
+you get low level access to the serial port. While this might not sound
+very powerful by itself, you can patch **kernel/printk.c** or any other
 essential syscall to use printascii, thus makeing it possible to trace
 virtually everything what your code does over a serial line. If you find
 yourself porting the kernel to some new and former unsupported
@@ -4669,7 +4675,8 @@ minimum and make sure it does not show up in production code.
 :::
 
 ::: {#outline-container-org9a71054 .outline-2}
-## [14]{.section-number-2} Scheduling Tasks {#org9a71054}
+[14]{.section-number-2} Scheduling Tasks {#org9a71054}
+----------------------------------------
 
 ::: {#text-14 .outline-text-2}
 There are two main ways of running tasks: tasklets and work queues.
@@ -4683,11 +4690,11 @@ in a sequence.
 ### [14.1]{.section-number-3} Tasklets {#orgb6837ac}
 
 ::: {#text-14-1 .outline-text-3}
-Here\'s an example tasklet module. The *tasklet_fn* function runs for a
-few seconds and in the mean time execution of the *example_tasklet_init*
-function continues to the exit point.
+Here\'s an example tasklet module. The *tasklet\_fn* function runs for a
+few seconds and in the mean time execution of the
+*example\_tasklet\_init* function continues to the exit point.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-C}
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -4729,7 +4736,7 @@ MODULE_LICENSE("GPL");
 
 So with this example loaded *dmesg* should show:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-bash}
 tasklet example init
 Example tasklet starts
@@ -4748,7 +4755,7 @@ To add a task to the scheduler we can use a workqueue. The kernel then
 uses the Completely Fair Scheduler (CFS) to execute work within the
 queue.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 #include <linux/module.h>
 #include <linux/init.h>
@@ -4786,7 +4793,8 @@ MODULE_DESCRIPTION("Workqueue example");
 :::
 
 ::: {#outline-container-org47d5026 .outline-2}
-## [15]{.section-number-2} Interrupt Handlers {#org47d5026}
+[15]{.section-number-2} Interrupt Handlers {#org47d5026}
+------------------------------------------
 
 ::: {#text-15 .outline-text-2}
 :::
@@ -4831,7 +4839,7 @@ at a later time (this is called the \"bottom half\") and return. The
 kernel is then guaranteed to call the bottom half as soon as possible --
 and when it does, everything allowed in kernel modules will be allowed.
 
-The way to implement this is to call **request_irq()** to get your
+The way to implement this is to call **request\_irq()** to get your
 interrupt handler called when the relevant IRQ is received.
 
 In practice IRQ handling can be a bit more complex. Hardware is often
@@ -4852,10 +4860,10 @@ in more details, might want to do a web search for \"APIC\" now ;)
 This function receives the IRQ number, the name of the function, flags,
 a name for /proc/interrupts and a parameter to pass to the interrupt
 handler. Usually there is a certain number of IRQs available. How many
-IRQs there are is hardware-dependent. The flags can include SA_SHIRQ to
+IRQs there are is hardware-dependent. The flags can include SA\_SHIRQ to
 indicate you\'re willing to share the IRQ with other interrupt handlers
 (usually because a number of hardware devices sit on the same IRQ) and
-SA_INTERRUPT to indicate this is a fast interrupt. This function will
+SA\_INTERRUPT to indicate this is a fast interrupt. This function will
 only succeed if there isn\'t already a handler on this IRQ, or if
 you\'re both willing to share.
 :::
@@ -4877,7 +4885,7 @@ Here\'s an example where buttons are connected to GPIO numbers 17 and 18
 and an LED is connected to GPIO 4. You can change those numbers to
 whatever is appropriate for your board.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-c}
 /*
  *  intrpt.c - Handling GPIO with interrupts
@@ -5047,7 +5055,7 @@ bulk of the work off into the scheduler.
 The example below modifies the previous example to also run an
 additional task when an interrupt is triggered.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-C}
 /*
  * bottomhalf.c - Top and bottom half interrupt handling
@@ -5221,7 +5229,8 @@ MODULE_DESCRIPTION("Interrupt with top and bottom half");
 :::
 
 ::: {#outline-container-org01272be .outline-2}
-## [16]{.section-number-2} Crypto {#org01272be}
+[16]{.section-number-2} Crypto {#org01272be}
+------------------------------
 
 ::: {#text-16 .outline-text-2}
 At the dawn of the internet everybody trusted everybody completely...but
@@ -5241,7 +5250,7 @@ Calculating and checking the hashes of things is a common operation.
 Here is a demonstration of how to calculate a sha256 hash within a
 kernel module.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-C}
 #include <linux/module.h>
 #include <crypto/internal/hash.h>
@@ -5311,7 +5320,7 @@ MODULE_LICENSE("GPL");
 
 Make and install the module:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 make
 sudo insmod cryptosha256.ko
@@ -5323,7 +5332,7 @@ And you should see that the hash was calculated for the test string.
 
 Finally, remove the test module:
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-sh}
 sudo rmmod cryptosha256
 ```
@@ -5338,7 +5347,7 @@ sudo rmmod cryptosha256
 Here is an example of symmetrically encrypting a string using the AES
 algorithm and a password.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-C}
 #include <crypto/internal/skcipher.h>
 #include <linux/scatterlist.h>
@@ -5546,7 +5555,8 @@ MODULE_LICENSE("GPL");
 :::
 
 ::: {#outline-container-org75d267e .outline-2}
-## [17]{.section-number-2} Standardising the interfaces: The Device Model {#org75d267e}
+[17]{.section-number-2} Standardising the interfaces: The Device Model {#org75d267e}
+----------------------------------------------------------------------
 
 ::: {#text-17 .outline-text-2}
 Up to this point we\'ve seen all kinds of modules doing all kinds of
@@ -5556,7 +5566,7 @@ a standardised way to start, suspend and resume a device a device model
 was added. An example is show below, and you can use this as a template
 to add your own suspend, resume or other interface functions.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-C}
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -5660,7 +5670,8 @@ module_exit(devicemodel_exit);
 :::
 
 ::: {#outline-container-org391b9a6 .outline-2}
-## [18]{.section-number-2} Optimisations {#org391b9a6}
+[18]{.section-number-2} Optimisations {#org391b9a6}
+-------------------------------------
 
 ::: {#text-18 .outline-text-2}
 :::
@@ -5679,7 +5690,7 @@ for this using the *likely* and *unlikely* macros.
 For example, when allocating memory you\'re almost always expecting this
 to succeed.
 
-::: org-src-container
+::: {.org-src-container}
 ``` {.src .src-C}
 bvl = bvec_alloc(gfp_mask, nr_iovecs, &idx);
 if (unlikely(!bvl)) {
@@ -5699,7 +5710,8 @@ pipeline. The opposite happens if you use the *likely* macro.
 :::
 
 ::: {#outline-container-org109e4b3 .outline-2}
-## [19]{.section-number-2} Common Pitfalls {#org109e4b3}
+[19]{.section-number-2} Common Pitfalls {#org109e4b3}
+---------------------------------------
 
 ::: {#text-19 .outline-text-2}
 Before I send you on your way to go out into the world and write kernel
@@ -5738,7 +5750,8 @@ anyway, just in case.
 :::
 
 ::: {#outline-container-org4e6c171 .outline-2}
-## [20]{.section-number-2} Where To Go From Here? {#org4e6c171}
+[20]{.section-number-2} Where To Go From Here? {#org4e6c171}
+----------------------------------------------
 
 ::: {#text-20 .outline-text-2}
 I could easily have squeezed a few more chapters into this book. I could
