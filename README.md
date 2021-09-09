@@ -22,3 +22,5 @@ cd [version directory]
 cd examples
 make
 ```
+
+![Book cover](cover.png)
