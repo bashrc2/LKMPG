@@ -3301,14 +3301,14 @@ Here's an example tasklet module. The /tasklet_fn/ function runs for a few secon
 #include <linux/delay.h>
 #include <linux/interrupt.h>
 
-static void tasklet_fn(unsigned long data)
+static void tasklet_fn(struct tasklet_struct *data)
 {
     pr_info("Example tasklet starts\n");
     mdelay(5000);
     pr_info("Example tasklet ends\n");
 }
 
-DECLARE_TASKLET(mytask, tasklet_fn, 0L);
+DECLARE_TASKLET(mytask, tasklet_fn);
 
 static int example_tasklet_init(void)
 {
@@ -3590,7 +3590,7 @@ static struct gpio buttons[] = {
 };
 
 /* Tasklet containing some non-trivial amount of processing */
-static void bottomhalf_tasklet_fn(unsigned long data)
+static void bottomhalf_tasklet_fn(struct tasklet_struct *data)
 {
     pr_info("Bottom half tasklet starts\n");
     /* do something which takes a while */
@@ -3598,7 +3598,7 @@ static void bottomhalf_tasklet_fn(unsigned long data)
     pr_info("Bottom half tasklet ends\n");
 }
 
-DECLARE_TASKLET(buttontask, bottomhalf_tasklet_fn, 0L);
+DECLARE_TASKLET(buttontask, bottomhalf_tasklet_fn);
 
 /*
  * interrupt function triggered when a button is pressed
