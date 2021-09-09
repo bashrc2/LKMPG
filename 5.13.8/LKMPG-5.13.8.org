@@ -1,8 +1,10 @@
+[[./img/cover.png]]
 #+TITLE: The Linux Kernel Module Programming Guide
 #+AUTHOR: Peter Jay Salzman, Michael Burian, Ori Pomerantz, Bob Mottram
 #+KEYWORDS: linux, kernel, kernel module, kernel programming
 #+DESCRIPTION: How to make kernel modules for Linux
 #+OPTIONS: ^:nil
+
 
 * Introduction
 The Linux Kernel Module Programming Guide is a free book; you may reproduce and/or modify it under the terms of the Open Software License, version 3.0.
