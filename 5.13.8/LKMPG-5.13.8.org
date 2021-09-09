@@ -3816,6 +3816,7 @@ Here is an example of symmetrically encrypting a string using the AES algorithm 
 
 #+begin_src C :file cryptosk.c
 #include <crypto/internal/skcipher.h>
+#include <linux/scatterlist.h>
 #include <linux/module.h>
 #include <linux/random.h>
 #include <linux/crypto.h>
