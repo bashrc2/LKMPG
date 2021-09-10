@@ -1,5 +1,4 @@
-[[./img/cover.png]]
-#+TITLE: The Linux Kernel Module Programming Guide
+[[#+TITLE: The Linux Kernel Module Programming Guide
 #+AUTHOR: Peter Jay Salzman, Michael Burian, Ori Pomerantz, Bob Mottram
 #+KEYWORDS: linux, kernel, kernel module, kernel programming
 #+DESCRIPTION: How to make kernel modules for Linux
@@ -570,7 +569,7 @@ In other words, your kernel refuses to accept your module because version string
 #+BEGIN_SRC txt
 # sudo modinfo hello-4.ko
 license:        GPL
-author:         Bob Mottram <bob@freedombone.net>
+author:         Bob Mottram <bob@libreserver.org>
 description:    A sample driver
 vermagic:       5.13.8-1.358 amd64 REGPARM 4KSTACKS gcc-4.9.2
 depends:
@@ -4155,6 +4154,6 @@ If you're interested in more examples of short kernel modules then searching on 
 
 I hope I have helped you in your quest to become a better programmer, or at least to have fun through technology. And, if you do write useful kernel modules, I hope you publish them under the GPL, so I can use them too.
 
-If you'd like to contribute to this guide, notice anything glaringly wrong, or just want to add extra sarcastic remarks perhaps involving monkeys or some other kind of animal then fire an email to bob@freedombone.net and you may be able to get commit access to https://code.freedombone.net/bashrc/LKMPG.
+If you'd like to contribute to this guide, notice anything glaringly wrong, or just want to add extra sarcastic remarks perhaps involving monkeys or some other kind of animal then fire an email to bob@libreserver.org and you may be able to get commit access to https://gitlab.com/bashrc2/LKMPG.
 
 Happy hacking.
