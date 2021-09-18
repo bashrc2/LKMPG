@@ -36,9 +36,9 @@ So, you want to write a kernel module. You know C, you've written a few normal p
 
 What exactly is a kernel module? Modules are pieces of code that can be loaded and unloaded into the kernel upon demand. They extend the functionality of the kernel without the need to reboot the system. For example, one type of module is the device driver, which allows the kernel to access hardware connected to the system. Without modules, we would have to build monolithic kernels and add new functionality directly into the kernel image. Besides having larger kernels, this has the disadvantage of requiring us to rebuild and reboot the kernel every time we want new functionality.
 
-** Kernel module package
+** Installing some Dependencies
 
-Linux distros provide the commands /modprobe/, /insmod/ and /depmod/ within a package.
+Linux distros provide the commands /modprobe/, /insmod/ and /depmod/ within a package. These can be installed as follows:
 
 On Debian:
 
@@ -74,6 +74,7 @@ sudo lsmod | grep fat
 
 ** Do I need to download and compile the kernel?
 For the purposes of following this guide you don't necessarily need to do that. However, it would be wise to run the examples within a test distro running on a virtual machine in order to avoid any possibility of messing up your system.
+
 ** Before We Begin
 Before we delve into code, there are a few issues we need to cover. Everyone's system is different and everyone has their own groove. Getting your first "hello world" program to compile and load correctly can sometimes be a trick. Rest assured, after you get over the initial hurdle of doing it for the first time, it will be smooth sailing thereafter.
 
