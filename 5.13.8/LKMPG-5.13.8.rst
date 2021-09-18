@@ -10,116 +10,116 @@
       .. container::
          :name: text-table-of-contents
 
-         -  `1. Introduction <#org2fe6d3b>`__
+         -  `1. Introduction <#orgfb1f91d>`__
 
-            -  `1.1. Authorship <#orgdbb39ac>`__
-            -  `1.2. Versioning and Notes <#orgdd87aec>`__
-            -  `1.3. Acknowledgements <#org93c4777>`__
-            -  `1.4. What Is A Kernel Module? <#orgfe8e658>`__
-            -  `1.5. Installing some Dependencies <#org7a008ba>`__
-            -  `1.6. What Modules are in my Kernel? <#orga334257>`__
+            -  `1.1. Authorship <#org04661e3>`__
+            -  `1.2. Versioning and Notes <#org40dfc5b>`__
+            -  `1.3. Acknowledgements <#org69c17b1>`__
+            -  `1.4. What Is A Kernel Module? <#org11980cf>`__
+            -  `1.5. Installing some Dependencies <#org717a585>`__
+            -  `1.6. What Modules are in my Kernel? <#org34eb349>`__
             -  `1.7. Do I need to download and compile the
-               kernel? <#org704cf47>`__
-            -  `1.8. Before We Begin <#org23b6001>`__
+               kernel? <#org5edddff>`__
+            -  `1.8. Before We Begin <#orgcee5a12>`__
 
-         -  `2. Headers <#org09e0ed1>`__
-         -  `3. Examples <#org8514710>`__
-         -  `4. Hello World <#org2e716c8>`__
+         -  `2. Headers <#org25ee2e2>`__
+         -  `3. Examples <#orgfbab5ee>`__
+         -  `4. Hello World <#org5936baa>`__
 
-            -  `4.1. The Simplest Module <#org50b6ca5>`__
-            -  `4.2. Hello and Goodbye <#org2cb9991>`__
-            -  `4.3. The \__init and \__exit Macros <#orgdb843de>`__
-            -  `4.4. Licensing and Module Documentation <#org3d717a3>`__
+            -  `4.1. The Simplest Module <#org46d957a>`__
+            -  `4.2. Hello and Goodbye <#org792c507>`__
+            -  `4.3. The \__init and \__exit Macros <#org4ac0db1>`__
+            -  `4.4. Licensing and Module Documentation <#org6040228>`__
             -  `4.5. Passing Command Line Arguments to a
-               Module <#org4fc6259>`__
-            -  `4.6. Modules Spanning Multiple Files <#orgaa1fefa>`__
+               Module <#orgc65e82d>`__
+            -  `4.6. Modules Spanning Multiple Files <#org18a0ec8>`__
             -  `4.7. Building modules for a precompiled
-               kernel <#orgcf0dd02>`__
+               kernel <#org7a3bdaa>`__
 
-         -  `5. Preliminaries <#org9b76907>`__
+         -  `5. Preliminaries <#org8c43f4e>`__
 
-            -  `5.1. How modules begin and end <#org6599c2c>`__
-            -  `5.2. Functions available to modules <#orgaacef73>`__
-            -  `5.3. User Space vs Kernel Space <#org376c013>`__
-            -  `5.4. Name Space <#org2d25c90>`__
-            -  `5.5. Code space <#orgbc65808>`__
-            -  `5.6. Device Drivers <#org517834b>`__
+            -  `5.1. How modules begin and end <#org4b8b752>`__
+            -  `5.2. Functions available to modules <#org909371e>`__
+            -  `5.3. User Space vs Kernel Space <#orgf7f182b>`__
+            -  `5.4. Name Space <#orgff44207>`__
+            -  `5.5. Code space <#org5255cdb>`__
+            -  `5.6. Device Drivers <#orgbc23973>`__
 
-         -  `6. Character Device drivers <#orgc9ab9cf>`__
+         -  `6. Character Device drivers <#org9f9f402>`__
 
-            -  `6.1. The file_operations Structure <#org503b2bc>`__
-            -  `6.2. The file structure <#org043bd77>`__
-            -  `6.3. Registering A Device <#org832e261>`__
-            -  `6.4. Unregistering A Device <#org8f03da4>`__
-            -  `6.5. chardev.c <#orgd2e2061>`__
+            -  `6.1. The file_operations Structure <#org4c8e73e>`__
+            -  `6.2. The file structure <#orgc832331>`__
+            -  `6.3. Registering A Device <#org1170a8f>`__
+            -  `6.4. Unregistering A Device <#orgd0756f2>`__
+            -  `6.5. chardev.c <#org3c38eaa>`__
             -  `6.6. Writing Modules for Multiple Kernel
-               Versions <#org0a359f8>`__
+               Versions <#orga7dad83>`__
 
-         -  `7. The /proc File System <#org4b9da08>`__
+         -  `7. The /proc File System <#org37398ab>`__
 
-            -  `7.1. Read and Write a /proc File <#org95403fb>`__
+            -  `7.1. Read and Write a /proc File <#orgc89475b>`__
             -  `7.2. Manage /proc file with standard
-               filesystem <#org77cad59>`__
-            -  `7.3. Manage /proc file with seq_file <#orgf8eb3d8>`__
+               filesystem <#org0ba2b62>`__
+            -  `7.3. Manage /proc file with seq_file <#org3bd39f4>`__
 
-         -  `8. sysfs: Interacting with your module <#org726c635>`__
-         -  `9. Talking To Device Files <#orgd812e51>`__
-         -  `10. System Calls <#orga4ce333>`__
-         -  `11. Blocking Processes and threads <#org14dc357>`__
+         -  `8. sysfs: Interacting with your module <#org6f5331f>`__
+         -  `9. Talking To Device Files <#org0917e40>`__
+         -  `10. System Calls <#orgb6faf69>`__
+         -  `11. Blocking Processes and threads <#org07bc856>`__
 
-            -  `11.1. Sleep <#orgc4b9377>`__
-            -  `11.2. Completions <#orgae2cfb4>`__
+            -  `11.1. Sleep <#org315b870>`__
+            -  `11.2. Completions <#orgaf9c3e8>`__
 
-         -  `12. Avoiding Collisions and Deadlocks <#orgb0a857c>`__
+         -  `12. Avoiding Collisions and Deadlocks <#orgf411c28>`__
 
-            -  `12.1. Mutex <#orgc02b11e>`__
-            -  `12.2. Spinlocks <#orgf3a2577>`__
-            -  `12.3. Read and write locks <#orga3a70d0>`__
-            -  `12.4. Atomic operations <#orga153ddc>`__
+            -  `12.1. Mutex <#org27b280a>`__
+            -  `12.2. Spinlocks <#orgca71381>`__
+            -  `12.3. Read and write locks <#org85f6936>`__
+            -  `12.4. Atomic operations <#org3193248>`__
 
-         -  `13. Replacing Print Macros <#orgfb9951d>`__
+         -  `13. Replacing Print Macros <#org7a251dc>`__
 
-            -  `13.1. Replacement <#org30b5453>`__
-            -  `13.2. Flashing keyboard LEDs <#orgb39268e>`__
+            -  `13.1. Replacement <#org51e9c6e>`__
+            -  `13.2. Flashing keyboard LEDs <#org364f3e1>`__
 
-         -  `14. Scheduling Tasks <#orgc55bb18>`__
+         -  `14. Scheduling Tasks <#org6435c32>`__
 
-            -  `14.1. Tasklets <#orga076eef>`__
-            -  `14.2. Work queues <#org982b3f6>`__
+            -  `14.1. Tasklets <#org369ed2d>`__
+            -  `14.2. Work queues <#orgecedcee>`__
 
-         -  `15. Interrupt Handlers <#orgc116273>`__
+         -  `15. Interrupt Handlers <#org16ea710>`__
 
-            -  `15.1. Interrupt Handlers <#org54e4896>`__
-            -  `15.2. Detecting button presses <#orge7773b4>`__
-            -  `15.3. Bottom Half <#orgcdc9929>`__
+            -  `15.1. Interrupt Handlers <#org4c00e67>`__
+            -  `15.2. Detecting button presses <#orgbe49b1f>`__
+            -  `15.3. Bottom Half <#org47ce5d0>`__
 
-         -  `16. Crypto <#orgbf0e5ac>`__
+         -  `16. Crypto <#orga546dae>`__
 
-            -  `16.1. Hash functions <#org2007617>`__
-            -  `16.2. Symmetric key encryption <#orgc6b3c30>`__
+            -  `16.1. Hash functions <#orgb7a2f3f>`__
+            -  `16.2. Symmetric key encryption <#org0cfee26>`__
 
          -  `17. Standardising the interfaces: The Device
-            Model <#org03f659f>`__
-         -  `18. Optimisations <#org68259eb>`__
+            Model <#orgc0998e8>`__
+         -  `18. Optimisations <#org85ac10f>`__
 
-            -  `18.1. Likely and Unlikely conditions <#org559c508>`__
+            -  `18.1. Likely and Unlikely conditions <#orgbc29856>`__
 
-         -  `19. Common Pitfalls <#org8c4d4e4>`__
+         -  `19. Common Pitfalls <#org73aac70>`__
 
-            -  `19.1. Using standard libraries <#org4d49bfc>`__
-            -  `19.2. Disabling interrupts <#org2cb7089>`__
+            -  `19.1. Using standard libraries <#orgb6b4a5c>`__
+            -  `19.2. Disabling interrupts <#org941503c>`__
             -  `19.3. Sticking your head inside a large
-               carnivore <#orgcbea719>`__
+               carnivore <#orgaeeefa9>`__
 
-         -  `20. Where To Go From Here? <#org3682fd2>`__
+         -  `20. Where To Go From Here? <#orgf82b901>`__
 
    [[#+TITLE: The Linux Kernel Module Programming Guide
 
    .. container:: outline-2
-      :name: outline-container-org2fe6d3b
+      :name: outline-container-orgfb1f91d
 
       .. rubric:: 1. Introduction
-         :name: org2fe6d3b
+         :name: orgfb1f91d
 
       .. container:: outline-text-2
          :name: text-1
@@ -158,10 +158,10 @@
          have questions or comments, please contact the address above.
 
       .. container:: outline-3
-         :name: outline-container-orgdbb39ac
+         :name: outline-container-org04661e3
 
          .. rubric:: 1.1. Authorship
-            :name: orgdbb39ac
+            :name: org04661e3
 
          .. container:: outline-text-3
             :name: text-1-1
@@ -179,10 +179,10 @@
             chapters.
 
       .. container:: outline-3
-         :name: outline-container-orgdd87aec
+         :name: outline-container-org40dfc5b
 
          .. rubric:: 1.2. Versioning and Notes
-            :name: orgdd87aec
+            :name: org40dfc5b
 
          .. container:: outline-text-3
             :name: text-1-2
@@ -201,10 +201,10 @@
             architectures, but I can't promise anything.
 
       .. container:: outline-3
-         :name: outline-container-org93c4777
+         :name: outline-container-org69c17b1
 
          .. rubric:: 1.3. Acknowledgements
-            :name: org93c4777
+            :name: org69c17b1
 
          .. container:: outline-text-3
             :name: text-1-3
@@ -215,10 +215,10 @@
             Bob Mottram and Roman Lakeev.
 
       .. container:: outline-3
-         :name: outline-container-orgfe8e658
+         :name: outline-container-org11980cf
 
          .. rubric:: 1.4. What Is A Kernel Module?
-            :name: orgfe8e658
+            :name: org11980cf
 
          .. container:: outline-text-3
             :name: text-1-4
@@ -241,10 +241,10 @@
             the kernel every time we want new functionality.
 
       .. container:: outline-3
-         :name: outline-container-org7a008ba
+         :name: outline-container-org717a585
 
          .. rubric:: 1.5. Installing some Dependencies
-            :name: org7a008ba
+            :name: org717a585
 
          .. container:: outline-text-3
             :name: text-1-5
@@ -270,10 +270,10 @@
                   sudo pacman -S gcc kmod
 
       .. container:: outline-3
-         :name: outline-container-orga334257
+         :name: outline-container-org34eb349
 
          .. rubric:: 1.6. What Modules are in my Kernel?
-            :name: orga334257
+            :name: org34eb349
 
          .. container:: outline-text-3
             :name: text-1-6
@@ -306,10 +306,10 @@
                   sudo lsmod | grep fat
 
       .. container:: outline-3
-         :name: outline-container-org704cf47
+         :name: outline-container-org5edddff
 
          .. rubric:: 1.7. Do I need to download and compile the kernel?
-            :name: org704cf47
+            :name: org5edddff
 
          .. container:: outline-text-3
             :name: text-1-7
@@ -321,10 +321,10 @@
             system.
 
       .. container:: outline-3
-         :name: outline-container-org23b6001
+         :name: outline-container-orgcee5a12
 
          .. rubric:: 1.8. Before We Begin
-            :name: org23b6001
+            :name: orgcee5a12
 
          .. container:: outline-text-3
             :name: text-1-8
@@ -369,10 +369,10 @@
             :::
 
    .. container:: outline-2
-      :name: outline-container-org09e0ed1
+      :name: outline-container-org25ee2e2
 
       .. rubric:: 2. Headers
-         :name: org09e0ed1
+         :name: org25ee2e2
 
       .. container:: outline-text-2
          :name: text-2
@@ -405,10 +405,10 @@
                sudo apt-get install kmod linux-headers-5.13.8-1-amd64
 
    .. container:: outline-2
-      :name: outline-container-org8514710
+      :name: outline-container-orgfbab5ee
 
       .. rubric:: 3. Examples
-         :name: org8514710
+         :name: orgfbab5ee
 
       .. container:: outline-text-2
          :name: text-3
@@ -431,19 +431,19 @@
          kernel header files.
 
    .. container:: outline-2
-      :name: outline-container-org2e716c8
+      :name: outline-container-org5936baa
 
       .. rubric:: 4. Hello World
-         :name: org2e716c8
+         :name: org5936baa
 
       .. container:: outline-text-2
          :name: text-4
 
       .. container:: outline-3
-         :name: outline-container-org50b6ca5
+         :name: outline-container-org46d957a
 
          .. rubric:: 4.1. The Simplest Module
-            :name: org50b6ca5
+            :name: org46d957a
 
          .. container:: outline-text-3
             :name: text-4-1
@@ -653,10 +653,10 @@
             :::
 
       .. container:: outline-3
-         :name: outline-container-org2cb9991
+         :name: outline-container-org792c507
 
          .. rubric:: 4.2. Hello and Goodbye
-            :name: org2cb9991
+            :name: org792c507
 
          .. container:: outline-text-3
             :name: text-4-2
@@ -727,10 +727,10 @@
             when you said make menuconfig or something like that.
 
       .. container:: outline-3
-         :name: outline-container-orgdb843de
+         :name: outline-container-org4ac0db1
 
          .. rubric:: 4.3. The \__init and \__exit Macros
-            :name: orgdb843de
+            :name: org4ac0db1
 
          .. container:: outline-text-3
             :name: text-4-3
@@ -788,10 +788,10 @@
                   MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-org3d717a3
+         :name: outline-container-org6040228
 
          .. rubric:: 4.4. Licensing and Module Documentation
-            :name: org3d717a3
+            :name: org6040228
 
          .. container:: outline-text-3
             :name: text-4-4
@@ -805,7 +805,6 @@
 
                   # insmod xxxxxx.o
                   Warning: loading xxxxxx.ko will taint the kernel: no license
-                    See http://www.tux.org/lkml/#export-tainted for information about tainted modules
                   Module xxxxxx loaded, with warnings
 
             You can use a few macros to indicate the license for your
@@ -848,10 +847,10 @@
                   module_exit(cleanup_hello_4);
 
       .. container:: outline-3
-         :name: outline-container-org4fc6259
+         :name: outline-container-orgc65e82d
 
          .. rubric:: 4.5. Passing Command Line Arguments to a Module
-            :name: org4fc6259
+            :name: orgc65e82d
 
          .. container:: outline-text-3
             :name: text-4-5
@@ -932,7 +931,7 @@
                   static int myint = 420;
                   static long int mylong = 9999;
                   static char *mystring = "blah";
-                  static int myintArray[2] = { -1, -1 };
+                  static int myintarray[2] = { -1, -1 };
                   static int arr_argc = 0;
 
                   /*
@@ -960,8 +959,8 @@
                    * of elements of the array initialized by the user at module loading time
                    * The fourth argument is the permission bits
                    */
-                  module_param_array(myintArray, int, &arr_argc, 0000);
-                  MODULE_PARM_DESC(myintArray, "An array of integers");
+                  module_param_array(myintarray, int, &arr_argc, 0000);
+                  MODULE_PARM_DESC(myintarray, "An array of integers");
 
                   static int __init hello_5_init(void)
                   {
@@ -972,10 +971,10 @@
                       pr_info("mylong is a long integer: %ld\n", mylong);
                       pr_info("mystring is a string: %s\n", mystring);
 
-                      for (i = 0; i < (sizeof myintArray / sizeof (int)); i++)
-                          pr_info("myintArray[%d] = %d\n", i, myintArray[i]);
+                      for (i = 0; i < (sizeof myintarray / sizeof (int)); i++)
+                          pr_info("myintarray[%d] = %d\n", i, myintarray[i]);
 
-                      pr_info("got %d arguments for myintArray.\n", arr_argc);
+                      pr_info("got %d arguments for myintarray.\n", arr_argc);
                       return 0;
                   }
 
@@ -993,25 +992,25 @@
 
                .. code:: src
 
-                  # sudo insmod hello-5.ko mystring="bebop" mybyte=255 myintArray=-1
+                  # sudo insmod hello-5.ko mystring="bebop" mybyte=255 myintarray=-1
                   mybyte is an 8 bit integer: 255
                   myshort is a short integer: 1
                   myint is an integer: 20
                   mylong is a long integer: 9999
                   mystring is a string: bebop
-                  myintArray is -1 and 420
+                  myintarray is -1 and 420
 
                   # rmmod hello-5
                   Goodbye, world 5
 
                   # sudo insmod hello-5.ko mystring="supercalifragilisticexpialidocious" \
-                  > mybyte=256 myintArray=-1,-1
+                  > mybyte=256 myintarray=-1,-1
                   mybyte is an 8 bit integer: 0
                   myshort is a short integer: 1
                   myint is an integer: 20
                   mylong is a long integer: 9999
                   mystring is a string: supercalifragilisticexpialidocious
-                  myintArray is -1 and -1
+                  myintarray is -1 and -1
 
                   # rmmod hello-5
                   Goodbye, world 5
@@ -1020,10 +1019,10 @@
                   hello-5.o: invalid argument syntax for mylong: 'h'
 
       .. container:: outline-3
-         :name: outline-container-orgaa1fefa
+         :name: outline-container-org18a0ec8
 
          .. rubric:: 4.6. Modules Spanning Multiple Files
-            :name: orgaa1fefa
+            :name: org18a0ec8
 
          .. container:: outline-text-3
             :name: text-4-6
@@ -1099,10 +1098,10 @@
             what object files are part of that module.
 
       .. container:: outline-3
-         :name: outline-container-orgcf0dd02
+         :name: outline-container-org7a3bdaa
 
          .. rubric:: 4.7. Building modules for a precompiled kernel
-            :name: orgcf0dd02
+            :name: org7a3bdaa
 
          .. container:: outline-text-3
             :name: text-4-7
@@ -1216,7 +1215,7 @@
             **EXTRAVERSION** to -1.358. We suggest to keep a backup copy
             of the makefile used to compile your kernel available in
             **/lib/modules/5.13.8-1.358/build**. A simple **cp
-            /lib/modules/`uname-r`/build/Makefile /usr/src/linux-`uname
+            /lib/modules/`uname -r`/build/Makefile /usr/src/linux-`uname
             -r\`** should suffice. Additionally, if you already started
             a kernel build with the previous (wrong) Makefile, you
             should also rerun make, or directly modify symbol
@@ -1234,16 +1233,19 @@
                .. code:: src
 
                   # make
-                  CHK     include/linux/version.h
-                  UPD     include/linux/version.h
-                  SYMLINK include/asm -> include/asm-i386
-                  SPLIT   include/linux/autoconf.h -> include/config/*
+                  SYNC    include/config/auto.conf.cmd
                   HOSTCC  scripts/basic/fixdep
-                  HOSTCC  scripts/basic/split-include
-                  HOSTCC  scripts/basic/docproc
-                  HOSTCC  scripts/conmakehash
-                  HOSTCC  scripts/kallsyms
-                  CC      scripts/empty.o
+                  HOSTCC  scripts/kconfig/conf.o
+                  HOSTCC  scripts/kconfig/confdata.o
+                  HOSTCC  scripts/kconfig/expr.o
+                  LEX     scripts/kconfig/lexer.lex.c
+                  YACC    scripts/kconfig/parser.tab.[ch]
+                  HOSTCC  scripts/kconfig/preprocess.o
+                  HOSTCC  scripts/kconfig/symbol.o
+                  HOSTCC  scripts/kconfig/util.o
+                  HOSTCC  scripts/kconfig/lexer.lex.o
+                  HOSTCC  scripts/kconfig/parser.tab.o
+                  HOSTLD  scripts/kconfig/conf
 
             If you do not desire to actually compile the kernel, you can
             interrupt the build process (CTRL-C) just after the SPLIT
@@ -1254,19 +1256,19 @@
             any errors.
 
    .. container:: outline-2
-      :name: outline-container-org9b76907
+      :name: outline-container-org8c43f4e
 
       .. rubric:: 5. Preliminaries
-         :name: org9b76907
+         :name: org8c43f4e
 
       .. container:: outline-text-2
          :name: text-5
 
       .. container:: outline-3
-         :name: outline-container-org6599c2c
+         :name: outline-container-org4b8b752
 
          .. rubric:: 5.1. How modules begin and end
-            :name: org6599c2c
+            :name: org4b8b752
 
          .. container:: outline-text-3
             :name: text-5-1
@@ -1297,10 +1299,10 @@
             think you'll know what I mean.
 
       .. container:: outline-3
-         :name: outline-container-orgaacef73
+         :name: outline-container-org909371e
 
          .. rubric:: 5.2. Functions available to modules
-            :name: orgaacef73
+            :name: org909371e
 
          .. container:: outline-text-3
             :name: text-5-2
@@ -1376,10 +1378,10 @@
             tries to delete a file on your system.
 
       .. container:: outline-3
-         :name: outline-container-org376c013
+         :name: outline-container-orgf7f182b
 
          .. rubric:: 5.3. User Space vs Kernel Space
-            :name: org376c013
+            :name: orgf7f182b
 
          .. container:: outline-text-3
             :name: text-5-3
@@ -1408,10 +1410,10 @@
             returns and execution gets transfered back to user mode.
 
       .. container:: outline-3
-         :name: outline-container-org2d25c90
+         :name: outline-container-orgff44207
 
          .. rubric:: 5.4. Name Space
-            :name: org2d25c90
+            :name: orgff44207
 
          .. container:: outline-text-3
             :name: text-5-4
@@ -1442,10 +1444,10 @@
             your modules since they share the kernel's codespace.
 
       .. container:: outline-3
-         :name: outline-container-orgbc65808
+         :name: outline-container-org5255cdb
 
          .. rubric:: 5.5. Code space
-            :name: orgbc65808
+            :name: org5255cdb
 
          .. container:: outline-text-3
             :name: text-5-5
@@ -1495,10 +1497,10 @@
             microkernel.
 
       .. container:: outline-3
-         :name: outline-container-org517834b
+         :name: outline-container-orgbc23973
 
          .. rubric:: 5.6. Device Drivers
-            :name: org517834b
+            :name: orgbc23973
 
          .. container:: outline-text-3
             :name: text-5-6
@@ -1619,19 +1621,19 @@
             :::
 
    .. container:: outline-2
-      :name: outline-container-orgc9ab9cf
+      :name: outline-container-org9f9f402
 
       .. rubric:: 6. Character Device drivers
-         :name: orgc9ab9cf
+         :name: org9f9f402
 
       .. container:: outline-text-2
          :name: text-6
 
       .. container:: outline-3
-         :name: outline-container-org503b2bc
+         :name: outline-container-org4c8e73e
 
          .. rubric:: 6.1. The file_operations Structure
-            :name: org503b2bc
+            :name: org4c8e73e
 
          .. container:: outline-text-3
             :name: text-6-1
@@ -1738,10 +1740,10 @@
             syscalls is commonly named fops.
 
       .. container:: outline-3
-         :name: outline-container-org043bd77
+         :name: outline-container-orgc832331
 
          .. rubric:: 6.2. The file structure
-            :name: org043bd77
+            :name: orgc832331
 
          .. container:: outline-text-3
             :name: text-6-2
@@ -1766,10 +1768,10 @@
             in file which are created elsewhere.
 
       .. container:: outline-3
-         :name: outline-container-org832e261
+         :name: outline-container-org1170a8f
 
          .. rubric:: 6.3. Registering A Device
-            :name: org832e261
+            :name: org1170a8f
 
          .. container:: outline-text-3
             :name: text-6-3
@@ -1827,10 +1829,10 @@
             and **device_destroy** during the call to cleanup_module.
 
       .. container:: outline-3
-         :name: outline-container-org8f03da4
+         :name: outline-container-orgd0756f2
 
          .. rubric:: 6.4. Unregistering A Device
-            :name: org8f03da4
+            :name: orgd0756f2
 
          .. container:: outline-text-3
             :name: text-6-4
@@ -1872,10 +1874,10 @@
             module's development.
 
       .. container:: outline-3
-         :name: outline-container-orgd2e2061
+         :name: outline-container-org3c38eaa
 
          .. rubric:: 6.5. chardev.c
-            :name: orgd2e2061
+            :name: org3c38eaa
 
          .. container:: outline-text-3
             :name: text-6-5
@@ -2087,10 +2089,10 @@
                   MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-org0a359f8
+         :name: outline-container-orga7dad83
 
          .. rubric:: 6.6. Writing Modules for Multiple Kernel Versions
-            :name: org0a359f8
+            :name: orga7dad83
 
          .. container:: outline-text-3
             :name: text-6-6
@@ -2147,10 +2149,10 @@
             full story.
 
    .. container:: outline-2
-      :name: outline-container-org4b9da08
+      :name: outline-container-org37398ab
 
       .. rubric:: 7. The /proc File System
-         :name: org4b9da08
+         :name: org37398ab
 
       .. container:: outline-text-2
          :name: text-7
@@ -2221,42 +2223,57 @@
             .. code:: src
 
                /*
-                procfs1.c
-               */
+                * procfs1.c
+                */
 
-               #include <linux/module.h>
                #include <linux/kernel.h>
+               #include <linux/module.h>
                #include <linux/proc_fs.h>
                #include <linux/uaccess.h>
+               #include <linux/version.h>
+
+               #if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 6, 0)
+               #define HAVE_PROC_OPS
+               #endif
 
                #define procfs_name "helloworld"
 
-               struct proc_dir_entry *Our_Proc_File;
+               static struct proc_dir_entry *our_proc_file;
 
-
-               ssize_t procfile_read(struct file *filePointer,char *buffer,
-                                     size_t buffer_length, loff_t * offset)
+               static ssize_t procfile_read(struct file *filePointer, char __user *buffer,
+                                            size_t buffer_length, loff_t *offset)
                {
-                   int ret=0;
-                   if(strlen(buffer) ==0) {
-                       pr_info("procfile read %s\n",filePointer->f_path.dentry->d_name.name);
-                       ret=copy_to_user(buffer,"HelloWorld!\n",sizeof("HelloWorld!\n"));
-                       ret=sizeof("HelloWorld!\n");
-                   }
-                   return ret;
+                   char s[13] = "HelloWorld!\n";
+                   int len = sizeof(s);
+                   ssize_t ret = len;
 
+                   if (*offset >= len || copy_to_user(buffer, s, len)) {
+                       pr_info("copy_to_user failed\n");
+                       ret = 0;
+                   } else {
+                       pr_info("procfile read %s\n", filePointer->f_path.dentry->d_name.name);
+                       *offset += len;
+                   }
+
+                   return ret;
                }
 
-               static const struct file_operations proc_file_fops = {
-                   .read  = procfile_read,
+               #ifdef HAVE_PROC_OPS
+               static const struct proc_ops proc_file_fops = {
+                   .proc_read = procfile_read,
                };
+               #else
+               static const struct file_operations proc_file_fops = {
+                   .read = procfile_read,
+               };
+               #endif
 
-               int init_module()
+               static int __init procfs1_init(void)
                {
-                   Our_Proc_File = proc_create(procfs_name,0644,NULL,&proc_file_fops);
-                   if(NULL==Our_Proc_File) {
-                       proc_remove(Our_Proc_File);
-                       pr_alert("Error:Could not initialize /proc/%s\n",procfs_name);
+                   our_proc_file = proc_create(procfs_name, 0644, NULL, &proc_file_fops);
+                   if (NULL == our_proc_file) {
+                       proc_remove(our_proc_file);
+                       pr_alert("Error:Could not initialize /proc/%s\n", procfs_name);
                        return -ENOMEM;
                    }
 
@@ -2264,19 +2281,22 @@
                    return 0;
                }
 
-               void cleanup_module()
+               static void __exit procfs1_exit(void)
                {
-                   proc_remove(Our_Proc_File);
+                   proc_remove(our_proc_file);
                    pr_info("/proc/%s removed\n", procfs_name);
                }
+
+               module_init(procfs1_init);
+               module_exit(procfs1_exit);
 
                MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-org95403fb
+         :name: outline-container-orgc89475b
 
          .. rubric:: 7.1. Read and Write a /proc File
-            :name: org95403fb
+            :name: orgc89475b
 
          .. container:: outline-text-3
             :name: text-7-1
@@ -2319,59 +2339,53 @@
 
                .. code:: src
 
-                  /**
-                   *  procfs2.c -  create a "file" in /proc
-                   *
+                  /*
+                   * procfs2.c -  create a "file" in /proc
                    */
 
-                  #include <linux/module.h>       /* Specifically, a module */
-                  #include <linux/kernel.h>       /* We're doing kernel work */
-                  #include <linux/proc_fs.h>      /* Necessary because we use the proc fs */
-                  #include <linux/uaccess.h>      /* for copy_from_user */
+                  #include <linux/kernel.h> /* We're doing kernel work */
+                  #include <linux/module.h> /* Specifically, a module */
+                  #include <linux/proc_fs.h> /* Necessary because we use the proc fs */
+                  #include <linux/uaccess.h> /* for copy_from_user */
+                  #include <linux/version.h>
 
-                  #define PROCFS_MAX_SIZE         1024
-                  #define PROCFS_NAME             "buffer1k"
+                  #if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 6, 0)
+                  #define HAVE_PROC_OPS
+                  #endif
 
-                  /**
-                   * This structure hold information about the /proc file
-                   *
-                   */
-                  static struct proc_dir_entry *Our_Proc_File;
+                  #define PROCFS_MAX_SIZE 1024
+                  #define PROCFS_NAME "buffer1k"
 
-                  /**
-                   * The buffer used to store character for this module
-                   *
-                   */
+                  /* This structure hold information about the /proc file */
+                  static struct proc_dir_entry *our_proc_file;
+
+                  /* The buffer used to store character for this module */
                   static char procfs_buffer[PROCFS_MAX_SIZE];
 
-                  /**
-                   * The size of the buffer
-                   *
-                   */
+                  /* The size of the buffer */
                   static unsigned long procfs_buffer_size = 0;
 
-                  /**
-                   * This function is called then the /proc file is read
-                   *
-                   */
-                  ssize_t procfile_read(struct file *filePointer,char *buffer,
-                                        size_t buffer_length, loff_t * offset)
+                  /* This function is called then the /proc file is read */
+                  static ssize_t procfile_read(struct file *filePointer, char __user *buffer,
+                                               size_t buffer_length, loff_t *offset)
                   {
-                      int ret=0;
-                      if(strlen(buffer) ==0) {
-                          pr_info("procfile read %s\n",filePointer->f_path.dentry->d_name.name);
-                          ret=copy_to_user(buffer,"HelloWorld!\n",sizeof("HelloWorld!\n"));
-                          ret=sizeof("HelloWorld!\n");
+                      char s[13] = "HelloWorld!\n";
+                      int len = sizeof(s);
+                      ssize_t ret = len;
+
+                      if (*offset >= len || copy_to_user(buffer, s, len)) {
+                          pr_info("copy_to_user failed\n");
+                          ret = 0;
+                      } else {
+                          pr_info("procfile read %s\n", filePointer->f_path.dentry->d_name.name);
+                          *offset += len;
                       }
+
                       return ret;
                   }
 
-
-                  /**
-                   * This function is called with the /proc file is written
-                   *
-                   */
-                  static ssize_t procfile_write(struct file *file, const char *buff,
+                  /* This function is called with the /proc file is written. */
+                  static ssize_t procfile_write(struct file *file, const char __user *buff,
                                                 size_t len, loff_t *off)
                   {
                       procfs_buffer_size = len;
@@ -2385,21 +2399,24 @@
                       return procfs_buffer_size;
                   }
 
-                  static const struct file_operations proc_file_fops = {
-                      .read  = procfile_read,
-                      .write  = procfile_write,
+                  #ifdef HAVE_PROC_OPS
+                  static const struct proc_ops proc_file_fops = {
+                      .proc_read = procfile_read,
+                      .proc_write = procfile_write,
                   };
+                  #else
+                  static const struct file_operations proc_file_fops = {
+                      .read = procfile_read,
+                      .write = procfile_write,
+                  };
+                  #endif
 
-                  /**
-                   *This function is called when the module is loaded
-                   *
-                   */
-                  int init_module()
+                  static int __init procfs2_init(void)
                   {
-                      Our_Proc_File = proc_create(PROCFS_NAME,0644,NULL,&proc_file_fops);
-                      if(NULL==Our_Proc_File) {
-                          proc_remove(Our_Proc_File);
-                          pr_alert("Error:Could not initialize /proc/%s\n",PROCFS_NAME);
+                      our_proc_file = proc_create(PROCFS_NAME, 0644, NULL, &proc_file_fops);
+                      if (NULL == our_proc_file) {
+                          proc_remove(our_proc_file);
+                          pr_alert("Error:Could not initialize /proc/%s\n", PROCFS_NAME);
                           return -ENOMEM;
                       }
 
@@ -2407,23 +2424,22 @@
                       return 0;
                   }
 
-                  /**
-                   *This function is called when the module is unloaded
-                   *
-                   */
-                  void cleanup_module()
+                  static void __exit procfs2_exit(void)
                   {
-                      proc_remove(Our_Proc_File);
+                      proc_remove(our_proc_file);
                       pr_info("/proc/%s removed\n", PROCFS_NAME);
                   }
+
+                  module_init(procfs2_init);
+                  module_exit(procfs2_exit);
 
                   MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-org77cad59
+         :name: outline-container-org0ba2b62
 
          .. rubric:: 7.2. Manage /proc file with standard filesystem
-            :name: org77cad59
+            :name: org0ba2b62
 
          .. container:: outline-text-3
             :name: text-7-2
@@ -2477,88 +2493,110 @@
                .. code:: src
 
                   /*
-                      procfs3.c
-                  */
+                   * procfs3.c
+                   */
 
                   #include <linux/kernel.h>
                   #include <linux/module.h>
                   #include <linux/proc_fs.h>
                   #include <linux/sched.h>
                   #include <linux/uaccess.h>
+                  #include <linux/version.h>
 
-                  #define PROCFS_MAX_SIZE         2048
-                  #define PROCFS_ENTRY_FILENAME   "buffer2k"
+                  #if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 6, 0)
+                  #define HAVE_PROC_OPS
+                  #endif
 
-                  struct proc_dir_entry *Our_Proc_File;
+                  #define PROCFS_MAX_SIZE 2048
+                  #define PROCFS_ENTRY_FILENAME "buffer2k"
+
+                  static struct proc_dir_entry *our_proc_file;
                   static char procfs_buffer[PROCFS_MAX_SIZE];
                   static unsigned long procfs_buffer_size = 0;
 
-                  static ssize_t procfs_read(struct file *filp, char *buffer,
+                  static ssize_t procfs_read(struct file *filp, char __user *buffer,
                                              size_t length, loff_t *offset)
                   {
                       static int finished = 0;
-                      if(finished)
-                      {
+
+                      if (finished) {
                           pr_debug("procfs_read: END\n");
                           finished = 0;
                           return 0;
                       }
                       finished = 1;
-                      if(copy_to_user(buffer, procfs_buffer, procfs_buffer_size))
+
+                      if (copy_to_user(buffer, procfs_buffer, procfs_buffer_size))
                           return -EFAULT;
+
                       pr_debug("procfs_read: read %lu bytes\n", procfs_buffer_size);
                       return procfs_buffer_size;
                   }
-                  static ssize_t procfs_write(struct file *file,  const char *buffer,
+                  static ssize_t procfs_write(struct file *file, const char __user *buffer,
                                               size_t len, loff_t *off)
                   {
-                      if(len>PROCFS_MAX_SIZE)
+                      if (len > PROCFS_MAX_SIZE)
                           procfs_buffer_size = PROCFS_MAX_SIZE;
                       else
                           procfs_buffer_size = len;
-                      if(copy_from_user(procfs_buffer, buffer, procfs_buffer_size))
+                      if (copy_from_user(procfs_buffer, buffer, procfs_buffer_size))
                           return -EFAULT;
+
                       pr_debug("procfs_write: write %lu bytes\n", procfs_buffer_size);
                       return procfs_buffer_size;
                   }
-                  int procfs_open(struct inode *inode, struct file *file)
+                  static int procfs_open(struct inode *inode, struct file *file)
                   {
                       try_module_get(THIS_MODULE);
                       return 0;
                   }
-                  int procfs_close(struct inode *inode, struct file *file)
+                  static int procfs_close(struct inode *inode, struct file *file)
                   {
                       module_put(THIS_MODULE);
                       return 0;
                   }
 
-                  static struct file_operations File_Ops_4_Our_Proc_File = {
-                      .read       = procfs_read,
-                      .write      = procfs_write,
-                      .open       = procfs_open,
-                      .release    = procfs_close,
+                  #ifdef HAVE_PROC_OPS
+                  static struct proc_ops file_ops_4_our_proc_file = {
+                      .proc_read = procfs_read,
+                      .proc_write = procfs_write,
+                      .proc_open = procfs_open,
+                      .proc_release = procfs_close,
                   };
+                  #else
+                  static const struct file_operations file_ops_4_our_proc_file = {
+                      .read = procfs_read,
+                      .write = procfs_write,
+                      .open = procfs_open,
+                      .release = procfs_close,
+                  };
+                  #endif
 
-                  int init_module()
+                  static int __init procfs3_init(void)
                   {
-                      Our_Proc_File = proc_create(PROCFS_ENTRY_FILENAME, 0644, NULL,&File_Ops_4_Our_Proc_File);
-                      if(Our_Proc_File == NULL)
-                      {
+                      our_proc_file = proc_create(PROCFS_ENTRY_FILENAME, 0644, NULL,
+                                                  &file_ops_4_our_proc_file);
+                      if (our_proc_file == NULL) {
                           remove_proc_entry(PROCFS_ENTRY_FILENAME, NULL);
-                          pr_debug("Error: Could not initialize /proc/%s\n", PROCFS_ENTRY_FILENAME);
+                          pr_debug("Error: Could not initialize /proc/%s\n",
+                                   PROCFS_ENTRY_FILENAME);
                           return -ENOMEM;
                       }
-                      proc_set_size(Our_Proc_File, 80);
-                      proc_set_user(Our_Proc_File,  GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
+                      proc_set_size(our_proc_file, 80);
+                      proc_set_user(our_proc_file, GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
 
                       pr_debug("/proc/%s created\n", PROCFS_ENTRY_FILENAME);
                       return 0;
                   }
-                  void cleanup_module()
+
+                  static void __exit procfs3_exit(void)
                   {
                       remove_proc_entry(PROCFS_ENTRY_FILENAME, NULL);
                       pr_debug("/proc/%s removed\n", PROCFS_ENTRY_FILENAME);
                   }
+
+                  module_init(procfs3_init);
+                  module_exit(procfs3_exit);
 
                   MODULE_LICENSE("GPL");
 
@@ -2574,10 +2612,10 @@
             related yourself.
 
       .. container:: outline-3
-         :name: outline-container-orgf8eb3d8
+         :name: outline-container-org3bd39f4
 
          .. rubric:: 7.3. Manage /proc file with seq_file
-            :name: orgf8eb3d8
+            :name: org3bd39f4
 
          .. container:: outline-text-3
             :name: text-7-3
@@ -2605,7 +2643,7 @@
             this in the figure "How seq_file works".
 
             .. container:: figure
-               :name: org96fed0f
+               :name: org8b9714a
 
                .. figure:: img/seq_file.png
                   :alt: seq_file.png
@@ -2622,49 +2660,45 @@
 
                .. code:: src
 
-                  /**
-                   *  procfs4.c -  create a "file" in /proc
-                   *      This program uses the seq_file library to manage the /proc file.
-                   *
+                  /*
+                   * procfs4.c -  create a "file" in /proc
+                   * This program uses the seq_file library to manage the /proc file.
                    */
 
-                  #include <linux/kernel.h>       /* We're doing kernel work */
-                  #include <linux/module.h>       /* Specifically, a module */
-                  #include <linux/proc_fs.h>      /* Necessary because we use proc fs */
-                  #include <linux/seq_file.h>     /* for seq_file */
+                  #include <linux/kernel.h> /* We are doing kernel work */
+                  #include <linux/module.h> /* Specifically, a module */
+                  #include <linux/proc_fs.h> /* Necessary because we use proc fs */
+                  #include <linux/seq_file.h> /* for seq_file */
+                  #include <linux/version.h>
 
-                  #define PROC_NAME       "iter"
+                  #if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 6, 0)
+                  #define HAVE_PROC_OPS
+                  #endif
 
-                  MODULE_AUTHOR("Philippe Reynes");
-                  MODULE_LICENSE("GPL");
+                  #define PROC_NAME "iter"
 
-                  /**
-                   * This function is called at the beginning of a sequence.
+                  /* This function is called at the beginning of a sequence.
                    * ie, when:
-                   *      - the /proc file is read (first time)
-                   *      - after the function stop (end of sequence)
-                   *
+                   *   - the /proc file is read (first time)
+                   *   - after the function stop (end of sequence)
                    */
                   static void *my_seq_start(struct seq_file *s, loff_t *pos)
                   {
                       static unsigned long counter = 0;
 
-                      /* beginning a new sequence ? */
-                      if ( *pos == 0 ) {
+                      /* beginning a new sequence? */
+                      if (*pos == 0) {
                           /* yes => return a non null value to begin the sequence */
                           return &counter;
                       }
-                      else {
-                          /* no => it's the end of the sequence, return end to stop reading */
-                          *pos = 0;
-                          return NULL;
-                      }
+
+                      /* no => it is the end of the sequence, return end to stop reading */
+                      *pos = 0;
+                      return NULL;
                   }
 
-                  /**
-                   * This function is called after the beginning of a sequence.
-                   * It's called untill the return is NULL (this ends the sequence).
-                   *
+                  /* This function is called after the beginning of a sequence.
+                   * It is called untill the return is NULL (this ends the sequence).
                    */
                   static void *my_seq_next(struct seq_file *s, void *v, loff_t *pos)
                   {
@@ -2674,70 +2708,58 @@
                       return NULL;
                   }
 
-                  /**
-                   * This function is called at the end of a sequence
-                   *
-                   */
+                  /* This function is called at the end of a sequence. */
                   static void my_seq_stop(struct seq_file *s, void *v)
                   {
                       /* nothing to do, we use a static value in start() */
                   }
 
-                  /**
-                   * This function is called for each "step" of a sequence
-                   *
-                   */
+                  /* This function is called for each "step" of a sequence. */
                   static int my_seq_show(struct seq_file *s, void *v)
                   {
-                      loff_t *spos = (loff_t *) v;
+                      loff_t *spos = (loff_t *)v;
 
                       seq_printf(s, "%Ld\n", *spos);
                       return 0;
                   }
 
-                  /**
-                   * This structure gather "function" to manage the sequence
-                   *
-                   */
+                  /* This structure gather "function" to manage the sequence */
                   static struct seq_operations my_seq_ops = {
-                          .start = my_seq_start,
-                          .next  = my_seq_next,
-                          .stop  = my_seq_stop,
-                          .show  = my_seq_show
+                      .start = my_seq_start,
+                      .next = my_seq_next,
+                      .stop = my_seq_stop,
+                      .show = my_seq_show,
                   };
 
-                  /**
-                   * This function is called when the /proc file is open.
-                   *
-                   */
+                  /* This function is called when the /proc file is open. */
                   static int my_open(struct inode *inode, struct file *file)
                   {
                       return seq_open(file, &my_seq_ops);
                   };
 
-                  /**
-                   * This structure gather "function" that manage the /proc file
-                   *
-                   */
-                  static struct file_operations my_file_ops = {
-                      .open    = my_open,
-                      .read    = seq_read,
-                      .proc_lseek  = seq_lseek,
-                      .release = seq_release
+                  /* This structure gather "function" that manage the /proc file */
+                  #ifdef HAVE_PROC_OPS
+                  static const struct proc_ops my_file_ops = {
+                      .proc_open = my_open,
+                      .proc_read = seq_read,
+                      .proc_lseek = seq_lseek,
+                      .proc_release = seq_release,
                   };
+                  #else
+                  static const struct file_operations my_file_ops = {
+                      .open = my_open,
+                      .read = seq_read,
+                      .llseek = seq_lseek,
+                      .release = seq_release,
+                  };
+                  #endif
 
-
-                  /**
-                   * This function is called when the module is loaded
-                   *
-                   */
-                  int init_module(void)
+                  static int __init procfs4_init(void)
                   {
                       struct proc_dir_entry *entry;
 
                       entry = proc_create(PROC_NAME, 0, NULL, &my_file_ops);
-                      if(entry == NULL)
-                      {
+                      if (entry == NULL) {
                           remove_proc_entry(PROC_NAME, NULL);
                           pr_debug("Error: Could not initialize /proc/%s\n", PROC_NAME);
                           return -ENOMEM;
@@ -2746,29 +2768,30 @@
                       return 0;
                   }
 
-                  /**
-                   * This function is called when the module is unloaded.
-                   *
-                   */
-                  void cleanup_module(void)
+                  static void __exit procfs4_exit(void)
                   {
                       remove_proc_entry(PROC_NAME, NULL);
                       pr_debug("/proc/%s removed\n", PROC_NAME);
                   }
 
+                  module_init(procfs4_init);
+                  module_exit(procfs4_exit);
+
+                  MODULE_LICENSE("GPL");
+
             If you want more information, you can read this web page:
 
-            -  http://lwn.net/Articles/22355/
+            -  https://lwn.net/Articles/22355/
             -  https://kernelnewbies.org/Documents/SeqFileHowTo
 
             You can also read the code of fs/seq_file.c in the linux
             kernel.
 
    .. container:: outline-2
-      :name: outline-container-org726c635
+      :name: outline-container-org6f5331f
 
       .. rubric:: 8. sysfs: Interacting with your module
-         :name: org726c635
+         :name: org6f5331f
 
       .. container:: outline-text-2
          :name: text-8
@@ -2903,10 +2926,10 @@
                sudo rmmod hello_sysfs
 
    .. container:: outline-2
-      :name: outline-container-orgd812e51
+      :name: outline-container-org0917e40
 
       .. rubric:: 9. Talking To Device Files
-         :name: orgd812e51
+         :name: org0917e40
 
       .. container:: outline-text-2
          :name: text-9
@@ -3540,10 +3563,10 @@
                MODULE_DESCRIPTION("This is test_ioctl module");
 
    .. container:: outline-2
-      :name: outline-container-orga4ce333
+      :name: outline-container-orgb6faf69
 
       .. rubric:: 10. System Calls
-         :name: orga4ce333
+         :name: orgb6faf69
 
       .. container:: outline-text-2
          :name: text-10
@@ -3833,19 +3856,19 @@
                MODULE_LICENSE("GPL");
 
    .. container:: outline-2
-      :name: outline-container-org14dc357
+      :name: outline-container-org07bc856
 
       .. rubric:: 11. Blocking Processes and threads
-         :name: org14dc357
+         :name: org07bc856
 
       .. container:: outline-text-2
          :name: text-11
 
       .. container:: outline-3
-         :name: outline-container-orgc4b9377
+         :name: outline-container-org315b870
 
          .. rubric:: 11.1. Sleep
-            :name: orgc4b9377
+            :name: org315b870
 
          .. container:: outline-text-3
             :name: text-11-1
@@ -3963,175 +3986,132 @@
                .. code:: src
 
                   /*
-                   *  sleep.c - create a /proc file, and if several processes try to open it at
-                   *  the same time, put all but one to sleep
+                   * sleep.c - create a /proc file, and if several processes try to open it
+                   * at the same time, put all but one to sleep.
                    */
 
-                  #include <linux/kernel.h>       /* We're doing kernel work */
-                  #include <linux/module.h>       /* Specifically, a module */
-                  #include <linux/proc_fs.h>      /* Necessary because we use proc fs */
-                  #include <linux/sched.h>        /* For putting processes to sleep and
+                  #include <linux/kernel.h> /* We're doing kernel work */
+                  #include <linux/module.h> /* Specifically, a module */
+                  #include <linux/proc_fs.h> /* Necessary because we use proc fs */
+                  #include <linux/sched.h> /* For putting processes to sleep and
                                                      waking them up */
-                  #include <linux/uaccess.h>      /* for get_user and put_user */
+                  #include <linux/uaccess.h> /* for get_user and put_user */
+                  #include <linux/version.h>
 
-                  /*
-                   * The module's file functions
-                   */
+                  #if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 6, 0)
+                  #define HAVE_PROC_OPS
+                  #endif
 
-                  /*
-                   * Here we keep the last message received, to prove that we can process our
-                   * input
+                  /* Here we keep the last message received, to prove that we can process our
+                   * input.
                    */
                   #define MESSAGE_LENGTH 80
-                  static char Message[MESSAGE_LENGTH];
+                  static char message[MESSAGE_LENGTH];
 
-                  static struct proc_dir_entry *Our_Proc_File;
+                  static struct proc_dir_entry *our_proc_file;
                   #define PROC_ENTRY_FILENAME "sleep"
 
-                  /*
-                   * Since we use the file operations struct, we can't use the special proc
+                  /* Since we use the file operations struct, we can't use the special proc
                    * output provisions - we have to use a standard read function, which is this
-                   * function
+                   * function.
                    */
                   static ssize_t module_output(struct file *file, /* see include/linux/fs.h   */
-                                               char *buf, /* The buffer to put data to
-                                                             (in the user segment)    */
-                                               size_t len,        /* The length of the buffer */
-                                               loff_t * offset)
+                                               char __user *buf, /* The buffer to put data to
+                                                                     (in the user segment)    */
+                                               size_t len, /* The length of the buffer */
+                                               loff_t *offset)
                   {
                       static int finished = 0;
                       int i;
-                      char message[MESSAGE_LENGTH + 30];
+                      char output_msg[MESSAGE_LENGTH + 30];
 
-                      /*
-                       * Return 0 to signify end of file - that we have nothing
-                       * more to say at this point.
+                      /* Return 0 to signify end of file - that we have nothing more to say
+                       * at this point.
                        */
                       if (finished) {
                           finished = 0;
                           return 0;
                       }
 
-                      /*
-                       * If you don't understand this by now, you're hopeless as a kernel
-                       * programmer.
-                       */
-                      sprintf(message, "Last input:%s\n", Message);
-                      for (i = 0; i < len && message[i]; i++)
-                          put_user(message[i], buf + i);
+                      sprintf(output_msg, "Last input:%s\n", message);
+                      for (i = 0; i < len && output_msg[i]; i++)
+                          put_user(output_msg[i], buf + i);
 
                       finished = 1;
-                      return i;               /* Return the number of bytes "read" */
+                      return i; /* Return the number of bytes "read" */
                   }
 
-                  /*
-                   * This function receives input from the user when the user writes to the /proc
-                   * file.
+                  /* This function receives input from the user when the user writes to the
+                   * /proc file.
                    */
-                  static ssize_t module_input(struct file *file,  /* The file itself */
-                                              const char *buf,    /* The buffer with input */
-                                              size_t length,      /* The buffer's length */
-                                              loff_t * offset)    /* offset to file - ignore */
+                  static ssize_t module_input(struct file *file, /* The file itself */
+                                              const char __user *buf, /* The buffer with input */
+                                              size_t length, /* The buffer's length */
+                                              loff_t *offset) /* offset to file - ignore */
                   {
                       int i;
 
-                      /*
-                       * Put the input into Message, where module_output will later be
-                       * able to use it
+                      /* Put the input into Message, where module_output will later be able
+                       * to use it.
                        */
                       for (i = 0; i < MESSAGE_LENGTH - 1 && i < length; i++)
-                          get_user(Message[i], buf + i);
-                      /*
-                       * we want a standard, zero terminated string
-                       */
-                      Message[i] = '\0';
+                          get_user(message[i], buf + i);
+                      /* we want a standard, zero terminated string */
+                      message[i] = '\0';
 
-                      /*
-                       * We need to return the number of input characters used
-                       */
+                      /* We need to return the number of input characters used */
                       return i;
                   }
 
-                  /*
-                   * 1 if the file is currently open by somebody
-                   */
-                  int Already_Open = 0;
+                  /* 1 if the file is currently open by somebody */
+                  static atomic_t already_open = ATOMIC_INIT(0);
 
-                  /*
-                   * Queue of processes who want our file
-                   */
-                  DECLARE_WAIT_QUEUE_HEAD(WaitQ);
-                  /*
-                   * Called when the /proc file is opened
-                   */
+                  /* Queue of processes who want our file */
+                  static DECLARE_WAIT_QUEUE_HEAD(waitq);
+
+                  /* Called when the /proc file is opened */
                   static int module_open(struct inode *inode, struct file *file)
                   {
-                      /*
-                       * If the file's flags include O_NONBLOCK, it means the process doesn't
-                       * want to wait for the file.  In this case, if the file is already
-                       * open, we should fail with -EAGAIN, meaning "you'll have to try
-                       * again", instead of blocking a process which would rather stay awake.
+                      /* If the file's flags include O_NONBLOCK, it means the process does not
+                       * want to wait for the file. In this case, if the file is already open,
+                       * we should fail with -EAGAIN, meaning "you will have to try again",
+                       * instead of blocking a process which would rather stay awake.
                        */
-                      if ((file->f_flags & O_NONBLOCK) && Already_Open)
+                      if ((file->f_flags & O_NONBLOCK) && atomic_read(&already_open))
                           return -EAGAIN;
 
-                      /*
-                       * This is the correct place for try_module_get(THIS_MODULE) because
-                       * if a process is in the loop, which is within the kernel module,
+                      /* This is the correct place for try_module_get(THIS_MODULE) because if
+                       * a process is in the loop, which is within the kernel module,
                        * the kernel module must not be removed.
                        */
                       try_module_get(THIS_MODULE);
 
-                      /*
-                       * If the file is already open, wait until it isn't
-                       */
-
-                      while (Already_Open) {
+                      while (atomic_cmpxchg(&already_open, 0, 1)) {
                           int i, is_sig = 0;
 
-                          /*
-                           * This function puts the current process, including any system
+                          /* This function puts the current process, including any system
                            * calls, such as us, to sleep.  Execution will be resumed right
                            * after the function call, either because somebody called
-                           * wake_up(&WaitQ) (only module_close does that, when the file
+                           * wake_up(&waitq) (only module_close does that, when the file
                            * is closed) or when a signal, such as Ctrl-C, is sent
                            * to the process
                            */
-                          wait_event_interruptible(WaitQ, !Already_Open);
+                          wait_event_interruptible(waitq, !atomic_read(&already_open));
 
-                          /*
-                           * If we woke up because we got a signal we're not blocking,
+                          /* If we woke up because we got a signal we're not blocking,
                            * return -EINTR (fail the system call).  This allows processes
                            * to be killed or stopped.
                            */
-
-                          /*
-                           * Emmanuel Papirakis:
-                           *
-                           * This is a little update to work with 2.2.*.  Signals now are contained in
-                           * two words (64 bits) and are stored in a structure that contains an array of
-                           * two unsigned longs.  We now have to make 2 checks in our if.
-                           *
-                           * Ori Pomerantz:
-                           *
-                           * Nobody promised me they'll never use more than 64 bits, or that this book
-                           * won't be used for a version of Linux with a word size of 16 bits.  This code
-                           * would work in any case.
-                           */
                           for (i = 0; i < _NSIG_WORDS && !is_sig; i++)
-                              is_sig =
-                                  current->pending.signal.sig[i] & ~current->
-                                  blocked.sig[i];
+                              is_sig = current->pending.signal.sig[i] & ~current->blocked.sig[i];
 
                           if (is_sig) {
-                              /*
-                               * It's important to put module_put(THIS_MODULE) here,
-                               * because for processes where the open is interrupted
-                               * there will never be a corresponding close. If we
-                               * don't decrement the usage count here, we will be
-                               * left with a positive usage count which we'll have no
-                               * way to bring down to zero, giving us an immortal
-                               * module, which can only be killed by rebooting
+                              /* It is important to put module_put(THIS_MODULE) here, because
+                               * for processes where the open is interrupted there will never
+                               * be a corresponding close. If we do not decrement the usage
+                               * count here, we will be left with a positive usage count
+                               * which we will have no way to bring down to zero, giving us
+                               * an immortal module, which can only be killed by rebooting
                                * the machine.
                                */
                               module_put(THIS_MODULE);
@@ -4139,94 +4119,84 @@
                           }
                       }
 
-                      /*
-                       * If we got here, Already_Open must be zero
-                       */
-
-                      /*
-                       * Open the file
-                       */
-                      Already_Open = 1;
-                      return 0;               /* Allow the access */
+                      return 0; /* Allow the access */
                   }
 
-                  /*
-                   * Called when the /proc file is closed
-                   */
-                  int module_close(struct inode *inode, struct file *file)
+                  /* Called when the /proc file is closed */
+                  static int module_close(struct inode *inode, struct file *file)
                   {
-                      /*
-                       * Set Already_Open to zero, so one of the processes in the WaitQ will
-                       * be able to set Already_Open back to one and to open the file. All
-                       * the other processes will be called when Already_Open is back to one,
+                      /* Set already_open to zero, so one of the processes in the waitq will
+                       * be able to set already_open back to one and to open the file. All
+                       * the other processes will be called when already_open is back to one,
                        * so they'll go back to sleep.
                        */
-                      Already_Open = 0;
+                      atomic_set(&already_open, 0);
 
-                      /*
-                       * Wake up all the processes in WaitQ, so if anybody is waiting for the
+                      /* Wake up all the processes in waitq, so if anybody is waiting for the
                        * file, they can have it.
                        */
-                      wake_up(&WaitQ);
+                      wake_up(&waitq);
 
                       module_put(THIS_MODULE);
 
-                      return 0;               /* success */
+                      return 0; /* success */
                   }
 
-                  /*
-                   * Structures to register as the /proc file, with pointers to all the relevant
+                  /* Structures to register as the /proc file, with pointers to all the relevant
                    * functions.
                    */
 
-                  /*
-                   * File operations for our proc file. This is where we place pointers to all
+                  /* File operations for our proc file. This is where we place pointers to all
                    * the functions called when somebody tries to do something to our file. NULL
                    * means we don't want to deal with something.
                    */
-                  static struct file_operations File_Ops_4_Our_Proc_File = {
-                      .read = module_output,   /* "read" from the file */
-                      .write = module_input,   /* "write" to the file */
-                      .open = module_open,     /* called when the /proc file is opened */
-                      .release = module_close, /* called when it's closed */
+                  #ifdef HAVE_PROC_OPS
+                  static const struct proc_ops file_ops_4_our_proc_file = {
+                      .proc_read = module_output, /* "read" from the file */
+                      .proc_write = module_input, /* "write" to the file */
+                      .proc_open = module_open, /* called when the /proc file is opened */
+                      .proc_release = module_close, /* called when it's closed */
                   };
+                  #else
+                  static const struct file_operations file_ops_4_our_proc_file = {
+                      .read = module_output,
+                      .write = module_input,
+                      .open = module_open,
+                      .release = module_close,
+                  };
+                  #endif
 
-                  /*
-                   * Module initialization and cleanup
-                   */
-
-                  /*
-                   * Initialize the module - register the proc file
-                   */
-
-                  int init_module()
+                  /* Initialize the module - register the proc file */
+                  static int __init sleep_init(void)
                   {
-                      Our_Proc_File = proc_create(PROC_ENTRY_FILENAME, 0644, NULL, &File_Ops_4_Our_Proc_File);
-                      if(Our_Proc_File == NULL)
-                      {
+                      our_proc_file =
+                          proc_create(PROC_ENTRY_FILENAME, 0644, NULL, &file_ops_4_our_proc_file);
+                      if (our_proc_file == NULL) {
                           remove_proc_entry(PROC_ENTRY_FILENAME, NULL);
                           pr_debug("Error: Could not initialize /proc/%s\n", PROC_ENTRY_FILENAME);
                           return -ENOMEM;
                       }
-                      proc_set_size(Our_Proc_File, 80);
-                      proc_set_user(Our_Proc_File,  GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
+                      proc_set_size(our_proc_file, 80);
+                      proc_set_user(our_proc_file, GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
 
-                      pr_info("/proc/test created\n");
+                      pr_info("/proc/%s created\n", PROC_ENTRY_FILENAME);
 
                       return 0;
                   }
 
-                  /*
-                   * Cleanup - unregister our file from /proc.  This could get dangerous if
-                   * there are still processes waiting in WaitQ, because they are inside our
+                  /* Cleanup - unregister our file from /proc.  This could get dangerous if
+                   * there are still processes waiting in waitq, because they are inside our
                    * open function, which will get unloaded. I'll explain how to avoid removal
                    * of a kernel module in such a case in chapter 10.
                    */
-                  void cleanup_module()
+                  static void __exit sleep_exit(void)
                   {
                       remove_proc_entry(PROC_ENTRY_FILENAME, NULL);
                       pr_debug("/proc/%s removed\n", PROC_ENTRY_FILENAME);
                   }
+
+                  module_init(sleep_init);
+                  module_exit(sleep_exit);
 
                   MODULE_LICENSE("GPL");
 
@@ -4301,10 +4271,10 @@
                   }
 
       .. container:: outline-3
-         :name: outline-container-orgae2cfb4
+         :name: outline-container-orgaf9c3e8
 
          .. rubric:: 11.2. Completions
-            :name: orgae2cfb4
+            :name: orgaf9c3e8
 
          .. container:: outline-text-3
             :name: text-11-2
@@ -4416,10 +4386,10 @@
             without adding a lot of complexity.
 
    .. container:: outline-2
-      :name: outline-container-orgb0a857c
+      :name: outline-container-orgf411c28
 
       .. rubric:: 12. Avoiding Collisions and Deadlocks
-         :name: orgb0a857c
+         :name: orgf411c28
 
       .. container:: outline-text-2
          :name: text-12
@@ -4433,10 +4403,10 @@
          happen.
 
       .. container:: outline-3
-         :name: outline-container-orgc02b11e
+         :name: outline-container-org27b280a
 
          .. rubric:: 12.1. Mutex
-            :name: orgc02b11e
+            :name: org27b280a
 
          .. container:: outline-text-3
             :name: text-12-1
@@ -4491,10 +4461,10 @@
                   MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-orgf3a2577
+         :name: outline-container-orgca71381
 
          .. rubric:: 12.2. Spinlocks
-            :name: orgf3a2577
+            :name: orgca71381
 
          .. container:: outline-text-3
             :name: text-12-2
@@ -4580,10 +4550,10 @@
                   MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-orga3a70d0
+         :name: outline-container-org85f6936
 
          .. rubric:: 12.3. Read and write locks
-            :name: orga3a70d0
+            :name: org85f6936
 
          .. container:: outline-text-3
             :name: text-12-3
@@ -4664,10 +4634,10 @@
             functions.
 
       .. container:: outline-3
-         :name: outline-container-orga153ddc
+         :name: outline-container-org3193248
 
          .. rubric:: 12.4. Atomic operations
-            :name: orga153ddc
+            :name: org3193248
 
          .. container:: outline-text-3
             :name: text-12-4
@@ -4763,19 +4733,19 @@
                   MODULE_LICENSE("GPL");
 
    .. container:: outline-2
-      :name: outline-container-orgfb9951d
+      :name: outline-container-org7a251dc
 
       .. rubric:: 13. Replacing Print Macros
-         :name: orgfb9951d
+         :name: org7a251dc
 
       .. container:: outline-text-2
          :name: text-13
 
       .. container:: outline-3
-         :name: outline-container-org30b5453
+         :name: outline-container-org51e9c6e
 
          .. rubric:: 13.1. Replacement
-            :name: org30b5453
+            :name: org51e9c6e
 
          .. container:: outline-text-3
             :name: text-13-1
@@ -4913,10 +4883,10 @@
                   module_exit(print_string_exit);
 
       .. container:: outline-3
-         :name: outline-container-orgb39268e
+         :name: outline-container-org364f3e1
 
          .. rubric:: 13.2. Flashing keyboard LEDs
-            :name: orgb39268e
+            :name: org364f3e1
 
          .. container:: outline-text-3
             :name: text-13-2
@@ -5054,10 +5024,10 @@
             code.
 
    .. container:: outline-2
-      :name: outline-container-orgc55bb18
+      :name: outline-container-org6435c32
 
       .. rubric:: 14. Scheduling Tasks
-         :name: orgc55bb18
+         :name: org6435c32
 
       .. container:: outline-text-2
          :name: text-14
@@ -5069,10 +5039,10 @@
          better suited to running multiple things in a sequence.
 
       .. container:: outline-3
-         :name: outline-container-orga076eef
+         :name: outline-container-org369ed2d
 
          .. rubric:: 14.1. Tasklets
-            :name: orga076eef
+            :name: org369ed2d
 
          .. container:: outline-text-3
             :name: text-14-1
@@ -5133,10 +5103,10 @@
                   Example tasklet ends
 
       .. container:: outline-3
-         :name: outline-container-org982b3f6
+         :name: outline-container-orgecedcee
 
          .. rubric:: 14.2. Work queues
-            :name: org982b3f6
+            :name: orgecedcee
 
          .. container:: outline-text-3
             :name: text-14-2
@@ -5180,19 +5150,19 @@
                   MODULE_DESCRIPTION("Workqueue example");
 
    .. container:: outline-2
-      :name: outline-container-orgc116273
+      :name: outline-container-org16ea710
 
       .. rubric:: 15. Interrupt Handlers
-         :name: orgc116273
+         :name: org16ea710
 
       .. container:: outline-text-2
          :name: text-15
 
       .. container:: outline-3
-         :name: outline-container-org54e4896
+         :name: outline-container-org4c00e67
 
          .. rubric:: 15.1. Interrupt Handlers
-            :name: org54e4896
+            :name: org4c00e67
 
          .. container:: outline-text-3
             :name: text-15-1
@@ -5276,10 +5246,10 @@
             willing to share.
 
       .. container:: outline-3
-         :name: outline-container-orge7773b4
+         :name: outline-container-orgbe49b1f
 
          .. rubric:: 15.2. Detecting button presses
-            :name: orge7773b4
+            :name: orgbe49b1f
 
          .. container:: outline-text-3
             :name: text-15-2
@@ -5455,10 +5425,10 @@
                   MODULE_DESCRIPTION("Handle some GPIO interrupts");
 
       .. container:: outline-3
-         :name: outline-container-orgcdc9929
+         :name: outline-container-org47ce5d0
 
          .. rubric:: 15.3. Bottom Half
-            :name: orgcdc9929
+            :name: org47ce5d0
 
          .. container:: outline-text-3
             :name: text-15-3
@@ -5643,10 +5613,10 @@
                   MODULE_DESCRIPTION("Interrupt with top and bottom half");
 
    .. container:: outline-2
-      :name: outline-container-orgbf0e5ac
+      :name: outline-container-orga546dae
 
       .. rubric:: 16. Crypto
-         :name: orgbf0e5ac
+         :name: orga546dae
 
       .. container:: outline-text-2
          :name: text-16
@@ -5661,10 +5631,10 @@
          functions.
 
       .. container:: outline-3
-         :name: outline-container-org2007617
+         :name: outline-container-orgb7a2f3f
 
          .. rubric:: 16.1. Hash functions
-            :name: org2007617
+            :name: orgb7a2f3f
 
          .. container:: outline-text-3
             :name: text-16-1
@@ -5763,10 +5733,10 @@
                   sudo rmmod cryptosha256
 
       .. container:: outline-3
-         :name: outline-container-orgc6b3c30
+         :name: outline-container-org0cfee26
 
          .. rubric:: 16.2. Symmetric key encryption
-            :name: orgc6b3c30
+            :name: org0cfee26
 
          .. container:: outline-text-3
             :name: text-16-2
@@ -5979,10 +5949,10 @@
                   MODULE_LICENSE("GPL");
 
    .. container:: outline-2
-      :name: outline-container-org03f659f
+      :name: outline-container-orgc0998e8
 
       .. rubric:: 17. Standardising the interfaces: The Device Model
-         :name: org03f659f
+         :name: orgc0998e8
 
       .. container:: outline-text-2
          :name: text-17
@@ -6097,19 +6067,19 @@
                module_exit(devicemodel_exit);
 
    .. container:: outline-2
-      :name: outline-container-org68259eb
+      :name: outline-container-org85ac10f
 
       .. rubric:: 18. Optimisations
-         :name: org68259eb
+         :name: org85ac10f
 
       .. container:: outline-text-2
          :name: text-18
 
       .. container:: outline-3
-         :name: outline-container-org559c508
+         :name: outline-container-orgbc29856
 
          .. rubric:: 18.1. Likely and Unlikely conditions
-            :name: org559c508
+            :name: orgbc29856
 
          .. container:: outline-text-3
             :name: text-18-1
@@ -6143,10 +6113,10 @@
             if you use the *likely* macro.
 
    .. container:: outline-2
-      :name: outline-container-org8c4d4e4
+      :name: outline-container-org73aac70
 
       .. rubric:: 19. Common Pitfalls
-         :name: org8c4d4e4
+         :name: org73aac70
 
       .. container:: outline-text-2
          :name: text-19
@@ -6158,10 +6128,10 @@
          paid for your copy of the book.
 
       .. container:: outline-3
-         :name: outline-container-org4d49bfc
+         :name: outline-container-orgb6b4a5c
 
          .. rubric:: 19.1. Using standard libraries
-            :name: org4d49bfc
+            :name: orgb6b4a5c
 
          .. container:: outline-text-3
             :name: text-19-1
@@ -6171,10 +6141,10 @@
             /proc/kallsyms.
 
       .. container:: outline-3
-         :name: outline-container-org2cb7089
+         :name: outline-container-org941503c
 
          .. rubric:: 19.2. Disabling interrupts
-            :name: org2cb7089
+            :name: org941503c
 
          .. container:: outline-text-3
             :name: text-19-2
@@ -6184,10 +6154,10 @@
             stuck and you'll have to power it off.
 
       .. container:: outline-3
-         :name: outline-container-orgcbea719
+         :name: outline-container-orgaeeefa9
 
          .. rubric:: 19.3. Sticking your head inside a large carnivore
-            :name: orgcbea719
+            :name: orgaeeefa9
 
          .. container:: outline-text-3
             :name: text-19-3
@@ -6196,10 +6166,10 @@
             I will anyway, just in case.
 
    .. container:: outline-2
-      :name: outline-container-org3682fd2
+      :name: outline-container-orgf82b901
 
       .. rubric:: 20. Where To Go From Here?
-         :name: org3682fd2
+         :name: orgf82b901
 
       .. container:: outline-text-2
          :name: text-20
@@ -6250,6 +6220,6 @@
 
    Author: Peter Jay Salzman, Michael Burian, Ori Pomerantz, Bob Mottram
 
-   Created: 2021-09-18 Sat 21:52
+   Created: 2021-09-18 Sat 23:07
 
    `Validate <https://validator.w3.org/check?uri=referer>`__

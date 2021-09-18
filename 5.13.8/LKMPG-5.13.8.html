@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-09-18 Sat 21:52 -->
+<!-- 2021-09-18 Sat 23:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -247,114 +247,114 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2fe6d3b">1. Introduction</a>
+<li><a href="#orgfb1f91d">1. Introduction</a>
 <ul>
-<li><a href="#orgdbb39ac">1.1. Authorship</a></li>
-<li><a href="#orgdd87aec">1.2. Versioning and Notes</a></li>
-<li><a href="#org93c4777">1.3. Acknowledgements</a></li>
-<li><a href="#orgfe8e658">1.4. What Is A Kernel Module?</a></li>
-<li><a href="#org7a008ba">1.5. Installing some Dependencies</a></li>
-<li><a href="#orga334257">1.6. What Modules are in my Kernel?</a></li>
-<li><a href="#org704cf47">1.7. Do I need to download and compile the kernel?</a></li>
-<li><a href="#org23b6001">1.8. Before We Begin</a></li>
+<li><a href="#org04661e3">1.1. Authorship</a></li>
+<li><a href="#org40dfc5b">1.2. Versioning and Notes</a></li>
+<li><a href="#org69c17b1">1.3. Acknowledgements</a></li>
+<li><a href="#org11980cf">1.4. What Is A Kernel Module?</a></li>
+<li><a href="#org717a585">1.5. Installing some Dependencies</a></li>
+<li><a href="#org34eb349">1.6. What Modules are in my Kernel?</a></li>
+<li><a href="#org5edddff">1.7. Do I need to download and compile the kernel?</a></li>
+<li><a href="#orgcee5a12">1.8. Before We Begin</a></li>
 </ul>
 </li>
-<li><a href="#org09e0ed1">2. Headers</a></li>
-<li><a href="#org8514710">3. Examples</a></li>
-<li><a href="#org2e716c8">4. Hello World</a>
+<li><a href="#org25ee2e2">2. Headers</a></li>
+<li><a href="#orgfbab5ee">3. Examples</a></li>
+<li><a href="#org5936baa">4. Hello World</a>
 <ul>
-<li><a href="#org50b6ca5">4.1. The Simplest Module</a></li>
-<li><a href="#org2cb9991">4.2. Hello and Goodbye</a></li>
-<li><a href="#orgdb843de">4.3. The __init and __exit Macros</a></li>
-<li><a href="#org3d717a3">4.4. Licensing and Module Documentation</a></li>
-<li><a href="#org4fc6259">4.5. Passing Command Line Arguments to a Module</a></li>
-<li><a href="#orgaa1fefa">4.6. Modules Spanning Multiple Files</a></li>
-<li><a href="#orgcf0dd02">4.7. Building modules for a precompiled kernel</a></li>
+<li><a href="#org46d957a">4.1. The Simplest Module</a></li>
+<li><a href="#org792c507">4.2. Hello and Goodbye</a></li>
+<li><a href="#org4ac0db1">4.3. The __init and __exit Macros</a></li>
+<li><a href="#org6040228">4.4. Licensing and Module Documentation</a></li>
+<li><a href="#orgc65e82d">4.5. Passing Command Line Arguments to a Module</a></li>
+<li><a href="#org18a0ec8">4.6. Modules Spanning Multiple Files</a></li>
+<li><a href="#org7a3bdaa">4.7. Building modules for a precompiled kernel</a></li>
 </ul>
 </li>
-<li><a href="#org9b76907">5. Preliminaries</a>
+<li><a href="#org8c43f4e">5. Preliminaries</a>
 <ul>
-<li><a href="#org6599c2c">5.1. How modules begin and end</a></li>
-<li><a href="#orgaacef73">5.2. Functions available to modules</a></li>
-<li><a href="#org376c013">5.3. User Space vs Kernel Space</a></li>
-<li><a href="#org2d25c90">5.4. Name Space</a></li>
-<li><a href="#orgbc65808">5.5. Code space</a></li>
-<li><a href="#org517834b">5.6. Device Drivers</a></li>
+<li><a href="#org4b8b752">5.1. How modules begin and end</a></li>
+<li><a href="#org909371e">5.2. Functions available to modules</a></li>
+<li><a href="#orgf7f182b">5.3. User Space vs Kernel Space</a></li>
+<li><a href="#orgff44207">5.4. Name Space</a></li>
+<li><a href="#org5255cdb">5.5. Code space</a></li>
+<li><a href="#orgbc23973">5.6. Device Drivers</a></li>
 </ul>
 </li>
-<li><a href="#orgc9ab9cf">6. Character Device drivers</a>
+<li><a href="#org9f9f402">6. Character Device drivers</a>
 <ul>
-<li><a href="#org503b2bc">6.1. The file_operations Structure</a></li>
-<li><a href="#org043bd77">6.2. The file structure</a></li>
-<li><a href="#org832e261">6.3. Registering A Device</a></li>
-<li><a href="#org8f03da4">6.4. Unregistering A Device</a></li>
-<li><a href="#orgd2e2061">6.5. chardev.c</a></li>
-<li><a href="#org0a359f8">6.6. Writing Modules for Multiple Kernel Versions</a></li>
+<li><a href="#org4c8e73e">6.1. The file_operations Structure</a></li>
+<li><a href="#orgc832331">6.2. The file structure</a></li>
+<li><a href="#org1170a8f">6.3. Registering A Device</a></li>
+<li><a href="#orgd0756f2">6.4. Unregistering A Device</a></li>
+<li><a href="#org3c38eaa">6.5. chardev.c</a></li>
+<li><a href="#orga7dad83">6.6. Writing Modules for Multiple Kernel Versions</a></li>
 </ul>
 </li>
-<li><a href="#org4b9da08">7. The /proc File System</a>
+<li><a href="#org37398ab">7. The /proc File System</a>
 <ul>
-<li><a href="#org95403fb">7.1. Read and Write a /proc File</a></li>
-<li><a href="#org77cad59">7.2. Manage /proc file with standard filesystem</a></li>
-<li><a href="#orgf8eb3d8">7.3. Manage /proc file with seq_file</a></li>
+<li><a href="#orgc89475b">7.1. Read and Write a /proc File</a></li>
+<li><a href="#org0ba2b62">7.2. Manage /proc file with standard filesystem</a></li>
+<li><a href="#org3bd39f4">7.3. Manage /proc file with seq_file</a></li>
 </ul>
 </li>
-<li><a href="#org726c635">8. sysfs: Interacting with your module</a></li>
-<li><a href="#orgd812e51">9. Talking To Device Files</a></li>
-<li><a href="#orga4ce333">10. System Calls</a></li>
-<li><a href="#org14dc357">11. Blocking Processes and threads</a>
+<li><a href="#org6f5331f">8. sysfs: Interacting with your module</a></li>
+<li><a href="#org0917e40">9. Talking To Device Files</a></li>
+<li><a href="#orgb6faf69">10. System Calls</a></li>
+<li><a href="#org07bc856">11. Blocking Processes and threads</a>
 <ul>
-<li><a href="#orgc4b9377">11.1. Sleep</a></li>
-<li><a href="#orgae2cfb4">11.2. Completions</a></li>
+<li><a href="#org315b870">11.1. Sleep</a></li>
+<li><a href="#orgaf9c3e8">11.2. Completions</a></li>
 </ul>
 </li>
-<li><a href="#orgb0a857c">12. Avoiding Collisions and Deadlocks</a>
+<li><a href="#orgf411c28">12. Avoiding Collisions and Deadlocks</a>
 <ul>
-<li><a href="#orgc02b11e">12.1. Mutex</a></li>
-<li><a href="#orgf3a2577">12.2. Spinlocks</a></li>
-<li><a href="#orga3a70d0">12.3. Read and write locks</a></li>
-<li><a href="#orga153ddc">12.4. Atomic operations</a></li>
+<li><a href="#org27b280a">12.1. Mutex</a></li>
+<li><a href="#orgca71381">12.2. Spinlocks</a></li>
+<li><a href="#org85f6936">12.3. Read and write locks</a></li>
+<li><a href="#org3193248">12.4. Atomic operations</a></li>
 </ul>
 </li>
-<li><a href="#orgfb9951d">13. Replacing Print Macros</a>
+<li><a href="#org7a251dc">13. Replacing Print Macros</a>
 <ul>
-<li><a href="#org30b5453">13.1. Replacement</a></li>
-<li><a href="#orgb39268e">13.2. Flashing keyboard LEDs</a></li>
+<li><a href="#org51e9c6e">13.1. Replacement</a></li>
+<li><a href="#org364f3e1">13.2. Flashing keyboard LEDs</a></li>
 </ul>
 </li>
-<li><a href="#orgc55bb18">14. Scheduling Tasks</a>
+<li><a href="#org6435c32">14. Scheduling Tasks</a>
 <ul>
-<li><a href="#orga076eef">14.1. Tasklets</a></li>
-<li><a href="#org982b3f6">14.2. Work queues</a></li>
+<li><a href="#org369ed2d">14.1. Tasklets</a></li>
+<li><a href="#orgecedcee">14.2. Work queues</a></li>
 </ul>
 </li>
-<li><a href="#orgc116273">15. Interrupt Handlers</a>
+<li><a href="#org16ea710">15. Interrupt Handlers</a>
 <ul>
-<li><a href="#org54e4896">15.1. Interrupt Handlers</a></li>
-<li><a href="#orge7773b4">15.2. Detecting button presses</a></li>
-<li><a href="#orgcdc9929">15.3. Bottom Half</a></li>
+<li><a href="#org4c00e67">15.1. Interrupt Handlers</a></li>
+<li><a href="#orgbe49b1f">15.2. Detecting button presses</a></li>
+<li><a href="#org47ce5d0">15.3. Bottom Half</a></li>
 </ul>
 </li>
-<li><a href="#orgbf0e5ac">16. Crypto</a>
+<li><a href="#orga546dae">16. Crypto</a>
 <ul>
-<li><a href="#org2007617">16.1. Hash functions</a></li>
-<li><a href="#orgc6b3c30">16.2. Symmetric key encryption</a></li>
+<li><a href="#orgb7a2f3f">16.1. Hash functions</a></li>
+<li><a href="#org0cfee26">16.2. Symmetric key encryption</a></li>
 </ul>
 </li>
-<li><a href="#org03f659f">17. Standardising the interfaces: The Device Model</a></li>
-<li><a href="#org68259eb">18. Optimisations</a>
+<li><a href="#orgc0998e8">17. Standardising the interfaces: The Device Model</a></li>
+<li><a href="#org85ac10f">18. Optimisations</a>
 <ul>
-<li><a href="#org559c508">18.1. Likely and Unlikely conditions</a></li>
+<li><a href="#orgbc29856">18.1. Likely and Unlikely conditions</a></li>
 </ul>
 </li>
-<li><a href="#org8c4d4e4">19. Common Pitfalls</a>
+<li><a href="#org73aac70">19. Common Pitfalls</a>
 <ul>
-<li><a href="#org4d49bfc">19.1. Using standard libraries</a></li>
-<li><a href="#org2cb7089">19.2. Disabling interrupts</a></li>
-<li><a href="#orgcbea719">19.3. Sticking your head inside a large carnivore</a></li>
+<li><a href="#orgb6b4a5c">19.1. Using standard libraries</a></li>
+<li><a href="#org941503c">19.2. Disabling interrupts</a></li>
+<li><a href="#orgaeeefa9">19.3. Sticking your head inside a large carnivore</a></li>
 </ul>
 </li>
-<li><a href="#org3682fd2">20. Where To Go From Here?</a></li>
+<li><a href="#orgf82b901">20. Where To Go From Here?</a></li>
 </ul>
 </div>
 </div>
@@ -363,8 +363,8 @@
 </p>
 
 
-<div id="outline-container-org2fe6d3b" class="outline-2">
-<h2 id="org2fe6d3b"><span class="section-number-2">1.</span> Introduction</h2>
+<div id="outline-container-orgfb1f91d" class="outline-2">
+<h2 id="orgfb1f91d"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The Linux Kernel Module Programming Guide is a free book; you may reproduce and/or modify it under the terms of the Open Software License, version 3.0.
@@ -387,8 +387,8 @@ If you publish or distribute this book commercially, donations, royalties, and/o
 </p>
 </div>
 
-<div id="outline-container-orgdbb39ac" class="outline-3">
-<h3 id="orgdbb39ac"><span class="section-number-3">1.1.</span> Authorship</h3>
+<div id="outline-container-org04661e3" class="outline-3">
+<h3 id="org04661e3"><span class="section-number-3">1.1.</span> Authorship</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 The Linux Kernel Module Programming Guide was originally written for the 2.2 kernels by Ori Pomerantz. Eventually, Ori no longer had time to maintain the document. After all, the Linux kernel is a fast moving target. Peter Jay Salzman took over maintenance and updated it for the 2.4 kernels. Eventually, Peter no longer had time to follow developments with the 2.6 kernel, so Michael Burian became a co-maintainer to update the document for the 2.6 kernels.  Bob Mottram updated the examples for 3.8 and later kernels, added the sysfs chapter and modified or updated other chapters.
@@ -396,8 +396,8 @@ The Linux Kernel Module Programming Guide was originally written for the 2.2 ker
 </div>
 </div>
 
-<div id="outline-container-orgdd87aec" class="outline-3">
-<h3 id="orgdd87aec"><span class="section-number-3">1.2.</span> Versioning and Notes</h3>
+<div id="outline-container-org40dfc5b" class="outline-3">
+<h3 id="org40dfc5b"><span class="section-number-3">1.2.</span> Versioning and Notes</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 The Linux kernel is a moving target. There has always been a question whether the LKMPG should remove deprecated information or keep it around for historical sake. Michael Burian and I decided to create a new branch of the LKMPG for each new stable kernel version. So version LKMPG 4.12.x will address Linux kernel 4.12.x and LKMPG 2.6.x will address Linux kernel 2.6. No attempt will be made to archive historical information; a person wishing this information should read the appropriately versioned LKMPG.
@@ -409,8 +409,8 @@ The source code and discussions should apply to most architectures, but I can't 
 </div>
 </div>
 
-<div id="outline-container-org93c4777" class="outline-3">
-<h3 id="org93c4777"><span class="section-number-3">1.3.</span> Acknowledgements</h3>
+<div id="outline-container-org69c17b1" class="outline-3">
+<h3 id="org69c17b1"><span class="section-number-3">1.3.</span> Acknowledgements</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 The following people have contributed corrections or good suggestions: Ignacio Martin, David Porter, Daniele Paolo Scarpazza, Dimo Velev, Francois Audeon, Horst Schirmeier, Bob Mottram and Roman Lakeev.
@@ -418,8 +418,8 @@ The following people have contributed corrections or good suggestions: Ignacio M
 </div>
 </div>
 
-<div id="outline-container-orgfe8e658" class="outline-3">
-<h3 id="orgfe8e658"><span class="section-number-3">1.4.</span> What Is A Kernel Module?</h3>
+<div id="outline-container-org11980cf" class="outline-3">
+<h3 id="org11980cf"><span class="section-number-3">1.4.</span> What Is A Kernel Module?</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 So, you want to write a kernel module. You know C, you've written a few normal programs to run as processes, and now you want to get to where the real action is, to where a single wild pointer can wipe out your file system and a core dump means a reboot.
@@ -431,8 +431,8 @@ What exactly is a kernel module? Modules are pieces of code that can be loaded a
 </div>
 </div>
 
-<div id="outline-container-org7a008ba" class="outline-3">
-<h3 id="org7a008ba"><span class="section-number-3">1.5.</span> Installing some Dependencies</h3>
+<div id="outline-container-org717a585" class="outline-3">
+<h3 id="org717a585"><span class="section-number-3">1.5.</span> Installing some Dependencies</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 Linux distros provide the commands <i>modprobe</i>, <i>insmod</i> and <i>depmod</i> within a package. These can be installed as follows:
@@ -458,8 +458,8 @@ On Parabola:
 </div>
 </div>
 
-<div id="outline-container-orga334257" class="outline-3">
-<h3 id="orga334257"><span class="section-number-3">1.6.</span> What Modules are in my Kernel?</h3>
+<div id="outline-container-org34eb349" class="outline-3">
+<h3 id="org34eb349"><span class="section-number-3">1.6.</span> What Modules are in my Kernel?</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 To discover what modules are already loaded within your current kernel use the command <b>lsmod</b>.
@@ -490,8 +490,8 @@ This can be a long list, and you might prefer to search for something particular
 </div>
 </div>
 
-<div id="outline-container-org704cf47" class="outline-3">
-<h3 id="org704cf47"><span class="section-number-3">1.7.</span> Do I need to download and compile the kernel?</h3>
+<div id="outline-container-org5edddff" class="outline-3">
+<h3 id="org5edddff"><span class="section-number-3">1.7.</span> Do I need to download and compile the kernel?</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 For the purposes of following this guide you don't necessarily need to do that. However, it would be wise to run the examples within a test distro running on a virtual machine in order to avoid any possibility of messing up your system.
@@ -499,8 +499,8 @@ For the purposes of following this guide you don't necessarily need to do that. 
 </div>
 </div>
 
-<div id="outline-container-org23b6001" class="outline-3">
-<h3 id="org23b6001"><span class="section-number-3">1.8.</span> Before We Begin</h3>
+<div id="outline-container-orgcee5a12" class="outline-3">
+<h3 id="orgcee5a12"><span class="section-number-3">1.8.</span> Before We Begin</h3>
 <div class="outline-text-3" id="text-1-8">
 <p>
 Before we delve into code, there are a few issues we need to cover. Everyone's system is different and everyone has their own groove. Getting your first "hello world" program to compile and load correctly can sometimes be a trick. Rest assured, after you get over the initial hurdle of doing it for the first time, it will be smooth sailing thereafter.
@@ -508,7 +508,7 @@ Before we delve into code, there are a few issues we need to cover. Everyone's s
 </div>
 
 <ol class="org-ol">
-<li><a id="org846f966"></a>Modversioning<br />
+<li><a id="org6bebf0d"></a>Modversioning<br />
 <div class="outline-text-5" id="text-1-8-0-1">
 <p>
 A module compiled for one kernel won't load if you boot a different kernel unless you enable CONFIG_MODVERSIONS in the kernel. We won't go into module versioning until later in this guide. Until we cover modversions, the examples in the guide may not work if you're running a kernel with modversioning turned on. However, most stock Linux distro kernels come with it turned on. If you're having trouble loading the modules because of versioning errors, compile a kernel with modversioning turned off.
@@ -516,7 +516,7 @@ A module compiled for one kernel won't load if you boot a different kernel unles
 </div>
 </li>
 
-<li><a id="org48f68de"></a>Using X<br />
+<li><a id="orgf393019"></a>Using X<br />
 <div class="outline-text-5" id="text-1-8-0-2">
 <p>
 It is highly recommended that you extract, compile and load all the examples this guide discusses. It's also highly recommended you do this from a console. You should not be working on this stuff in X.
@@ -531,8 +531,8 @@ Modules can't print to the screen like printf() can, but they can log informatio
 </div>
 </div>
 
-<div id="outline-container-org09e0ed1" class="outline-2">
-<h2 id="org09e0ed1"><span class="section-number-2">2.</span> Headers</h2>
+<div id="outline-container-org25ee2e2" class="outline-2">
+<h2 id="org25ee2e2"><span class="section-number-2">2.</span> Headers</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Before you can build anything you'll need to install the header files for your kernel. On Parabola GNU/Linux:
@@ -564,8 +564,8 @@ This will tell you what kernel header files are available. Then for example:
 </div>
 </div>
 
-<div id="outline-container-org8514710" class="outline-2">
-<h2 id="org8514710"><span class="section-number-2">3.</span> Examples</h2>
+<div id="outline-container-orgfbab5ee" class="outline-2">
+<h2 id="orgfbab5ee"><span class="section-number-2">3.</span> Examples</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 All the examples from this document are available within the <i>examples</i> subdirectory. The directory is created by a script which pulls the source code out from the manual. To test that they compile:
@@ -584,12 +584,12 @@ If there are any compile errors then you might have a more recent kernel version
 </div>
 </div>
 
-<div id="outline-container-org2e716c8" class="outline-2">
-<h2 id="org2e716c8"><span class="section-number-2">4.</span> Hello World</h2>
+<div id="outline-container-org5936baa" class="outline-2">
+<h2 id="org5936baa"><span class="section-number-2">4.</span> Hello World</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org50b6ca5" class="outline-3">
-<h3 id="org50b6ca5"><span class="section-number-3">4.1.</span> The Simplest Module</h3>
+<div id="outline-container-org46d957a" class="outline-3">
+<h3 id="org46d957a"><span class="section-number-3">4.1.</span> The Simplest Module</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Most people learning programming start out with some sort of "<i>hello world</i>" example. I don't know what happens to people who break with this tradition, but I think it's safer not to find out. We'll start with a series of hello world programs that demonstrate the different aspects of the basics of writing a kernel module.
@@ -736,7 +736,7 @@ Lastly, every kernel module needs to include linux/module.h. We needed to includ
 </div>
 
 <ol class="org-ol">
-<li><a id="orgbe94803"></a>A point about coding style<br />
+<li><a id="org3350af9"></a>A point about coding style<br />
 <div class="outline-text-5" id="text-4-1-0-1">
 <p>
 Another thing which may not be immediately obvious to anyone getting started with kernel programming is that indentation within your code should be using <b>tabs</b> and <b>not spaces</b>. It's one of the coding conventions of the kernel. You may not like it, but you'll need to get used to it if you ever submit a patch upstream.
@@ -744,7 +744,7 @@ Another thing which may not be immediately obvious to anyone getting started wit
 </div>
 </li>
 
-<li><a id="org99d5449"></a>Introducing print macros<br />
+<li><a id="org6738bc0"></a>Introducing print macros<br />
 <div class="outline-text-5" id="text-4-1-0-2">
 <p>
 In the beginning there was <b>printk</b>, usually followed by a priority such as KERN_INFO or KERN_DEBUG. More recently this can also be expressed in abbreviated form using a set of print macros, such as <b>pr_info</b> and <b>pr_debug</b>. This just saves some mindless keyboard bashing and looks a bit neater. They can be found within <b>linux/printk.h</b>. Take time to read through the available priority macros.
@@ -752,7 +752,7 @@ In the beginning there was <b>printk</b>, usually followed by a priority such as
 </div>
 </li>
 
-<li><a id="orgb112122"></a>About Compiling<br />
+<li><a id="org3a76bb4"></a>About Compiling<br />
 <div class="outline-text-5" id="text-4-1-0-3">
 <p>
 Kernel modules need to be compiled a bit differently from regular userspace apps. Former kernel versions required us to care much about these settings, which are usually stored in Makefiles. Although hierarchically organized, many redundant settings accumulated in sublevel Makefiles and made them large and rather difficult to maintain. Fortunately, there is a new way of doing these things, called kbuild, and the build process for external loadable modules is now fully integrated into the standard kernel build mechanism. To learn more on how to compile modules which are not part of the official kernel (such as all the examples you'll find in this guide), see file <b>linux/Documentation/kbuild/modules.txt</b>.
@@ -772,8 +772,8 @@ Here's another exercise for the reader. See that comment above the return statem
 </ol>
 </div>
 
-<div id="outline-container-org2cb9991" class="outline-3">
-<h3 id="org2cb9991"><span class="section-number-3">4.2.</span> Hello and Goodbye</h3>
+<div id="outline-container-org792c507" class="outline-3">
+<h3 id="org792c507"><span class="section-number-3">4.2.</span> Hello and Goodbye</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 In early kernel versions you had to use the <b>init_module</b> and <b>cleanup_module</b> functions, as in the first hello world example, but these days you can name those anything you want by using the <b>module_init</b> and <b>module_exit</b> macros. These macros are defined in <b>linux/init.h</b>. The only requirement is that your init and cleanup functions must be defined before calling the those macros, otherwise you'll get compilation errors. Here's an example of this technique:
@@ -828,8 +828,8 @@ Now have a look at linux/drivers/char/Makefile for a real world example. As you 
 </div>
 </div>
 
-<div id="outline-container-orgdb843de" class="outline-3">
-<h3 id="orgdb843de"><span class="section-number-3">4.3.</span> The __init and __exit Macros</h3>
+<div id="outline-container-org4ac0db1" class="outline-3">
+<h3 id="org4ac0db1"><span class="section-number-3">4.3.</span> The __init and __exit Macros</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 This demonstrates a feature of kernel 2.2 and later. Notice the change in the definitions of the init and cleanup functions. The <b>__init</b> macro causes the init function to be discarded and its memory freed once the init function finishes for built-in drivers, but not loadable modules. If you think about when the init function is invoked, this makes perfect sense.
@@ -877,8 +877,8 @@ MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
 </div>
 </div>
 
-<div id="outline-container-org3d717a3" class="outline-3">
-<h3 id="org3d717a3"><span class="section-number-3">4.4.</span> Licensing and Module Documentation</h3>
+<div id="outline-container-org6040228" class="outline-3">
+<h3 id="org6040228"><span class="section-number-3">4.4.</span> Licensing and Module Documentation</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 Honestly, who loads or even cares about proprietary modules? If you do then you might have seen something like this:
@@ -887,7 +887,6 @@ Honestly, who loads or even cares about proprietary modules? If you do then you 
 <div class="org-src-container">
 <pre class="src src-txt"># insmod xxxxxx.o
 Warning: loading xxxxxx.ko will taint the kernel: no license
-  See http://www.tux.org/lkml/#export-tainted for information about tainted modules
 Module xxxxxx loaded, with warnings
 </pre>
 </div>
@@ -930,8 +929,8 @@ MODULE_DESCRIPTION(<span style="color: #deb887;">"A sample driver"</span>);
 </div>
 </div>
 
-<div id="outline-container-org4fc6259" class="outline-3">
-<h3 id="org4fc6259"><span class="section-number-3">4.5.</span> Passing Command Line Arguments to a Module</h3>
+<div id="outline-container-orgc65e82d" class="outline-3">
+<h3 id="orgc65e82d"><span class="section-number-3">4.5.</span> Passing Command Line Arguments to a Module</h3>
 <div class="outline-text-3" id="text-4-5">
 <p>
 Modules can take command line arguments, but not with the argc/argv you might be used to.
@@ -990,7 +989,7 @@ MODULE_AUTHOR(<span style="color: #deb887;">"Peter Jay Salzman"</span>);
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">myint</span> = 420;
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">long</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">mylong</span> = 9999;
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">char</span> *<span style="color: #4eee94;">mystring</span> = <span style="color: #deb887;">"blah"</span>;
-<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">myintArray</span>[2] = { -1, -1 };
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">myintarray</span>[2] = { -1, -1 };
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">arr_argc</span> = 0;
 
 <span style="color: #7f7f7f;">/*</span>
@@ -1018,8 +1017,8 @@ MODULE_AUTHOR(<span style="color: #deb887;">"Peter Jay Salzman"</span>);
 <span style="color: #7f7f7f;"> * of elements of the array initialized by the user at module loading time</span>
 <span style="color: #7f7f7f;"> * The fourth argument is the permission bits</span>
 <span style="color: #7f7f7f;"> */</span>
-<span style="color: #daa520;">module_param_array</span>(myintArray, <span style="color: #98f5ff;">int</span>, &amp;arr_argc, 0000);
-<span style="color: #daa520;">MODULE_PARM_DESC</span>(myintArray, <span style="color: #deb887;">"An array of integers"</span>);
+<span style="color: #daa520;">module_param_array</span>(myintarray, <span style="color: #98f5ff;">int</span>, &amp;arr_argc, 0000);
+<span style="color: #daa520;">MODULE_PARM_DESC</span>(myintarray, <span style="color: #deb887;">"An array of integers"</span>);
 
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">__init</span> hello_5_init(<span style="color: #98f5ff;">void</span>)
 {
@@ -1030,10 +1029,10 @@ MODULE_AUTHOR(<span style="color: #deb887;">"Peter Jay Salzman"</span>);
     pr_info(<span style="color: #deb887;">"mylong is a long integer: %ld\n"</span>, mylong);
     pr_info(<span style="color: #deb887;">"mystring is a string: %s\n"</span>, mystring);
 
-    <span style="color: #00bfff;">for</span> (i = 0; i &lt; (<span style="color: #00bfff;">sizeof</span> myintArray / <span style="color: #00bfff;">sizeof</span> (<span style="color: #98f5ff;">int</span>)); i++)
-        pr_info(<span style="color: #deb887;">"myintArray[%d] = %d\n"</span>, i, myintArray[i]);
+    <span style="color: #00bfff;">for</span> (i = 0; i &lt; (<span style="color: #00bfff;">sizeof</span> myintarray / <span style="color: #00bfff;">sizeof</span> (<span style="color: #98f5ff;">int</span>)); i++)
+        pr_info(<span style="color: #deb887;">"myintarray[%d] = %d\n"</span>, i, myintarray[i]);
 
-    pr_info(<span style="color: #deb887;">"got %d arguments for myintArray.\n"</span>, arr_argc);
+    pr_info(<span style="color: #deb887;">"got %d arguments for myintarray.\n"</span>, arr_argc);
     <span style="color: #00bfff;">return</span> 0;
 }
 
@@ -1052,25 +1051,25 @@ I would recommend playing around with this code:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-txt"># sudo insmod hello-5.ko mystring="bebop" mybyte=255 myintArray=-1
+<pre class="src src-txt"># sudo insmod hello-5.ko mystring="bebop" mybyte=255 myintarray=-1
 mybyte is an 8 bit integer: 255
 myshort is a short integer: 1
 myint is an integer: 20
 mylong is a long integer: 9999
 mystring is a string: bebop
-myintArray is -1 and 420
+myintarray is -1 and 420
 
 # rmmod hello-5
 Goodbye, world 5
 
 # sudo insmod hello-5.ko mystring="supercalifragilisticexpialidocious" \
-&gt; mybyte=256 myintArray=-1,-1
+&gt; mybyte=256 myintarray=-1,-1
 mybyte is an 8 bit integer: 0
 myshort is a short integer: 1
 myint is an integer: 20
 mylong is a long integer: 9999
 mystring is a string: supercalifragilisticexpialidocious
-myintArray is -1 and -1
+myintarray is -1 and -1
 
 # rmmod hello-5
 Goodbye, world 5
@@ -1082,8 +1081,8 @@ hello-5.o: invalid argument syntax for mylong: 'h'
 </div>
 </div>
 
-<div id="outline-container-orgaa1fefa" class="outline-3">
-<h3 id="orgaa1fefa"><span class="section-number-3">4.6.</span> Modules Spanning Multiple Files</h3>
+<div id="outline-container-org18a0ec8" class="outline-3">
+<h3 id="org18a0ec8"><span class="section-number-3">4.6.</span> Modules Spanning Multiple Files</h3>
 <div class="outline-text-3" id="text-4-6">
 <p>
 Sometimes it makes sense to divide a kernel module between several source files.
@@ -1159,8 +1158,8 @@ This is the complete makefile for all the examples we've seen so far. The first 
 </div>
 </div>
 
-<div id="outline-container-orgcf0dd02" class="outline-3">
-<h3 id="orgcf0dd02"><span class="section-number-3">4.7.</span> Building modules for a precompiled kernel</h3>
+<div id="outline-container-org7a3bdaa" class="outline-3">
+<h3 id="org7a3bdaa"><span class="section-number-3">4.7.</span> Building modules for a precompiled kernel</h3>
 <div class="outline-text-3" id="text-4-7">
 <p>
 Obviously, we strongly suggest you to recompile your kernel, so that you can enable a number of useful debugging features, such as forced module unloading (<b>MODULE_FORCE_UNLOAD</b>): when this option is enabled, you can force the kernel to unload a module even when it believes it is unsafe, via a <b>sudo rmmod -f module</b> command. This option can save you a lot of time and a number of reboots during the development of a module. If you don't want to recompile your kernel then you should consider running the examples within a test distro on a virtual machine. If you mess anything up then you can easily reboot or restore the VM.
@@ -1224,7 +1223,7 @@ Let's focus again on the previous error message: a closer look at the version ma
 </div>
 
 <p>
-In this case, you need to restore the value of symbol <b>EXTRAVERSION</b> to -1.358. We suggest to keep a backup copy of the makefile used to compile your kernel available in <b>/lib/modules/5.13.8-1.358/build</b>. A simple <b>cp /lib/modules/`uname-r`/build/Makefile /usr/src/linux-`uname -r`</b> should suffice. Additionally, if you already started a kernel build with the previous (wrong) Makefile, you should also rerun make, or directly modify symbol UTS_RELEASE in file <b>/usr/src/linux-5.13.8/include/linux/version.h</b> according to contents of file <b>/lib/modules/5.13.8/build/include/linux/version.h</b>, or overwrite the latter with the first.
+In this case, you need to restore the value of symbol <b>EXTRAVERSION</b> to -1.358. We suggest to keep a backup copy of the makefile used to compile your kernel available in <b>/lib/modules/5.13.8-1.358/build</b>. A simple <b>cp /lib/modules/`uname -r`/build/Makefile /usr/src/linux-`uname -r`</b> should suffice. Additionally, if you already started a kernel build with the previous (wrong) Makefile, you should also rerun make, or directly modify symbol UTS_RELEASE in file <b>/usr/src/linux-5.13.8/include/linux/version.h</b> according to contents of file <b>/lib/modules/5.13.8/build/include/linux/version.h</b>, or overwrite the latter with the first.
 </p>
 
 <p>
@@ -1233,16 +1232,19 @@ Now, please run make to update configuration and version headers and objects:
 
 <div class="org-src-container">
 <pre class="src src-txt"># make
-CHK     include/linux/version.h
-UPD     include/linux/version.h
-SYMLINK include/asm -&gt; include/asm-i386
-SPLIT   include/linux/autoconf.h -&gt; include/config/*
+SYNC    include/config/auto.conf.cmd
 HOSTCC  scripts/basic/fixdep
-HOSTCC  scripts/basic/split-include
-HOSTCC  scripts/basic/docproc
-HOSTCC  scripts/conmakehash
-HOSTCC  scripts/kallsyms
-CC      scripts/empty.o
+HOSTCC  scripts/kconfig/conf.o
+HOSTCC  scripts/kconfig/confdata.o
+HOSTCC  scripts/kconfig/expr.o
+LEX     scripts/kconfig/lexer.lex.c
+YACC    scripts/kconfig/parser.tab.[ch]
+HOSTCC  scripts/kconfig/preprocess.o
+HOSTCC  scripts/kconfig/symbol.o
+HOSTCC  scripts/kconfig/util.o
+HOSTCC  scripts/kconfig/lexer.lex.o
+HOSTCC  scripts/kconfig/parser.tab.o
+HOSTLD  scripts/kconfig/conf
 </pre>
 </div>
 
@@ -1253,12 +1255,12 @@ If you do not desire to actually compile the kernel, you can interrupt the build
 </div>
 </div>
 
-<div id="outline-container-org9b76907" class="outline-2">
-<h2 id="org9b76907"><span class="section-number-2">5.</span> Preliminaries</h2>
+<div id="outline-container-org8c43f4e" class="outline-2">
+<h2 id="org8c43f4e"><span class="section-number-2">5.</span> Preliminaries</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org6599c2c" class="outline-3">
-<h3 id="org6599c2c"><span class="section-number-3">5.1.</span> How modules begin and end</h3>
+<div id="outline-container-org4b8b752" class="outline-3">
+<h3 id="org4b8b752"><span class="section-number-3">5.1.</span> How modules begin and end</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 A program usually begins with a <b>main()</b> function, executes a bunch of instructions and terminates upon completion of those instructions. Kernel modules work a bit differently. A module always begin with either the init_module or the function you specify with module_init call. This is the entry function for modules; it tells the kernel what functionality the module provides and sets up the kernel to run the module's functions when they're needed. Once it does this, entry function returns and the module does nothing until the kernel wants to do something with the code that the module provides.
@@ -1274,8 +1276,8 @@ Every module must have an entry function and an exit function. Since there's mor
 </div>
 </div>
 
-<div id="outline-container-orgaacef73" class="outline-3">
-<h3 id="orgaacef73"><span class="section-number-3">5.2.</span> Functions available to modules</h3>
+<div id="outline-container-org909371e" class="outline-3">
+<h3 id="org909371e"><span class="section-number-3">5.2.</span> Functions available to modules</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 Programmers use functions they don't define all the time. A prime example of this is <b>printf()</b>. You use these library functions which are provided by the standard C library, libc. The definitions for these functions don't actually enter your program until the linking stage, which insures that the code (for printf() for example) is available, and fixes the call instruction to point to that code.
@@ -1314,8 +1316,8 @@ You can even write modules to replace the kernel's system calls, which we'll do 
 </div>
 </div>
 
-<div id="outline-container-org376c013" class="outline-3">
-<h3 id="org376c013"><span class="section-number-3">5.3.</span> User Space vs Kernel Space</h3>
+<div id="outline-container-orgf7f182b" class="outline-3">
+<h3 id="orgf7f182b"><span class="section-number-3">5.3.</span> User Space vs Kernel Space</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 A kernel is all about access to resources, whether the resource in question happens to be a video card, a hard drive or even memory. Programs often compete for the same resource. As I just saved this document, updatedb started updating the locate database. My vim session and updatedb are both using the hard drive concurrently. The kernel needs to keep things orderly, and not give users access to resources whenever they feel like it. To this end, a CPU can run in different modes. Each mode gives a different level of freedom to do what you want on the system. The Intel 80386 architecture had 4 of these modes, which were called rings. Unix uses only two rings; the highest ring (ring 0, also known as `supervisor mode' where everything is allowed to happen) and the lowest ring, which is called `user mode'.
@@ -1327,8 +1329,8 @@ Recall the discussion about library functions vs system calls. Typically, you us
 </div>
 </div>
 
-<div id="outline-container-org2d25c90" class="outline-3">
-<h3 id="org2d25c90"><span class="section-number-3">5.4.</span> Name Space</h3>
+<div id="outline-container-orgff44207" class="outline-3">
+<h3 id="orgff44207"><span class="section-number-3">5.4.</span> Name Space</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 When you write a small C program, you use variables which are convenient and make sense to the reader. If, on the other hand, you're writing routines which will be part of a bigger problem, any global variables you have are part of a community of other peoples' global variables; some of the variable names can clash. When a program has lots of global variables which aren't meaningful enough to be distinguished, you get namespace pollution. In large projects, effort must be made to remember reserved names, and to find ways to develop a scheme for naming unique variable names and symbols.
@@ -1344,8 +1346,8 @@ The file <b>/proc/kallsyms</b> holds all the symbols that the kernel knows about
 </div>
 </div>
 
-<div id="outline-container-orgbc65808" class="outline-3">
-<h3 id="orgbc65808"><span class="section-number-3">5.5.</span> Code space</h3>
+<div id="outline-container-org5255cdb" class="outline-3">
+<h3 id="org5255cdb"><span class="section-number-3">5.5.</span> Code space</h3>
 <div class="outline-text-3" id="text-5-5">
 <p>
 Memory management is a very complicated subject and the majority of O'Reilly's "<i>Understanding The Linux Kernel</i>" exclusively covers memory management! We're not setting out to be experts on memory managements, but we do need to know a couple of facts to even begin worrying about writing real modules.
@@ -1365,8 +1367,8 @@ By the way, I would like to point out that the above discussion is true for any 
 </div>
 </div>
 
-<div id="outline-container-org517834b" class="outline-3">
-<h3 id="org517834b"><span class="section-number-3">5.6.</span> Device Drivers</h3>
+<div id="outline-container-orgbc23973" class="outline-3">
+<h3 id="orgbc23973"><span class="section-number-3">5.6.</span> Device Drivers</h3>
 <div class="outline-text-3" id="text-5-6">
 <p>
 One class of module is the device driver, which provides functionality for hardware like a serial port. On unix, each piece of hardware is represented by a file located in /dev named a device file which provides the means to communicate with the hardware. The device driver provides the communication on behalf of a user program. So the es1370.o sound card device driver might connect the /dev/sound device file to the Ensoniq IS1370 sound card. A userspace program like mp3blaster can use /dev/sound without ever knowing what kind of sound card is installed.
@@ -1374,7 +1376,7 @@ One class of module is the device driver, which provides functionality for hardw
 </div>
 
 <ol class="org-ol">
-<li><a id="org85bda17"></a>Major and Minor Numbers<br />
+<li><a id="org5820cac"></a>Major and Minor Numbers<br />
 <div class="outline-text-5" id="text-5-6-0-1">
 <p>
 Let's look at some device files. Here are device files which represent the first three partitions on the primary master IDE hard drive:
@@ -1440,12 +1442,12 @@ By now you can look at these two device files and know instantly that they are b
 </div>
 </div>
 
-<div id="outline-container-orgc9ab9cf" class="outline-2">
-<h2 id="orgc9ab9cf"><span class="section-number-2">6.</span> Character Device drivers</h2>
+<div id="outline-container-org9f9f402" class="outline-2">
+<h2 id="org9f9f402"><span class="section-number-2">6.</span> Character Device drivers</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org503b2bc" class="outline-3">
-<h3 id="org503b2bc"><span class="section-number-3">6.1.</span> The file_operations Structure</h3>
+<div id="outline-container-org4c8e73e" class="outline-3">
+<h3 id="org4c8e73e"><span class="section-number-3">6.1.</span> The file_operations Structure</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 The file_operations structure is defined in <b>/usr/include/linux/fs.h</b>, and holds pointers to functions defined by the driver that perform various operations on the device. Each field of the structure corresponds to the address of some function defined by the driver to handle a requested operation.
@@ -1537,8 +1539,8 @@ An instance of struct file_operations containing pointers to functions that are 
 </div>
 </div>
 
-<div id="outline-container-org043bd77" class="outline-3">
-<h3 id="org043bd77"><span class="section-number-3">6.2.</span> The file structure</h3>
+<div id="outline-container-orgc832331" class="outline-3">
+<h3 id="orgc832331"><span class="section-number-3">6.2.</span> The file structure</h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 Each device is represented in the kernel by a file structure, which is defined in <b>linux/fs.h</b>. Be aware that a file is a kernel level structure and never appears in a user space program. It's not the same thing as a <b>FILE</b>, which is defined by glibc and would never appear in a kernel space function. Also, its name is a bit misleading; it represents an abstract open `file', not a file on a disk, which is represented by a structure named inode.
@@ -1554,8 +1556,8 @@ Go ahead and look at the definition of file. Most of the entries you see, like s
 </div>
 </div>
 
-<div id="outline-container-org832e261" class="outline-3">
-<h3 id="org832e261"><span class="section-number-3">6.3.</span> Registering A Device</h3>
+<div id="outline-container-org1170a8f" class="outline-3">
+<h3 id="org1170a8f"><span class="section-number-3">6.3.</span> Registering A Device</h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 As discussed earlier, char devices are accessed through device files, usually located in /dev. This is by convention. When writing a driver, it's OK to put the device file in your current directory. Just make sure you place it in /dev for a production driver. The major number tells you which driver handles which device file. The minor number is used only by the driver itself to differentiate which device it's operating on, just in case the driver handles more than one device.
@@ -1584,8 +1586,8 @@ If you pass a major number of 0 to register_chrdev, the return value will be the
 </div>
 </div>
 
-<div id="outline-container-org8f03da4" class="outline-3">
-<h3 id="org8f03da4"><span class="section-number-3">6.4.</span> Unregistering A Device</h3>
+<div id="outline-container-orgd0756f2" class="outline-3">
+<h3 id="orgd0756f2"><span class="section-number-3">6.4.</span> Unregistering A Device</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
 We can't allow the kernel module to be rmmod'ed whenever root feels like it. If the device file is opened by a process and then we remove the kernel module, using the file would cause a call to the memory location where the appropriate function (read/write) used to be. If we're lucky, no other code was loaded there, and we'll get an ugly error message. If we're unlucky, another kernel module was loaded into the same location, which means a jump into the middle of another function within the kernel. The results of this would be impossible to predict, but they can't be very positive.
@@ -1606,8 +1608,8 @@ It's important to keep the counter accurate; if you ever do lose track of the co
 </div>
 </div>
 
-<div id="outline-container-orgd2e2061" class="outline-3">
-<h3 id="orgd2e2061"><span class="section-number-3">6.5.</span> chardev.c</h3>
+<div id="outline-container-org3c38eaa" class="outline-3">
+<h3 id="org3c38eaa"><span class="section-number-3">6.5.</span> chardev.c</h3>
 <div class="outline-text-3" id="text-6-5">
 <p>
 The next code sample creates a char driver named chardev. You can cat its device file.
@@ -1811,8 +1813,8 @@ MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
 </div>
 </div>
 
-<div id="outline-container-org0a359f8" class="outline-3">
-<h3 id="org0a359f8"><span class="section-number-3">6.6.</span> Writing Modules for Multiple Kernel Versions</h3>
+<div id="outline-container-orga7dad83" class="outline-3">
+<h3 id="orga7dad83"><span class="section-number-3">6.6.</span> Writing Modules for Multiple Kernel Versions</h3>
 <div class="outline-text-3" id="text-6-6">
 <p>
 The system calls, which are the major interface the kernel shows to the processes, generally stay the same across versions. A new system call may be added, but usually the old ones will behave exactly like they used to. This is necessary for backward compatibility &#x2013; a new kernel version is not supposed to break regular processes. In most cases, the device files will also remain the same. On the other hand, the internal interfaces within the kernel can and do change between versions.
@@ -1837,8 +1839,8 @@ You might already have noticed that recent kernels look different. In case you h
 </div>
 </div>
 
-<div id="outline-container-org4b9da08" class="outline-2">
-<h2 id="org4b9da08"><span class="section-number-2">7.</span> The /proc File System</h2>
+<div id="outline-container-org37398ab" class="outline-2">
+<h2 id="org37398ab"><span class="section-number-2">7.</span> The /proc File System</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 In Linux, there is an additional mechanism for the kernel and kernel modules to send information to processes &#x2014; the <b>/proc</b> file system. Originally designed to allow easy access to information about processes (hence the name), it is now used by every bit of the kernel which has something interesting to report, such as <b>/proc/modules</b> which provides the list of modules and <b>/proc/meminfo</b> which stats memory usage statistics.
@@ -1876,42 +1878,57 @@ HelloWorld!
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> procfs1.c</span>
-<span style="color: #7f7f7f;">*/</span>
+<span style="color: #7f7f7f;"> * procfs1.c</span>
+<span style="color: #7f7f7f;"> */</span>
 
-<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/module.h&gt;</span>
 <span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/kernel.h&gt;</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/module.h&gt;</span>
 <span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/proc_fs.h&gt;</span>
 <span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/uaccess.h&gt;</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/version.h&gt;</span>
+
+<span style="color: #ffd700;">#if</span> LINUX_VERSION_CODE &gt;= KERNEL_VERSION(5, 6, 0)
+<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">HAVE_PROC_OPS</span>
+<span style="color: #ffd700;">#endif</span>
 
 <span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">procfs_name</span> <span style="color: #deb887;">"helloworld"</span>
 
-<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">proc_dir_entry</span> *<span style="color: #4eee94;">Our_Proc_File</span>;
+<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">proc_dir_entry</span> *<span style="color: #4eee94;">our_proc_file</span>;
 
-
-<span style="color: #98f5ff;">ssize_t</span> <span style="color: #daa520;">procfile_read</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">filePointer</span>,<span style="color: #98f5ff;">char</span> *<span style="color: #4eee94;">buffer</span>,
-                      <span style="color: #98f5ff;">size_t</span> <span style="color: #4eee94;">buffer_length</span>, <span style="color: #98f5ff;">loff_t</span> * <span style="color: #4eee94;">offset</span>)
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">ssize_t</span> <span style="color: #daa520;">procfile_read</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">filePointer</span>, <span style="color: #98f5ff;">char</span> <span style="color: #4eee94;">__user</span> *buffer,
+                             <span style="color: #98f5ff;">size_t</span> <span style="color: #4eee94;">buffer_length</span>, <span style="color: #98f5ff;">loff_t</span> *<span style="color: #4eee94;">offset</span>)
 {
-    <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">ret</span>=0;
-    <span style="color: #00bfff;">if</span>(strlen(buffer) ==0) {
-        pr_info(<span style="color: #deb887;">"procfile read %s\n"</span>,filePointer-&gt;f_path.dentry-&gt;d_name.name);
-        ret=copy_to_user(buffer,<span style="color: #deb887;">"HelloWorld!\n"</span>,<span style="color: #00bfff;">sizeof</span>(<span style="color: #deb887;">"HelloWorld!\n"</span>));
-        ret=<span style="color: #00bfff;">sizeof</span>(<span style="color: #deb887;">"HelloWorld!\n"</span>);
-    }
-    <span style="color: #00bfff;">return</span> ret;
+    <span style="color: #98f5ff;">char</span> <span style="color: #4eee94;">s</span>[13] = <span style="color: #deb887;">"HelloWorld!\n"</span>;
+    <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">len</span> = <span style="color: #00bfff;">sizeof</span>(s);
+    <span style="color: #98f5ff;">ssize_t</span> <span style="color: #4eee94;">ret</span> = len;
 
+    <span style="color: #00bfff;">if</span> (*offset &gt;= len || copy_to_user(buffer, s, len)) {
+        pr_info(<span style="color: #deb887;">"copy_to_user failed\n"</span>);
+        ret = 0;
+    } <span style="color: #00bfff;">else</span> {
+        pr_info(<span style="color: #deb887;">"procfile read %s\n"</span>, filePointer-&gt;f_path.dentry-&gt;d_name.name);
+        *offset += len;
+    }
+
+    <span style="color: #00bfff;">return</span> ret;
 }
 
-<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">const</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file_operations</span> <span style="color: #4eee94;">proc_file_fops</span> = {
-    .read  = procfile_read,
+<span style="color: #ffd700;">#ifdef</span> HAVE_PROC_OPS
+<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">const</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">proc_ops</span> <span style="color: #4eee94;">proc_file_fops</span> = {
+    .proc_read = procfile_read,
 };
+<span style="color: #ffd700;">#else</span>
+<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">const</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file_operations</span> <span style="color: #4eee94;">proc_file_fops</span> = {
+    .read = procfile_read,
+};
+<span style="color: #ffd700;">#endif</span>
 
-<span style="color: #98f5ff;">int</span> <span style="color: #daa520;">init_module</span>()
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">__init</span> procfs1_init(<span style="color: #98f5ff;">void</span>)
 {
-    Our_Proc_File = proc_create(procfs_name,0644,<span style="color: #a2cd5a;">NULL</span>,&amp;proc_file_fops);
-    <span style="color: #00bfff;">if</span>(<span style="color: #a2cd5a;">NULL</span>==Our_Proc_File) {
-        proc_remove(Our_Proc_File);
-        pr_alert(<span style="color: #deb887;">"Error:Could not initialize /proc/%s\n"</span>,procfs_name);
+    our_proc_file = proc_create(procfs_name, 0644, <span style="color: #a2cd5a;">NULL</span>, &amp;proc_file_fops);
+    <span style="color: #00bfff;">if</span> (<span style="color: #a2cd5a;">NULL</span> == our_proc_file) {
+        proc_remove(our_proc_file);
+        pr_alert(<span style="color: #deb887;">"Error:Could not initialize /proc/%s\n"</span>, procfs_name);
         <span style="color: #00bfff;">return</span> -ENOMEM;
     }
 
@@ -1919,19 +1936,22 @@ HelloWorld!
     <span style="color: #00bfff;">return</span> 0;
 }
 
-<span style="color: #98f5ff;">void</span> <span style="color: #daa520;">cleanup_module</span>()
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">__exit</span> procfs1_exit(<span style="color: #98f5ff;">void</span>)
 {
-    proc_remove(Our_Proc_File);
+    proc_remove(our_proc_file);
     pr_info(<span style="color: #deb887;">"/proc/%s removed\n"</span>, procfs_name);
 }
+
+<span style="color: #daa520;">module_init</span>(procfs1_init);
+<span style="color: #daa520;">module_exit</span>(procfs1_exit);
 
 MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org95403fb" class="outline-3">
-<h3 id="org95403fb"><span class="section-number-3">7.1.</span> Read and Write a /proc File</h3>
+<div id="outline-container-orgc89475b" class="outline-3">
+<h3 id="orgc89475b"><span class="section-number-3">7.1.</span> Read and Write a /proc File</h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
 We have seen a very simple example for a /proc file where we only read the file /proc/helloworld. It's also possible to write in a /proc file. It works the same way as read, a function is called when the /proc file is written. But there is a little difference with read, data comes from user, so you have to import data from user space to kernel space (with copy_from_user or get_user)
@@ -1946,59 +1966,53 @@ The only memory segment accessible to a process is its own, so when writing regu
 </p>
 
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> *  procfs2.c -  create a "file" in /proc</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
+<pre class="src src-c"><span style="color: #7f7f7f;">/*</span>
+<span style="color: #7f7f7f;"> * procfs2.c -  create a "file" in /proc</span>
+<span style="color: #7f7f7f;"> */</span>
 
-<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/module.h&gt;</span>       <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Specifically, a module</span><span style="color: #7f7f7f;"> */</span>
-<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/kernel.h&gt;</span>       <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">We're doing kernel work</span><span style="color: #7f7f7f;"> */</span>
-<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/proc_fs.h&gt;</span>      <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Necessary because we use the proc fs</span><span style="color: #7f7f7f;"> */</span>
-<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/uaccess.h&gt;</span>      <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">for copy_from_user</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/kernel.h&gt;</span> <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">We're doing kernel work</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/module.h&gt;</span> <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Specifically, a module</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/proc_fs.h&gt;</span> <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Necessary because we use the proc fs</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/uaccess.h&gt;</span> <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">for copy_from_user</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/version.h&gt;</span>
 
-<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">PROCFS_MAX_SIZE</span>         1024
-<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">PROCFS_NAME</span>             <span style="color: #deb887;">"buffer1k"</span>
+<span style="color: #ffd700;">#if</span> LINUX_VERSION_CODE &gt;= KERNEL_VERSION(5, 6, 0)
+<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">HAVE_PROC_OPS</span>
+<span style="color: #ffd700;">#endif</span>
 
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> * This structure hold information about the /proc file</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
-<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">proc_dir_entry</span> *<span style="color: #4eee94;">Our_Proc_File</span>;
+<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">PROCFS_MAX_SIZE</span> 1024
+<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">PROCFS_NAME</span> <span style="color: #deb887;">"buffer1k"</span>
 
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> * The buffer used to store character for this module</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">This structure hold information about the /proc file</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">proc_dir_entry</span> *<span style="color: #4eee94;">our_proc_file</span>;
+
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">The buffer used to store character for this module</span><span style="color: #7f7f7f;"> */</span>
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">char</span> <span style="color: #4eee94;">procfs_buffer</span>[PROCFS_MAX_SIZE];
 
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> * The size of the buffer</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">The size of the buffer</span><span style="color: #7f7f7f;"> */</span>
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">unsigned</span> <span style="color: #98f5ff;">long</span> <span style="color: #4eee94;">procfs_buffer_size</span> = 0;
 
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> * This function is called then the /proc file is read</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
-<span style="color: #98f5ff;">ssize_t</span> <span style="color: #daa520;">procfile_read</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">filePointer</span>,<span style="color: #98f5ff;">char</span> *<span style="color: #4eee94;">buffer</span>,
-                      <span style="color: #98f5ff;">size_t</span> <span style="color: #4eee94;">buffer_length</span>, <span style="color: #98f5ff;">loff_t</span> * <span style="color: #4eee94;">offset</span>)
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">This function is called then the /proc file is read</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">ssize_t</span> <span style="color: #daa520;">procfile_read</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">filePointer</span>, <span style="color: #98f5ff;">char</span> <span style="color: #4eee94;">__user</span> *buffer,
+                             <span style="color: #98f5ff;">size_t</span> <span style="color: #4eee94;">buffer_length</span>, <span style="color: #98f5ff;">loff_t</span> *<span style="color: #4eee94;">offset</span>)
 {
-    <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">ret</span>=0;
-    <span style="color: #00bfff;">if</span>(strlen(buffer) ==0) {
-        pr_info(<span style="color: #deb887;">"procfile read %s\n"</span>,filePointer-&gt;f_path.dentry-&gt;d_name.name);
-        ret=copy_to_user(buffer,<span style="color: #deb887;">"HelloWorld!\n"</span>,<span style="color: #00bfff;">sizeof</span>(<span style="color: #deb887;">"HelloWorld!\n"</span>));
-        ret=<span style="color: #00bfff;">sizeof</span>(<span style="color: #deb887;">"HelloWorld!\n"</span>);
+    <span style="color: #98f5ff;">char</span> <span style="color: #4eee94;">s</span>[13] = <span style="color: #deb887;">"HelloWorld!\n"</span>;
+    <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">len</span> = <span style="color: #00bfff;">sizeof</span>(s);
+    <span style="color: #98f5ff;">ssize_t</span> <span style="color: #4eee94;">ret</span> = len;
+
+    <span style="color: #00bfff;">if</span> (*offset &gt;= len || copy_to_user(buffer, s, len)) {
+        pr_info(<span style="color: #deb887;">"copy_to_user failed\n"</span>);
+        ret = 0;
+    } <span style="color: #00bfff;">else</span> {
+        pr_info(<span style="color: #deb887;">"procfile read %s\n"</span>, filePointer-&gt;f_path.dentry-&gt;d_name.name);
+        *offset += len;
     }
+
     <span style="color: #00bfff;">return</span> ret;
 }
 
-
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> * This function is called with the /proc file is written</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
-<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">ssize_t</span> <span style="color: #daa520;">procfile_write</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>, <span style="color: #00bfff;">const</span> <span style="color: #98f5ff;">char</span> *<span style="color: #4eee94;">buff</span>,
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">This function is called with the /proc file is written.</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">ssize_t</span> <span style="color: #daa520;">procfile_write</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>, <span style="color: #00bfff;">const</span> <span style="color: #98f5ff;">char</span> <span style="color: #4eee94;">__user</span> *buff,
                               <span style="color: #98f5ff;">size_t</span> <span style="color: #4eee94;">len</span>, <span style="color: #98f5ff;">loff_t</span> *<span style="color: #4eee94;">off</span>)
 {
     procfs_buffer_size = len;
@@ -2012,21 +2026,24 @@ The only memory segment accessible to a process is its own, so when writing regu
     <span style="color: #00bfff;">return</span> procfs_buffer_size;
 }
 
-<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">const</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file_operations</span> <span style="color: #4eee94;">proc_file_fops</span> = {
-    .read  = procfile_read,
-    .write  = procfile_write,
+<span style="color: #ffd700;">#ifdef</span> HAVE_PROC_OPS
+<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">const</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">proc_ops</span> <span style="color: #4eee94;">proc_file_fops</span> = {
+    .proc_read = procfile_read,
+    .proc_write = procfile_write,
 };
+<span style="color: #ffd700;">#else</span>
+<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">const</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file_operations</span> <span style="color: #4eee94;">proc_file_fops</span> = {
+    .read = procfile_read,
+    .write = procfile_write,
+};
+<span style="color: #ffd700;">#endif</span>
 
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> *This function is called when the module is loaded</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
-<span style="color: #98f5ff;">int</span> <span style="color: #daa520;">init_module</span>()
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">__init</span> procfs2_init(<span style="color: #98f5ff;">void</span>)
 {
-    Our_Proc_File = proc_create(PROCFS_NAME,0644,<span style="color: #a2cd5a;">NULL</span>,&amp;proc_file_fops);
-    <span style="color: #00bfff;">if</span>(<span style="color: #a2cd5a;">NULL</span>==Our_Proc_File) {
-        proc_remove(Our_Proc_File);
-        pr_alert(<span style="color: #deb887;">"Error:Could not initialize /proc/%s\n"</span>,PROCFS_NAME);
+    our_proc_file = proc_create(PROCFS_NAME, 0644, <span style="color: #a2cd5a;">NULL</span>, &amp;proc_file_fops);
+    <span style="color: #00bfff;">if</span> (<span style="color: #a2cd5a;">NULL</span> == our_proc_file) {
+        proc_remove(our_proc_file);
+        pr_alert(<span style="color: #deb887;">"Error:Could not initialize /proc/%s\n"</span>, PROCFS_NAME);
         <span style="color: #00bfff;">return</span> -ENOMEM;
     }
 
@@ -2034,15 +2051,14 @@ The only memory segment accessible to a process is its own, so when writing regu
     <span style="color: #00bfff;">return</span> 0;
 }
 
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> *This function is called when the module is unloaded</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
-<span style="color: #98f5ff;">void</span> <span style="color: #daa520;">cleanup_module</span>()
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">__exit</span> procfs2_exit(<span style="color: #98f5ff;">void</span>)
 {
-    proc_remove(Our_Proc_File);
+    proc_remove(our_proc_file);
     pr_info(<span style="color: #deb887;">"/proc/%s removed\n"</span>, PROCFS_NAME);
 }
+
+<span style="color: #daa520;">module_init</span>(procfs2_init);
+<span style="color: #daa520;">module_exit</span>(procfs2_exit);
 
 MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
 </pre>
@@ -2050,8 +2066,8 @@ MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
 </div>
 </div>
 
-<div id="outline-container-org77cad59" class="outline-3">
-<h3 id="org77cad59"><span class="section-number-3">7.2.</span> Manage /proc file with standard filesystem</h3>
+<div id="outline-container-org0ba2b62" class="outline-3">
+<h3 id="org0ba2b62"><span class="section-number-3">7.2.</span> Manage /proc file with standard filesystem</h3>
 <div class="outline-text-3" id="text-7-2">
 <p>
 We have seen how to read and write a /proc file with the /proc interface. But it's also possible to manage /proc file with inodes. The main concern is to use advanced functions, like permissions.
@@ -2079,88 +2095,110 @@ It's important to note that the standard roles of read and write are reversed in
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">    procfs3.c</span>
-<span style="color: #7f7f7f;">*/</span>
+<span style="color: #7f7f7f;"> * procfs3.c</span>
+<span style="color: #7f7f7f;"> */</span>
 
 <span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/kernel.h&gt;</span>
 <span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/module.h&gt;</span>
 <span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/proc_fs.h&gt;</span>
 <span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/sched.h&gt;</span>
 <span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/uaccess.h&gt;</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/version.h&gt;</span>
 
-<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">PROCFS_MAX_SIZE</span>         2048
-<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">PROCFS_ENTRY_FILENAME</span>   <span style="color: #deb887;">"buffer2k"</span>
+<span style="color: #ffd700;">#if</span> LINUX_VERSION_CODE &gt;= KERNEL_VERSION(5, 6, 0)
+<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">HAVE_PROC_OPS</span>
+<span style="color: #ffd700;">#endif</span>
 
-<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">proc_dir_entry</span> *<span style="color: #4eee94;">Our_Proc_File</span>;
+<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">PROCFS_MAX_SIZE</span> 2048
+<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">PROCFS_ENTRY_FILENAME</span> <span style="color: #deb887;">"buffer2k"</span>
+
+<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">proc_dir_entry</span> *<span style="color: #4eee94;">our_proc_file</span>;
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">char</span> <span style="color: #4eee94;">procfs_buffer</span>[PROCFS_MAX_SIZE];
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">unsigned</span> <span style="color: #98f5ff;">long</span> <span style="color: #4eee94;">procfs_buffer_size</span> = 0;
 
-<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">ssize_t</span> <span style="color: #daa520;">procfs_read</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">filp</span>, <span style="color: #98f5ff;">char</span> *<span style="color: #4eee94;">buffer</span>,
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">ssize_t</span> <span style="color: #daa520;">procfs_read</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">filp</span>, <span style="color: #98f5ff;">char</span> <span style="color: #4eee94;">__user</span> *buffer,
                            <span style="color: #98f5ff;">size_t</span> <span style="color: #4eee94;">length</span>, <span style="color: #98f5ff;">loff_t</span> *<span style="color: #4eee94;">offset</span>)
 {
     <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">finished</span> = 0;
-    <span style="color: #00bfff;">if</span>(finished)
-    {
+
+    <span style="color: #00bfff;">if</span> (finished) {
         pr_debug(<span style="color: #deb887;">"procfs_read: END\n"</span>);
         finished = 0;
         <span style="color: #00bfff;">return</span> 0;
     }
     finished = 1;
-    <span style="color: #00bfff;">if</span>(copy_to_user(buffer, procfs_buffer, procfs_buffer_size))
+
+    <span style="color: #00bfff;">if</span> (copy_to_user(buffer, procfs_buffer, procfs_buffer_size))
         <span style="color: #00bfff;">return</span> -EFAULT;
+
     pr_debug(<span style="color: #deb887;">"procfs_read: read %lu bytes\n"</span>, procfs_buffer_size);
     <span style="color: #00bfff;">return</span> procfs_buffer_size;
 }
-<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">ssize_t</span> <span style="color: #daa520;">procfs_write</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>,  <span style="color: #00bfff;">const</span> <span style="color: #98f5ff;">char</span> *<span style="color: #4eee94;">buffer</span>,
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">ssize_t</span> <span style="color: #daa520;">procfs_write</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>, <span style="color: #00bfff;">const</span> <span style="color: #98f5ff;">char</span> <span style="color: #4eee94;">__user</span> *buffer,
                             <span style="color: #98f5ff;">size_t</span> <span style="color: #4eee94;">len</span>, <span style="color: #98f5ff;">loff_t</span> *<span style="color: #4eee94;">off</span>)
 {
-    <span style="color: #00bfff;">if</span>(len&gt;PROCFS_MAX_SIZE)
+    <span style="color: #00bfff;">if</span> (len &gt; PROCFS_MAX_SIZE)
         procfs_buffer_size = PROCFS_MAX_SIZE;
     <span style="color: #00bfff;">else</span>
         procfs_buffer_size = len;
-    <span style="color: #00bfff;">if</span>(copy_from_user(procfs_buffer, buffer, procfs_buffer_size))
+    <span style="color: #00bfff;">if</span> (copy_from_user(procfs_buffer, buffer, procfs_buffer_size))
         <span style="color: #00bfff;">return</span> -EFAULT;
+
     pr_debug(<span style="color: #deb887;">"procfs_write: write %lu bytes\n"</span>, procfs_buffer_size);
     <span style="color: #00bfff;">return</span> procfs_buffer_size;
 }
-<span style="color: #98f5ff;">int</span> <span style="color: #daa520;">procfs_open</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">inode</span> *<span style="color: #4eee94;">inode</span>, <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>)
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">procfs_open</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">inode</span> *<span style="color: #4eee94;">inode</span>, <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>)
 {
     try_module_get(THIS_MODULE);
     <span style="color: #00bfff;">return</span> 0;
 }
-<span style="color: #98f5ff;">int</span> <span style="color: #daa520;">procfs_close</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">inode</span> *<span style="color: #4eee94;">inode</span>, <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>)
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">procfs_close</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">inode</span> *<span style="color: #4eee94;">inode</span>, <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>)
 {
     module_put(THIS_MODULE);
     <span style="color: #00bfff;">return</span> 0;
 }
 
-<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file_operations</span> <span style="color: #4eee94;">File_Ops_4_Our_Proc_File</span> = {
-    .read       = procfs_read,
-    .write      = procfs_write,
-    .open       = procfs_open,
-    .release    = procfs_close,
+<span style="color: #ffd700;">#ifdef</span> HAVE_PROC_OPS
+<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">proc_ops</span> <span style="color: #4eee94;">file_ops_4_our_proc_file</span> = {
+    .proc_read = procfs_read,
+    .proc_write = procfs_write,
+    .proc_open = procfs_open,
+    .proc_release = procfs_close,
 };
+<span style="color: #ffd700;">#else</span>
+<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">const</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file_operations</span> <span style="color: #4eee94;">file_ops_4_our_proc_file</span> = {
+    .read = procfs_read,
+    .write = procfs_write,
+    .open = procfs_open,
+    .release = procfs_close,
+};
+<span style="color: #ffd700;">#endif</span>
 
-<span style="color: #98f5ff;">int</span> <span style="color: #daa520;">init_module</span>()
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">__init</span> procfs3_init(<span style="color: #98f5ff;">void</span>)
 {
-    Our_Proc_File = proc_create(PROCFS_ENTRY_FILENAME, 0644, <span style="color: #a2cd5a;">NULL</span>,&amp;File_Ops_4_Our_Proc_File);
-    <span style="color: #00bfff;">if</span>(Our_Proc_File == <span style="color: #a2cd5a;">NULL</span>)
-    {
+    our_proc_file = proc_create(PROCFS_ENTRY_FILENAME, 0644, <span style="color: #a2cd5a;">NULL</span>,
+                                &amp;file_ops_4_our_proc_file);
+    <span style="color: #00bfff;">if</span> (our_proc_file == <span style="color: #a2cd5a;">NULL</span>) {
         remove_proc_entry(PROCFS_ENTRY_FILENAME, <span style="color: #a2cd5a;">NULL</span>);
-        pr_debug(<span style="color: #deb887;">"Error: Could not initialize /proc/%s\n"</span>, PROCFS_ENTRY_FILENAME);
+        pr_debug(<span style="color: #deb887;">"Error: Could not initialize /proc/%s\n"</span>,
+                 PROCFS_ENTRY_FILENAME);
         <span style="color: #00bfff;">return</span> -ENOMEM;
     }
-    proc_set_size(Our_Proc_File, 80);
-    proc_set_user(Our_Proc_File,  GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
+    proc_set_size(our_proc_file, 80);
+    proc_set_user(our_proc_file, GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
 
     pr_debug(<span style="color: #deb887;">"/proc/%s created\n"</span>, PROCFS_ENTRY_FILENAME);
     <span style="color: #00bfff;">return</span> 0;
 }
-<span style="color: #98f5ff;">void</span> <span style="color: #daa520;">cleanup_module</span>()
+
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">__exit</span> procfs3_exit(<span style="color: #98f5ff;">void</span>)
 {
     remove_proc_entry(PROCFS_ENTRY_FILENAME, <span style="color: #a2cd5a;">NULL</span>);
     pr_debug(<span style="color: #deb887;">"/proc/%s removed\n"</span>, PROCFS_ENTRY_FILENAME);
 }
+
+<span style="color: #daa520;">module_init</span>(procfs3_init);
+<span style="color: #daa520;">module_exit</span>(procfs3_exit);
 
 MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
 </pre>
@@ -2172,8 +2210,8 @@ Still hungry for procfs examples? Well, first of all keep in mind, there are rum
 </div>
 </div>
 
-<div id="outline-container-orgf8eb3d8" class="outline-3">
-<h3 id="orgf8eb3d8"><span class="section-number-3">7.3.</span> Manage /proc file with seq_file</h3>
+<div id="outline-container-org3bd39f4" class="outline-3">
+<h3 id="org3bd39f4"><span class="section-number-3">7.3.</span> Manage /proc file with seq_file</h3>
 <div class="outline-text-3" id="text-7-3">
 <p>
 As we have seen, writing a /proc file may be quite "complex". So to help
@@ -2191,7 +2229,7 @@ BE CARREFUL: when a sequence is finished, another one starts. That means that at
 </p>
 
 
-<div id="org96fed0f" class="figure">
+<div id="org8b9714a" class="figure">
 <p><img src="img/seq_file.png" alt="seq_file.png" width="50%" height="10%" align="center" />
 </p>
 </div>
@@ -2208,50 +2246,46 @@ Seq_file provides basic functions for file_operations, as seq_read, seq_lseek, a
 </p>
 
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> *  procfs4.c -  create a "file" in /proc</span>
-<span style="color: #ffe4b5;"> *      This program uses the seq_file library to manage the /proc file.</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
+<pre class="src src-c"><span style="color: #7f7f7f;">/*</span>
+<span style="color: #7f7f7f;"> * procfs4.c -  create a "file" in /proc</span>
+<span style="color: #7f7f7f;"> * This program uses the seq_file library to manage the /proc file.</span>
+<span style="color: #7f7f7f;"> */</span>
 
-<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/kernel.h&gt;</span>       <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">We're doing kernel work</span><span style="color: #7f7f7f;"> */</span>
-<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/module.h&gt;</span>       <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Specifically, a module</span><span style="color: #7f7f7f;"> */</span>
-<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/proc_fs.h&gt;</span>      <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Necessary because we use proc fs</span><span style="color: #7f7f7f;"> */</span>
-<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/seq_file.h&gt;</span>     <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">for seq_file</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/kernel.h&gt;</span> <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">We are doing kernel work</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/module.h&gt;</span> <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Specifically, a module</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/proc_fs.h&gt;</span> <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Necessary because we use proc fs</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/seq_file.h&gt;</span> <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">for seq_file</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/version.h&gt;</span>
 
-<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">PROC_NAME</span>       <span style="color: #deb887;">"iter"</span>
+<span style="color: #ffd700;">#if</span> LINUX_VERSION_CODE &gt;= KERNEL_VERSION(5, 6, 0)
+<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">HAVE_PROC_OPS</span>
+<span style="color: #ffd700;">#endif</span>
 
-MODULE_AUTHOR(<span style="color: #deb887;">"Philippe Reynes"</span>);
-MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
+<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">PROC_NAME</span> <span style="color: #deb887;">"iter"</span>
 
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> * This function is called at the beginning of a sequence.</span>
-<span style="color: #ffe4b5;"> * ie, when:</span>
-<span style="color: #ffe4b5;"> *      - the /proc file is read (first time)</span>
-<span style="color: #ffe4b5;"> *      - after the function stop (end of sequence)</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">This function is called at the beginning of a sequence.</span>
+<span style="color: #7f7f7f;"> * ie, when:</span>
+<span style="color: #7f7f7f;"> *   - the /proc file is read (first time)</span>
+<span style="color: #7f7f7f;"> *   - after the function stop (end of sequence)</span>
+<span style="color: #7f7f7f;"> */</span>
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> *<span style="color: #daa520;">my_seq_start</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">seq_file</span> *<span style="color: #4eee94;">s</span>, <span style="color: #98f5ff;">loff_t</span> *<span style="color: #4eee94;">pos</span>)
 {
     <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">unsigned</span> <span style="color: #98f5ff;">long</span> <span style="color: #4eee94;">counter</span> = 0;
 
-    <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">beginning a new sequence ?</span><span style="color: #7f7f7f;"> */</span>
-    <span style="color: #00bfff;">if</span> ( *pos == 0 ) {
+    <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">beginning a new sequence?</span><span style="color: #7f7f7f;"> */</span>
+    <span style="color: #00bfff;">if</span> (*pos == 0) {
         <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">yes =&gt; return a non null value to begin the sequence</span><span style="color: #7f7f7f;"> */</span>
         <span style="color: #00bfff;">return</span> &amp;counter;
     }
-    <span style="color: #00bfff;">else</span> {
-        <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">no =&gt; it's the end of the sequence, return end to stop reading</span><span style="color: #7f7f7f;"> */</span>
-        *pos = 0;
-        <span style="color: #00bfff;">return</span> <span style="color: #a2cd5a;">NULL</span>;
-    }
+
+    <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">no =&gt; it is the end of the sequence, return end to stop reading</span><span style="color: #7f7f7f;"> */</span>
+    *pos = 0;
+    <span style="color: #00bfff;">return</span> <span style="color: #a2cd5a;">NULL</span>;
 }
 
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> * This function is called after the beginning of a sequence.</span>
-<span style="color: #ffe4b5;"> * It's called untill the return is NULL (this ends the sequence).</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">This function is called after the beginning of a sequence.</span>
+<span style="color: #7f7f7f;"> * It is called untill the return is NULL (this ends the sequence).</span>
+<span style="color: #7f7f7f;"> */</span>
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> *<span style="color: #daa520;">my_seq_next</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">seq_file</span> *<span style="color: #4eee94;">s</span>, <span style="color: #98f5ff;">void</span> *<span style="color: #4eee94;">v</span>, <span style="color: #98f5ff;">loff_t</span> *<span style="color: #4eee94;">pos</span>)
 {
     <span style="color: #98f5ff;">unsigned</span> <span style="color: #98f5ff;">long</span> *<span style="color: #4eee94;">tmp_v</span> = (<span style="color: #98f5ff;">unsigned</span> <span style="color: #98f5ff;">long</span> *)v;
@@ -2260,70 +2294,58 @@ MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
     <span style="color: #00bfff;">return</span> <span style="color: #a2cd5a;">NULL</span>;
 }
 
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> * This function is called at the end of a sequence</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">This function is called at the end of a sequence.</span><span style="color: #7f7f7f;"> */</span>
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">my_seq_stop</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">seq_file</span> *<span style="color: #4eee94;">s</span>, <span style="color: #98f5ff;">void</span> *<span style="color: #4eee94;">v</span>)
 {
     <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">nothing to do, we use a static value in start()</span><span style="color: #7f7f7f;"> */</span>
 }
 
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> * This function is called for each "step" of a sequence</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">This function is called for each "step" of a sequence.</span><span style="color: #7f7f7f;"> */</span>
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">my_seq_show</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">seq_file</span> *<span style="color: #4eee94;">s</span>, <span style="color: #98f5ff;">void</span> *<span style="color: #4eee94;">v</span>)
 {
-    <span style="color: #98f5ff;">loff_t</span> *<span style="color: #4eee94;">spos</span> = (<span style="color: #98f5ff;">loff_t</span> *) v;
+    <span style="color: #98f5ff;">loff_t</span> *<span style="color: #4eee94;">spos</span> = (<span style="color: #98f5ff;">loff_t</span> *)v;
 
     seq_printf(s, <span style="color: #deb887;">"%Ld\n"</span>, *spos);
     <span style="color: #00bfff;">return</span> 0;
 }
 
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> * This structure gather "function" to manage the sequence</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">This structure gather "function" to manage the sequence</span><span style="color: #7f7f7f;"> */</span>
 <span style="color: #00bfff;">static</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">seq_operations</span> <span style="color: #4eee94;">my_seq_ops</span> = {
-        .start = my_seq_start,
-        .next  = my_seq_next,
-        .stop  = my_seq_stop,
-        .show  = my_seq_show
+    .start = my_seq_start,
+    .next = my_seq_next,
+    .stop = my_seq_stop,
+    .show = my_seq_show,
 };
 
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> * This function is called when the /proc file is open.</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">This function is called when the /proc file is open.</span><span style="color: #7f7f7f;"> */</span>
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">my_open</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">inode</span> *<span style="color: #4eee94;">inode</span>, <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>)
 {
     <span style="color: #00bfff;">return</span> seq_open(file, &amp;my_seq_ops);
 };
 
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> * This structure gather "function" that manage the /proc file</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
-<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file_operations</span> <span style="color: #4eee94;">my_file_ops</span> = {
-    .open    = my_open,
-    .read    = seq_read,
-    .proc_lseek  = seq_lseek,
-    .release = seq_release
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">This structure gather "function" that manage the /proc file</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#ifdef</span> HAVE_PROC_OPS
+<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">const</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">proc_ops</span> <span style="color: #4eee94;">my_file_ops</span> = {
+    .proc_open = my_open,
+    .proc_read = seq_read,
+    .proc_lseek = seq_lseek,
+    .proc_release = seq_release,
 };
+<span style="color: #ffd700;">#else</span>
+<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">const</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file_operations</span> <span style="color: #4eee94;">my_file_ops</span> = {
+    .open = my_open,
+    .read = seq_read,
+    .llseek = seq_lseek,
+    .release = seq_release,
+};
+<span style="color: #ffd700;">#endif</span>
 
-
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> * This function is called when the module is loaded</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
-<span style="color: #98f5ff;">int</span> <span style="color: #daa520;">init_module</span>(<span style="color: #98f5ff;">void</span>)
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">__init</span> procfs4_init(<span style="color: #98f5ff;">void</span>)
 {
     <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">proc_dir_entry</span> *<span style="color: #4eee94;">entry</span>;
 
     entry = proc_create(PROC_NAME, 0, <span style="color: #a2cd5a;">NULL</span>, &amp;my_file_ops);
-    <span style="color: #00bfff;">if</span>(entry == <span style="color: #a2cd5a;">NULL</span>)
-    {
+    <span style="color: #00bfff;">if</span> (entry == <span style="color: #a2cd5a;">NULL</span>) {
         remove_proc_entry(PROC_NAME, <span style="color: #a2cd5a;">NULL</span>);
         pr_debug(<span style="color: #deb887;">"Error: Could not initialize /proc/%s\n"</span>, PROC_NAME);
         <span style="color: #00bfff;">return</span> -ENOMEM;
@@ -2332,15 +2354,16 @@ MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
     <span style="color: #00bfff;">return</span> 0;
 }
 
-<span style="color: #ffe4b5;">/**</span>
-<span style="color: #ffe4b5;"> * This function is called when the module is unloaded.</span>
-<span style="color: #ffe4b5;"> *</span>
-<span style="color: #ffe4b5;"> */</span>
-<span style="color: #98f5ff;">void</span> <span style="color: #daa520;">cleanup_module</span>(<span style="color: #98f5ff;">void</span>)
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">__exit</span> procfs4_exit(<span style="color: #98f5ff;">void</span>)
 {
     remove_proc_entry(PROC_NAME, <span style="color: #a2cd5a;">NULL</span>);
     pr_debug(<span style="color: #deb887;">"/proc/%s removed\n"</span>, PROC_NAME);
 }
+
+<span style="color: #daa520;">module_init</span>(procfs4_init);
+<span style="color: #daa520;">module_exit</span>(procfs4_exit);
+
+MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
 </pre>
 </div>
 
@@ -2349,7 +2372,7 @@ If you want more information, you can read this web page:
 </p>
 
 <ul class="org-ul">
-<li><a href="http://lwn.net/Articles/22355/">http://lwn.net/Articles/22355/</a></li>
+<li><a href="https://lwn.net/Articles/22355/">https://lwn.net/Articles/22355/</a></li>
 
 <li><a href="https://kernelnewbies.org/Documents/SeqFileHowTo">https://kernelnewbies.org/Documents/SeqFileHowTo</a></li>
 </ul>
@@ -2362,8 +2385,8 @@ You can also read the code of fs/seq_file.c in the linux kernel.
 </div>
 </div>
 
-<div id="outline-container-org726c635" class="outline-2">
-<h2 id="org726c635"><span class="section-number-2">8.</span> sysfs: Interacting with your module</h2>
+<div id="outline-container-org6f5331f" class="outline-2">
+<h2 id="org6f5331f"><span class="section-number-2">8.</span> sysfs: Interacting with your module</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 <i>sysfs</i> allows you to interact with the running kernel from userspace by reading or setting variables inside of modules. This can be useful for debugging purposes, or just as an interface for applications or scripts. You can find sysfs directories and files under the <i>sys</i> directory on your system.
@@ -2498,8 +2521,8 @@ Finally, remove the test module:
 </div>
 </div>
 
-<div id="outline-container-orgd812e51" class="outline-2">
-<h2 id="orgd812e51"><span class="section-number-2">9.</span> Talking To Device Files</h2>
+<div id="outline-container-org0917e40" class="outline-2">
+<h2 id="org0917e40"><span class="section-number-2">9.</span> Talking To Device Files</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 Device files are supposed to represent physical devices. Most physical devices are used for output as well as input, so there has to be some mechanism for device drivers in the kernel to get the output to send to the device from processes. This is done by opening the device file for output and writing to it, just like writing to a file. In the following example, this is implemented by device_write.
@@ -3099,8 +3122,8 @@ MODULE_DESCRIPTION(<span style="color: #deb887;">"This is test_ioctl module"</sp
 </div>
 </div>
 
-<div id="outline-container-orga4ce333" class="outline-2">
-<h2 id="orga4ce333"><span class="section-number-2">10.</span> System Calls</h2>
+<div id="outline-container-orgb6faf69" class="outline-2">
+<h2 id="orgb6faf69"><span class="section-number-2">10.</span> System Calls</h2>
 <div class="outline-text-2" id="text-10">
 <p>
 So far, the only thing we've done was to use well defined kernel mechanisms to register <b>/proc</b> files and device handlers. This is fine if you want to do something the kernel programmers thought you'd want, such as write a device driver. But what if you want to do something unusual, to change the behaviour of the system in some way? Then, you're mostly on your own.
@@ -3307,12 +3330,12 @@ MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
 </div>
 </div>
 
-<div id="outline-container-org14dc357" class="outline-2">
-<h2 id="org14dc357"><span class="section-number-2">11.</span> Blocking Processes and threads</h2>
+<div id="outline-container-org07bc856" class="outline-2">
+<h2 id="org07bc856"><span class="section-number-2">11.</span> Blocking Processes and threads</h2>
 <div class="outline-text-2" id="text-11">
 </div>
-<div id="outline-container-orgc4b9377" class="outline-3">
-<h3 id="orgc4b9377"><span class="section-number-3">11.1.</span> Sleep</h3>
+<div id="outline-container-org315b870" class="outline-3">
+<h3 id="org315b870"><span class="section-number-3">11.1.</span> Sleep</h3>
 <div class="outline-text-3" id="text-11-1">
 <p>
 What do you do when somebody asks you for something you can't do right away? If you're a human being and you're bothered by a human being, the only thing you can say is: "<i>Not right now, I'm busy. Go away!</i>". But if you're a kernel module and you're bothered by a process, you have another possibility. You can put the process to sleep until you can service it. After all, processes are being put to sleep by the kernel and woken up all the time (that's the way multiple processes appear to run on the same time on a single CPU).
@@ -3385,175 +3408,132 @@ hostname:~/lkmpg-examples/09-BlockingProcesses#
 
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> *  sleep.c - create a /proc file, and if several processes try to open it at</span>
-<span style="color: #7f7f7f;"> *  the same time, put all but one to sleep</span>
+<span style="color: #7f7f7f;"> * sleep.c - create a /proc file, and if several processes try to open it</span>
+<span style="color: #7f7f7f;"> * at the same time, put all but one to sleep.</span>
 <span style="color: #7f7f7f;"> */</span>
 
-<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/kernel.h&gt;</span>       <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">We're doing kernel work</span><span style="color: #7f7f7f;"> */</span>
-<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/module.h&gt;</span>       <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Specifically, a module</span><span style="color: #7f7f7f;"> */</span>
-<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/proc_fs.h&gt;</span>      <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Necessary because we use proc fs</span><span style="color: #7f7f7f;"> */</span>
-<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/sched.h&gt;</span>        <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">For putting processes to sleep and</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/kernel.h&gt;</span> <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">We're doing kernel work</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/module.h&gt;</span> <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Specifically, a module</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/proc_fs.h&gt;</span> <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Necessary because we use proc fs</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/sched.h&gt;</span> <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">For putting processes to sleep and</span>
 <span style="color: #7f7f7f;">                                   waking them up</span><span style="color: #7f7f7f;"> */</span>
-<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/uaccess.h&gt;</span>      <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">for get_user and put_user</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/uaccess.h&gt;</span> <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">for get_user and put_user</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #deb887;">&lt;linux/version.h&gt;</span>
 
-<span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> * The module's file functions</span>
-<span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#if</span> LINUX_VERSION_CODE &gt;= KERNEL_VERSION(5, 6, 0)
+<span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">HAVE_PROC_OPS</span>
+<span style="color: #ffd700;">#endif</span>
 
-<span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> * Here we keep the last message received, to prove that we can process our</span>
-<span style="color: #7f7f7f;"> * input</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Here we keep the last message received, to prove that we can process our</span>
+<span style="color: #7f7f7f;"> * input.</span>
 <span style="color: #7f7f7f;"> */</span>
 <span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">MESSAGE_LENGTH</span> 80
-<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">char</span> Message[MESSAGE_LENGTH];
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">char</span> message[MESSAGE_LENGTH];
 
-<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">proc_dir_entry</span> *<span style="color: #4eee94;">Our_Proc_File</span>;
+<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">proc_dir_entry</span> *<span style="color: #4eee94;">our_proc_file</span>;
 <span style="color: #ffd700;">#define</span> <span style="color: #4eee94;">PROC_ENTRY_FILENAME</span> <span style="color: #deb887;">"sleep"</span>
 
-<span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> * Since we use the file operations struct, we can't use the special proc</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Since we use the file operations struct, we can't use the special proc</span>
 <span style="color: #7f7f7f;"> * output provisions - we have to use a standard read function, which is this</span>
-<span style="color: #7f7f7f;"> * function</span>
+<span style="color: #7f7f7f;"> * function.</span>
 <span style="color: #7f7f7f;"> */</span>
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">ssize_t</span> <span style="color: #daa520;">module_output</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>, <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">see include/linux/fs.h</span><span style="color: #7f7f7f;">   */</span>
-                             <span style="color: #98f5ff;">char</span> *<span style="color: #4eee94;">buf</span>, <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">The buffer to put data to</span>
-<span style="color: #7f7f7f;">                                           (in the user segment)</span><span style="color: #7f7f7f;">    */</span>
-                             <span style="color: #98f5ff;">size_t</span> <span style="color: #4eee94;">len</span>,        <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">The length of the buffer</span><span style="color: #7f7f7f;"> */</span>
-                             <span style="color: #98f5ff;">loff_t</span> * <span style="color: #4eee94;">offset</span>)
+                             <span style="color: #98f5ff;">char</span> <span style="color: #4eee94;">__user</span> *buf, <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">The buffer to put data to</span>
+<span style="color: #7f7f7f;">                                                   (in the user segment)</span><span style="color: #7f7f7f;">    */</span>
+                             <span style="color: #98f5ff;">size_t</span> <span style="color: #4eee94;">len</span>, <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">The length of the buffer</span><span style="color: #7f7f7f;"> */</span>
+                             <span style="color: #98f5ff;">loff_t</span> *<span style="color: #4eee94;">offset</span>)
 {
     <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">finished</span> = 0;
     <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span>;
-    <span style="color: #98f5ff;">char</span> <span style="color: #4eee94;">message</span>[MESSAGE_LENGTH + 30];
+    <span style="color: #98f5ff;">char</span> <span style="color: #4eee94;">output_msg</span>[MESSAGE_LENGTH + 30];
 
-    <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">     * Return 0 to signify end of file - that we have nothing</span>
-<span style="color: #7f7f7f;">     * more to say at this point.</span>
+    <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Return 0 to signify end of file - that we have nothing more to say</span>
+<span style="color: #7f7f7f;">     * at this point.</span>
 <span style="color: #7f7f7f;">     */</span>
     <span style="color: #00bfff;">if</span> (finished) {
         finished = 0;
         <span style="color: #00bfff;">return</span> 0;
     }
 
-    <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">     * If you don't understand this by now, you're hopeless as a kernel</span>
-<span style="color: #7f7f7f;">     * programmer.</span>
-<span style="color: #7f7f7f;">     */</span>
-    sprintf(message, <span style="color: #deb887;">"Last input:%s\n"</span>, Message);
-    <span style="color: #00bfff;">for</span> (i = 0; i &lt; len &amp;&amp; message[i]; i++)
-        put_user(message[i], buf + i);
+    sprintf(output_msg, <span style="color: #deb887;">"Last input:%s\n"</span>, message);
+    <span style="color: #00bfff;">for</span> (i = 0; i &lt; len &amp;&amp; output_msg[i]; i++)
+        put_user(output_msg[i], buf + i);
 
     finished = 1;
-    <span style="color: #00bfff;">return</span> i;               <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Return the number of bytes "read"</span><span style="color: #7f7f7f;"> */</span>
+    <span style="color: #00bfff;">return</span> i; <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Return the number of bytes "read"</span><span style="color: #7f7f7f;"> */</span>
 }
 
-<span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> * This function receives input from the user when the user writes to the /proc</span>
-<span style="color: #7f7f7f;"> * file.</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">This function receives input from the user when the user writes to the</span>
+<span style="color: #7f7f7f;"> * /proc file.</span>
 <span style="color: #7f7f7f;"> */</span>
-<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">ssize_t</span> <span style="color: #daa520;">module_input</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>,  <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">The file itself</span><span style="color: #7f7f7f;"> */</span>
-                            <span style="color: #00bfff;">const</span> <span style="color: #98f5ff;">char</span> *<span style="color: #4eee94;">buf</span>,    <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">The buffer with input</span><span style="color: #7f7f7f;"> */</span>
-                            <span style="color: #98f5ff;">size_t</span> <span style="color: #4eee94;">length</span>,      <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">The buffer's length</span><span style="color: #7f7f7f;"> */</span>
-                            <span style="color: #98f5ff;">loff_t</span> * <span style="color: #4eee94;">offset</span>)    <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">offset to file - ignore</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">ssize_t</span> <span style="color: #daa520;">module_input</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>, <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">The file itself</span><span style="color: #7f7f7f;"> */</span>
+                            <span style="color: #00bfff;">const</span> <span style="color: #98f5ff;">char</span> <span style="color: #4eee94;">__user</span> *buf, <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">The buffer with input</span><span style="color: #7f7f7f;"> */</span>
+                            <span style="color: #98f5ff;">size_t</span> <span style="color: #4eee94;">length</span>, <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">The buffer's length</span><span style="color: #7f7f7f;"> */</span>
+                            <span style="color: #98f5ff;">loff_t</span> *<span style="color: #4eee94;">offset</span>) <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">offset to file - ignore</span><span style="color: #7f7f7f;"> */</span>
 {
     <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span>;
 
-    <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">     * Put the input into Message, where module_output will later be</span>
-<span style="color: #7f7f7f;">     * able to use it</span>
+    <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Put the input into Message, where module_output will later be able</span>
+<span style="color: #7f7f7f;">     * to use it.</span>
 <span style="color: #7f7f7f;">     */</span>
     <span style="color: #00bfff;">for</span> (i = 0; i &lt; MESSAGE_LENGTH - 1 &amp;&amp; i &lt; length; i++)
-        get_user(Message[i], buf + i);
-    <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">     * we want a standard, zero terminated string</span>
-<span style="color: #7f7f7f;">     */</span>
-    Message[i] = <span style="color: #deb887;">'\0'</span>;
+        get_user(message[i], buf + i);
+    <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">we want a standard, zero terminated string</span><span style="color: #7f7f7f;"> */</span>
+    message[i] = <span style="color: #deb887;">'\0'</span>;
 
-    <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">     * We need to return the number of input characters used</span>
-<span style="color: #7f7f7f;">     */</span>
+    <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">We need to return the number of input characters used</span><span style="color: #7f7f7f;"> */</span>
     <span style="color: #00bfff;">return</span> i;
 }
 
-<span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> * 1 if the file is currently open by somebody</span>
-<span style="color: #7f7f7f;"> */</span>
-<span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">Already_Open</span> = 0;
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">1 if the file is currently open by somebody</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">atomic_t</span> <span style="color: #4eee94;">already_open</span> = ATOMIC_INIT(0);
 
-<span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> * Queue of processes who want our file</span>
-<span style="color: #7f7f7f;"> */</span>
-<span style="color: #daa520;">DECLARE_WAIT_QUEUE_HEAD</span>(WaitQ);
-<span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> * Called when the /proc file is opened</span>
-<span style="color: #7f7f7f;"> */</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Queue of processes who want our file</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">static</span> <span style="color: #daa520;">DECLARE_WAIT_QUEUE_HEAD</span>(waitq);
+
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Called when the /proc file is opened</span><span style="color: #7f7f7f;"> */</span>
 <span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">module_open</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">inode</span> *<span style="color: #4eee94;">inode</span>, <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>)
 {
-    <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">     * If the file's flags include O_NONBLOCK, it means the process doesn't</span>
-<span style="color: #7f7f7f;">     * want to wait for the file.  In this case, if the file is already</span>
-<span style="color: #7f7f7f;">     * open, we should fail with -EAGAIN, meaning "you'll have to try</span>
-<span style="color: #7f7f7f;">     * again", instead of blocking a process which would rather stay awake.</span>
+    <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">If the file's flags include O_NONBLOCK, it means the process does not</span>
+<span style="color: #7f7f7f;">     * want to wait for the file. In this case, if the file is already open,</span>
+<span style="color: #7f7f7f;">     * we should fail with -EAGAIN, meaning "you will have to try again",</span>
+<span style="color: #7f7f7f;">     * instead of blocking a process which would rather stay awake.</span>
 <span style="color: #7f7f7f;">     */</span>
-    <span style="color: #00bfff;">if</span> ((file-&gt;f_flags &amp; O_NONBLOCK) &amp;&amp; Already_Open)
+    <span style="color: #00bfff;">if</span> ((file-&gt;f_flags &amp; O_NONBLOCK) &amp;&amp; atomic_read(&amp;already_open))
         <span style="color: #00bfff;">return</span> -EAGAIN;
 
-    <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">     * This is the correct place for try_module_get(THIS_MODULE) because</span>
-<span style="color: #7f7f7f;">     * if a process is in the loop, which is within the kernel module,</span>
+    <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">This is the correct place for try_module_get(THIS_MODULE) because if</span>
+<span style="color: #7f7f7f;">     * a process is in the loop, which is within the kernel module,</span>
 <span style="color: #7f7f7f;">     * the kernel module must not be removed.</span>
 <span style="color: #7f7f7f;">     */</span>
     try_module_get(THIS_MODULE);
 
-    <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">     * If the file is already open, wait until it isn't</span>
-<span style="color: #7f7f7f;">     */</span>
-
-    <span style="color: #00bfff;">while</span> (Already_Open) {
+    <span style="color: #00bfff;">while</span> (atomic_cmpxchg(&amp;already_open, 0, 1)) {
         <span style="color: #98f5ff;">int</span> <span style="color: #4eee94;">i</span>, <span style="color: #4eee94;">is_sig</span> = 0;
 
-        <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">         * This function puts the current process, including any system</span>
+        <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">This function puts the current process, including any system</span>
 <span style="color: #7f7f7f;">         * calls, such as us, to sleep.  Execution will be resumed right</span>
 <span style="color: #7f7f7f;">         * after the function call, either because somebody called</span>
-<span style="color: #7f7f7f;">         * wake_up(&amp;WaitQ) (only module_close does that, when the file</span>
+<span style="color: #7f7f7f;">         * wake_up(&amp;waitq) (only module_close does that, when the file</span>
 <span style="color: #7f7f7f;">         * is closed) or when a signal, such as Ctrl-C, is sent</span>
 <span style="color: #7f7f7f;">         * to the process</span>
 <span style="color: #7f7f7f;">         */</span>
-        wait_event_interruptible(WaitQ, !Already_Open);
+        wait_event_interruptible(waitq, !atomic_read(&amp;already_open));
 
-        <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">         * If we woke up because we got a signal we're not blocking,</span>
+        <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">If we woke up because we got a signal we're not blocking,</span>
 <span style="color: #7f7f7f;">         * return -EINTR (fail the system call).  This allows processes</span>
 <span style="color: #7f7f7f;">         * to be killed or stopped.</span>
 <span style="color: #7f7f7f;">         */</span>
-
-        <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">         * Emmanuel Papirakis:</span>
-<span style="color: #7f7f7f;">         *</span>
-<span style="color: #7f7f7f;">         * This is a little update to work with 2.2.*.  Signals now are contained in</span>
-<span style="color: #7f7f7f;">         * two words (64 bits) and are stored in a structure that contains an array of</span>
-<span style="color: #7f7f7f;">         * two unsigned longs.  We now have to make 2 checks in our if.</span>
-<span style="color: #7f7f7f;">         *</span>
-<span style="color: #7f7f7f;">         * Ori Pomerantz:</span>
-<span style="color: #7f7f7f;">         *</span>
-<span style="color: #7f7f7f;">         * Nobody promised me they'll never use more than 64 bits, or that this book</span>
-<span style="color: #7f7f7f;">         * won't be used for a version of Linux with a word size of 16 bits.  This code</span>
-<span style="color: #7f7f7f;">         * would work in any case.</span>
-<span style="color: #7f7f7f;">         */</span>
         <span style="color: #00bfff;">for</span> (i = 0; i &lt; _NSIG_WORDS &amp;&amp; !is_sig; i++)
-            is_sig =
-                current-&gt;pending.signal.sig[i] &amp; ~current-&gt;
-                blocked.sig[i];
+            is_sig = current-&gt;pending.signal.sig[i] &amp; ~current-&gt;blocked.sig[i];
 
         <span style="color: #00bfff;">if</span> (is_sig) {
-            <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">             * It's important to put module_put(THIS_MODULE) here,</span>
-<span style="color: #7f7f7f;">             * because for processes where the open is interrupted</span>
-<span style="color: #7f7f7f;">             * there will never be a corresponding close. If we</span>
-<span style="color: #7f7f7f;">             * don't decrement the usage count here, we will be</span>
-<span style="color: #7f7f7f;">             * left with a positive usage count which we'll have no</span>
-<span style="color: #7f7f7f;">             * way to bring down to zero, giving us an immortal</span>
-<span style="color: #7f7f7f;">             * module, which can only be killed by rebooting</span>
+            <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">It is important to put module_put(THIS_MODULE) here, because</span>
+<span style="color: #7f7f7f;">             * for processes where the open is interrupted there will never</span>
+<span style="color: #7f7f7f;">             * be a corresponding close. If we do not decrement the usage</span>
+<span style="color: #7f7f7f;">             * count here, we will be left with a positive usage count</span>
+<span style="color: #7f7f7f;">             * which we will have no way to bring down to zero, giving us</span>
+<span style="color: #7f7f7f;">             * an immortal module, which can only be killed by rebooting</span>
 <span style="color: #7f7f7f;">             * the machine.</span>
 <span style="color: #7f7f7f;">             */</span>
             module_put(THIS_MODULE);
@@ -3561,94 +3541,84 @@ hostname:~/lkmpg-examples/09-BlockingProcesses#
         }
     }
 
-    <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">     * If we got here, Already_Open must be zero</span>
-<span style="color: #7f7f7f;">     */</span>
-
-    <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">     * Open the file</span>
-<span style="color: #7f7f7f;">     */</span>
-    Already_Open = 1;
-    <span style="color: #00bfff;">return</span> 0;               <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Allow the access</span><span style="color: #7f7f7f;"> */</span>
+    <span style="color: #00bfff;">return</span> 0; <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Allow the access</span><span style="color: #7f7f7f;"> */</span>
 }
 
-<span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> * Called when the /proc file is closed</span>
-<span style="color: #7f7f7f;"> */</span>
-<span style="color: #98f5ff;">int</span> <span style="color: #daa520;">module_close</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">inode</span> *<span style="color: #4eee94;">inode</span>, <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>)
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Called when the /proc file is closed</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">module_close</span>(<span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">inode</span> *<span style="color: #4eee94;">inode</span>, <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file</span> *<span style="color: #4eee94;">file</span>)
 {
-    <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">     * Set Already_Open to zero, so one of the processes in the WaitQ will</span>
-<span style="color: #7f7f7f;">     * be able to set Already_Open back to one and to open the file. All</span>
-<span style="color: #7f7f7f;">     * the other processes will be called when Already_Open is back to one,</span>
+    <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Set already_open to zero, so one of the processes in the waitq will</span>
+<span style="color: #7f7f7f;">     * be able to set already_open back to one and to open the file. All</span>
+<span style="color: #7f7f7f;">     * the other processes will be called when already_open is back to one,</span>
 <span style="color: #7f7f7f;">     * so they'll go back to sleep.</span>
 <span style="color: #7f7f7f;">     */</span>
-    Already_Open = 0;
+    atomic_set(&amp;already_open, 0);
 
-    <span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;">     * Wake up all the processes in WaitQ, so if anybody is waiting for the</span>
+    <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Wake up all the processes in waitq, so if anybody is waiting for the</span>
 <span style="color: #7f7f7f;">     * file, they can have it.</span>
 <span style="color: #7f7f7f;">     */</span>
-    wake_up(&amp;WaitQ);
+    wake_up(&amp;waitq);
 
     module_put(THIS_MODULE);
 
-    <span style="color: #00bfff;">return</span> 0;               <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">success</span><span style="color: #7f7f7f;"> */</span>
+    <span style="color: #00bfff;">return</span> 0; <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">success</span><span style="color: #7f7f7f;"> */</span>
 }
 
-<span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> * Structures to register as the /proc file, with pointers to all the relevant</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Structures to register as the /proc file, with pointers to all the relevant</span>
 <span style="color: #7f7f7f;"> * functions.</span>
 <span style="color: #7f7f7f;"> */</span>
 
-<span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> * File operations for our proc file. This is where we place pointers to all</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">File operations for our proc file. This is where we place pointers to all</span>
 <span style="color: #7f7f7f;"> * the functions called when somebody tries to do something to our file. NULL</span>
 <span style="color: #7f7f7f;"> * means we don't want to deal with something.</span>
 <span style="color: #7f7f7f;"> */</span>
-<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file_operations</span> <span style="color: #4eee94;">File_Ops_4_Our_Proc_File</span> = {
-    .read = module_output,   <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">"read" from the file</span><span style="color: #7f7f7f;"> */</span>
-    .write = module_input,   <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">"write" to the file</span><span style="color: #7f7f7f;"> */</span>
-    .open = module_open,     <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">called when the /proc file is opened</span><span style="color: #7f7f7f;"> */</span>
-    .release = module_close, <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">called when it's closed</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #ffd700;">#ifdef</span> HAVE_PROC_OPS
+<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">const</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">proc_ops</span> <span style="color: #4eee94;">file_ops_4_our_proc_file</span> = {
+    .proc_read = module_output, <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">"read" from the file</span><span style="color: #7f7f7f;"> */</span>
+    .proc_write = module_input, <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">"write" to the file</span><span style="color: #7f7f7f;"> */</span>
+    .proc_open = module_open, <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">called when the /proc file is opened</span><span style="color: #7f7f7f;"> */</span>
+    .proc_release = module_close, <span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">called when it's closed</span><span style="color: #7f7f7f;"> */</span>
 };
+<span style="color: #ffd700;">#else</span>
+<span style="color: #00bfff;">static</span> <span style="color: #00bfff;">const</span> <span style="color: #00bfff;">struct</span> <span style="color: #98f5ff;">file_operations</span> <span style="color: #4eee94;">file_ops_4_our_proc_file</span> = {
+    .read = module_output,
+    .write = module_input,
+    .open = module_open,
+    .release = module_close,
+};
+<span style="color: #ffd700;">#endif</span>
 
-<span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> * Module initialization and cleanup</span>
-<span style="color: #7f7f7f;"> */</span>
-
-<span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> * Initialize the module - register the proc file</span>
-<span style="color: #7f7f7f;"> */</span>
-
-<span style="color: #98f5ff;">int</span> <span style="color: #daa520;">init_module</span>()
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Initialize the module - register the proc file</span><span style="color: #7f7f7f;"> */</span>
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">int</span> <span style="color: #daa520;">__init</span> sleep_init(<span style="color: #98f5ff;">void</span>)
 {
-    Our_Proc_File = proc_create(PROC_ENTRY_FILENAME, 0644, <span style="color: #a2cd5a;">NULL</span>, &amp;File_Ops_4_Our_Proc_File);
-    <span style="color: #00bfff;">if</span>(Our_Proc_File == <span style="color: #a2cd5a;">NULL</span>)
-    {
+    our_proc_file =
+        proc_create(PROC_ENTRY_FILENAME, 0644, <span style="color: #a2cd5a;">NULL</span>, &amp;file_ops_4_our_proc_file);
+    <span style="color: #00bfff;">if</span> (our_proc_file == <span style="color: #a2cd5a;">NULL</span>) {
         remove_proc_entry(PROC_ENTRY_FILENAME, <span style="color: #a2cd5a;">NULL</span>);
         pr_debug(<span style="color: #deb887;">"Error: Could not initialize /proc/%s\n"</span>, PROC_ENTRY_FILENAME);
         <span style="color: #00bfff;">return</span> -ENOMEM;
     }
-    proc_set_size(Our_Proc_File, 80);
-    proc_set_user(Our_Proc_File,  GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
+    proc_set_size(our_proc_file, 80);
+    proc_set_user(our_proc_file, GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
 
-    pr_info(<span style="color: #deb887;">"/proc/test created\n"</span>);
+    pr_info(<span style="color: #deb887;">"/proc/%s created\n"</span>, PROC_ENTRY_FILENAME);
 
     <span style="color: #00bfff;">return</span> 0;
 }
 
-<span style="color: #7f7f7f;">/*</span>
-<span style="color: #7f7f7f;"> * Cleanup - unregister our file from /proc.  This could get dangerous if</span>
-<span style="color: #7f7f7f;"> * there are still processes waiting in WaitQ, because they are inside our</span>
+<span style="color: #7f7f7f;">/* </span><span style="color: #7f7f7f;">Cleanup - unregister our file from /proc.  This could get dangerous if</span>
+<span style="color: #7f7f7f;"> * there are still processes waiting in waitq, because they are inside our</span>
 <span style="color: #7f7f7f;"> * open function, which will get unloaded. I'll explain how to avoid removal</span>
 <span style="color: #7f7f7f;"> * of a kernel module in such a case in chapter 10.</span>
 <span style="color: #7f7f7f;"> */</span>
-<span style="color: #98f5ff;">void</span> <span style="color: #daa520;">cleanup_module</span>()
+<span style="color: #00bfff;">static</span> <span style="color: #98f5ff;">void</span> <span style="color: #daa520;">__exit</span> sleep_exit(<span style="color: #98f5ff;">void</span>)
 {
     remove_proc_entry(PROC_ENTRY_FILENAME, <span style="color: #a2cd5a;">NULL</span>);
     pr_debug(<span style="color: #deb887;">"/proc/%s removed\n"</span>, PROC_ENTRY_FILENAME);
 }
+
+<span style="color: #daa520;">module_init</span>(sleep_init);
+<span style="color: #daa520;">module_exit</span>(sleep_exit);
 
 MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
 </pre>
@@ -3725,8 +3695,8 @@ MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
 </div>
 </div>
 
-<div id="outline-container-orgae2cfb4" class="outline-3">
-<h3 id="orgae2cfb4"><span class="section-number-3">11.2.</span> Completions</h3>
+<div id="outline-container-orgaf9c3e8" class="outline-3">
+<h3 id="orgaf9c3e8"><span class="section-number-3">11.2.</span> Completions</h3>
 <div class="outline-text-3" id="text-11-2">
 <p>
 Sometimes one thing should happen before another within a module having multiple threads. Rather than using <b>/proc/sleep</b> commands the kernel has another way to do this which allows timeouts or interrupts to also happen.
@@ -3832,15 +3802,15 @@ There are other variations upon the <i>wait_for_completion</i> function, which i
 </div>
 </div>
 
-<div id="outline-container-orgb0a857c" class="outline-2">
-<h2 id="orgb0a857c"><span class="section-number-2">12.</span> Avoiding Collisions and Deadlocks</h2>
+<div id="outline-container-orgf411c28" class="outline-2">
+<h2 id="orgf411c28"><span class="section-number-2">12.</span> Avoiding Collisions and Deadlocks</h2>
 <div class="outline-text-2" id="text-12">
 <p>
 If processes running on different CPUs or in different threads try to access the same memory then it's possible that strange things can happen or your system can lock up. To avoid this various types of mutual exclusion kernel functions are available. These indicate if a section of code is "locked" or "unlocked" so that simultaneous attempts to run it can't happen.
 </p>
 </div>
-<div id="outline-container-orgc02b11e" class="outline-3">
-<h3 id="orgc02b11e"><span class="section-number-3">12.1.</span> Mutex</h3>
+<div id="outline-container-org27b280a" class="outline-3">
+<h3 id="org27b280a"><span class="section-number-3">12.1.</span> Mutex</h3>
 <div class="outline-text-3" id="text-12-1">
 <p>
 You can use kernel mutexes (mutual exclusions) in much the same manner that you might deploy them in userland. This may be all that's needed to avoid collisions in most cases.
@@ -3891,8 +3861,8 @@ MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
 </div>
 </div>
 </div>
-<div id="outline-container-orgf3a2577" class="outline-3">
-<h3 id="orgf3a2577"><span class="section-number-3">12.2.</span> Spinlocks</h3>
+<div id="outline-container-orgca71381" class="outline-3">
+<h3 id="orgca71381"><span class="section-number-3">12.2.</span> Spinlocks</h3>
 <div class="outline-text-3" id="text-12-2">
 <p>
 As the name suggests, spinlocks lock up the CPU that the code is running on, taking 100% of its resources. Because of this you should only use the spinlock mechanism around code which is likely to take no more than a few milliseconds to run and so won't noticably slow anything down from the user's point of view.
@@ -3971,8 +3941,8 @@ MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
 </div>
 </div>
 
-<div id="outline-container-orga3a70d0" class="outline-3">
-<h3 id="orga3a70d0"><span class="section-number-3">12.3.</span> Read and write locks</h3>
+<div id="outline-container-org85f6936" class="outline-3">
+<h3 id="org85f6936"><span class="section-number-3">12.3.</span> Read and write locks</h3>
 <div class="outline-text-3" id="text-12-3">
 <p>
 Read and write locks are specialised kinds of spinlocks so that you can exclusively read from something or write to something. Like the earlier spinlocks example the one below shows an "irq safe" situation in which if other functions were triggered from irqs which might also read and write to whatever you are concerned with then they wouldn't disrupt the logic. As before it's a good idea to keep anything done within the lock as short as possible so that it doesn't hang up the system and cause users to start revolting against the tyranny of your module.
@@ -4040,8 +4010,8 @@ Of course if you know for sure that there are no functions triggered by irqs whi
 </p>
 </div>
 </div>
-<div id="outline-container-orga153ddc" class="outline-3">
-<h3 id="orga153ddc"><span class="section-number-3">12.4.</span> Atomic operations</h3>
+<div id="outline-container-org3193248" class="outline-3">
+<h3 id="org3193248"><span class="section-number-3">12.4.</span> Atomic operations</h3>
 <div class="outline-text-3" id="text-12-4">
 <p>
 If you're doing simple arithmetic: adding, subtracting or bitwise operations then there's another way in the multi-CPU and multi-hyperthreaded world to stop other parts of the system from messing with your mojo. By using atomic operations you can be confident that your addition, subtraction or bit flip did actually happen and wasn't overwritten by some other shenanigans. An example is shown below.
@@ -4129,12 +4099,12 @@ MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
 </div>
 </div>
 </div>
-<div id="outline-container-orgfb9951d" class="outline-2">
-<h2 id="orgfb9951d"><span class="section-number-2">13.</span> Replacing Print Macros</h2>
+<div id="outline-container-org7a251dc" class="outline-2">
+<h2 id="org7a251dc"><span class="section-number-2">13.</span> Replacing Print Macros</h2>
 <div class="outline-text-2" id="text-13">
 </div>
-<div id="outline-container-org30b5453" class="outline-3">
-<h3 id="org30b5453"><span class="section-number-3">13.1.</span> Replacement</h3>
+<div id="outline-container-org51e9c6e" class="outline-3">
+<h3 id="org51e9c6e"><span class="section-number-3">13.1.</span> Replacement</h3>
 <div class="outline-text-3" id="text-13-1">
 <p>
 In Section 1.2.1.2, I said that X and kernel module programming don't mix. That's true for developing kernel modules, but in actual use, you want to be able to send messages to whichever tty the command to load the module came from.
@@ -4262,8 +4232,8 @@ MODULE_AUTHOR(<span style="color: #deb887;">"Peter Jay Salzman"</span>);
 </div>
 </div>
 
-<div id="outline-container-orgb39268e" class="outline-3">
-<h3 id="orgb39268e"><span class="section-number-3">13.2.</span> Flashing keyboard LEDs</h3>
+<div id="outline-container-org364f3e1" class="outline-3">
+<h3 id="org364f3e1"><span class="section-number-3">13.2.</span> Flashing keyboard LEDs</h3>
 <div class="outline-text-3" id="text-13-2">
 <p>
 In certain conditions, you may desire a simpler and more direct way to communicate to the external world. Flashing keyboard LEDs can be such a solution: It is an immediate way to attract attention or to display a status condition. Keyboard LEDs are present on every hardware, they are always visible, they do not need any setup, and their use is rather simple and non-intrusive, compared to writing to a tty or a file.
@@ -4381,16 +4351,16 @@ While you have seen lots of stuff that can be used to aid debugging here, there 
 </div>
 </div>
 
-<div id="outline-container-orgc55bb18" class="outline-2">
-<h2 id="orgc55bb18"><span class="section-number-2">14.</span> Scheduling Tasks</h2>
+<div id="outline-container-org6435c32" class="outline-2">
+<h2 id="org6435c32"><span class="section-number-2">14.</span> Scheduling Tasks</h2>
 <div class="outline-text-2" id="text-14">
 <p>
 There are two main ways of running tasks: tasklets and work queues. Tasklets are a quick and easy way of scheduling a single function to be run, for example when triggered from an interrupt, whereas work queues are more complicated but also better suited to running multiple things in a sequence.
 </p>
 </div>
 
-<div id="outline-container-orga076eef" class="outline-3">
-<h3 id="orga076eef"><span class="section-number-3">14.1.</span> Tasklets</h3>
+<div id="outline-container-org369ed2d" class="outline-3">
+<h3 id="org369ed2d"><span class="section-number-3">14.1.</span> Tasklets</h3>
 <div class="outline-text-3" id="text-14-1">
 <p>
 Here's an example tasklet module. The <i>tasklet_fn</i> function runs for a few seconds and in the mean time execution of the <i>example_tasklet_init</i> function continues to the exit point.
@@ -4448,8 +4418,8 @@ Example tasklet ends
 </div>
 </div>
 </div>
-<div id="outline-container-org982b3f6" class="outline-3">
-<h3 id="org982b3f6"><span class="section-number-3">14.2.</span> Work queues</h3>
+<div id="outline-container-orgecedcee" class="outline-3">
+<h3 id="orgecedcee"><span class="section-number-3">14.2.</span> Work queues</h3>
 <div class="outline-text-3" id="text-14-2">
 <p>
 To add a task to the scheduler we can use a workqueue. The kernel then uses the Completely Fair Scheduler (CFS) to execute work within the queue.
@@ -4491,12 +4461,12 @@ MODULE_DESCRIPTION(<span style="color: #deb887;">"Workqueue example"</span>);
 </div>
 </div>
 
-<div id="outline-container-orgc116273" class="outline-2">
-<h2 id="orgc116273"><span class="section-number-2">15.</span> Interrupt Handlers</h2>
+<div id="outline-container-org16ea710" class="outline-2">
+<h2 id="org16ea710"><span class="section-number-2">15.</span> Interrupt Handlers</h2>
 <div class="outline-text-2" id="text-15">
 </div>
-<div id="outline-container-org54e4896" class="outline-3">
-<h3 id="org54e4896"><span class="section-number-3">15.1.</span> Interrupt Handlers</h3>
+<div id="outline-container-org4c00e67" class="outline-3">
+<h3 id="org4c00e67"><span class="section-number-3">15.1.</span> Interrupt Handlers</h3>
 <div class="outline-text-3" id="text-15-1">
 <p>
 Except for the last chapter, everything we did in the kernel so far we've done as a response to a process asking for it, either by dealing with a special file, sending an ioctl(), or issuing a system call. But the job of the kernel isn't just to respond to process requests. Another job, which is every bit as important, is to speak to the hardware connected to the machine.
@@ -4528,8 +4498,8 @@ This function receives the IRQ number, the name of the function, flags, a name f
 </div>
 </div>
 
-<div id="outline-container-orge7773b4" class="outline-3">
-<h3 id="orge7773b4"><span class="section-number-3">15.2.</span> Detecting button presses</h3>
+<div id="outline-container-orgbe49b1f" class="outline-3">
+<h3 id="orgbe49b1f"><span class="section-number-3">15.2.</span> Detecting button presses</h3>
 <div class="outline-text-3" id="text-15-2">
 <p>
 Many popular single board computers, such as Raspberry Pis or Beagleboards, have a bunch of GPIO pins. Attaching buttons to those and then having a button press do something is a classic case in which you might need to use interrupts so that instead of having the CPU waste time and battery power polling for a change in input state it's better for the input to trigger the CPU to then run a particular handling function.
@@ -4696,8 +4666,8 @@ MODULE_DESCRIPTION(<span style="color: #deb887;">"Handle some GPIO interrupts"</
 </div>
 </div>
 
-<div id="outline-container-orgcdc9929" class="outline-3">
-<h3 id="orgcdc9929"><span class="section-number-3">15.3.</span> Bottom Half</h3>
+<div id="outline-container-org47ce5d0" class="outline-3">
+<h3 id="org47ce5d0"><span class="section-number-3">15.3.</span> Bottom Half</h3>
 <div class="outline-text-3" id="text-15-3">
 <p>
 Suppose you want to do a bunch of stuff inside of an interrupt routine. A common way to do that without rendering the interrupt unavailable for a significant duration is to combine it with a tasklet. This pushes the bulk of the work off into the scheduler.
@@ -4879,16 +4849,16 @@ MODULE_DESCRIPTION(<span style="color: #deb887;">"Interrupt with top and bottom 
 </div>
 </div>
 
-<div id="outline-container-orgbf0e5ac" class="outline-2">
-<h2 id="orgbf0e5ac"><span class="section-number-2">16.</span> Crypto</h2>
+<div id="outline-container-orga546dae" class="outline-2">
+<h2 id="orga546dae"><span class="section-number-2">16.</span> Crypto</h2>
 <div class="outline-text-2" id="text-16">
 <p>
 At the dawn of the internet everybody trusted everybody completely&#x2026;but that didn't work out so well. When this guide was originally written it was a more innocent era in which almost nobody actually gave a damn about crypto - least of all kernel developers. That's certainly no longer the case now. To handle crypto stuff the kernel has its own API enabling common methods of encryption, decryption and your favourite hash functions.
 </p>
 </div>
 
-<div id="outline-container-org2007617" class="outline-3">
-<h3 id="org2007617"><span class="section-number-3">16.1.</span> Hash functions</h3>
+<div id="outline-container-orgb7a2f3f" class="outline-3">
+<h3 id="orgb7a2f3f"><span class="section-number-3">16.1.</span> Hash functions</h3>
 <div class="outline-text-3" id="text-16-1">
 <p>
 Calculating and checking the hashes of things is a common operation. Here is a demonstration of how to calculate a sha256 hash within a kernel module.
@@ -4987,8 +4957,8 @@ Finally, remove the test module:
 </div>
 </div>
 
-<div id="outline-container-orgc6b3c30" class="outline-3">
-<h3 id="orgc6b3c30"><span class="section-number-3">16.2.</span> Symmetric key encryption</h3>
+<div id="outline-container-org0cfee26" class="outline-3">
+<h3 id="org0cfee26"><span class="section-number-3">16.2.</span> Symmetric key encryption</h3>
 <div class="outline-text-3" id="text-16-2">
 <p>
 Here is an example of symmetrically encrypting a string using the AES algorithm and a password.
@@ -5200,8 +5170,8 @@ MODULE_LICENSE(<span style="color: #deb887;">"GPL"</span>);
 </div>
 </div>
 
-<div id="outline-container-org03f659f" class="outline-2">
-<h2 id="org03f659f"><span class="section-number-2">17.</span> Standardising the interfaces: The Device Model</h2>
+<div id="outline-container-orgc0998e8" class="outline-2">
+<h2 id="orgc0998e8"><span class="section-number-2">17.</span> Standardising the interfaces: The Device Model</h2>
 <div class="outline-text-2" id="text-17">
 <p>
 Up to this point we've seen all kinds of modules doing all kinds of things, but there was no consistency in their interfaces with the rest of the kernel. To impose some consistency such that there is at minimum a standardised way to start, suspend and resume a device a device model was added. An example is show below, and you can use this as a template to add your own suspend, resume or other interface functions.
@@ -5308,12 +5278,12 @@ MODULE_DESCRIPTION(<span style="color: #deb887;">"Linux Device Model example"</s
 </div>
 </div>
 </div>
-<div id="outline-container-org68259eb" class="outline-2">
-<h2 id="org68259eb"><span class="section-number-2">18.</span> Optimisations</h2>
+<div id="outline-container-org85ac10f" class="outline-2">
+<h2 id="org85ac10f"><span class="section-number-2">18.</span> Optimisations</h2>
 <div class="outline-text-2" id="text-18">
 </div>
-<div id="outline-container-org559c508" class="outline-3">
-<h3 id="org559c508"><span class="section-number-3">18.1.</span> Likely and Unlikely conditions</h3>
+<div id="outline-container-orgbc29856" class="outline-3">
+<h3 id="orgbc29856"><span class="section-number-3">18.1.</span> Likely and Unlikely conditions</h3>
 <div class="outline-text-3" id="text-18-1">
 <p>
 Sometimes you might want your code to run as quickly as possible, especially if it's handling an interrupt or doing something which might cause noticible latency. If your code contains boolean conditions and if you know that the conditions are almost always likely to evaluate as either <i>true</i> or <i>false</i>, then you can allow the compiler to optimise for this using the <i>likely</i> and <i>unlikely</i> macros.
@@ -5340,16 +5310,16 @@ When the <i>unlikely</i> macro is used the compiler alters its machine instructi
 </div>
 </div>
 
-<div id="outline-container-org8c4d4e4" class="outline-2">
-<h2 id="org8c4d4e4"><span class="section-number-2">19.</span> Common Pitfalls</h2>
+<div id="outline-container-org73aac70" class="outline-2">
+<h2 id="org73aac70"><span class="section-number-2">19.</span> Common Pitfalls</h2>
 <div class="outline-text-2" id="text-19">
 <p>
 Before I send you on your way to go out into the world and write kernel modules, there are a few things I need to warn you about. If I fail to warn you and something bad happens, please report the problem to me for a full refund of the amount I was paid for your copy of the book.
 </p>
 </div>
 
-<div id="outline-container-org4d49bfc" class="outline-3">
-<h3 id="org4d49bfc"><span class="section-number-3">19.1.</span> Using standard libraries</h3>
+<div id="outline-container-orgb6b4a5c" class="outline-3">
+<h3 id="orgb6b4a5c"><span class="section-number-3">19.1.</span> Using standard libraries</h3>
 <div class="outline-text-3" id="text-19-1">
 <p>
 You can't do that. In a kernel module you can only use kernel functions, which are the functions you can see in /proc/kallsyms.
@@ -5357,8 +5327,8 @@ You can't do that. In a kernel module you can only use kernel functions, which a
 </div>
 </div>
 
-<div id="outline-container-org2cb7089" class="outline-3">
-<h3 id="org2cb7089"><span class="section-number-3">19.2.</span> Disabling interrupts</h3>
+<div id="outline-container-org941503c" class="outline-3">
+<h3 id="org941503c"><span class="section-number-3">19.2.</span> Disabling interrupts</h3>
 <div class="outline-text-3" id="text-19-2">
 <p>
 You might need to do this for a short time and that is OK, but if you don't enable them afterwards, your system will be stuck and you'll have to power it off.
@@ -5366,8 +5336,8 @@ You might need to do this for a short time and that is OK, but if you don't enab
 </div>
 </div>
 
-<div id="outline-container-orgcbea719" class="outline-3">
-<h3 id="orgcbea719"><span class="section-number-3">19.3.</span> Sticking your head inside a large carnivore</h3>
+<div id="outline-container-orgaeeefa9" class="outline-3">
+<h3 id="orgaeeefa9"><span class="section-number-3">19.3.</span> Sticking your head inside a large carnivore</h3>
 <div class="outline-text-3" id="text-19-3">
 <p>
 I probably don't have to warn you about this, but I figured I will anyway, just in case.
@@ -5376,8 +5346,8 @@ I probably don't have to warn you about this, but I figured I will anyway, just 
 </div>
 </div>
 
-<div id="outline-container-org3682fd2" class="outline-2">
-<h2 id="org3682fd2"><span class="section-number-2">20.</span> Where To Go From Here?</h2>
+<div id="outline-container-orgf82b901" class="outline-2">
+<h2 id="orgf82b901"><span class="section-number-2">20.</span> Where To Go From Here?</h2>
 <div class="outline-text-2" id="text-20">
 <p>
 I could easily have squeezed a few more chapters into this book. I could have added a chapter about creating new file systems, or about adding new protocol stacks (as if there's a need for that &#x2013; you'd have to dig underground to find a protocol stack not supported by Linux). I could have added explanations of the kernel mechanisms we haven't touched upon, such as bootstrapping or the disk interface.
@@ -5407,7 +5377,7 @@ Happy hacking.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Peter Jay Salzman, Michael Burian, Ori Pomerantz, Bob Mottram</p>
-<p class="date">Created: 2021-09-18 Sat 21:52</p>
+<p class="date">Created: 2021-09-18 Sat 23:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
