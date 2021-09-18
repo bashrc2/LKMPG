@@ -2149,7 +2149,7 @@ MODULE_DESCRIPTION("This is test_ioctl module");
 #+END_SRC
 
 * System Calls
-So far, the only thing we've done was to use well defined kernel mechanisms to register */proc* files and device handlers. This is fine if you want to do something the kernel programmers thought you'd want, such as write a device driver. But what if you want to do something unusual, to change the behavior of the system in some way? Then, you're mostly on your own.
+So far, the only thing we've done was to use well defined kernel mechanisms to register */proc* files and device handlers. This is fine if you want to do something the kernel programmers thought you'd want, such as write a device driver. But what if you want to do something unusual, to change the behaviour of the system in some way? Then, you're mostly on your own.
 
 If you're not being sensible and using a virtual machine then this is where kernel programming can become hazardous. While writing the example below, I killed the *open()* system call. This meant I couldn't open any files, I couldn't run any programs, and I couldn't shutdown the system. I had to restart the virtual machine. No important files got anihilated, but if I was doing this on some live mission critical system then that could have been a possible outcome. To ensure you don't lose any files, even within a test environment, please run *sync* right before you do the *insmod* and the *rmmod*.
 
