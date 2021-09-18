@@ -10,116 +10,116 @@
       .. container::
          :name: text-table-of-contents
 
-         -  `1. Introduction <#orgfb1f91d>`__
+         -  `1. Introduction <#orgb27f5d8>`__
 
-            -  `1.1. Authorship <#org04661e3>`__
-            -  `1.2. Versioning and Notes <#org40dfc5b>`__
-            -  `1.3. Acknowledgements <#org69c17b1>`__
-            -  `1.4. What Is A Kernel Module? <#org11980cf>`__
-            -  `1.5. Installing some Dependencies <#org717a585>`__
-            -  `1.6. What Modules are in my Kernel? <#org34eb349>`__
+            -  `1.1. Authorship <#orgd893047>`__
+            -  `1.2. Versioning and Notes <#org5fdd2ec>`__
+            -  `1.3. Acknowledgements <#org507e3cb>`__
+            -  `1.4. What Is A Kernel Module? <#org1ae19a6>`__
+            -  `1.5. Installing some Dependencies <#org6a519b2>`__
+            -  `1.6. What Modules are in my Kernel? <#org7c7d9b9>`__
             -  `1.7. Do I need to download and compile the
-               kernel? <#org5edddff>`__
-            -  `1.8. Before We Begin <#orgcee5a12>`__
+               kernel? <#orgdc1adeb>`__
+            -  `1.8. Before We Begin <#org1fcf5aa>`__
 
-         -  `2. Headers <#org25ee2e2>`__
-         -  `3. Examples <#orgfbab5ee>`__
-         -  `4. Hello World <#org5936baa>`__
+         -  `2. Headers <#org6d9fcd1>`__
+         -  `3. Examples <#orgc715b71>`__
+         -  `4. Hello World <#orgd52bae4>`__
 
-            -  `4.1. The Simplest Module <#org46d957a>`__
-            -  `4.2. Hello and Goodbye <#org792c507>`__
-            -  `4.3. The \__init and \__exit Macros <#org4ac0db1>`__
-            -  `4.4. Licensing and Module Documentation <#org6040228>`__
+            -  `4.1. The Simplest Module <#org209441b>`__
+            -  `4.2. Hello and Goodbye <#orge74a371>`__
+            -  `4.3. The \__init and \__exit Macros <#org7dfbaa1>`__
+            -  `4.4. Licensing and Module Documentation <#orgd8e37c0>`__
             -  `4.5. Passing Command Line Arguments to a
-               Module <#orgc65e82d>`__
-            -  `4.6. Modules Spanning Multiple Files <#org18a0ec8>`__
+               Module <#orgff5448f>`__
+            -  `4.6. Modules Spanning Multiple Files <#org0c40efc>`__
             -  `4.7. Building modules for a precompiled
-               kernel <#org7a3bdaa>`__
+               kernel <#org36cada0>`__
 
-         -  `5. Preliminaries <#org8c43f4e>`__
+         -  `5. Preliminaries <#org9851636>`__
 
-            -  `5.1. How modules begin and end <#org4b8b752>`__
-            -  `5.2. Functions available to modules <#org909371e>`__
-            -  `5.3. User Space vs Kernel Space <#orgf7f182b>`__
-            -  `5.4. Name Space <#orgff44207>`__
-            -  `5.5. Code space <#org5255cdb>`__
-            -  `5.6. Device Drivers <#orgbc23973>`__
+            -  `5.1. How modules begin and end <#org55ff261>`__
+            -  `5.2. Functions available to modules <#org7d4305e>`__
+            -  `5.3. User Space vs Kernel Space <#orgab0a92e>`__
+            -  `5.4. Name Space <#orgb638df0>`__
+            -  `5.5. Code space <#org14d3d2a>`__
+            -  `5.6. Device Drivers <#org4bd3e66>`__
 
-         -  `6. Character Device drivers <#org9f9f402>`__
+         -  `6. Character Device drivers <#orgc71d2f4>`__
 
-            -  `6.1. The file_operations Structure <#org4c8e73e>`__
-            -  `6.2. The file structure <#orgc832331>`__
-            -  `6.3. Registering A Device <#org1170a8f>`__
-            -  `6.4. Unregistering A Device <#orgd0756f2>`__
-            -  `6.5. chardev.c <#org3c38eaa>`__
+            -  `6.1. The file_operations Structure <#orgd76186a>`__
+            -  `6.2. The file structure <#org5a272cb>`__
+            -  `6.3. Registering A Device <#org4c5e2db>`__
+            -  `6.4. Unregistering A Device <#org473c50e>`__
+            -  `6.5. chardev.c <#org2b9d722>`__
             -  `6.6. Writing Modules for Multiple Kernel
-               Versions <#orga7dad83>`__
+               Versions <#org26291ae>`__
 
-         -  `7. The /proc File System <#org37398ab>`__
+         -  `7. The /proc File System <#orge2c940d>`__
 
-            -  `7.1. Read and Write a /proc File <#orgc89475b>`__
+            -  `7.1. Read and Write a /proc File <#org290e65b>`__
             -  `7.2. Manage /proc file with standard
-               filesystem <#org0ba2b62>`__
-            -  `7.3. Manage /proc file with seq_file <#org3bd39f4>`__
+               filesystem <#org51611fb>`__
+            -  `7.3. Manage /proc file with seq_file <#org0d17392>`__
 
-         -  `8. sysfs: Interacting with your module <#org6f5331f>`__
-         -  `9. Talking To Device Files <#org0917e40>`__
-         -  `10. System Calls <#orgb6faf69>`__
-         -  `11. Blocking Processes and threads <#org07bc856>`__
+         -  `8. sysfs: Interacting with your module <#org04374c0>`__
+         -  `9. Talking To Device Files <#orgea4c032>`__
+         -  `10. System Calls <#orgab13e2e>`__
+         -  `11. Blocking Processes and threads <#org23ab857>`__
 
-            -  `11.1. Sleep <#org315b870>`__
-            -  `11.2. Completions <#orgaf9c3e8>`__
+            -  `11.1. Sleep <#orgd224f2a>`__
+            -  `11.2. Completions <#org99594de>`__
 
-         -  `12. Avoiding Collisions and Deadlocks <#orgf411c28>`__
+         -  `12. Avoiding Collisions and Deadlocks <#org61b66b7>`__
 
-            -  `12.1. Mutex <#org27b280a>`__
-            -  `12.2. Spinlocks <#orgca71381>`__
-            -  `12.3. Read and write locks <#org85f6936>`__
-            -  `12.4. Atomic operations <#org3193248>`__
+            -  `12.1. Mutex <#orgbe4317f>`__
+            -  `12.2. Spinlocks <#orgfeaf450>`__
+            -  `12.3. Read and write locks <#orgbf2717d>`__
+            -  `12.4. Atomic operations <#org1ef5185>`__
 
-         -  `13. Replacing Print Macros <#org7a251dc>`__
+         -  `13. Replacing Print Macros <#orga2133e3>`__
 
-            -  `13.1. Replacement <#org51e9c6e>`__
-            -  `13.2. Flashing keyboard LEDs <#org364f3e1>`__
+            -  `13.1. Replacement <#org16f0adc>`__
+            -  `13.2. Flashing keyboard LEDs <#orgadd3642>`__
 
-         -  `14. Scheduling Tasks <#org6435c32>`__
+         -  `14. Scheduling Tasks <#org7e4816c>`__
 
-            -  `14.1. Tasklets <#org369ed2d>`__
-            -  `14.2. Work queues <#orgecedcee>`__
+            -  `14.1. Tasklets <#org1d9251e>`__
+            -  `14.2. Work queues <#orgf87ea41>`__
 
-         -  `15. Interrupt Handlers <#org16ea710>`__
+         -  `15. Interrupt Handlers <#org0f9ed49>`__
 
-            -  `15.1. Interrupt Handlers <#org4c00e67>`__
-            -  `15.2. Detecting button presses <#orgbe49b1f>`__
-            -  `15.3. Bottom Half <#org47ce5d0>`__
+            -  `15.1. Interrupt Handlers <#org5abaed1>`__
+            -  `15.2. Detecting button presses <#orgb4b2786>`__
+            -  `15.3. Bottom Half <#orgadd8d56>`__
 
-         -  `16. Crypto <#orga546dae>`__
+         -  `16. Crypto <#org9be687c>`__
 
-            -  `16.1. Hash functions <#orgb7a2f3f>`__
-            -  `16.2. Symmetric key encryption <#org0cfee26>`__
+            -  `16.1. Hash functions <#org510ee5c>`__
+            -  `16.2. Symmetric key encryption <#org2de6846>`__
 
          -  `17. Standardising the interfaces: The Device
-            Model <#orgc0998e8>`__
-         -  `18. Optimisations <#org85ac10f>`__
+            Model <#org72d95fa>`__
+         -  `18. Optimisations <#orga641b8f>`__
 
-            -  `18.1. Likely and Unlikely conditions <#orgbc29856>`__
+            -  `18.1. Likely and Unlikely conditions <#org954dc6c>`__
 
-         -  `19. Common Pitfalls <#org73aac70>`__
+         -  `19. Common Pitfalls <#org2ff66d3>`__
 
-            -  `19.1. Using standard libraries <#orgb6b4a5c>`__
-            -  `19.2. Disabling interrupts <#org941503c>`__
+            -  `19.1. Using standard libraries <#org86c7073>`__
+            -  `19.2. Disabling interrupts <#orgba6e600>`__
             -  `19.3. Sticking your head inside a large
-               carnivore <#orgaeeefa9>`__
+               carnivore <#org59ad298>`__
 
-         -  `20. Where To Go From Here? <#orgf82b901>`__
+         -  `20. Where To Go From Here? <#org6363726>`__
 
    [[#+TITLE: The Linux Kernel Module Programming Guide
 
    .. container:: outline-2
-      :name: outline-container-orgfb1f91d
+      :name: outline-container-orgb27f5d8
 
       .. rubric:: 1. Introduction
-         :name: orgfb1f91d
+         :name: orgb27f5d8
 
       .. container:: outline-text-2
          :name: text-1
@@ -158,10 +158,10 @@
          have questions or comments, please contact the address above.
 
       .. container:: outline-3
-         :name: outline-container-org04661e3
+         :name: outline-container-orgd893047
 
          .. rubric:: 1.1. Authorship
-            :name: org04661e3
+            :name: orgd893047
 
          .. container:: outline-text-3
             :name: text-1-1
@@ -179,10 +179,10 @@
             chapters.
 
       .. container:: outline-3
-         :name: outline-container-org40dfc5b
+         :name: outline-container-org5fdd2ec
 
          .. rubric:: 1.2. Versioning and Notes
-            :name: org40dfc5b
+            :name: org5fdd2ec
 
          .. container:: outline-text-3
             :name: text-1-2
@@ -201,10 +201,10 @@
             architectures, but I can't promise anything.
 
       .. container:: outline-3
-         :name: outline-container-org69c17b1
+         :name: outline-container-org507e3cb
 
          .. rubric:: 1.3. Acknowledgements
-            :name: org69c17b1
+            :name: org507e3cb
 
          .. container:: outline-text-3
             :name: text-1-3
@@ -215,10 +215,10 @@
             Bob Mottram and Roman Lakeev.
 
       .. container:: outline-3
-         :name: outline-container-org11980cf
+         :name: outline-container-org1ae19a6
 
          .. rubric:: 1.4. What Is A Kernel Module?
-            :name: org11980cf
+            :name: org1ae19a6
 
          .. container:: outline-text-3
             :name: text-1-4
@@ -241,10 +241,10 @@
             the kernel every time we want new functionality.
 
       .. container:: outline-3
-         :name: outline-container-org717a585
+         :name: outline-container-org6a519b2
 
          .. rubric:: 1.5. Installing some Dependencies
-            :name: org717a585
+            :name: org6a519b2
 
          .. container:: outline-text-3
             :name: text-1-5
@@ -270,10 +270,10 @@
                   sudo pacman -S gcc kmod
 
       .. container:: outline-3
-         :name: outline-container-org34eb349
+         :name: outline-container-org7c7d9b9
 
          .. rubric:: 1.6. What Modules are in my Kernel?
-            :name: org34eb349
+            :name: org7c7d9b9
 
          .. container:: outline-text-3
             :name: text-1-6
@@ -306,10 +306,10 @@
                   sudo lsmod | grep fat
 
       .. container:: outline-3
-         :name: outline-container-org5edddff
+         :name: outline-container-orgdc1adeb
 
          .. rubric:: 1.7. Do I need to download and compile the kernel?
-            :name: org5edddff
+            :name: orgdc1adeb
 
          .. container:: outline-text-3
             :name: text-1-7
@@ -321,10 +321,10 @@
             system.
 
       .. container:: outline-3
-         :name: outline-container-orgcee5a12
+         :name: outline-container-org1fcf5aa
 
          .. rubric:: 1.8. Before We Begin
-            :name: orgcee5a12
+            :name: org1fcf5aa
 
          .. container:: outline-text-3
             :name: text-1-8
@@ -369,10 +369,10 @@
             :::
 
    .. container:: outline-2
-      :name: outline-container-org25ee2e2
+      :name: outline-container-org6d9fcd1
 
       .. rubric:: 2. Headers
-         :name: org25ee2e2
+         :name: org6d9fcd1
 
       .. container:: outline-text-2
          :name: text-2
@@ -405,10 +405,10 @@
                sudo apt-get install kmod linux-headers-5.13.8-1-amd64
 
    .. container:: outline-2
-      :name: outline-container-orgfbab5ee
+      :name: outline-container-orgc715b71
 
       .. rubric:: 3. Examples
-         :name: orgfbab5ee
+         :name: orgc715b71
 
       .. container:: outline-text-2
          :name: text-3
@@ -431,19 +431,19 @@
          kernel header files.
 
    .. container:: outline-2
-      :name: outline-container-org5936baa
+      :name: outline-container-orgd52bae4
 
       .. rubric:: 4. Hello World
-         :name: org5936baa
+         :name: orgd52bae4
 
       .. container:: outline-text-2
          :name: text-4
 
       .. container:: outline-3
-         :name: outline-container-org46d957a
+         :name: outline-container-org209441b
 
          .. rubric:: 4.1. The Simplest Module
-            :name: org46d957a
+            :name: org209441b
 
          .. container:: outline-text-3
             :name: text-4-1
@@ -653,10 +653,10 @@
             :::
 
       .. container:: outline-3
-         :name: outline-container-org792c507
+         :name: outline-container-orge74a371
 
          .. rubric:: 4.2. Hello and Goodbye
-            :name: org792c507
+            :name: orge74a371
 
          .. container:: outline-text-3
             :name: text-4-2
@@ -727,10 +727,10 @@
             when you said make menuconfig or something like that.
 
       .. container:: outline-3
-         :name: outline-container-org4ac0db1
+         :name: outline-container-org7dfbaa1
 
          .. rubric:: 4.3. The \__init and \__exit Macros
-            :name: org4ac0db1
+            :name: org7dfbaa1
 
          .. container:: outline-text-3
             :name: text-4-3
@@ -788,10 +788,10 @@
                   MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-org6040228
+         :name: outline-container-orgd8e37c0
 
          .. rubric:: 4.4. Licensing and Module Documentation
-            :name: org6040228
+            :name: orgd8e37c0
 
          .. container:: outline-text-3
             :name: text-4-4
@@ -847,10 +847,10 @@
                   module_exit(cleanup_hello_4);
 
       .. container:: outline-3
-         :name: outline-container-orgc65e82d
+         :name: outline-container-orgff5448f
 
          .. rubric:: 4.5. Passing Command Line Arguments to a Module
-            :name: orgc65e82d
+            :name: orgff5448f
 
          .. container:: outline-text-3
             :name: text-4-5
@@ -1019,10 +1019,10 @@
                   hello-5.o: invalid argument syntax for mylong: 'h'
 
       .. container:: outline-3
-         :name: outline-container-org18a0ec8
+         :name: outline-container-org0c40efc
 
          .. rubric:: 4.6. Modules Spanning Multiple Files
-            :name: org18a0ec8
+            :name: org0c40efc
 
          .. container:: outline-text-3
             :name: text-4-6
@@ -1098,10 +1098,10 @@
             what object files are part of that module.
 
       .. container:: outline-3
-         :name: outline-container-org7a3bdaa
+         :name: outline-container-org36cada0
 
          .. rubric:: 4.7. Building modules for a precompiled kernel
-            :name: org7a3bdaa
+            :name: org36cada0
 
          .. container:: outline-text-3
             :name: text-4-7
@@ -1256,19 +1256,19 @@
             any errors.
 
    .. container:: outline-2
-      :name: outline-container-org8c43f4e
+      :name: outline-container-org9851636
 
       .. rubric:: 5. Preliminaries
-         :name: org8c43f4e
+         :name: org9851636
 
       .. container:: outline-text-2
          :name: text-5
 
       .. container:: outline-3
-         :name: outline-container-org4b8b752
+         :name: outline-container-org55ff261
 
          .. rubric:: 5.1. How modules begin and end
-            :name: org4b8b752
+            :name: org55ff261
 
          .. container:: outline-text-3
             :name: text-5-1
@@ -1299,10 +1299,10 @@
             think you'll know what I mean.
 
       .. container:: outline-3
-         :name: outline-container-org909371e
+         :name: outline-container-org7d4305e
 
          .. rubric:: 5.2. Functions available to modules
-            :name: org909371e
+            :name: org7d4305e
 
          .. container:: outline-text-3
             :name: text-5-2
@@ -1378,10 +1378,10 @@
             tries to delete a file on your system.
 
       .. container:: outline-3
-         :name: outline-container-orgf7f182b
+         :name: outline-container-orgab0a92e
 
          .. rubric:: 5.3. User Space vs Kernel Space
-            :name: orgf7f182b
+            :name: orgab0a92e
 
          .. container:: outline-text-3
             :name: text-5-3
@@ -1410,10 +1410,10 @@
             returns and execution gets transfered back to user mode.
 
       .. container:: outline-3
-         :name: outline-container-orgff44207
+         :name: outline-container-orgb638df0
 
          .. rubric:: 5.4. Name Space
-            :name: orgff44207
+            :name: orgb638df0
 
          .. container:: outline-text-3
             :name: text-5-4
@@ -1444,10 +1444,10 @@
             your modules since they share the kernel's codespace.
 
       .. container:: outline-3
-         :name: outline-container-org5255cdb
+         :name: outline-container-org14d3d2a
 
          .. rubric:: 5.5. Code space
-            :name: org5255cdb
+            :name: org14d3d2a
 
          .. container:: outline-text-3
             :name: text-5-5
@@ -1497,10 +1497,10 @@
             microkernel.
 
       .. container:: outline-3
-         :name: outline-container-orgbc23973
+         :name: outline-container-org4bd3e66
 
          .. rubric:: 5.6. Device Drivers
-            :name: orgbc23973
+            :name: org4bd3e66
 
          .. container:: outline-text-3
             :name: text-5-6
@@ -1621,19 +1621,19 @@
             :::
 
    .. container:: outline-2
-      :name: outline-container-org9f9f402
+      :name: outline-container-orgc71d2f4
 
       .. rubric:: 6. Character Device drivers
-         :name: org9f9f402
+         :name: orgc71d2f4
 
       .. container:: outline-text-2
          :name: text-6
 
       .. container:: outline-3
-         :name: outline-container-org4c8e73e
+         :name: outline-container-orgd76186a
 
          .. rubric:: 6.1. The file_operations Structure
-            :name: org4c8e73e
+            :name: orgd76186a
 
          .. container:: outline-text-3
             :name: text-6-1
@@ -1740,10 +1740,10 @@
             syscalls is commonly named fops.
 
       .. container:: outline-3
-         :name: outline-container-orgc832331
+         :name: outline-container-org5a272cb
 
          .. rubric:: 6.2. The file structure
-            :name: orgc832331
+            :name: org5a272cb
 
          .. container:: outline-text-3
             :name: text-6-2
@@ -1768,10 +1768,10 @@
             in file which are created elsewhere.
 
       .. container:: outline-3
-         :name: outline-container-org1170a8f
+         :name: outline-container-org4c5e2db
 
          .. rubric:: 6.3. Registering A Device
-            :name: org1170a8f
+            :name: org4c5e2db
 
          .. container:: outline-text-3
             :name: text-6-3
@@ -1829,10 +1829,10 @@
             and **device_destroy** during the call to cleanup_module.
 
       .. container:: outline-3
-         :name: outline-container-orgd0756f2
+         :name: outline-container-org473c50e
 
          .. rubric:: 6.4. Unregistering A Device
-            :name: orgd0756f2
+            :name: org473c50e
 
          .. container:: outline-text-3
             :name: text-6-4
@@ -1874,10 +1874,10 @@
             module's development.
 
       .. container:: outline-3
-         :name: outline-container-org3c38eaa
+         :name: outline-container-org2b9d722
 
          .. rubric:: 6.5. chardev.c
-            :name: org3c38eaa
+            :name: org2b9d722
 
          .. container:: outline-text-3
             :name: text-6-5
@@ -1905,46 +1905,38 @@
                .. code:: src
 
                   /*
-                   *  chardev.c: Creates a read-only char device that says how many times
-                   *  you've read from the dev file
+                   * chardev.c: Creates a read-only char device that says how many times
+                   * you have read from the dev file
                    */
 
-                  #include <linux/kernel.h>
-                  #include <linux/module.h>
-                  #include <linux/fs.h>
-                  #include <linux/init.h>
+                  #include <linux/cdev.h>
                   #include <linux/delay.h>
                   #include <linux/device.h>
+                  #include <linux/fs.h>
+                  #include <linux/init.h>
                   #include <linux/irq.h>
-                  #include <asm/uaccess.h>
-                  #include <asm/irq.h>
-                  #include <asm/io.h>
+                  #include <linux/kernel.h>
+                  #include <linux/module.h>
                   #include <linux/poll.h>
-                  #include <linux/cdev.h>
 
-                  /*
-                   *  Prototypes - this would normally go in a .h file
-                   */
-                  int init_module(void);
-                  void cleanup_module(void);
+                  /*  Prototypes - this would normally go in a .h file */
                   static int device_open(struct inode *, struct file *);
                   static int device_release(struct inode *, struct file *);
-                  static ssize_t device_read(struct file *, char *, size_t, loff_t *);
-                  static ssize_t device_write(struct file *, const char *, size_t, loff_t *);
+                  static ssize_t device_read(struct file *, char __user *, size_t, loff_t *);
+                  static ssize_t device_write(struct file *, const char __user *, size_t,
+                                              loff_t *);
 
                   #define SUCCESS 0
-                  #define DEVICE_NAME "chardev"   /* Dev name as it appears in /proc/devices   */
-                  #define BUF_LEN 80              /* Max length of the message from the device */
+                  #define DEVICE_NAME "chardev" /* Dev name as it appears in /proc/devices   */
+                  #define BUF_LEN 80 /* Max length of the message from the device */
 
-                  /*
-                   * Global variables are declared as static, so are global within the file.
-                   */
+                  /* Global variables are declared as static, so are global within the file. */
 
-                  static int Major;               /* Major number assigned to our device driver */
-                  static int Device_Open = 0;     /* Is device open?
-                                                   * Used to prevent multiple access to device */
-                  static char msg[BUF_LEN];       /* The msg the device will give when asked */
-                  static char *msg_Ptr;
+                  static int major; /* major number assigned to our device driver */
+                  /* Is device open? Used to prevent multiple access to device */
+                  static atomic_t already_open = ATOMIC_INIT(0);
+                  static char msg[BUF_LEN]; /* The msg the device will give when asked */
+                  static char *msg_ptr;
 
                   static struct class *cls;
 
@@ -1952,77 +1944,62 @@
                       .read = device_read,
                       .write = device_write,
                       .open = device_open,
-                      .release = device_release
+                      .release = device_release,
                   };
 
-                  /*
-                   * This function is called when the module is loaded
-                   */
-                  int init_module(void)
+                  static int __init chardev_init(void)
                   {
-                      Major = register_chrdev(0, DEVICE_NAME, &chardev_fops);
+                      major = register_chrdev(0, DEVICE_NAME, &chardev_fops);
 
-                      if (Major < 0) {
-                          pr_alert("Registering char device failed with %d\n", Major);
-                          return Major;
+                      if (major < 0) {
+                          pr_alert("Registering char device failed with %d\n", major);
+                          return major;
                       }
 
-                      pr_info("I was assigned major number %d.\n", Major);
+                      pr_info("I was assigned major number %d.\n", major);
 
                       cls = class_create(THIS_MODULE, DEVICE_NAME);
-                      device_create(cls, NULL, MKDEV(Major, 0), NULL, DEVICE_NAME);
+                      device_create(cls, NULL, MKDEV(major, 0), NULL, DEVICE_NAME);
 
                       pr_info("Device created on /dev/%s\n", DEVICE_NAME);
 
                       return SUCCESS;
                   }
 
-                  /*
-                   * This function is called when the module is unloaded
-                   */
-                  void cleanup_module(void)
+                  static void __exit chardev_exit(void)
                   {
-                      device_destroy(cls, MKDEV(Major, 0));
+                      device_destroy(cls, MKDEV(major, 0));
                       class_destroy(cls);
 
-                      /*
-                       * Unregister the device
-                       */
-                      unregister_chrdev(Major, DEVICE_NAME);
+                      /* Unregister the device */
+                      unregister_chrdev(major, DEVICE_NAME);
                   }
 
-                  /*
-                   * Methods
-                   */
+                  /* Methods */
 
-                  /*
-                   * Called when a process tries to open the device file, like
-                   * "cat /dev/mycharfile"
+                  /* Called when a process tries to open the device file, like
+                   * "sudo cat /dev/chardev"
                    */
                   static int device_open(struct inode *inode, struct file *file)
                   {
                       static int counter = 0;
 
-                      if (Device_Open)
+                      if (atomic_cmpxchg(&already_open, 0, 1))
                           return -EBUSY;
 
-                      Device_Open++;
                       sprintf(msg, "I already told you %d times Hello world!\n", counter++);
-                      msg_Ptr = msg;
+                      msg_ptr = msg;
                       try_module_get(THIS_MODULE);
 
                       return SUCCESS;
                   }
 
-                  /*
-                   * Called when a process closes the device file.
-                   */
+                  /* Called when a process closes the device file. */
                   static int device_release(struct inode *inode, struct file *file)
                   {
-                      Device_Open--;          /* We're now ready for our next caller */
+                      atomic_set(&already_open, 0); /* We're now ready for our next caller */
 
-                      /*
-                       * Decrement the usage count, or else once you opened the file, you'll
+                      /* Decrement the usage count, or else once you opened the file, you will
                        * never get get rid of the module.
                        */
                       module_put(THIS_MODULE);
@@ -2030,69 +2007,56 @@
                       return SUCCESS;
                   }
 
-                  /*
-                   * Called when a process, which already opened the dev file, attempts to
+                  /* Called when a process, which already opened the dev file, attempts to
                    * read from it.
                    */
-                  static ssize_t device_read(struct file *filp,   /* see include/linux/fs.h   */
-                                             char *buffer,        /* buffer to fill with data */
-                                             size_t length,       /* length of the buffer     */
-                                             loff_t * offset)
+                  static ssize_t device_read(struct file *filp, /* see include/linux/fs.h   */
+                                             char __user *buffer, /* buffer to fill with data */
+                                             size_t length, /* length of the buffer     */
+                                             loff_t *offset)
                   {
-                      /*
-                       * Number of bytes actually written to the buffer
-                       */
+                      /* Number of bytes actually written to the buffer */
                       int bytes_read = 0;
 
-                      /*
-                       * If we're at the end of the message,
-                       * return 0 signifying end of file
-                       */
-                      if (*msg_Ptr == 0)
+                      /* If we are at the end of message, return 0 signifying end of file. */
+                      if (*msg_ptr == 0)
                           return 0;
 
-                      /*
-                       * Actually put the data into the buffer
-                       */
-                      while (length && *msg_Ptr) {
-
-                          /*
-                           * The buffer is in the user data segment, not the kernel
+                      /* Actually put the data into the buffer */
+                      while (length && *msg_ptr) {
+                          /* The buffer is in the user data segment, not the kernel
                            * segment so "*" assignment won't work.  We have to use
                            * put_user which copies data from the kernel data segment to
                            * the user data segment.
                            */
-                          put_user(*(msg_Ptr++), buffer++);
+                          put_user(*(msg_ptr++), buffer++);
 
                           length--;
                           bytes_read++;
                       }
 
-                      /*
-                       * Most read functions return the number of bytes put into the buffer
-                       */
+                      /* Most read functions return the number of bytes put into the buffer. */
                       return bytes_read;
                   }
 
-                  /*
-                   * Called when a process writes to dev file: echo "hi" > /dev/hello
-                   */
-                  static ssize_t device_write(struct file *filp,
-                                              const char *buff,
-                                              size_t len,
-                                              loff_t * off)
+                  /* Called when a process writes to dev file: echo "hi" > /dev/hello */
+                  static ssize_t device_write(struct file *filp, const char __user *buff,
+                                              size_t len, loff_t *off)
                   {
-                      pr_alert("Sorry, this operation isn't supported.\n");
+                      pr_alert("Sorry, this operation is not supported.\n");
                       return -EINVAL;
                   }
+
+                  module_init(chardev_init);
+                  module_exit(chardev_exit);
 
                   MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-orga7dad83
+         :name: outline-container-org26291ae
 
          .. rubric:: 6.6. Writing Modules for Multiple Kernel Versions
-            :name: orga7dad83
+            :name: org26291ae
 
          .. container:: outline-text-3
             :name: text-6-6
@@ -2149,10 +2113,10 @@
             full story.
 
    .. container:: outline-2
-      :name: outline-container-org37398ab
+      :name: outline-container-orge2c940d
 
       .. rubric:: 7. The /proc File System
-         :name: org37398ab
+         :name: orge2c940d
 
       .. container:: outline-text-2
          :name: text-7
@@ -2293,10 +2257,10 @@
                MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-orgc89475b
+         :name: outline-container-org290e65b
 
          .. rubric:: 7.1. Read and Write a /proc File
-            :name: orgc89475b
+            :name: org290e65b
 
          .. container:: outline-text-3
             :name: text-7-1
@@ -2436,10 +2400,10 @@
                   MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-org0ba2b62
+         :name: outline-container-org51611fb
 
          .. rubric:: 7.2. Manage /proc file with standard filesystem
-            :name: org0ba2b62
+            :name: org51611fb
 
          .. container:: outline-text-3
             :name: text-7-2
@@ -2612,10 +2576,10 @@
             related yourself.
 
       .. container:: outline-3
-         :name: outline-container-org3bd39f4
+         :name: outline-container-org0d17392
 
          .. rubric:: 7.3. Manage /proc file with seq_file
-            :name: org3bd39f4
+            :name: org0d17392
 
          .. container:: outline-text-3
             :name: text-7-3
@@ -2643,7 +2607,7 @@
             this in the figure "How seq_file works".
 
             .. container:: figure
-               :name: org8b9714a
+               :name: orgd49bbfb
 
                .. figure:: img/seq_file.png
                   :alt: seq_file.png
@@ -2788,10 +2752,10 @@
             kernel.
 
    .. container:: outline-2
-      :name: outline-container-org6f5331f
+      :name: outline-container-org04374c0
 
       .. rubric:: 8. sysfs: Interacting with your module
-         :name: org6f5331f
+         :name: org04374c0
 
       .. container:: outline-text-2
          :name: text-8
@@ -2926,10 +2890,10 @@
                sudo rmmod hello_sysfs
 
    .. container:: outline-2
-      :name: outline-container-org0917e40
+      :name: outline-container-orgea4c032
 
       .. rubric:: 9. Talking To Device Files
-         :name: org0917e40
+         :name: orgea4c032
 
       .. container:: outline-text-2
          :name: text-9
@@ -2992,226 +2956,170 @@
             .. code:: src
 
                /*
-                *  chardev2.c - Create an input/output character device
+                * chardev2.c - Create an input/output character device
                 */
 
-               #include <linux/kernel.h>       /* We're doing kernel work */
-               #include <linux/module.h>       /* Specifically, a module */
-               #include <linux/fs.h>
-               #include <linux/init.h>
+               #include <linux/cdev.h>
                #include <linux/delay.h>
                #include <linux/device.h>
+               #include <linux/fs.h>
+               #include <linux/init.h>
                #include <linux/irq.h>
-               #include <asm/uaccess.h>
-               #include <asm/irq.h>
-               #include <asm/io.h>
+               #include <linux/kernel.h> /* We are doing kernel work */
+               #include <linux/module.h> /* Specifically, a module */
                #include <linux/poll.h>
-               #include <linux/cdev.h>
 
                #include "chardev.h"
                #define SUCCESS 0
                #define DEVICE_NAME "char_dev"
                #define BUF_LEN 80
 
-               /*
-                * Is the device open right now? Used to prevent
-                * concurent access into the same device
+               /* Is the device open right now? Used to prevent concurrent access into
+                * the same device
                 */
-               static int Device_Open = 0;
+               static atomic_t already_open = ATOMIC_INIT(0);
 
-               /*
-                * The message the device will give when asked
+               /* The message the device will give when asked */
+               static char message[BUF_LEN];
+
+               /* How far did the process reading the message get? Useful if the message
+                * is larger than the size of the buffer we get to fill in device_read.
                 */
-               static char Message[BUF_LEN];
+               static char *message_ptr;
 
-               /*
-                * How far did the process reading the message get?
-                * Useful if the message is larger than the size of the
-                * buffer we get to fill in device_read.
-                */
-               static char *Message_Ptr;
-
-               static int Major;               /* Major number assigned to our device driver */
                static struct class *cls;
 
-               /*
-                * This is called whenever a process attempts to open the device file
-                */
+               /* This is called whenever a process attempts to open the device file */
                static int device_open(struct inode *inode, struct file *file)
                {
-               #ifdef DEBUG
-                       pr_info("device_open(%p)\n", file);
-               #endif
+                   pr_info("device_open(%p)\n", file);
 
-                   /*
-                    * We don't want to talk to two processes at the same time
-                    */
-                   if (Device_Open)
+                   /* We don't want to talk to two processes at the same time. */
+                   if (atomic_cmpxchg(&already_open, 0, 1))
                        return -EBUSY;
 
-                   Device_Open++;
-                   /*
-                    * Initialize the message
-                    */
-                   Message_Ptr = Message;
+                   /* Initialize the message */
+                   message_ptr = message;
                    try_module_get(THIS_MODULE);
                    return SUCCESS;
                }
 
                static int device_release(struct inode *inode, struct file *file)
                {
-               #ifdef DEBUG
                    pr_info("device_release(%p,%p)\n", inode, file);
-               #endif
 
-                   /*
-                    * We're now ready for our next caller
-                    */
-                   Device_Open--;
+                   /* We're now ready for our next caller */
+                   atomic_set(&already_open, 0);
 
                    module_put(THIS_MODULE);
                    return SUCCESS;
                }
 
-               /*
-                * This function is called whenever a process which has already opened the
+               /* This function is called whenever a process which has already opened the
                 * device file attempts to read from it.
                 */
-               static ssize_t device_read(struct file *file,   /* see include/linux/fs.h   */
-                                          char __user * buffer,        /* buffer to be
-                                                                        * filled with data */
-                                          size_t length,       /* length of the buffer     */
-                                          loff_t * offset)
+               static ssize_t device_read(struct file *file, /* see include/linux/fs.h   */
+                                          char __user *buffer, /* buffer to be filled  */
+                                          size_t length, /* length of the buffer     */
+                                          loff_t *offset)
                {
-                   /*
-                    * Number of bytes actually written to the buffer
-                    */
+                   /* Number of bytes actually written to the buffer */
                    int bytes_read = 0;
 
-               #ifdef DEBUG
-                   pr_info("device_read(%p,%p,%d)\n", file, buffer, length);
-               #endif
+                   pr_info("device_read(%p,%p,%ld)\n", file, buffer, length);
 
-                   /*
-                    * If we're at the end of the message, return 0
-                    * (which signifies end of file)
-                    */
-                   if (*Message_Ptr == 0)
+                   /* If at the end of message, return 0 (which signifies end of file). */
+                   if (*message_ptr == 0)
                        return 0;
 
-                   /*
-                    * Actually put the data into the buffer
-                    */
-                   while (length && *Message_Ptr) {
+                   /* Actually put the data into the buffer */
+                   while (length && *message_ptr) {
+                       /* Because the buffer is in the user data segment, not the kernel
+                        * data segment, assignment would not work. Instead, we have to
+                        * use put_user which copies data from the kernel data segment to
+                        * the user data segment.
+                        */
+                       put_user(*(message_ptr++), buffer++);
+                       length--;
+                       bytes_read++;
+                   }
 
-                   /*
-                    * Because the buffer is in the user data segment,
-                    * not the kernel data segment, assignment wouldn't
-                    * work. Instead, we have to use put_user which
-                    * copies data from the kernel data segment to the
-                    * user data segment.
-                    */
-                    put_user(*(Message_Ptr++), buffer++);
-                    length--;
-                    bytes_read++;
-               }
+                   pr_info("Read %d bytes, %ld left\n", bytes_read, length);
 
-               #ifdef DEBUG
-                   pr_info("Read %d bytes, %d left\n", bytes_read, length);
-               #endif
-
-                   /*
-                    * Read functions are supposed to return the number
-                    * of bytes actually inserted into the buffer
+                   /* Read functions are supposed to return the number of bytes actually
+                    * inserted into the buffer.
                     */
                    return bytes_read;
                }
 
-               /*
-                * This function is called when somebody tries to
-                * write into our device file.
-                */
-               static ssize_t
-               device_write(struct file *file,
-                            const char __user * buffer, size_t length, loff_t * offset)
+               /* called when somebody tries to write into our device file. */
+               static ssize_t device_write(struct file *file, const char __user *buffer,
+                                           size_t length, loff_t *offset)
                {
                    int i;
 
-               #ifdef DEBUG
-                   pr_info("device_write(%p,%s,%d)", file, buffer, length);
-               #endif
+                   pr_info("device_write(%p,%s,%ld)", file, buffer, length);
 
                    for (i = 0; i < length && i < BUF_LEN; i++)
-                       get_user(Message[i], buffer + i);
+                       get_user(message[i], buffer + i);
 
-                   Message_Ptr = Message;
+                   message_ptr = message;
 
-                   /*
-                    * Again, return the number of input characters used
-                    */
+                   /* Again, return the number of input characters used. */
                    return i;
                }
 
-               /*
-                * This function is called whenever a process tries to do an ioctl on our
+               /* This function is called whenever a process tries to do an ioctl on our
                 * device file. We get two extra parameters (additional to the inode and file
                 * structures, which all device functions get): the number of the ioctl called
                 * and the parameter given to the ioctl function.
                 *
                 * If the ioctl is write or read/write (meaning output is returned to the
                 * calling process), the ioctl call returns the output of this function.
-                *
                 */
-               long device_ioctl(struct file *file,             /* ditto */
-                                 unsigned int ioctl_num,        /* number and param for ioctl */
-                                 unsigned long ioctl_param)
+               static long
+               device_ioctl(struct file *file, /* ditto */
+                            unsigned int ioctl_num, /* number and param for ioctl */
+                            unsigned long ioctl_param)
                {
                    int i;
                    char *temp;
                    char ch;
 
-                   /*
-                    * Switch according to the ioctl called
-                    */
+                   /* Switch according to the ioctl called */
                    switch (ioctl_num) {
                    case IOCTL_SET_MSG:
-                       /*
-                        * Receive a pointer to a message (in user space) and set that
-                        * to be the device's message.  Get the parameter given to
-                        * ioctl by the process.
+                       /* Receive a pointer to a message (in user space) and set that to
+                        * be the device's message.  Get the parameter given to ioctl by
+                        * the process.
                         */
                        temp = (char *)ioctl_param;
 
-                        /*
-                         * Find the length of the message
-                         */
-                        get_user(ch, temp);
-                        for (i = 0; ch && i < BUF_LEN; i++, temp++)
-                            get_user(ch, temp);
+                       /* Find the length of the message */
+                       get_user(ch, (char __user *)temp);
+                       for (i = 0; ch && i < BUF_LEN; i++, temp++)
+                           get_user(ch, (char __user *)temp);
 
-                        device_write(file, (char *)ioctl_param, i, 0);
-                        break;
+                       device_write(file, (char __user *)ioctl_param, i, NULL);
+                       break;
 
                    case IOCTL_GET_MSG:
-                       /*
-                        * Give the current message to the calling process -
-                        * the parameter we got is a pointer, fill it.
+                       /* Give the current message to the calling process - the parameter
+                        * we got is a pointer, fill it.
                         */
-                       i = device_read(file, (char *)ioctl_param, 99, 0);
+                       i = device_read(file, (char __user *)ioctl_param, 99, NULL);
 
-                       /*
-                        * Put a zero at the end of the buffer, so it will be
-                        * properly terminated
+                       /* Put a zero at the end of the buffer, so it will be properly
+                        * terminated.
                         */
-                       put_user('\0', (char *)ioctl_param + i);
+                       put_user('\0', (char __user *)ioctl_param + i);
                        break;
 
                    case IOCTL_GET_NTH_BYTE:
-                       /*
-                        * This ioctl is both input (ioctl_param) and
-                        * output (the return value of this function)
+                       /* This ioctl is both input (ioctl_param) and output (the return
+                        * value of this function).
                         */
-                       return Message[ioctl_param];
+                       return message[ioctl_param];
                        break;
                    }
 
@@ -3220,64 +3128,52 @@
 
                /* Module Declarations */
 
-               /*
-                * This structure will hold the functions to be called
-                * when a process does something to the device we
-                * created. Since a pointer to this structure is kept in
-                * the devices table, it can't be local to
-                * init_module. NULL is for unimplemented functions.
+               /* This structure will hold the functions to be called when a process does
+                * something to the device we created. Since a pointer to this structure
+                * is kept in the devices table, it can't be local to init_module. NULL is
+                * for unimplemented functions.
                 */
-               struct file_operations Fops = {
-                       .read = device_read,
-                       .write = device_write,
-                       .unlocked_ioctl = device_ioctl,
-                       .open = device_open,
-                       .release = device_release,      /* a.k.a. close */
+               static struct file_operations fops = {
+                   .read = device_read,
+                   .write = device_write,
+                   .unlocked_ioctl = device_ioctl,
+                   .open = device_open,
+                   .release = device_release, /* a.k.a. close */
                };
 
-               /*
-                * Initialize the module - Register the character device
-                */
-               int init_module()
+               /* Initialize the module - Register the character device */
+               static int __init chardev2_init(void)
                {
-                   int ret_val;
-                   /*
-                    * Register the character device (atleast try)
-                    */
-                   ret_val = register_chrdev(MAJOR_NUM, DEVICE_NAME, &Fops);
+                   /* Register the character device (atleast try) */
+                   int ret_val = register_chrdev(MAJOR_NUM, DEVICE_NAME, &fops);
 
-                   /*
-                    * Negative values signify an error
-                    */
+                   /* Negative values signify an error */
                    if (ret_val < 0) {
                        pr_alert("%s failed with %d\n",
                                 "Sorry, registering the character device ", ret_val);
                        return ret_val;
                    }
 
-                   Major = ret_val;
-
                    cls = class_create(THIS_MODULE, DEVICE_FILE_NAME);
-                   device_create(cls, NULL, MKDEV(Major, MAJOR_NUM), NULL, DEVICE_FILE_NAME);
+                   device_create(cls, NULL, MKDEV(MAJOR_NUM, 0), NULL, DEVICE_FILE_NAME);
 
                    pr_info("Device created on /dev/%s\n", DEVICE_FILE_NAME);
 
                    return 0;
                }
 
-               /*
-                * Cleanup - unregister the appropriate file from /proc
-                */
-               void cleanup_module()
+               /* Cleanup - unregister the appropriate file from /proc */
+               static void __exit chardev2_exit(void)
                {
-                   device_destroy(cls, MKDEV(Major, 0));
+                   device_destroy(cls, MKDEV(MAJOR_NUM, 0));
                    class_destroy(cls);
 
-                   /*
-                    * Unregister the device
-                    */
-                   unregister_chrdev(Major, DEVICE_NAME);
+                   /* Unregister the device */
+                   unregister_chrdev(MAJOR_NUM, DEVICE_NAME);
                }
+
+               module_init(chardev2_init);
+               module_exit(chardev2_exit);
 
                MODULE_LICENSE("GPL");
 
@@ -3563,10 +3459,10 @@
                MODULE_DESCRIPTION("This is test_ioctl module");
 
    .. container:: outline-2
-      :name: outline-container-orgb6faf69
+      :name: outline-container-orgab13e2e
 
       .. rubric:: 10. System Calls
-         :name: orgb6faf69
+         :name: orgab13e2e
 
       .. container:: outline-text-2
          :name: text-10
@@ -3856,19 +3752,19 @@
                MODULE_LICENSE("GPL");
 
    .. container:: outline-2
-      :name: outline-container-org07bc856
+      :name: outline-container-org23ab857
 
       .. rubric:: 11. Blocking Processes and threads
-         :name: org07bc856
+         :name: org23ab857
 
       .. container:: outline-text-2
          :name: text-11
 
       .. container:: outline-3
-         :name: outline-container-org315b870
+         :name: outline-container-orgd224f2a
 
          .. rubric:: 11.1. Sleep
-            :name: org315b870
+            :name: orgd224f2a
 
          .. container:: outline-text-3
             :name: text-11-1
@@ -4271,10 +4167,10 @@
                   }
 
       .. container:: outline-3
-         :name: outline-container-orgaf9c3e8
+         :name: outline-container-org99594de
 
          .. rubric:: 11.2. Completions
-            :name: orgaf9c3e8
+            :name: org99594de
 
          .. container:: outline-text-3
             :name: text-11-2
@@ -4386,10 +4282,10 @@
             without adding a lot of complexity.
 
    .. container:: outline-2
-      :name: outline-container-orgf411c28
+      :name: outline-container-org61b66b7
 
       .. rubric:: 12. Avoiding Collisions and Deadlocks
-         :name: orgf411c28
+         :name: org61b66b7
 
       .. container:: outline-text-2
          :name: text-12
@@ -4403,10 +4299,10 @@
          happen.
 
       .. container:: outline-3
-         :name: outline-container-org27b280a
+         :name: outline-container-orgbe4317f
 
          .. rubric:: 12.1. Mutex
-            :name: org27b280a
+            :name: orgbe4317f
 
          .. container:: outline-text-3
             :name: text-12-1
@@ -4461,10 +4357,10 @@
                   MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-orgca71381
+         :name: outline-container-orgfeaf450
 
          .. rubric:: 12.2. Spinlocks
-            :name: orgca71381
+            :name: orgfeaf450
 
          .. container:: outline-text-3
             :name: text-12-2
@@ -4550,10 +4446,10 @@
                   MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-org85f6936
+         :name: outline-container-orgbf2717d
 
          .. rubric:: 12.3. Read and write locks
-            :name: org85f6936
+            :name: orgbf2717d
 
          .. container:: outline-text-3
             :name: text-12-3
@@ -4634,10 +4530,10 @@
             functions.
 
       .. container:: outline-3
-         :name: outline-container-org3193248
+         :name: outline-container-org1ef5185
 
          .. rubric:: 12.4. Atomic operations
-            :name: org3193248
+            :name: org1ef5185
 
          .. container:: outline-text-3
             :name: text-12-4
@@ -4733,19 +4629,19 @@
                   MODULE_LICENSE("GPL");
 
    .. container:: outline-2
-      :name: outline-container-org7a251dc
+      :name: outline-container-orga2133e3
 
       .. rubric:: 13. Replacing Print Macros
-         :name: org7a251dc
+         :name: orga2133e3
 
       .. container:: outline-text-2
          :name: text-13
 
       .. container:: outline-3
-         :name: outline-container-org51e9c6e
+         :name: outline-container-org16f0adc
 
          .. rubric:: 13.1. Replacement
-            :name: org51e9c6e
+            :name: org16f0adc
 
          .. container:: outline-text-3
             :name: text-13-1
@@ -4883,10 +4779,10 @@
                   module_exit(print_string_exit);
 
       .. container:: outline-3
-         :name: outline-container-org364f3e1
+         :name: outline-container-orgadd3642
 
          .. rubric:: 13.2. Flashing keyboard LEDs
-            :name: org364f3e1
+            :name: orgadd3642
 
          .. container:: outline-text-3
             :name: text-13-2
@@ -4909,55 +4805,48 @@
                .. code:: src
 
                   /*
-                   *  kbleds.c - Blink keyboard leds until the module is unloaded.
+                   * kbleds.c - Blink keyboard leds until the module is unloaded.
                    */
 
-                  #include <linux/module.h>
                   #include <linux/init.h>
-                  #include <linux/vt_kern.h>      /* for fg_console */
-                  #include <linux/tty.h>          /* For fg_console, MAX_NR_CONSOLES */
-                  #include <linux/kd.h>           /* For KDSETLED */
-                  #include <linux/vt.h>
-                  #include <linux/console_struct.h>       /* For vc_cons */
+                  #include <linux/kd.h> /* For KDSETLED */
+                  #include <linux/module.h>
+                  #include <linux/tty.h> /* For tty_struct */
+                  #include <linux/vt.h> /* For MAX_NR_CONSOLES */
+                  #include <linux/vt_kern.h> /* for fg_console */
+                  #include <linux/console_struct.h> /* For vc_cons */
 
                   MODULE_DESCRIPTION("Example module illustrating the use of Keyboard LEDs.");
-                  MODULE_AUTHOR("Daniele Paolo Scarpazza");
-                  MODULE_LICENSE("GPL");
 
-                  struct timer_list my_timer;
-                  struct tty_driver *my_driver;
-                  char kbledstatus = 0;
+                  static struct timer_list my_timer;
+                  static struct tty_driver *my_driver;
+                  static unsigned long kbledstatus = 0;
 
-                  #define BLINK_DELAY   HZ/5
-                  #define ALL_LEDS_ON   0x07
-                  #define RESTORE_LEDS  0xFF
+                  #define BLINK_DELAY HZ / 5
+                  #define ALL_LEDS_ON 0x07
+                  #define RESTORE_LEDS 0xFF
 
-                  /*
-                   * Function my_timer_func blinks the keyboard LEDs periodically by invoking
+                  /* Function my_timer_func blinks the keyboard LEDs periodically by invoking
                    * command KDSETLED of ioctl() on the keyboard driver. To learn more on virtual
                    * terminal ioctl operations, please see file:
-                   *     /usr/src/linux/drivers/char/vt_ioctl.c, function vt_ioctl().
+                   *   drivers/tty/vt/vt_ioctl.c, function vt_ioctl().
                    *
                    * The argument to KDSETLED is alternatively set to 7 (thus causing the led
                    * mode to be set to LED_SHOW_IOCTL, and all the leds are lit) and to 0xFF
                    * (any value above 7 switches back the led mode to LED_SHOW_FLAGS, thus
                    * the LEDs reflect the actual keyboard status).  To learn more on this,
-                   * please see file:
-                   *     /usr/src/linux/drivers/char/keyboard.c, function setledstate().
-                   *
+                   * please see file: drivers/tty/vt/keyboard.c, function setledstate().
                    */
-
-                  static void my_timer_func(unsigned long ptr)
+                  static void my_timer_func(struct timer_list *unused)
                   {
-                      unsigned long *pstatus = (unsigned long *)ptr;
-                      struct tty_struct* t = vc_cons[fg_console].d->port.tty;
+                      struct tty_struct *t = vc_cons[fg_console].d->port.tty;
 
-                      if (*pstatus == ALL_LEDS_ON)
-                          *pstatus = RESTORE_LEDS;
+                      if (kbledstatus == ALL_LEDS_ON)
+                          kbledstatus = RESTORE_LEDS;
                       else
-                          *pstatus = ALL_LEDS_ON;
+                          kbledstatus = ALL_LEDS_ON;
 
-                      (my_driver->ops->ioctl) (t, KDSETLED, *pstatus);
+                      (my_driver->ops->ioctl)(t, KDSETLED, kbledstatus);
 
                       my_timer.expires = jiffies + BLINK_DELAY;
                       add_timer(&my_timer);
@@ -4972,19 +4861,16 @@
                       for (i = 0; i < MAX_NR_CONSOLES; i++) {
                           if (!vc_cons[i].d)
                               break;
-                          pr_info("poet_atkm: console[%i/%i] #%i, tty %lx\n", i,
-                                  MAX_NR_CONSOLES, vc_cons[i].d->vc_num,
-                                  (unsigned long)vc_cons[i].d->port.tty);
+                          pr_info("poet_atkm: console[%i/%i] #%i, tty %lx\n", i, MAX_NR_CONSOLES,
+                                  vc_cons[i].d->vc_num, (unsigned long)vc_cons[i].d->port.tty);
                       }
                       pr_info("kbleds: finished scanning consoles\n");
 
                       my_driver = vc_cons[fg_console].d->port.tty->driver;
                       pr_info("kbleds: tty driver magic %x\n", my_driver->magic);
 
-                      /*
-                       * Set up the LED blink timer the first time
-                       */
-                      timer_setup(&my_timer, (void*)&my_timer_func, (unsigned long)&kbledstatus);
+                      /* Set up the LED blink timer the first time. */
+                      timer_setup(&my_timer, my_timer_func, 0);
                       my_timer.expires = jiffies + BLINK_DELAY;
                       add_timer(&my_timer);
 
@@ -4995,12 +4881,14 @@
                   {
                       pr_info("kbleds: unloading...\n");
                       del_timer(&my_timer);
-                      (my_driver->ops->ioctl) (vc_cons[fg_console].d->port.tty,
-                                               KDSETLED, RESTORE_LEDS);
+                      (my_driver->ops->ioctl)(vc_cons[fg_console].d->port.tty, KDSETLED,
+                                              RESTORE_LEDS);
                   }
 
                   module_init(kbleds_init);
                   module_exit(kbleds_cleanup);
+
+                  MODULE_LICENSE("GPL");
 
             If none of the examples in this chapter fit your debugging
             needs there might yet be some other tricks to try. Ever
@@ -5024,10 +4912,10 @@
             code.
 
    .. container:: outline-2
-      :name: outline-container-org6435c32
+      :name: outline-container-org7e4816c
 
       .. rubric:: 14. Scheduling Tasks
-         :name: org6435c32
+         :name: org7e4816c
 
       .. container:: outline-text-2
          :name: text-14
@@ -5039,10 +4927,10 @@
          better suited to running multiple things in a sequence.
 
       .. container:: outline-3
-         :name: outline-container-org369ed2d
+         :name: outline-container-org1d9251e
 
          .. rubric:: 14.1. Tasklets
-            :name: org369ed2d
+            :name: org1d9251e
 
          .. container:: outline-text-3
             :name: text-14-1
@@ -5103,10 +4991,10 @@
                   Example tasklet ends
 
       .. container:: outline-3
-         :name: outline-container-orgecedcee
+         :name: outline-container-orgf87ea41
 
          .. rubric:: 14.2. Work queues
-            :name: orgecedcee
+            :name: orgf87ea41
 
          .. container:: outline-text-3
             :name: text-14-2
@@ -5150,19 +5038,19 @@
                   MODULE_DESCRIPTION("Workqueue example");
 
    .. container:: outline-2
-      :name: outline-container-org16ea710
+      :name: outline-container-org0f9ed49
 
       .. rubric:: 15. Interrupt Handlers
-         :name: org16ea710
+         :name: org0f9ed49
 
       .. container:: outline-text-2
          :name: text-15
 
       .. container:: outline-3
-         :name: outline-container-org4c00e67
+         :name: outline-container-org5abaed1
 
          .. rubric:: 15.1. Interrupt Handlers
-            :name: org4c00e67
+            :name: org5abaed1
 
          .. container:: outline-text-3
             :name: text-15-1
@@ -5246,10 +5134,10 @@
             willing to share.
 
       .. container:: outline-3
-         :name: outline-container-orgbe49b1f
+         :name: outline-container-orgb4b2786
 
          .. rubric:: 15.2. Detecting button presses
-            :name: orgbe49b1f
+            :name: orgb4b2786
 
          .. container:: outline-text-3
             :name: text-15-2
@@ -5425,10 +5313,10 @@
                   MODULE_DESCRIPTION("Handle some GPIO interrupts");
 
       .. container:: outline-3
-         :name: outline-container-org47ce5d0
+         :name: outline-container-orgadd8d56
 
          .. rubric:: 15.3. Bottom Half
-            :name: org47ce5d0
+            :name: orgadd8d56
 
          .. container:: outline-text-3
             :name: text-15-3
@@ -5613,10 +5501,10 @@
                   MODULE_DESCRIPTION("Interrupt with top and bottom half");
 
    .. container:: outline-2
-      :name: outline-container-orga546dae
+      :name: outline-container-org9be687c
 
       .. rubric:: 16. Crypto
-         :name: orga546dae
+         :name: org9be687c
 
       .. container:: outline-text-2
          :name: text-16
@@ -5631,10 +5519,10 @@
          functions.
 
       .. container:: outline-3
-         :name: outline-container-orgb7a2f3f
+         :name: outline-container-org510ee5c
 
          .. rubric:: 16.1. Hash functions
-            :name: orgb7a2f3f
+            :name: org510ee5c
 
          .. container:: outline-text-3
             :name: text-16-1
@@ -5733,10 +5621,10 @@
                   sudo rmmod cryptosha256
 
       .. container:: outline-3
-         :name: outline-container-org0cfee26
+         :name: outline-container-org2de6846
 
          .. rubric:: 16.2. Symmetric key encryption
-            :name: org0cfee26
+            :name: org2de6846
 
          .. container:: outline-text-3
             :name: text-16-2
@@ -5949,10 +5837,10 @@
                   MODULE_LICENSE("GPL");
 
    .. container:: outline-2
-      :name: outline-container-orgc0998e8
+      :name: outline-container-org72d95fa
 
       .. rubric:: 17. Standardising the interfaces: The Device Model
-         :name: orgc0998e8
+         :name: org72d95fa
 
       .. container:: outline-text-2
          :name: text-17
@@ -6067,19 +5955,19 @@
                module_exit(devicemodel_exit);
 
    .. container:: outline-2
-      :name: outline-container-org85ac10f
+      :name: outline-container-orga641b8f
 
       .. rubric:: 18. Optimisations
-         :name: org85ac10f
+         :name: orga641b8f
 
       .. container:: outline-text-2
          :name: text-18
 
       .. container:: outline-3
-         :name: outline-container-orgbc29856
+         :name: outline-container-org954dc6c
 
          .. rubric:: 18.1. Likely and Unlikely conditions
-            :name: orgbc29856
+            :name: org954dc6c
 
          .. container:: outline-text-3
             :name: text-18-1
@@ -6113,10 +6001,10 @@
             if you use the *likely* macro.
 
    .. container:: outline-2
-      :name: outline-container-org73aac70
+      :name: outline-container-org2ff66d3
 
       .. rubric:: 19. Common Pitfalls
-         :name: org73aac70
+         :name: org2ff66d3
 
       .. container:: outline-text-2
          :name: text-19
@@ -6128,10 +6016,10 @@
          paid for your copy of the book.
 
       .. container:: outline-3
-         :name: outline-container-orgb6b4a5c
+         :name: outline-container-org86c7073
 
          .. rubric:: 19.1. Using standard libraries
-            :name: orgb6b4a5c
+            :name: org86c7073
 
          .. container:: outline-text-3
             :name: text-19-1
@@ -6141,10 +6029,10 @@
             /proc/kallsyms.
 
       .. container:: outline-3
-         :name: outline-container-org941503c
+         :name: outline-container-orgba6e600
 
          .. rubric:: 19.2. Disabling interrupts
-            :name: org941503c
+            :name: orgba6e600
 
          .. container:: outline-text-3
             :name: text-19-2
@@ -6154,10 +6042,10 @@
             stuck and you'll have to power it off.
 
       .. container:: outline-3
-         :name: outline-container-orgaeeefa9
+         :name: outline-container-org59ad298
 
          .. rubric:: 19.3. Sticking your head inside a large carnivore
-            :name: orgaeeefa9
+            :name: org59ad298
 
          .. container:: outline-text-3
             :name: text-19-3
@@ -6166,10 +6054,10 @@
             I will anyway, just in case.
 
    .. container:: outline-2
-      :name: outline-container-orgf82b901
+      :name: outline-container-org6363726
 
       .. rubric:: 20. Where To Go From Here?
-         :name: orgf82b901
+         :name: org6363726
 
       .. container:: outline-text-2
          :name: text-20
@@ -6220,6 +6108,6 @@
 
    Author: Peter Jay Salzman, Michael Burian, Ori Pomerantz, Bob Mottram
 
-   Created: 2021-09-18 Sat 23:07
+   Created: 2021-09-18 Sat 23:20
 
    `Validate <https://validator.w3.org/check?uri=referer>`__
