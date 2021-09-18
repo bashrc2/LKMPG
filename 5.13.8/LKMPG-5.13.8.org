@@ -1478,7 +1478,7 @@ MODULE_LICENSE("GPL");
 
 If you want more information, you can read this web page:
 
-  * [[http://lwn.net/Articles/22355/]]
+  * [[https://lwn.net/Articles/22355/]]
 
   * [[https://kernelnewbies.org/Documents/SeqFileHowTo]]
 
