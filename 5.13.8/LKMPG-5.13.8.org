@@ -610,7 +610,7 @@ HOSTCC  scripts/kallsyms
 CC      scripts/empty.o
 #+END_SRC
 
-If you do not desire to actually compile the kernel, you can interrupt the build process (CTRL-C) just after the SPLIT line, because at that time, the files you need will be are ready. Now you can turn back to the directory of your module and compile it: It will be built exactly according your current kernel settings, and it will load into it without any errors.
+If you do not desire to actually compile the kernel, you can interrupt the build process (CTRL-C) just after the SPLIT line, because at that time, the files you need will be are ready. Now you can turn back to the directory of your module and compile it: It will be built exactly according to your current kernel settings, and it will load into it without any errors.
 
 * Preliminaries
 ** How modules begin and end
@@ -3728,6 +3728,7 @@ MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Bob Mottram");
 MODULE_DESCRIPTION("Interrupt with top and bottom half");
 #+end_src
+
 * Crypto
 At the dawn of the internet everybody trusted everybody completely...but that didn't work out so well. When this guide was originally written it was a more innocent era in which almost nobody actually gave a damn about crypto - least of all kernel developers. That's certainly no longer the case now. To handle crypto stuff the kernel has its own API enabling common methods of encryption, decryption and your favourite hash functions.
 
@@ -3816,6 +3817,7 @@ Finally, remove the test module:
 #+BEGIN_SRC sh
 sudo rmmod cryptosha256
 #+END_SRC
+
 ** Symmetric key encryption
 Here is an example of symmetrically encrypting a string using the AES algorithm and a password.
 
@@ -4020,6 +4022,7 @@ MODULE_AUTHOR("Bob Mottram");
 MODULE_DESCRIPTION("Symmetric key encryption example");
 MODULE_LICENSE("GPL");
 #+end_src
+
 * Standardising the interfaces: The Device Model
 Up to this point we've seen all kinds of modules doing all kinds of things, but there was no consistency in their interfaces with the rest of the kernel. To impose some consistency such that there is at minimum a standardised way to start, suspend and resume a device a device model was added. An example is show below, and you can use this as a template to add your own suspend, resume or other interface functions.
 
@@ -4137,6 +4140,7 @@ if (unlikely(!bvl)) {
 #+end_src
 
 When the /unlikely/ macro is used the compiler alters its machine instruction output so that it continues along the false branch and only jumps if the condition is true. That avoids flushing the processor pipeline. The opposite happens if you use the /likely/ macro.
+
 * Common Pitfalls
 Before I send you on your way to go out into the world and write kernel modules, there are a few things I need to warn you about. If I fail to warn you and something bad happens, please report the problem to me for a full refund of the amount I was paid for your copy of the book.
 
