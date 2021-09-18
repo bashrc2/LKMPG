@@ -592,7 +592,7 @@ SUBLEVEL = 4
 EXTRAVERSION = -1.358custom
 #+END_SRC
 
-In this case, you need to restore the value of symbol *EXTRAVERSION* to -1.358. We suggest to keep a backup copy of the makefile used to compile your kernel available in */lib/modules/5.13.8-1.358/build*. A simple *cp /lib/modules/`uname-r`/build/Makefile /usr/src/linux-`uname -r`* should suffice. Additionally, if you already started a kernel build with the previous (wrong) Makefile, you should also rerun make, or directly modify symbol UTS_RELEASE in file */usr/src/linux-5.13.8/include/linux/version.h* according to contents of file */lib/modules/5.13.8/build/include/linux/version.h*, or overwrite the latter with the first.
+In this case, you need to restore the value of symbol *EXTRAVERSION* to -1.358. We suggest to keep a backup copy of the makefile used to compile your kernel available in */lib/modules/5.13.8-1.358/build*. A simple *cp /lib/modules/`uname -r`/build/Makefile /usr/src/linux-`uname -r`* should suffice. Additionally, if you already started a kernel build with the previous (wrong) Makefile, you should also rerun make, or directly modify symbol UTS_RELEASE in file */usr/src/linux-5.13.8/include/linux/version.h* according to contents of file */lib/modules/5.13.8/build/include/linux/version.h*, or overwrite the latter with the first.
 
 Now, please run make to update configuration and version headers and objects:
 
