@@ -708,50 +708,56 @@ brw-rw---- 1 root disk 8, 16 Jan  3 09:02 /dev/sdb
 By now you can look at these two device files and know instantly that they are block devices and are handled by same driver (block major 8). Sometimes two device files with the same major but different minor number can actually represent the same piece of physical hardware. So just be aware that the word "hardware" in our discussion can mean something very abstract.
 
 * Character Device drivers
-** The proc_ops Structure
-The proc_ops structure is defined in */usr/include/linux/fs.h*, and holds pointers to functions defined by the driver that perform various operations on the device. Each field of the structure corresponds to the address of some function defined by the driver to handle a requested operation.
+** The file_operations Structure
+The file_operations structure is defined in */usr/include/linux/fs.h*, and holds pointers to functions defined by the driver that perform various operations on the device. Each field of the structure corresponds to the address of some function defined by the driver to handle a requested operation.
 
-For example, every character driver needs to define a function that reads from the device. The proc_ops structure holds the address of the module's function that performs that operation. Here is what the definition looks like for kernel 3.0:
+For example, every character driver needs to define a function that reads from the device. The file_operations structure holds the address of the module's function that performs that operation. Here is what the definition looks like for kernel 5.4:
 
 #+BEGIN_SRC c
-struct proc_ops {
-    struct module *owner;
-    loff_t (*llseek) (struct file *, loff_t, int);
-    ssize_t (*read) (struct file *, char __user *, size_t, loff_t *);
-    ssize_t (*write) (struct file *, const char __user *, size_t, loff_t *);
-    ssize_t (*aio_read) (struct kiocb *, const struct iovec *, unsigned long, loff_t);
-    ssize_t (*aio_write) (struct kiocb *, const struct iovec *, unsigned long, loff_t);
-    int (*iterate) (struct file *, struct dir_context *);
-    unsigned int (*poll) (struct file *, struct poll_table_struct *);
-    long (*unlocked_ioctl) (struct file *, unsigned int, unsigned long);
-    long (*compat_ioctl) (struct file *, unsigned int, unsigned long);
-    int (*mmap) (struct file *, struct vm_area_struct *);
-    int (*open) (struct inode *, struct file *);
-    int (*flush) (struct file *, fl_owner_t id);
-    int (*release) (struct inode *, struct file *);
-    int (*fsync) (struct file *, loff_t, loff_t, int datasync);
-    int (*aio_fsync) (struct kiocb *, int datasync);
-    int (*fasync) (int, struct file *, int);
-    int (*lock) (struct file *, int, struct file_lock *);
-    ssize_t (*sendpage) (struct file *, struct page *, int, size_t, loff_t *, int);
-    unsigned long (*get_unmapped_area)(struct file *, unsigned long, unsigned long, unsigned long, unsigned long);
-    int (*check_flags)(int);
-    int (*flock) (struct file *, int, struct file_lock *);
-    ssize_t (*splice_write)(struct pipe_inode_info *, struct file *, loff_t *, size_t, unsigned int);
-    ssize_t (*splice_read)(struct file *, loff_t *, struct pipe_inode_info *, size_t, unsigned int);
-    int (*setlease)(struct file *, long, struct file_lock **);
-    long (*fallocate)(struct file *file, int mode, loff_t offset,
-              loff_t len);
-    int (*show_fdinfo)(struct seq_file *m, struct file *f);
-};
+      struct file_operations {
+	  struct module *owner;
+	  loff_t (*llseek) (struct file *, loff_t, int);
+	  ssize_t (*read) (struct file *, char __user *, size_t, loff_t *);
+	  ssize_t (*write) (struct file *, const char __user *, size_t, loff_t *);
+	  ssize_t (*aio_read) (struct kiocb *, const struct iovec *, unsigned long, loff_t);
+	  ssize_t (*aio_write) (struct kiocb *, const struct iovec *, unsigned long, loff_t);
+	  int (*iterate) (struct file *, struct dir_context *);
+	  unsigned int (*poll) (struct file *, struct poll_table_struct *);
+	  long (*unlocked_ioctl) (struct file *, unsigned int, unsigned long);
+	  long (*compat_ioctl) (struct file *, unsigned int, unsigned long);
+	  int (*mmap) (struct file *, struct vm_area_struct *);
+	  int (*open) (struct inode *, struct file *);
+	  int (*flush) (struct file *, fl_owner_t id);
+	  int (*release) (struct inode *, struct file *);
+	  int (*fsync) (struct file *, loff_t, loff_t, int datasync);
+	  int (*aio_fsync) (struct kiocb *, int datasync);
+	  int (*fasync) (int, struct file *, int);
+	  int (*lock) (struct file *, int, struct file_lock *);
+	  ssize_t (*sendpage) (struct file *, struct page *, int, size_t, loff_t *, int);
+	  unsigned long (*get_unmapped_area)(struct file *, unsigned long, unsigned long, unsigned long, unsigned long);
+	  int (*check_flags)(int);
+	  int (*flock) (struct file *, int, struct file_lock *);
+	  ssize_t (*splice_write)(struct pipe_inode_info *, struct file *, loff_t *, size_t, unsigned int);
+	  ssize_t (*splice_read)(struct file *, loff_t *, struct pipe_inode_info *, size_t, unsigned int);
+	  int (*setlease)(struct file *, long, struct file_lock **, void **);
+	  long (*fallocate)(struct file *file, int mode, loff_t offset,
+			    loff_t len);
+          void (*show_fdinfo)(struct seq_file *m, struct file *f);
+          ssize_t (*copy_file_range)(struct file *, loff_t, struct file *,
+                                     loff_t, size_t, unsigned int);
+          loff_t (*remap_file_range)(struct file *file_in, loff_t pos_in,
+	                             struct file *file_out, loff_t pos_out,
+                                     loff_t len, unsigned int remap_flags);
+          int (*fadvise)(struct file *, loff_t, loff_t, int);
+      } __randomize_layout;
 #+END_SRC
 
-Some operations are not implemented by a driver. For example, a driver that handles a video card won't need to read from a directory structure. The corresponding entries in the proc_ops structure should be set to NULL.
+Some operations are not implemented by a driver. For example, a driver that handles a video card won't need to read from a directory structure. The corresponding entries in the file_operations structure should be set to NULL.
 
 There is a gcc extension that makes assigning to this structure more convenient. You'll see it in modern drivers, and may catch you by surprise. This is what the new way of assigning to the structure looks like:
 
 #+BEGIN_SRC c
-struct proc_ops fops = {
+struct file_operations fops = {
         proc_read: device_read,
         proc_write: device_write,
         proc_open: device_open,
@@ -762,17 +768,17 @@ struct proc_ops fops = {
 However, there's also a C99 way of assigning to elements of a structure, and this is definitely preferred over using the GNU extension. The version of gcc the author used when writing this, 2.95, supports the new C99 syntax. You should use this syntax in case someone wants to port your driver. It will help with compatibility:
 
 #+BEGIN_SRC c
-struct proc_ops fops = {
-        .proc_read = device_read,
-        .proc_write = device_write,
-        .proc_open = device_open,
-        .proc_release = device_release
+struct file_operations fops = {
+        .read = device_read,
+        .write = device_write,
+        .open = device_open,
+        .release = device_release
 };
 #+END_SRC
 
 The meaning is clear, and you should be aware that any member of the structure which you don't explicitly assign will be initialized to NULL by gcc.
 
-An instance of struct proc_ops containing pointers to functions that are used to implement read, write, open, ... syscalls is commonly named fops.
+An instance of struct file_operations containing pointers to functions that are used to implement read, write, open, ... syscalls is commonly named fops.
 
 ** The file structure
 
@@ -788,10 +794,10 @@ As discussed earlier, char devices are accessed through device files, usually lo
 Adding a driver to your system means registering it with the kernel. This is synonymous with assigning it a major number during the module's initialization. You do this by using the register_chrdev function, defined by linux/fs.h.
 
 #+BEGIN_SRC c
-int register_chrdev(unsigned int major, const char *name, struct proc_ops *fops);
+int register_chrdev(unsigned int major, const char *name, struct file_operations *fops);
 #+END_SRC
 
-where unsigned int major is the major number you want to request, /const char *name/ is the name of the device as it'll appear in */proc/devices* and /struct proc_ops *fops/ is a pointer to the proc_ops table for your driver. A negative return value means the registration failed. Note that we didn't pass the minor number to register_chrdev. That's because the kernel doesn't care about the minor number; only our driver uses it.
+where unsigned int major is the major number you want to request, /const char *name/ is the name of the device as it'll appear in */proc/devices* and /struct file_operations *fops/ is a pointer to the file_operations table for your driver. A negative return value means the registration failed. Note that we didn't pass the minor number to register_chrdev. That's because the kernel doesn't care about the minor number; only our driver uses it.
 
 Now the question is, how do you get a major number without hijacking one that's already in use? The easiest way would be to look through Documentation /devices.txt and pick an unused one. That's a bad way of doing things because you'll never be sure if the number you picked will be assigned later. The answer is that you can ask the kernel to assign you a dynamic major number.
 
@@ -1061,8 +1067,8 @@ ssize_t procfile_read(struct file *filePointer,char *buffer,
 
 }
 
-static const struct proc_ops proc_file_fops = {
-    .proc_read  = procfile_read,
+static const struct file_operations proc_file_fops = {
+    .read  = procfile_read,
 };
 
 int init_module()
@@ -1161,9 +1167,9 @@ static ssize_t procfile_write(struct file *file, const char *buff,
     return procfs_buffer_size;
 }
 
-static const struct proc_ops proc_file_fops = {
-    .proc_read  = procfile_read,
-    .proc_write  = procfile_write,
+static const struct file_operations proc_file_fops = {
+    .read  = procfile_read,
+    .write  = procfile_write,
 };
 
 /**
@@ -1199,11 +1205,11 @@ MODULE_LICENSE("GPL");
 ** Manage /proc file with standard filesystem
 We have seen how to read and write a /proc file with the /proc interface. But it's also possible to manage /proc file with inodes. The main concern is to use advanced functions, like permissions.
 
-In Linux, there is a standard mechanism for file system registration. Since every file system has to have its own functions to handle inode and file operations, there is a special structure to hold pointers to all those functions, struct *inode_operations*, which includes a pointer to struct proc_ops.
+In Linux, there is a standard mechanism for file system registration. Since every file system has to have its own functions to handle inode and file operations, there is a special structure to hold pointers to all those functions, struct *inode_operations*, which includes a pointer to struct file_operations.
 
 The difference between file and inode operations is that file operations deal with the file itself whereas inode operations deal with ways of referencing the file, such as creating links to it.
 
-In /proc, whenever we register a new file, we're allowed to specify which struct inode_operations will be used to access to it. This is the mechanism we use, a struct inode_operations which includes a pointer to a struct proc_ops which includes pointers to our procfs_read and procfs_write functions.
+In /proc, whenever we register a new file, we're allowed to specify which struct inode_operations will be used to access to it. This is the mechanism we use, a struct inode_operations which includes a pointer to a struct file_operations which includes pointers to our procfs_read and procfs_write functions.
 
 Another interesting point here is the module_permission function. This function is called whenever a process tries to do something with the /proc file, and it can decide whether to allow access or not. Right now it is only based on the operation and the uid of the current user (as available in current, a pointer to a structure which includes information on the currently running process), but it could be based on anything we like, such as what other processes are doing with the same file, the time of day, or the last input we received.
 
@@ -1266,11 +1272,11 @@ int procfs_close(struct inode *inode, struct file *file)
     return 0;
 }
 
-static struct proc_ops File_Ops_4_Our_Proc_File = {
-    .proc_read       = procfs_read,
-    .proc_write      = procfs_write,
-    .proc_open       = procfs_open,
-    .proc_release    = procfs_close,
+static struct file_operations File_Ops_4_Our_Proc_File = {
+    .read       = procfs_read,
+    .write      = procfs_write,
+    .open       = procfs_open,
+    .release    = procfs_close,
 };
 
 int init_module()
@@ -1312,7 +1318,7 @@ BE CARREFUL: when a sequence is finished, another one starts. That means that at
 #+attr_html: :width 50% :height 10% :align center
 [[file:img/seq_file.png]]
                                                                              |
-Seq_file provides basic functions for proc_ops, as seq_read, seq_lseek, and some others. But nothing to write in the /proc file. Of course, you can still use the same way as in the previous example.
+Seq_file provides basic functions for file_operations, as seq_read, seq_lseek, and some others. But nothing to write in the /proc file. Of course, you can still use the same way as in the previous example.
 
 #+BEGIN_SRC c :file procfs4.c
 /**
@@ -1412,11 +1418,11 @@ static int my_open(struct inode *inode, struct file *file)
  * This structure gather "function" that manage the /proc file
  *
  */
-static struct proc_ops my_file_ops = {
-    .proc_open    = my_open,
-    .proc_read    = seq_read,
+static struct file_operations my_file_ops = {
+    .open    = my_open,
+    .read    = seq_read,
     .proc_lseek  = seq_lseek,
-    .proc_release = seq_release
+    .release = seq_release
 };
 
 
@@ -2605,11 +2611,11 @@ int module_close(struct inode *inode, struct file *file)
  * the functions called when somebody tries to do something to our file. NULL
  * means we don't want to deal with something.
  */
-static struct proc_ops File_Ops_4_Our_Proc_File = {
-    .proc_read = module_output,  /* "read" from the file */
-    .proc_write = module_input,  /* "write" to the file */
-    .proc_open = module_open,    /* called when the /proc file is opened */
-    .proc_release = module_close,        /* called when it's closed */
+static struct file_operations File_Ops_4_Our_Proc_File = {
+    .read = module_output,   /* "read" from the file */
+    .write = module_input,   /* "write" to the file */
+    .open = module_open,     /* called when the /proc file is opened */
+    .release = module_close, /* called when it's closed */
 };
 
 /*
