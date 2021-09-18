@@ -1,5 +1,5 @@
 [[#+TITLE: The Linux Kernel Module Programming Guide
-#+AUTHOR: Peter Jay Salzman, Michael Burian, Ori Pomerantz, Bob Mottram
+#+AUTHOR: Peter Jay Salzman, Michael Burian, Ori Pomerantz, Bob Mottram, Jim Huang
 #+KEYWORDS: linux, kernel, kernel module, kernel programming
 #+DESCRIPTION: How to make kernel modules for Linux
 #+OPTIONS: ^:nil
@@ -18,7 +18,7 @@ If you publish or distribute this book commercially, donations, royalties, and/o
 
 ** Authorship
 
-The Linux Kernel Module Programming Guide was originally written for the 2.2 kernels by Ori Pomerantz. Eventually, Ori no longer had time to maintain the document. After all, the Linux kernel is a fast moving target. Peter Jay Salzman took over maintenance and updated it for the 2.4 kernels. Eventually, Peter no longer had time to follow developments with the 2.6 kernel, so Michael Burian became a co-maintainer to update the document for the 2.6 kernels.  Bob Mottram updated the examples for 3.8 and later kernels, added the sysfs chapter and modified or updated other chapters.
+The Linux Kernel Module Programming Guide was originally written for the 2.2 kernels by Ori Pomerantz. Eventually, Ori no longer had time to maintain the document. After all, the Linux kernel is a fast moving target. Peter Jay Salzman took over maintenance and updated it for the 2.4 kernels. Eventually, Peter no longer had time to follow developments with the 2.6 kernel, so Michael Burian became a co-maintainer to update the document for the 2.6 kernels.  Bob Mottram updated the examples for 3.8 and later kernels, added the sysfs chapter and modified or updated other chapters. Jim Huang upgraded some examples to recent kernel versions.
 
 ** Versioning and Notes
 
