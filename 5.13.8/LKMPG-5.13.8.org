@@ -799,7 +799,7 @@ Adding a driver to your system means registering it with the kernel. This is syn
 int register_chrdev(unsigned int major, const char *name, struct file_operations *fops);
 #+END_SRC
 
-where unsigned int major is the major number you want to request, /const char *name/ is the name of the device as it'll appear in */proc/devices* and /struct file_operations *fops/ is a pointer to the file_operations table for your driver. A negative return value means the registration failed. Note that we didn't pass the minor number to register_chrdev. That's because the kernel doesn't care about the minor number; only our driver uses it.
+Where unsigned int major is the major number you want to request, /const char *name/ is the name of the device as it'll appear in */proc/devices* and /struct file_operations *fops/ is a pointer to the file_operations table for your driver. A negative return value means the registration failed. Note that we didn't pass the minor number to register_chrdev. That's because the kernel doesn't care about the minor number; only our driver uses it.
 
 Now the question is, how do you get a major number without hijacking one that's already in use? The easiest way would be to look through Documentation /devices.txt and pick an unused one. That's a bad way of doing things because you'll never be sure if the number you picked will be assigned later. The answer is that you can ask the kernel to assign you a dynamic major number.
 
