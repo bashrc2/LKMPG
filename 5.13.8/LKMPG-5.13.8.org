@@ -3640,10 +3640,10 @@ static irqreturn_t button_top_half(int irq, void *ident)
    high priority activity */
 static irqreturn_t button_bottom_half(int irq, void *ident)
 { 
-    pr_info("Bottom half tasklet starts\n");
+    pr_info("Bottom half task starts\n");
     /* do something which takes a while */
     mdelay(500);
-    pr_info("Bottom half tasklet ends\n");
+    pr_info("Bottom half task ends\n");
     return IRQ_HANDLED;
 }
 
