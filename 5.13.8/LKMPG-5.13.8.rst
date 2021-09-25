@@ -10,116 +10,116 @@
       .. container::
          :name: text-table-of-contents
 
-         -  `1. Introduction <#org9520c69>`__
+         -  `1. Introduction <#org194f2d8>`__
 
-            -  `1.1. Authorship <#org577a07e>`__
-            -  `1.2. Versioning and Notes <#org1a1c7c6>`__
-            -  `1.3. Acknowledgements <#org41d391a>`__
-            -  `1.4. What Is A Kernel Module? <#orgaa937c0>`__
-            -  `1.5. Installing some Dependencies <#org56a3846>`__
-            -  `1.6. What Modules are in my Kernel? <#org938f8ea>`__
+            -  `1.1. Authorship <#org90dd899>`__
+            -  `1.2. Versioning and Notes <#orgeb71dab>`__
+            -  `1.3. Acknowledgements <#org94f66b2>`__
+            -  `1.4. What Is A Kernel Module? <#orgfd70251>`__
+            -  `1.5. Installing some Dependencies <#orgfed9bd3>`__
+            -  `1.6. What Modules are in my Kernel? <#orgb3c5a72>`__
             -  `1.7. Do I need to download and compile the
-               kernel? <#org1cf64ef>`__
-            -  `1.8. Before We Begin <#orgc4eea93>`__
+               kernel? <#org57b3721>`__
+            -  `1.8. Before We Begin <#org892d56a>`__
 
-         -  `2. Headers <#orgefe361b>`__
-         -  `3. Examples <#org40ac5e3>`__
-         -  `4. Hello World <#org0ed2420>`__
+         -  `2. Headers <#org2d6ef39>`__
+         -  `3. Examples <#org396a3cd>`__
+         -  `4. Hello World <#orgca231bf>`__
 
-            -  `4.1. The Simplest Module <#orgf35b44c>`__
-            -  `4.2. Hello and Goodbye <#org4580402>`__
-            -  `4.3. The \__init and \__exit Macros <#org110cf38>`__
-            -  `4.4. Licensing and Module Documentation <#org502d0da>`__
+            -  `4.1. The Simplest Module <#org3b7715a>`__
+            -  `4.2. Hello and Goodbye <#orgd8066a0>`__
+            -  `4.3. The \__init and \__exit Macros <#org070e5a7>`__
+            -  `4.4. Licensing and Module Documentation <#orgc586a2b>`__
             -  `4.5. Passing Command Line Arguments to a
-               Module <#org78b67a1>`__
-            -  `4.6. Modules Spanning Multiple Files <#orgebcd705>`__
+               Module <#org89bcb61>`__
+            -  `4.6. Modules Spanning Multiple Files <#orgbad5ebe>`__
             -  `4.7. Building modules for a precompiled
-               kernel <#org3565060>`__
+               kernel <#orgc48e9a6>`__
 
-         -  `5. Preliminaries <#orgfcc10f0>`__
+         -  `5. Preliminaries <#orgdd139d7>`__
 
-            -  `5.1. How modules begin and end <#org20d1c3f>`__
-            -  `5.2. Functions available to modules <#org40c7e70>`__
-            -  `5.3. User Space vs Kernel Space <#orgb41dbed>`__
-            -  `5.4. Name Space <#orgc5f54e1>`__
-            -  `5.5. Code space <#org748dc77>`__
-            -  `5.6. Device Drivers <#org4e2d8b4>`__
+            -  `5.1. How modules begin and end <#orgc95c587>`__
+            -  `5.2. Functions available to modules <#orgc4bd286>`__
+            -  `5.3. User Space vs Kernel Space <#org4f9d0af>`__
+            -  `5.4. Name Space <#orga846991>`__
+            -  `5.5. Code space <#org38a0676>`__
+            -  `5.6. Device Drivers <#org4cee785>`__
 
-         -  `6. Character Device drivers <#orgb73a917>`__
+         -  `6. Character Device drivers <#orga286613>`__
 
-            -  `6.1. The file_operations Structure <#org7f8b300>`__
-            -  `6.2. The file structure <#org593e82d>`__
-            -  `6.3. Registering A Device <#org4ad4f96>`__
-            -  `6.4. Unregistering A Device <#orga331533>`__
-            -  `6.5. chardev.c <#org2a531c4>`__
+            -  `6.1. The file_operations Structure <#orgd5ca862>`__
+            -  `6.2. The file structure <#orgc2f7def>`__
+            -  `6.3. Registering A Device <#org50162ec>`__
+            -  `6.4. Unregistering A Device <#org7c8bcd5>`__
+            -  `6.5. chardev.c <#orgbdaa8b5>`__
             -  `6.6. Writing Modules for Multiple Kernel
-               Versions <#org3c4e7e8>`__
+               Versions <#org1bba99c>`__
 
-         -  `7. The /proc File System <#org9e7a28e>`__
+         -  `7. The /proc File System <#orgf781f23>`__
 
-            -  `7.1. Read and Write a /proc File <#orgb31f7d2>`__
+            -  `7.1. Read and Write a /proc File <#org756306c>`__
             -  `7.2. Manage /proc file with standard
-               filesystem <#orge6c4e16>`__
-            -  `7.3. Manage /proc file with seq_file <#orgd5a3eea>`__
+               filesystem <#org1405acd>`__
+            -  `7.3. Manage /proc file with seq_file <#org4367a59>`__
 
-         -  `8. sysfs: Interacting with your module <#orgd3bde32>`__
-         -  `9. Talking To Device Files <#org766c4f9>`__
-         -  `10. System Calls <#orgc660355>`__
-         -  `11. Blocking Processes and threads <#org5432247>`__
+         -  `8. sysfs: Interacting with your module <#orge159a4e>`__
+         -  `9. Talking To Device Files <#org4e9bb4d>`__
+         -  `10. System Calls <#org1217179>`__
+         -  `11. Blocking Processes and threads <#orgd98c455>`__
 
-            -  `11.1. Sleep <#org76bc503>`__
-            -  `11.2. Completions <#org256fb98>`__
+            -  `11.1. Sleep <#orgecc7795>`__
+            -  `11.2. Completions <#orgf9801b3>`__
 
-         -  `12. Avoiding Collisions and Deadlocks <#org6c395db>`__
+         -  `12. Avoiding Collisions and Deadlocks <#org667e555>`__
 
-            -  `12.1. Mutex <#orgf8c225b>`__
-            -  `12.2. Spinlocks <#org3271226>`__
-            -  `12.3. Read and write locks <#orgcd3df25>`__
-            -  `12.4. Atomic operations <#orga1d9003>`__
+            -  `12.1. Mutex <#org11921e0>`__
+            -  `12.2. Spinlocks <#orgd7c07d8>`__
+            -  `12.3. Read and write locks <#org18cdf69>`__
+            -  `12.4. Atomic operations <#org217ad6d>`__
 
-         -  `13. Replacing Print Macros <#org47d56e4>`__
+         -  `13. Replacing Print Macros <#org036ebea>`__
 
-            -  `13.1. Replacement <#org779e92a>`__
-            -  `13.2. Flashing keyboard LEDs <#org4387fb7>`__
+            -  `13.1. Replacement <#org7536455>`__
+            -  `13.2. Flashing keyboard LEDs <#org092cf3f>`__
 
-         -  `14. Scheduling Tasks <#orgbf2707a>`__
+         -  `14. Scheduling Tasks <#org10f080a>`__
 
-            -  `14.1. Tasklets <#orgffd966c>`__
-            -  `14.2. Work queues <#org534ddd1>`__
+            -  `14.1. Tasklets <#org35468cd>`__
+            -  `14.2. Work queues <#org911f173>`__
 
-         -  `15. Interrupt Handlers <#org651dc74>`__
+         -  `15. Interrupt Handlers <#orgb31076d>`__
 
-            -  `15.1. Interrupt Handlers <#orgf95be5d>`__
-            -  `15.2. Detecting button presses <#org436751c>`__
-            -  `15.3. Bottom Half <#orgefa8364>`__
+            -  `15.1. Interrupt Handlers <#org1af4954>`__
+            -  `15.2. Detecting button presses <#org413c4bd>`__
+            -  `15.3. Bottom Half <#org80a8238>`__
 
-         -  `16. Crypto <#orgaad496d>`__
+         -  `16. Crypto <#org2aa6048>`__
 
-            -  `16.1. Hash functions <#org4280294>`__
-            -  `16.2. Symmetric key encryption <#org6e5dea7>`__
+            -  `16.1. Hash functions <#org42fe422>`__
+            -  `16.2. Symmetric key encryption <#org790b2de>`__
 
          -  `17. Standardising the interfaces: The Device
-            Model <#org03fc3ab>`__
-         -  `18. Optimisations <#org2d44c6b>`__
+            Model <#org2fa4772>`__
+         -  `18. Optimisations <#org89cca3f>`__
 
-            -  `18.1. Likely and Unlikely conditions <#org4964959>`__
+            -  `18.1. Likely and Unlikely conditions <#org69e0a28>`__
 
-         -  `19. Common Pitfalls <#org31caf57>`__
+         -  `19. Common Pitfalls <#org69891f1>`__
 
-            -  `19.1. Using standard libraries <#org1516009>`__
-            -  `19.2. Disabling interrupts <#org0ac2440>`__
+            -  `19.1. Using standard libraries <#orgcb44dc2>`__
+            -  `19.2. Disabling interrupts <#org57a1c96>`__
             -  `19.3. Sticking your head inside a large
-               carnivore <#org6552dee>`__
+               carnivore <#orgd8a5ade>`__
 
-         -  `20. Where To Go From Here? <#org1fad3af>`__
+         -  `20. Where To Go From Here? <#orgb3a4740>`__
 
    [[#+TITLE: The Linux Kernel Module Programming Guide
 
    .. container:: outline-2
-      :name: outline-container-org9520c69
+      :name: outline-container-org194f2d8
 
       .. rubric:: 1. Introduction
-         :name: org9520c69
+         :name: org194f2d8
 
       .. container:: outline-text-2
          :name: text-1
@@ -158,10 +158,10 @@
          have questions or comments, please contact the address above.
 
       .. container:: outline-3
-         :name: outline-container-org577a07e
+         :name: outline-container-org90dd899
 
          .. rubric:: 1.1. Authorship
-            :name: org577a07e
+            :name: org90dd899
 
          .. container:: outline-text-3
             :name: text-1-1
@@ -180,10 +180,10 @@
             versions.
 
       .. container:: outline-3
-         :name: outline-container-org1a1c7c6
+         :name: outline-container-orgeb71dab
 
          .. rubric:: 1.2. Versioning and Notes
-            :name: org1a1c7c6
+            :name: orgeb71dab
 
          .. container:: outline-text-3
             :name: text-1-2
@@ -202,10 +202,10 @@
             architectures, but I can't promise anything.
 
       .. container:: outline-3
-         :name: outline-container-org41d391a
+         :name: outline-container-org94f66b2
 
          .. rubric:: 1.3. Acknowledgements
-            :name: org41d391a
+            :name: org94f66b2
 
          .. container:: outline-text-3
             :name: text-1-3
@@ -216,10 +216,10 @@
             Bob Mottram and Roman Lakeev.
 
       .. container:: outline-3
-         :name: outline-container-orgaa937c0
+         :name: outline-container-orgfd70251
 
          .. rubric:: 1.4. What Is A Kernel Module?
-            :name: orgaa937c0
+            :name: orgfd70251
 
          .. container:: outline-text-3
             :name: text-1-4
@@ -242,10 +242,10 @@
             the kernel every time we want new functionality.
 
       .. container:: outline-3
-         :name: outline-container-org56a3846
+         :name: outline-container-orgfed9bd3
 
          .. rubric:: 1.5. Installing some Dependencies
-            :name: org56a3846
+            :name: orgfed9bd3
 
          .. container:: outline-text-3
             :name: text-1-5
@@ -271,10 +271,10 @@
                   sudo pacman -S gcc kmod
 
       .. container:: outline-3
-         :name: outline-container-org938f8ea
+         :name: outline-container-orgb3c5a72
 
          .. rubric:: 1.6. What Modules are in my Kernel?
-            :name: org938f8ea
+            :name: orgb3c5a72
 
          .. container:: outline-text-3
             :name: text-1-6
@@ -307,10 +307,10 @@
                   sudo lsmod | grep fat
 
       .. container:: outline-3
-         :name: outline-container-org1cf64ef
+         :name: outline-container-org57b3721
 
          .. rubric:: 1.7. Do I need to download and compile the kernel?
-            :name: org1cf64ef
+            :name: org57b3721
 
          .. container:: outline-text-3
             :name: text-1-7
@@ -322,10 +322,10 @@
             system.
 
       .. container:: outline-3
-         :name: outline-container-orgc4eea93
+         :name: outline-container-org892d56a
 
          .. rubric:: 1.8. Before We Begin
-            :name: orgc4eea93
+            :name: org892d56a
 
          .. container:: outline-text-3
             :name: text-1-8
@@ -370,10 +370,10 @@
             :::
 
    .. container:: outline-2
-      :name: outline-container-orgefe361b
+      :name: outline-container-org2d6ef39
 
       .. rubric:: 2. Headers
-         :name: orgefe361b
+         :name: org2d6ef39
 
       .. container:: outline-text-2
          :name: text-2
@@ -406,10 +406,10 @@
                sudo apt-get install kmod linux-headers-5.13.8-1-amd64
 
    .. container:: outline-2
-      :name: outline-container-org40ac5e3
+      :name: outline-container-org396a3cd
 
       .. rubric:: 3. Examples
-         :name: org40ac5e3
+         :name: org396a3cd
 
       .. container:: outline-text-2
          :name: text-3
@@ -432,19 +432,19 @@
          kernel header files.
 
    .. container:: outline-2
-      :name: outline-container-org0ed2420
+      :name: outline-container-orgca231bf
 
       .. rubric:: 4. Hello World
-         :name: org0ed2420
+         :name: orgca231bf
 
       .. container:: outline-text-2
          :name: text-4
 
       .. container:: outline-3
-         :name: outline-container-orgf35b44c
+         :name: outline-container-org3b7715a
 
          .. rubric:: 4.1. The Simplest Module
-            :name: orgf35b44c
+            :name: org3b7715a
 
          .. container:: outline-text-3
             :name: text-4-1
@@ -658,10 +658,10 @@
             :::
 
       .. container:: outline-3
-         :name: outline-container-org4580402
+         :name: outline-container-orgd8066a0
 
          .. rubric:: 4.2. Hello and Goodbye
-            :name: org4580402
+            :name: orgd8066a0
 
          .. container:: outline-text-3
             :name: text-4-2
@@ -736,10 +736,10 @@
             when you said make menuconfig or something like that.
 
       .. container:: outline-3
-         :name: outline-container-org110cf38
+         :name: outline-container-org070e5a7
 
          .. rubric:: 4.3. The \__init and \__exit Macros
-            :name: org110cf38
+            :name: org070e5a7
 
          .. container:: outline-text-3
             :name: text-4-3
@@ -797,10 +797,10 @@
                   MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-org502d0da
+         :name: outline-container-orgc586a2b
 
          .. rubric:: 4.4. Licensing and Module Documentation
-            :name: org502d0da
+            :name: orgc586a2b
 
          .. container:: outline-text-3
             :name: text-4-4
@@ -856,10 +856,10 @@
                   module_exit(cleanup_hello_4);
 
       .. container:: outline-3
-         :name: outline-container-org78b67a1
+         :name: outline-container-org89bcb61
 
          .. rubric:: 4.5. Passing Command Line Arguments to a Module
-            :name: org78b67a1
+            :name: org89bcb61
 
          .. container:: outline-text-3
             :name: text-4-5
@@ -1029,10 +1029,10 @@
                   hello-5.o: invalid argument syntax for mylong: 'h'
 
       .. container:: outline-3
-         :name: outline-container-orgebcd705
+         :name: outline-container-orgbad5ebe
 
          .. rubric:: 4.6. Modules Spanning Multiple Files
-            :name: orgebcd705
+            :name: orgbad5ebe
 
          .. container:: outline-text-3
             :name: text-4-6
@@ -1112,10 +1112,10 @@
             what object files are part of that module.
 
       .. container:: outline-3
-         :name: outline-container-org3565060
+         :name: outline-container-orgc48e9a6
 
          .. rubric:: 4.7. Building modules for a precompiled kernel
-            :name: org3565060
+            :name: orgc48e9a6
 
          .. container:: outline-text-3
             :name: text-4-7
@@ -1270,19 +1270,19 @@
             any errors.
 
    .. container:: outline-2
-      :name: outline-container-orgfcc10f0
+      :name: outline-container-orgdd139d7
 
       .. rubric:: 5. Preliminaries
-         :name: orgfcc10f0
+         :name: orgdd139d7
 
       .. container:: outline-text-2
          :name: text-5
 
       .. container:: outline-3
-         :name: outline-container-org20d1c3f
+         :name: outline-container-orgc95c587
 
          .. rubric:: 5.1. How modules begin and end
-            :name: org20d1c3f
+            :name: orgc95c587
 
          .. container:: outline-text-3
             :name: text-5-1
@@ -1313,10 +1313,10 @@
             think you'll know what I mean.
 
       .. container:: outline-3
-         :name: outline-container-org40c7e70
+         :name: outline-container-orgc4bd286
 
          .. rubric:: 5.2. Functions available to modules
-            :name: org40c7e70
+            :name: orgc4bd286
 
          .. container:: outline-text-3
             :name: text-5-2
@@ -1392,10 +1392,10 @@
             tries to delete a file on your system.
 
       .. container:: outline-3
-         :name: outline-container-orgb41dbed
+         :name: outline-container-org4f9d0af
 
          .. rubric:: 5.3. User Space vs Kernel Space
-            :name: orgb41dbed
+            :name: org4f9d0af
 
          .. container:: outline-text-3
             :name: text-5-3
@@ -1424,10 +1424,10 @@
             returns and execution gets transfered back to user mode.
 
       .. container:: outline-3
-         :name: outline-container-orgc5f54e1
+         :name: outline-container-orga846991
 
          .. rubric:: 5.4. Name Space
-            :name: orgc5f54e1
+            :name: orga846991
 
          .. container:: outline-text-3
             :name: text-5-4
@@ -1458,10 +1458,10 @@
             your modules since they share the kernel's codespace.
 
       .. container:: outline-3
-         :name: outline-container-org748dc77
+         :name: outline-container-org38a0676
 
          .. rubric:: 5.5. Code space
-            :name: org748dc77
+            :name: org38a0676
 
          .. container:: outline-text-3
             :name: text-5-5
@@ -1511,10 +1511,10 @@
             microkernel.
 
       .. container:: outline-3
-         :name: outline-container-org4e2d8b4
+         :name: outline-container-org4cee785
 
          .. rubric:: 5.6. Device Drivers
-            :name: org4e2d8b4
+            :name: org4cee785
 
          .. container:: outline-text-3
             :name: text-5-6
@@ -1635,19 +1635,19 @@
             :::
 
    .. container:: outline-2
-      :name: outline-container-orgb73a917
+      :name: outline-container-orga286613
 
       .. rubric:: 6. Character Device drivers
-         :name: orgb73a917
+         :name: orga286613
 
       .. container:: outline-text-2
          :name: text-6
 
       .. container:: outline-3
-         :name: outline-container-org7f8b300
+         :name: outline-container-orgd5ca862
 
          .. rubric:: 6.1. The file_operations Structure
-            :name: org7f8b300
+            :name: orgd5ca862
 
          .. container:: outline-text-3
             :name: text-6-1
@@ -1754,10 +1754,10 @@
             syscalls is commonly named fops.
 
       .. container:: outline-3
-         :name: outline-container-org593e82d
+         :name: outline-container-orgc2f7def
 
          .. rubric:: 6.2. The file structure
-            :name: org593e82d
+            :name: orgc2f7def
 
          .. container:: outline-text-3
             :name: text-6-2
@@ -1782,10 +1782,10 @@
             in file which are created elsewhere.
 
       .. container:: outline-3
-         :name: outline-container-org4ad4f96
+         :name: outline-container-org50162ec
 
          .. rubric:: 6.3. Registering A Device
-            :name: org4ad4f96
+            :name: org50162ec
 
          .. container:: outline-text-3
             :name: text-6-3
@@ -1843,10 +1843,10 @@
             and **device_destroy** during the call to cleanup_module.
 
       .. container:: outline-3
-         :name: outline-container-orga331533
+         :name: outline-container-org7c8bcd5
 
          .. rubric:: 6.4. Unregistering A Device
-            :name: orga331533
+            :name: org7c8bcd5
 
          .. container:: outline-text-3
             :name: text-6-4
@@ -1888,10 +1888,10 @@
             module's development.
 
       .. container:: outline-3
-         :name: outline-container-org2a531c4
+         :name: outline-container-orgbdaa8b5
 
          .. rubric:: 6.5. chardev.c
-            :name: org2a531c4
+            :name: orgbdaa8b5
 
          .. container:: outline-text-3
             :name: text-6-5
@@ -2069,10 +2069,10 @@
                   MODULE_DESCRIPTION("Demonstrates a read-only char device");
 
       .. container:: outline-3
-         :name: outline-container-org3c4e7e8
+         :name: outline-container-org1bba99c
 
          .. rubric:: 6.6. Writing Modules for Multiple Kernel Versions
-            :name: org3c4e7e8
+            :name: org1bba99c
 
          .. container:: outline-text-3
             :name: text-6-6
@@ -2129,10 +2129,10 @@
             full story.
 
    .. container:: outline-2
-      :name: outline-container-org9e7a28e
+      :name: outline-container-orgf781f23
 
       .. rubric:: 7. The /proc File System
-         :name: org9e7a28e
+         :name: orgf781f23
 
       .. container:: outline-text-2
          :name: text-7
@@ -2275,10 +2275,10 @@
                MODULE_DESCRIPTION("Demonstrates procfs");
 
       .. container:: outline-3
-         :name: outline-container-orgb31f7d2
+         :name: outline-container-org756306c
 
          .. rubric:: 7.1. Read and Write a /proc File
-            :name: orgb31f7d2
+            :name: org756306c
 
          .. container:: outline-text-3
             :name: text-7-1
@@ -2420,10 +2420,10 @@
                   MODULE_DESCRIPTION("Demonstrates procfs");
 
       .. container:: outline-3
-         :name: outline-container-orge6c4e16
+         :name: outline-container-org1405acd
 
          .. rubric:: 7.2. Manage /proc file with standard filesystem
-            :name: orge6c4e16
+            :name: org1405acd
 
          .. container:: outline-text-3
             :name: text-7-2
@@ -2599,10 +2599,10 @@
             related yourself.
 
       .. container:: outline-3
-         :name: outline-container-orgd5a3eea
+         :name: outline-container-org4367a59
 
          .. rubric:: 7.3. Manage /proc file with seq_file
-            :name: orgd5a3eea
+            :name: org4367a59
 
          .. container:: outline-text-3
             :name: text-7-3
@@ -2630,7 +2630,7 @@
             this in the figure "How seq_file works".
 
             .. container:: figure
-               :name: org089974d
+               :name: org4c1b245
 
                .. figure:: img/seq_file.png
                   :alt: seq_file.png
@@ -2777,10 +2777,10 @@
             kernel.
 
    .. container:: outline-2
-      :name: outline-container-orgd3bde32
+      :name: outline-container-orge159a4e
 
       .. rubric:: 8. sysfs: Interacting with your module
-         :name: orgd3bde32
+         :name: orge159a4e
 
       .. container:: outline-text-2
          :name: text-8
@@ -2916,10 +2916,10 @@
                sudo rmmod hello_sysfs
 
    .. container:: outline-2
-      :name: outline-container-org766c4f9
+      :name: outline-container-org4e9bb4d
 
       .. rubric:: 9. Talking To Device Files
-         :name: org766c4f9
+         :name: org4e9bb4d
 
       .. container:: outline-text-2
          :name: text-9
@@ -3487,10 +3487,10 @@
                MODULE_DESCRIPTION("This is test_ioctl module");
 
    .. container:: outline-2
-      :name: outline-container-orgc660355
+      :name: outline-container-org1217179
 
       .. rubric:: 10. System Calls
-         :name: orgc660355
+         :name: org1217179
 
       .. container:: outline-text-2
          :name: text-10
@@ -3782,19 +3782,19 @@
                MODULE_DESCRIPTION("Demonstrates a read-only char device");
 
    .. container:: outline-2
-      :name: outline-container-org5432247
+      :name: outline-container-orgd98c455
 
       .. rubric:: 11. Blocking Processes and threads
-         :name: org5432247
+         :name: orgd98c455
 
       .. container:: outline-text-2
          :name: text-11
 
       .. container:: outline-3
-         :name: outline-container-org76bc503
+         :name: outline-container-orgecc7795
 
          .. rubric:: 11.1. Sleep
-            :name: org76bc503
+            :name: orgecc7795
 
          .. container:: outline-text-3
             :name: text-11-1
@@ -4199,10 +4199,10 @@
                   }
 
       .. container:: outline-3
-         :name: outline-container-org256fb98
+         :name: outline-container-orgf9801b3
 
          .. rubric:: 11.2. Completions
-            :name: org256fb98
+            :name: orgf9801b3
 
          .. container:: outline-text-3
             :name: text-11-2
@@ -4310,10 +4310,10 @@
             without adding a lot of complexity.
 
    .. container:: outline-2
-      :name: outline-container-org6c395db
+      :name: outline-container-org667e555
 
       .. rubric:: 12. Avoiding Collisions and Deadlocks
-         :name: org6c395db
+         :name: org667e555
 
       .. container:: outline-text-2
          :name: text-12
@@ -4327,10 +4327,10 @@
          happen.
 
       .. container:: outline-3
-         :name: outline-container-orgf8c225b
+         :name: outline-container-org11921e0
 
          .. rubric:: 12.1. Mutex
-            :name: orgf8c225b
+            :name: org11921e0
 
          .. container:: outline-text-3
             :name: text-12-1
@@ -4385,10 +4385,10 @@
                   MODULE_DESCRIPTION("Mutex example");
 
       .. container:: outline-3
-         :name: outline-container-org3271226
+         :name: outline-container-orgd7c07d8
 
          .. rubric:: 12.2. Spinlocks
-            :name: org3271226
+            :name: orgd7c07d8
 
          .. container:: outline-text-3
             :name: text-12-2
@@ -4474,10 +4474,10 @@
                   MODULE_DESCRIPTION("Spinlock example");
 
       .. container:: outline-3
-         :name: outline-container-orgcd3df25
+         :name: outline-container-org18cdf69
 
          .. rubric:: 12.3. Read and write locks
-            :name: orgcd3df25
+            :name: org18cdf69
 
          .. container:: outline-text-3
             :name: text-12-3
@@ -4558,10 +4558,10 @@
             functions.
 
       .. container:: outline-3
-         :name: outline-container-orga1d9003
+         :name: outline-container-org217ad6d
 
          .. rubric:: 12.4. Atomic operations
-            :name: orga1d9003
+            :name: org217ad6d
 
          .. container:: outline-text-3
             :name: text-12-4
@@ -4657,19 +4657,19 @@
                   MODULE_DESCRIPTION("Atomic operations example");
 
    .. container:: outline-2
-      :name: outline-container-org47d56e4
+      :name: outline-container-org036ebea
 
       .. rubric:: 13. Replacing Print Macros
-         :name: org47d56e4
+         :name: org036ebea
 
       .. container:: outline-text-2
          :name: text-13
 
       .. container:: outline-3
-         :name: outline-container-org779e92a
+         :name: outline-container-org7536455
 
          .. rubric:: 13.1. Replacement
-            :name: org779e92a
+            :name: org7536455
 
          .. container:: outline-text-3
             :name: text-13-1
@@ -4808,10 +4808,10 @@
                   module_exit(print_string_exit);
 
       .. container:: outline-3
-         :name: outline-container-org4387fb7
+         :name: outline-container-org092cf3f
 
          .. rubric:: 13.2. Flashing keyboard LEDs
-            :name: org4387fb7
+            :name: org092cf3f
 
          .. container:: outline-text-3
             :name: text-13-2
@@ -4833,65 +4833,65 @@
 
                .. code:: src
 
-                  /*
-                   * kbleds.c - Blink keyboard leds until the module is unloaded.
-                   */
+                   /*
+                    * kbleds.c - Blink keyboard leds until the module is unloaded.
+                    */
 
-                  #include <linux/init.h>
-                  #include <linux/kd.h> /* For KDSETLED */
-                  #include <linux/module.h>
-                  #include <linux/tty.h> /* For tty_struct */
-                  #include <linux/vt.h> /* For MAX_NR_CONSOLES */
-                  #include <linux/vt_kern.h> /* for fg_console */
-                  #include <linux/console_struct.h> /* For vc_cons */
+                   #include <linux/init.h>
+                   #include <linux/kd.h> /* For KDSETLED */
+                   #include <linux/module.h>
+                   #include <linux/tty.h> /* For tty_struct */
+                   #include <linux/vt.h> /* For MAX_NR_CONSOLES */
+                   #include <linux/vt_kern.h> /* for fg_console */
+                   #include <linux/console_struct.h> /* For vc_cons */
 
-                  MODULE_DESCRIPTION("Example module illustrating the use of Keyboard LEDs.");
+                   MODULE_DESCRIPTION("Example module illustrating the use of Keyboard LEDs.");
 
-                  static struct timer_list my_timer;
-                  static struct tty_driver *my_driver;
-                  static unsigned long kbledstatus = 0;
+                   static struct timer_list my_timer;
+                   static struct tty_driver *my_driver;
+                   static unsigned long kbledstatus = 0;
 
-                  #define BLINK_DELAY HZ / 5
-                  #define ALL_LEDS_ON 0x07
-                  #define RESTORE_LEDS 0xFF
+                   #define BLINK_DELAY HZ / 5
+                   #define ALL_LEDS_ON 0x07
+                   #define RESTORE_LEDS 0xFF
 
-                  /* Function my_timer_func blinks the keyboard LEDs periodically by invoking
-                   * command KDSETLED of ioctl() on the keyboard driver. To learn more on virtual
-                   * terminal ioctl operations, please see file:
-                   *   drivers/tty/vt/vt_ioctl.c, function vt_ioctl().
-                   *
-                   * The argument to KDSETLED is alternatively set to 7 (thus causing the led
-                   * mode to be set to LED_SHOW_IOCTL, and all the leds are lit) and to 0xFF
-                   * (any value above 7 switches back the led mode to LED_SHOW_FLAGS, thus
-                   * the LEDs reflect the actual keyboard status).  To learn more on this,
-                   * please see file: drivers/tty/vt/keyboard.c, function setledstate().
-                   */
-                  static void my_timer_func(struct timer_list *unused)
-                  {
-                      struct tty_struct *t = vc_cons[fg_console].d->port.tty;
+                   /* Function my_timer_func blinks the keyboard LEDs periodically by invoking
+                    * command KDSETLED of ioctl() on the keyboard driver. To learn more on virtual
+                    * terminal ioctl operations, please see file:
+                    *   drivers/tty/vt/vt_ioctl.c, function vt_ioctl().
+                    *
+                    * The argument to KDSETLED is alternatively set to 7 (thus causing the led
+                    * mode to be set to LED_SHOW_IOCTL, and all the leds are lit) and to 0xFF
+                    * (any value above 7 switches back the led mode to LED_SHOW_FLAGS, thus
+                    * the LEDs reflect the actual keyboard status).  To learn more on this,
+                    * please see file: drivers/tty/vt/keyboard.c, function setledstate().
+                    */
+                   static void my_timer_func(struct timer_list *unused)
+                   {
+                       struct tty_struct *t = vc_cons[fg_console].d->port.tty;
 
-                      if (kbledstatus == ALL_LEDS_ON)
-                          kbledstatus = RESTORE_LEDS;
-                      else
-                          kbledstatus = ALL_LEDS_ON;
+                       if (kbledstatus == ALL_LEDS_ON)
+                           kbledstatus = RESTORE_LEDS;
+                       else
+                           kbledstatus = ALL_LEDS_ON;
 
-                      (my_driver->ops->ioctl)(t, KDSETLED, kbledstatus);
+                       (my_driver->ops->ioctl)(t, KDSETLED, kbledstatus);
 
-                      my_timer.expires = jiffies + BLINK_DELAY;
-                      add_timer(&my_timer);
-                  }
+                       my_timer.expires = jiffies + BLINK_DELAY;
+                       add_timer(&my_timer);
+                   }
 
                   static int __init kbleds_init(void)
                   {
-                      int i;
+                     int i;
 
-                      pr_info("kbleds: loading\n");
-                      pr_info("kbleds: fgconsole is %x\n", fg_console);
-                      for (i = 0; i < MAX_NR_CONSOLES; i++) {
-                          if (!vc_cons[i].d)
-                              break;
-                          pr_info("poet_atkm: console[%i/%i] #%i, tty %lx\n", i, MAX_NR_CONSOLES,
-                                  vc_cons[i].d->vc_num, (unsigned long)vc_cons[i].d->port.tty);
+                     pr_info("kbleds: loading\n");
+                     pr_info("kbleds: fgconsole is %x\n", fg_console);
+                     for (i = 0; i < MAX_NR_CONSOLES; i++) {
+                         if (!vc_cons[i].d)
+                             break;
+                         pr_info("poet_atkm: console[%i/%i] #%i, tty %lx\n", i, MAX_NR_CONSOLES,
+                             vc_cons[i].d->vc_num, (unsigned long)vc_cons[i].d->port.tty);
                       }
                       pr_info("kbleds: finished scanning consoles\n");
 
@@ -4911,14 +4911,14 @@
                       pr_info("kbleds: unloading...\n");
                       del_timer(&my_timer);
                       (my_driver->ops->ioctl)(vc_cons[fg_console].d->port.tty, KDSETLED,
-                                              RESTORE_LEDS);
+                                       RESTORE_LEDS);
                   }
 
                   module_init(kbleds_init);
                   module_exit(kbleds_cleanup);
 
                   MODULE_LICENSE("GPL");
-                  MODULE_AUTHOR("Peter Jay Salzman");
+                  MODULE_AUTHOR("Daniele Paolo Scarpazza");
                   MODULE_DESCRIPTION("Keyboard LED example");
 
             If none of the examples in this chapter fit your debugging
@@ -4943,10 +4943,10 @@
             code.
 
    .. container:: outline-2
-      :name: outline-container-orgbf2707a
+      :name: outline-container-org10f080a
 
       .. rubric:: 14. Scheduling Tasks
-         :name: orgbf2707a
+         :name: org10f080a
 
       .. container:: outline-text-2
          :name: text-14
@@ -4964,10 +4964,10 @@
          wish to avoid the tasklet debate.
 
       .. container:: outline-3
-         :name: outline-container-orgffd966c
+         :name: outline-container-org35468cd
 
          .. rubric:: 14.1. Tasklets
-            :name: orgffd966c
+            :name: org35468cd
 
          .. container:: outline-text-3
             :name: text-14-1
@@ -5028,10 +5028,10 @@
                   Example tasklet ends
 
       .. container:: outline-3
-         :name: outline-container-org534ddd1
+         :name: outline-container-org911f173
 
          .. rubric:: 14.2. Work queues
-            :name: org534ddd1
+            :name: org911f173
 
          .. container:: outline-text-3
             :name: text-14-2
@@ -5075,19 +5075,19 @@
                   MODULE_DESCRIPTION("Workqueue example");
 
    .. container:: outline-2
-      :name: outline-container-org651dc74
+      :name: outline-container-orgb31076d
 
       .. rubric:: 15. Interrupt Handlers
-         :name: org651dc74
+         :name: orgb31076d
 
       .. container:: outline-text-2
          :name: text-15
 
       .. container:: outline-3
-         :name: outline-container-orgf95be5d
+         :name: outline-container-org1af4954
 
          .. rubric:: 15.1. Interrupt Handlers
-            :name: orgf95be5d
+            :name: org1af4954
 
          .. container:: outline-text-3
             :name: text-15-1
@@ -5171,10 +5171,10 @@
             willing to share.
 
       .. container:: outline-3
-         :name: outline-container-org436751c
+         :name: outline-container-org413c4bd
 
          .. rubric:: 15.2. Detecting button presses
-            :name: org436751c
+            :name: org413c4bd
 
          .. container:: outline-text-3
             :name: text-15-2
@@ -5348,10 +5348,10 @@
                   MODULE_DESCRIPTION("Handle some GPIO interrupts");
 
       .. container:: outline-3
-         :name: outline-container-orgefa8364
+         :name: outline-container-org80a8238
 
          .. rubric:: 15.3. Bottom Half
-            :name: orgefa8364
+            :name: org80a8238
 
          .. container:: outline-text-3
             :name: text-15-3
@@ -5707,10 +5707,10 @@
                   MODULE_DESCRIPTION("Interrupt with top and bottom half using threaded irqs");
 
    .. container:: outline-2
-      :name: outline-container-orgaad496d
+      :name: outline-container-org2aa6048
 
       .. rubric:: 16. Crypto
-         :name: orgaad496d
+         :name: org2aa6048
 
       .. container:: outline-text-2
          :name: text-16
@@ -5725,10 +5725,10 @@
          functions.
 
       .. container:: outline-3
-         :name: outline-container-org4280294
+         :name: outline-container-org42fe422
 
          .. rubric:: 16.1. Hash functions
-            :name: org4280294
+            :name: org42fe422
 
          .. container:: outline-text-3
             :name: text-16-1
@@ -5827,10 +5827,10 @@
                   sudo rmmod cryptosha256
 
       .. container:: outline-3
-         :name: outline-container-org6e5dea7
+         :name: outline-container-org790b2de
 
          .. rubric:: 16.2. Symmetric key encryption
-            :name: org6e5dea7
+            :name: org790b2de
 
          .. container:: outline-text-3
             :name: text-16-2
@@ -6039,10 +6039,10 @@
                   MODULE_DESCRIPTION("Symmetric key encryption example");
 
    .. container:: outline-2
-      :name: outline-container-org03fc3ab
+      :name: outline-container-org2fa4772
 
       .. rubric:: 17. Standardising the interfaces: The Device Model
-         :name: org03fc3ab
+         :name: org2fa4772
 
       .. container:: outline-text-2
          :name: text-17
@@ -6157,19 +6157,19 @@
                module_exit(devicemodel_exit);
 
    .. container:: outline-2
-      :name: outline-container-org2d44c6b
+      :name: outline-container-org89cca3f
 
       .. rubric:: 18. Optimisations
-         :name: org2d44c6b
+         :name: org89cca3f
 
       .. container:: outline-text-2
          :name: text-18
 
       .. container:: outline-3
-         :name: outline-container-org4964959
+         :name: outline-container-org69e0a28
 
          .. rubric:: 18.1. Likely and Unlikely conditions
-            :name: org4964959
+            :name: org69e0a28
 
          .. container:: outline-text-3
             :name: text-18-1
@@ -6203,10 +6203,10 @@
             if you use the *likely* macro.
 
    .. container:: outline-2
-      :name: outline-container-org31caf57
+      :name: outline-container-org69891f1
 
       .. rubric:: 19. Common Pitfalls
-         :name: org31caf57
+         :name: org69891f1
 
       .. container:: outline-text-2
          :name: text-19
@@ -6218,10 +6218,10 @@
          paid for your copy of the book.
 
       .. container:: outline-3
-         :name: outline-container-org1516009
+         :name: outline-container-orgcb44dc2
 
          .. rubric:: 19.1. Using standard libraries
-            :name: org1516009
+            :name: orgcb44dc2
 
          .. container:: outline-text-3
             :name: text-19-1
@@ -6231,10 +6231,10 @@
             /proc/kallsyms.
 
       .. container:: outline-3
-         :name: outline-container-org0ac2440
+         :name: outline-container-org57a1c96
 
          .. rubric:: 19.2. Disabling interrupts
-            :name: org0ac2440
+            :name: org57a1c96
 
          .. container:: outline-text-3
             :name: text-19-2
@@ -6244,10 +6244,10 @@
             stuck and you'll have to power it off.
 
       .. container:: outline-3
-         :name: outline-container-org6552dee
+         :name: outline-container-orgd8a5ade
 
          .. rubric:: 19.3. Sticking your head inside a large carnivore
-            :name: org6552dee
+            :name: orgd8a5ade
 
          .. container:: outline-text-3
             :name: text-19-3
@@ -6256,10 +6256,10 @@
             I will anyway, just in case.
 
    .. container:: outline-2
-      :name: outline-container-org1fad3af
+      :name: outline-container-orgb3a4740
 
       .. rubric:: 20. Where To Go From Here?
-         :name: org1fad3af
+         :name: orgb3a4740
 
       .. container:: outline-text-2
          :name: text-20
@@ -6311,6 +6311,6 @@
    Author: Peter Jay Salzman, Michael Burian, Ori Pomerantz, Bob
    Mottram, Jim Huang
 
-   Created: 2021-09-25 Sat 15:46
+   Created: 2021-09-25 Sat 17:08
 
    `Validate <https://validator.w3.org/check?uri=referer>`__
