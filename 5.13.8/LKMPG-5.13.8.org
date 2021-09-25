@@ -214,7 +214,7 @@ sudo rmmod hello_1
 Notice that the dash was replaced by an underscore. To see what just happened in the logs:
 
 #+BEGIN_SRC sh
-journalctl --since "1 hour ago" | grep kernel
+journalctl --since "10 min ago" | grep kernel
 #+END_SRC
 
 You now know the basics of creating, compiling, installing and removing modules. Now for more of a description of how this module works.
