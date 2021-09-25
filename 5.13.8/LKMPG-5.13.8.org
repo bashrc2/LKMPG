@@ -3858,56 +3858,61 @@ At the dawn of the internet everybody trusted everybody completely...but that di
 ** Random numbers
 Typically you may want a random number to use as a password salt or capabilities token. Random numbers can be created first by assigning a generator and then using *crypto_rng_get_bytes* to obtain however many random bytes that you need.
 
-#+begin_src C :file random.c
-  #include <linux/module.h>
-  #include <crypto/internal/rng.h>
+#+begin_src C :file randomgen.c
+#include <linux/module.h>
+#include <crypto/internal/rng.h>
 
-  struct crypto_rng * rng = NULL;
+struct crypto_rng * rng = NULL;
   
-  static int get_random_numbers(crypto_rng *rng, u8 *buf, unsigned int len)
-  {
-    if (!buf || !len) {
-      pr_debug("No output buffer provided\n");
-      return -EINVAL;
-    }
-  
-    ret = crypto_rng_get_bytes(rng, buf, len);
-  
-    return ret;
+static int get_random_numbers(struct crypto_rng *rng, u8 *buf, unsigned int len)
+{
+  if (!buf || !len) {
+    pr_debug("No output buffer provided\n");
+    return -EINVAL;
   }
   
-  int random_init(void)
-  {
-    char *drbg = "drbg_nopr_sha256";
-    int ret;
-    u8 buf[32];
+  int ret = crypto_rng_get_bytes(rng, buf, len);
   
-    rng = crypto_alloc_rng(drbg, 0, 0);
-    if (IS_ERR(rng)) {
-      pr_debug("could not allocate RNG handle for %s\n", drbg);
-      return PTR_ERR(rng);
-    }
-    ret = get_random_numbers(rng, (u8 *)buf, 32);
-    if (ret < 0)
-      pr_debug("generation of random numbers failed\n");
-    else if (ret == 0)
-      pr_debug("RNG returned no data");
-    else
-      pr_debug("RNG returned %d bytes of data\n", ret);
+  return ret;
+}
+  
+int random_init(void)
+{
+  char *drbg = "drbg_nopr_sha256";
+  int ret;
+  u8 buf[32];
+  
+  rng = crypto_alloc_rng(drbg, 0, 0);
+  if (IS_ERR(rng)) {
+    pr_debug("could not allocate RNG handle for %s\n", drbg);
+    return PTR_ERR(rng);
   }
-  
-  void random_exit(void)
-  {
-    if (!IS_ERR(rng))
-      crypto_free_rng(rng);
+  ret = get_random_numbers(rng, (u8 *)buf, 32);
+  if (ret < 0) {
+    pr_debug("generation of random numbers failed\n");
+    return -2;
   }
+  else if (ret == 0) {
+    pr_debug("RNG returned no data");
+    return -1;
+  }
+  else
+    pr_debug("RNG returned %d bytes of data\n", ret);
+  return 0;
+}
   
-  module_init(random_init);
-  module_exit(random_exit);
+void random_exit(void)
+{
+  if (!IS_ERR(rng))
+    crypto_free_rng(rng);
+}
   
-  MODULE_LICENSE("GPL");
-  MODULE_AUTHOR("Bob Mottram");
-  MODULE_DESCRIPTION("Random number generation");
+module_init(random_init);
+module_exit(random_exit);
+  
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Bob Mottram");
+MODULE_DESCRIPTION("Random number generation");
 #+end_src
 
 ** Hash functions

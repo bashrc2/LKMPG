@@ -35,6 +35,7 @@ obj-m += example_mutex.o
 obj-m += ioctl.o
 obj-m += bottomhalf.o
 obj-m += bottomhalf_threaded.o
+obj-m += randomgen.o
 
 all:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
