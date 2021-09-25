@@ -162,6 +162,10 @@ MODULE_LICENSE("GPL");
 Now you'll need a Makefile. If you copy and paste this change the indentation to use tabs, not spaces.
 
 #+BEGIN_SRC makefile
+MY_CFLAGS += -g -DDEBUG
+ccflags-y += ${MY_CFLAGS}
+CC += ${MY_CFLAGS}
+KBUILD_CFLAGS := -mcmodel=kernel -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
 obj-m += hello-1.o
 
 all:
@@ -271,6 +275,10 @@ MODULE_LICENSE("GPL");
 So now we have two real kernel modules under our belt. Adding another module is as simple as this:
 
 #+BEGIN_SRC makefile
+MY_CFLAGS += -g -DDEBUG
+ccflags-y += ${MY_CFLAGS}
+CC += ${MY_CFLAGS}
+KBUILD_CFLAGS := -mcmodel=kernel -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
 obj-m += hello-1.o
 obj-m += hello-2.o
 
@@ -533,6 +541,10 @@ MODULE_LICENSE("GPL");
 And finally, the makefile:
 
 #+BEGIN_SRC makefile
+MY_CFLAGS += -g -DDEBUG
+ccflags-y += ${MY_CFLAGS}
+CC += ${MY_CFLAGS}
+KBUILD_CFLAGS := -mcmodel=kernel -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
 obj-m += hello-1.o
 obj-m += hello-2.o
 obj-m += hello-3.o
