@@ -3949,7 +3949,7 @@ static int test_skcipher_result(struct skcipher_def * sk, int rc)
 static void test_skcipher_callback(struct crypto_async_request *req, int error)
 {
     struct tcrypt_result *result = req->data;
-    /* int ret; */
+    int ret;
 
     if (error == -EINPROGRESS)
         return;
