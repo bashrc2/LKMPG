@@ -730,38 +730,38 @@ For example, every character driver needs to define a function that reads from t
 
 #+BEGIN_SRC c
       struct file_operations {
-	  struct module *owner;
-	  loff_t (*llseek) (struct file *, loff_t, int);
-	  ssize_t (*read) (struct file *, char __user *, size_t, loff_t *);
-	  ssize_t (*write) (struct file *, const char __user *, size_t, loff_t *);
-	  ssize_t (*aio_read) (struct kiocb *, const struct iovec *, unsigned long, loff_t);
-	  ssize_t (*aio_write) (struct kiocb *, const struct iovec *, unsigned long, loff_t);
-	  int (*iterate) (struct file *, struct dir_context *);
-	  unsigned int (*poll) (struct file *, struct poll_table_struct *);
-	  long (*unlocked_ioctl) (struct file *, unsigned int, unsigned long);
-	  long (*compat_ioctl) (struct file *, unsigned int, unsigned long);
-	  int (*mmap) (struct file *, struct vm_area_struct *);
-	  int (*open) (struct inode *, struct file *);
-	  int (*flush) (struct file *, fl_owner_t id);
-	  int (*release) (struct inode *, struct file *);
-	  int (*fsync) (struct file *, loff_t, loff_t, int datasync);
-	  int (*aio_fsync) (struct kiocb *, int datasync);
-	  int (*fasync) (int, struct file *, int);
-	  int (*lock) (struct file *, int, struct file_lock *);
-	  ssize_t (*sendpage) (struct file *, struct page *, int, size_t, loff_t *, int);
-	  unsigned long (*get_unmapped_area)(struct file *, unsigned long, unsigned long, unsigned long, unsigned long);
-	  int (*check_flags)(int);
-	  int (*flock) (struct file *, int, struct file_lock *);
-	  ssize_t (*splice_write)(struct pipe_inode_info *, struct file *, loff_t *, size_t, unsigned int);
-	  ssize_t (*splice_read)(struct file *, loff_t *, struct pipe_inode_info *, size_t, unsigned int);
-	  int (*setlease)(struct file *, long, struct file_lock **, void **);
-	  long (*fallocate)(struct file *file, int mode, loff_t offset,
-			    loff_t len);
+          struct module *owner;
+          loff_t (*llseek) (struct file *, loff_t, int);
+          ssize_t (*read) (struct file *, char __user *, size_t, loff_t *);
+          ssize_t (*write) (struct file *, const char __user *, size_t, loff_t *);
+          ssize_t (*aio_read) (struct kiocb *, const struct iovec *, unsigned long, loff_t);
+          ssize_t (*aio_write) (struct kiocb *, const struct iovec *, unsigned long, loff_t);
+          int (*iterate) (struct file *, struct dir_context *);
+          unsigned int (*poll) (struct file *, struct poll_table_struct *);
+          long (*unlocked_ioctl) (struct file *, unsigned int, unsigned long);
+          long (*compat_ioctl) (struct file *, unsigned int, unsigned long);
+          int (*mmap) (struct file *, struct vm_area_struct *);
+          int (*open) (struct inode *, struct file *);
+          int (*flush) (struct file *, fl_owner_t id);
+          int (*release) (struct inode *, struct file *);
+          int (*fsync) (struct file *, loff_t, loff_t, int datasync);
+          int (*aio_fsync) (struct kiocb *, int datasync);
+          int (*fasync) (int, struct file *, int);
+          int (*lock) (struct file *, int, struct file_lock *);
+          ssize_t (*sendpage) (struct file *, struct page *, int, size_t, loff_t *, int);
+          unsigned long (*get_unmapped_area)(struct file *, unsigned long, unsigned long, unsigned long, unsigned long);
+          int (*check_flags)(int);
+          int (*flock) (struct file *, int, struct file_lock *);
+          ssize_t (*splice_write)(struct pipe_inode_info *, struct file *, loff_t *, size_t, unsigned int);
+          ssize_t (*splice_read)(struct file *, loff_t *, struct pipe_inode_info *, size_t, unsigned int);
+          int (*setlease)(struct file *, long, struct file_lock **, void **);
+          long (*fallocate)(struct file *file, int mode, loff_t offset,
+                            loff_t len);
           void (*show_fdinfo)(struct seq_file *m, struct file *f);
           ssize_t (*copy_file_range)(struct file *, loff_t, struct file *,
                                      loff_t, size_t, unsigned int);
           loff_t (*remap_file_range)(struct file *file_in, loff_t pos_in,
-	                             struct file *file_out, loff_t pos_out,
+                                     struct file *file_out, loff_t pos_out,
                                      loff_t len, unsigned int remap_flags);
           int (*fadvise)(struct file *, loff_t, loff_t, int);
       } __randomize_layout;
@@ -2578,8 +2578,8 @@ int main(int argc, char *argv[])
     /* Usage */
     if (argc != 2) {
         printf("Usage: %s <filename>\n", argv[0]);
-	puts("Reads the content of a file, but doesn't wait for input");
-	exit(-1);
+        puts("Reads the content of a file, but doesn't wait for input");
+        exit(-1);
     }
   
     /* Open the file for reading in non blocking mode */
@@ -2668,16 +2668,16 @@ In the following example two threads are started, but one needs to start before 
       init_completion(&machine.flywheel_comp);
   
       crank_thread =
-	  kthread_create(machine_crank_thread,
-			 NULL, "KThread Crank");
+          kthread_create(machine_crank_thread,
+                         NULL, "KThread Crank");
       if (IS_ERR(crank_thread))
-	  return -1;
+          return -1;
   
       flywheel_thread =
-	  kthread_create(machine_flywheel_spinup_thread,
-			 NULL, "KThread Flywheel");
+          kthread_create(machine_flywheel_spinup_thread,
+                         NULL, "KThread Flywheel");
       if (IS_ERR(flywheel_thread)) {
-	  kthread_stop(crank_thread);
+          kthread_stop(crank_thread);
           return -1;
       }
 
@@ -3534,8 +3534,8 @@ int bottomhalf_init(void)
 
     if (ret) {
         pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
-	gpio_free_array(leds, ARRAY_SIZE(leds));
-	return ret;
+        gpio_free_array(leds, ARRAY_SIZE(leds));
+        return ret;
     }
 
     pr_info("Current button1 value: %d\n",
@@ -3545,9 +3545,9 @@ int bottomhalf_init(void)
 
     if (ret < 0) {
         pr_err("Unable to request IRQ: %d\n", ret);
-	gpio_free_array(buttons, ARRAY_SIZE(leds));
-	gpio_free_array(leds, ARRAY_SIZE(leds));
-	return ret;
+        gpio_free_array(buttons, ARRAY_SIZE(leds));
+        gpio_free_array(leds, ARRAY_SIZE(leds));
+        return ret;
     }
 
     button_irqs[0] = ret;
@@ -3561,9 +3561,9 @@ int bottomhalf_init(void)
 
     if (ret) {
         pr_err("Unable to request IRQ: %d\n", ret);
-	gpio_free_array(buttons, ARRAY_SIZE(leds));
-	gpio_free_array(leds, ARRAY_SIZE(leds));
-	return ret;
+        gpio_free_array(buttons, ARRAY_SIZE(leds));
+        gpio_free_array(leds, ARRAY_SIZE(leds));
+        return ret;
     }
 
 
@@ -3571,9 +3571,9 @@ int bottomhalf_init(void)
 
     if (ret < 0) {
         pr_err("Unable to request IRQ: %d\n", ret);
-	gpio_free_array(buttons, ARRAY_SIZE(leds));
-	gpio_free_array(leds, ARRAY_SIZE(leds));
-	return ret;
+        gpio_free_array(buttons, ARRAY_SIZE(leds));
+        gpio_free_array(leds, ARRAY_SIZE(leds));
+        return ret;
     }
 
     button_irqs[1] = ret;
@@ -3587,10 +3587,10 @@ int bottomhalf_init(void)
 
     if (ret) {
         pr_err("Unable to request IRQ: %d\n", ret);
-	free_irq(button_irqs[0], NULL);
-	gpio_free_array(buttons, ARRAY_SIZE(leds));
-	gpio_free_array(leds, ARRAY_SIZE(leds));
-	return ret;
+        free_irq(button_irqs[0], NULL);
+        gpio_free_array(buttons, ARRAY_SIZE(leds));
+        gpio_free_array(leds, ARRAY_SIZE(leds));
+        return ret;
     }
 
     return 0;
@@ -3694,8 +3694,8 @@ int bottomhalf_init(void)
 
     if (ret) {
         pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
-	gpio_free_array(leds, ARRAY_SIZE(leds));
-	return ret;
+        gpio_free_array(leds, ARRAY_SIZE(leds));
+        return ret;
     }
 
     pr_info("Current button1 value: %d\n",
@@ -3705,9 +3705,9 @@ int bottomhalf_init(void)
 
     if (ret < 0) {
         pr_err("Unable to request IRQ: %d\n", ret);
-	gpio_free_array(buttons, ARRAY_SIZE(leds));
-	gpio_free_array(leds, ARRAY_SIZE(leds));
-	return ret;
+        gpio_free_array(buttons, ARRAY_SIZE(leds));
+        gpio_free_array(leds, ARRAY_SIZE(leds));
+        return ret;
     }
 
     button_irqs[0] = ret;
@@ -3716,16 +3716,16 @@ int bottomhalf_init(void)
            button_irqs[0]);
 
     ret = request_threaded_irq(gpio_to_irq(button_irqs[0]),
-			       button_top_half,
-			       button_bottom_half,	
-			       IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-			       "gpiomod#button1", NULL);
+                               button_top_half,
+                               button_bottom_half,      
+                               IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                               "gpiomod#button1", NULL);
 
     if (ret) {
         pr_err("Unable to request IRQ: %d\n", ret);
-	gpio_free_array(buttons, ARRAY_SIZE(leds));
-	gpio_free_array(leds, ARRAY_SIZE(leds));
-	return ret;
+        gpio_free_array(buttons, ARRAY_SIZE(leds));
+        gpio_free_array(leds, ARRAY_SIZE(leds));
+        return ret;
     }
 
 
@@ -3733,9 +3733,9 @@ int bottomhalf_init(void)
 
     if (ret < 0) {
         pr_err("Unable to request IRQ: %d\n", ret);
-	gpio_free_array(buttons, ARRAY_SIZE(leds));
-	gpio_free_array(leds, ARRAY_SIZE(leds));
-	return ret;
+        gpio_free_array(buttons, ARRAY_SIZE(leds));
+        gpio_free_array(leds, ARRAY_SIZE(leds));
+        return ret;
     }
 
     button_irqs[1] = ret;
@@ -3744,17 +3744,17 @@ int bottomhalf_init(void)
            button_irqs[1]);
 
     ret = request_threaded_irq(gpio_to_irq(button_irqs[1]),
-			       button_top_half,
-			       button_bottom_half,	
-			       IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-			       "gpiomod#button2", NULL);
+                               button_top_half,
+                               button_bottom_half,      
+                               IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                               "gpiomod#button2", NULL);
 
     if (ret) {
         pr_err("Unable to request IRQ: %d\n", ret);
-	free_irq(button_irqs[0], NULL);
-	gpio_free_array(buttons, ARRAY_SIZE(leds));
-	gpio_free_array(leds, ARRAY_SIZE(leds));
-	return ret;
+        free_irq(button_irqs[0], NULL);
+        gpio_free_array(buttons, ARRAY_SIZE(leds));
+        gpio_free_array(leds, ARRAY_SIZE(leds));
+        return ret;
     }
 
     return 0;
