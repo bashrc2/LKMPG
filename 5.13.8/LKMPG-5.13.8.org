@@ -6,6 +6,12 @@
 
 
 * Introduction
+
+#+NAME:   fig:herd.jpg
+#+attr_html: :width 100%
+#+attr_latex: :width 100%
+[[./img/herd.jpg]]
+
 The Linux Kernel Module Programming Guide is a free book; you may reproduce and/or modify it under the terms of the Open Software License, version 3.0.
 
 This book is distributed in the hope it will be useful, but without any warranty, without even the implied warranty of merchantability or fitness for a particular purpose.
@@ -120,6 +126,13 @@ make
 If there are any compile errors then you might have a more recent kernel version or need to install the corresponding kernel header files.
 
 * Hello World
+
+#+CAPTION: Wall of Fame. Katwijk, Netherlands.
+#+NAME:   fig:walloffame.jpg
+#+attr_html: :width 100%
+#+attr_latex: :width 100%
+[[./img/walloffame.jpg]]
+
 ** The Simplest Module
 Most people learning programming start out with some sort of "/hello world/" example. I don't know what happens to people who break with this tradition, but I think it's safer not to find out. We'll start with a series of hello world programs that demonstrate the different aspects of the basics of writing a kernel module.
 
@@ -498,7 +511,14 @@ Goodbye, world 5
 hello-5.o: invalid argument syntax for mylong: 'h'
 #+END_SRC
 
+#+CAPTION: Stickers. Luisalvaz.
+#+NAME:   fig:stickers.jpg
+#+attr_html: :width 100%
+#+attr_latex: :width 100%
+[[./img/stickers.jpg]]
+
 ** Modules Spanning Multiple Files
+
 Sometimes it makes sense to divide a kernel module between several source files.
 
 Here's an example of such a kernel module.
@@ -628,6 +648,7 @@ HOSTLD  scripts/kconfig/conf
 If you do not desire to actually compile the kernel, you can interrupt the build process (CTRL-C) just after the SPLIT line, because at that time, the files you need will be are ready. Now you can turn back to the directory of your module and compile it: It will be built exactly according to your current kernel settings, and it will load into it without any errors.
 
 * Preliminaries
+
 ** How modules begin and end
 A program usually begins with a *main()* function, executes a bunch of instructions and terminates upon completion of those instructions. Kernel modules work a bit differently. A module always begin with either the init_module or the function you specify with module_init call. This is the entry function for modules; it tells the kernel what functionality the module provides and sets up the kernel to run the module's functions when they're needed. Once it does this, entry function returns and the module does nothing until the kernel wants to do something with the code that the module provides.
 
@@ -1001,6 +1022,13 @@ While previous versions of this guide showed how you can write backward compatib
 You might already have noticed that recent kernels look different. In case you haven't they look like 2.6.x.y now. The meaning of the first three items basically stays the same, but a subpatchlevel has been added and will indicate security fixes till the next stable patchlevel is out. So people can choose between a stable tree with security updates and use the latest kernel as developer tree. Search the kernel mailing list archives if you're interested in the full story.
 
 * The /proc File System
+
+#+CAPTION: Wall painting near Maybachufer in Berlin-Kreuzberg, Germany
+#+NAME:   fig:kreuzberg.jpg
+#+attr_html: :width 100%
+#+attr_latex: :width 100%
+[[./img/kreuzberg.jpg]]
+
 In Linux, there is an additional mechanism for the kernel and kernel modules to send information to processes --- the */proc* file system. Originally designed to allow easy access to information about processes (hence the name), it is now used by every bit of the kernel which has something interesting to report, such as */proc/modules* which provides the list of modules and */proc/meminfo* which stats memory usage statistics.
 
 The method to use the proc file system is very similar to the one used with device drivers --- a structure is created with all the information needed for the */proc* file, including pointers to any handler functions (in our case there is only one, the one called when somebody attempts to read from the */proc* file). Then, init_module registers the structure with the kernel and cleanup_module unregisters it.
@@ -1589,6 +1617,13 @@ sudo rmmod hello_sysfs
 #+END_SRC
 
 * Talking To Device Files
+
+#+CAPTION: Lugansk, Ukraine
+#+NAME:   fig:luhansk.jpg
+#+attr_html: :width 100%
+#+attr_latex: :width 100%
+[[./img/luhansk.jpg]]
+
 Device files are supposed to represent physical devices. Most physical devices are used for output as well as input, so there has to be some mechanism for device drivers in the kernel to get the output to send to the device from processes. This is done by opening the device file for output and writing to it, just like writing to a file. In the following example, this is implemented by device_write.
 
 This is not always enough. Imagine you had a serial port connected to a modem (even if you have an internal modem, it is still implemented from the CPU's perspective as a serial port connected to a modem, so you don't have to tax your imagination too hard). The natural thing to do would be to use the device file to write things to the modem (either modem commands or data to be sent through the phone line) and read things from the modem (either responses for commands or the data received through the phone line). However, this leaves open the question of what to do when you need to talk to the serial port itself, for example to send the rate at which data is sent and received.
@@ -2288,6 +2323,13 @@ MODULE_DESCRIPTION("Demonstrates a read-only char device");
 #+END_SRC
 
 * Blocking Processes and threads
+
+#+CAPTION: Berlin Wall, 1989
+#+NAME:   fig:berlinwall.jpg
+#+attr_html: :width 100%
+#+attr_latex: :width 100%
+[[./img/berlinwall.jpg]]
+
 ** Sleep
 What do you do when somebody asks you for something you can't do right away? If you're a human being and you're bothered by a human being, the only thing you can say is: "/Not right now, I'm busy. Go away!/". But if you're a kernel module and you're bothered by a process, you have another possibility. You can put the process to sleep until you can service it. After all, processes are being put to sleep by the kernel and woken up all the time (that's the way multiple processes appear to run on the same time on a single CPU).
 
@@ -2711,6 +2753,13 @@ So even though /flywheel_thread/ is started first you should notice if you load 
 There are other variations upon the /wait_for_completion/ function, which include timeouts or being interrupted, but this basic mechanism is enough for many common situations without adding a lot of complexity.
 
 * Avoiding Collisions and Deadlocks
+
+#+CAPTION: Graffiti at a former roof felt factory in Santalahti, Tampere, Finland
+#+NAME:   fig:badass.jpg
+#+attr_html: :width 100%
+#+attr_latex: :width 100%
+[[./img/badass.jpg]]
+
 If processes running on different CPUs or in different threads try to access the same memory then it's possible that strange things can happen or your system can lock up. To avoid this various types of mutual exclusion kernel functions are available. These indicate if a section of code is "locked" or "unlocked" so that simultaneous attempts to run it can't happen.
 ** Mutex
 You can use kernel mutexes (mutual exclusions) in much the same manner that you might deploy them in userland. This may be all that's needed to avoid collisions in most cases.
@@ -2758,6 +2807,13 @@ MODULE_AUTHOR("Bob Mottram");
 MODULE_DESCRIPTION("Mutex example");
 #+end_src
 ** Spinlocks
+
+#+CAPTION: Graffiti from Spin
+#+NAME: fig:spin.jpg
+#+attr_html: :width 100%
+#+attr_latex: :width 100%
+[[./img/spin.jpg]]
+
 As the name suggests, spinlocks lock up the CPU that the code is running on, taking 100% of its resources. Because of this you should only use the spinlock mechanism around code which is likely to take no more than a few milliseconds to run and so won't noticably slow anything down from the user's point of view.
 
 The example here is /"irq safe"/ in that if interrupts happen during the lock then they won't be forgotten and will activate when the unlock happens, using the /flags/ variable to retain their state.
@@ -3275,6 +3331,13 @@ MODULE_DESCRIPTION("Workqueue example");
 #+END_SRC
 
 * Interrupt Handlers
+
+#+CAPTION: Graffiti artist in Bucharest, Romania
+#+NAME:   fig:bucharest.jpg
+#+attr_html: :width 100%
+#+attr_latex: :width 100%
+[[./img/bucharest.jpg]]
+
 ** Interrupt Handlers
 Except for the last chapter, everything we did in the kernel so far we've done as a response to a process asking for it, either by dealing with a special file, sending an ioctl(), or issuing a system call. But the job of the kernel isn't just to respond to process requests. Another job, which is every bit as important, is to speak to the hardware connected to the machine.
 
