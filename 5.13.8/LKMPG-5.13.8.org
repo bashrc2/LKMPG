@@ -3620,7 +3620,7 @@ module_exit(bottomhalf_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Bob Mottram");
-MODULE_DESCRIPTION("Interrupt with top and bottom half");
+MODULE_DESCRIPTION("Interrupt with top and bottom half using a tasklet");
 #+end_src
 
 It is expected that at some unspecified point in the future tasklets may eventually be deprecated, to be replaced by /threaded irqs/ instead. Here is an example of how to do the same thing as before, with top and bottom halves, but using threads.
@@ -3784,7 +3784,7 @@ module_exit(bottomhalf_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Bob Mottram");
-MODULE_DESCRIPTION("Interrupt with top and bottom half");
+MODULE_DESCRIPTION("Interrupt with top and bottom half using threaded irqs");
 #+end_src
 
 * Crypto
