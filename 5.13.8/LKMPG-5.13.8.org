@@ -128,7 +128,7 @@ If there are any compile errors then you might have a more recent kernel version
 * Hello World
 
 #+CAPTION: Wall of Fame. Katwijk, Netherlands.
-#+NAME:   fig:walloffame.jpg
+#+NAME: fig:walloffame.jpg
 #+attr_html: :width 100%
 #+attr_latex: :width 100%
 [[./img/walloffame.jpg]]
@@ -512,7 +512,7 @@ hello-5.o: invalid argument syntax for mylong: 'h'
 #+END_SRC
 
 #+CAPTION: Stickers. Luisalvaz.
-#+NAME:   fig:stickers.jpg
+#+NAME: fig:stickers.jpg
 #+attr_html: :width 100%
 #+attr_latex: :width 100%
 [[./img/stickers.jpg]]
@@ -1028,7 +1028,7 @@ You might already have noticed that recent kernels look different. In case you h
 * The /proc File System
 
 #+CAPTION: Wall painting near Maybachufer in Berlin-Kreuzberg, Germany
-#+NAME:   fig:kreuzberg.jpg
+#+NAME: fig:kreuzberg.jpg
 #+attr_html: :width 100%
 #+attr_latex: :width 100%
 [[./img/kreuzberg.jpg]]
@@ -1623,7 +1623,7 @@ sudo rmmod hello_sysfs
 * Talking To Device Files
 
 #+CAPTION: Lugansk, Ukraine
-#+NAME:   fig:luhansk.jpg
+#+NAME: fig:luhansk.jpg
 #+attr_html: :width 100%
 #+attr_latex: :width 100%
 [[./img/luhansk.jpg]]
@@ -2329,7 +2329,7 @@ MODULE_DESCRIPTION("Demonstrates a read-only char device");
 * Blocking Processes and threads
 
 #+CAPTION: Berlin Wall, 1989
-#+NAME:   fig:berlinwall.jpg
+#+NAME: fig:berlinwall.jpg
 #+attr_html: :width 100%
 #+attr_latex: :width 100%
 [[./img/berlinwall.jpg]]
@@ -2759,7 +2759,7 @@ There are other variations upon the /wait_for_completion/ function, which includ
 * Avoiding Collisions and Deadlocks
 
 #+CAPTION: Graffiti at a former roof felt factory in Santalahti, Tampere, Finland
-#+NAME:   fig:badass.jpg
+#+NAME: fig:badass.jpg
 #+attr_html: :width 100%
 #+attr_latex: :width 100%
 [[./img/badass.jpg]]
@@ -3337,7 +3337,7 @@ MODULE_DESCRIPTION("Workqueue example");
 * Interrupt Handlers
 
 #+CAPTION: Graffiti artist in Bucharest, Romania
-#+NAME:   fig:bucharest.jpg
+#+NAME: fig:bucharest.jpg
 #+attr_html: :width 100%
 #+attr_latex: :width 100%
 [[./img/bucharest.jpg]]
@@ -4271,6 +4271,12 @@ You might need to do this for a short time and that is OK, but if you don't enab
 
 ** Sticking your head inside a large carnivore
 I probably don't have to warn you about this, but I figured I will anyway, just in case.
+
+#+CAPTION: Street art in Ximen/Taipei, Taiwan
+#+NAME: fig:ximen.jpg
+#+attr_html: :width 100%
+#+attr_latex: :width 100%
+[[./img/ximen.jpg]]
 
 * Where To Go From Here?
 I could easily have squeezed a few more chapters into this book. I could have added a chapter about creating new file systems, or about adding new protocol stacks (as if there's a need for that -- you'd have to dig underground to find a protocol stack not supported by Linux). I could have added explanations of the kernel mechanisms we haven't touched upon, such as bootstrapping or the disk interface.
