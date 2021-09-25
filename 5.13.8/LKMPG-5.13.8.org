@@ -604,11 +604,15 @@ In other words, your kernel refuses to accept your module because version string
 
 #+BEGIN_SRC txt
 # sudo modinfo hello-4.ko
+filename:       /home/tacitus/LKMPG/5.13.8/examples/hello-4.ko
 license:        GPL
-author:         Bob Mottram <bob@libreserver.org>
+author:         Bob Mottram
 description:    A sample driver
-vermagic:       5.13.8-1.358 amd64 REGPARM 4KSTACKS gcc-4.9.2
-depends:
+vermagic:       5.13.8-gnu-1 SMP preempt mod_unload 
+name:           hello_4
+retpoline:      Y
+depends:        
+srcversion:     C2F2A11B1F59FBBA64F3A0A
 #+END_SRC
 
 To overcome this problem we could resort to the *--force-vermagic* option, but this solution is potentially unsafe, and unquestionably inacceptable in production modules. Consequently, we want to compile our module in an environment which was identical to the one in which our precompiled kernel was built. How to do this, is the subject of the remainder of this chapter.
