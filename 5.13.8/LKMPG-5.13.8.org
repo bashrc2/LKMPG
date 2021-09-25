@@ -4013,7 +4013,7 @@ static int test_skcipher_encrypt(char * plaintext, char * password,
     if (crypto_skcipher_setkey(sk->tfm, key, SYMMETRIC_KEY_LENGTH)) {
         pr_info("key could not be set\n");
         ret = -EAGAIN;
-        goto out;
+        return ret;
     }
     pr_info("Symmetric key: %s\n", key);
     pr_info("Plaintext: %s\n", plaintext);
@@ -4023,7 +4023,7 @@ static int test_skcipher_encrypt(char * plaintext, char * password,
         sk->ivdata = kmalloc(CIPHER_BLOCK_SIZE, GFP_KERNEL);
         if (!sk->ivdata) {
             pr_info("could not allocate ivdata\n");
-            goto out;
+            return ret;
         }
         get_random_bytes(sk->ivdata, CIPHER_BLOCK_SIZE);
     }
@@ -4033,7 +4033,7 @@ static int test_skcipher_encrypt(char * plaintext, char * password,
         sk->scratchpad = kmalloc(CIPHER_BLOCK_SIZE, GFP_KERNEL);
         if (!sk->scratchpad) {
             pr_info("could not allocate scratchpad\n");
-            goto out;
+            return ret;
         }
     }
     sprintf((char*)sk->scratchpad,"%s",plaintext);
@@ -4047,11 +4047,10 @@ static int test_skcipher_encrypt(char * plaintext, char * password,
     ret = crypto_skcipher_encrypt(sk->req);
     ret = test_skcipher_result(sk, ret);
     if (ret)
-        goto out;
+        return ret;
 
     pr_info("Encryption request successful\n");
 
-out:
     return ret;
 }
 
