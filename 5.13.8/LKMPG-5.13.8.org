@@ -3994,8 +3994,7 @@ static int test_skcipher_encrypt(char * plaintext, char * password,
         sk->req = skcipher_request_alloc(sk->tfm, GFP_KERNEL);
         if (!sk->req) {
             pr_info("could not allocate skcipher request\n");
-            ret = -ENOMEM;
-            goto out;
+            return -ENOMEM;
         }
     }
 
