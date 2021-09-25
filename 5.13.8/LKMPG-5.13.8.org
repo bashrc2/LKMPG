@@ -1463,7 +1463,7 @@ module_init(procfs4_init);
 module_exit(procfs4_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Peter Jay Salzman");
+MODULE_AUTHOR("Philippe Reynes");
 MODULE_DESCRIPTION("Demonstrates procfs");
 #+END_SRC
 
