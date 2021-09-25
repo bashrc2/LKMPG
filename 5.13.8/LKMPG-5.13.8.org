@@ -3020,7 +3020,7 @@ static void print_string(char *str)
                          0,   /* Don't take the string
                                  from user space        */
 #endif
-                         str, /* String                 */
+                         (unsigned char *)str, /* String                 */
                          strlen(str));        /* Length */
 
         /*
@@ -3039,9 +3039,9 @@ static void print_string(char *str)
          */
 
 #if ( LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,9) )
-        (ttyops->write) (my_tty, 0, "\015\012", 2);
+        (ttyops->write) (my_tty, 0, (unsigned char *)"\015\012", 2);
 #else
-        (ttyops->write) (my_tty, "\015\012", 2);
+        (ttyops->write) (my_tty, (unsigned char *)"\015\012", 2);
 #endif
     }
 }
@@ -3805,10 +3805,10 @@ int cryptosha256_init(void)
     if (crypto_shash_init(shash))
         return -1;
 
-    if (crypto_shash_update(shash, plaintext, strlen(plaintext)))
+    if (crypto_shash_update(shash, (unsigned char *)plaintext, strlen(plaintext)))
         return -1;
 
-    if (crypto_shash_final(shash, hash_sha256))
+    if (crypto_shash_final(shash, (unsigned char *)hash_sha256))
         return -1;
 
     kfree(shash);
