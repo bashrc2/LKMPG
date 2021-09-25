@@ -3867,7 +3867,7 @@ struct crypto_rng * rng = NULL;
 static int get_random_numbers(struct crypto_rng *rng, u8 *buf, unsigned int len)
 {
   if (!buf || !len) {
-    pr_debug("No output buffer provided\n");
+    pr_info("No output buffer provided\n");
     return -EINVAL;
   }
   
@@ -3884,20 +3884,20 @@ int random_init(void)
   
   rng = crypto_alloc_rng(drbg, 0, 0);
   if (IS_ERR(rng)) {
-    pr_debug("could not allocate RNG handle for %s\n", drbg);
+    pr_info("could not allocate RNG handle for %s\n", drbg);
     return PTR_ERR(rng);
   }
   ret = get_random_numbers(rng, (u8 *)buf, 32);
   if (ret < 0) {
-    pr_debug("generation of random numbers failed\n");
+    pr_info("generation of random numbers failed\n");
     return -2;
   }
   else if (ret == 0) {
-    pr_debug("RNG returned no data");
+    pr_info("RNG returned no data");
     return -1;
   }
   else
-    pr_debug("RNG returned %d bytes of data\n", ret);
+    pr_info("RNG returned %d bytes of data\n", ret);
   return 0;
 }
   
