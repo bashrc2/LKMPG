@@ -1,87 +1,85 @@
 ::: {#content}
 ::: {#table-of-contents}
-Table of Contents
------------------
+## Table of Contents
 
 ::: {#text-table-of-contents}
--   [1. Introduction](#orga3608fd)
-    -   [1.1. Authorship](#org0c2ba20)
-    -   [1.2. Versioning and Notes](#orgfd7cff8)
-    -   [1.3. Acknowledgements](#orgb060a34)
-    -   [1.4. What Is A Kernel Module?](#orgc883560)
-    -   [1.5. Installing some Dependencies](#orgb03af00)
-    -   [1.6. What Modules are in my Kernel?](#orgeb01214)
+-   [1. Introduction](#orga52b20e)
+    -   [1.1. Authorship](#org1cedb0a)
+    -   [1.2. Versioning and Notes](#orgefabb2c)
+    -   [1.3. Acknowledgements](#orgd521949)
+    -   [1.4. What Is A Kernel Module?](#org0d23f91)
+    -   [1.5. Installing some Dependencies](#org01ebc8c)
+    -   [1.6. What Modules are in my Kernel?](#org87aea9c)
     -   [1.7. Do I need to download and compile the
-        kernel?](#org191b00a)
-    -   [1.8. Before We Begin](#org96631e5)
--   [2. Headers](#org2a15f80)
--   [3. Examples](#orgf4ea0e0)
--   [4. Hello World](#org1e56bf1)
-    -   [4.1. The Simplest Module](#org0d9533d)
-    -   [4.2. Hello and Goodbye](#org7b2d81d)
-    -   [4.3. The \_\_init and \_\_exit Macros](#orgd532037)
-    -   [4.4. Licensing and Module Documentation](#orgeb5e923)
-    -   [4.5. Passing Command Line Arguments to a Module](#org15a69e7)
-    -   [4.6. Modules Spanning Multiple Files](#org93705fc)
-    -   [4.7. Building modules for a precompiled kernel](#orgcce4189)
--   [5. Preliminaries](#org02c574e)
-    -   [5.1. How modules begin and end](#org30dba4d)
-    -   [5.2. Functions available to modules](#orgd6d7e1a)
-    -   [5.3. User Space vs Kernel Space](#org82285d8)
-    -   [5.4. Name Space](#org88cd4d8)
-    -   [5.5. Code space](#org43de0d3)
-    -   [5.6. Device Drivers](#org9364eca)
--   [6. Character Device drivers](#org5f612d5)
-    -   [6.1. The file\_operations Structure](#org8082ef8)
-    -   [6.2. The file structure](#org6ee93d7)
-    -   [6.3. Registering A Device](#orgb8f6d54)
-    -   [6.4. Unregistering A Device](#orgfad7564)
-    -   [6.5. chardev.c](#org53f35a8)
-    -   [6.6. Writing Modules for Multiple Kernel Versions](#org4be9970)
--   [7. The /proc File System](#org94a77dc)
-    -   [7.1. Read and Write a /proc File](#org89caf7c)
-    -   [7.2. Manage /proc file with standard filesystem](#orge5f8b57)
-    -   [7.3. Manage /proc file with seq\_file](#org0b7b40b)
--   [8. sysfs: Interacting with your module](#orgc5d647f)
--   [9. Talking To Device Files](#orga92d14d)
--   [10. System Calls](#org36df3e3)
--   [11. Blocking Processes and threads](#orge22df23)
-    -   [11.1. Sleep](#org2e31ad7)
-    -   [11.2. Completions](#org878be62)
--   [12. Avoiding Collisions and Deadlocks](#org1497df5)
-    -   [12.1. Mutex](#org9375d3a)
-    -   [12.2. Spinlocks](#orgaf124e4)
-    -   [12.3. Read and write locks](#orgc61adff)
-    -   [12.4. Atomic operations](#org797e945)
--   [13. Replacing Print Macros](#org315b814)
-    -   [13.1. Replacement](#orge064924)
-    -   [13.2. Flashing keyboard LEDs](#org3cbb3b2)
--   [14. Scheduling Tasks](#org7319533)
-    -   [14.1. Tasklets](#org6dca427)
-    -   [14.2. Work queues](#org3618eb0)
--   [15. Interrupt Handlers](#org9764750)
-    -   [15.1. Interrupt Handlers](#orge11d62b)
-    -   [15.2. Detecting button presses](#org0a6ea65)
-    -   [15.3. Bottom Half](#org793822b)
--   [16. Crypto](#orga873b84)
-    -   [16.1. Hash functions](#org8c0e5bf)
-    -   [16.2. Symmetric key encryption](#org6c8251d)
--   [17. Standardising the interfaces: The Device Model](#org80ad533)
--   [18. Optimisations](#orgd2ab6d2)
-    -   [18.1. Likely and Unlikely conditions](#org9213a35)
--   [19. Common Pitfalls](#org789c577)
-    -   [19.1. Using standard libraries](#orgc72082f)
-    -   [19.2. Disabling interrupts](#orgb937c60)
-    -   [19.3. Sticking your head inside a large carnivore](#org10a8359)
--   [20. Where To Go From Here?](#org33f194c)
+        kernel?](#org3105c25)
+    -   [1.8. Before We Begin](#org3613b5c)
+-   [2. Headers](#org55be331)
+-   [3. Examples](#orgc089cc7)
+-   [4. Hello World](#org927a75a)
+    -   [4.1. The Simplest Module](#orgb4b224c)
+    -   [4.2. Hello and Goodbye](#orgc9e251b)
+    -   [4.3. The \_\_init and \_\_exit Macros](#orgbedf180)
+    -   [4.4. Licensing and Module Documentation](#org0b50be3)
+    -   [4.5. Passing Command Line Arguments to a Module](#org3bc3b6e)
+    -   [4.6. Modules Spanning Multiple Files](#orgfa1b2dd)
+    -   [4.7. Building modules for a precompiled kernel](#org0e34d2e)
+-   [5. Preliminaries](#org5698ecd)
+    -   [5.1. How modules begin and end](#org8148b7f)
+    -   [5.2. Functions available to modules](#orgbba77e1)
+    -   [5.3. User Space vs Kernel Space](#org695cac3)
+    -   [5.4. Name Space](#org4b75509)
+    -   [5.5. Code space](#orgeeb2806)
+    -   [5.6. Device Drivers](#org81d5088)
+-   [6. Character Device drivers](#org9e44303)
+    -   [6.1. The file_operations Structure](#org8f47977)
+    -   [6.2. The file structure](#org0e88fd8)
+    -   [6.3. Registering A Device](#org6f9256e)
+    -   [6.4. Unregistering A Device](#org56e59b1)
+    -   [6.5. chardev.c](#org8282db1)
+    -   [6.6. Writing Modules for Multiple Kernel Versions](#orgd910fa9)
+-   [7. The /proc File System](#orgb5f3d2f)
+    -   [7.1. Read and Write a /proc File](#org589de2b)
+    -   [7.2. Manage /proc file with standard filesystem](#orgcf5392b)
+    -   [7.3. Manage /proc file with seq_file](#org282a15b)
+-   [8. sysfs: Interacting with your module](#org6d5eeb2)
+-   [9. Talking To Device Files](#org09d5857)
+-   [10. System Calls](#org51eb895)
+-   [11. Blocking Processes and threads](#orgb6a9115)
+    -   [11.1. Sleep](#org2687dee)
+    -   [11.2. Completions](#orge56dfbd)
+-   [12. Avoiding Collisions and Deadlocks](#orgbcc42de)
+    -   [12.1. Mutex](#org9bc931f)
+    -   [12.2. Spinlocks](#org9524a19)
+    -   [12.3. Read and write locks](#orga814666)
+    -   [12.4. Atomic operations](#org718958d)
+-   [13. Replacing Print Macros](#orgb5a8756)
+    -   [13.1. Replacement](#orga836e2e)
+    -   [13.2. Flashing keyboard LEDs](#org86785e3)
+-   [14. Scheduling Tasks](#org24328ef)
+    -   [14.1. Tasklets](#org9acb1ea)
+    -   [14.2. Work queues](#org710330a)
+-   [15. Interrupt Handlers](#org35cd7bb)
+    -   [15.1. Interrupt Handlers](#orged1ad6a)
+    -   [15.2. Detecting button presses](#org83d512c)
+    -   [15.3. Bottom Half](#org168b208)
+-   [16. Crypto](#org16f10c6)
+    -   [16.1. Hash functions](#org751218b)
+    -   [16.2. Symmetric key encryption](#org864d511)
+-   [17. Standardising the interfaces: The Device Model](#orgdeb9f24)
+-   [18. Optimisations](#orgdb8f947)
+    -   [18.1. Likely and Unlikely conditions](#org33455b4)
+-   [19. Common Pitfalls](#orgb29f511)
+    -   [19.1. Using standard libraries](#orgfbda4ad)
+    -   [19.2. Disabling interrupts](#org61c29e9)
+    -   [19.3. Sticking your head inside a large carnivore](#org5613143)
+-   [20. Where To Go From Here?](#org258b0a6)
 :::
 :::
 
-\[\[\#+TITLE: The Linux Kernel Module Programming Guide
+\[\[#+TITLE: The Linux Kernel Module Programming Guide
 
-::: {#outline-container-orga3608fd .outline-2}
-[1.]{.section-number-2} Introduction {#orga3608fd}
-------------------------------------
+::: {#outline-container-orga52b20e .outline-2}
+## [1]{.section-number-2} Introduction {#orga52b20e}
 
 ::: {#text-1 .outline-text-2}
 The Linux Kernel Module Programming Guide is a free book; you may
@@ -104,7 +102,7 @@ the Open Software License, and the original copyright notice must remain
 intact. If you have contributed new material to this book, you must make
 the material and source code available for your revisions. Please make
 revisions and updates available directly to the document maintainer,
-Peter Jay Salzman \<p\@dirac.org\>. This will allow for the merging of
+Peter Jay Salzman \<p\@dirac.org>. This will allow for the merging of
 updates and provide consistent revisions to the Linux community.
 
 If you publish or distribute this book commercially, donations,
@@ -115,8 +113,8 @@ LDP. If you have questions or comments, please contact the address
 above.
 :::
 
-::: {#outline-container-org0c2ba20 .outline-3}
-### [1.1.]{.section-number-3} Authorship {#org0c2ba20}
+::: {#outline-container-org1cedb0a .outline-3}
+### [1.1]{.section-number-3} Authorship {#org1cedb0a}
 
 ::: {#text-1-1 .outline-text-3}
 The Linux Kernel Module Programming Guide was originally written for the
@@ -132,8 +130,8 @@ versions.
 :::
 :::
 
-::: {#outline-container-orgfd7cff8 .outline-3}
-### [1.2.]{.section-number-3} Versioning and Notes {#orgfd7cff8}
+::: {#outline-container-orgefabb2c .outline-3}
+### [1.2]{.section-number-3} Versioning and Notes {#orgefabb2c}
 
 ::: {#text-1-2 .outline-text-3}
 The Linux kernel is a moving target. There has always been a question
@@ -150,8 +148,8 @@ I can\'t promise anything.
 :::
 :::
 
-::: {#outline-container-orgb060a34 .outline-3}
-### [1.3.]{.section-number-3} Acknowledgements {#orgb060a34}
+::: {#outline-container-orgd521949 .outline-3}
+### [1.3]{.section-number-3} Acknowledgements {#orgd521949}
 
 ::: {#text-1-3 .outline-text-3}
 The following people have contributed corrections or good suggestions:
@@ -160,8 +158,8 @@ Francois Audeon, Horst Schirmeier, Bob Mottram and Roman Lakeev.
 :::
 :::
 
-::: {#outline-container-orgc883560 .outline-3}
-### [1.4.]{.section-number-3} What Is A Kernel Module? {#orgc883560}
+::: {#outline-container-org0d23f91 .outline-3}
+### [1.4]{.section-number-3} What Is A Kernel Module? {#org0d23f91}
 
 ::: {#text-1-4 .outline-text-3}
 So, you want to write a kernel module. You know C, you\'ve written a few
@@ -181,8 +179,8 @@ time we want new functionality.
 :::
 :::
 
-::: {#outline-container-orgb03af00 .outline-3}
-### [1.5.]{.section-number-3} Installing some Dependencies {#orgb03af00}
+::: {#outline-container-org01ebc8c .outline-3}
+### [1.5]{.section-number-3} Installing some Dependencies {#org01ebc8c}
 
 ::: {#text-1-5 .outline-text-3}
 Linux distros provide the commands *modprobe*, *insmod* and *depmod*
@@ -190,7 +188,7 @@ within a package. These can be installed as follows:
 
 On Debian:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo apt-get install build-essential kmod
 ```
@@ -198,7 +196,7 @@ sudo apt-get install build-essential kmod
 
 On Parabola:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo pacman -S gcc kmod
 ```
@@ -206,14 +204,14 @@ sudo pacman -S gcc kmod
 :::
 :::
 
-::: {#outline-container-orgeb01214 .outline-3}
-### [1.6.]{.section-number-3} What Modules are in my Kernel? {#orgeb01214}
+::: {#outline-container-org87aea9c .outline-3}
+### [1.6]{.section-number-3} What Modules are in my Kernel? {#org87aea9c}
 
 ::: {#text-1-6 .outline-text-3}
 To discover what modules are already loaded within your current kernel
 use the command **lsmod**.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo lsmod
 ```
@@ -222,7 +220,7 @@ sudo lsmod
 Modules are stored within the file /proc/modules, so you can also see
 them with:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo cat /proc/modules
 ```
@@ -231,7 +229,7 @@ sudo cat /proc/modules
 This can be a long list, and you might prefer to search for something
 particular. To search for the *fat* module:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo lsmod | grep fat
 ```
@@ -239,8 +237,8 @@ sudo lsmod | grep fat
 :::
 :::
 
-::: {#outline-container-org191b00a .outline-3}
-### [1.7.]{.section-number-3} Do I need to download and compile the kernel? {#org191b00a}
+::: {#outline-container-org3105c25 .outline-3}
+### [1.7]{.section-number-3} Do I need to download and compile the kernel? {#org3105c25}
 
 ::: {#text-1-7 .outline-text-3}
 For the purposes of following this guide you don\'t necessarily need to
@@ -250,8 +248,8 @@ messing up your system.
 :::
 :::
 
-::: {#outline-container-org96631e5 .outline-3}
-### [1.8.]{.section-number-3} Before We Begin {#org96631e5}
+::: {#outline-container-org3613b5c .outline-3}
+### [1.8]{.section-number-3} Before We Begin {#org3613b5c}
 
 ::: {#text-1-8 .outline-text-3}
 Before we delve into code, there are a few issues we need to cover.
@@ -262,18 +260,20 @@ hurdle of doing it for the first time, it will be smooth sailing
 thereafter.
 :::
 
-1.  []{#org7bb04b9}Modversioning\
+1.  []{#org6dd6a46}Modversioning\
+
     ::: {#text-1-8-0-1 .outline-text-5}
     A module compiled for one kernel won\'t load if you boot a different
-    kernel unless you enable CONFIG\_MODVERSIONS in the kernel. We
-    won\'t go into module versioning until later in this guide. Until we
-    cover modversions, the examples in the guide may not work if you\'re
+    kernel unless you enable CONFIG_MODVERSIONS in the kernel. We won\'t
+    go into module versioning until later in this guide. Until we cover
+    modversions, the examples in the guide may not work if you\'re
     running a kernel with modversioning turned on. However, most stock
     Linux distro kernels come with it turned on. If you\'re having
     trouble loading the modules because of versioning errors, compile a
     kernel with modversioning turned off.
     :::
-2.  []{#org43d6aa4}Using X\
+2.  []{#org6ceb52a}Using X\
+
     ::: {#text-1-8-0-2 .outline-text-5}
     It is highly recommended that you extract, compile and load all the
     examples this guide discusses. It\'s also highly recommended you do
@@ -290,15 +290,14 @@ thereafter.
 :::
 :::
 
-::: {#outline-container-org2a15f80 .outline-2}
-[2.]{.section-number-2} Headers {#org2a15f80}
--------------------------------
+::: {#outline-container-org55be331 .outline-2}
+## [2]{.section-number-2} Headers {#org55be331}
 
 ::: {#text-2 .outline-text-2}
 Before you can build anything you\'ll need to install the header files
 for your kernel. On Parabola GNU/Linux:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo pacman -S linux-libre-headers
 ```
@@ -306,7 +305,7 @@ sudo pacman -S linux-libre-headers
 
 On Debian:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo apt-get update
 apt-cache search linux-headers-$(uname -r)
@@ -316,7 +315,7 @@ apt-cache search linux-headers-$(uname -r)
 This will tell you what kernel header files are available. Then for
 example:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo apt-get install kmod linux-headers-5.13.8-1-amd64
 ```
@@ -324,16 +323,15 @@ sudo apt-get install kmod linux-headers-5.13.8-1-amd64
 :::
 :::
 
-::: {#outline-container-orgf4ea0e0 .outline-2}
-[3.]{.section-number-2} Examples {#orgf4ea0e0}
---------------------------------
+::: {#outline-container-orgc089cc7 .outline-2}
+## [3]{.section-number-2} Examples {#orgc089cc7}
 
 ::: {#text-3 .outline-text-2}
 All the examples from this document are available within the *examples*
 subdirectory. The directory is created by a script which pulls the
 source code out from the manual. To test that they compile:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 ./create_examples.sh
 cd examples
@@ -346,15 +344,14 @@ version or need to install the corresponding kernel header files.
 :::
 :::
 
-::: {#outline-container-org1e56bf1 .outline-2}
-[4.]{.section-number-2} Hello World {#org1e56bf1}
------------------------------------
+::: {#outline-container-org927a75a .outline-2}
+## [4]{.section-number-2} Hello World {#org927a75a}
 
 ::: {#text-4 .outline-text-2}
 :::
 
-::: {#outline-container-org0d9533d .outline-3}
-### [4.1.]{.section-number-3} The Simplest Module {#org0d9533d}
+::: {#outline-container-orgb4b224c .outline-3}
+### [4.1]{.section-number-3} The Simplest Module {#orgb4b224c}
 
 ::: {#text-4-1 .outline-text-3}
 Most people learning programming start out with some sort of \"*hello
@@ -367,7 +364,7 @@ Here\'s the simplest module possible.
 
 Make a test directory:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 mkdir -p ~/develop/kernel/hello-1
 cd ~/develop/kernel/hello-1
@@ -376,7 +373,7 @@ cd ~/develop/kernel/hello-1
 
 Paste this into you favourite editor and save it as **hello-1.c**:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  *  hello-1.c - The simplest kernel module.
@@ -406,21 +403,25 @@ MODULE_LICENSE("GPL");
 Now you\'ll need a Makefile. If you copy and paste this change the
 indentation to use tabs, not spaces.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-makefile}
+MY_CFLAGS += -g -DDEBUG
+ccflags-y += ${MY_CFLAGS}
+CC += ${MY_CFLAGS}
+KBUILD_CFLAGS := -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
 obj-m += hello-1.o
 
 all:
-        make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+    make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 
 clean:
-        make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+    make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 ```
 :::
 
 And finally just:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 make
 ```
@@ -429,7 +430,7 @@ make
 If all goes smoothly you should then find that you have a compiled
 **hello-1.ko** module. You can find info on it with the command:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo modinfo hello-1.ko
 ```
@@ -437,7 +438,7 @@ sudo modinfo hello-1.ko
 
 At this point the command:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo lsmod | grep hello
 ```
@@ -445,7 +446,7 @@ sudo lsmod | grep hello
 
 should return nothing. You can try loading your shiny new module with:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo insmod hello-1.ko
 ```
@@ -454,7 +455,7 @@ sudo insmod hello-1.ko
 The dash character will get converted to an underscore, so when you
 again try:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo lsmod | grep hello
 ```
@@ -462,7 +463,7 @@ sudo lsmod | grep hello
 
 you should now see your loaded module. It can be removed again with:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo rmmod hello_1
 ```
@@ -471,7 +472,7 @@ sudo rmmod hello_1
 Notice that the dash was replaced by an underscore. To see what just
 happened in the logs:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 journalctl --since "1 hour ago" | grep kernel
 ```
@@ -481,27 +482,28 @@ You now know the basics of creating, compiling, installing and removing
 modules. Now for more of a description of how this module works.
 
 Kernel modules must have at least two functions: a \"start\"
-(initialization) function called **init\_module()** which is called when
+(initialization) function called **init_module()** which is called when
 the module is insmoded into the kernel, and an \"end\" (cleanup)
-function called **cleanup\_module()** which is called just before it is
+function called **cleanup_module()** which is called just before it is
 rmmoded. Actually, things have changed starting with kernel 2.3.13. You
 can now use whatever name you like for the start and end functions of a
 module, and you\'ll learn how to do this in Section 2.3. In fact, the
 new method is the preferred method. However, many people still use
-init\_module() and cleanup\_module() for their start and end functions.
+init_module() and cleanup_module() for their start and end functions.
 
-Typically, init\_module() either registers a handler for something with
+Typically, init_module() either registers a handler for something with
 the kernel, or it replaces one of the kernel functions with its own code
 (usually code to do something and then call the original function). The
-cleanup\_module() function is supposed to undo whatever init\_module()
+cleanup_module() function is supposed to undo whatever init_module()
 did, so the module can be unloaded safely.
 
 Lastly, every kernel module needs to include linux/module.h. We needed
 to include **linux/kernel.h** only for the macro expansion for the
-pr\_alert() log level, which you\'ll learn about in Section 2.1.1.
+pr_alert() log level, which you\'ll learn about in Section 2.1.1.
 :::
 
-1.  []{#orgb856fa3}A point about coding style\
+1.  []{#org84bf2d8}A point about coding style\
+
     ::: {#text-4-1-0-1 .outline-text-5}
     Another thing which may not be immediately obvious to anyone getting
     started with kernel programming is that indentation within your code
@@ -509,17 +511,19 @@ pr\_alert() log level, which you\'ll learn about in Section 2.1.1.
     conventions of the kernel. You may not like it, but you\'ll need to
     get used to it if you ever submit a patch upstream.
     :::
-2.  []{#org629243b}Introducing print macros\
+2.  []{#orga87dfa3}Introducing print macros\
+
     ::: {#text-4-1-0-2 .outline-text-5}
     In the beginning there was **printk**, usually followed by a
-    priority such as KERN\_INFO or KERN\_DEBUG. More recently this can
+    priority such as KERN_INFO or KERN_DEBUG. More recently this can
     also be expressed in abbreviated form using a set of print macros,
-    such as **pr\_info** and **pr\_debug**. This just saves some
-    mindless keyboard bashing and looks a bit neater. They can be found
-    within **linux/printk.h**. Take time to read through the available
-    priority macros.
+    such as **pr_info** and **pr_debug**. This just saves some mindless
+    keyboard bashing and looks a bit neater. They can be found within
+    **linux/printk.h**. Take time to read through the available priority
+    macros.
     :::
-3.  []{#orgb87fdfa}About Compiling\
+3.  []{#org38da8d2}About Compiling\
+
     ::: {#text-4-1-0-3 .outline-text-5}
     Kernel modules need to be compiled a bit differently from regular
     userspace apps. Former kernel versions required us to care much
@@ -540,25 +544,25 @@ pr\_alert() log level, which you\'ll learn about in Section 2.1.1.
     probably save you lots of work.
 
     > Here\'s another exercise for the reader. See that comment above
-    > the return statement in init\_module()? Change the return value to
+    > the return statement in init_module()? Change the return value to
     > something negative, recompile and load the module again. What
     > happens?
     :::
 :::
 
-::: {#outline-container-org7b2d81d .outline-3}
-### [4.2.]{.section-number-3} Hello and Goodbye {#org7b2d81d}
+::: {#outline-container-orgc9e251b .outline-3}
+### [4.2]{.section-number-3} Hello and Goodbye {#orgc9e251b}
 
 ::: {#text-4-2 .outline-text-3}
-In early kernel versions you had to use the **init\_module** and
-**cleanup\_module** functions, as in the first hello world example, but
+In early kernel versions you had to use the **init_module** and
+**cleanup_module** functions, as in the first hello world example, but
 these days you can name those anything you want by using the
-**module\_init** and **module\_exit** macros. These macros are defined
-in **linux/init.h**. The only requirement is that your init and cleanup
+**module_init** and **module_exit** macros. These macros are defined in
+**linux/init.h**. The only requirement is that your init and cleanup
 functions must be defined before calling the those macros, otherwise
 you\'ll get compilation errors. Here\'s an example of this technique:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  *  hello-2.c - Demonstrating the module_init() and module_exit() macros.
@@ -589,8 +593,12 @@ MODULE_LICENSE("GPL");
 So now we have two real kernel modules under our belt. Adding another
 module is as simple as this:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-makefile}
+MY_CFLAGS += -g -DDEBUG
+ccflags-y += ${MY_CFLAGS}
+CC += ${MY_CFLAGS}
+KBUILD_CFLAGS := -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
 obj-m += hello-1.o
 obj-m += hello-2.o
 
@@ -605,17 +613,17 @@ clean:
 Now have a look at linux/drivers/char/Makefile for a real world example.
 As you can see, some things get hardwired into the kernel (obj-y) but
 where are all those obj-m gone? Those familiar with shell scripts will
-easily be able to spot them. For those not, the obj-\$(CONFIG\_FOO)
+easily be able to spot them. For those not, the obj-\$(CONFIG_FOO)
 entries you see everywhere expand into obj-y or obj-m, depending on
-whether the CONFIG\_FOO variable has been set to y or m. While we are at
+whether the CONFIG_FOO variable has been set to y or m. While we are at
 it, those were exactly the kind of variables that you have set in the
 linux/.config file, the last time when you said make menuconfig or
 something like that.
 :::
 :::
 
-::: {#outline-container-orgd532037 .outline-3}
-### [4.3.]{.section-number-3} The \_\_init and \_\_exit Macros {#orgd532037}
+::: {#outline-container-orgbedf180 .outline-3}
+### [4.3]{.section-number-3} The \_\_init and \_\_exit Macros {#orgbedf180}
 
 ::: {#text-4-3 .outline-text-3}
 This demonstrates a feature of kernel 2.2 and later. Notice the change
@@ -638,7 +646,7 @@ These macros are defined in **linux/init.h** and serve to free up kernel
 memory. When you boot your kernel and see something like Freeing unused
 kernel memory: 236k freed, this is precisely what the kernel is freeing.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  *  hello-3.c - Illustrating the __init, __initdata and __exit macros.
@@ -669,14 +677,14 @@ MODULE_LICENSE("GPL");
 :::
 :::
 
-::: {#outline-container-orgeb5e923 .outline-3}
-### [4.4.]{.section-number-3} Licensing and Module Documentation {#orgeb5e923}
+::: {#outline-container-org0b50be3 .outline-3}
+### [4.4]{.section-number-3} Licensing and Module Documentation {#org0b50be3}
 
 ::: {#text-4-4 .outline-text-3}
 Honestly, who loads or even cares about proprietary modules? If you do
 then you might have seen something like this:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-txt}
 # insmod xxxxxx.o
 Warning: loading xxxxxx.ko will taint the kernel: no license
@@ -690,10 +698,10 @@ BSD/GPL\", \"Dual MIT/GPL\", \"Dual MPL/GPL\" and \"Proprietary\".
 They\'re defined within **linux/module.h**.
 
 To reference what license you\'re using a macro is available called
-**MODULE\_LICENSE**. This and a few other macros describing the module
+**MODULE_LICENSE**. This and a few other macros describing the module
 are illustrated in the below example.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  *  hello-4.c - Demonstrates module documentation.
@@ -724,8 +732,8 @@ module_exit(cleanup_hello_4);
 :::
 :::
 
-::: {#outline-container-org15a69e7 .outline-3}
-### [4.5.]{.section-number-3} Passing Command Line Arguments to a Module {#org15a69e7}
+::: {#outline-container-org3bc3b6e .outline-3}
+### [4.5]{.section-number-3} Passing Command Line Arguments to a Module {#org3bc3b6e}
 
 ::: {#text-4-5 .outline-text-3}
 Modules can take command line arguments, but not with the argc/argv you
@@ -733,20 +741,20 @@ might be used to.
 
 To allow arguments to be passed to your module, declare the variables
 that will take the values of the command line arguments as global and
-then use the module\_param() macro, (defined in linux/moduleparam.h) to
+then use the module_param() macro, (defined in linux/moduleparam.h) to
 set the mechanism up. At runtime, insmod will fill the variables with
 any command line arguments that are given, like ./insmod mymodule.ko
 myvariable=5. The variable declarations and macros should be placed at
 the beginning of the module for clarity. The example code should clear
 up my admittedly lousy explanation.
 
-The module\_param() macro takes 3 arguments: the name of the variable,
+The module_param() macro takes 3 arguments: the name of the variable,
 its type and permissions for the corresponding file in sysfs. Integer
 types can be signed as usual or unsigned. If you\'d like to use arrays
-of integers or strings see module\_param\_array() and
-module\_param\_string().
+of integers or strings see module_param_array() and
+module_param_string().
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 int myint = 3;
 module_param(myint, int, 0);
@@ -759,7 +767,7 @@ need to pass a pointer to a count variable as third parameter. At your
 option, you could also ignore the count and pass NULL instead. We show
 both possibilities here:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 int myintarray[2];
 module_param_array(myintarray, int, NULL, 0); /* not interested in count */
@@ -775,12 +783,11 @@ set, like an port or IO address. If the variables contain the default
 values, then perform autodetection (explained elsewhere). Otherwise,
 keep the current value. This will be made clear later on.
 
-Lastly, there\'s a macro function, **MODULE\_PARM\_DESC()**, that is
-used to document arguments that the module can take. It takes two
-parameters: a variable name and a free form string describing that
-variable.
+Lastly, there\'s a macro function, **MODULE_PARM_DESC()**, that is used
+to document arguments that the module can take. It takes two parameters:
+a variable name and a free form string describing that variable.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  *  hello-5.c - Demonstrates command line argument passing to a module.
@@ -799,7 +806,7 @@ static int myint = 420;
 static long int mylong = 9999;
 static char *mystring = "blah";
 static int myintarray[2] = { -1, -1 };
-static int arr_argc = 0;
+static unsigned int arr_argc = 0;
 
 /*
  * module_param(foo, int, 0000)
@@ -839,7 +846,7 @@ static int __init hello_5_init(void)
     pr_info("mystring is a string: %s\n", mystring);
 
     for (i = 0; i < (sizeof myintarray / sizeof (int)); i++)
-        pr_info("myintarray[%d] = %d\n", i, myintarray[i]);
+    pr_info("myintarray[%d] = %d\n", i, myintarray[i]);
 
     pr_info("got %d arguments for myintarray.\n", arr_argc);
     return 0;
@@ -857,7 +864,7 @@ module_exit(hello_5_exit);
 
 I would recommend playing around with this code:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-txt}
 # sudo insmod hello-5.ko mystring="bebop" mybyte=255 myintarray=-1
 mybyte is an 8 bit integer: 255
@@ -889,8 +896,8 @@ hello-5.o: invalid argument syntax for mylong: 'h'
 :::
 :::
 
-::: {#outline-container-org93705fc .outline-3}
-### [4.6.]{.section-number-3} Modules Spanning Multiple Files {#org93705fc}
+::: {#outline-container-orgfa1b2dd .outline-3}
+### [4.6]{.section-number-3} Modules Spanning Multiple Files {#orgfa1b2dd}
 
 ::: {#text-4-6 .outline-text-3}
 Sometimes it makes sense to divide a kernel module between several
@@ -898,7 +905,7 @@ source files.
 
 Here\'s an example of such a kernel module.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  *  start.c - Illustration of multi filed modules
@@ -919,7 +926,7 @@ MODULE_LICENSE("GPL");
 
 The next file:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  *  stop.c - Illustration of multi filed modules
@@ -939,8 +946,12 @@ MODULE_LICENSE("GPL");
 
 And finally, the makefile:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-makefile}
+MY_CFLAGS += -g -DDEBUG
+ccflags-y += ${MY_CFLAGS}
+CC += ${MY_CFLAGS}
+KBUILD_CFLAGS := -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
 obj-m += hello-1.o
 obj-m += hello-2.o
 obj-m += hello-3.o
@@ -964,13 +975,13 @@ module, second we tell make what object files are part of that module.
 :::
 :::
 
-::: {#outline-container-orgcce4189 .outline-3}
-### [4.7.]{.section-number-3} Building modules for a precompiled kernel {#orgcce4189}
+::: {#outline-container-org0e34d2e .outline-3}
+### [4.7]{.section-number-3} Building modules for a precompiled kernel {#org0e34d2e}
 
 ::: {#text-4-7 .outline-text-3}
 Obviously, we strongly suggest you to recompile your kernel, so that you
 can enable a number of useful debugging features, such as forced module
-unloading (**MODULE\_FORCE\_UNLOAD**): when this option is enabled, you
+unloading (**MODULE_FORCE_UNLOAD**): when this option is enabled, you
 can force the kernel to unload a module even when it believes it is
 unsafe, via a **sudo rmmod -f module** command. This option can save you
 a lot of time and a number of reboots during the development of a
@@ -991,7 +1002,7 @@ Now, if you just install a kernel source tree, use it to compile your
 kernel module and you try to insert your module into the kernel, in most
 cases you would obtain an error as follows:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-txt}
 insmod: error inserting 'poet_atkm.ko': -1 Invalid module format
 ```
@@ -999,7 +1010,7 @@ insmod: error inserting 'poet_atkm.ko': -1 Invalid module format
 
 Less cryptical information are logged to the systemd journal:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-txt}
 Jun  4 22:07:54 localhost kernel: poet_atkm: version magic '2.6.5-1.358custom 686
 REGPARM 4KSTACKS gcc-3.3' should be '2.6.5-1.358 686 REGPARM 4KSTACKS gcc-3.3'
@@ -1014,7 +1025,7 @@ in your module when it is linked against the **init/vermagic.o** file.
 To inspect version magics and other strings stored in a given module,
 issue the modinfo module.ko command:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-txt}
 # sudo modinfo hello-4.ko
 license:        GPL
@@ -1052,7 +1063,7 @@ makefile that some distros include. Then, examine your
 information matches exactly the one used for your current kernel. For
 example, you makefile could start as follows:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-makefile}
 VERSION = 4
 PATCHLEVEL = 7
@@ -1067,7 +1078,7 @@ compile your kernel available in **/lib/modules/5.13.8-1.358/build**. A
 simple **cp /lib/modules/\`uname -r\`/build/Makefile
 /usr/src/linux-\`uname -r\`** should suffice. Additionally, if you
 already started a kernel build with the previous (wrong) Makefile, you
-should also rerun make, or directly modify symbol UTS\_RELEASE in file
+should also rerun make, or directly modify symbol UTS_RELEASE in file
 **/usr/src/linux-5.13.8/include/linux/version.h** according to contents
 of file **/lib/modules/5.13.8/build/include/linux/version.h**, or
 overwrite the latter with the first.
@@ -1075,7 +1086,7 @@ overwrite the latter with the first.
 Now, please run make to update configuration and version headers and
 objects:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-txt}
 # make
 SYNC    include/config/auto.conf.cmd
@@ -1104,42 +1115,41 @@ without any errors.
 :::
 :::
 
-::: {#outline-container-org02c574e .outline-2}
-[5.]{.section-number-2} Preliminaries {#org02c574e}
--------------------------------------
+::: {#outline-container-org5698ecd .outline-2}
+## [5]{.section-number-2} Preliminaries {#org5698ecd}
 
 ::: {#text-5 .outline-text-2}
 :::
 
-::: {#outline-container-org30dba4d .outline-3}
-### [5.1.]{.section-number-3} How modules begin and end {#org30dba4d}
+::: {#outline-container-org8148b7f .outline-3}
+### [5.1]{.section-number-3} How modules begin and end {#org8148b7f}
 
 ::: {#text-5-1 .outline-text-3}
 A program usually begins with a **main()** function, executes a bunch of
 instructions and terminates upon completion of those instructions.
 Kernel modules work a bit differently. A module always begin with either
-the init\_module or the function you specify with module\_init call.
-This is the entry function for modules; it tells the kernel what
+the init_module or the function you specify with module_init call. This
+is the entry function for modules; it tells the kernel what
 functionality the module provides and sets up the kernel to run the
 module\'s functions when they\'re needed. Once it does this, entry
 function returns and the module does nothing until the kernel wants to
 do something with the code that the module provides.
 
-All modules end by calling either **cleanup\_module** or the function
-you specify with the **module\_exit** call. This is the exit function
-for modules; it undoes whatever entry function did. It unregisters the
+All modules end by calling either **cleanup_module** or the function you
+specify with the **module_exit** call. This is the exit function for
+modules; it undoes whatever entry function did. It unregisters the
 functionality that the entry function registered.
 
 Every module must have an entry function and an exit function. Since
 there\'s more than one way to specify entry and exit functions, I\'ll
 try my best to use the terms \`entry function\' and \`exit function\',
-but if I slip and simply refer to them as init\_module and
-cleanup\_module, I think you\'ll know what I mean.
+but if I slip and simply refer to them as init_module and
+cleanup_module, I think you\'ll know what I mean.
 :::
 :::
 
-::: {#outline-container-orgd6d7e1a .outline-3}
-### [5.2.]{.section-number-3} Functions available to modules {#orgd6d7e1a}
+::: {#outline-container-orgbba77e1 .outline-3}
+### [5.2]{.section-number-3} Functions available to modules {#orgbba77e1}
 
 ::: {#text-5-2 .outline-text-3}
 Programmers use functions they don\'t define all the time. A prime
@@ -1150,7 +1160,7 @@ which insures that the code (for printf() for example) is available, and
 fixes the call instruction to point to that code.
 
 Kernel modules are different here, too. In the hello world example, you
-might have noticed that we used a function, **pr\_info()** but didn\'t
+might have noticed that we used a function, **pr_info()** but didn\'t
 include a standard I/O library. That\'s because modules are object files
 whose symbols get resolved upon insmod\'ing. The definition for the
 symbols comes from the kernel itself; the only external functions you
@@ -1171,7 +1181,7 @@ write(), which then sends the data to standard output.
 Would you like to see what system calls are made by printf()? It\'s
 easy! Compile the following program:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 #include <stdio.h>
 
@@ -1206,8 +1216,8 @@ everytime someone tries to delete a file on your system.
 :::
 :::
 
-::: {#outline-container-org82285d8 .outline-3}
-### [5.3.]{.section-number-3} User Space vs Kernel Space {#org82285d8}
+::: {#outline-container-org695cac3 .outline-3}
+### [5.3]{.section-number-3} User Space vs Kernel Space {#org695cac3}
 
 ::: {#text-5-3 .outline-text-3}
 A kernel is all about access to resources, whether the resource in
@@ -1232,8 +1242,8 @@ returns and execution gets transfered back to user mode.
 :::
 :::
 
-::: {#outline-container-org88cd4d8 .outline-3}
-### [5.4.]{.section-number-3} Name Space {#org88cd4d8}
+::: {#outline-container-org4b75509 .outline-3}
+### [5.4]{.section-number-3} Name Space {#org4b75509}
 
 ::: {#text-5-4 .outline-text-3}
 When you write a small C program, you use variables which are convenient
@@ -1260,8 +1270,8 @@ share the kernel\'s codespace.
 :::
 :::
 
-::: {#outline-container-org43de0d3 .outline-3}
-### [5.5.]{.section-number-3} Code space {#org43de0d3}
+::: {#outline-container-orgeeb2806 .outline-3}
+### [5.5]{.section-number-3} Code space {#orgeeb2806}
 
 ::: {#text-5-5 .outline-text-3}
 Memory management is a very complicated subject and the majority of
@@ -1302,8 +1312,8 @@ Zircon kernel of Google Fuchsia are two examples of a microkernel.
 :::
 :::
 
-::: {#outline-container-org9364eca .outline-3}
-### [5.6.]{.section-number-3} Device Drivers {#org9364eca}
+::: {#outline-container-org81d5088 .outline-3}
+### [5.6]{.section-number-3} Device Drivers {#org81d5088}
 
 ::: {#text-5-6 .outline-text-3}
 One class of module is the device driver, which provides functionality
@@ -1316,13 +1326,14 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
 /dev/sound without ever knowing what kind of sound card is installed.
 :::
 
-1.  []{#org07032f5}Major and Minor Numbers\
+1.  []{#org2d592ef}Major and Minor Numbers\
+
     ::: {#text-5-6-0-1 .outline-text-5}
     Let\'s look at some device files. Here are device files which
     represent the first three partitions on the primary master IDE hard
     drive:
 
-    ::: {.org-src-container}
+    ::: org-src-container
     ``` {.src .src-sh}
     # ls -l /dev/hda[1-3]
     brw-rw----  1 root  disk  3, 1 Jul  5  2000 /dev/hda1
@@ -1363,7 +1374,7 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
     are block devices. Here are some character devices (the serial
     ports):
 
-    ::: {.org-src-container}
+    ::: org-src-container
     ``` {.src .src-sh}
     crw-rw----  1 root  dial 4, 64 Feb 18 23:34 /dev/ttyS0
     crw-r-----  1 root  dial 4, 65 Nov 17 10:26 /dev/ttyS1
@@ -1398,7 +1409,7 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
     abstract than a PCI card that you can hold in your hand. Look at
     these two device files:
 
-    ::: {.org-src-container}
+    ::: org-src-container
     ``` {.src .src-sh}
     % ls -l /dev/sda /dev/sdb
     brw-rw---- 1 root disk 8,  0 Jan  3 09:02 /dev/sda
@@ -1416,29 +1427,28 @@ Ensoniq IS1370 sound card. A userspace program like mp3blaster can use
 :::
 :::
 
-::: {#outline-container-org5f612d5 .outline-2}
-[6.]{.section-number-2} Character Device drivers {#org5f612d5}
-------------------------------------------------
+::: {#outline-container-org9e44303 .outline-2}
+## [6]{.section-number-2} Character Device drivers {#org9e44303}
 
 ::: {#text-6 .outline-text-2}
 :::
 
-::: {#outline-container-org8082ef8 .outline-3}
-### [6.1.]{.section-number-3} The file\_operations Structure {#org8082ef8}
+::: {#outline-container-org8f47977 .outline-3}
+### [6.1]{.section-number-3} The file_operations Structure {#org8f47977}
 
 ::: {#text-6-1 .outline-text-3}
-The file\_operations structure is defined in
-**/usr/include/linux/fs.h**, and holds pointers to functions defined by
-the driver that perform various operations on the device. Each field of
-the structure corresponds to the address of some function defined by the
-driver to handle a requested operation.
+The file_operations structure is defined in **/usr/include/linux/fs.h**,
+and holds pointers to functions defined by the driver that perform
+various operations on the device. Each field of the structure
+corresponds to the address of some function defined by the driver to
+handle a requested operation.
 
 For example, every character driver needs to define a function that
-reads from the device. The file\_operations structure holds the address
+reads from the device. The file_operations structure holds the address
 of the module\'s function that performs that operation. Here is what the
 definition looks like for kernel 5.4:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 struct file_operations {
     struct module *owner;
@@ -1467,13 +1477,13 @@ struct file_operations {
     ssize_t (*splice_read)(struct file *, loff_t *, struct pipe_inode_info *, size_t, unsigned int);
     int (*setlease)(struct file *, long, struct file_lock **, void **);
     long (*fallocate)(struct file *file, int mode, loff_t offset,
-                      loff_t len);
+              loff_t len);
     void (*show_fdinfo)(struct seq_file *m, struct file *f);
     ssize_t (*copy_file_range)(struct file *, loff_t, struct file *,
-                               loff_t, size_t, unsigned int);
+                   loff_t, size_t, unsigned int);
     loff_t (*remap_file_range)(struct file *file_in, loff_t pos_in,
-                               struct file *file_out, loff_t pos_out,
-                               loff_t len, unsigned int remap_flags);
+                   struct file *file_out, loff_t pos_out,
+                   loff_t len, unsigned int remap_flags);
     int (*fadvise)(struct file *, loff_t, loff_t, int);
 } __randomize_layout;
 ```
@@ -1481,7 +1491,7 @@ struct file_operations {
 
 Some operations are not implemented by a driver. For example, a driver
 that handles a video card won\'t need to read from a directory
-structure. The corresponding entries in the file\_operations structure
+structure. The corresponding entries in the file_operations structure
 should be set to NULL.
 
 There is a gcc extension that makes assigning to this structure more
@@ -1489,13 +1499,13 @@ convenient. You\'ll see it in modern drivers, and may catch you by
 surprise. This is what the new way of assigning to the structure looks
 like:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 struct file_operations fops = {
-        proc_read: device_read,
-        proc_write: device_write,
-        proc_open: device_open,
-        proc_release: device_release
+    proc_read: device_read,
+    proc_write: device_write,
+    proc_open: device_open,
+    proc_release: device_release
 };
 ```
 :::
@@ -1506,13 +1516,13 @@ extension. The version of gcc the author used when writing this, 2.95,
 supports the new C99 syntax. You should use this syntax in case someone
 wants to port your driver. It will help with compatibility:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 struct file_operations fops = {
-        .read = device_read,
-        .write = device_write,
-        .open = device_open,
-        .release = device_release
+    .read = device_read,
+    .write = device_write,
+    .open = device_open,
+    .release = device_release
 };
 ```
 :::
@@ -1521,14 +1531,14 @@ The meaning is clear, and you should be aware that any member of the
 structure which you don\'t explicitly assign will be initialized to NULL
 by gcc.
 
-An instance of struct file\_operations containing pointers to functions
+An instance of struct file_operations containing pointers to functions
 that are used to implement read, write, open, ... syscalls is commonly
 named fops.
 :::
 :::
 
-::: {#outline-container-org6ee93d7 .outline-3}
-### [6.2.]{.section-number-3} The file structure {#org6ee93d7}
+::: {#outline-container-org0e88fd8 .outline-3}
+### [6.2]{.section-number-3} The file structure {#org0e88fd8}
 
 ::: {#text-6-2 .outline-text-3}
 Each device is represented in the kernel by a file structure, which is
@@ -1549,8 +1559,8 @@ only use structures contained in file which are created elsewhere.
 :::
 :::
 
-::: {#outline-container-orgb8f6d54 .outline-3}
-### [6.3.]{.section-number-3} Registering A Device {#orgb8f6d54}
+::: {#outline-container-org6f9256e .outline-3}
+### [6.3]{.section-number-3} Registering A Device {#org6f9256e}
 
 ::: {#text-6-3 .outline-text-3}
 As discussed earlier, char devices are accessed through device files,
@@ -1563,10 +1573,10 @@ operating on, just in case the driver handles more than one device.
 
 Adding a driver to your system means registering it with the kernel.
 This is synonymous with assigning it a major number during the module\'s
-initialization. You do this by using the register\_chrdev function,
+initialization. You do this by using the register_chrdev function,
 defined by linux/fs.h.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 int register_chrdev(unsigned int major, const char *name, struct file_operations *fops);
 ```
@@ -1574,11 +1584,11 @@ int register_chrdev(unsigned int major, const char *name, struct file_operations
 
 Where unsigned int major is the major number you want to request, *const
 char \*name* is the name of the device as it\'ll appear in
-**/proc/devices** and *struct file\_operations \*fops* is a pointer to
-the file\_operations table for your driver. A negative return value
-means the registration failed. Note that we didn\'t pass the minor
-number to register\_chrdev. That\'s because the kernel doesn\'t care
-about the minor number; only our driver uses it.
+**/proc/devices** and *struct file_operations \*fops* is a pointer to
+the file_operations table for your driver. A negative return value means
+the registration failed. Note that we didn\'t pass the minor number to
+register_chrdev. That\'s because the kernel doesn\'t care about the
+minor number; only our driver uses it.
 
 Now the question is, how do you get a major number without hijacking one
 that\'s already in use? The easiest way would be to look through
@@ -1587,7 +1597,7 @@ doing things because you\'ll never be sure if the number you picked will
 be assigned later. The answer is that you can ask the kernel to assign
 you a dynamic major number.
 
-If you pass a major number of 0 to register\_chrdev, the return value
+If you pass a major number of 0 to register_chrdev, the return value
 will be the dynamically allocated major number. The downside is that you
 can\'t make a device file in advance, since you don\'t know what the
 major number will be. There are a couple of ways to do this. First, the
@@ -1596,13 +1606,13 @@ device file by hand. Second, the newly registered device will have an
 entry in **/proc/devices**, and we can either make the device file by
 hand or write a shell script to read the file in and make the device
 file. The third method is we can have our driver make the the device
-file using the **device\_create** function after a successful
-registration and **device\_destroy** during the call to cleanup\_module.
+file using the **device_create** function after a successful
+registration and **device_destroy** during the call to cleanup_module.
 :::
 :::
 
-::: {#outline-container-orgfad7564 .outline-3}
-### [6.4.]{.section-number-3} Unregistering A Device {#orgfad7564}
+::: {#outline-container-org56e59b1 .outline-3}
+### [6.4]{.section-number-3} Unregistering A Device {#org56e59b1}
 
 ::: {#text-6-4 .outline-text-3}
 We can\'t allow the kernel module to be rmmod\'ed whenever root feels
@@ -1617,19 +1627,19 @@ predict, but they can\'t be very positive.
 
 Normally, when you don\'t want to allow something, you return an error
 code (a negative number) from the function which is supposed to do it.
-With cleanup\_module that\'s impossible because it\'s a void function.
+With cleanup_module that\'s impossible because it\'s a void function.
 However, there\'s a counter which keeps track of how many processes are
 using your module. You can see what it\'s value is by looking at the 3rd
 field of **/proc/modules**. If this number isn\'t zero, rmmod will fail.
 Note that you don\'t have to check the counter from within
-cleanup\_module because the check will be performed for you by the
-system call sys\_delete\_module, defined in **linux/module.c**. You
-shouldn\'t use this counter directly, but there are functions defined in
+cleanup_module because the check will be performed for you by the system
+call sys_delete_module, defined in **linux/module.c**. You shouldn\'t
+use this counter directly, but there are functions defined in
 **linux/module.h** which let you increase, decrease and display this
 counter:
 
--   try\_module\_get(THIS\_MODULE): Increment the use count.
--   module\_put(THIS\_MODULE): Decrement the use count.
+-   try_module_get(THIS_MODULE): Increment the use count.
+-   module_put(THIS_MODULE): Decrement the use count.
 
 It\'s important to keep the counter accurate; if you ever do lose track
 of the correct usage count, you\'ll never be able to unload the module;
@@ -1638,14 +1648,14 @@ sooner or later during a module\'s development.
 :::
 :::
 
-::: {#outline-container-org53f35a8 .outline-3}
-### [6.5.]{.section-number-3} chardev.c {#org53f35a8}
+::: {#outline-container-org8282db1 .outline-3}
+### [6.5]{.section-number-3} chardev.c {#org8282db1}
 
 ::: {#text-6-5 .outline-text-3}
 The next code sample creates a char driver named chardev. You can cat
 its device file.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-bash}
 cat /proc/devices
 ```
@@ -1659,7 +1669,7 @@ supported. Don\'t worry if you don\'t see what we do with the data we
 read into the buffer; we don\'t do much with it. We simply read in the
 data and print a message acknowledging that we received it.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  * chardev.c: Creates a read-only char device that says how many times
@@ -1681,7 +1691,7 @@ static int device_open(struct inode *, struct file *);
 static int device_release(struct inode *, struct file *);
 static ssize_t device_read(struct file *, char __user *, size_t, loff_t *);
 static ssize_t device_write(struct file *, const char __user *, size_t,
-                            loff_t *);
+                loff_t *);
 
 #define SUCCESS 0
 #define DEVICE_NAME "chardev" /* Dev name as it appears in /proc/devices   */
@@ -1709,8 +1719,8 @@ static int __init chardev_init(void)
     major = register_chrdev(0, DEVICE_NAME, &chardev_fops);
 
     if (major < 0) {
-        pr_alert("Registering char device failed with %d\n", major);
-        return major;
+    pr_alert("Registering char device failed with %d\n", major);
+    return major;
     }
 
     pr_info("I was assigned major number %d.\n", major);
@@ -1742,7 +1752,7 @@ static int device_open(struct inode *inode, struct file *file)
     static int counter = 0;
 
     if (atomic_cmpxchg(&already_open, 0, 1))
-        return -EBUSY;
+    return -EBUSY;
 
     sprintf(msg, "I already told you %d times Hello world!\n", counter++);
     msg_ptr = msg;
@@ -1768,28 +1778,28 @@ static int device_release(struct inode *inode, struct file *file)
  * read from it.
  */
 static ssize_t device_read(struct file *filp, /* see include/linux/fs.h   */
-                           char __user *buffer, /* buffer to fill with data */
-                           size_t length, /* length of the buffer     */
-                           loff_t *offset)
+               char __user *buffer, /* buffer to fill with data */
+               size_t length, /* length of the buffer     */
+               loff_t *offset)
 {
     /* Number of bytes actually written to the buffer */
     int bytes_read = 0;
 
     /* If we are at the end of message, return 0 signifying end of file. */
     if (*msg_ptr == 0)
-        return 0;
+    return 0;
 
     /* Actually put the data into the buffer */
     while (length && *msg_ptr) {
-        /* The buffer is in the user data segment, not the kernel
-         * segment so "*" assignment won't work.  We have to use
-         * put_user which copies data from the kernel data segment to
-         * the user data segment.
-         */
-        put_user(*(msg_ptr++), buffer++);
+    /* The buffer is in the user data segment, not the kernel
+     * segment so "*" assignment won't work.  We have to use
+     * put_user which copies data from the kernel data segment to
+     * the user data segment.
+     */
+    put_user(*(msg_ptr++), buffer++);
 
-        length--;
-        bytes_read++;
+    length--;
+    bytes_read++;
     }
 
     /* Most read functions return the number of bytes put into the buffer. */
@@ -1798,7 +1808,7 @@ static ssize_t device_read(struct file *filp, /* see include/linux/fs.h   */
 
 /* Called when a process writes to dev file: echo "hi" > /dev/hello */
 static ssize_t device_write(struct file *filp, const char __user *buff,
-                            size_t len, loff_t *off)
+                size_t len, loff_t *off)
 {
     pr_alert("Sorry, this operation is not supported.\n");
     return -EINVAL;
@@ -1813,8 +1823,8 @@ MODULE_LICENSE("GPL");
 :::
 :::
 
-::: {#outline-container-org4be9970 .outline-3}
-### [6.6.]{.section-number-3} Writing Modules for Multiple Kernel Versions {#org4be9970}
+::: {#outline-container-orgd910fa9 .outline-3}
+### [6.6]{.section-number-3} Writing Modules for Multiple Kernel Versions {#orgd910fa9}
 
 ::: {#text-6-6 .outline-text-3}
 The system calls, which are the major interface the kernel shows to the
@@ -1826,8 +1836,8 @@ device files will also remain the same. On the other hand, the internal
 interfaces within the kernel can and do change between versions.
 
 The Linux kernel versions are divided between the stable versions
-(n.\$\<\\(even number\\)\>\$.m) and the development versions
-(n.\$\<\\(odd number\\)\>\$.m). The development versions include all the
+(n.\$\<\\(even number\\)>\$.m) and the development versions
+(n.\$\<\\(odd number\\)>\$.m). The development versions include all the
 cool new ideas, including those which will be considered a mistake, or
 reimplemented, in the next version. As a result, you can\'t trust the
 interface to remain the same in those versions (which is why I don\'t
@@ -1839,7 +1849,7 @@ version (the m number).
 There are differences between different kernel versions, and if you want
 to support multiple kernel versions, you\'ll find yourself having to
 code conditional compilation directives. The way to do this to compare
-the macro LINUX\_VERSION\_CODE to the macro KERNEL\_VERSION. In version
+the macro LINUX_VERSION_CODE to the macro KERNEL_VERSION. In version
 a.b.c of the kernel, the value of this macro would be
 \\(2\^{16}a+2\^{8}b+c\\).
 
@@ -1864,9 +1874,8 @@ archives if you\'re interested in the full story.
 :::
 :::
 
-::: {#outline-container-org94a77dc .outline-2}
-[7.]{.section-number-2} The /proc File System {#org94a77dc}
----------------------------------------------
+::: {#outline-container-orgb5f3d2f .outline-2}
+## [7]{.section-number-2} The /proc File System {#orgb5f3d2f}
 
 ::: {#text-7 .outline-text-2}
 In Linux, there is an additional mechanism for the kernel and kernel
@@ -1881,8 +1890,8 @@ The method to use the proc file system is very similar to the one used
 with device drivers --- a structure is created with all the information
 needed for the **/proc** file, including pointers to any handler
 functions (in our case there is only one, the one called when somebody
-attempts to read from the **/proc** file). Then, init\_module registers
-the structure with the kernel and cleanup\_module unregisters it.
+attempts to read from the **/proc** file). Then, init_module registers
+the structure with the kernel and cleanup_module unregisters it.
 
 Normal file systems are located on a disk, rather than just in memory
 (which is where **/proc** is), and in that case the inode number is a
@@ -1892,25 +1901,25 @@ example the file\'s permissions, together with a pointer to the disk
 location or locations where the file\'s data can be found.
 
 Because we don\'t get called when the file is opened or closed, there\'s
-nowhere for us to put try\_module\_get and try\_module\_put in this
-module, and if the file is opened and then the module is removed,
-there\'s no way to avoid the consequences.
+nowhere for us to put try_module_get and try_module_put in this module,
+and if the file is opened and then the module is removed, there\'s no
+way to avoid the consequences.
 
 Here a simple example showing how to use a **/proc** file. This is the
 HelloWorld for the **/proc** filesystem. There are three parts: create
-the file ***proc* helloworld** in the function init\_module, return a
+the file ***proc* helloworld** in the function init_module, return a
 value (and a buffer) when the file **/proc/helloworld** is read in the
-callback function **procfile\_read**, and delete the file
-**/proc/helloworld** in the function cleanup\_module.
+callback function **procfile_read**, and delete the file
+**/proc/helloworld** in the function cleanup_module.
 
 The **/proc/helloworld** is created when the module is loaded with the
-function **proc\_create**. The return value is a **struct
-proc\_dir\_entry** , and it will be used to configure the file
+function **proc_create**. The return value is a **struct
+proc_dir_entry** , and it will be used to configure the file
 **/proc/helloworld** (for example, the owner of this file). A null
 return value means that the creation has failed.
 
 Each time, everytime the file **/proc/helloworld** is read, the function
-**procfile\_read** is called. Two parameters of this function are very
+**procfile_read** is called. Two parameters of this function are very
 important: the buffer (the first parameter) and the offset (the third
 one). The content of the buffer will be returned to the application
 which read it (for example the cat command). The offset is the current
@@ -1918,14 +1927,14 @@ position in the file. If the return value of the function isn\'t null,
 then this function is called again. So be careful with this function, if
 it never returns zero, the read function is called endlessly.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-txt}
 # cat /proc/helloworld
 HelloWorld!
 ```
 :::
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  * procfs1.c
@@ -1946,18 +1955,18 @@ HelloWorld!
 static struct proc_dir_entry *our_proc_file;
 
 static ssize_t procfile_read(struct file *filePointer, char __user *buffer,
-                             size_t buffer_length, loff_t *offset)
+                 size_t buffer_length, loff_t *offset)
 {
     char s[13] = "HelloWorld!\n";
     int len = sizeof(s);
     ssize_t ret = len;
 
     if (*offset >= len || copy_to_user(buffer, s, len)) {
-        pr_info("copy_to_user failed\n");
-        ret = 0;
+    pr_info("copy_to_user failed\n");
+    ret = 0;
     } else {
-        pr_info("procfile read %s\n", filePointer->f_path.dentry->d_name.name);
-        *offset += len;
+    pr_info("procfile read %s\n", filePointer->f_path.dentry->d_name.name);
+    *offset += len;
     }
 
     return ret;
@@ -1977,9 +1986,9 @@ static int __init procfs1_init(void)
 {
     our_proc_file = proc_create(procfs_name, 0644, NULL, &proc_file_fops);
     if (NULL == our_proc_file) {
-        proc_remove(our_proc_file);
-        pr_alert("Error:Could not initialize /proc/%s\n", procfs_name);
-        return -ENOMEM;
+    proc_remove(our_proc_file);
+    pr_alert("Error:Could not initialize /proc/%s\n", procfs_name);
+    return -ENOMEM;
     }
 
     pr_info("/proc/%s created\n", procfs_name);
@@ -2000,8 +2009,8 @@ MODULE_LICENSE("GPL");
 :::
 :::
 
-::: {#outline-container-org89caf7c .outline-3}
-### [7.1.]{.section-number-3} Read and Write a /proc File {#org89caf7c}
+::: {#outline-container-org589de2b .outline-3}
+### [7.1]{.section-number-3} Read and Write a /proc File {#org589de2b}
 
 ::: {#text-7-1 .outline-text-3}
 We have seen a very simple example for a /proc file where we only read
@@ -2009,10 +2018,10 @@ the file /proc/helloworld. It\'s also possible to write in a /proc file.
 It works the same way as read, a function is called when the /proc file
 is written. But there is a little difference with read, data comes from
 user, so you have to import data from user space to kernel space (with
-copy\_from\_user or get\_user)
+copy_from_user or get_user)
 
-The reason for copy\_from\_user or get\_user is that Linux memory (on
-Intel architecture, it may be different under some other processors) is
+The reason for copy_from_user or get_user is that Linux memory (on Intel
+architecture, it may be different under some other processors) is
 segmented. This means that a pointer, by itself, does not reference a
 unique location in memory, only a location in a memory segment, and you
 need to know which memory segment it is to be able to use it. There is
@@ -2025,14 +2034,14 @@ access the kernel memory segment, which is handled automatically by the
 system. However, when the content of a memory buffer needs to be passed
 between the currently running process and the kernel, the kernel
 function receives a pointer to the memory buffer which is in the process
-segment. The put\_user and get\_user macros allow you to access that
+segment. The put_user and get_user macros allow you to access that
 memory. These functions handle only one character, you can handle
-several characters with copy\_to\_user and copy\_from\_user. As the
-buffer (in read or write function) is in kernel space, for write
-function you need to import data because it comes from user space, but
-not for the read function because data is already in kernel space.
+several characters with copy_to_user and copy_from_user. As the buffer
+(in read or write function) is in kernel space, for write function you
+need to import data because it comes from user space, but not for the
+read function because data is already in kernel space.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  * procfs2.c -  create a "file" in /proc
@@ -2062,18 +2071,18 @@ static unsigned long procfs_buffer_size = 0;
 
 /* This function is called then the /proc file is read */
 static ssize_t procfile_read(struct file *filePointer, char __user *buffer,
-                             size_t buffer_length, loff_t *offset)
+                 size_t buffer_length, loff_t *offset)
 {
     char s[13] = "HelloWorld!\n";
     int len = sizeof(s);
     ssize_t ret = len;
 
     if (*offset >= len || copy_to_user(buffer, s, len)) {
-        pr_info("copy_to_user failed\n");
-        ret = 0;
+    pr_info("copy_to_user failed\n");
+    ret = 0;
     } else {
-        pr_info("procfile read %s\n", filePointer->f_path.dentry->d_name.name);
-        *offset += len;
+    pr_info("procfile read %s\n", filePointer->f_path.dentry->d_name.name);
+    *offset += len;
     }
 
     return ret;
@@ -2081,14 +2090,14 @@ static ssize_t procfile_read(struct file *filePointer, char __user *buffer,
 
 /* This function is called with the /proc file is written. */
 static ssize_t procfile_write(struct file *file, const char __user *buff,
-                              size_t len, loff_t *off)
+                  size_t len, loff_t *off)
 {
     procfs_buffer_size = len;
     if (procfs_buffer_size > PROCFS_MAX_SIZE)
-        procfs_buffer_size = PROCFS_MAX_SIZE;
+    procfs_buffer_size = PROCFS_MAX_SIZE;
 
     if (copy_from_user(procfs_buffer, buff, procfs_buffer_size))
-        return -EFAULT;
+    return -EFAULT;
 
     procfs_buffer[procfs_buffer_size] = '\0';
     return procfs_buffer_size;
@@ -2110,9 +2119,9 @@ static int __init procfs2_init(void)
 {
     our_proc_file = proc_create(PROCFS_NAME, 0644, NULL, &proc_file_fops);
     if (NULL == our_proc_file) {
-        proc_remove(our_proc_file);
-        pr_alert("Error:Could not initialize /proc/%s\n", PROCFS_NAME);
-        return -ENOMEM;
+    proc_remove(our_proc_file);
+    pr_alert("Error:Could not initialize /proc/%s\n", PROCFS_NAME);
+    return -ENOMEM;
     }
 
     pr_info("/proc/%s created\n", PROCFS_NAME);
@@ -2134,8 +2143,8 @@ MODULE_LICENSE("GPL");
 :::
 :::
 
-::: {#outline-container-orge5f8b57 .outline-3}
-### [7.2.]{.section-number-3} Manage /proc file with standard filesystem {#orge5f8b57}
+::: {#outline-container-orgcf5392b .outline-3}
+### [7.2]{.section-number-3} Manage /proc file with standard filesystem {#orgcf5392b}
 
 ::: {#text-7-2 .outline-text-3}
 We have seen how to read and write a /proc file with the /proc
@@ -2145,20 +2154,20 @@ main concern is to use advanced functions, like permissions.
 In Linux, there is a standard mechanism for file system registration.
 Since every file system has to have its own functions to handle inode
 and file operations, there is a special structure to hold pointers to
-all those functions, struct **inode\_operations**, which includes a
-pointer to struct file\_operations.
+all those functions, struct **inode_operations**, which includes a
+pointer to struct file_operations.
 
 The difference between file and inode operations is that file operations
 deal with the file itself whereas inode operations deal with ways of
 referencing the file, such as creating links to it.
 
 In /proc, whenever we register a new file, we\'re allowed to specify
-which struct inode\_operations will be used to access to it. This is the
-mechanism we use, a struct inode\_operations which includes a pointer to
-a struct file\_operations which includes pointers to our procfs\_read
-and procfs\_write functions.
+which struct inode_operations will be used to access to it. This is the
+mechanism we use, a struct inode_operations which includes a pointer to
+a struct file_operations which includes pointers to our procfs_read and
+procfs_write functions.
 
-Another interesting point here is the module\_permission function. This
+Another interesting point here is the module_permission function. This
 function is called whenever a process tries to do something with the
 /proc file, and it can decide whether to allow access or not. Right now
 it is only based on the operation and the uid of the current user (as
@@ -2175,7 +2184,7 @@ something from the kernel, then the kernel needs to output it, and if a
 process writes something to the kernel, then the kernel receives it as
 input.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  * procfs3.c
@@ -2200,32 +2209,32 @@ static char procfs_buffer[PROCFS_MAX_SIZE];
 static unsigned long procfs_buffer_size = 0;
 
 static ssize_t procfs_read(struct file *filp, char __user *buffer,
-                           size_t length, loff_t *offset)
+               size_t length, loff_t *offset)
 {
     static int finished = 0;
 
     if (finished) {
-        pr_debug("procfs_read: END\n");
-        finished = 0;
-        return 0;
+    pr_debug("procfs_read: END\n");
+    finished = 0;
+    return 0;
     }
     finished = 1;
 
     if (copy_to_user(buffer, procfs_buffer, procfs_buffer_size))
-        return -EFAULT;
+    return -EFAULT;
 
     pr_debug("procfs_read: read %lu bytes\n", procfs_buffer_size);
     return procfs_buffer_size;
 }
 static ssize_t procfs_write(struct file *file, const char __user *buffer,
-                            size_t len, loff_t *off)
+                size_t len, loff_t *off)
 {
     if (len > PROCFS_MAX_SIZE)
-        procfs_buffer_size = PROCFS_MAX_SIZE;
+    procfs_buffer_size = PROCFS_MAX_SIZE;
     else
-        procfs_buffer_size = len;
+    procfs_buffer_size = len;
     if (copy_from_user(procfs_buffer, buffer, procfs_buffer_size))
-        return -EFAULT;
+    return -EFAULT;
 
     pr_debug("procfs_write: write %lu bytes\n", procfs_buffer_size);
     return procfs_buffer_size;
@@ -2260,12 +2269,12 @@ static const struct file_operations file_ops_4_our_proc_file = {
 static int __init procfs3_init(void)
 {
     our_proc_file = proc_create(PROCFS_ENTRY_FILENAME, 0644, NULL,
-                                &file_ops_4_our_proc_file);
+                &file_ops_4_our_proc_file);
     if (our_proc_file == NULL) {
-        remove_proc_entry(PROCFS_ENTRY_FILENAME, NULL);
-        pr_debug("Error: Could not initialize /proc/%s\n",
-                 PROCFS_ENTRY_FILENAME);
-        return -ENOMEM;
+    remove_proc_entry(PROCFS_ENTRY_FILENAME, NULL);
+    pr_debug("Error: Could not initialize /proc/%s\n",
+         PROCFS_ENTRY_FILENAME);
+    return -ENOMEM;
     }
     proc_set_size(our_proc_file, 80);
     proc_set_user(our_proc_file, GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
@@ -2298,14 +2307,14 @@ you want to document something kernel related yourself.
 :::
 :::
 
-::: {#outline-container-org0b7b40b .outline-3}
-### [7.3.]{.section-number-3} Manage /proc file with seq\_file {#org0b7b40b}
+::: {#outline-container-org282a15b .outline-3}
+### [7.3]{.section-number-3} Manage /proc file with seq_file {#org282a15b}
 
 ::: {#text-7-3 .outline-text-3}
 As we have seen, writing a /proc file may be quite \"complex\". So to
-help people writting /proc file, there is an API named seq\_file that
+help people writting /proc file, there is an API named seq_file that
 helps formating a /proc file for output. It\'s based on sequence, which
-is composed of 3 functions: start(), next(), and stop(). The seq\_file
+is composed of 3 functions: start(), next(), and stop(). The seq_file
 API starts a sequence when a user read the /proc file.
 
 A sequence begins with the call of the function start(). If the return
@@ -2319,17 +2328,18 @@ stop() is called.
 BE CARREFUL: when a sequence is finished, another one starts. That means
 that at the end of function stop(), the function start() is called
 again. This loop finishes when the function start() returns NULL. You
-can see a scheme of this in the figure \"How seq\_file works\".
+can see a scheme of this in the figure \"How seq_file works\".
 
-::: {#org4f19cee .figure}
-![seq\_file.png](img/seq_file.png){width="50%" height="10%"}
+::: figure
+![seq_file.png](img/seq_file.png){width="50%" height="10%"
+align="center"}
 :::
 
-Seq\_file provides basic functions for file\_operations, as seq\_read,
-seq\_lseek, and some others. But nothing to write in the /proc file. Of
+Seq_file provides basic functions for file_operations, as seq_read,
+seq_lseek, and some others. But nothing to write in the /proc file. Of
 course, you can still use the same way as in the previous example.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  * procfs4.c -  create a "file" in /proc
@@ -2359,8 +2369,8 @@ static void *my_seq_start(struct seq_file *s, loff_t *pos)
 
     /* beginning a new sequence? */
     if (*pos == 0) {
-        /* yes => return a non null value to begin the sequence */
-        return &counter;
+    /* yes => return a non null value to begin the sequence */
+    return &counter;
     }
 
     /* no => it is the end of the sequence, return end to stop reading */
@@ -2431,9 +2441,9 @@ static int __init procfs4_init(void)
 
     entry = proc_create(PROC_NAME, 0, NULL, &my_file_ops);
     if (entry == NULL) {
-        remove_proc_entry(PROC_NAME, NULL);
-        pr_debug("Error: Could not initialize /proc/%s\n", PROC_NAME);
-        return -ENOMEM;
+    remove_proc_entry(PROC_NAME, NULL);
+    pr_debug("Error: Could not initialize /proc/%s\n", PROC_NAME);
+    return -ENOMEM;
     }
 
     return 0;
@@ -2457,14 +2467,13 @@ If you want more information, you can read this web page:
 -   <https://lwn.net/Articles/22355/>
 -   <https://kernelnewbies.org/Documents/SeqFileHowTo>
 
-You can also read the code of fs/seq\_file.c in the linux kernel.
+You can also read the code of fs/seq_file.c in the linux kernel.
 :::
 :::
 :::
 
-::: {#outline-container-orgc5d647f .outline-2}
-[8.]{.section-number-2} sysfs: Interacting with your module {#orgc5d647f}
------------------------------------------------------------
+::: {#outline-container-org6d5eeb2 .outline-2}
+## [8]{.section-number-2} sysfs: Interacting with your module {#org6d5eeb2}
 
 ::: {#text-8 .outline-text-2}
 *sysfs* allows you to interact with the running kernel from userspace by
@@ -2473,7 +2482,7 @@ debugging purposes, or just as an interface for applications or scripts.
 You can find sysfs directories and files under the *sys* directory on
 your system.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-bash}
 ls -l /sys
 ```
@@ -2482,7 +2491,7 @@ ls -l /sys
 An example of a hello world module which includes the creation of a
 variable accessible via sysfs is given below.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  * hello-sysfs.c sysfs example
@@ -2504,15 +2513,15 @@ static struct kobject *mymodule;
 static int myvariable = 0;
 
 static ssize_t myvariable_show(struct kobject *kobj,
-                               struct kobj_attribute *attr,
-                               char *buf)
+                   struct kobj_attribute *attr,
+                   char *buf)
 {
     return sprintf(buf, "%d\n", myvariable);
 }
 
 static ssize_t myvariable_store(struct kobject *kobj,
-                                struct kobj_attribute *attr,
-                                char *buf, size_t count)
+                struct kobj_attribute *attr,
+                char *buf, size_t count)
 {
     sscanf(buf, "%du", &myvariable);
     return count;
@@ -2521,7 +2530,7 @@ static ssize_t myvariable_store(struct kobject *kobj,
 
 static struct kobj_attribute myvariable_attribute =
     __ATTR(myvariable, 0660, myvariable_show,
-           (void*)myvariable_store);
+       (void*)myvariable_store);
 
 static int __init mymodule_init (void)
 {
@@ -2530,14 +2539,14 @@ static int __init mymodule_init (void)
     pr_info("mymodule: initialised\n");
 
     mymodule =
-        kobject_create_and_add("mymodule", kernel_kobj);
+    kobject_create_and_add("mymodule", kernel_kobj);
     if (!mymodule)
-        return -ENOMEM;
+    return -ENOMEM;
 
     error = sysfs_create_file(mymodule, &myvariable_attribute.attr);
     if (error) {
-        pr_info("failed to create the myvariable file " \
-                "in /sys/kernel/mymodule\n");
+    pr_info("failed to create the myvariable file " \
+        "in /sys/kernel/mymodule\n");
     }
 
     return error;
@@ -2556,7 +2565,7 @@ module_exit(mymodule_exit);
 
 Make and install the module:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 make
 sudo insmod hello-sysfs.ko
@@ -2565,7 +2574,7 @@ sudo insmod hello-sysfs.ko
 
 Check that it exists:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo lsmod | grep hello_sysfs
 ```
@@ -2573,7 +2582,7 @@ sudo lsmod | grep hello_sysfs
 
 What is the current value of *myvariable* ?
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 cat /sys/kernel/mymodule/myvariable
 ```
@@ -2581,7 +2590,7 @@ cat /sys/kernel/mymodule/myvariable
 
 Set the value of *myvariable* and check that it changed.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 echo "32" > /sys/kernel/mymodule/myvariable
 cat /sys/kernel/mymodule/myvariable
@@ -2590,7 +2599,7 @@ cat /sys/kernel/mymodule/myvariable
 
 Finally, remove the test module:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo rmmod hello_sysfs
 ```
@@ -2598,9 +2607,8 @@ sudo rmmod hello_sysfs
 :::
 :::
 
-::: {#outline-container-orga92d14d .outline-2}
-[9.]{.section-number-2} Talking To Device Files {#orga92d14d}
------------------------------------------------
+::: {#outline-container-org09d5857 .outline-2}
+## [9]{.section-number-2} Talking To Device Files {#org09d5857}
 
 ::: {#text-9 .outline-text-2}
 Device files are supposed to represent physical devices. Most physical
@@ -2608,7 +2616,7 @@ devices are used for output as well as input, so there has to be some
 mechanism for device drivers in the kernel to get the output to send to
 the device from processes. This is done by opening the device file for
 output and writing to it, just like writing to a file. In the following
-example, this is implemented by device\_write.
+example, this is implemented by device_write.
 
 This is not always enough. Imagine you had a serial port connected to a
 modem (even if you have an internal modem, it is still implemented from
@@ -2650,7 +2658,7 @@ somebody else\'s ioctls, or if they get yours, you\'ll know something is
 wrong. For more information, consult the kernel source tree at
 Documentation/ioctl-number.txt.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  * chardev2.c - Create an input/output character device
@@ -2693,7 +2701,7 @@ static int device_open(struct inode *inode, struct file *file)
 
     /* We don't want to talk to two processes at the same time. */
     if (atomic_cmpxchg(&already_open, 0, 1))
-        return -EBUSY;
+    return -EBUSY;
 
     /* Initialize the message */
     message_ptr = message;
@@ -2716,9 +2724,9 @@ static int device_release(struct inode *inode, struct file *file)
  * device file attempts to read from it.
  */
 static ssize_t device_read(struct file *file, /* see include/linux/fs.h   */
-                           char __user *buffer, /* buffer to be filled  */
-                           size_t length, /* length of the buffer     */
-                           loff_t *offset)
+               char __user *buffer, /* buffer to be filled  */
+               size_t length, /* length of the buffer     */
+               loff_t *offset)
 {
     /* Number of bytes actually written to the buffer */
     int bytes_read = 0;
@@ -2727,18 +2735,18 @@ static ssize_t device_read(struct file *file, /* see include/linux/fs.h   */
 
     /* If at the end of message, return 0 (which signifies end of file). */
     if (*message_ptr == 0)
-        return 0;
+    return 0;
 
     /* Actually put the data into the buffer */
     while (length && *message_ptr) {
-        /* Because the buffer is in the user data segment, not the kernel
-         * data segment, assignment would not work. Instead, we have to
-         * use put_user which copies data from the kernel data segment to
-         * the user data segment.
-         */
-        put_user(*(message_ptr++), buffer++);
-        length--;
-        bytes_read++;
+    /* Because the buffer is in the user data segment, not the kernel
+     * data segment, assignment would not work. Instead, we have to
+     * use put_user which copies data from the kernel data segment to
+     * the user data segment.
+     */
+    put_user(*(message_ptr++), buffer++);
+    length--;
+    bytes_read++;
     }
 
     pr_info("Read %d bytes, %ld left\n", bytes_read, length);
@@ -2751,14 +2759,14 @@ static ssize_t device_read(struct file *file, /* see include/linux/fs.h   */
 
 /* called when somebody tries to write into our device file. */
 static ssize_t device_write(struct file *file, const char __user *buffer,
-                            size_t length, loff_t *offset)
+                size_t length, loff_t *offset)
 {
     int i;
 
     pr_info("device_write(%p,%s,%ld)", file, buffer, length);
 
     for (i = 0; i < length && i < BUF_LEN; i++)
-        get_user(message[i], buffer + i);
+    get_user(message[i], buffer + i);
 
     message_ptr = message;
 
@@ -2776,8 +2784,8 @@ static ssize_t device_write(struct file *file, const char __user *buffer,
  */
 static long
 device_ioctl(struct file *file, /* ditto */
-             unsigned int ioctl_num, /* number and param for ioctl */
-             unsigned long ioctl_param)
+         unsigned int ioctl_num, /* number and param for ioctl */
+         unsigned long ioctl_param)
 {
     int i;
     char *temp;
@@ -2786,38 +2794,38 @@ device_ioctl(struct file *file, /* ditto */
     /* Switch according to the ioctl called */
     switch (ioctl_num) {
     case IOCTL_SET_MSG:
-        /* Receive a pointer to a message (in user space) and set that to
-         * be the device's message.  Get the parameter given to ioctl by
-         * the process.
-         */
-        temp = (char *)ioctl_param;
+    /* Receive a pointer to a message (in user space) and set that to
+     * be the device's message.  Get the parameter given to ioctl by
+     * the process.
+     */
+    temp = (char *)ioctl_param;
 
-        /* Find the length of the message */
+    /* Find the length of the message */
+    get_user(ch, (char __user *)temp);
+    for (i = 0; ch && i < BUF_LEN; i++, temp++)
         get_user(ch, (char __user *)temp);
-        for (i = 0; ch && i < BUF_LEN; i++, temp++)
-            get_user(ch, (char __user *)temp);
 
-        device_write(file, (char __user *)ioctl_param, i, NULL);
-        break;
+    device_write(file, (char __user *)ioctl_param, i, NULL);
+    break;
 
     case IOCTL_GET_MSG:
-        /* Give the current message to the calling process - the parameter
-         * we got is a pointer, fill it.
-         */
-        i = device_read(file, (char __user *)ioctl_param, 99, NULL);
+    /* Give the current message to the calling process - the parameter
+     * we got is a pointer, fill it.
+     */
+    i = device_read(file, (char __user *)ioctl_param, 99, NULL);
 
-        /* Put a zero at the end of the buffer, so it will be properly
-         * terminated.
-         */
-        put_user('\0', (char __user *)ioctl_param + i);
-        break;
+    /* Put a zero at the end of the buffer, so it will be properly
+     * terminated.
+     */
+    put_user('\0', (char __user *)ioctl_param + i);
+    break;
 
     case IOCTL_GET_NTH_BYTE:
-        /* This ioctl is both input (ioctl_param) and output (the return
-         * value of this function).
-         */
-        return message[ioctl_param];
-        break;
+    /* This ioctl is both input (ioctl_param) and output (the return
+     * value of this function).
+     */
+    return message[ioctl_param];
+    break;
     }
 
     return SUCCESS;
@@ -2846,9 +2854,9 @@ static int __init chardev2_init(void)
 
     /* Negative values signify an error */
     if (ret_val < 0) {
-        pr_alert("%s failed with %d\n",
-                 "Sorry, registering the character device ", ret_val);
-        return ret_val;
+    pr_alert("%s failed with %d\n",
+         "Sorry, registering the character device ", ret_val);
+    return ret_val;
     }
 
     cls = class_create(THIS_MODULE, DEVICE_FILE_NAME);
@@ -2876,7 +2884,7 @@ MODULE_LICENSE("GPL");
 ```
 :::
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  *  chardev2.h - the header file with the ioctl definitions.
@@ -2947,7 +2955,7 @@ MODULE_LICENSE("GPL");
 ```
 :::
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 #include <linux/ioctl.h>
 #include <linux/init.h>
@@ -2993,60 +3001,60 @@ static long test_ioctl_ioctl(struct file* filp, unsigned int cmd, unsigned long 
     switch (cmd) {
     case IOCTL_VALSET:
 
-        /*
-        if (!capable(CAP_SYS_ADMIN)) {
-         retval = -EPERM;
-         goto done;
-        }
-        if (!access_ok(VERIFY_READ, (void __user *)arg, _IOC_SIZE(cmd))) {
-         retval = -EFAULT;
-         goto done;
-        }
-        */
-        if (copy_from_user(&data, (int __user*)arg, sizeof(data))) {
-            retval = -EFAULT;
-            goto done;
-        }
+    /*
+    if (!capable(CAP_SYS_ADMIN)) {
+     retval = -EPERM;
+     goto done;
+    }
+    if (!access_ok(VERIFY_READ, (void __user *)arg, _IOC_SIZE(cmd))) {
+     retval = -EFAULT;
+     goto done;
+    }
+    */
+    if (copy_from_user(&data, (int __user*)arg, sizeof(data))) {
+        retval = -EFAULT;
+        goto done;
+    }
 
-        pr_alert("IOCTL set val:%x .\n", data.val);
-        write_lock(&ioctl_data->lock);
-        ioctl_data->val = data.val;
-        write_unlock(&ioctl_data->lock);
-        break;
+    pr_alert("IOCTL set val:%x .\n", data.val);
+    write_lock(&ioctl_data->lock);
+    ioctl_data->val = data.val;
+    write_unlock(&ioctl_data->lock);
+    break;
 
     case IOCTL_VALGET:
-        /*
-        if (!access_ok(VERIFY_WRITE, (void __user *)arg, _IOC_SIZE(cmd))) {
-                                     retval = -EFAULT;
-                                     goto done;
-                             }
-        */
-        read_lock(&ioctl_data->lock);
-        val = ioctl_data->val;
-        read_unlock(&ioctl_data->lock);
-        data.val = val;
+    /*
+    if (!access_ok(VERIFY_WRITE, (void __user *)arg, _IOC_SIZE(cmd))) {
+                     retval = -EFAULT;
+                     goto done;
+                 }
+    */
+    read_lock(&ioctl_data->lock);
+    val = ioctl_data->val;
+    read_unlock(&ioctl_data->lock);
+    data.val = val;
 
-        if (copy_to_user((int __user*)arg, &data, sizeof(data))) {
-            retval = -EFAULT;
-            goto done;
-        }
+    if (copy_to_user((int __user*)arg, &data, sizeof(data))) {
+        retval = -EFAULT;
+        goto done;
+    }
 
-        break;
+    break;
 
     case IOCTL_VALGET_NUM:
-        retval = __put_user(ioctl_num, (int __user*)arg);
-        break;
+    retval = __put_user(ioctl_num, (int __user*)arg);
+    break;
 
     case IOCTL_VALSET_NUM:
-        /*
-        if (!capable(CAP_SYS_ADMIN))
-         return -EPERM;
-        */
-        ioctl_num = arg;
-        break;
+    /*
+    if (!capable(CAP_SYS_ADMIN))
+     return -EPERM;
+    */
+    ioctl_num = arg;
+    break;
 
     default:
-        retval = -ENOTTY;
+    retval = -ENOTTY;
     }
 
 done:
@@ -3063,10 +3071,10 @@ ssize_t test_ioctl_read(struct file* filp, char __user* buf, size_t count, loff_
     read_unlock(&ioctl_data->lock);
 
     for (; i < count ; i++) {
-        if (copy_to_user(&buf[i], &val, 1)) {
-            retval = -EFAULT;
-            goto out;
-        }
+    if (copy_to_user(&buf[i], &val, 1)) {
+        retval = -EFAULT;
+        goto out;
+    }
     }
 
     retval = count;
@@ -3078,8 +3086,8 @@ static int test_ioctl_close(struct inode* inode, struct file* filp) {
     pr_alert("%s call.\n", __func__);
 
     if (filp->private_data) {
-        kfree(filp->private_data);
-        filp->private_data = NULL;
+    kfree(filp->private_data);
+    filp->private_data = NULL;
     }
 
     return 0;
@@ -3091,7 +3099,7 @@ static int test_ioctl_open(struct inode* inode, struct file* filp) {
     ioctl_data = kmalloc(sizeof(struct test_ioctl_data), GFP_KERNEL);
 
     if (ioctl_data == NULL) {
-        return -ENOMEM;
+    return -ENOMEM;
     }
 
     rwlock_init(&ioctl_data->lock);
@@ -3115,7 +3123,7 @@ static int ioctl_init(void) {
     alloc_ret = alloc_chrdev_region(&dev, 0, num_of_dev, DRIVER_NAME);
 
     if (alloc_ret) {
-        goto error;
+    goto error;
     }
 
     test_ioctl_major = MAJOR(dev);
@@ -3123,7 +3131,7 @@ static int ioctl_init(void) {
     cdev_ret = cdev_add(&test_ioctl_cdev, dev, num_of_dev);
 
     if (cdev_ret) {
-        goto error;
+    goto error;
     }
 
     pr_alert("%s driver(major: %d) installed.\n", DRIVER_NAME, test_ioctl_major);
@@ -3131,11 +3139,11 @@ static int ioctl_init(void) {
 error:
 
     if (cdev_ret == 0) {
-        cdev_del(&test_ioctl_cdev);
+    cdev_del(&test_ioctl_cdev);
     }
 
     if (alloc_ret == 0) {
-        unregister_chrdev_region(dev, num_of_dev);
+    unregister_chrdev_region(dev, num_of_dev);
     }
 
     return -1;
@@ -3159,9 +3167,8 @@ MODULE_DESCRIPTION("This is test_ioctl module");
 :::
 :::
 
-::: {#outline-container-org36df3e3 .outline-2}
-[10.]{.section-number-2} System Calls {#org36df3e3}
--------------------------------------
+::: {#outline-container-org51eb895 .outline-2}
+## [10]{.section-number-2} System Calls {#org51eb895}
 
 ::: {#text-10 .outline-text-2}
 So far, the only thing we\'ve done was to use well defined kernel
@@ -3189,7 +3196,7 @@ kernel (such as opening a file, forking to a new process, or requesting
 more memory), this is the mechanism used. If you want to change the
 behaviour of the kernel in interesting ways, this is the place to do it.
 By the way, if you want to see which system calls a program uses, run
-**strace \<arguments\>**.
+**strace \<arguments>**.
 
 In general, a process is not supposed to be able to access the kernel.
 It can\'t access kernel memory and it can\'t call kernel functions. The
@@ -3205,77 +3212,77 @@ interrupt 0x80. The hardware knows that once you jump to this location,
 you are no longer running in restricted user mode, but as the operating
 system kernel --- and therefore you\'re allowed to do whatever you want.
 
-The location in the kernel a process can jump to is called system\_call.
+The location in the kernel a process can jump to is called system_call.
 The procedure at that location checks the system call number, which
 tells the kernel what service the process requested. Then, it looks at
-the table of system calls (sys\_call\_table) to see the address of the
+the table of system calls (sys_call_table) to see the address of the
 kernel function to call. Then it calls the function, and after it
 returns, does a few system checks and then return back to the process
 (or to a different process, if the process time ran out). If you want to
 read this code, it\'s at the source file
-arch/\$\<\\(architecture\\)\>\$/kernel/entry.S, after the line
-ENTRY(system\_call).
+arch/\$\<\\(architecture\\)>\$/kernel/entry.S, after the line
+ENTRY(system_call).
 
 So, if we want to change the way a certain system call works, what we
 need to do is to write our own function to implement it (usually by
 adding a bit of our own code, and then calling the original function)
-and then change the pointer at sys\_call\_table to point to our
-function. Because we might be removed later and we don\'t want to leave
-the system in an unstable state, it\'s important for cleanup\_module to
-restore the table to its original state.
+and then change the pointer at sys_call_table to point to our function.
+Because we might be removed later and we don\'t want to leave the system
+in an unstable state, it\'s important for cleanup_module to restore the
+table to its original state.
 
 The source code here is an example of such a kernel module. We want to
-\"spy\" on a certain user, and to **pr\_info()** a message whenever that
+\"spy\" on a certain user, and to **pr_info()** a message whenever that
 user opens a file. Towards this end, we replace the system call to open
-a file with our own function, called **our\_sys\_open**. This function
+a file with our own function, called **our_sys_open**. This function
 checks the uid (user\'s id) of the current process, and if it\'s equal
-to the uid we spy on, it calls pr\_info() to display the name of the
-file to be opened. Then, either way, it calls the original open()
-function with the same parameters, to actually open the file.
+to the uid we spy on, it calls pr_info() to display the name of the file
+to be opened. Then, either way, it calls the original open() function
+with the same parameters, to actually open the file.
 
-The **init\_module** function replaces the appropriate location in
-**sys\_call\_table** and keeps the original pointer in a variable. The
-cleanup\_module function uses that variable to restore everything back
-to normal. This approach is dangerous, because of the possibility of two
+The **init_module** function replaces the appropriate location in
+**sys_call_table** and keeps the original pointer in a variable. The
+cleanup_module function uses that variable to restore everything back to
+normal. This approach is dangerous, because of the possibility of two
 kernel modules changing the same system call. Imagine we have two kernel
-modules, A and B. A\'s open system call will be A\_open and B\'s will be
-B\_open. Now, when A is inserted into the kernel, the system call is
-replaced with A\_open, which will call the original sys\_open when it\'s
+modules, A and B. A\'s open system call will be A_open and B\'s will be
+B_open. Now, when A is inserted into the kernel, the system call is
+replaced with A_open, which will call the original sys_open when it\'s
 done. Next, B is inserted into the kernel, which replaces the system
-call with B\_open, which will call what it thinks is the original system
-call, A\_open, when it\'s done.
+call with B_open, which will call what it thinks is the original system
+call, A_open, when it\'s done.
 
 Now, if B is removed first, everything will be well --- it will simply
-restore the system call to A\_open, which calls the original. However,
-if A is removed and then B is removed, the system will crash. A\'s
-removal will restore the system call to the original, sys\_open, cutting
-B out of the loop. Then, when B is removed, it will restore the system
-call to what it thinks is the original, **A\_open**, which is no longer
-in memory. At first glance, it appears we could solve this particular
+restore the system call to A_open, which calls the original. However, if
+A is removed and then B is removed, the system will crash. A\'s removal
+will restore the system call to the original, sys_open, cutting B out of
+the loop. Then, when B is removed, it will restore the system call to
+what it thinks is the original, **A_open**, which is no longer in
+memory. At first glance, it appears we could solve this particular
 problem by checking if the system call is equal to our open function and
 if so not changing it at all (so that B won\'t change the system call
 when it\'s removed), but that will cause an even worse problem. When A
-is removed, it sees that the system call was changed to **B\_open** so
-that it is no longer pointing to **A\_open**, so it won\'t restore it to
-**sys\_open** before it is removed from memory. Unfortunately,
-**B\_open** will still try to call **A\_open** which is no longer there,
-so that even without removing B the system would crash.
+is removed, it sees that the system call was changed to **B_open** so
+that it is no longer pointing to **A_open**, so it won\'t restore it to
+**sys_open** before it is removed from memory. Unfortunately, **B_open**
+will still try to call **A_open** which is no longer there, so that even
+without removing B the system would crash.
 
 Note that all the related problems make syscall stealing unfeasiable for
 production use. In order to keep people from doing potential harmful
-things **sys\_call\_table** is no longer exported. This means, if you
-want to do something more than a mere dry run of this example, you will
-have to patch your current kernel in order to have sys\_call\_table
-exported. In the example directory you will find a README and the patch.
-As you can imagine, such modifications are not to be taken lightly. Do
-not try this on valueable systems (ie systems that you do not own - or
-cannot restore easily). You\'ll need to get the complete sourcecode of
-this guide as a tarball in order to get the patch and the README.
-Depending on your kernel version, you might even need to hand apply the
-patch. Still here? Well, so is this chapter. If Wyle E. Coyote was a
-kernel hacker, this would be the first thing he\'d try. ;)
+things **sys_call_table** is no longer exported. This means, if you want
+to do something more than a mere dry run of this example, you will have
+to patch your current kernel in order to have sys_call_table exported.
+In the example directory you will find a README and the patch. As you
+can imagine, such modifications are not to be taken lightly. Do not try
+this on valueable systems (ie systems that you do not own - or cannot
+restore easily). You\'ll need to get the complete sourcecode of this
+guide as a tarball in order to get the patch and the README. Depending
+on your kernel version, you might even need to hand apply the patch.
+Still here? Well, so is this chapter. If Wyle E. Coyote was a kernel
+hacker, this would be the first thing he\'d try. ;)
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  *  syscall.c
@@ -3353,9 +3360,9 @@ asmlinkage int our_sys_open(const char *filename, int flags, int mode)
      */
     pr_info("Opened file by %d: ", uid);
     do {
-        get_user(ch, filename + i);
-        i++;
-        pr_info("%c", ch);
+    get_user(ch, filename + i);
+    i++;
+    pr_info("%c", ch);
     } while (ch != 0);
     pr_info("\n");
 
@@ -3372,12 +3379,12 @@ static unsigned long **aquire_sys_call_table(void)
     unsigned long **sct;
 
     while (offset < ULLONG_MAX) {
-        sct = (unsigned long **)offset;
+    sct = (unsigned long **)offset;
 
-        if (sct[__NR_close] == (unsigned long *) close_fd)
-            return sct;
+    if (sct[__NR_close] == (unsigned long *) close_fd)
+        return sct;
 
-        offset += sizeof(void *);
+    offset += sizeof(void *);
     }
 
     return NULL;
@@ -3386,7 +3393,7 @@ static unsigned long **aquire_sys_call_table(void)
 static int __init syscall_start(void)
 {
     if(!(sys_call_table = aquire_sys_call_table()))
-        return -1;
+    return -1;
 
     original_cr0 = read_cr0();
 
@@ -3408,17 +3415,17 @@ static int __init syscall_start(void)
 static void __exit syscall_end(void)
 {
     if(!sys_call_table) {
-        return;
+    return;
     }
 
     /*
      * Return the system call back to normal
      */
     if (sys_call_table[__NR_open] != (unsigned long *)our_sys_open) {
-        pr_alert("Somebody else also played with the ");
-        pr_alert("open system call\n");
-        pr_alert("The system may be left in ");
-        pr_alert("an unstable state.\n");
+    pr_alert("Somebody else also played with the ");
+    pr_alert("open system call\n");
+    pr_alert("The system may be left in ");
+    pr_alert("an unstable state.\n");
     }
 
     write_cr0(original_cr0 & ~0x00010000);
@@ -3437,15 +3444,14 @@ MODULE_LICENSE("GPL");
 :::
 :::
 
-::: {#outline-container-orge22df23 .outline-2}
-[11.]{.section-number-2} Blocking Processes and threads {#orge22df23}
--------------------------------------------------------
+::: {#outline-container-orgb6a9115 .outline-2}
+## [11]{.section-number-2} Blocking Processes and threads {#orgb6a9115}
 
 ::: {#text-11 .outline-text-2}
 :::
 
-::: {#outline-container-org2e31ad7 .outline-3}
-### [11.1.]{.section-number-3} Sleep {#org2e31ad7}
+::: {#outline-container-org2687dee .outline-3}
+### [11.1]{.section-number-3} Sleep {#org2687dee}
 
 ::: {#text-11-1 .outline-text-3}
 What do you do when somebody asks you for something you can\'t do right
@@ -3460,10 +3466,10 @@ run on the same time on a single CPU).
 This kernel module is an example of this. The file (called
 **/proc/sleep**) can only be opened by a single process at a time. If
 the file is already open, the kernel module calls
-wait\_event\_interruptible. The easiest way to keep a file open is to
-open it with:
+wait_event_interruptible. The easiest way to keep a file open is to open
+it with:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-bash}
 tail -f
 ```
@@ -3471,13 +3477,13 @@ tail -f
 
 This function changes the status of the task (a task is the kernel data
 structure which holds information about a process and the system call
-it\'s in, if any) to **TASK\_INTERRUPTIBLE**, which means that the task
+it\'s in, if any) to **TASK_INTERRUPTIBLE**, which means that the task
 will not run until it is woken up somehow, and adds it to WaitQ, the
 queue of tasks waiting to access the file. Then, the function calls the
 scheduler to context switch to a different process, one which has some
 use for the CPU.
 
-When a process is done with the file, it closes it, and module\_close is
+When a process is done with the file, it closes it, and module_close is
 called. That function wakes up all the processes in the queue (there\'s
 no mechanism to only wake up one of them). It then returns and the
 process which just closed the file can continue to run. In time, the
@@ -3485,7 +3491,7 @@ scheduler decides that that process has had enough and gives control of
 the CPU to another process. Eventually, one of the processes which was
 in the queue will be given control of the CPU by the scheduler. It
 starts at the point right after the call to
-**module\_interruptible\_sleep\_on**.
+**module_interruptible_sleep_on**.
 
 This means that the process is still in kernel mode - as far as the
 process is concerned, it issued the open system call and the system call
@@ -3504,12 +3510,12 @@ that we need not switch to a different vt). As soon as the first
 background process is killed with kill %1 , the second is woken up, is
 able to access the file and finally terminates.
 
-To make our life more interesting, **module\_close** doesn\'t have a
+To make our life more interesting, **module_close** doesn\'t have a
 monopoly on waking up the processes which wait to access the file. A
 signal, such as *Ctrl +c* (**SIGINT**) can also wake up a process. This
-is because we used **module\_interruptible\_sleep\_on**. We could have
-used **module\_sleep\_on** instead, but that would have resulted in
-extremely angry users whose *Ctrl+c*\'s are ignored.
+is because we used **module_interruptible_sleep_on**. We could have used
+**module_sleep_on** instead, but that would have resulted in extremely
+angry users whose *Ctrl+c*\'s are ignored.
 
 In that case, we want to return with **-EINTR** immediately. This is
 important so users can, for example, kill the process before it receives
@@ -3517,14 +3523,14 @@ the file.
 
 There is one more point to remember. Some times processes don\'t want to
 sleep, they want either to get what they want immediately, or to be told
-it cannot be done. Such processes use the **O\_NONBLOCK** flag when
+it cannot be done. Such processes use the **O_NONBLOCK** flag when
 opening the file. The kernel is supposed to respond by returning with
 the error code **-EAGAIN** from operations which would otherwise block,
-such as opening the file in this example. The program cat\_noblock,
+such as opening the file in this example. The program cat_noblock,
 available in the source directory for this chapter, can be used to open
-a file with **O\_NONBLOCK**.
+a file with **O_NONBLOCK**.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 hostname:~/lkmpg-examples/09-BlockingProcesses# insmod sleep.ko
 hostname:~/lkmpg-examples/09-BlockingProcesses# cat_noblock /proc/sleep
@@ -3549,7 +3555,7 @@ hostname:~/lkmpg-examples/09-BlockingProcesses#
 ```
 :::
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  * sleep.c - create a /proc file, and if several processes try to open it
@@ -3560,7 +3566,7 @@ hostname:~/lkmpg-examples/09-BlockingProcesses#
 #include <linux/module.h> /* Specifically, a module */
 #include <linux/proc_fs.h> /* Necessary because we use proc fs */
 #include <linux/sched.h> /* For putting processes to sleep and
-                                   waking them up */
+                   waking them up */
 #include <linux/uaccess.h> /* for get_user and put_user */
 #include <linux/version.h>
 
@@ -3582,10 +3588,10 @@ static struct proc_dir_entry *our_proc_file;
  * function.
  */
 static ssize_t module_output(struct file *file, /* see include/linux/fs.h   */
-                             char __user *buf, /* The buffer to put data to
-                                                   (in the user segment)    */
-                             size_t len, /* The length of the buffer */
-                             loff_t *offset)
+                 char __user *buf, /* The buffer to put data to
+                           (in the user segment)    */
+                 size_t len, /* The length of the buffer */
+                 loff_t *offset)
 {
     static int finished = 0;
     int i;
@@ -3595,13 +3601,13 @@ static ssize_t module_output(struct file *file, /* see include/linux/fs.h   */
      * at this point.
      */
     if (finished) {
-        finished = 0;
-        return 0;
+    finished = 0;
+    return 0;
     }
 
     sprintf(output_msg, "Last input:%s\n", message);
     for (i = 0; i < len && output_msg[i]; i++)
-        put_user(output_msg[i], buf + i);
+    put_user(output_msg[i], buf + i);
 
     finished = 1;
     return i; /* Return the number of bytes "read" */
@@ -3611,9 +3617,9 @@ static ssize_t module_output(struct file *file, /* see include/linux/fs.h   */
  * /proc file.
  */
 static ssize_t module_input(struct file *file, /* The file itself */
-                            const char __user *buf, /* The buffer with input */
-                            size_t length, /* The buffer's length */
-                            loff_t *offset) /* offset to file - ignore */
+                const char __user *buf, /* The buffer with input */
+                size_t length, /* The buffer's length */
+                loff_t *offset) /* offset to file - ignore */
 {
     int i;
 
@@ -3621,7 +3627,7 @@ static ssize_t module_input(struct file *file, /* The file itself */
      * to use it.
      */
     for (i = 0; i < MESSAGE_LENGTH - 1 && i < length; i++)
-        get_user(message[i], buf + i);
+    get_user(message[i], buf + i);
     /* we want a standard, zero terminated string */
     message[i] = '\0';
 
@@ -3644,7 +3650,7 @@ static int module_open(struct inode *inode, struct file *file)
      * instead of blocking a process which would rather stay awake.
      */
     if ((file->f_flags & O_NONBLOCK) && atomic_read(&already_open))
-        return -EAGAIN;
+    return -EAGAIN;
 
     /* This is the correct place for try_module_get(THIS_MODULE) because if
      * a process is in the loop, which is within the kernel module,
@@ -3653,36 +3659,36 @@ static int module_open(struct inode *inode, struct file *file)
     try_module_get(THIS_MODULE);
 
     while (atomic_cmpxchg(&already_open, 0, 1)) {
-        int i, is_sig = 0;
+    int i, is_sig = 0;
 
-        /* This function puts the current process, including any system
-         * calls, such as us, to sleep.  Execution will be resumed right
-         * after the function call, either because somebody called
-         * wake_up(&waitq) (only module_close does that, when the file
-         * is closed) or when a signal, such as Ctrl-C, is sent
-         * to the process
+    /* This function puts the current process, including any system
+     * calls, such as us, to sleep.  Execution will be resumed right
+     * after the function call, either because somebody called
+     * wake_up(&waitq) (only module_close does that, when the file
+     * is closed) or when a signal, such as Ctrl-C, is sent
+     * to the process
+     */
+    wait_event_interruptible(waitq, !atomic_read(&already_open));
+
+    /* If we woke up because we got a signal we're not blocking,
+     * return -EINTR (fail the system call).  This allows processes
+     * to be killed or stopped.
+     */
+    for (i = 0; i < _NSIG_WORDS && !is_sig; i++)
+        is_sig = current->pending.signal.sig[i] & ~current->blocked.sig[i];
+
+    if (is_sig) {
+        /* It is important to put module_put(THIS_MODULE) here, because
+         * for processes where the open is interrupted there will never
+         * be a corresponding close. If we do not decrement the usage
+         * count here, we will be left with a positive usage count
+         * which we will have no way to bring down to zero, giving us
+         * an immortal module, which can only be killed by rebooting
+         * the machine.
          */
-        wait_event_interruptible(waitq, !atomic_read(&already_open));
-
-        /* If we woke up because we got a signal we're not blocking,
-         * return -EINTR (fail the system call).  This allows processes
-         * to be killed or stopped.
-         */
-        for (i = 0; i < _NSIG_WORDS && !is_sig; i++)
-            is_sig = current->pending.signal.sig[i] & ~current->blocked.sig[i];
-
-        if (is_sig) {
-            /* It is important to put module_put(THIS_MODULE) here, because
-             * for processes where the open is interrupted there will never
-             * be a corresponding close. If we do not decrement the usage
-             * count here, we will be left with a positive usage count
-             * which we will have no way to bring down to zero, giving us
-             * an immortal module, which can only be killed by rebooting
-             * the machine.
-             */
-            module_put(THIS_MODULE);
-            return -EINTR;
-        }
+        module_put(THIS_MODULE);
+        return -EINTR;
+    }
     }
 
     return 0; /* Allow the access */
@@ -3736,11 +3742,11 @@ static const struct file_operations file_ops_4_our_proc_file = {
 static int __init sleep_init(void)
 {
     our_proc_file =
-        proc_create(PROC_ENTRY_FILENAME, 0644, NULL, &file_ops_4_our_proc_file);
+    proc_create(PROC_ENTRY_FILENAME, 0644, NULL, &file_ops_4_our_proc_file);
     if (our_proc_file == NULL) {
-        remove_proc_entry(PROC_ENTRY_FILENAME, NULL);
-        pr_debug("Error: Could not initialize /proc/%s\n", PROC_ENTRY_FILENAME);
-        return -ENOMEM;
+    remove_proc_entry(PROC_ENTRY_FILENAME, NULL);
+    pr_debug("Error: Could not initialize /proc/%s\n", PROC_ENTRY_FILENAME);
+    return -ENOMEM;
     }
     proc_set_size(our_proc_file, 80);
     proc_set_user(our_proc_file, GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
@@ -3768,7 +3774,7 @@ MODULE_LICENSE("GPL");
 ```
 :::
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /* cat_noblock.c - open a file and display its contents, but exit rather than
  * wait for input */
@@ -3792,9 +3798,9 @@ int main(int argc, char *argv[])
 
     /* Usage */
     if (argc != 2) {
-        printf("Usage: %s <filename>\n", argv[0]);
-        puts("Reads the content of a file, but doesn't wait for input");
-        exit(-1);
+    printf("Usage: %s <filename>\n", argv[0]);
+    puts("Reads the content of a file, but doesn't wait for input");
+    exit(-1);
     }
 
     /* Open the file for reading in non blocking mode */
@@ -3802,36 +3808,36 @@ int main(int argc, char *argv[])
 
     /* If open failed */
     if (fd == -1) {
-        if (errno = EAGAIN)
-            puts("Open would block");
-        else
-            puts("Open failed");
-        exit(-1);
+    if (errno = EAGAIN)
+        puts("Open would block");
+    else
+        puts("Open failed");
+    exit(-1);
     }
 
     /* Read the file and output its contents */
     do {
-        int i;
+    int i;
 
-        /* Read characters from the file */
-        bytes = read(fd, buffer, MAX_BYTES);
+    /* Read characters from the file */
+    bytes = read(fd, buffer, MAX_BYTES);
 
-        /* If there's an error, report it and die */
-        if (bytes == -1) {
-            if (errno = EAGAIN)
-                puts("Normally I'd block, but you told me not to");
-            else
-                puts("Another read error");
-            exit(-1);
-        }
+    /* If there's an error, report it and die */
+    if (bytes == -1) {
+        if (errno = EAGAIN)
+        puts("Normally I'd block, but you told me not to");
+        else
+        puts("Another read error");
+        exit(-1);
+    }
 
-        /* Print the characters */
-        if (bytes > 0) {
-            for(i=0; i<bytes; i++)
-                putchar(buffer[i]);
-        }
+    /* Print the characters */
+    if (bytes > 0) {
+        for(i=0; i<bytes; i++)
+        putchar(buffer[i]);
+    }
 
-        /* While there are no errors and the file isn't over */
+    /* While there are no errors and the file isn't over */
     } while (bytes > 0);
     return 0;
 }
@@ -3840,8 +3846,8 @@ int main(int argc, char *argv[])
 :::
 :::
 
-::: {#outline-container-org878be62 .outline-3}
-### [11.2.]{.section-number-3} Completions {#org878be62}
+::: {#outline-container-orge56dfbd .outline-3}
+### [11.2]{.section-number-3} Completions {#orge56dfbd}
 
 ::: {#text-11-2 .outline-text-3}
 Sometimes one thing should happen before another within a module having
@@ -3852,7 +3858,7 @@ happen.
 In the following example two threads are started, but one needs to start
 before another.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-C}
 #include <linux/init.h>
 #include <linux/module.h>
@@ -3894,16 +3900,16 @@ static int completions_init(void)
     init_completion(&machine.flywheel_comp);
 
     crank_thread =
-        kthread_create(machine_crank_thread,
-                       NULL, "KThread Crank");
+    kthread_create(machine_crank_thread,
+               NULL, "KThread Crank");
     if (IS_ERR(crank_thread))
-        goto ERROR_THREAD_1;
+    goto ERROR_THREAD_1;
 
     flywheel_thread =
-        kthread_create(machine_flywheel_spinup_thread,
-                       NULL, "KThread Flywheel");
+    kthread_create(machine_flywheel_spinup_thread,
+               NULL, "KThread Flywheel");
     if (IS_ERR(flywheel_thread))
-        goto ERROR_THREAD_2;
+    goto ERROR_THREAD_2;
 
     wake_up_process(flywheel_thread);
     wake_up_process(crank_thread);
@@ -3936,23 +3942,22 @@ MODULE_LICENSE("GPL");
 
 The *machine* structure stores the completion states for the two
 threads. At the exit point of each thread the respective completion
-state is updated, and *wait\_for\_completion* is used by the flywheel
+state is updated, and *wait_for_completion* is used by the flywheel
 thread to ensure that it doesn\'t begin prematurely.
 
-So even though *flywheel\_thread* is started first you should notice if
+So even though *flywheel_thread* is started first you should notice if
 you load this module and run *dmesg* that turning the crank always
 happens first because the flywheel thread waits for it to complete.
 
-There are other variations upon the *wait\_for\_completion* function,
+There are other variations upon the *wait_for_completion* function,
 which include timeouts or being interrupted, but this basic mechanism is
 enough for many common situations without adding a lot of complexity.
 :::
 :::
 :::
 
-::: {#outline-container-org1497df5 .outline-2}
-[12.]{.section-number-2} Avoiding Collisions and Deadlocks {#org1497df5}
-----------------------------------------------------------
+::: {#outline-container-orgbcc42de .outline-2}
+## [12]{.section-number-2} Avoiding Collisions and Deadlocks {#orgbcc42de}
 
 ::: {#text-12 .outline-text-2}
 If processes running on different CPUs or in different threads try to
@@ -3963,15 +3968,15 @@ code is \"locked\" or \"unlocked\" so that simultaneous attempts to run
 it can\'t happen.
 :::
 
-::: {#outline-container-org9375d3a .outline-3}
-### [12.1.]{.section-number-3} Mutex {#org9375d3a}
+::: {#outline-container-org9bc931f .outline-3}
+### [12.1]{.section-number-3} Mutex {#org9bc931f}
 
 ::: {#text-12-1 .outline-text-3}
 You can use kernel mutexes (mutual exclusions) in much the same manner
 that you might deploy them in userland. This may be all that\'s needed
 to avoid collisions in most cases.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-C}
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -3988,16 +3993,16 @@ static int example_mutex_init(void)
 
     ret = mutex_trylock(&mymutex);
     if (ret != 0) {
-        pr_info("mutex is locked\n");
+    pr_info("mutex is locked\n");
 
-        if (mutex_is_locked(&mymutex) == 0)
-            pr_info("The mutex failed to lock!\n");
+    if (mutex_is_locked(&mymutex) == 0)
+        pr_info("The mutex failed to lock!\n");
 
-        mutex_unlock(&mymutex);
-        pr_info("mutex is unlocked\n");
+    mutex_unlock(&mymutex);
+    pr_info("mutex is unlocked\n");
     }
     else
-        pr_info("Failed to lock\n");
+    pr_info("Failed to lock\n");
 
     return 0;
 }
@@ -4018,8 +4023,8 @@ MODULE_LICENSE("GPL");
 :::
 :::
 
-::: {#outline-container-orgaf124e4 .outline-3}
-### [12.2.]{.section-number-3} Spinlocks {#orgaf124e4}
+::: {#outline-container-org9524a19 .outline-3}
+### [12.2]{.section-number-3} Spinlocks {#org9524a19}
 
 ::: {#text-12-2 .outline-text-3}
 As the name suggests, spinlocks lock up the CPU that the code is running
@@ -4032,7 +4037,7 @@ The example here is *\"irq safe\"* in that if interrupts happen during
 the lock then they won\'t be forgotten and will activate when the unlock
 happens, using the *flags* variable to retain their state.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-C}
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -4102,8 +4107,8 @@ MODULE_LICENSE("GPL");
 :::
 :::
 
-::: {#outline-container-orgc61adff .outline-3}
-### [12.3.]{.section-number-3} Read and write locks {#orgc61adff}
+::: {#outline-container-orga814666 .outline-3}
+### [12.3]{.section-number-3} Read and write locks {#orga814666}
 
 ::: {#text-12-3 .outline-text-3}
 Read and write locks are specialised kinds of spinlocks so that you can
@@ -4115,7 +4120,7 @@ logic. As before it\'s a good idea to keep anything done within the lock
 as short as possible so that it doesn\'t hang up the system and cause
 users to start revolting against the tyranny of your module.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-C}
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -4175,13 +4180,13 @@ MODULE_LICENSE("GPL");
 
 Of course if you know for sure that there are no functions triggered by
 irqs which could possibly interfere with your logic then you can use the
-simpler *read\_lock(&myrwlock)* and *read\_unlock(&myrwlock)* or the
+simpler *read_lock(&myrwlock)* and *read_unlock(&myrwlock)* or the
 corresponding write functions.
 :::
 :::
 
-::: {#outline-container-org797e945 .outline-3}
-### [12.4.]{.section-number-3} Atomic operations {#org797e945}
+::: {#outline-container-org718958d .outline-3}
+### [12.4]{.section-number-3} Atomic operations {#org718958d}
 
 ::: {#text-12-4 .outline-text-3}
 If you\'re doing simple arithmetic: adding, subtracting or bitwise
@@ -4191,7 +4196,7 @@ with your mojo. By using atomic operations you can be confident that
 your addition, subtraction or bit flip did actually happen and wasn\'t
 overwritten by some other shenanigans. An example is shown below.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-C}
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -4224,7 +4229,7 @@ static void atomic_add_subtract(void)
     atomic_inc(&debbie);
 
     pr_info("chris: %d, debbie: %d\n",
-            atomic_read(&chris), atomic_read(&debbie));
+        atomic_read(&chris), atomic_read(&debbie));
 }
 
 static void atomic_bitwise(void)
@@ -4241,7 +4246,7 @@ static void atomic_bitwise(void)
 
     pr_info("Bits 3: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
     if (test_and_set_bit(3, &word))
-        pr_info("wrong\n");
+    pr_info("wrong\n");
     pr_info("Bits 4: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
 
     word = 255;
@@ -4275,15 +4280,14 @@ MODULE_LICENSE("GPL");
 :::
 :::
 
-::: {#outline-container-org315b814 .outline-2}
-[13.]{.section-number-2} Replacing Print Macros {#org315b814}
------------------------------------------------
+::: {#outline-container-orgb5a8756 .outline-2}
+## [13]{.section-number-2} Replacing Print Macros {#orgb5a8756}
 
 ::: {#text-13 .outline-text-2}
 :::
 
-::: {#outline-container-orge064924 .outline-3}
-### [13.1.]{.section-number-3} Replacement {#orge064924}
+::: {#outline-container-orga836e2e .outline-3}
+### [13.1]{.section-number-3} Replacement {#orga836e2e}
 
 ::: {#text-13-1 .outline-text-3}
 In Section 1.2.1.2, I said that X and kernel module programming don\'t
@@ -4302,7 +4306,7 @@ running task, to get the current task\'s tty structure. Then, we look
 inside that tty structure to find a pointer to a string write function,
 which we use to write a string to the tty.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  *  print_string.c - Send output to the tty we're running on, regardless if it's
@@ -4346,55 +4350,55 @@ static void print_string(char *str)
      */
     if (my_tty != NULL) {
 
-        /*
-         * my_tty->driver is a struct which holds the tty's functions,
-         * one of which (write) is used to write strings to the tty.
-         * It can be used to take a string either from the user's or
-         * kernel's memory segment.
-         *
-         * The function's 1st parameter is the tty to write to,
-         * because the same function would normally be used for all
-         * tty's of a certain type.  The 2nd parameter controls
-         * whether the function receives a string from kernel
-         * memory (false, 0) or from user memory (true, non zero).
-         * BTW: this param has been removed in Kernels > 2.6.9
-         * The (2nd) 3rd parameter is a pointer to a string.
-         * The (3rd) 4th parameter is the length of the string.
-         *
-         * As you will see below, sometimes it's necessary to use
-         * preprocessor stuff to create code that works for different
-         * kernel versions. The (naive) approach we've taken here
-         * does not scale well. The right way to deal with this
-         * is described in section 2 of
-         * linux/Documentation/SubmittingPatches
-         */
-        (ttyops->write) (my_tty,      /* The tty itself */
+    /*
+     * my_tty->driver is a struct which holds the tty's functions,
+     * one of which (write) is used to write strings to the tty.
+     * It can be used to take a string either from the user's or
+     * kernel's memory segment.
+     *
+     * The function's 1st parameter is the tty to write to,
+     * because the same function would normally be used for all
+     * tty's of a certain type.  The 2nd parameter controls
+     * whether the function receives a string from kernel
+     * memory (false, 0) or from user memory (true, non zero).
+     * BTW: this param has been removed in Kernels > 2.6.9
+     * The (2nd) 3rd parameter is a pointer to a string.
+     * The (3rd) 4th parameter is the length of the string.
+     *
+     * As you will see below, sometimes it's necessary to use
+     * preprocessor stuff to create code that works for different
+     * kernel versions. The (naive) approach we've taken here
+     * does not scale well. The right way to deal with this
+     * is described in section 2 of
+     * linux/Documentation/SubmittingPatches
+     */
+    (ttyops->write) (my_tty,      /* The tty itself */
 #if ( LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,9) )
-                         0,   /* Don't take the string
-                                 from user space        */
+             0,   /* Don't take the string
+                 from user space        */
 #endif
-                         str, /* String                 */
-                         strlen(str));        /* Length */
+             (unsigned char *)str, /* String                 */
+             strlen(str));        /* Length */
 
-        /*
-         * ttys were originally hardware devices, which (usually)
-         * strictly followed the ASCII standard.  In ASCII, to move to
-         * a new line you need two characters, a carriage return and a
-         * line feed.  On Unix, the ASCII line feed is used for both
-         * purposes - so we can't just use \n, because it wouldn't have
-         * a carriage return and the next line will start at the
-         * column right after the line feed.
-         *
-         * This is why text files are different between Unix and
-         * MS Windows.  In CP/M and derivatives, like MS-DOS and
-         * MS Windows, the ASCII standard was strictly adhered to,
-         * and therefore a newline requirs both a LF and a CR.
-         */
+    /*
+     * ttys were originally hardware devices, which (usually)
+     * strictly followed the ASCII standard.  In ASCII, to move to
+     * a new line you need two characters, a carriage return and a
+     * line feed.  On Unix, the ASCII line feed is used for both
+     * purposes - so we can't just use \n, because it wouldn't have
+     * a carriage return and the next line will start at the
+     * column right after the line feed.
+     *
+     * This is why text files are different between Unix and
+     * MS Windows.  In CP/M and derivatives, like MS-DOS and
+     * MS Windows, the ASCII standard was strictly adhered to,
+     * and therefore a newline requirs both a LF and a CR.
+     */
 
 #if ( LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,9) )
-        (ttyops->write) (my_tty, 0, "\015\012", 2);
+    (ttyops->write) (my_tty, 0, (unsigned char *)"\015\012", 2);
 #else
-        (ttyops->write) (my_tty, "\015\012", 2);
+    (ttyops->write) (my_tty, (unsigned char *)"\015\012", 2);
 #endif
     }
 }
@@ -4417,8 +4421,8 @@ module_exit(print_string_exit);
 :::
 :::
 
-::: {#outline-container-org3cbb3b2 .outline-3}
-### [13.2.]{.section-number-3} Flashing keyboard LEDs {#org3cbb3b2}
+::: {#outline-container-org86785e3 .outline-3}
+### [13.2]{.section-number-3} Flashing keyboard LEDs {#org86785e3}
 
 ::: {#text-13-2 .outline-text-3}
 In certain conditions, you may desire a simpler and more direct way to
@@ -4431,7 +4435,7 @@ simple and non-intrusive, compared to writing to a tty or a file.
 The following source code illustrates a minimal kernel module which,
 when loaded, starts blinking the keyboard LEDs until it is unloaded.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  * kbleds.c - Blink keyboard leds until the module is unloaded.
@@ -4471,9 +4475,9 @@ static void my_timer_func(struct timer_list *unused)
     struct tty_struct *t = vc_cons[fg_console].d->port.tty;
 
     if (kbledstatus == ALL_LEDS_ON)
-        kbledstatus = RESTORE_LEDS;
+    kbledstatus = RESTORE_LEDS;
     else
-        kbledstatus = ALL_LEDS_ON;
+    kbledstatus = ALL_LEDS_ON;
 
     (my_driver->ops->ioctl)(t, KDSETLED, kbledstatus);
 
@@ -4488,10 +4492,10 @@ static int __init kbleds_init(void)
     pr_info("kbleds: loading\n");
     pr_info("kbleds: fgconsole is %x\n", fg_console);
     for (i = 0; i < MAX_NR_CONSOLES; i++) {
-        if (!vc_cons[i].d)
-            break;
-        pr_info("poet_atkm: console[%i/%i] #%i, tty %lx\n", i, MAX_NR_CONSOLES,
-                vc_cons[i].d->vc_num, (unsigned long)vc_cons[i].d->port.tty);
+    if (!vc_cons[i].d)
+        break;
+    pr_info("poet_atkm: console[%i/%i] #%i, tty %lx\n", i, MAX_NR_CONSOLES,
+        vc_cons[i].d->vc_num, (unsigned long)vc_cons[i].d->port.tty);
     }
     pr_info("kbleds: finished scanning consoles\n");
 
@@ -4511,7 +4515,7 @@ static void __exit kbleds_cleanup(void)
     pr_info("kbleds: unloading...\n");
     del_timer(&my_timer);
     (my_driver->ops->ioctl)(vc_cons[fg_console].d->port.tty, KDSETLED,
-                            RESTORE_LEDS);
+                RESTORE_LEDS);
 }
 
 module_init(kbleds_init);
@@ -4523,9 +4527,9 @@ MODULE_LICENSE("GPL");
 
 If none of the examples in this chapter fit your debugging needs there
 might yet be some other tricks to try. Ever wondered what
-CONFIG\_LL\_DEBUG in make menuconfig is good for? If you activate that
-you get low level access to the serial port. While this might not sound
-very powerful by itself, you can patch **kernel/printk.c** or any other
+CONFIG_LL_DEBUG in make menuconfig is good for? If you activate that you
+get low level access to the serial port. While this might not sound very
+powerful by itself, you can patch **kernel/printk.c** or any other
 essential syscall to use printascii, thus makeing it possible to trace
 virtually everything what your code does over a serial line. If you find
 yourself porting the kernel to some new and former unsupported
@@ -4541,9 +4545,8 @@ minimum and make sure it does not show up in production code.
 :::
 :::
 
-::: {#outline-container-org7319533 .outline-2}
-[14.]{.section-number-2} Scheduling Tasks {#org7319533}
------------------------------------------
+::: {#outline-container-org24328ef .outline-2}
+## [14]{.section-number-2} Scheduling Tasks {#org24328ef}
 
 ::: {#text-14 .outline-text-2}
 There are two main ways of running tasks: tasklets and work queues.
@@ -4558,15 +4561,15 @@ irqs*. However, discussion about that has been ongoing since 2007
 section on interrupt handlers if you wish to avoid the tasklet debate.
 :::
 
-::: {#outline-container-org6dca427 .outline-3}
-### [14.1.]{.section-number-3} Tasklets {#org6dca427}
+::: {#outline-container-org9acb1ea .outline-3}
+### [14.1]{.section-number-3} Tasklets {#org9acb1ea}
 
 ::: {#text-14-1 .outline-text-3}
-Here\'s an example tasklet module. The *tasklet\_fn* function runs for a
-few seconds and in the mean time execution of the
-*example\_tasklet\_init* function continues to the exit point.
+Here\'s an example tasklet module. The *tasklet_fn* function runs for a
+few seconds and in the mean time execution of the *example_tasklet_init*
+function continues to the exit point.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-C}
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -4608,7 +4611,7 @@ MODULE_LICENSE("GPL");
 
 So with this example loaded *dmesg* should show:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-bash}
 tasklet example init
 Example tasklet starts
@@ -4619,15 +4622,15 @@ Example tasklet ends
 :::
 :::
 
-::: {#outline-container-org3618eb0 .outline-3}
-### [14.2.]{.section-number-3} Work queues {#org3618eb0}
+::: {#outline-container-org710330a .outline-3}
+### [14.2]{.section-number-3} Work queues {#org710330a}
 
 ::: {#text-14-2 .outline-text-3}
 To add a task to the scheduler we can use a workqueue. The kernel then
 uses the Completely Fair Scheduler (CFS) to execute work within the
 queue.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 #include <linux/module.h>
 #include <linux/init.h>
@@ -4664,15 +4667,14 @@ MODULE_DESCRIPTION("Workqueue example");
 :::
 :::
 
-::: {#outline-container-org9764750 .outline-2}
-[15.]{.section-number-2} Interrupt Handlers {#org9764750}
--------------------------------------------
+::: {#outline-container-org35cd7bb .outline-2}
+## [15]{.section-number-2} Interrupt Handlers {#org35cd7bb}
 
 ::: {#text-15 .outline-text-2}
 :::
 
-::: {#outline-container-orge11d62b .outline-3}
-### [15.1.]{.section-number-3} Interrupt Handlers {#orge11d62b}
+::: {#outline-container-orged1ad6a .outline-3}
+### [15.1]{.section-number-3} Interrupt Handlers {#orged1ad6a}
 
 ::: {#text-15-1 .outline-text-3}
 Except for the last chapter, everything we did in the kernel so far
@@ -4711,7 +4713,7 @@ at a later time (this is called the \"bottom half\") and return. The
 kernel is then guaranteed to call the bottom half as soon as possible --
 and when it does, everything allowed in kernel modules will be allowed.
 
-The way to implement this is to call **request\_irq()** to get your
+The way to implement this is to call **request_irq()** to get your
 interrupt handler called when the relevant IRQ is received.
 
 In practice IRQ handling can be a bit more complex. Hardware is often
@@ -4732,17 +4734,17 @@ in more details, might want to do a web search for \"APIC\" now ;)
 This function receives the IRQ number, the name of the function, flags,
 a name for /proc/interrupts and a parameter to pass to the interrupt
 handler. Usually there is a certain number of IRQs available. How many
-IRQs there are is hardware-dependent. The flags can include SA\_SHIRQ to
+IRQs there are is hardware-dependent. The flags can include SA_SHIRQ to
 indicate you\'re willing to share the IRQ with other interrupt handlers
 (usually because a number of hardware devices sit on the same IRQ) and
-SA\_INTERRUPT to indicate this is a fast interrupt. This function will
+SA_INTERRUPT to indicate this is a fast interrupt. This function will
 only succeed if there isn\'t already a handler on this IRQ, or if
 you\'re both willing to share.
 :::
 :::
 
-::: {#outline-container-org0a6ea65 .outline-3}
-### [15.2.]{.section-number-3} Detecting button presses {#org0a6ea65}
+::: {#outline-container-org83d512c .outline-3}
+### [15.2]{.section-number-3} Detecting button presses {#org83d512c}
 
 ::: {#text-15-2 .outline-text-3}
 Many popular single board computers, such as Raspberry Pis or
@@ -4757,7 +4759,7 @@ Here\'s an example where buttons are connected to GPIO numbers 17 and 18
 and an LED is connected to GPIO 4. You can change those numbers to
 whatever is appropriate for your board.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-c}
 /*
  *  intrpt.c - Handling GPIO with interrupts
@@ -4780,14 +4782,14 @@ static int button_irqs[] = { -1, -1 };
 /* Define GPIOs for LEDs.
    Change the numbers for the GPIO on your board. */
 static struct gpio leds[] = {
-        {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
+    {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
 };
 
 /* Define GPIOs for BUTTONS
    Change the numbers for the GPIO on your board. */
 static struct gpio buttons[] = {
-        { 17, GPIOF_IN, "LED 1 ON BUTTON" },
-        { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
+    { 17, GPIOF_IN, "LED 1 ON BUTTON" },
+    { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
 };
 
 /*
@@ -4797,10 +4799,10 @@ static irqreturn_t button_isr(int irq, void *data)
 {
     /* first button */
     if (irq == button_irqs[0] && !gpio_get_value(leds[0].gpio))
-            gpio_set_value(leds[0].gpio, 1);
+        gpio_set_value(leds[0].gpio, 1);
     /* second button */
     else if(irq == button_irqs[1] && gpio_get_value(leds[0].gpio))
-            gpio_set_value(leds[0].gpio, 0);
+        gpio_set_value(leds[0].gpio, 0);
 
     return IRQ_HANDLED;
 }
@@ -4815,62 +4817,62 @@ int init_module()
     ret = gpio_request_array(leds, ARRAY_SIZE(leds));
 
     if (ret) {
-        pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
-        return ret;
+    pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
+    return ret;
     }
 
     /* register BUTTON gpios */
     ret = gpio_request_array(buttons, ARRAY_SIZE(buttons));
 
     if (ret) {
-        pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
-        goto fail1;
+    pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
+    goto fail1;
     }
 
     pr_info("Current button1 value: %d\n",
-            gpio_get_value(buttons[0].gpio));
+        gpio_get_value(buttons[0].gpio));
 
     ret = gpio_to_irq(buttons[0].gpio);
 
     if (ret < 0) {
-        pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
+    pr_err("Unable to request IRQ: %d\n", ret);
+    goto fail2;
     }
 
     button_irqs[0] = ret;
 
     pr_info("Successfully requested BUTTON1 IRQ # %d\n",
-            button_irqs[0]);
+        button_irqs[0]);
 
     ret = request_irq(button_irqs[0], button_isr,
-                      IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                      "gpiomod#button1", NULL);
+              IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+              "gpiomod#button1", NULL);
 
     if (ret) {
-        pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
+    pr_err("Unable to request IRQ: %d\n", ret);
+    goto fail2;
     }
 
 
     ret = gpio_to_irq(buttons[1].gpio);
 
     if (ret < 0) {
-        pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
+    pr_err("Unable to request IRQ: %d\n", ret);
+    goto fail2;
     }
 
     button_irqs[1] = ret;
 
     pr_info("Successfully requested BUTTON2 IRQ # %d\n",
-            button_irqs[1]);
+        button_irqs[1]);
 
     ret = request_irq(button_irqs[1], button_isr,
-                      IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                      "gpiomod#button2", NULL);
+              IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+              "gpiomod#button2", NULL);
 
     if (ret) {
-        pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail3;
+    pr_err("Unable to request IRQ: %d\n", ret);
+    goto fail3;
     }
 
     return 0;
@@ -4900,7 +4902,7 @@ void cleanup_module()
 
     /* turn all LEDs off */
     for (i = 0; i < ARRAY_SIZE(leds); i++)
-        gpio_set_value(leds[i].gpio, 0);
+    gpio_set_value(leds[i].gpio, 0);
 
     /* unregister */
     gpio_free_array(leds, ARRAY_SIZE(leds));
@@ -4915,8 +4917,8 @@ MODULE_DESCRIPTION("Handle some GPIO interrupts");
 :::
 :::
 
-::: {#outline-container-org793822b .outline-3}
-### [15.3.]{.section-number-3} Bottom Half {#org793822b}
+::: {#outline-container-org168b208 .outline-3}
+### [15.3]{.section-number-3} Bottom Half {#org168b208}
 
 ::: {#text-15-3 .outline-text-3}
 Suppose you want to do a bunch of stuff inside of an interrupt routine.
@@ -4927,182 +4929,7 @@ bulk of the work off into the scheduler.
 The example below modifies the previous example to also run an
 additional task when an interrupt is triggered.
 
-::: {.org-src-container}
-``` {.src .src-C}
-/*
- * bottomhalf.c - Top and bottom half interrupt handling
- *
- *  Copyright (C) 2017 by Bob Mottram
- *  Based upon the Rpi example by Stefan Wendler (devnull@kaltpost.de)
- *  from:
- *    https://github.com/wendlers/rpi-kmod-samples
- *
- *  Press one button to turn on a LED and another to turn it off
- */
-
-#include <linux/module.h>
-#include <linux/kernel.h>
-#include <linux/gpio.h>
-#include <linux/delay.h>
-#include <linux/interrupt.h>
-
-static int button_irqs[] = { -1, -1 };
-
-/* Define GPIOs for LEDs.
-   Change the numbers for the GPIO on your board. */
-static struct gpio leds[] = {
-        {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
-};
-
-/* Define GPIOs for BUTTONS
-   Change the numbers for the GPIO on your board. */
-static struct gpio buttons[] = {
-        { 17, GPIOF_IN, "LED 1 ON BUTTON" },
-        { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
-};
-
-/* Tasklet containing some non-trivial amount of processing */
-static void bottomhalf_tasklet_fn(struct tasklet_struct *data)
-{
-    pr_info("Bottom half tasklet starts\n");
-    /* do something which takes a while */
-    mdelay(500);
-    pr_info("Bottom half tasklet ends\n");
-}
-
-DECLARE_TASKLET(buttontask, bottomhalf_tasklet_fn);
-
-/*
- * interrupt function triggered when a button is pressed
- */
-static irqreturn_t button_isr(int irq, void *data)
-{
-    /* Do something quickly right now */
-    if (irq == button_irqs[0] && !gpio_get_value(leds[0].gpio))
-            gpio_set_value(leds[0].gpio, 1);
-    else if(irq == button_irqs[1] && gpio_get_value(leds[0].gpio))
-            gpio_set_value(leds[0].gpio, 0);
-
-    /* Do the rest at leisure via the scheduler */
-    tasklet_schedule(&buttontask);
-
-    return IRQ_HANDLED;
-}
-
-int init_module()
-{
-    int ret = 0;
-
-    pr_info("%s\n", __func__);
-
-    /* register LED gpios */
-    ret = gpio_request_array(leds, ARRAY_SIZE(leds));
-
-    if (ret) {
-        pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
-        return ret;
-    }
-
-    /* register BUTTON gpios */
-    ret = gpio_request_array(buttons, ARRAY_SIZE(buttons));
-
-    if (ret) {
-        pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
-        goto fail1;
-    }
-
-    pr_info("Current button1 value: %d\n",
-           gpio_get_value(buttons[0].gpio));
-
-    ret = gpio_to_irq(buttons[0].gpio);
-
-    if (ret < 0) {
-        pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
-    }
-
-    button_irqs[0] = ret;
-
-    pr_info("Successfully requested BUTTON1 IRQ # %d\n",
-           button_irqs[0]);
-
-    ret = request_irq(button_irqs[0], button_isr,
-                      IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                      "gpiomod#button1", NULL);
-
-    if (ret) {
-        pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
-    }
-
-
-    ret = gpio_to_irq(buttons[1].gpio);
-
-    if (ret < 0) {
-        pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
-    }
-
-    button_irqs[1] = ret;
-
-    pr_info("Successfully requested BUTTON2 IRQ # %d\n",
-           button_irqs[1]);
-
-    ret = request_irq(button_irqs[1], button_isr,
-                      IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                      "gpiomod#button2", NULL);
-
-    if (ret) {
-        pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail3;
-    }
-
-    return 0;
-
-/* cleanup what has been setup so far */
-fail3:
-    free_irq(button_irqs[0], NULL);
-
-fail2:
-    gpio_free_array(buttons, ARRAY_SIZE(leds));
-
-fail1:
-    gpio_free_array(leds, ARRAY_SIZE(leds));
-
-    return ret;
-}
-
-void cleanup_module()
-{
-    int i;
-
-    pr_info("%s\n", __func__);
-
-    /* free irqs */
-    free_irq(button_irqs[0], NULL);
-    free_irq(button_irqs[1], NULL);
-
-    /* turn all LEDs off */
-    for (i = 0; i < ARRAY_SIZE(leds); i++)
-        gpio_set_value(leds[i].gpio, 0);
-
-    /* unregister */
-    gpio_free_array(leds, ARRAY_SIZE(leds));
-    gpio_free_array(buttons, ARRAY_SIZE(buttons));
-}
-
-MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Bob Mottram");
-MODULE_DESCRIPTION("Interrupt with top and bottom half");
-```
-:::
-
-It is expected that at some unspecified point in the future tasklets may
-eventually be deprecated, to be replaced by *threaded irqs* instead.
-Here is an example of how to do the same thing as before, with top and
-bottom halves, but using threads.
-
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-C}
 /*
  * bottomhalf.c - Top and bottom half interrupt handling
@@ -5126,14 +4953,190 @@ static int button_irqs[] = { -1, -1 };
 /* Define GPIOs for LEDs.
    Change the numbers for the GPIO on your board. */
 static struct gpio leds[] = {
-        {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
+    {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
 };
 
 /* Define GPIOs for BUTTONS
    Change the numbers for the GPIO on your board. */
 static struct gpio buttons[] = {
-        { 17, GPIOF_IN, "LED 1 ON BUTTON" },
-        { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
+    { 17, GPIOF_IN, "LED 1 ON BUTTON" },
+    { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
+};
+
+/* Tasklet containing some non-trivial amount of processing */
+static void bottomhalf_tasklet_fn(struct tasklet_struct *data)
+{
+    pr_info("Bottom half tasklet starts\n");
+    /* do something which takes a while */
+    mdelay(500);
+    pr_info("Bottom half tasklet ends\n");
+}
+
+DECLARE_TASKLET(buttontask, bottomhalf_tasklet_fn);
+
+/*
+ * interrupt function triggered when a button is pressed
+ */
+static irqreturn_t button_isr(int irq, void *data)
+{
+    /* Do something quickly right now */
+    if (irq == button_irqs[0] && !gpio_get_value(leds[0].gpio))
+        gpio_set_value(leds[0].gpio, 1);
+    else if(irq == button_irqs[1] && gpio_get_value(leds[0].gpio))
+        gpio_set_value(leds[0].gpio, 0);
+
+    /* Do the rest at leisure via the scheduler */
+    tasklet_schedule(&buttontask);
+
+    return IRQ_HANDLED;
+}
+
+int bottomhalf_init(void)
+{
+    int ret = 0;
+
+    pr_info("%s\n", __func__);
+
+    /* register LED gpios */
+    ret = gpio_request_array(leds, ARRAY_SIZE(leds));
+
+    if (ret) {
+    pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
+    return ret;
+    }
+
+    /* register BUTTON gpios */
+    ret = gpio_request_array(buttons, ARRAY_SIZE(buttons));
+
+    if (ret) {
+    pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
+    gpio_free_array(leds, ARRAY_SIZE(leds));
+    return ret;
+    }
+
+    pr_info("Current button1 value: %d\n",
+       gpio_get_value(buttons[0].gpio));
+
+    ret = gpio_to_irq(buttons[0].gpio);
+
+    if (ret < 0) {
+    pr_err("Unable to request IRQ: %d\n", ret);
+    gpio_free_array(buttons, ARRAY_SIZE(leds));
+    gpio_free_array(leds, ARRAY_SIZE(leds));
+    return ret;
+    }
+
+    button_irqs[0] = ret;
+
+    pr_info("Successfully requested BUTTON1 IRQ # %d\n",
+       button_irqs[0]);
+
+    ret = request_irq(button_irqs[0], button_isr,
+              IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+              "gpiomod#button1", NULL);
+
+    if (ret) {
+    pr_err("Unable to request IRQ: %d\n", ret);
+    gpio_free_array(buttons, ARRAY_SIZE(leds));
+    gpio_free_array(leds, ARRAY_SIZE(leds));
+    return ret;
+    }
+
+
+    ret = gpio_to_irq(buttons[1].gpio);
+
+    if (ret < 0) {
+    pr_err("Unable to request IRQ: %d\n", ret);
+    gpio_free_array(buttons, ARRAY_SIZE(leds));
+    gpio_free_array(leds, ARRAY_SIZE(leds));
+    return ret;
+    }
+
+    button_irqs[1] = ret;
+
+    pr_info("Successfully requested BUTTON2 IRQ # %d\n",
+       button_irqs[1]);
+
+    ret = request_irq(button_irqs[1], button_isr,
+              IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+              "gpiomod#button2", NULL);
+
+    if (ret) {
+    pr_err("Unable to request IRQ: %d\n", ret);
+    free_irq(button_irqs[0], NULL);
+    gpio_free_array(buttons, ARRAY_SIZE(leds));
+    gpio_free_array(leds, ARRAY_SIZE(leds));
+    return ret;
+    }
+
+    return 0;
+}
+
+void bottomhalf_exit(void)
+{
+    int i;
+
+    pr_info("%s\n", __func__);
+
+    /* free irqs */
+    free_irq(button_irqs[0], NULL);
+    free_irq(button_irqs[1], NULL);
+
+    /* turn all LEDs off */
+    for (i = 0; i < ARRAY_SIZE(leds); i++)
+    gpio_set_value(leds[i].gpio, 0);
+
+    /* unregister */
+    gpio_free_array(leds, ARRAY_SIZE(leds));
+    gpio_free_array(buttons, ARRAY_SIZE(buttons));
+}
+
+module_init(bottomhalf_init);
+module_exit(bottomhalf_exit);
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Bob Mottram");
+MODULE_DESCRIPTION("Interrupt with top and bottom half");
+```
+:::
+
+It is expected that at some unspecified point in the future tasklets may
+eventually be deprecated, to be replaced by *threaded irqs* instead.
+Here is an example of how to do the same thing as before, with top and
+bottom halves, but using threads.
+
+::: org-src-container
+``` {.src .src-C}
+/*
+ * bottomhalf.c - Top and bottom half interrupt handling
+ *
+ *  Copyright (C) 2017,2021 by Bob Mottram
+ *  Based upon the Rpi example by Stefan Wendler (devnull@kaltpost.de)
+ *  from:
+ *    https://github.com/wendlers/rpi-kmod-samples
+ *
+ *  Press one button to turn on a LED and another to turn it off
+ */
+
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/gpio.h>
+#include <linux/delay.h>
+#include <linux/interrupt.h>
+
+static int button_irqs[] = { -1, -1 };
+
+/* Define GPIOs for LEDs.
+   Change the numbers for the GPIO on your board. */
+static struct gpio leds[] = {
+    {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
+};
+
+/* Define GPIOs for BUTTONS
+   Change the numbers for the GPIO on your board. */
+static struct gpio buttons[] = {
+    { 17, GPIOF_IN, "LED 1 ON BUTTON" },
+    { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
 };
 
 /* This happens immediately, when the IRQ is triggered */
@@ -5153,7 +5156,7 @@ static irqreturn_t button_bottom_half(int irq, void *ident)
     return IRQ_HANDLED;
 }
 
-int init_module()
+int bottomhalf_init(void)
 {
     int ret = 0;
 
@@ -5163,84 +5166,82 @@ int init_module()
     ret = gpio_request_array(leds, ARRAY_SIZE(leds));
 
     if (ret) {
-        pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
-        return ret;
+    pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
+    return ret;
     }
 
     /* register BUTTON gpios */
     ret = gpio_request_array(buttons, ARRAY_SIZE(buttons));
 
     if (ret) {
-        pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
-        goto fail1;
+    pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
+    gpio_free_array(leds, ARRAY_SIZE(leds));
+    return ret;
     }
 
     pr_info("Current button1 value: %d\n",
-           gpio_get_value(buttons[0].gpio));
+       gpio_get_value(buttons[0].gpio));
 
     ret = gpio_to_irq(buttons[0].gpio);
 
     if (ret < 0) {
-        pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
+    pr_err("Unable to request IRQ: %d\n", ret);
+    gpio_free_array(buttons, ARRAY_SIZE(leds));
+    gpio_free_array(leds, ARRAY_SIZE(leds));
+    return ret;
     }
 
     button_irqs[0] = ret;
 
     pr_info("Successfully requested BUTTON1 IRQ # %d\n",
-           button_irqs[0]);
+       button_irqs[0]);
 
     ret = request_threaded_irq(gpio_to_irq(button_irqs[0]),
-                               button_top_half,
-                               button_bottom_half,      
-                               IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                               "gpiomod#button1", NULL);
+                   button_top_half,
+                   button_bottom_half,  
+                   IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                   "gpiomod#button1", NULL);
 
     if (ret) {
-        pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
+    pr_err("Unable to request IRQ: %d\n", ret);
+    gpio_free_array(buttons, ARRAY_SIZE(leds));
+    gpio_free_array(leds, ARRAY_SIZE(leds));
+    return ret;
     }
 
 
     ret = gpio_to_irq(buttons[1].gpio);
 
     if (ret < 0) {
-        pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
+    pr_err("Unable to request IRQ: %d\n", ret);
+    gpio_free_array(buttons, ARRAY_SIZE(leds));
+    gpio_free_array(leds, ARRAY_SIZE(leds));
+    return ret;
     }
 
     button_irqs[1] = ret;
 
     pr_info("Successfully requested BUTTON2 IRQ # %d\n",
-           button_irqs[1]);
+       button_irqs[1]);
 
     ret = request_threaded_irq(gpio_to_irq(button_irqs[1]),
-                               button_top_half,
-                               button_bottom_half,      
-                               IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                               "gpiomod#button2", NULL);
+                   button_top_half,
+                   button_bottom_half,  
+                   IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                   "gpiomod#button2", NULL);
 
     if (ret) {
-        pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail3;
+    pr_err("Unable to request IRQ: %d\n", ret);
+    free_irq(button_irqs[0], NULL);
+    gpio_free_array(buttons, ARRAY_SIZE(leds));
+    gpio_free_array(leds, ARRAY_SIZE(leds));
+    return ret;
     }
 
     return 0;
-
-/* cleanup what has been setup so far */
-fail3:
-    free_irq(button_irqs[0], NULL);
-
-fail2:
-    gpio_free_array(buttons, ARRAY_SIZE(leds));
-
-fail1:
-    gpio_free_array(leds, ARRAY_SIZE(leds));
-
-    return ret;
 }
 
-void cleanup_module()
+void bottomhalf_exit(void)
 {
     int i;
 
@@ -5252,12 +5253,15 @@ void cleanup_module()
 
     /* turn all LEDs off */
     for (i = 0; i < ARRAY_SIZE(leds); i++)
-        gpio_set_value(leds[i].gpio, 0);
+    gpio_set_value(leds[i].gpio, 0);
 
     /* unregister */
     gpio_free_array(leds, ARRAY_SIZE(leds));
     gpio_free_array(buttons, ARRAY_SIZE(buttons));
 }
+
+module_init(bottomhalf_init);
+module_exit(bottomhalf_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Bob Mottram");
@@ -5268,9 +5272,8 @@ MODULE_DESCRIPTION("Interrupt with top and bottom half");
 :::
 :::
 
-::: {#outline-container-orga873b84 .outline-2}
-[16.]{.section-number-2} Crypto {#orga873b84}
--------------------------------
+::: {#outline-container-org16f10c6 .outline-2}
+## [16]{.section-number-2} Crypto {#org16f10c6}
 
 ::: {#text-16 .outline-text-2}
 At the dawn of the internet everybody trusted everybody completely...but
@@ -5282,15 +5285,15 @@ enabling common methods of encryption, decryption and your favourite
 hash functions.
 :::
 
-::: {#outline-container-org8c0e5bf .outline-3}
-### [16.1.]{.section-number-3} Hash functions {#org8c0e5bf}
+::: {#outline-container-org751218b .outline-3}
+### [16.1]{.section-number-3} Hash functions {#org751218b}
 
 ::: {#text-16-1 .outline-text-3}
 Calculating and checking the hashes of things is a common operation.
 Here is a demonstration of how to calculate a sha256 hash within a
 kernel module.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-C}
 #include <linux/module.h>
 #include <crypto/internal/hash.h>
@@ -5304,7 +5307,7 @@ static void show_hash_result(char * plaintext, char * hash_sha256)
 
     pr_info("sha256 test for string: \"%s\"\n", plaintext);
     for (i = 0; i < SHA256_LENGTH ; i++)
-        sprintf(&str[i*2],"%02x", (unsigned char)hash_sha256[i]);
+    sprintf(&str[i*2],"%02x", (unsigned char)hash_sha256[i]);
     str[i*2] = 0;
     pr_info("%s\n", str);
 }
@@ -5318,24 +5321,24 @@ int cryptosha256_init(void)
 
     sha256 = crypto_alloc_shash("sha256", 0, 0);
     if (IS_ERR(sha256))
-        return -1;
+    return -1;
 
     shash =
-        kmalloc(sizeof(struct shash_desc) + crypto_shash_descsize(sha256),
-                GFP_KERNEL);
+    kmalloc(sizeof(struct shash_desc) + crypto_shash_descsize(sha256),
+        GFP_KERNEL);
     if (!shash)
-        return -ENOMEM;
+    return -ENOMEM;
 
     shash->tfm = sha256;
 
     if (crypto_shash_init(shash))
-        return -1;
+    return -1;
 
-    if (crypto_shash_update(shash, plaintext, strlen(plaintext)))
-        return -1;
+    if (crypto_shash_update(shash, (unsigned char *)plaintext, strlen(plaintext)))
+    return -1;
 
-    if (crypto_shash_final(shash, hash_sha256))
-        return -1;
+    if (crypto_shash_final(shash, (unsigned char *)hash_sha256))
+    return -1;
 
     kfree(shash);
     crypto_free_shash(sha256);
@@ -5360,7 +5363,7 @@ MODULE_LICENSE("GPL");
 
 Make and install the module:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 make
 sudo insmod cryptosha256.ko
@@ -5372,7 +5375,7 @@ And you should see that the hash was calculated for the test string.
 
 Finally, remove the test module:
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-sh}
 sudo rmmod cryptosha256
 ```
@@ -5380,14 +5383,14 @@ sudo rmmod cryptosha256
 :::
 :::
 
-::: {#outline-container-org6c8251d .outline-3}
-### [16.2.]{.section-number-3} Symmetric key encryption {#org6c8251d}
+::: {#outline-container-org864d511 .outline-3}
+### [16.2]{.section-number-3} Symmetric key encryption {#org864d511}
 
 ::: {#text-16-2 .outline-text-3}
 Here is an example of symmetrically encrypting a string using the AES
 algorithm and a password.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-C}
 #include <crypto/internal/skcipher.h>
 #include <linux/scatterlist.h>
@@ -5418,36 +5421,36 @@ static struct skcipher_def sk;
 static void test_skcipher_finish(struct skcipher_def * sk)
 {
     if (sk->tfm)
-        crypto_free_skcipher(sk->tfm);
+    crypto_free_skcipher(sk->tfm);
     if (sk->req)
-        skcipher_request_free(sk->req);
+    skcipher_request_free(sk->req);
     if (sk->ivdata)
-        kfree(sk->ivdata);
+    kfree(sk->ivdata);
     if (sk->scratchpad)
-        kfree(sk->scratchpad);
+    kfree(sk->scratchpad);
     if (sk->ciphertext)
-        kfree(sk->ciphertext);
+    kfree(sk->ciphertext);
 }
 
 static int test_skcipher_result(struct skcipher_def * sk, int rc)
 {
     switch (rc) {
     case 0:
-        break;
+    break;
     case -EINPROGRESS || -EBUSY:
-        rc = wait_for_completion_interruptible(
-            &sk->result.completion);
-        if (!rc && !sk->result.err) {
-            reinit_completion(&sk->result.completion);
-            break;
-        }
-        pr_info("skcipher encrypt returned with %d result %d\n",
-            rc, sk->result.err);
+    rc = wait_for_completion_interruptible(
+        &sk->result.completion);
+    if (!rc && !sk->result.err) {
+        reinit_completion(&sk->result.completion);
         break;
+    }
+    pr_info("skcipher encrypt returned with %d result %d\n",
+        rc, sk->result.err);
+    break;
     default:
-        pr_info("skcipher encrypt returned with %d result %d\n",
-            rc, sk->result.err);
-        break;
+    pr_info("skcipher encrypt returned with %d result %d\n",
+        rc, sk->result.err);
+    break;
     }
 
     init_completion(&sk->result.completion);
@@ -5461,7 +5464,7 @@ static void test_skcipher_callback(struct crypto_async_request *req, int error)
     /* int ret; */
 
     if (error == -EINPROGRESS)
-        return;
+    return;
 
     result->err = error;
     complete(&result->completion);
@@ -5473,7 +5476,7 @@ static void test_skcipher_callback(struct crypto_async_request *req, int error)
     ret = crypto_skcipher_decrypt(sk.req);
     ret = test_skcipher_result(&sk, ret);
     if (ret)
-        return;
+    return;
 
     sg_copy_from_buffer(&sk.sg, 1, sk.scratchpad, CIPHER_BLOCK_SIZE);
     sk.scratchpad[CIPHER_BLOCK_SIZE-1] = 0;
@@ -5484,31 +5487,31 @@ static void test_skcipher_callback(struct crypto_async_request *req, int error)
 }
 
 static int test_skcipher_encrypt(char * plaintext, char * password,
-                                 struct skcipher_def * sk)
+                 struct skcipher_def * sk)
 {
     int ret = -EFAULT;
     unsigned char key[SYMMETRIC_KEY_LENGTH];
 
     if (!sk->tfm) {
-        sk->tfm = crypto_alloc_skcipher("cbc-aes-aesni", 0, 0);
-        if (IS_ERR(sk->tfm)) {
-            pr_info("could not allocate skcipher handle\n");
-            return PTR_ERR(sk->tfm);
-        }
+    sk->tfm = crypto_alloc_skcipher("cbc-aes-aesni", 0, 0);
+    if (IS_ERR(sk->tfm)) {
+        pr_info("could not allocate skcipher handle\n");
+        return PTR_ERR(sk->tfm);
+    }
     }
 
     if (!sk->req) {
-        sk->req = skcipher_request_alloc(sk->tfm, GFP_KERNEL);
-        if (!sk->req) {
-            pr_info("could not allocate skcipher request\n");
-            ret = -ENOMEM;
-            goto out;
-        }
+    sk->req = skcipher_request_alloc(sk->tfm, GFP_KERNEL);
+    if (!sk->req) {
+        pr_info("could not allocate skcipher request\n");
+        ret = -ENOMEM;
+        goto out;
+    }
     }
 
     skcipher_request_set_callback(sk->req, CRYPTO_TFM_REQ_MAY_BACKLOG,
-                                  test_skcipher_callback,
-                                  &sk->result);
+                  test_skcipher_callback,
+                  &sk->result);
 
     /* clear the key */
     memset((void*)key,'\0',SYMMETRIC_KEY_LENGTH);
@@ -5518,43 +5521,43 @@ static int test_skcipher_encrypt(char * plaintext, char * password,
 
     /* AES 256 with given symmetric key */
     if (crypto_skcipher_setkey(sk->tfm, key, SYMMETRIC_KEY_LENGTH)) {
-        pr_info("key could not be set\n");
-        ret = -EAGAIN;
-        goto out;
+    pr_info("key could not be set\n");
+    ret = -EAGAIN;
+    goto out;
     }
     pr_info("Symmetric key: %s\n", key);
     pr_info("Plaintext: %s\n", plaintext);
 
     if (!sk->ivdata) {
-        /* see https://en.wikipedia.org/wiki/Initialization_vector */
-        sk->ivdata = kmalloc(CIPHER_BLOCK_SIZE, GFP_KERNEL);
-        if (!sk->ivdata) {
-            pr_info("could not allocate ivdata\n");
-            goto out;
-        }
-        get_random_bytes(sk->ivdata, CIPHER_BLOCK_SIZE);
+    /* see https://en.wikipedia.org/wiki/Initialization_vector */
+    sk->ivdata = kmalloc(CIPHER_BLOCK_SIZE, GFP_KERNEL);
+    if (!sk->ivdata) {
+        pr_info("could not allocate ivdata\n");
+        goto out;
+    }
+    get_random_bytes(sk->ivdata, CIPHER_BLOCK_SIZE);
     }
 
     if (!sk->scratchpad) {
-        /* The text to be encrypted */
-        sk->scratchpad = kmalloc(CIPHER_BLOCK_SIZE, GFP_KERNEL);
-        if (!sk->scratchpad) {
-            pr_info("could not allocate scratchpad\n");
-            goto out;
-        }
+    /* The text to be encrypted */
+    sk->scratchpad = kmalloc(CIPHER_BLOCK_SIZE, GFP_KERNEL);
+    if (!sk->scratchpad) {
+        pr_info("could not allocate scratchpad\n");
+        goto out;
+    }
     }
     sprintf((char*)sk->scratchpad,"%s",plaintext);
 
     sg_init_one(&sk->sg, sk->scratchpad, CIPHER_BLOCK_SIZE);
     skcipher_request_set_crypt(sk->req, &sk->sg, &sk->sg,
-                               CIPHER_BLOCK_SIZE, sk->ivdata);
+                   CIPHER_BLOCK_SIZE, sk->ivdata);
     init_completion(&sk->result.completion);
 
     /* encrypt data */
     ret = crypto_skcipher_encrypt(sk->req);
     ret = test_skcipher_result(sk, ret);
     if (ret)
-        goto out;
+    goto out;
 
     pr_info("Encryption request successful\n");
 
@@ -5594,9 +5597,8 @@ MODULE_LICENSE("GPL");
 :::
 :::
 
-::: {#outline-container-org80ad533 .outline-2}
-[17.]{.section-number-2} Standardising the interfaces: The Device Model {#org80ad533}
------------------------------------------------------------------------
+::: {#outline-container-orgdeb9f24 .outline-2}
+## [17]{.section-number-2} Standardising the interfaces: The Device Model {#orgdeb9f24}
 
 ::: {#text-17 .outline-text-2}
 Up to this point we\'ve seen all kinds of modules doing all kinds of
@@ -5606,7 +5608,7 @@ a standardised way to start, suspend and resume a device a device model
 was added. An example is show below, and you can use this as a template
 to add your own suspend, resume or other interface functions.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-C}
 #include <linux/kernel.h>
 #include <linux/module.h>
@@ -5668,9 +5670,9 @@ static const struct dev_pm_ops devicemodel_pm_ops =
 
 static struct platform_driver devicemodel_driver = {
     .driver     = {
-        .name   = "devicemodel_example",
-        .owner  = THIS_MODULE,
-        .pm     = &devicemodel_pm_ops,
+    .name   = "devicemodel_example",
+    .owner  = THIS_MODULE,
+    .pm     = &devicemodel_pm_ops,
     },
     .probe      = devicemodel_probe,
     .remove     = devicemodel_remove,
@@ -5685,8 +5687,8 @@ static int devicemodel_init(void)
     ret = platform_driver_register(&devicemodel_driver);
 
     if (ret) {
-        pr_err("Unable to register driver\n");
-        return ret;
+    pr_err("Unable to register driver\n");
+    return ret;
     }
 
     return 0;
@@ -5709,15 +5711,14 @@ module_exit(devicemodel_exit);
 :::
 :::
 
-::: {#outline-container-orgd2ab6d2 .outline-2}
-[18.]{.section-number-2} Optimisations {#orgd2ab6d2}
---------------------------------------
+::: {#outline-container-orgdb8f947 .outline-2}
+## [18]{.section-number-2} Optimisations {#orgdb8f947}
 
 ::: {#text-18 .outline-text-2}
 :::
 
-::: {#outline-container-org9213a35 .outline-3}
-### [18.1.]{.section-number-3} Likely and Unlikely conditions {#org9213a35}
+::: {#outline-container-org33455b4 .outline-3}
+### [18.1]{.section-number-3} Likely and Unlikely conditions {#org33455b4}
 
 ::: {#text-18-1 .outline-text-3}
 Sometimes you might want your code to run as quickly as possible,
@@ -5730,7 +5731,7 @@ for this using the *likely* and *unlikely* macros.
 For example, when allocating memory you\'re almost always expecting this
 to succeed.
 
-::: {.org-src-container}
+::: org-src-container
 ``` {.src .src-C}
 bvl = bvec_alloc(gfp_mask, nr_iovecs, &idx);
 if (unlikely(!bvl)) {
@@ -5749,9 +5750,8 @@ pipeline. The opposite happens if you use the *likely* macro.
 :::
 :::
 
-::: {#outline-container-org789c577 .outline-2}
-[19.]{.section-number-2} Common Pitfalls {#org789c577}
-----------------------------------------
+::: {#outline-container-orgb29f511 .outline-2}
+## [19]{.section-number-2} Common Pitfalls {#orgb29f511}
 
 ::: {#text-19 .outline-text-2}
 Before I send you on your way to go out into the world and write kernel
@@ -5760,8 +5760,8 @@ warn you and something bad happens, please report the problem to me for
 a full refund of the amount I was paid for your copy of the book.
 :::
 
-::: {#outline-container-orgc72082f .outline-3}
-### [19.1.]{.section-number-3} Using standard libraries {#orgc72082f}
+::: {#outline-container-orgfbda4ad .outline-3}
+### [19.1]{.section-number-3} Using standard libraries {#orgfbda4ad}
 
 ::: {#text-19-1 .outline-text-3}
 You can\'t do that. In a kernel module you can only use kernel
@@ -5769,8 +5769,8 @@ functions, which are the functions you can see in /proc/kallsyms.
 :::
 :::
 
-::: {#outline-container-orgb937c60 .outline-3}
-### [19.2.]{.section-number-3} Disabling interrupts {#orgb937c60}
+::: {#outline-container-org61c29e9 .outline-3}
+### [19.2]{.section-number-3} Disabling interrupts {#org61c29e9}
 
 ::: {#text-19-2 .outline-text-3}
 You might need to do this for a short time and that is OK, but if you
@@ -5779,8 +5779,8 @@ have to power it off.
 :::
 :::
 
-::: {#outline-container-org10a8359 .outline-3}
-### [19.3.]{.section-number-3} Sticking your head inside a large carnivore {#org10a8359}
+::: {#outline-container-org5613143 .outline-3}
+### [19.3]{.section-number-3} Sticking your head inside a large carnivore {#org5613143}
 
 ::: {#text-19-3 .outline-text-3}
 I probably don\'t have to warn you about this, but I figured I will
@@ -5789,9 +5789,8 @@ anyway, just in case.
 :::
 :::
 
-::: {#outline-container-org33f194c .outline-2}
-[20.]{.section-number-2} Where To Go From Here? {#org33f194c}
------------------------------------------------
+::: {#outline-container-org258b0a6 .outline-2}
+## [20]{.section-number-2} Where To Go From Here? {#org258b0a6}
 
 ::: {#text-20 .outline-text-2}
 I could easily have squeezed a few more chapters into this book. I could
@@ -5840,7 +5839,7 @@ Happy hacking.
 Author: Peter Jay Salzman, Michael Burian, Ori Pomerantz, Bob Mottram,
 Jim Huang
 
-Created: 2021-09-23 Thu 10:18
+Created: 2021-09-25 Sat 12:33
 
-[Validate](https://validator.w3.org/check?uri=referer)
+[Validate](http://validator.w3.org/check?uri=referer)
 :::
