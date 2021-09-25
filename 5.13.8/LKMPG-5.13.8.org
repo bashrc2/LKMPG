@@ -3431,7 +3431,7 @@ The example below modifies the previous example to also run an additional task w
 /*
  * bottomhalf.c - Top and bottom half interrupt handling
  *
- *  Copyright (C) 2017 by Bob Mottram
+ *  Copyright (C) 2017,2021 by Bob Mottram
  *  Based upon the Rpi example by Stefan Wendler (devnull@kaltpost.de)
  *  from:
  *    https://github.com/wendlers/rpi-kmod-samples
@@ -3488,7 +3488,7 @@ static irqreturn_t button_isr(int irq, void *data)
     return IRQ_HANDLED;
 }
 
-int init_module()
+int bottomhalf_init(void)
 {
     int ret = 0;
 
@@ -3507,7 +3507,8 @@ int init_module()
 
     if (ret) {
         pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
-        goto fail1;
+	gpio_free_array(leds, ARRAY_SIZE(leds));
+	return ret;
     }
 
     pr_info("Current button1 value: %d\n",
@@ -3517,7 +3518,9 @@ int init_module()
 
     if (ret < 0) {
         pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
+	gpio_free_array(buttons, ARRAY_SIZE(leds));
+	gpio_free_array(leds, ARRAY_SIZE(leds));
+	return ret;
     }
 
     button_irqs[0] = ret;
@@ -3531,7 +3534,9 @@ int init_module()
 
     if (ret) {
         pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
+	gpio_free_array(buttons, ARRAY_SIZE(leds));
+	gpio_free_array(leds, ARRAY_SIZE(leds));
+	return ret;
     }
 
 
@@ -3539,7 +3544,9 @@ int init_module()
 
     if (ret < 0) {
         pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
+	gpio_free_array(buttons, ARRAY_SIZE(leds));
+	gpio_free_array(leds, ARRAY_SIZE(leds));
+	return ret;
     }
 
     button_irqs[1] = ret;
@@ -3553,25 +3560,16 @@ int init_module()
 
     if (ret) {
         pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail3;
+	free_irq(button_irqs[0], NULL);
+	gpio_free_array(buttons, ARRAY_SIZE(leds));
+	gpio_free_array(leds, ARRAY_SIZE(leds));
+	return ret;
     }
 
     return 0;
-
-/* cleanup what has been setup so far */
-fail3:
-    free_irq(button_irqs[0], NULL);
-
-fail2:
-    gpio_free_array(buttons, ARRAY_SIZE(leds));
-
-fail1:
-    gpio_free_array(leds, ARRAY_SIZE(leds));
-
-    return ret;
 }
 
-void cleanup_module()
+void bottomhalf_exit(void)
 {
     int i;
 
@@ -3589,6 +3587,9 @@ void cleanup_module()
     gpio_free_array(leds, ARRAY_SIZE(leds));
     gpio_free_array(buttons, ARRAY_SIZE(buttons));
 }
+
+module_init(bottomhalf_init);
+module_exit(bottomhalf_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Bob Mottram");
@@ -3647,7 +3648,7 @@ static irqreturn_t button_bottom_half(int irq, void *ident)
     return IRQ_HANDLED;
 }
 
-int init_module()
+int bottomhalf_init(void)
 {
     int ret = 0;
 
@@ -3666,7 +3667,8 @@ int init_module()
 
     if (ret) {
         pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
-        goto fail1;
+	gpio_free_array(leds, ARRAY_SIZE(leds));
+	return ret;
     }
 
     pr_info("Current button1 value: %d\n",
@@ -3676,7 +3678,9 @@ int init_module()
 
     if (ret < 0) {
         pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
+	gpio_free_array(buttons, ARRAY_SIZE(leds));
+	gpio_free_array(leds, ARRAY_SIZE(leds));
+	return ret;
     }
 
     button_irqs[0] = ret;
@@ -3692,7 +3696,9 @@ int init_module()
 
     if (ret) {
         pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
+	gpio_free_array(buttons, ARRAY_SIZE(leds));
+	gpio_free_array(leds, ARRAY_SIZE(leds));
+	return ret;
     }
 
 
@@ -3700,7 +3706,9 @@ int init_module()
 
     if (ret < 0) {
         pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail2;
+	gpio_free_array(buttons, ARRAY_SIZE(leds));
+	gpio_free_array(leds, ARRAY_SIZE(leds));
+	return ret;
     }
 
     button_irqs[1] = ret;
@@ -3716,25 +3724,16 @@ int init_module()
 
     if (ret) {
         pr_err("Unable to request IRQ: %d\n", ret);
-        goto fail3;
+	free_irq(button_irqs[0], NULL);
+	gpio_free_array(buttons, ARRAY_SIZE(leds));
+	gpio_free_array(leds, ARRAY_SIZE(leds));
+	return ret;
     }
 
     return 0;
-
-/* cleanup what has been setup so far */
-fail3:
-    free_irq(button_irqs[0], NULL);
-
-fail2:
-    gpio_free_array(buttons, ARRAY_SIZE(leds));
-
-fail1:
-    gpio_free_array(leds, ARRAY_SIZE(leds));
-
-    return ret;
 }
 
-void cleanup_module()
+void bottomhalf_exit(void)
 {
     int i;
 
@@ -3752,6 +3751,9 @@ void cleanup_module()
     gpio_free_array(leds, ARRAY_SIZE(leds));
     gpio_free_array(buttons, ARRAY_SIZE(buttons));
 }
+
+module_init(bottomhalf_init);
+module_exit(bottomhalf_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Bob Mottram");
