@@ -10,116 +10,116 @@
       .. container::
          :name: text-table-of-contents
 
-         -  `1. Introduction <#orga52b20e>`__
+         -  `1. Introduction <#org4b72238>`__
 
-            -  `1.1. Authorship <#org1cedb0a>`__
-            -  `1.2. Versioning and Notes <#orgefabb2c>`__
-            -  `1.3. Acknowledgements <#orgd521949>`__
-            -  `1.4. What Is A Kernel Module? <#org0d23f91>`__
-            -  `1.5. Installing some Dependencies <#org01ebc8c>`__
-            -  `1.6. What Modules are in my Kernel? <#org87aea9c>`__
+            -  `1.1. Authorship <#org6888101>`__
+            -  `1.2. Versioning and Notes <#org4fd547a>`__
+            -  `1.3. Acknowledgements <#org3d3e3f5>`__
+            -  `1.4. What Is A Kernel Module? <#org2a51c19>`__
+            -  `1.5. Installing some Dependencies <#org3b59899>`__
+            -  `1.6. What Modules are in my Kernel? <#orgd66d36d>`__
             -  `1.7. Do I need to download and compile the
-               kernel? <#org3105c25>`__
-            -  `1.8. Before We Begin <#org3613b5c>`__
+               kernel? <#org638fd9b>`__
+            -  `1.8. Before We Begin <#org5cdf0bc>`__
 
-         -  `2. Headers <#org55be331>`__
-         -  `3. Examples <#orgc089cc7>`__
-         -  `4. Hello World <#org927a75a>`__
+         -  `2. Headers <#org53ad665>`__
+         -  `3. Examples <#org896dd31>`__
+         -  `4. Hello World <#orgc888eb1>`__
 
-            -  `4.1. The Simplest Module <#orgb4b224c>`__
-            -  `4.2. Hello and Goodbye <#orgc9e251b>`__
-            -  `4.3. The \__init and \__exit Macros <#orgbedf180>`__
-            -  `4.4. Licensing and Module Documentation <#org0b50be3>`__
+            -  `4.1. The Simplest Module <#org9bfa978>`__
+            -  `4.2. Hello and Goodbye <#org59def12>`__
+            -  `4.3. The \__init and \__exit Macros <#org1c2a3b7>`__
+            -  `4.4. Licensing and Module Documentation <#orgdf87f51>`__
             -  `4.5. Passing Command Line Arguments to a
-               Module <#org3bc3b6e>`__
-            -  `4.6. Modules Spanning Multiple Files <#orgfa1b2dd>`__
+               Module <#org2663a3f>`__
+            -  `4.6. Modules Spanning Multiple Files <#orge7d4e2a>`__
             -  `4.7. Building modules for a precompiled
-               kernel <#org0e34d2e>`__
+               kernel <#org4805106>`__
 
-         -  `5. Preliminaries <#org5698ecd>`__
+         -  `5. Preliminaries <#org5f8da13>`__
 
-            -  `5.1. How modules begin and end <#org8148b7f>`__
-            -  `5.2. Functions available to modules <#orgbba77e1>`__
-            -  `5.3. User Space vs Kernel Space <#org695cac3>`__
-            -  `5.4. Name Space <#org4b75509>`__
-            -  `5.5. Code space <#orgeeb2806>`__
-            -  `5.6. Device Drivers <#org81d5088>`__
+            -  `5.1. How modules begin and end <#orgc873eae>`__
+            -  `5.2. Functions available to modules <#orga6e3304>`__
+            -  `5.3. User Space vs Kernel Space <#org5b527c2>`__
+            -  `5.4. Name Space <#org35bb189>`__
+            -  `5.5. Code space <#orgabbee17>`__
+            -  `5.6. Device Drivers <#org094150d>`__
 
-         -  `6. Character Device drivers <#org9e44303>`__
+         -  `6. Character Device drivers <#org9c3ab13>`__
 
-            -  `6.1. The file_operations Structure <#org8f47977>`__
-            -  `6.2. The file structure <#org0e88fd8>`__
-            -  `6.3. Registering A Device <#org6f9256e>`__
-            -  `6.4. Unregistering A Device <#org56e59b1>`__
-            -  `6.5. chardev.c <#org8282db1>`__
+            -  `6.1. The file_operations Structure <#org2b69f24>`__
+            -  `6.2. The file structure <#org3e746a1>`__
+            -  `6.3. Registering A Device <#orga72a012>`__
+            -  `6.4. Unregistering A Device <#org2877a6f>`__
+            -  `6.5. chardev.c <#org07084a5>`__
             -  `6.6. Writing Modules for Multiple Kernel
-               Versions <#orgd910fa9>`__
+               Versions <#org96b817c>`__
 
-         -  `7. The /proc File System <#orgb5f3d2f>`__
+         -  `7. The /proc File System <#org143b51d>`__
 
-            -  `7.1. Read and Write a /proc File <#org589de2b>`__
+            -  `7.1. Read and Write a /proc File <#org6bd0573>`__
             -  `7.2. Manage /proc file with standard
-               filesystem <#orgcf5392b>`__
-            -  `7.3. Manage /proc file with seq_file <#org282a15b>`__
+               filesystem <#org5e777a2>`__
+            -  `7.3. Manage /proc file with seq_file <#org413ab4c>`__
 
-         -  `8. sysfs: Interacting with your module <#org6d5eeb2>`__
-         -  `9. Talking To Device Files <#org09d5857>`__
-         -  `10. System Calls <#org51eb895>`__
-         -  `11. Blocking Processes and threads <#orgb6a9115>`__
+         -  `8. sysfs: Interacting with your module <#orgb498a5a>`__
+         -  `9. Talking To Device Files <#orga7b6fb9>`__
+         -  `10. System Calls <#org5b3d7f0>`__
+         -  `11. Blocking Processes and threads <#org1a90aa9>`__
 
-            -  `11.1. Sleep <#org2687dee>`__
-            -  `11.2. Completions <#orge56dfbd>`__
+            -  `11.1. Sleep <#org74d0776>`__
+            -  `11.2. Completions <#org2173780>`__
 
-         -  `12. Avoiding Collisions and Deadlocks <#orgbcc42de>`__
+         -  `12. Avoiding Collisions and Deadlocks <#orgfc2408e>`__
 
-            -  `12.1. Mutex <#org9bc931f>`__
-            -  `12.2. Spinlocks <#org9524a19>`__
-            -  `12.3. Read and write locks <#orga814666>`__
-            -  `12.4. Atomic operations <#org718958d>`__
+            -  `12.1. Mutex <#orgeb8c56f>`__
+            -  `12.2. Spinlocks <#org90bc284>`__
+            -  `12.3. Read and write locks <#org1db5018>`__
+            -  `12.4. Atomic operations <#orga190d2c>`__
 
-         -  `13. Replacing Print Macros <#orgb5a8756>`__
+         -  `13. Replacing Print Macros <#orge21968e>`__
 
-            -  `13.1. Replacement <#orga836e2e>`__
-            -  `13.2. Flashing keyboard LEDs <#org86785e3>`__
+            -  `13.1. Replacement <#org2daf078>`__
+            -  `13.2. Flashing keyboard LEDs <#org10d1ccc>`__
 
-         -  `14. Scheduling Tasks <#org24328ef>`__
+         -  `14. Scheduling Tasks <#orgd79b9f8>`__
 
-            -  `14.1. Tasklets <#org9acb1ea>`__
-            -  `14.2. Work queues <#org710330a>`__
+            -  `14.1. Tasklets <#orgfa43697>`__
+            -  `14.2. Work queues <#org0ac4443>`__
 
-         -  `15. Interrupt Handlers <#org35cd7bb>`__
+         -  `15. Interrupt Handlers <#orgece22bc>`__
 
-            -  `15.1. Interrupt Handlers <#orged1ad6a>`__
-            -  `15.2. Detecting button presses <#org83d512c>`__
-            -  `15.3. Bottom Half <#org168b208>`__
+            -  `15.1. Interrupt Handlers <#orgdfd366a>`__
+            -  `15.2. Detecting button presses <#org64f7d80>`__
+            -  `15.3. Bottom Half <#org10a4cdf>`__
 
-         -  `16. Crypto <#org16f10c6>`__
+         -  `16. Crypto <#org63a7c7e>`__
 
-            -  `16.1. Hash functions <#org751218b>`__
-            -  `16.2. Symmetric key encryption <#org864d511>`__
+            -  `16.1. Hash functions <#org1634eb7>`__
+            -  `16.2. Symmetric key encryption <#org7e938eb>`__
 
          -  `17. Standardising the interfaces: The Device
-            Model <#orgdeb9f24>`__
-         -  `18. Optimisations <#orgdb8f947>`__
+            Model <#orgcb8ca34>`__
+         -  `18. Optimisations <#org0bb3975>`__
 
-            -  `18.1. Likely and Unlikely conditions <#org33455b4>`__
+            -  `18.1. Likely and Unlikely conditions <#org59c119b>`__
 
-         -  `19. Common Pitfalls <#orgb29f511>`__
+         -  `19. Common Pitfalls <#org05633a5>`__
 
-            -  `19.1. Using standard libraries <#orgfbda4ad>`__
-            -  `19.2. Disabling interrupts <#org61c29e9>`__
+            -  `19.1. Using standard libraries <#org756d3b8>`__
+            -  `19.2. Disabling interrupts <#org7a5fe7a>`__
             -  `19.3. Sticking your head inside a large
-               carnivore <#org5613143>`__
+               carnivore <#org2b28420>`__
 
-         -  `20. Where To Go From Here? <#org258b0a6>`__
+         -  `20. Where To Go From Here? <#org996dd0f>`__
 
    [[#+TITLE: The Linux Kernel Module Programming Guide
 
    .. container:: outline-2
-      :name: outline-container-orga52b20e
+      :name: outline-container-org4b72238
 
-      .. rubric:: 1 Introduction
-         :name: orga52b20e
+      .. rubric:: 1. Introduction
+         :name: org4b72238
 
       .. container:: outline-text-2
          :name: text-1
@@ -158,10 +158,10 @@
          have questions or comments, please contact the address above.
 
       .. container:: outline-3
-         :name: outline-container-org1cedb0a
+         :name: outline-container-org6888101
 
-         .. rubric:: 1.1 Authorship
-            :name: org1cedb0a
+         .. rubric:: 1.1. Authorship
+            :name: org6888101
 
          .. container:: outline-text-3
             :name: text-1-1
@@ -180,10 +180,10 @@
             versions.
 
       .. container:: outline-3
-         :name: outline-container-orgefabb2c
+         :name: outline-container-org4fd547a
 
-         .. rubric:: 1.2 Versioning and Notes
-            :name: orgefabb2c
+         .. rubric:: 1.2. Versioning and Notes
+            :name: org4fd547a
 
          .. container:: outline-text-3
             :name: text-1-2
@@ -202,10 +202,10 @@
             architectures, but I can't promise anything.
 
       .. container:: outline-3
-         :name: outline-container-orgd521949
+         :name: outline-container-org3d3e3f5
 
-         .. rubric:: 1.3 Acknowledgements
-            :name: orgd521949
+         .. rubric:: 1.3. Acknowledgements
+            :name: org3d3e3f5
 
          .. container:: outline-text-3
             :name: text-1-3
@@ -216,10 +216,10 @@
             Bob Mottram and Roman Lakeev.
 
       .. container:: outline-3
-         :name: outline-container-org0d23f91
+         :name: outline-container-org2a51c19
 
-         .. rubric:: 1.4 What Is A Kernel Module?
-            :name: org0d23f91
+         .. rubric:: 1.4. What Is A Kernel Module?
+            :name: org2a51c19
 
          .. container:: outline-text-3
             :name: text-1-4
@@ -242,10 +242,10 @@
             the kernel every time we want new functionality.
 
       .. container:: outline-3
-         :name: outline-container-org01ebc8c
+         :name: outline-container-org3b59899
 
-         .. rubric:: 1.5 Installing some Dependencies
-            :name: org01ebc8c
+         .. rubric:: 1.5. Installing some Dependencies
+            :name: org3b59899
 
          .. container:: outline-text-3
             :name: text-1-5
@@ -271,10 +271,10 @@
                   sudo pacman -S gcc kmod
 
       .. container:: outline-3
-         :name: outline-container-org87aea9c
+         :name: outline-container-orgd66d36d
 
-         .. rubric:: 1.6 What Modules are in my Kernel?
-            :name: org87aea9c
+         .. rubric:: 1.6. What Modules are in my Kernel?
+            :name: orgd66d36d
 
          .. container:: outline-text-3
             :name: text-1-6
@@ -307,10 +307,10 @@
                   sudo lsmod | grep fat
 
       .. container:: outline-3
-         :name: outline-container-org3105c25
+         :name: outline-container-org638fd9b
 
-         .. rubric:: 1.7 Do I need to download and compile the kernel?
-            :name: org3105c25
+         .. rubric:: 1.7. Do I need to download and compile the kernel?
+            :name: org638fd9b
 
          .. container:: outline-text-3
             :name: text-1-7
@@ -322,10 +322,10 @@
             system.
 
       .. container:: outline-3
-         :name: outline-container-org3613b5c
+         :name: outline-container-org5cdf0bc
 
-         .. rubric:: 1.8 Before We Begin
-            :name: org3613b5c
+         .. rubric:: 1.8. Before We Begin
+            :name: org5cdf0bc
 
          .. container:: outline-text-3
             :name: text-1-8
@@ -370,10 +370,10 @@
             :::
 
    .. container:: outline-2
-      :name: outline-container-org55be331
+      :name: outline-container-org53ad665
 
-      .. rubric:: 2 Headers
-         :name: org55be331
+      .. rubric:: 2. Headers
+         :name: org53ad665
 
       .. container:: outline-text-2
          :name: text-2
@@ -406,10 +406,10 @@
                sudo apt-get install kmod linux-headers-5.13.8-1-amd64
 
    .. container:: outline-2
-      :name: outline-container-orgc089cc7
+      :name: outline-container-org896dd31
 
-      .. rubric:: 3 Examples
-         :name: orgc089cc7
+      .. rubric:: 3. Examples
+         :name: org896dd31
 
       .. container:: outline-text-2
          :name: text-3
@@ -432,19 +432,19 @@
          kernel header files.
 
    .. container:: outline-2
-      :name: outline-container-org927a75a
+      :name: outline-container-orgc888eb1
 
-      .. rubric:: 4 Hello World
-         :name: org927a75a
+      .. rubric:: 4. Hello World
+         :name: orgc888eb1
 
       .. container:: outline-text-2
          :name: text-4
 
       .. container:: outline-3
-         :name: outline-container-orgb4b224c
+         :name: outline-container-org9bfa978
 
-         .. rubric:: 4.1 The Simplest Module
-            :name: orgb4b224c
+         .. rubric:: 4.1. The Simplest Module
+            :name: org9bfa978
 
          .. container:: outline-text-3
             :name: text-4-1
@@ -507,14 +507,14 @@
                   MY_CFLAGS += -g -DDEBUG
                   ccflags-y += ${MY_CFLAGS}
                   CC += ${MY_CFLAGS}
-                  KBUILD_CFLAGS := -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
+                  KBUILD_CFLAGS := -mcmodel=kernel -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
                   obj-m += hello-1.o
 
                   all:
-                      make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+                          make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 
                   clean:
-                      make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+                          make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 
             And finally just:
 
@@ -576,7 +576,7 @@
 
                .. code:: src
 
-                  journalctl --since "1 hour ago" | grep kernel
+                  journalctl --since "10 min ago" | grep kernel
 
             You now know the basics of creating, compiling, installing
             and removing modules. Now for more of a description of how
@@ -658,10 +658,10 @@
             :::
 
       .. container:: outline-3
-         :name: outline-container-orgc9e251b
+         :name: outline-container-org59def12
 
-         .. rubric:: 4.2 Hello and Goodbye
-            :name: orgc9e251b
+         .. rubric:: 4.2. Hello and Goodbye
+            :name: org59def12
 
          .. container:: outline-text-3
             :name: text-4-2
@@ -714,7 +714,7 @@
                   MY_CFLAGS += -g -DDEBUG
                   ccflags-y += ${MY_CFLAGS}
                   CC += ${MY_CFLAGS}
-                  KBUILD_CFLAGS := -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
+                  KBUILD_CFLAGS := -mcmodel=kernel -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
                   obj-m += hello-1.o
                   obj-m += hello-2.o
 
@@ -736,10 +736,10 @@
             when you said make menuconfig or something like that.
 
       .. container:: outline-3
-         :name: outline-container-orgbedf180
+         :name: outline-container-org1c2a3b7
 
-         .. rubric:: 4.3 The \__init and \__exit Macros
-            :name: orgbedf180
+         .. rubric:: 4.3. The \__init and \__exit Macros
+            :name: org1c2a3b7
 
          .. container:: outline-text-3
             :name: text-4-3
@@ -797,10 +797,10 @@
                   MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-org0b50be3
+         :name: outline-container-orgdf87f51
 
-         .. rubric:: 4.4 Licensing and Module Documentation
-            :name: org0b50be3
+         .. rubric:: 4.4. Licensing and Module Documentation
+            :name: orgdf87f51
 
          .. container:: outline-text-3
             :name: text-4-4
@@ -856,10 +856,10 @@
                   module_exit(cleanup_hello_4);
 
       .. container:: outline-3
-         :name: outline-container-org3bc3b6e
+         :name: outline-container-org2663a3f
 
-         .. rubric:: 4.5 Passing Command Line Arguments to a Module
-            :name: org3bc3b6e
+         .. rubric:: 4.5. Passing Command Line Arguments to a Module
+            :name: org2663a3f
 
          .. container:: outline-text-3
             :name: text-4-5
@@ -935,6 +935,7 @@
 
                   MODULE_LICENSE("GPL");
                   MODULE_AUTHOR("Peter Jay Salzman");
+                  MODULE_DESCRIPTION("Demonstrates commandline arguments for a module");
 
                   static short int myshort = 1;
                   static int myint = 420;
@@ -981,7 +982,7 @@
                       pr_info("mystring is a string: %s\n", mystring);
 
                       for (i = 0; i < (sizeof myintarray / sizeof (int)); i++)
-                      pr_info("myintarray[%d] = %d\n", i, myintarray[i]);
+                          pr_info("myintarray[%d] = %d\n", i, myintarray[i]);
 
                       pr_info("got %d arguments for myintarray.\n", arr_argc);
                       return 0;
@@ -1028,10 +1029,10 @@
                   hello-5.o: invalid argument syntax for mylong: 'h'
 
       .. container:: outline-3
-         :name: outline-container-orgfa1b2dd
+         :name: outline-container-orge7d4e2a
 
-         .. rubric:: 4.6 Modules Spanning Multiple Files
-            :name: orgfa1b2dd
+         .. rubric:: 4.6. Modules Spanning Multiple Files
+            :name: orge7d4e2a
 
          .. container:: outline-text-3
             :name: text-4-6
@@ -1089,7 +1090,7 @@
                   MY_CFLAGS += -g -DDEBUG
                   ccflags-y += ${MY_CFLAGS}
                   CC += ${MY_CFLAGS}
-                  KBUILD_CFLAGS := -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
+                  KBUILD_CFLAGS := -mcmodel=kernel -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
                   obj-m += hello-1.o
                   obj-m += hello-2.o
                   obj-m += hello-3.o
@@ -1111,10 +1112,10 @@
             what object files are part of that module.
 
       .. container:: outline-3
-         :name: outline-container-org0e34d2e
+         :name: outline-container-org4805106
 
-         .. rubric:: 4.7 Building modules for a precompiled kernel
-            :name: org0e34d2e
+         .. rubric:: 4.7. Building modules for a precompiled kernel
+            :name: org4805106
 
          .. container:: outline-text-3
             :name: text-4-7
@@ -1269,19 +1270,19 @@
             any errors.
 
    .. container:: outline-2
-      :name: outline-container-org5698ecd
+      :name: outline-container-org5f8da13
 
-      .. rubric:: 5 Preliminaries
-         :name: org5698ecd
+      .. rubric:: 5. Preliminaries
+         :name: org5f8da13
 
       .. container:: outline-text-2
          :name: text-5
 
       .. container:: outline-3
-         :name: outline-container-org8148b7f
+         :name: outline-container-orgc873eae
 
-         .. rubric:: 5.1 How modules begin and end
-            :name: org8148b7f
+         .. rubric:: 5.1. How modules begin and end
+            :name: orgc873eae
 
          .. container:: outline-text-3
             :name: text-5-1
@@ -1312,10 +1313,10 @@
             think you'll know what I mean.
 
       .. container:: outline-3
-         :name: outline-container-orgbba77e1
+         :name: outline-container-orga6e3304
 
-         .. rubric:: 5.2 Functions available to modules
-            :name: orgbba77e1
+         .. rubric:: 5.2. Functions available to modules
+            :name: orga6e3304
 
          .. container:: outline-text-3
             :name: text-5-2
@@ -1391,10 +1392,10 @@
             tries to delete a file on your system.
 
       .. container:: outline-3
-         :name: outline-container-org695cac3
+         :name: outline-container-org5b527c2
 
-         .. rubric:: 5.3 User Space vs Kernel Space
-            :name: org695cac3
+         .. rubric:: 5.3. User Space vs Kernel Space
+            :name: org5b527c2
 
          .. container:: outline-text-3
             :name: text-5-3
@@ -1423,10 +1424,10 @@
             returns and execution gets transfered back to user mode.
 
       .. container:: outline-3
-         :name: outline-container-org4b75509
+         :name: outline-container-org35bb189
 
-         .. rubric:: 5.4 Name Space
-            :name: org4b75509
+         .. rubric:: 5.4. Name Space
+            :name: org35bb189
 
          .. container:: outline-text-3
             :name: text-5-4
@@ -1457,10 +1458,10 @@
             your modules since they share the kernel's codespace.
 
       .. container:: outline-3
-         :name: outline-container-orgeeb2806
+         :name: outline-container-orgabbee17
 
-         .. rubric:: 5.5 Code space
-            :name: orgeeb2806
+         .. rubric:: 5.5. Code space
+            :name: orgabbee17
 
          .. container:: outline-text-3
             :name: text-5-5
@@ -1510,10 +1511,10 @@
             microkernel.
 
       .. container:: outline-3
-         :name: outline-container-org81d5088
+         :name: outline-container-org094150d
 
-         .. rubric:: 5.6 Device Drivers
-            :name: org81d5088
+         .. rubric:: 5.6. Device Drivers
+            :name: org094150d
 
          .. container:: outline-text-3
             :name: text-5-6
@@ -1634,19 +1635,19 @@
             :::
 
    .. container:: outline-2
-      :name: outline-container-org9e44303
+      :name: outline-container-org9c3ab13
 
-      .. rubric:: 6 Character Device drivers
-         :name: org9e44303
+      .. rubric:: 6. Character Device drivers
+         :name: org9c3ab13
 
       .. container:: outline-text-2
          :name: text-6
 
       .. container:: outline-3
-         :name: outline-container-org8f47977
+         :name: outline-container-org2b69f24
 
-         .. rubric:: 6.1 The file_operations Structure
-            :name: org8f47977
+         .. rubric:: 6.1. The file_operations Structure
+            :name: org2b69f24
 
          .. container:: outline-text-3
             :name: text-6-1
@@ -1695,13 +1696,13 @@
                       ssize_t (*splice_read)(struct file *, loff_t *, struct pipe_inode_info *, size_t, unsigned int);
                       int (*setlease)(struct file *, long, struct file_lock **, void **);
                       long (*fallocate)(struct file *file, int mode, loff_t offset,
-                                loff_t len);
+                                        loff_t len);
                       void (*show_fdinfo)(struct seq_file *m, struct file *f);
                       ssize_t (*copy_file_range)(struct file *, loff_t, struct file *,
-                                     loff_t, size_t, unsigned int);
+                                                 loff_t, size_t, unsigned int);
                       loff_t (*remap_file_range)(struct file *file_in, loff_t pos_in,
-                                     struct file *file_out, loff_t pos_out,
-                                     loff_t len, unsigned int remap_flags);
+                                                 struct file *file_out, loff_t pos_out,
+                                                 loff_t len, unsigned int remap_flags);
                       int (*fadvise)(struct file *, loff_t, loff_t, int);
                   } __randomize_layout;
 
@@ -1720,10 +1721,10 @@
                .. code:: src
 
                   struct file_operations fops = {
-                      proc_read: device_read,
-                      proc_write: device_write,
-                      proc_open: device_open,
-                      proc_release: device_release
+                          proc_read: device_read,
+                          proc_write: device_write,
+                          proc_open: device_open,
+                          proc_release: device_release
                   };
 
             However, there's also a C99 way of assigning to elements of
@@ -1738,10 +1739,10 @@
                .. code:: src
 
                   struct file_operations fops = {
-                      .read = device_read,
-                      .write = device_write,
-                      .open = device_open,
-                      .release = device_release
+                          .read = device_read,
+                          .write = device_write,
+                          .open = device_open,
+                          .release = device_release
                   };
 
             The meaning is clear, and you should be aware that any
@@ -1753,10 +1754,10 @@
             syscalls is commonly named fops.
 
       .. container:: outline-3
-         :name: outline-container-org0e88fd8
+         :name: outline-container-org3e746a1
 
-         .. rubric:: 6.2 The file structure
-            :name: org0e88fd8
+         .. rubric:: 6.2. The file structure
+            :name: org3e746a1
 
          .. container:: outline-text-3
             :name: text-6-2
@@ -1781,10 +1782,10 @@
             in file which are created elsewhere.
 
       .. container:: outline-3
-         :name: outline-container-org6f9256e
+         :name: outline-container-orga72a012
 
-         .. rubric:: 6.3 Registering A Device
-            :name: org6f9256e
+         .. rubric:: 6.3. Registering A Device
+            :name: orga72a012
 
          .. container:: outline-text-3
             :name: text-6-3
@@ -1842,10 +1843,10 @@
             and **device_destroy** during the call to cleanup_module.
 
       .. container:: outline-3
-         :name: outline-container-org56e59b1
+         :name: outline-container-org2877a6f
 
-         .. rubric:: 6.4 Unregistering A Device
-            :name: org56e59b1
+         .. rubric:: 6.4. Unregistering A Device
+            :name: org2877a6f
 
          .. container:: outline-text-3
             :name: text-6-4
@@ -1887,10 +1888,10 @@
             module's development.
 
       .. container:: outline-3
-         :name: outline-container-org8282db1
+         :name: outline-container-org07084a5
 
-         .. rubric:: 6.5 chardev.c
-            :name: org8282db1
+         .. rubric:: 6.5. chardev.c
+            :name: org07084a5
 
          .. container:: outline-text-3
             :name: text-6-5
@@ -1937,7 +1938,7 @@
                   static int device_release(struct inode *, struct file *);
                   static ssize_t device_read(struct file *, char __user *, size_t, loff_t *);
                   static ssize_t device_write(struct file *, const char __user *, size_t,
-                                  loff_t *);
+                                              loff_t *);
 
                   #define SUCCESS 0
                   #define DEVICE_NAME "chardev" /* Dev name as it appears in /proc/devices   */
@@ -1965,8 +1966,8 @@
                       major = register_chrdev(0, DEVICE_NAME, &chardev_fops);
 
                       if (major < 0) {
-                      pr_alert("Registering char device failed with %d\n", major);
-                      return major;
+                          pr_alert("Registering char device failed with %d\n", major);
+                          return major;
                       }
 
                       pr_info("I was assigned major number %d.\n", major);
@@ -1998,7 +1999,7 @@
                       static int counter = 0;
 
                       if (atomic_cmpxchg(&already_open, 0, 1))
-                      return -EBUSY;
+                          return -EBUSY;
 
                       sprintf(msg, "I already told you %d times Hello world!\n", counter++);
                       msg_ptr = msg;
@@ -2024,28 +2025,28 @@
                    * read from it.
                    */
                   static ssize_t device_read(struct file *filp, /* see include/linux/fs.h   */
-                                 char __user *buffer, /* buffer to fill with data */
-                                 size_t length, /* length of the buffer     */
-                                 loff_t *offset)
+                                             char __user *buffer, /* buffer to fill with data */
+                                             size_t length, /* length of the buffer     */
+                                             loff_t *offset)
                   {
                       /* Number of bytes actually written to the buffer */
                       int bytes_read = 0;
 
                       /* If we are at the end of message, return 0 signifying end of file. */
                       if (*msg_ptr == 0)
-                      return 0;
+                          return 0;
 
                       /* Actually put the data into the buffer */
                       while (length && *msg_ptr) {
-                      /* The buffer is in the user data segment, not the kernel
-                       * segment so "*" assignment won't work.  We have to use
-                       * put_user which copies data from the kernel data segment to
-                       * the user data segment.
-                       */
-                      put_user(*(msg_ptr++), buffer++);
+                          /* The buffer is in the user data segment, not the kernel
+                           * segment so "*" assignment won't work.  We have to use
+                           * put_user which copies data from the kernel data segment to
+                           * the user data segment.
+                           */
+                          put_user(*(msg_ptr++), buffer++);
 
-                      length--;
-                      bytes_read++;
+                          length--;
+                          bytes_read++;
                       }
 
                       /* Most read functions return the number of bytes put into the buffer. */
@@ -2054,7 +2055,7 @@
 
                   /* Called when a process writes to dev file: echo "hi" > /dev/hello */
                   static ssize_t device_write(struct file *filp, const char __user *buff,
-                                  size_t len, loff_t *off)
+                                              size_t len, loff_t *off)
                   {
                       pr_alert("Sorry, this operation is not supported.\n");
                       return -EINVAL;
@@ -2064,12 +2065,14 @@
                   module_exit(chardev_exit);
 
                   MODULE_LICENSE("GPL");
+                  MODULE_AUTHOR("Peter Jay Salzman");
+                  MODULE_DESCRIPTION("Demonstrates a read-only char device");
 
       .. container:: outline-3
-         :name: outline-container-orgd910fa9
+         :name: outline-container-org96b817c
 
-         .. rubric:: 6.6 Writing Modules for Multiple Kernel Versions
-            :name: orgd910fa9
+         .. rubric:: 6.6. Writing Modules for Multiple Kernel Versions
+            :name: org96b817c
 
          .. container:: outline-text-3
             :name: text-6-6
@@ -2126,10 +2129,10 @@
             full story.
 
    .. container:: outline-2
-      :name: outline-container-orgb5f3d2f
+      :name: outline-container-org143b51d
 
-      .. rubric:: 7 The /proc File System
-         :name: orgb5f3d2f
+      .. rubric:: 7. The /proc File System
+         :name: org143b51d
 
       .. container:: outline-text-2
          :name: text-7
@@ -2218,18 +2221,18 @@
                static struct proc_dir_entry *our_proc_file;
 
                static ssize_t procfile_read(struct file *filePointer, char __user *buffer,
-                                size_t buffer_length, loff_t *offset)
+                                            size_t buffer_length, loff_t *offset)
                {
                    char s[13] = "HelloWorld!\n";
                    int len = sizeof(s);
                    ssize_t ret = len;
 
                    if (*offset >= len || copy_to_user(buffer, s, len)) {
-                   pr_info("copy_to_user failed\n");
-                   ret = 0;
+                       pr_info("copy_to_user failed\n");
+                       ret = 0;
                    } else {
-                   pr_info("procfile read %s\n", filePointer->f_path.dentry->d_name.name);
-                   *offset += len;
+                       pr_info("procfile read %s\n", filePointer->f_path.dentry->d_name.name);
+                       *offset += len;
                    }
 
                    return ret;
@@ -2249,9 +2252,9 @@
                {
                    our_proc_file = proc_create(procfs_name, 0644, NULL, &proc_file_fops);
                    if (NULL == our_proc_file) {
-                   proc_remove(our_proc_file);
-                   pr_alert("Error:Could not initialize /proc/%s\n", procfs_name);
-                   return -ENOMEM;
+                       proc_remove(our_proc_file);
+                       pr_alert("Error:Could not initialize /proc/%s\n", procfs_name);
+                       return -ENOMEM;
                    }
 
                    pr_info("/proc/%s created\n", procfs_name);
@@ -2268,12 +2271,14 @@
                module_exit(procfs1_exit);
 
                MODULE_LICENSE("GPL");
+               MODULE_AUTHOR("Peter Jay Salzman");
+               MODULE_DESCRIPTION("Demonstrates procfs");
 
       .. container:: outline-3
-         :name: outline-container-org589de2b
+         :name: outline-container-org6bd0573
 
-         .. rubric:: 7.1 Read and Write a /proc File
-            :name: org589de2b
+         .. rubric:: 7.1. Read and Write a /proc File
+            :name: org6bd0573
 
          .. container:: outline-text-3
             :name: text-7-1
@@ -2344,18 +2349,18 @@
 
                   /* This function is called then the /proc file is read */
                   static ssize_t procfile_read(struct file *filePointer, char __user *buffer,
-                                   size_t buffer_length, loff_t *offset)
+                                               size_t buffer_length, loff_t *offset)
                   {
                       char s[13] = "HelloWorld!\n";
                       int len = sizeof(s);
                       ssize_t ret = len;
 
                       if (*offset >= len || copy_to_user(buffer, s, len)) {
-                      pr_info("copy_to_user failed\n");
-                      ret = 0;
+                          pr_info("copy_to_user failed\n");
+                          ret = 0;
                       } else {
-                      pr_info("procfile read %s\n", filePointer->f_path.dentry->d_name.name);
-                      *offset += len;
+                          pr_info("procfile read %s\n", filePointer->f_path.dentry->d_name.name);
+                          *offset += len;
                       }
 
                       return ret;
@@ -2363,14 +2368,14 @@
 
                   /* This function is called with the /proc file is written. */
                   static ssize_t procfile_write(struct file *file, const char __user *buff,
-                                    size_t len, loff_t *off)
+                                                size_t len, loff_t *off)
                   {
                       procfs_buffer_size = len;
                       if (procfs_buffer_size > PROCFS_MAX_SIZE)
-                      procfs_buffer_size = PROCFS_MAX_SIZE;
+                          procfs_buffer_size = PROCFS_MAX_SIZE;
 
                       if (copy_from_user(procfs_buffer, buff, procfs_buffer_size))
-                      return -EFAULT;
+                          return -EFAULT;
 
                       procfs_buffer[procfs_buffer_size] = '\0';
                       return procfs_buffer_size;
@@ -2392,9 +2397,9 @@
                   {
                       our_proc_file = proc_create(PROCFS_NAME, 0644, NULL, &proc_file_fops);
                       if (NULL == our_proc_file) {
-                      proc_remove(our_proc_file);
-                      pr_alert("Error:Could not initialize /proc/%s\n", PROCFS_NAME);
-                      return -ENOMEM;
+                          proc_remove(our_proc_file);
+                          pr_alert("Error:Could not initialize /proc/%s\n", PROCFS_NAME);
+                          return -ENOMEM;
                       }
 
                       pr_info("/proc/%s created\n", PROCFS_NAME);
@@ -2411,12 +2416,14 @@
                   module_exit(procfs2_exit);
 
                   MODULE_LICENSE("GPL");
+                  MODULE_AUTHOR("Peter Jay Salzman");
+                  MODULE_DESCRIPTION("Demonstrates procfs");
 
       .. container:: outline-3
-         :name: outline-container-orgcf5392b
+         :name: outline-container-org5e777a2
 
-         .. rubric:: 7.2 Manage /proc file with standard filesystem
-            :name: orgcf5392b
+         .. rubric:: 7.2. Manage /proc file with standard filesystem
+            :name: org5e777a2
 
          .. container:: outline-text-3
             :name: text-7-2
@@ -2492,32 +2499,32 @@
                   static unsigned long procfs_buffer_size = 0;
 
                   static ssize_t procfs_read(struct file *filp, char __user *buffer,
-                                 size_t length, loff_t *offset)
+                                             size_t length, loff_t *offset)
                   {
                       static int finished = 0;
 
                       if (finished) {
-                      pr_debug("procfs_read: END\n");
-                      finished = 0;
-                      return 0;
+                          pr_debug("procfs_read: END\n");
+                          finished = 0;
+                          return 0;
                       }
                       finished = 1;
 
                       if (copy_to_user(buffer, procfs_buffer, procfs_buffer_size))
-                      return -EFAULT;
+                          return -EFAULT;
 
                       pr_debug("procfs_read: read %lu bytes\n", procfs_buffer_size);
                       return procfs_buffer_size;
                   }
                   static ssize_t procfs_write(struct file *file, const char __user *buffer,
-                                  size_t len, loff_t *off)
+                                              size_t len, loff_t *off)
                   {
                       if (len > PROCFS_MAX_SIZE)
-                      procfs_buffer_size = PROCFS_MAX_SIZE;
+                          procfs_buffer_size = PROCFS_MAX_SIZE;
                       else
-                      procfs_buffer_size = len;
+                          procfs_buffer_size = len;
                       if (copy_from_user(procfs_buffer, buffer, procfs_buffer_size))
-                      return -EFAULT;
+                          return -EFAULT;
 
                       pr_debug("procfs_write: write %lu bytes\n", procfs_buffer_size);
                       return procfs_buffer_size;
@@ -2552,12 +2559,12 @@
                   static int __init procfs3_init(void)
                   {
                       our_proc_file = proc_create(PROCFS_ENTRY_FILENAME, 0644, NULL,
-                                  &file_ops_4_our_proc_file);
+                                                  &file_ops_4_our_proc_file);
                       if (our_proc_file == NULL) {
-                      remove_proc_entry(PROCFS_ENTRY_FILENAME, NULL);
-                      pr_debug("Error: Could not initialize /proc/%s\n",
-                           PROCFS_ENTRY_FILENAME);
-                      return -ENOMEM;
+                          remove_proc_entry(PROCFS_ENTRY_FILENAME, NULL);
+                          pr_debug("Error: Could not initialize /proc/%s\n",
+                                   PROCFS_ENTRY_FILENAME);
+                          return -ENOMEM;
                       }
                       proc_set_size(our_proc_file, 80);
                       proc_set_user(our_proc_file, GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
@@ -2576,6 +2583,8 @@
                   module_exit(procfs3_exit);
 
                   MODULE_LICENSE("GPL");
+                  MODULE_AUTHOR("Peter Jay Salzman");
+                  MODULE_DESCRIPTION("Demonstrates procfs");
 
             Still hungry for procfs examples? Well, first of all keep in
             mind, there are rumors around, claiming that procfs is on
@@ -2589,10 +2598,10 @@
             related yourself.
 
       .. container:: outline-3
-         :name: outline-container-org282a15b
+         :name: outline-container-org413ab4c
 
-         .. rubric:: 7.3 Manage /proc file with seq_file
-            :name: org282a15b
+         .. rubric:: 7.3. Manage /proc file with seq_file
+            :name: org413ab4c
 
          .. container:: outline-text-3
             :name: text-7-3
@@ -2620,6 +2629,7 @@
             this in the figure "How seq_file works".
 
             .. container:: figure
+               :name: orgb93fa50
 
                .. figure:: img/seq_file.png
                   :alt: seq_file.png
@@ -2664,8 +2674,8 @@
 
                       /* beginning a new sequence? */
                       if (*pos == 0) {
-                      /* yes => return a non null value to begin the sequence */
-                      return &counter;
+                          /* yes => return a non null value to begin the sequence */
+                          return &counter;
                       }
 
                       /* no => it is the end of the sequence, return end to stop reading */
@@ -2736,9 +2746,9 @@
 
                       entry = proc_create(PROC_NAME, 0, NULL, &my_file_ops);
                       if (entry == NULL) {
-                      remove_proc_entry(PROC_NAME, NULL);
-                      pr_debug("Error: Could not initialize /proc/%s\n", PROC_NAME);
-                      return -ENOMEM;
+                          remove_proc_entry(PROC_NAME, NULL);
+                          pr_debug("Error: Could not initialize /proc/%s\n", PROC_NAME);
+                          return -ENOMEM;
                       }
 
                       return 0;
@@ -2754,6 +2764,8 @@
                   module_exit(procfs4_exit);
 
                   MODULE_LICENSE("GPL");
+                  MODULE_AUTHOR("Peter Jay Salzman");
+                  MODULE_DESCRIPTION("Demonstrates procfs");
 
             If you want more information, you can read this web page:
 
@@ -2764,10 +2776,10 @@
             kernel.
 
    .. container:: outline-2
-      :name: outline-container-org6d5eeb2
+      :name: outline-container-orgb498a5a
 
-      .. rubric:: 8 sysfs: Interacting with your module
-         :name: org6d5eeb2
+      .. rubric:: 8. sysfs: Interacting with your module
+         :name: orgb498a5a
 
       .. container:: outline-text-2
          :name: text-8
@@ -2804,6 +2816,7 @@
 
                MODULE_LICENSE("GPL");
                MODULE_AUTHOR("Bob Mottram");
+               MODULE_DESCRIPTION("Demonstrates sysfs");
 
                static struct kobject *mymodule;
 
@@ -2811,15 +2824,15 @@
                static int myvariable = 0;
 
                static ssize_t myvariable_show(struct kobject *kobj,
-                                  struct kobj_attribute *attr,
-                                  char *buf)
+                                              struct kobj_attribute *attr,
+                                              char *buf)
                {
                    return sprintf(buf, "%d\n", myvariable);
                }
 
                static ssize_t myvariable_store(struct kobject *kobj,
-                               struct kobj_attribute *attr,
-                               char *buf, size_t count)
+                                               struct kobj_attribute *attr,
+                                               char *buf, size_t count)
                {
                    sscanf(buf, "%du", &myvariable);
                    return count;
@@ -2828,7 +2841,7 @@
 
                static struct kobj_attribute myvariable_attribute =
                    __ATTR(myvariable, 0660, myvariable_show,
-                      (void*)myvariable_store);
+                          (void*)myvariable_store);
 
                static int __init mymodule_init (void)
                {
@@ -2837,14 +2850,14 @@
                    pr_info("mymodule: initialised\n");
 
                    mymodule =
-                   kobject_create_and_add("mymodule", kernel_kobj);
+                       kobject_create_and_add("mymodule", kernel_kobj);
                    if (!mymodule)
-                   return -ENOMEM;
+                       return -ENOMEM;
 
                    error = sysfs_create_file(mymodule, &myvariable_attribute.attr);
                    if (error) {
-                   pr_info("failed to create the myvariable file " \
-                       "in /sys/kernel/mymodule\n");
+                       pr_info("failed to create the myvariable file " \
+                               "in /sys/kernel/mymodule\n");
                    }
 
                    return error;
@@ -2902,10 +2915,10 @@
                sudo rmmod hello_sysfs
 
    .. container:: outline-2
-      :name: outline-container-org09d5857
+      :name: outline-container-orga7b6fb9
 
-      .. rubric:: 9 Talking To Device Files
-         :name: org09d5857
+      .. rubric:: 9. Talking To Device Files
+         :name: orga7b6fb9
 
       .. container:: outline-text-2
          :name: text-9
@@ -3008,7 +3021,7 @@
 
                    /* We don't want to talk to two processes at the same time. */
                    if (atomic_cmpxchg(&already_open, 0, 1))
-                   return -EBUSY;
+                       return -EBUSY;
 
                    /* Initialize the message */
                    message_ptr = message;
@@ -3031,9 +3044,9 @@
                 * device file attempts to read from it.
                 */
                static ssize_t device_read(struct file *file, /* see include/linux/fs.h   */
-                              char __user *buffer, /* buffer to be filled  */
-                              size_t length, /* length of the buffer     */
-                              loff_t *offset)
+                                          char __user *buffer, /* buffer to be filled  */
+                                          size_t length, /* length of the buffer     */
+                                          loff_t *offset)
                {
                    /* Number of bytes actually written to the buffer */
                    int bytes_read = 0;
@@ -3042,18 +3055,18 @@
 
                    /* If at the end of message, return 0 (which signifies end of file). */
                    if (*message_ptr == 0)
-                   return 0;
+                       return 0;
 
                    /* Actually put the data into the buffer */
                    while (length && *message_ptr) {
-                   /* Because the buffer is in the user data segment, not the kernel
-                    * data segment, assignment would not work. Instead, we have to
-                    * use put_user which copies data from the kernel data segment to
-                    * the user data segment.
-                    */
-                   put_user(*(message_ptr++), buffer++);
-                   length--;
-                   bytes_read++;
+                       /* Because the buffer is in the user data segment, not the kernel
+                        * data segment, assignment would not work. Instead, we have to
+                        * use put_user which copies data from the kernel data segment to
+                        * the user data segment.
+                        */
+                       put_user(*(message_ptr++), buffer++);
+                       length--;
+                       bytes_read++;
                    }
 
                    pr_info("Read %d bytes, %ld left\n", bytes_read, length);
@@ -3066,14 +3079,14 @@
 
                /* called when somebody tries to write into our device file. */
                static ssize_t device_write(struct file *file, const char __user *buffer,
-                               size_t length, loff_t *offset)
+                                           size_t length, loff_t *offset)
                {
                    int i;
 
                    pr_info("device_write(%p,%s,%ld)", file, buffer, length);
 
                    for (i = 0; i < length && i < BUF_LEN; i++)
-                   get_user(message[i], buffer + i);
+                       get_user(message[i], buffer + i);
 
                    message_ptr = message;
 
@@ -3091,8 +3104,8 @@
                 */
                static long
                device_ioctl(struct file *file, /* ditto */
-                        unsigned int ioctl_num, /* number and param for ioctl */
-                        unsigned long ioctl_param)
+                            unsigned int ioctl_num, /* number and param for ioctl */
+                            unsigned long ioctl_param)
                {
                    int i;
                    char *temp;
@@ -3101,38 +3114,38 @@
                    /* Switch according to the ioctl called */
                    switch (ioctl_num) {
                    case IOCTL_SET_MSG:
-                   /* Receive a pointer to a message (in user space) and set that to
-                    * be the device's message.  Get the parameter given to ioctl by
-                    * the process.
-                    */
-                   temp = (char *)ioctl_param;
+                       /* Receive a pointer to a message (in user space) and set that to
+                        * be the device's message.  Get the parameter given to ioctl by
+                        * the process.
+                        */
+                       temp = (char *)ioctl_param;
 
-                   /* Find the length of the message */
-                   get_user(ch, (char __user *)temp);
-                   for (i = 0; ch && i < BUF_LEN; i++, temp++)
+                       /* Find the length of the message */
                        get_user(ch, (char __user *)temp);
+                       for (i = 0; ch && i < BUF_LEN; i++, temp++)
+                           get_user(ch, (char __user *)temp);
 
-                   device_write(file, (char __user *)ioctl_param, i, NULL);
-                   break;
+                       device_write(file, (char __user *)ioctl_param, i, NULL);
+                       break;
 
                    case IOCTL_GET_MSG:
-                   /* Give the current message to the calling process - the parameter
-                    * we got is a pointer, fill it.
-                    */
-                   i = device_read(file, (char __user *)ioctl_param, 99, NULL);
+                       /* Give the current message to the calling process - the parameter
+                        * we got is a pointer, fill it.
+                        */
+                       i = device_read(file, (char __user *)ioctl_param, 99, NULL);
 
-                   /* Put a zero at the end of the buffer, so it will be properly
-                    * terminated.
-                    */
-                   put_user('\0', (char __user *)ioctl_param + i);
-                   break;
+                       /* Put a zero at the end of the buffer, so it will be properly
+                        * terminated.
+                        */
+                       put_user('\0', (char __user *)ioctl_param + i);
+                       break;
 
                    case IOCTL_GET_NTH_BYTE:
-                   /* This ioctl is both input (ioctl_param) and output (the return
-                    * value of this function).
-                    */
-                   return message[ioctl_param];
-                   break;
+                       /* This ioctl is both input (ioctl_param) and output (the return
+                        * value of this function).
+                        */
+                       return message[ioctl_param];
+                       break;
                    }
 
                    return SUCCESS;
@@ -3161,9 +3174,9 @@
 
                    /* Negative values signify an error */
                    if (ret_val < 0) {
-                   pr_alert("%s failed with %d\n",
-                        "Sorry, registering the character device ", ret_val);
-                   return ret_val;
+                       pr_alert("%s failed with %d\n",
+                                "Sorry, registering the character device ", ret_val);
+                       return ret_val;
                    }
 
                    cls = class_create(THIS_MODULE, DEVICE_FILE_NAME);
@@ -3188,6 +3201,8 @@
                module_exit(chardev2_exit);
 
                MODULE_LICENSE("GPL");
+               MODULE_AUTHOR("Wang Chen Shu");
+               MODULE_DESCRIPTION("This is test_ioctl module");
 
          .. container:: org-src-container
 
@@ -3308,60 +3323,60 @@
                    switch (cmd) {
                    case IOCTL_VALSET:
 
-                   /*
-                   if (!capable(CAP_SYS_ADMIN)) {
-                    retval = -EPERM;
-                    goto done;
-                   }
-                   if (!access_ok(VERIFY_READ, (void __user *)arg, _IOC_SIZE(cmd))) {
-                    retval = -EFAULT;
-                    goto done;
-                   }
-                   */
-                   if (copy_from_user(&data, (int __user*)arg, sizeof(data))) {
-                       retval = -EFAULT;
-                       goto done;
-                   }
+                       /*
+                       if (!capable(CAP_SYS_ADMIN)) {
+                        retval = -EPERM;
+                        goto done;
+                       }
+                       if (!access_ok(VERIFY_READ, (void __user *)arg, _IOC_SIZE(cmd))) {
+                        retval = -EFAULT;
+                        goto done;
+                       }
+                       */
+                       if (copy_from_user(&data, (int __user*)arg, sizeof(data))) {
+                           retval = -EFAULT;
+                           goto done;
+                       }
 
-                   pr_alert("IOCTL set val:%x .\n", data.val);
-                   write_lock(&ioctl_data->lock);
-                   ioctl_data->val = data.val;
-                   write_unlock(&ioctl_data->lock);
-                   break;
+                       pr_alert("IOCTL set val:%x .\n", data.val);
+                       write_lock(&ioctl_data->lock);
+                       ioctl_data->val = data.val;
+                       write_unlock(&ioctl_data->lock);
+                       break;
 
                    case IOCTL_VALGET:
-                   /*
-                   if (!access_ok(VERIFY_WRITE, (void __user *)arg, _IOC_SIZE(cmd))) {
-                                    retval = -EFAULT;
-                                    goto done;
-                                }
-                   */
-                   read_lock(&ioctl_data->lock);
-                   val = ioctl_data->val;
-                   read_unlock(&ioctl_data->lock);
-                   data.val = val;
+                       /*
+                       if (!access_ok(VERIFY_WRITE, (void __user *)arg, _IOC_SIZE(cmd))) {
+                                                    retval = -EFAULT;
+                                                    goto done;
+                                            }
+                       */
+                       read_lock(&ioctl_data->lock);
+                       val = ioctl_data->val;
+                       read_unlock(&ioctl_data->lock);
+                       data.val = val;
 
-                   if (copy_to_user((int __user*)arg, &data, sizeof(data))) {
-                       retval = -EFAULT;
-                       goto done;
-                   }
+                       if (copy_to_user((int __user*)arg, &data, sizeof(data))) {
+                           retval = -EFAULT;
+                           goto done;
+                       }
 
-                   break;
+                       break;
 
                    case IOCTL_VALGET_NUM:
-                   retval = __put_user(ioctl_num, (int __user*)arg);
-                   break;
+                       retval = __put_user(ioctl_num, (int __user*)arg);
+                       break;
 
                    case IOCTL_VALSET_NUM:
-                   /*
-                   if (!capable(CAP_SYS_ADMIN))
-                    return -EPERM;
-                   */
-                   ioctl_num = arg;
-                   break;
+                       /*
+                       if (!capable(CAP_SYS_ADMIN))
+                        return -EPERM;
+                       */
+                       ioctl_num = arg;
+                       break;
 
                    default:
-                   retval = -ENOTTY;
+                       retval = -ENOTTY;
                    }
 
                done:
@@ -3378,10 +3393,10 @@
                    read_unlock(&ioctl_data->lock);
 
                    for (; i < count ; i++) {
-                   if (copy_to_user(&buf[i], &val, 1)) {
-                       retval = -EFAULT;
-                       goto out;
-                   }
+                       if (copy_to_user(&buf[i], &val, 1)) {
+                           retval = -EFAULT;
+                           goto out;
+                       }
                    }
 
                    retval = count;
@@ -3393,8 +3408,8 @@
                    pr_alert("%s call.\n", __func__);
 
                    if (filp->private_data) {
-                   kfree(filp->private_data);
-                   filp->private_data = NULL;
+                       kfree(filp->private_data);
+                       filp->private_data = NULL;
                    }
 
                    return 0;
@@ -3406,7 +3421,7 @@
                    ioctl_data = kmalloc(sizeof(struct test_ioctl_data), GFP_KERNEL);
 
                    if (ioctl_data == NULL) {
-                   return -ENOMEM;
+                       return -ENOMEM;
                    }
 
                    rwlock_init(&ioctl_data->lock);
@@ -3430,7 +3445,7 @@
                    alloc_ret = alloc_chrdev_region(&dev, 0, num_of_dev, DRIVER_NAME);
 
                    if (alloc_ret) {
-                   goto error;
+                       goto error;
                    }
 
                    test_ioctl_major = MAJOR(dev);
@@ -3438,7 +3453,7 @@
                    cdev_ret = cdev_add(&test_ioctl_cdev, dev, num_of_dev);
 
                    if (cdev_ret) {
-                   goto error;
+                       goto error;
                    }
 
                    pr_alert("%s driver(major: %d) installed.\n", DRIVER_NAME, test_ioctl_major);
@@ -3446,11 +3461,11 @@
                error:
 
                    if (cdev_ret == 0) {
-                   cdev_del(&test_ioctl_cdev);
+                       cdev_del(&test_ioctl_cdev);
                    }
 
                    if (alloc_ret == 0) {
-                   unregister_chrdev_region(dev, num_of_dev);
+                       unregister_chrdev_region(dev, num_of_dev);
                    }
 
                    return -1;
@@ -3471,10 +3486,10 @@
                MODULE_DESCRIPTION("This is test_ioctl module");
 
    .. container:: outline-2
-      :name: outline-container-org51eb895
+      :name: outline-container-org5b3d7f0
 
-      .. rubric:: 10 System Calls
-         :name: org51eb895
+      .. rubric:: 10. System Calls
+         :name: org5b3d7f0
 
       .. container:: outline-text-2
          :name: text-10
@@ -3683,9 +3698,9 @@
                     */
                    pr_info("Opened file by %d: ", uid);
                    do {
-                   get_user(ch, filename + i);
-                   i++;
-                   pr_info("%c", ch);
+                       get_user(ch, filename + i);
+                       i++;
+                       pr_info("%c", ch);
                    } while (ch != 0);
                    pr_info("\n");
 
@@ -3702,12 +3717,12 @@
                    unsigned long **sct;
 
                    while (offset < ULLONG_MAX) {
-                   sct = (unsigned long **)offset;
+                       sct = (unsigned long **)offset;
 
-                   if (sct[__NR_close] == (unsigned long *) close_fd)
-                       return sct;
+                       if (sct[__NR_close] == (unsigned long *) close_fd)
+                           return sct;
 
-                   offset += sizeof(void *);
+                       offset += sizeof(void *);
                    }
 
                    return NULL;
@@ -3716,7 +3731,7 @@
                static int __init syscall_start(void)
                {
                    if(!(sys_call_table = aquire_sys_call_table()))
-                   return -1;
+                       return -1;
 
                    original_cr0 = read_cr0();
 
@@ -3738,17 +3753,17 @@
                static void __exit syscall_end(void)
                {
                    if(!sys_call_table) {
-                   return;
+                       return;
                    }
 
                    /*
                     * Return the system call back to normal
                     */
                    if (sys_call_table[__NR_open] != (unsigned long *)our_sys_open) {
-                   pr_alert("Somebody else also played with the ");
-                   pr_alert("open system call\n");
-                   pr_alert("The system may be left in ");
-                   pr_alert("an unstable state.\n");
+                       pr_alert("Somebody else also played with the ");
+                       pr_alert("open system call\n");
+                       pr_alert("The system may be left in ");
+                       pr_alert("an unstable state.\n");
                    }
 
                    write_cr0(original_cr0 & ~0x00010000);
@@ -3762,21 +3777,23 @@
                module_exit(syscall_end);
 
                MODULE_LICENSE("GPL");
+               MODULE_AUTHOR("Peter Jay Salzman");
+               MODULE_DESCRIPTION("Demonstrates a read-only char device");
 
    .. container:: outline-2
-      :name: outline-container-orgb6a9115
+      :name: outline-container-org1a90aa9
 
-      .. rubric:: 11 Blocking Processes and threads
-         :name: orgb6a9115
+      .. rubric:: 11. Blocking Processes and threads
+         :name: org1a90aa9
 
       .. container:: outline-text-2
          :name: text-11
 
       .. container:: outline-3
-         :name: outline-container-org2687dee
+         :name: outline-container-org74d0776
 
-         .. rubric:: 11.1 Sleep
-            :name: org2687dee
+         .. rubric:: 11.1. Sleep
+            :name: org74d0776
 
          .. container:: outline-text-3
             :name: text-11-1
@@ -3902,7 +3919,7 @@
                   #include <linux/module.h> /* Specifically, a module */
                   #include <linux/proc_fs.h> /* Necessary because we use proc fs */
                   #include <linux/sched.h> /* For putting processes to sleep and
-                                     waking them up */
+                                                     waking them up */
                   #include <linux/uaccess.h> /* for get_user and put_user */
                   #include <linux/version.h>
 
@@ -3924,10 +3941,10 @@
                    * function.
                    */
                   static ssize_t module_output(struct file *file, /* see include/linux/fs.h   */
-                                   char __user *buf, /* The buffer to put data to
-                                             (in the user segment)    */
-                                   size_t len, /* The length of the buffer */
-                                   loff_t *offset)
+                                               char __user *buf, /* The buffer to put data to
+                                                                     (in the user segment)    */
+                                               size_t len, /* The length of the buffer */
+                                               loff_t *offset)
                   {
                       static int finished = 0;
                       int i;
@@ -3937,13 +3954,13 @@
                        * at this point.
                        */
                       if (finished) {
-                      finished = 0;
-                      return 0;
+                          finished = 0;
+                          return 0;
                       }
 
                       sprintf(output_msg, "Last input:%s\n", message);
                       for (i = 0; i < len && output_msg[i]; i++)
-                      put_user(output_msg[i], buf + i);
+                          put_user(output_msg[i], buf + i);
 
                       finished = 1;
                       return i; /* Return the number of bytes "read" */
@@ -3953,9 +3970,9 @@
                    * /proc file.
                    */
                   static ssize_t module_input(struct file *file, /* The file itself */
-                                  const char __user *buf, /* The buffer with input */
-                                  size_t length, /* The buffer's length */
-                                  loff_t *offset) /* offset to file - ignore */
+                                              const char __user *buf, /* The buffer with input */
+                                              size_t length, /* The buffer's length */
+                                              loff_t *offset) /* offset to file - ignore */
                   {
                       int i;
 
@@ -3963,7 +3980,7 @@
                        * to use it.
                        */
                       for (i = 0; i < MESSAGE_LENGTH - 1 && i < length; i++)
-                      get_user(message[i], buf + i);
+                          get_user(message[i], buf + i);
                       /* we want a standard, zero terminated string */
                       message[i] = '\0';
 
@@ -3986,7 +4003,7 @@
                        * instead of blocking a process which would rather stay awake.
                        */
                       if ((file->f_flags & O_NONBLOCK) && atomic_read(&already_open))
-                      return -EAGAIN;
+                          return -EAGAIN;
 
                       /* This is the correct place for try_module_get(THIS_MODULE) because if
                        * a process is in the loop, which is within the kernel module,
@@ -3995,36 +4012,36 @@
                       try_module_get(THIS_MODULE);
 
                       while (atomic_cmpxchg(&already_open, 0, 1)) {
-                      int i, is_sig = 0;
+                          int i, is_sig = 0;
 
-                      /* This function puts the current process, including any system
-                       * calls, such as us, to sleep.  Execution will be resumed right
-                       * after the function call, either because somebody called
-                       * wake_up(&waitq) (only module_close does that, when the file
-                       * is closed) or when a signal, such as Ctrl-C, is sent
-                       * to the process
-                       */
-                      wait_event_interruptible(waitq, !atomic_read(&already_open));
-
-                      /* If we woke up because we got a signal we're not blocking,
-                       * return -EINTR (fail the system call).  This allows processes
-                       * to be killed or stopped.
-                       */
-                      for (i = 0; i < _NSIG_WORDS && !is_sig; i++)
-                          is_sig = current->pending.signal.sig[i] & ~current->blocked.sig[i];
-
-                      if (is_sig) {
-                          /* It is important to put module_put(THIS_MODULE) here, because
-                           * for processes where the open is interrupted there will never
-                           * be a corresponding close. If we do not decrement the usage
-                           * count here, we will be left with a positive usage count
-                           * which we will have no way to bring down to zero, giving us
-                           * an immortal module, which can only be killed by rebooting
-                           * the machine.
+                          /* This function puts the current process, including any system
+                           * calls, such as us, to sleep.  Execution will be resumed right
+                           * after the function call, either because somebody called
+                           * wake_up(&waitq) (only module_close does that, when the file
+                           * is closed) or when a signal, such as Ctrl-C, is sent
+                           * to the process
                            */
-                          module_put(THIS_MODULE);
-                          return -EINTR;
-                      }
+                          wait_event_interruptible(waitq, !atomic_read(&already_open));
+
+                          /* If we woke up because we got a signal we're not blocking,
+                           * return -EINTR (fail the system call).  This allows processes
+                           * to be killed or stopped.
+                           */
+                          for (i = 0; i < _NSIG_WORDS && !is_sig; i++)
+                              is_sig = current->pending.signal.sig[i] & ~current->blocked.sig[i];
+
+                          if (is_sig) {
+                              /* It is important to put module_put(THIS_MODULE) here, because
+                               * for processes where the open is interrupted there will never
+                               * be a corresponding close. If we do not decrement the usage
+                               * count here, we will be left with a positive usage count
+                               * which we will have no way to bring down to zero, giving us
+                               * an immortal module, which can only be killed by rebooting
+                               * the machine.
+                               */
+                              module_put(THIS_MODULE);
+                              return -EINTR;
+                          }
                       }
 
                       return 0; /* Allow the access */
@@ -4078,11 +4095,11 @@
                   static int __init sleep_init(void)
                   {
                       our_proc_file =
-                      proc_create(PROC_ENTRY_FILENAME, 0644, NULL, &file_ops_4_our_proc_file);
+                          proc_create(PROC_ENTRY_FILENAME, 0644, NULL, &file_ops_4_our_proc_file);
                       if (our_proc_file == NULL) {
-                      remove_proc_entry(PROC_ENTRY_FILENAME, NULL);
-                      pr_debug("Error: Could not initialize /proc/%s\n", PROC_ENTRY_FILENAME);
-                      return -ENOMEM;
+                          remove_proc_entry(PROC_ENTRY_FILENAME, NULL);
+                          pr_debug("Error: Could not initialize /proc/%s\n", PROC_ENTRY_FILENAME);
+                          return -ENOMEM;
                       }
                       proc_set_size(our_proc_file, 80);
                       proc_set_user(our_proc_file, GLOBAL_ROOT_UID, GLOBAL_ROOT_GID);
@@ -4107,6 +4124,8 @@
                   module_exit(sleep_exit);
 
                   MODULE_LICENSE("GPL");
+                  MODULE_AUTHOR("Peter Jay Salzman");
+                  MODULE_DESCRIPTION("Demonstrates sleep");
 
             .. container:: org-src-container
 
@@ -4134,9 +4153,9 @@
 
                       /* Usage */
                       if (argc != 2) {
-                      printf("Usage: %s <filename>\n", argv[0]);
-                      puts("Reads the content of a file, but doesn't wait for input");
-                      exit(-1);
+                          printf("Usage: %s <filename>\n", argv[0]);
+                          puts("Reads the content of a file, but doesn't wait for input");
+                          exit(-1);
                       }
 
                       /* Open the file for reading in non blocking mode */
@@ -4144,45 +4163,45 @@
 
                       /* If open failed */
                       if (fd == -1) {
-                      if (errno = EAGAIN)
-                          puts("Open would block");
-                      else
-                          puts("Open failed");
-                      exit(-1);
+                          if (errno = EAGAIN)
+                              puts("Open would block");
+                          else
+                              puts("Open failed");
+                          exit(-1);
                       }
 
                       /* Read the file and output its contents */
                       do {
-                      int i;
+                          int i;
 
-                      /* Read characters from the file */
-                      bytes = read(fd, buffer, MAX_BYTES);
+                          /* Read characters from the file */
+                          bytes = read(fd, buffer, MAX_BYTES);
 
-                      /* If there's an error, report it and die */
-                      if (bytes == -1) {
-                          if (errno = EAGAIN)
-                          puts("Normally I'd block, but you told me not to");
-                          else
-                          puts("Another read error");
-                          exit(-1);
-                      }
+                          /* If there's an error, report it and die */
+                          if (bytes == -1) {
+                              if (errno = EAGAIN)
+                                  puts("Normally I'd block, but you told me not to");
+                              else
+                                  puts("Another read error");
+                              exit(-1);
+                          }
 
-                      /* Print the characters */
-                      if (bytes > 0) {
-                          for(i=0; i<bytes; i++)
-                          putchar(buffer[i]);
-                      }
+                          /* Print the characters */
+                          if (bytes > 0) {
+                          for(i = 0; i < bytes; i++)
+                              putchar(buffer[i]);
+                          }
 
-                      /* While there are no errors and the file isn't over */
+                          /* While there are no errors and the file isn't over */
                       } while (bytes > 0);
                       return 0;
                   }
 
       .. container:: outline-3
-         :name: outline-container-orge56dfbd
+         :name: outline-container-org2173780
 
-         .. rubric:: 11.2 Completions
-            :name: orge56dfbd
+         .. rubric:: 11.2. Completions
+            :name: org2173780
 
          .. container:: outline-text-3
             :name: text-11-2
@@ -4239,27 +4258,23 @@
                       init_completion(&machine.flywheel_comp);
 
                       crank_thread =
-                      kthread_create(machine_crank_thread,
-                                 NULL, "KThread Crank");
+                          kthread_create(machine_crank_thread,
+                                         NULL, "KThread Crank");
                       if (IS_ERR(crank_thread))
-                      goto ERROR_THREAD_1;
+                          return -1;
 
                       flywheel_thread =
-                      kthread_create(machine_flywheel_spinup_thread,
-                                 NULL, "KThread Flywheel");
-                      if (IS_ERR(flywheel_thread))
-                      goto ERROR_THREAD_2;
+                          kthread_create(machine_flywheel_spinup_thread,
+                                         NULL, "KThread Flywheel");
+                      if (IS_ERR(flywheel_thread)) {
+                          kthread_stop(crank_thread);
+                          return -1;
+                      }
 
                       wake_up_process(flywheel_thread);
                       wake_up_process(crank_thread);
 
                       return 0;
-
-                  ERROR_THREAD_2:
-                      kthread_stop(crank_thread);
-                  ERROR_THREAD_1:
-
-                      return -1;
                   }
 
                   void completions_exit(void)
@@ -4273,9 +4288,9 @@
                   module_init(completions_init);
                   module_exit(completions_exit);
 
+                  MODULE_LICENSE("GPL");
                   MODULE_AUTHOR("Bob Mottram");
                   MODULE_DESCRIPTION("Completions example");
-                  MODULE_LICENSE("GPL");
 
             The *machine* structure stores the completion states for the
             two threads. At the exit point of each thread the respective
@@ -4294,10 +4309,10 @@
             without adding a lot of complexity.
 
    .. container:: outline-2
-      :name: outline-container-orgbcc42de
+      :name: outline-container-orgfc2408e
 
-      .. rubric:: 12 Avoiding Collisions and Deadlocks
-         :name: orgbcc42de
+      .. rubric:: 12. Avoiding Collisions and Deadlocks
+         :name: orgfc2408e
 
       .. container:: outline-text-2
          :name: text-12
@@ -4311,10 +4326,10 @@
          happen.
 
       .. container:: outline-3
-         :name: outline-container-org9bc931f
+         :name: outline-container-orgeb8c56f
 
-         .. rubric:: 12.1 Mutex
-            :name: org9bc931f
+         .. rubric:: 12.1. Mutex
+            :name: orgeb8c56f
 
          .. container:: outline-text-3
             :name: text-12-1
@@ -4342,16 +4357,16 @@
 
                       ret = mutex_trylock(&mymutex);
                       if (ret != 0) {
-                      pr_info("mutex is locked\n");
+                          pr_info("mutex is locked\n");
 
-                      if (mutex_is_locked(&mymutex) == 0)
-                          pr_info("The mutex failed to lock!\n");
+                          if (mutex_is_locked(&mymutex) == 0)
+                              pr_info("The mutex failed to lock!\n");
 
-                      mutex_unlock(&mymutex);
-                      pr_info("mutex is unlocked\n");
+                          mutex_unlock(&mymutex);
+                          pr_info("mutex is unlocked\n");
                       }
                       else
-                      pr_info("Failed to lock\n");
+                          pr_info("Failed to lock\n");
 
                       return 0;
                   }
@@ -4364,15 +4379,15 @@
                   module_init(example_mutex_init);
                   module_exit(example_mutex_exit);
 
+                  MODULE_LICENSE("GPL");
                   MODULE_AUTHOR("Bob Mottram");
                   MODULE_DESCRIPTION("Mutex example");
-                  MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-org9524a19
+         :name: outline-container-org90bc284
 
-         .. rubric:: 12.2 Spinlocks
-            :name: org9524a19
+         .. rubric:: 12.2. Spinlocks
+            :name: org90bc284
 
          .. container:: outline-text-3
             :name: text-12-2
@@ -4453,15 +4468,15 @@
                   module_init(example_spinlock_init);
                   module_exit(example_spinlock_exit);
 
+                  MODULE_LICENSE("GPL");
                   MODULE_AUTHOR("Bob Mottram");
                   MODULE_DESCRIPTION("Spinlock example");
-                  MODULE_LICENSE("GPL");
 
       .. container:: outline-3
-         :name: outline-container-orga814666
+         :name: outline-container-org1db5018
 
-         .. rubric:: 12.3 Read and write locks
-            :name: orga814666
+         .. rubric:: 12.3. Read and write locks
+            :name: org1db5018
 
          .. container:: outline-text-3
             :name: text-12-3
@@ -4531,9 +4546,9 @@
                   module_init(example_rwlock_init);
                   module_exit(example_rwlock_exit);
 
+                  MODULE_LICENSE("GPL");
                   MODULE_AUTHOR("Bob Mottram");
                   MODULE_DESCRIPTION("Read/Write locks example");
-                  MODULE_LICENSE("GPL");
 
             Of course if you know for sure that there are no functions
             triggered by irqs which could possibly interfere with your
@@ -4542,10 +4557,10 @@
             functions.
 
       .. container:: outline-3
-         :name: outline-container-org718958d
+         :name: outline-container-orga190d2c
 
-         .. rubric:: 12.4 Atomic operations
-            :name: org718958d
+         .. rubric:: 12.4. Atomic operations
+            :name: orga190d2c
 
          .. container:: outline-text-3
             :name: text-12-4
@@ -4594,7 +4609,7 @@
                       atomic_inc(&debbie);
 
                       pr_info("chris: %d, debbie: %d\n",
-                          atomic_read(&chris), atomic_read(&debbie));
+                              atomic_read(&chris), atomic_read(&debbie));
                   }
 
                   static void atomic_bitwise(void)
@@ -4611,7 +4626,7 @@
 
                       pr_info("Bits 3: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
                       if (test_and_set_bit(3, &word))
-                      pr_info("wrong\n");
+                          pr_info("wrong\n");
                       pr_info("Bits 4: "BYTE_TO_BINARY_PATTERN, BYTE_TO_BINARY(word));
 
                       word = 255;
@@ -4636,24 +4651,24 @@
                   module_init(example_atomic_init);
                   module_exit(example_atomic_exit);
 
+                  MODULE_LICENSE("GPL");
                   MODULE_AUTHOR("Bob Mottram");
                   MODULE_DESCRIPTION("Atomic operations example");
-                  MODULE_LICENSE("GPL");
 
    .. container:: outline-2
-      :name: outline-container-orgb5a8756
+      :name: outline-container-orge21968e
 
-      .. rubric:: 13 Replacing Print Macros
-         :name: orgb5a8756
+      .. rubric:: 13. Replacing Print Macros
+         :name: orge21968e
 
       .. container:: outline-text-2
          :name: text-13
 
       .. container:: outline-3
-         :name: outline-container-orga836e2e
+         :name: outline-container-org2daf078
 
-         .. rubric:: 13.1 Replacement
-            :name: orga836e2e
+         .. rubric:: 13.1. Replacement
+            :name: org2daf078
 
          .. container:: outline-text-3
             :name: text-13-1
@@ -4695,6 +4710,7 @@
 
                   MODULE_LICENSE("GPL");
                   MODULE_AUTHOR("Peter Jay Salzman");
+                  MODULE_DESCRIPTION("Replacing print macros example");
 
                   static void print_string(char *str)
                   {
@@ -4723,55 +4739,55 @@
                        */
                       if (my_tty != NULL) {
 
-                      /*
-                       * my_tty->driver is a struct which holds the tty's functions,
-                       * one of which (write) is used to write strings to the tty.
-                       * It can be used to take a string either from the user's or
-                       * kernel's memory segment.
-                       *
-                       * The function's 1st parameter is the tty to write to,
-                       * because the same function would normally be used for all
-                       * tty's of a certain type.  The 2nd parameter controls
-                       * whether the function receives a string from kernel
-                       * memory (false, 0) or from user memory (true, non zero).
-                       * BTW: this param has been removed in Kernels > 2.6.9
-                       * The (2nd) 3rd parameter is a pointer to a string.
-                       * The (3rd) 4th parameter is the length of the string.
-                       *
-                       * As you will see below, sometimes it's necessary to use
-                       * preprocessor stuff to create code that works for different
-                       * kernel versions. The (naive) approach we've taken here
-                       * does not scale well. The right way to deal with this
-                       * is described in section 2 of
-                       * linux/Documentation/SubmittingPatches
-                       */
-                      (ttyops->write) (my_tty,      /* The tty itself */
+                          /*
+                           * my_tty->driver is a struct which holds the tty's functions,
+                           * one of which (write) is used to write strings to the tty.
+                           * It can be used to take a string either from the user's or
+                           * kernel's memory segment.
+                           *
+                           * The function's 1st parameter is the tty to write to,
+                           * because the same function would normally be used for all
+                           * tty's of a certain type.  The 2nd parameter controls
+                           * whether the function receives a string from kernel
+                           * memory (false, 0) or from user memory (true, non zero).
+                           * BTW: this param has been removed in Kernels > 2.6.9
+                           * The (2nd) 3rd parameter is a pointer to a string.
+                           * The (3rd) 4th parameter is the length of the string.
+                           *
+                           * As you will see below, sometimes it's necessary to use
+                           * preprocessor stuff to create code that works for different
+                           * kernel versions. The (naive) approach we've taken here
+                           * does not scale well. The right way to deal with this
+                           * is described in section 2 of
+                           * linux/Documentation/SubmittingPatches
+                           */
+                          (ttyops->write) (my_tty,      /* The tty itself */
                   #if ( LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,9) )
-                               0,   /* Don't take the string
-                                   from user space        */
+                                           0,   /* Don't take the string
+                                                   from user space        */
                   #endif
-                               (unsigned char *)str, /* String                 */
-                               strlen(str));        /* Length */
+                                           (unsigned char *)str, /* String                 */
+                                           strlen(str));        /* Length */
 
-                      /*
-                       * ttys were originally hardware devices, which (usually)
-                       * strictly followed the ASCII standard.  In ASCII, to move to
-                       * a new line you need two characters, a carriage return and a
-                       * line feed.  On Unix, the ASCII line feed is used for both
-                       * purposes - so we can't just use \n, because it wouldn't have
-                       * a carriage return and the next line will start at the
-                       * column right after the line feed.
-                       *
-                       * This is why text files are different between Unix and
-                       * MS Windows.  In CP/M and derivatives, like MS-DOS and
-                       * MS Windows, the ASCII standard was strictly adhered to,
-                       * and therefore a newline requirs both a LF and a CR.
-                       */
+                          /*
+                           * ttys were originally hardware devices, which (usually)
+                           * strictly followed the ASCII standard.  In ASCII, to move to
+                           * a new line you need two characters, a carriage return and a
+                           * line feed.  On Unix, the ASCII line feed is used for both
+                           * purposes - so we can't just use \n, because it wouldn't have
+                           * a carriage return and the next line will start at the
+                           * column right after the line feed.
+                           *
+                           * This is why text files are different between Unix and
+                           * MS Windows.  In CP/M and derivatives, like MS-DOS and
+                           * MS Windows, the ASCII standard was strictly adhered to,
+                           * and therefore a newline requirs both a LF and a CR.
+                           */
 
                   #if ( LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,9) )
-                      (ttyops->write) (my_tty, 0, (unsigned char *)"\015\012", 2);
+                          (ttyops->write) (my_tty, 0, (unsigned char *)"\015\012", 2);
                   #else
-                      (ttyops->write) (my_tty, (unsigned char *)"\015\012", 2);
+                          (ttyops->write) (my_tty, (unsigned char *)"\015\012", 2);
                   #endif
                       }
                   }
@@ -4791,10 +4807,10 @@
                   module_exit(print_string_exit);
 
       .. container:: outline-3
-         :name: outline-container-org86785e3
+         :name: outline-container-org10d1ccc
 
-         .. rubric:: 13.2 Flashing keyboard LEDs
-            :name: org86785e3
+         .. rubric:: 13.2. Flashing keyboard LEDs
+            :name: org10d1ccc
 
          .. container:: outline-text-3
             :name: text-13-2
@@ -4854,9 +4870,9 @@
                       struct tty_struct *t = vc_cons[fg_console].d->port.tty;
 
                       if (kbledstatus == ALL_LEDS_ON)
-                      kbledstatus = RESTORE_LEDS;
+                          kbledstatus = RESTORE_LEDS;
                       else
-                      kbledstatus = ALL_LEDS_ON;
+                          kbledstatus = ALL_LEDS_ON;
 
                       (my_driver->ops->ioctl)(t, KDSETLED, kbledstatus);
 
@@ -4871,10 +4887,10 @@
                       pr_info("kbleds: loading\n");
                       pr_info("kbleds: fgconsole is %x\n", fg_console);
                       for (i = 0; i < MAX_NR_CONSOLES; i++) {
-                      if (!vc_cons[i].d)
-                          break;
-                      pr_info("poet_atkm: console[%i/%i] #%i, tty %lx\n", i, MAX_NR_CONSOLES,
-                          vc_cons[i].d->vc_num, (unsigned long)vc_cons[i].d->port.tty);
+                          if (!vc_cons[i].d)
+                              break;
+                          pr_info("poet_atkm: console[%i/%i] #%i, tty %lx\n", i, MAX_NR_CONSOLES,
+                                  vc_cons[i].d->vc_num, (unsigned long)vc_cons[i].d->port.tty);
                       }
                       pr_info("kbleds: finished scanning consoles\n");
 
@@ -4894,13 +4910,15 @@
                       pr_info("kbleds: unloading...\n");
                       del_timer(&my_timer);
                       (my_driver->ops->ioctl)(vc_cons[fg_console].d->port.tty, KDSETLED,
-                                  RESTORE_LEDS);
+                                              RESTORE_LEDS);
                   }
 
                   module_init(kbleds_init);
                   module_exit(kbleds_cleanup);
 
                   MODULE_LICENSE("GPL");
+                  MODULE_AUTHOR("Peter Jay Salzman");
+                  MODULE_DESCRIPTION("Keyboard LED example");
 
             If none of the examples in this chapter fit your debugging
             needs there might yet be some other tricks to try. Ever
@@ -4924,10 +4942,10 @@
             code.
 
    .. container:: outline-2
-      :name: outline-container-org24328ef
+      :name: outline-container-orgd79b9f8
 
-      .. rubric:: 14 Scheduling Tasks
-         :name: org24328ef
+      .. rubric:: 14. Scheduling Tasks
+         :name: orgd79b9f8
 
       .. container:: outline-text-2
          :name: text-14
@@ -4945,10 +4963,10 @@
          wish to avoid the tasklet debate.
 
       .. container:: outline-3
-         :name: outline-container-org9acb1ea
+         :name: outline-container-orgfa43697
 
-         .. rubric:: 14.1 Tasklets
-            :name: org9acb1ea
+         .. rubric:: 14.1. Tasklets
+            :name: orgfa43697
 
          .. container:: outline-text-3
             :name: text-14-1
@@ -4993,9 +5011,9 @@
                   module_init(example_tasklet_init);
                   module_exit(example_tasklet_exit);
 
+                  MODULE_LICENSE("GPL");
                   MODULE_AUTHOR("Bob Mottram");
                   MODULE_DESCRIPTION("Tasklet example");
-                  MODULE_LICENSE("GPL");
 
             So with this example loaded *dmesg* should show:
 
@@ -5009,10 +5027,10 @@
                   Example tasklet ends
 
       .. container:: outline-3
-         :name: outline-container-org710330a
+         :name: outline-container-org0ac4443
 
-         .. rubric:: 14.2 Work queues
-            :name: org710330a
+         .. rubric:: 14.2. Work queues
+            :name: org0ac4443
 
          .. container:: outline-text-3
             :name: text-14-2
@@ -5056,19 +5074,19 @@
                   MODULE_DESCRIPTION("Workqueue example");
 
    .. container:: outline-2
-      :name: outline-container-org35cd7bb
+      :name: outline-container-orgece22bc
 
-      .. rubric:: 15 Interrupt Handlers
-         :name: org35cd7bb
+      .. rubric:: 15. Interrupt Handlers
+         :name: orgece22bc
 
       .. container:: outline-text-2
          :name: text-15
 
       .. container:: outline-3
-         :name: outline-container-orged1ad6a
+         :name: outline-container-orgdfd366a
 
-         .. rubric:: 15.1 Interrupt Handlers
-            :name: orged1ad6a
+         .. rubric:: 15.1. Interrupt Handlers
+            :name: orgdfd366a
 
          .. container:: outline-text-3
             :name: text-15-1
@@ -5152,10 +5170,10 @@
             willing to share.
 
       .. container:: outline-3
-         :name: outline-container-org83d512c
+         :name: outline-container-org64f7d80
 
-         .. rubric:: 15.2 Detecting button presses
-            :name: org83d512c
+         .. rubric:: 15.2. Detecting button presses
+            :name: org64f7d80
 
          .. container:: outline-text-3
             :name: text-15-2
@@ -5199,14 +5217,14 @@
                   /* Define GPIOs for LEDs.
                      Change the numbers for the GPIO on your board. */
                   static struct gpio leds[] = {
-                      {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
+                          {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
                   };
 
                   /* Define GPIOs for BUTTONS
                      Change the numbers for the GPIO on your board. */
                   static struct gpio buttons[] = {
-                      { 17, GPIOF_IN, "LED 1 ON BUTTON" },
-                      { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
+                          { 17, GPIOF_IN, "LED 1 ON BUTTON" },
+                          { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
                   };
 
                   /*
@@ -5216,10 +5234,10 @@
                   {
                       /* first button */
                       if (irq == button_irqs[0] && !gpio_get_value(leds[0].gpio))
-                          gpio_set_value(leds[0].gpio, 1);
+                              gpio_set_value(leds[0].gpio, 1);
                       /* second button */
                       else if(irq == button_irqs[1] && gpio_get_value(leds[0].gpio))
-                          gpio_set_value(leds[0].gpio, 0);
+                              gpio_set_value(leds[0].gpio, 0);
 
                       return IRQ_HANDLED;
                   }
@@ -5234,77 +5252,75 @@
                       ret = gpio_request_array(leds, ARRAY_SIZE(leds));
 
                       if (ret) {
-                      pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
-                      return ret;
+                          pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
+                          return ret;
                       }
 
                       /* register BUTTON gpios */
                       ret = gpio_request_array(buttons, ARRAY_SIZE(buttons));
 
                       if (ret) {
-                      pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
-                      goto fail1;
+                          pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
                       pr_info("Current button1 value: %d\n",
-                          gpio_get_value(buttons[0].gpio));
+                              gpio_get_value(buttons[0].gpio));
 
                       ret = gpio_to_irq(buttons[0].gpio);
 
                       if (ret < 0) {
-                      pr_err("Unable to request IRQ: %d\n", ret);
-                      goto fail2;
+                          pr_err("Unable to request IRQ: %d\n", ret);
+                          gpio_free_array(buttons, ARRAY_SIZE(leds));
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
                       button_irqs[0] = ret;
 
                       pr_info("Successfully requested BUTTON1 IRQ # %d\n",
-                          button_irqs[0]);
+                              button_irqs[0]);
 
                       ret = request_irq(button_irqs[0], button_isr,
-                                IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                                "gpiomod#button1", NULL);
+                                        IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                                        "gpiomod#button1", NULL);
 
                       if (ret) {
-                      pr_err("Unable to request IRQ: %d\n", ret);
-                      goto fail2;
+                          pr_err("Unable to request IRQ: %d\n", ret);
+                          gpio_free_array(buttons, ARRAY_SIZE(leds));
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
 
                       ret = gpio_to_irq(buttons[1].gpio);
 
                       if (ret < 0) {
-                      pr_err("Unable to request IRQ: %d\n", ret);
-                      goto fail2;
+                          pr_err("Unable to request IRQ: %d\n", ret);
+                          gpio_free_array(buttons, ARRAY_SIZE(leds));
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
                       button_irqs[1] = ret;
 
                       pr_info("Successfully requested BUTTON2 IRQ # %d\n",
-                          button_irqs[1]);
+                              button_irqs[1]);
 
                       ret = request_irq(button_irqs[1], button_isr,
-                                IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                                "gpiomod#button2", NULL);
+                                        IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                                        "gpiomod#button2", NULL);
 
                       if (ret) {
-                      pr_err("Unable to request IRQ: %d\n", ret);
-                      goto fail3;
+                          pr_err("Unable to request IRQ: %d\n", ret);
+                          free_irq(button_irqs[0], NULL);
+                          gpio_free_array(buttons, ARRAY_SIZE(leds));
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
                       return 0;
-
-                  /* cleanup what has been setup so far */
-                  fail3:
-                      free_irq(button_irqs[0], NULL);
-
-                  fail2:
-                      gpio_free_array(buttons, ARRAY_SIZE(leds));
-
-                  fail1:
-                      gpio_free_array(leds, ARRAY_SIZE(leds));
-
-                      return ret;
                   }
 
                   void cleanup_module()
@@ -5319,7 +5335,7 @@
 
                       /* turn all LEDs off */
                       for (i = 0; i < ARRAY_SIZE(leds); i++)
-                      gpio_set_value(leds[i].gpio, 0);
+                          gpio_set_value(leds[i].gpio, 0);
 
                       /* unregister */
                       gpio_free_array(leds, ARRAY_SIZE(leds));
@@ -5331,10 +5347,10 @@
                   MODULE_DESCRIPTION("Handle some GPIO interrupts");
 
       .. container:: outline-3
-         :name: outline-container-org168b208
+         :name: outline-container-org10a4cdf
 
-         .. rubric:: 15.3 Bottom Half
-            :name: org168b208
+         .. rubric:: 15.3. Bottom Half
+            :name: org10a4cdf
 
          .. container:: outline-text-3
             :name: text-15-3
@@ -5374,14 +5390,14 @@
                   /* Define GPIOs for LEDs.
                      Change the numbers for the GPIO on your board. */
                   static struct gpio leds[] = {
-                      {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
+                          {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
                   };
 
                   /* Define GPIOs for BUTTONS
                      Change the numbers for the GPIO on your board. */
                   static struct gpio buttons[] = {
-                      { 17, GPIOF_IN, "LED 1 ON BUTTON" },
-                      { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
+                          { 17, GPIOF_IN, "LED 1 ON BUTTON" },
+                          { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
                   };
 
                   /* Tasklet containing some non-trivial amount of processing */
@@ -5402,9 +5418,9 @@
                   {
                       /* Do something quickly right now */
                       if (irq == button_irqs[0] && !gpio_get_value(leds[0].gpio))
-                          gpio_set_value(leds[0].gpio, 1);
+                              gpio_set_value(leds[0].gpio, 1);
                       else if(irq == button_irqs[1] && gpio_get_value(leds[0].gpio))
-                          gpio_set_value(leds[0].gpio, 0);
+                              gpio_set_value(leds[0].gpio, 0);
 
                       /* Do the rest at leisure via the scheduler */
                       tasklet_schedule(&buttontask);
@@ -5422,72 +5438,72 @@
                       ret = gpio_request_array(leds, ARRAY_SIZE(leds));
 
                       if (ret) {
-                      pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
-                      return ret;
+                          pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
+                          return ret;
                       }
 
                       /* register BUTTON gpios */
                       ret = gpio_request_array(buttons, ARRAY_SIZE(buttons));
 
                       if (ret) {
-                      pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
-                      gpio_free_array(leds, ARRAY_SIZE(leds));
-                      return ret;
+                          pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
                       pr_info("Current button1 value: %d\n",
-                         gpio_get_value(buttons[0].gpio));
+                             gpio_get_value(buttons[0].gpio));
 
                       ret = gpio_to_irq(buttons[0].gpio);
 
                       if (ret < 0) {
-                      pr_err("Unable to request IRQ: %d\n", ret);
-                      gpio_free_array(buttons, ARRAY_SIZE(leds));
-                      gpio_free_array(leds, ARRAY_SIZE(leds));
-                      return ret;
+                          pr_err("Unable to request IRQ: %d\n", ret);
+                          gpio_free_array(buttons, ARRAY_SIZE(leds));
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
                       button_irqs[0] = ret;
 
                       pr_info("Successfully requested BUTTON1 IRQ # %d\n",
-                         button_irqs[0]);
+                             button_irqs[0]);
 
                       ret = request_irq(button_irqs[0], button_isr,
-                                IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                                "gpiomod#button1", NULL);
+                                        IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                                        "gpiomod#button1", NULL);
 
                       if (ret) {
-                      pr_err("Unable to request IRQ: %d\n", ret);
-                      gpio_free_array(buttons, ARRAY_SIZE(leds));
-                      gpio_free_array(leds, ARRAY_SIZE(leds));
-                      return ret;
+                          pr_err("Unable to request IRQ: %d\n", ret);
+                          gpio_free_array(buttons, ARRAY_SIZE(leds));
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
 
                       ret = gpio_to_irq(buttons[1].gpio);
 
                       if (ret < 0) {
-                      pr_err("Unable to request IRQ: %d\n", ret);
-                      gpio_free_array(buttons, ARRAY_SIZE(leds));
-                      gpio_free_array(leds, ARRAY_SIZE(leds));
-                      return ret;
+                          pr_err("Unable to request IRQ: %d\n", ret);
+                          gpio_free_array(buttons, ARRAY_SIZE(leds));
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
                       button_irqs[1] = ret;
 
                       pr_info("Successfully requested BUTTON2 IRQ # %d\n",
-                         button_irqs[1]);
+                             button_irqs[1]);
 
                       ret = request_irq(button_irqs[1], button_isr,
-                                IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                                "gpiomod#button2", NULL);
+                                        IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                                        "gpiomod#button2", NULL);
 
                       if (ret) {
-                      pr_err("Unable to request IRQ: %d\n", ret);
-                      free_irq(button_irqs[0], NULL);
-                      gpio_free_array(buttons, ARRAY_SIZE(leds));
-                      gpio_free_array(leds, ARRAY_SIZE(leds));
-                      return ret;
+                          pr_err("Unable to request IRQ: %d\n", ret);
+                          free_irq(button_irqs[0], NULL);
+                          gpio_free_array(buttons, ARRAY_SIZE(leds));
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
                       return 0;
@@ -5505,7 +5521,7 @@
 
                       /* turn all LEDs off */
                       for (i = 0; i < ARRAY_SIZE(leds); i++)
-                      gpio_set_value(leds[i].gpio, 0);
+                          gpio_set_value(leds[i].gpio, 0);
 
                       /* unregister */
                       gpio_free_array(leds, ARRAY_SIZE(leds));
@@ -5517,7 +5533,7 @@
 
                   MODULE_LICENSE("GPL");
                   MODULE_AUTHOR("Bob Mottram");
-                  MODULE_DESCRIPTION("Interrupt with top and bottom half");
+                  MODULE_DESCRIPTION("Interrupt with top and bottom half using a tasklet");
 
             It is expected that at some unspecified point in the future
             tasklets may eventually be deprecated, to be replaced by
@@ -5551,14 +5567,14 @@
                   /* Define GPIOs for LEDs.
                      Change the numbers for the GPIO on your board. */
                   static struct gpio leds[] = {
-                      {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
+                          {  4, GPIOF_OUT_INIT_LOW, "LED 1" }
                   };
 
                   /* Define GPIOs for BUTTONS
                      Change the numbers for the GPIO on your board. */
                   static struct gpio buttons[] = {
-                      { 17, GPIOF_IN, "LED 1 ON BUTTON" },
-                      { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
+                          { 17, GPIOF_IN, "LED 1 ON BUTTON" },
+                          { 18, GPIOF_IN, "LED 1 OFF BUTTON" }
                   };
 
                   /* This happens immediately, when the IRQ is triggered */
@@ -5588,76 +5604,76 @@
                       ret = gpio_request_array(leds, ARRAY_SIZE(leds));
 
                       if (ret) {
-                      pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
-                      return ret;
+                          pr_err("Unable to request GPIOs for LEDs: %d\n", ret);
+                          return ret;
                       }
 
                       /* register BUTTON gpios */
                       ret = gpio_request_array(buttons, ARRAY_SIZE(buttons));
 
                       if (ret) {
-                      pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
-                      gpio_free_array(leds, ARRAY_SIZE(leds));
-                      return ret;
+                          pr_err("Unable to request GPIOs for BUTTONs: %d\n", ret);
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
                       pr_info("Current button1 value: %d\n",
-                         gpio_get_value(buttons[0].gpio));
+                             gpio_get_value(buttons[0].gpio));
 
                       ret = gpio_to_irq(buttons[0].gpio);
 
                       if (ret < 0) {
-                      pr_err("Unable to request IRQ: %d\n", ret);
-                      gpio_free_array(buttons, ARRAY_SIZE(leds));
-                      gpio_free_array(leds, ARRAY_SIZE(leds));
-                      return ret;
+                          pr_err("Unable to request IRQ: %d\n", ret);
+                          gpio_free_array(buttons, ARRAY_SIZE(leds));
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
                       button_irqs[0] = ret;
 
                       pr_info("Successfully requested BUTTON1 IRQ # %d\n",
-                         button_irqs[0]);
+                             button_irqs[0]);
 
                       ret = request_threaded_irq(gpio_to_irq(button_irqs[0]),
-                                     button_top_half,
-                                     button_bottom_half,  
-                                     IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                                     "gpiomod#button1", NULL);
+                                                 button_top_half,
+                                                 button_bottom_half,      
+                                                 IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                                                 "gpiomod#button1", NULL);
 
                       if (ret) {
-                      pr_err("Unable to request IRQ: %d\n", ret);
-                      gpio_free_array(buttons, ARRAY_SIZE(leds));
-                      gpio_free_array(leds, ARRAY_SIZE(leds));
-                      return ret;
+                          pr_err("Unable to request IRQ: %d\n", ret);
+                          gpio_free_array(buttons, ARRAY_SIZE(leds));
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
 
                       ret = gpio_to_irq(buttons[1].gpio);
 
                       if (ret < 0) {
-                      pr_err("Unable to request IRQ: %d\n", ret);
-                      gpio_free_array(buttons, ARRAY_SIZE(leds));
-                      gpio_free_array(leds, ARRAY_SIZE(leds));
-                      return ret;
+                          pr_err("Unable to request IRQ: %d\n", ret);
+                          gpio_free_array(buttons, ARRAY_SIZE(leds));
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
                       button_irqs[1] = ret;
 
                       pr_info("Successfully requested BUTTON2 IRQ # %d\n",
-                         button_irqs[1]);
+                             button_irqs[1]);
 
                       ret = request_threaded_irq(gpio_to_irq(button_irqs[1]),
-                                     button_top_half,
-                                     button_bottom_half,  
-                                     IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
-                                     "gpiomod#button2", NULL);
+                                                 button_top_half,
+                                                 button_bottom_half,      
+                                                 IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+                                                 "gpiomod#button2", NULL);
 
                       if (ret) {
-                      pr_err("Unable to request IRQ: %d\n", ret);
-                      free_irq(button_irqs[0], NULL);
-                      gpio_free_array(buttons, ARRAY_SIZE(leds));
-                      gpio_free_array(leds, ARRAY_SIZE(leds));
-                      return ret;
+                          pr_err("Unable to request IRQ: %d\n", ret);
+                          free_irq(button_irqs[0], NULL);
+                          gpio_free_array(buttons, ARRAY_SIZE(leds));
+                          gpio_free_array(leds, ARRAY_SIZE(leds));
+                          return ret;
                       }
 
                       return 0;
@@ -5675,7 +5691,7 @@
 
                       /* turn all LEDs off */
                       for (i = 0; i < ARRAY_SIZE(leds); i++)
-                      gpio_set_value(leds[i].gpio, 0);
+                          gpio_set_value(leds[i].gpio, 0);
 
                       /* unregister */
                       gpio_free_array(leds, ARRAY_SIZE(leds));
@@ -5687,13 +5703,13 @@
 
                   MODULE_LICENSE("GPL");
                   MODULE_AUTHOR("Bob Mottram");
-                  MODULE_DESCRIPTION("Interrupt with top and bottom half");
+                  MODULE_DESCRIPTION("Interrupt with top and bottom half using threaded irqs");
 
    .. container:: outline-2
-      :name: outline-container-org16f10c6
+      :name: outline-container-org63a7c7e
 
-      .. rubric:: 16 Crypto
-         :name: org16f10c6
+      .. rubric:: 16. Crypto
+         :name: org63a7c7e
 
       .. container:: outline-text-2
          :name: text-16
@@ -5708,10 +5724,10 @@
          functions.
 
       .. container:: outline-3
-         :name: outline-container-org751218b
+         :name: outline-container-org1634eb7
 
-         .. rubric:: 16.1 Hash functions
-            :name: org751218b
+         .. rubric:: 16.1. Hash functions
+            :name: org1634eb7
 
          .. container:: outline-text-3
             :name: text-16-1
@@ -5736,7 +5752,7 @@
 
                       pr_info("sha256 test for string: \"%s\"\n", plaintext);
                       for (i = 0; i < SHA256_LENGTH ; i++)
-                      sprintf(&str[i*2],"%02x", (unsigned char)hash_sha256[i]);
+                          sprintf(&str[i*2],"%02x", (unsigned char)hash_sha256[i]);
                       str[i*2] = 0;
                       pr_info("%s\n", str);
                   }
@@ -5750,24 +5766,24 @@
 
                       sha256 = crypto_alloc_shash("sha256", 0, 0);
                       if (IS_ERR(sha256))
-                      return -1;
+                          return -1;
 
                       shash =
-                      kmalloc(sizeof(struct shash_desc) + crypto_shash_descsize(sha256),
-                          GFP_KERNEL);
+                          kmalloc(sizeof(struct shash_desc) + crypto_shash_descsize(sha256),
+                                  GFP_KERNEL);
                       if (!shash)
-                      return -ENOMEM;
+                          return -ENOMEM;
 
                       shash->tfm = sha256;
 
                       if (crypto_shash_init(shash))
-                      return -1;
+                          return -1;
 
                       if (crypto_shash_update(shash, (unsigned char *)plaintext, strlen(plaintext)))
-                      return -1;
+                          return -1;
 
                       if (crypto_shash_final(shash, (unsigned char *)hash_sha256))
-                      return -1;
+                          return -1;
 
                       kfree(shash);
                       crypto_free_shash(sha256);
@@ -5784,9 +5800,9 @@
                   module_init(cryptosha256_init);
                   module_exit(cryptosha256_exit);
 
+                  MODULE_LICENSE("GPL");
                   MODULE_AUTHOR("Bob Mottram");
                   MODULE_DESCRIPTION("sha256 hash test");
-                  MODULE_LICENSE("GPL");
 
             Make and install the module:
 
@@ -5810,10 +5826,10 @@
                   sudo rmmod cryptosha256
 
       .. container:: outline-3
-         :name: outline-container-org864d511
+         :name: outline-container-org7e938eb
 
-         .. rubric:: 16.2 Symmetric key encryption
-            :name: org864d511
+         .. rubric:: 16.2. Symmetric key encryption
+            :name: org7e938eb
 
          .. container:: outline-text-3
             :name: text-16-2
@@ -5854,36 +5870,36 @@
                   static void test_skcipher_finish(struct skcipher_def * sk)
                   {
                       if (sk->tfm)
-                      crypto_free_skcipher(sk->tfm);
+                          crypto_free_skcipher(sk->tfm);
                       if (sk->req)
-                      skcipher_request_free(sk->req);
+                          skcipher_request_free(sk->req);
                       if (sk->ivdata)
-                      kfree(sk->ivdata);
+                          kfree(sk->ivdata);
                       if (sk->scratchpad)
-                      kfree(sk->scratchpad);
+                          kfree(sk->scratchpad);
                       if (sk->ciphertext)
-                      kfree(sk->ciphertext);
+                          kfree(sk->ciphertext);
                   }
 
                   static int test_skcipher_result(struct skcipher_def * sk, int rc)
                   {
                       switch (rc) {
                       case 0:
-                      break;
-                      case -EINPROGRESS || -EBUSY:
-                      rc = wait_for_completion_interruptible(
-                          &sk->result.completion);
-                      if (!rc && !sk->result.err) {
-                          reinit_completion(&sk->result.completion);
                           break;
-                      }
-                      pr_info("skcipher encrypt returned with %d result %d\n",
-                          rc, sk->result.err);
-                      break;
+                      case -EINPROGRESS || -EBUSY:
+                          rc = wait_for_completion_interruptible(
+                              &sk->result.completion);
+                          if (!rc && !sk->result.err) {
+                              reinit_completion(&sk->result.completion);
+                              break;
+                          }
+                          pr_info("skcipher encrypt returned with %d result %d\n",
+                              rc, sk->result.err);
+                          break;
                       default:
-                      pr_info("skcipher encrypt returned with %d result %d\n",
-                          rc, sk->result.err);
-                      break;
+                          pr_info("skcipher encrypt returned with %d result %d\n",
+                              rc, sk->result.err);
+                          break;
                       }
 
                       init_completion(&sk->result.completion);
@@ -5894,57 +5910,54 @@
                   static void test_skcipher_callback(struct crypto_async_request *req, int error)
                   {
                       struct tcrypt_result *result = req->data;
-                      /* int ret; */
+                      int ret;
 
                       if (error == -EINPROGRESS)
-                      return;
+                          return;
 
                       result->err = error;
                       complete(&result->completion);
                       pr_info("Encryption finished successfully\n");
 
                       /* decrypt data */
-                      /*
                       memset((void*)sk.scratchpad, '-', CIPHER_BLOCK_SIZE);
                       ret = crypto_skcipher_decrypt(sk.req);
                       ret = test_skcipher_result(&sk, ret);
                       if (ret)
-                      return;
+                          return;
 
                       sg_copy_from_buffer(&sk.sg, 1, sk.scratchpad, CIPHER_BLOCK_SIZE);
                       sk.scratchpad[CIPHER_BLOCK_SIZE-1] = 0;
 
                       pr_info("Decryption request successful\n");
                       pr_info("Decrypted: %s\n", sk.scratchpad);
-                      */
                   }
 
                   static int test_skcipher_encrypt(char * plaintext, char * password,
-                                   struct skcipher_def * sk)
+                                                   struct skcipher_def * sk)
                   {
                       int ret = -EFAULT;
                       unsigned char key[SYMMETRIC_KEY_LENGTH];
 
                       if (!sk->tfm) {
-                      sk->tfm = crypto_alloc_skcipher("cbc-aes-aesni", 0, 0);
-                      if (IS_ERR(sk->tfm)) {
-                          pr_info("could not allocate skcipher handle\n");
-                          return PTR_ERR(sk->tfm);
-                      }
+                          sk->tfm = crypto_alloc_skcipher("cbc-aes-aesni", 0, 0);
+                          if (IS_ERR(sk->tfm)) {
+                              pr_info("could not allocate skcipher handle\n");
+                              return PTR_ERR(sk->tfm);
+                          }
                       }
 
                       if (!sk->req) {
-                      sk->req = skcipher_request_alloc(sk->tfm, GFP_KERNEL);
-                      if (!sk->req) {
-                          pr_info("could not allocate skcipher request\n");
-                          ret = -ENOMEM;
-                          goto out;
-                      }
+                          sk->req = skcipher_request_alloc(sk->tfm, GFP_KERNEL);
+                          if (!sk->req) {
+                              pr_info("could not allocate skcipher request\n");
+                              return -ENOMEM;
+                          }
                       }
 
                       skcipher_request_set_callback(sk->req, CRYPTO_TFM_REQ_MAY_BACKLOG,
-                                    test_skcipher_callback,
-                                    &sk->result);
+                                                    test_skcipher_callback,
+                                                    &sk->result);
 
                       /* clear the key */
                       memset((void*)key,'\0',SYMMETRIC_KEY_LENGTH);
@@ -5954,47 +5967,46 @@
 
                       /* AES 256 with given symmetric key */
                       if (crypto_skcipher_setkey(sk->tfm, key, SYMMETRIC_KEY_LENGTH)) {
-                      pr_info("key could not be set\n");
-                      ret = -EAGAIN;
-                      goto out;
+                          pr_info("key could not be set\n");
+                          ret = -EAGAIN;
+                          return ret;
                       }
                       pr_info("Symmetric key: %s\n", key);
                       pr_info("Plaintext: %s\n", plaintext);
 
                       if (!sk->ivdata) {
-                      /* see https://en.wikipedia.org/wiki/Initialization_vector */
-                      sk->ivdata = kmalloc(CIPHER_BLOCK_SIZE, GFP_KERNEL);
-                      if (!sk->ivdata) {
-                          pr_info("could not allocate ivdata\n");
-                          goto out;
-                      }
-                      get_random_bytes(sk->ivdata, CIPHER_BLOCK_SIZE);
+                          /* see https://en.wikipedia.org/wiki/Initialization_vector */
+                          sk->ivdata = kmalloc(CIPHER_BLOCK_SIZE, GFP_KERNEL);
+                          if (!sk->ivdata) {
+                              pr_info("could not allocate ivdata\n");
+                              return ret;
+                          }
+                          get_random_bytes(sk->ivdata, CIPHER_BLOCK_SIZE);
                       }
 
                       if (!sk->scratchpad) {
-                      /* The text to be encrypted */
-                      sk->scratchpad = kmalloc(CIPHER_BLOCK_SIZE, GFP_KERNEL);
-                      if (!sk->scratchpad) {
-                          pr_info("could not allocate scratchpad\n");
-                          goto out;
-                      }
+                          /* The text to be encrypted */
+                          sk->scratchpad = kmalloc(CIPHER_BLOCK_SIZE, GFP_KERNEL);
+                          if (!sk->scratchpad) {
+                              pr_info("could not allocate scratchpad\n");
+                              return ret;
+                          }
                       }
                       sprintf((char*)sk->scratchpad,"%s",plaintext);
 
                       sg_init_one(&sk->sg, sk->scratchpad, CIPHER_BLOCK_SIZE);
                       skcipher_request_set_crypt(sk->req, &sk->sg, &sk->sg,
-                                     CIPHER_BLOCK_SIZE, sk->ivdata);
+                                                 CIPHER_BLOCK_SIZE, sk->ivdata);
                       init_completion(&sk->result.completion);
 
                       /* encrypt data */
                       ret = crypto_skcipher_encrypt(sk->req);
                       ret = test_skcipher_result(sk, ret);
                       if (ret)
-                      goto out;
+                          return ret;
 
                       pr_info("Encryption request successful\n");
 
-                  out:
                       return ret;
                   }
 
@@ -6021,15 +6033,15 @@
                   module_init(cryptoapi_init);
                   module_exit(cryptoapi_exit);
 
+                  MODULE_LICENSE("GPL");
                   MODULE_AUTHOR("Bob Mottram");
                   MODULE_DESCRIPTION("Symmetric key encryption example");
-                  MODULE_LICENSE("GPL");
 
    .. container:: outline-2
-      :name: outline-container-orgdeb9f24
+      :name: outline-container-orgcb8ca34
 
-      .. rubric:: 17 Standardising the interfaces: The Device Model
-         :name: orgdeb9f24
+      .. rubric:: 17. Standardising the interfaces: The Device Model
+         :name: orgcb8ca34
 
       .. container:: outline-text-2
          :name: text-17
@@ -6106,9 +6118,9 @@
 
                static struct platform_driver devicemodel_driver = {
                    .driver     = {
-                   .name   = "devicemodel_example",
-                   .owner  = THIS_MODULE,
-                   .pm     = &devicemodel_pm_ops,
+                       .name   = "devicemodel_example",
+                       .owner  = THIS_MODULE,
+                       .pm     = &devicemodel_pm_ops,
                    },
                    .probe      = devicemodel_probe,
                    .remove     = devicemodel_remove,
@@ -6123,8 +6135,8 @@
                    ret = platform_driver_register(&devicemodel_driver);
 
                    if (ret) {
-                   pr_err("Unable to register driver\n");
-                   return ret;
+                       pr_err("Unable to register driver\n");
+                       return ret;
                    }
 
                    return 0;
@@ -6144,19 +6156,19 @@
                module_exit(devicemodel_exit);
 
    .. container:: outline-2
-      :name: outline-container-orgdb8f947
+      :name: outline-container-org0bb3975
 
-      .. rubric:: 18 Optimisations
-         :name: orgdb8f947
+      .. rubric:: 18. Optimisations
+         :name: org0bb3975
 
       .. container:: outline-text-2
          :name: text-18
 
       .. container:: outline-3
-         :name: outline-container-org33455b4
+         :name: outline-container-org59c119b
 
-         .. rubric:: 18.1 Likely and Unlikely conditions
-            :name: org33455b4
+         .. rubric:: 18.1. Likely and Unlikely conditions
+            :name: org59c119b
 
          .. container:: outline-text-3
             :name: text-18-1
@@ -6190,10 +6202,10 @@
             if you use the *likely* macro.
 
    .. container:: outline-2
-      :name: outline-container-orgb29f511
+      :name: outline-container-org05633a5
 
-      .. rubric:: 19 Common Pitfalls
-         :name: orgb29f511
+      .. rubric:: 19. Common Pitfalls
+         :name: org05633a5
 
       .. container:: outline-text-2
          :name: text-19
@@ -6205,10 +6217,10 @@
          paid for your copy of the book.
 
       .. container:: outline-3
-         :name: outline-container-orgfbda4ad
+         :name: outline-container-org756d3b8
 
-         .. rubric:: 19.1 Using standard libraries
-            :name: orgfbda4ad
+         .. rubric:: 19.1. Using standard libraries
+            :name: org756d3b8
 
          .. container:: outline-text-3
             :name: text-19-1
@@ -6218,10 +6230,10 @@
             /proc/kallsyms.
 
       .. container:: outline-3
-         :name: outline-container-org61c29e9
+         :name: outline-container-org7a5fe7a
 
-         .. rubric:: 19.2 Disabling interrupts
-            :name: org61c29e9
+         .. rubric:: 19.2. Disabling interrupts
+            :name: org7a5fe7a
 
          .. container:: outline-text-3
             :name: text-19-2
@@ -6231,10 +6243,10 @@
             stuck and you'll have to power it off.
 
       .. container:: outline-3
-         :name: outline-container-org5613143
+         :name: outline-container-org2b28420
 
-         .. rubric:: 19.3 Sticking your head inside a large carnivore
-            :name: org5613143
+         .. rubric:: 19.3. Sticking your head inside a large carnivore
+            :name: org2b28420
 
          .. container:: outline-text-3
             :name: text-19-3
@@ -6243,10 +6255,10 @@
             I will anyway, just in case.
 
    .. container:: outline-2
-      :name: outline-container-org258b0a6
+      :name: outline-container-org996dd0f
 
-      .. rubric:: 20 Where To Go From Here?
-         :name: org258b0a6
+      .. rubric:: 20. Where To Go From Here?
+         :name: org996dd0f
 
       .. container:: outline-text-2
          :name: text-20
@@ -6298,6 +6310,6 @@
    Author: Peter Jay Salzman, Michael Burian, Ori Pomerantz, Bob
    Mottram, Jim Huang
 
-   Created: 2021-09-25 Sat 12:33
+   Created: 2021-09-25 Sat 15:26
 
-   `Validate <http://validator.w3.org/check?uri=referer>`__
+   `Validate <https://validator.w3.org/check?uri=referer>`__
