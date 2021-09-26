@@ -7,7 +7,7 @@
 
 * Introduction
 
-#+NAME:   fig:herd.jpg
+#+NAME: fig:herd.jpg
 #+attr_html: :width 100%
 #+attr_latex: :width 100%
 [[./img/herd.jpg]]
@@ -511,11 +511,10 @@ Goodbye, world 5
 hello-5.o: invalid argument syntax for mylong: 'h'
 #+END_SRC
 
-#+CAPTION: Stickers. Luisalvaz.
-#+NAME: fig:stickers.jpg
+#+NAME: fig:phone.jpg
 #+attr_html: :width 100%
 #+attr_latex: :width 100%
-[[./img/stickers.jpg]]
+[[./img/phone.jpg]]
 
 ** Modules Spanning Multiple Files
 
@@ -2142,6 +2141,12 @@ MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Wang Chen Shu");
 MODULE_DESCRIPTION("This is test_ioctl module");
 #+END_SRC
+
+#+CAPTION: Street art in Ximen/Taipei, Taiwan
+#+NAME: fig:ximen.jpg
+#+attr_html: :width 100%
+#+attr_latex: :width 100%
+[[./img/ximen.jpg]]
 
 * System Calls
 So far, the only thing we've done was to use well defined kernel mechanisms to register */proc* files and device handlers. This is fine if you want to do something the kernel programmers thought you'd want, such as write a device driver. But what if you want to do something unusual, to change the behaviour of the system in some way? Then, you're mostly on your own.
@@ -4332,13 +4337,14 @@ You might need to do this for a short time and that is OK, but if you don't enab
 ** Sticking your head inside a large carnivore
 I probably don't have to warn you about this, but I figured I will anyway, just in case.
 
-#+CAPTION: Street art in Ximen/Taipei, Taiwan
-#+NAME: fig:ximen.jpg
+* Where To Go From Here?
+
+#+CAPTION: Graffiti planet
+#+NAME: fig:planet.jpg
 #+attr_html: :width 100%
 #+attr_latex: :width 100%
-[[./img/ximen.jpg]]
+[[./img/planet.jpg]]
 
-* Where To Go From Here?
 I could easily have squeezed a few more chapters into this book. I could have added a chapter about creating new file systems, or about adding new protocol stacks (as if there's a need for that -- you'd have to dig underground to find a protocol stack not supported by Linux). I could have added explanations of the kernel mechanisms we haven't touched upon, such as bootstrapping or the disk interface.
 
 However, I chose not to. My purpose in writing this book was to provide initiation into the mysteries of kernel module programming and to teach the common techniques for that purpose. For people seriously interested in kernel programming, I recommend [[https://kernelnewbies.org][kernelnewbies.org]] and the /Documentation/ subdirectory within the kernel source code which isn't always easy to understand but can be a starting point for further investigation. Also, as Linus said, the best way to learn the kernel is to read the source code yourself.
