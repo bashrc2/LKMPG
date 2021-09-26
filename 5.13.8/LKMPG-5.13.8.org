@@ -4345,6 +4345,8 @@ However, I chose not to. My purpose in writing this book was to provide initiati
 
 If you're interested in more examples of short kernel modules then searching on sites such as Github and Gitlab is a good way to start, although there is a lot of duplication of older LKMPG examples which may not compile with newer kernel versions. You will also be able to find examples of the use of kernel modules to attack or compromise systems or exfiltrate data and those can be useful for thinking about how to defend systems and learning about existing security mechanisms within the kernel.
 
+If you want to get something upstreamed into the official Torvalds kernel, and hence distributed onwards to other computer users, then the kernelnewbies [[https://kernelnewbies.org/FirstKernelPatch][guide to creating a patch]] will step you through the process of using git to create an email patch series and send it to one of the proliferation of kernel subsystem mailing lists. Using git is really an entire book in itself (perhaps multiple books) and so I havn't attempted to cover that here, but you will need to become familiar with email based git workflow if upstreaming is your aim.
+
 I hope I have helped you in your quest to become a better programmer, or at least to have fun through technology. And, if you do write useful kernel modules, I hope you publish them under the GPL, so I can use them too.
 
 If you'd like to contribute to this guide, notice anything glaringly wrong, or just want to add extra sarcastic remarks perhaps involving monkeys or some other kind of animal then fire an email to bob@libreserver.org and you may be able to get commit access to https://gitlab.com/bashrc2/LKMPG.
