@@ -1,4 +1,4 @@
-% Created 2021-10-07 Thu 10:37
+% Created 2021-12-03 Fri 22:43
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -32,11 +32,11 @@
 
 
 \section{Introduction}
-\label{sec:org6c87a6b}
+\label{sec:org14778d6}
 
 \begin{center}
 \includegraphics[width=100%]{./img/herd.jpg}
-\label{org79e49a0}
+\label{orgae0e7f2}
 \end{center}
 
 The Linux Kernel Module Programming Guide is a free book; you may reproduce and/or modify it under the terms of the Open Software License, version 3.0.
@@ -50,31 +50,31 @@ Derivative works and translations of this document must be placed under the Open
 If you publish or distribute this book commercially, donations, royalties, and/or printed copies are greatly appreciated by the author and the \href{http://www.tldp.org}{Linux Documentation Project} (LDP). Contributing in this way shows your support for free software and the LDP. If you have questions or comments, please contact the address above.
 
 \subsection{Authorship}
-\label{sec:orgf714696}
+\label{sec:org70cc341}
 
 The Linux Kernel Module Programming Guide was originally written for the 2.2 kernels by Ori Pomerantz. Eventually, Ori no longer had time to maintain the document. After all, the Linux kernel is a fast moving target. Peter Jay Salzman took over maintenance and updated it for the 2.4 kernels. Eventually, Peter no longer had time to follow developments with the 2.6 kernel, so Michael Burian became a co-maintainer to update the document for the 2.6 kernels.  Bob Mottram updated the examples for 3.8 and later kernels, added the sysfs chapter and modified or updated other chapters. Jim Huang upgraded some examples to recent kernel versions. For attribution on individual images, which are Creative Commons licensed, see their metadata tags.
 
 \subsection{Versioning and Notes}
-\label{sec:org270ae43}
+\label{sec:orgf94fb76}
 
 The Linux kernel is a moving target. There has always been a question whether the LKMPG should remove deprecated information or keep it around for historical sake. Michael Burian and I decided to create a new branch of the LKMPG for each new stable kernel version. So version LKMPG 4.12.x will address Linux kernel 4.12.x and LKMPG 2.6.x will address Linux kernel 2.6. No attempt will be made to archive historical information; a person wishing this information should read the appropriately versioned LKMPG.
 
 The source code and discussions should apply to most architectures, but I can't promise anything.
 
 \subsection{Acknowledgements}
-\label{sec:org1335146}
+\label{sec:org72aab87}
 
 The following people have contributed corrections or good suggestions: Ignacio Martin, David Porter, Daniele Paolo Scarpazza, Dimo Velev, Francois Audeon, Horst Schirmeier, Bob Mottram and Roman Lakeev.
 
 \subsection{What Is A Kernel Module?}
-\label{sec:org3519c43}
+\label{sec:orge14185b}
 
 So, you want to write a kernel module. You know C, you've written a few normal programs to run as processes, and now you want to get to where the real action is, to where a single wild pointer can wipe out your file system and a core dump means a reboot.
 
 What exactly is a kernel module? Modules are pieces of code that can be loaded and unloaded into the kernel upon demand. They extend the functionality of the kernel without the need to reboot the system. For example, one type of module is the device driver, which allows the kernel to access hardware connected to the system. Without modules, we would have to build monolithic kernels and add new functionality directly into the kernel image. Besides having larger kernels, this has the disadvantage of requiring us to rebuild and reboot the kernel every time we want new functionality.
 
 \subsection{Installing some Dependencies}
-\label{sec:org320a013}
+\label{sec:org3e0aefb}
 
 Linux distros provide the commands \emph{modprobe}, \emph{insmod} and \emph{depmod} within a package. These can be installed as follows:
 
@@ -91,7 +91,7 @@ sudo pacman -S gcc kmod
 \end{verbatim}
 
 \subsection{What Modules are in my Kernel?}
-\label{sec:org3e7c003}
+\label{sec:orge612fa7}
 
 To discover what modules are already loaded within your current kernel use the command \textbf{lsmod}.
 
@@ -112,21 +112,21 @@ sudo lsmod | grep fat
 \end{verbatim}
 
 \subsection{Do I need to download and compile the kernel?}
-\label{sec:orgda84718}
+\label{sec:orgd42ab4d}
 For the purposes of following this guide you don't necessarily need to do that. However, it would be wise to run the examples within a test distro running on a virtual machine in order to avoid any possibility of messing up your system.
 
 \subsection{Before We Begin}
-\label{sec:org9b67dbc}
+\label{sec:orgd89b112}
 Before we delve into code, there are a few issues we need to cover. Everyone's system is different and everyone has their own groove. Getting your first "hello world" program to compile and load correctly can sometimes be a trick. Rest assured, after you get over the initial hurdle of doing it for the first time, it will be smooth sailing thereafter.
 
 \begin{enumerate}
 \item Modversioning
-\label{sec:org4630800}
+\label{sec:orge1bd715}
 
 A module compiled for one kernel won't load if you boot a different kernel unless you enable CONFIG\_MODVERSIONS in the kernel. We won't go into module versioning until later in this guide. Until we cover modversions, the examples in the guide may not work if you're running a kernel with modversioning turned on. However, most stock Linux distro kernels come with it turned on. If you're having trouble loading the modules because of versioning errors, compile a kernel with modversioning turned off.
 
 \item Using X
-\label{sec:orgf7e24a5}
+\label{sec:orge92e1f1}
 
 It is highly recommended that you extract, compile and load all the examples this guide discusses. It's also highly recommended you do this from a console. You should not be working on this stuff in X.
 
@@ -134,7 +134,7 @@ Modules can't print to the screen like printf() can, but they can log informatio
 \end{enumerate}
 
 \section{Headers}
-\label{sec:org9affd9e}
+\label{sec:orgece199f}
 Before you can build anything you'll need to install the header files for your kernel. On Parabola GNU/Linux:
 
 \begin{verbatim}
@@ -155,7 +155,7 @@ sudo apt-get install kmod linux-headers-5.13.8-1-amd64
 \end{verbatim}
 
 \section{Examples}
-\label{sec:org28f47af}
+\label{sec:org99d63bb}
 All the examples from this document are available within the \emph{examples} subdirectory. The directory is created by a script which pulls the source code out from the manual. To test that they compile:
 
 \begin{verbatim}
@@ -167,16 +167,16 @@ make
 If there are any compile errors then you might have a more recent kernel version or need to install the corresponding kernel header files.
 
 \section{Hello World}
-\label{sec:orgd5fd786}
+\label{sec:orgd717eb4}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=100%]{./img/walloffame.jpg}
-\caption{\label{fig:org44c9581}Wall of Fame. Katwijk, Netherlands.}
+\caption{\label{fig:org7e25ba3}Wall of Fame. Katwijk, Netherlands.}
 \end{figure}
 
 \subsection{The Simplest Module}
-\label{sec:org114e3e9}
+\label{sec:org4438fbe}
 Most people learning programming start out with some sort of "\emph{hello world}" example. I don't know what happens to people who break with this tradition, but I think it's safer not to find out. We'll start with a series of hello world programs that demonstrate the different aspects of the basics of writing a kernel module.
 
 Here's the simplest module possible.
@@ -218,7 +218,7 @@ MODULE_LICENSE("GPL");
 Now you'll need a Makefile. If you copy and paste this change the indentation to use tabs, not spaces.
 
 \begin{verbatim}
-MY_CFLAGS += -g -DDEBUG
+MY_CFLAGS += -Og -g -DDEBUG
 ccflags-y += ${MY_CFLAGS}
 CC += ${MY_CFLAGS}
 KBUILD_CFLAGS := -mcmodel=kernel -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
@@ -284,16 +284,16 @@ Lastly, every kernel module needs to include linux/module.h. We needed to includ
 
 \begin{enumerate}
 \item A point about coding style
-\label{sec:orgb7ffdb0}
+\label{sec:orgab4e4e8}
 Another thing which may not be immediately obvious to anyone getting started with kernel programming is that indentation within your code should be using \textbf{tabs} and \textbf{not spaces}. It's one of the coding conventions of the kernel. You may not like it, but you'll need to get used to it if you ever submit a patch upstream.
 
 \item Introducing print macros
-\label{sec:org3465632}
+\label{sec:org86871ee}
 
 In the beginning there was \textbf{printk}, usually followed by a priority such as KERN\_INFO or KERN\_DEBUG. More recently this can also be expressed in abbreviated form using a set of print macros, such as \textbf{pr\_info} and \textbf{pr\_debug}. This just saves some mindless keyboard bashing and looks a bit neater. They can be found within \textbf{linux/printk.h}. Take time to read through the available priority macros.
 
 \item About Compiling
-\label{sec:org23e449e}
+\label{sec:orgc384366}
 
 Kernel modules need to be compiled a bit differently from regular userspace apps. Former kernel versions required us to care much about these settings, which are usually stored in Makefiles. Although hierarchically organized, many redundant settings accumulated in sublevel Makefiles and made them large and rather difficult to maintain. Fortunately, there is a new way of doing these things, called kbuild, and the build process for external loadable modules is now fully integrated into the standard kernel build mechanism. To learn more on how to compile modules which are not part of the official kernel (such as all the examples you'll find in this guide), see file \textbf{linux/Documentation/kbuild/modules.txt}.
 
@@ -305,7 +305,7 @@ Here's another exercise for the reader. See that comment above the return statem
 \end{enumerate}
 
 \subsection{Hello and Goodbye}
-\label{sec:orgc0d93b5}
+\label{sec:org083e987}
 In early kernel versions you had to use the \textbf{init\_module} and \textbf{cleanup\_module} functions, as in the first hello world example, but these days you can name those anything you want by using the \textbf{module\_init} and \textbf{module\_exit} macros. These macros are defined in \textbf{linux/init.h}. The only requirement is that your init and cleanup functions must be defined before calling the those macros, otherwise you'll get compilation errors. Here's an example of this technique:
 
 \begin{verbatim}
@@ -337,7 +337,7 @@ MODULE_LICENSE("GPL");
 So now we have two real kernel modules under our belt. Adding another module is as simple as this:
 
 \begin{verbatim}
-MY_CFLAGS += -g -DDEBUG
+MY_CFLAGS += -Og -g -DDEBUG
 ccflags-y += ${MY_CFLAGS}
 CC += ${MY_CFLAGS}
 KBUILD_CFLAGS := -mcmodel=kernel -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
@@ -354,7 +354,7 @@ clean:
 Now have a look at linux/drivers/char/Makefile for a real world example. As you can see, some things get hardwired into the kernel (obj-y) but where are all those obj-m gone? Those familiar with shell scripts will easily be able to spot them. For those not, the obj-\$(CONFIG\_FOO) entries you see everywhere expand into obj-y or obj-m, depending on whether the CONFIG\_FOO variable has been set to y or m. While we are at it, those were exactly the kind of variables that you have set in the linux/.config file, the last time when you said make menuconfig or something like that.
 
 \subsection{The \_\_init and \_\_exit Macros}
-\label{sec:orgb3f8fa1}
+\label{sec:org6d7d1d5}
 This demonstrates a feature of kernel 2.2 and later. Notice the change in the definitions of the init and cleanup functions. The \textbf{\_\_init} macro causes the init function to be discarded and its memory freed once the init function finishes for built-in drivers, but not loadable modules. If you think about when the init function is invoked, this makes perfect sense.
 
 There is also an \textbf{\_\_initdata} which works similarly to \textbf{\_\_init} but for init variables rather than functions.
@@ -391,7 +391,7 @@ MODULE_LICENSE("GPL");
 \end{verbatim}
 
 \subsection{Licensing and Module Documentation}
-\label{sec:org4141d68}
+\label{sec:org2395461}
 Honestly, who loads or even cares about proprietary modules? If you do then you might have seen something like this:
 
 \begin{verbatim}
@@ -432,7 +432,7 @@ module_exit(cleanup_hello_4);
 \end{verbatim}
 
 \subsection{Passing Command Line Arguments to a Module}
-\label{sec:org29d7ade}
+\label{sec:orgb0c35a7}
 Modules can take command line arguments, but not with the argc/argv you might be used to.
 
 To allow arguments to be passed to your module, declare the variables that will take the values of the command line arguments as global and then use the module\_param() macro, (defined in linux/moduleparam.h) to set the mechanism up. At runtime, insmod will fill the variables with any command line arguments that are given, like ./insmod mymodule.ko myvariable=5. The variable declarations and macros should be placed at the beginning of the module for clarity. The example code should clear up my admittedly lousy explanation.
@@ -565,11 +565,11 @@ hello-5.o: invalid argument syntax for mylong: 'h'
 
 \begin{center}
 \includegraphics[width=100%]{./img/phone.jpg}
-\label{org3291938}
+\label{orgea1ce28}
 \end{center}
 
 \subsection{Modules Spanning Multiple Files}
-\label{sec:org3bcbd0e}
+\label{sec:orgd3a9074}
 
 Sometimes it makes sense to divide a kernel module between several source files.
 
@@ -613,7 +613,7 @@ MODULE_LICENSE("GPL");
 And finally, the makefile:
 
 \begin{verbatim}
-MY_CFLAGS += -g -DDEBUG
+MY_CFLAGS += -Og -g -DDEBUG
 ccflags-y += ${MY_CFLAGS}
 CC += ${MY_CFLAGS}
 KBUILD_CFLAGS := -mcmodel=kernel -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -fanalyzer -std=gnu89
@@ -635,7 +635,7 @@ clean:
 This is the complete makefile for all the examples we've seen so far. The first five lines are nothing special, but for the last example we'll need two lines. First we invent an object name for our combined module, second we tell make what object files are part of that module.
 
 \subsection{Building modules for a precompiled kernel}
-\label{sec:org0c345b2}
+\label{sec:org7935a18}
 Obviously, we strongly suggest you to recompile your kernel, so that you can enable a number of useful debugging features, such as forced module unloading (\textbf{MODULE\_FORCE\_UNLOAD}): when this option is enabled, you can force the kernel to unload a module even when it believes it is unsafe, via a \textbf{sudo rmmod -f module} command. This option can save you a lot of time and a number of reboots during the development of a module. If you don't want to recompile your kernel then you should consider running the examples within a test distro on a virtual machine. If you mess anything up then you can easily reboot or restore the VM.
 
 There are cases in which you may want to load your module into a precompiled running kernel, such as the ones shipped with common Linux distros, or a kernel you have compiled in the past. In certain circumstances you could require to compile and insert a module into a running kernel which you are not allowed to recompile, or on a machine that you prefer not to reboot. If you can't think of a case that will force you to use modules for a precompiled kernel you might want to skip this and treat the rest of this chapter as a big footnote.
@@ -705,10 +705,10 @@ HOSTLD  scripts/kconfig/conf
 If you do not desire to actually compile the kernel, you can interrupt the build process (CTRL-C) just after the SPLIT line, because at that time, the files you need are ready. Now you can turn back to the directory of your module and compile it: It will be built exactly according to your current kernel settings, and it will load into it without any errors.
 
 \section{Preliminaries}
-\label{sec:org762b27e}
+\label{sec:orga9a93d0}
 
 \subsection{How modules begin and end}
-\label{sec:org411d74d}
+\label{sec:orgfb5070a}
 A program usually begins with a \textbf{main()} function, executes a bunch of instructions and terminates upon completion of those instructions. Kernel modules work a bit differently. A module always begin with either the init\_module or the function you specify with module\_init call. This is the entry function for modules; it tells the kernel what functionality the module provides and sets up the kernel to run the module's functions when they're needed. Once it does this, entry function returns and the module does nothing until the kernel wants to do something with the code that the module provides.
 
 All modules end by calling either \textbf{cleanup\_module} or the function you specify with the \textbf{module\_exit} call. This is the exit function for modules; it undoes whatever entry function did. It unregisters the functionality that the entry function registered.
@@ -716,7 +716,7 @@ All modules end by calling either \textbf{cleanup\_module} or the function you s
 Every module must have an entry function and an exit function. Since there's more than one way to specify entry and exit functions, I'll try my best to use the terms `entry function' and `exit function', but if I slip and simply refer to them as init\_module and cleanup\_module, I think you'll know what I mean.
 
 \subsection{Functions available to modules}
-\label{sec:org90ec804}
+\label{sec:org032b8d7}
 Programmers use functions they don't define all the time. A prime example of this is \textbf{printf()}. You use these library functions which are provided by the standard C library, libc. The definitions for these functions don't actually enter your program until the linking stage, which insures that the code (for printf() for example) is available, and fixes the call instruction to point to that code.
 
 Kernel modules are different here, too. In the hello world example, you might have noticed that we used a function, \textbf{pr\_info()} but didn't include a standard I/O library. That's because modules are object files whose symbols get resolved upon insmod'ing. The definition for the symbols comes from the kernel itself; the only external functions you can use are the ones provided by the kernel. If you're curious about what symbols have been exported by your kernel, take a look at \textbf{/proc/kallsyms}.
@@ -740,13 +740,13 @@ with \textbf{gcc -Wall -o hello hello.c}. Run the exectable with \textbf{strace 
 You can even write modules to replace the kernel's system calls, which we'll do shortly. Crackers often make use of this sort of thing for backdoors or trojans, but you can write your own modules to do more benign things, like have the kernel write Tee hee, that tickles! everytime someone tries to delete a file on your system.
 
 \subsection{User Space vs Kernel Space}
-\label{sec:org00aa5e6}
+\label{sec:org1bc5628}
 A kernel is all about access to resources, whether the resource in question happens to be a video card, a hard drive or even memory. Programs often compete for the same resource. As I just saved this document, updatedb started updating the locate database. My vim session and updatedb are both using the hard drive concurrently. The kernel needs to keep things orderly, and not give users access to resources whenever they feel like it. To this end, a CPU can run in different modes. Each mode gives a different level of freedom to do what you want on the system. The Intel 80386 architecture had 4 of these modes, which were called rings. Unix uses only two rings; the highest ring (ring 0, also known as `supervisor mode' where everything is allowed to happen) and the lowest ring, which is called `user mode'.
 
 Recall the discussion about library functions vs system calls. Typically, you use a library function in user mode. The library function calls one or more system calls, and these system calls execute on the library function's behalf, but do so in supervisor mode since they are part of the kernel itself. Once the system call completes its task, it returns and execution gets transfered back to user mode.
 
 \subsection{Name Space}
-\label{sec:org86f98b7}
+\label{sec:orgecc372f}
 When you write a small C program, you use variables which are convenient and make sense to the reader. If, on the other hand, you're writing routines which will be part of a bigger problem, any global variables you have are part of a community of other peoples' global variables; some of the variable names can clash. When a program has lots of global variables which aren't meaningful enough to be distinguished, you get namespace pollution. In large projects, effort must be made to remember reserved names, and to find ways to develop a scheme for naming unique variable names and symbols.
 
 When writing kernel code, even the smallest module will be linked against the entire kernel, so this is definitely an issue. The best way to deal with this is to declare all your variables as static and to use a well-defined prefix for your symbols. By convention, all kernel prefixes are lowercase. If you don't want to declare everything as static, another option is to declare a symbol table and register it with a kernel. We'll get to this later.
@@ -754,7 +754,7 @@ When writing kernel code, even the smallest module will be linked against the en
 The file \textbf{/proc/kallsyms} holds all the symbols that the kernel knows about and which are therefore accessible to your modules since they share the kernel's codespace.
 
 \subsection{Code space}
-\label{sec:orga2c2aaa}
+\label{sec:orgfbee90a}
 Memory management is a complicated subject and the majority of O'Reilly's "\emph{Understanding The Linux Kernel}" exclusively covers memory management! We're not setting out to be experts on memory managements, but we do need to know a couple of facts to even begin worrying about writing real modules.
 
 If you haven't thought about what a segfault really means, you may be surprised to hear that pointers don't actually point to memory locations. Not real ones, anyway. When a process is created, the kernel sets aside a portion of real physical memory and hands it to the process to use for its executing code, variables, stack, heap and other things which a computer scientist would know about. This memory begins with 0x00000000 and extends up to whatever it needs to be. Since the memory space for any two processes don't overlap, every process that can access a memory address, say 0xbffff978, would be accessing a different location in real physical memory! The processes would be accessing an index named 0xbffff978 which points to some kind of offset into the region of memory set aside for that particular process. For the most part, a process like our Hello, World program can't access the space of another process, although there are ways which we'll talk about later.
@@ -764,12 +764,12 @@ The kernel has its own space of memory as well. Since a module is code which can
 By the way, I would like to point out that the above discussion is true for any operating system which uses a monolithic kernel. This isn't the same thing as \emph{"building all your modules into the kernel"}, although the idea is the same. There are things called microkernels which have modules which get their own codespace. The GNU Hurd and the Zircon kernel of Google Fuchsia are two examples of a microkernel.
 
 \subsection{Device Drivers}
-\label{sec:orgc57dac8}
+\label{sec:org5a02772}
 One class of module is the device driver, which provides functionality for hardware like a serial port. On unix, each piece of hardware is represented by a file located in /dev named a device file which provides the means to communicate with the hardware. The device driver provides the communication on behalf of a user program. So the es1370.o sound card device driver might connect the /dev/sound device file to the Ensoniq IS1370 sound card. A userspace program like mp3blaster can use /dev/sound without ever knowing what kind of sound card is installed.
 
 \begin{enumerate}
 \item Major and Minor Numbers
-\label{sec:org764147c}
+\label{sec:org77ab63b}
 
 Let's look at some device files. Here are device files which represent the first three partitions on the primary master IDE hard drive:
 
@@ -811,9 +811,9 @@ By now you can look at these two device files and know instantly that they are b
 \end{enumerate}
 
 \section{Character Device drivers}
-\label{sec:orgc520f7c}
+\label{sec:org89d3c97}
 \subsection{The file\_operations Structure}
-\label{sec:orge07f6cc}
+\label{sec:orgf4c809d}
 The file\_operations structure is defined in \textbf{/usr/include/linux/fs.h}, and holds pointers to functions defined by the driver that perform operations on the device. Each field of the structure corresponds to the address of some function defined by the driver to handle a requested operation.
 
 For example, every character driver needs to define a function that reads from the device. The file\_operations structure holds the address of the module's function that performs that operation. Here is what the definition looks like for kernel 5.4:
@@ -886,7 +886,7 @@ The meaning is clear, and you should be aware that any member of the structure w
 An instance of struct file\_operations containing pointers to functions that are used to implement read, write, open, \ldots{} syscalls is commonly named fops.
 
 \subsection{The file structure}
-\label{sec:orgcea536e}
+\label{sec:org3c202d6}
 
 Each device is represented in the kernel by a file structure, which is defined in \textbf{linux/fs.h}. Be aware that a file is a kernel level structure and never appears in a user space program. It's not the same thing as a \textbf{FILE}, which is defined by glibc and would never appear in a kernel space function. Also, its name is a bit misleading; it represents an abstract open `file', not a file on a disk, which is represented by a structure named inode.
 
@@ -895,7 +895,7 @@ An instance of struct file is commonly named filp. You'll also see it refered to
 Go ahead and look at the definition of file. Most of the entries you see, like struct dentry aren't used by device drivers, and you can ignore them. This is because drivers don't fill file directly; they only use structures contained in file which are created elsewhere.
 
 \subsection{Registering A Device}
-\label{sec:orgbe4a132}
+\label{sec:org72137bb}
 As discussed earlier, char devices are accessed through device files, usually located in /dev. This is by convention. When writing a driver, it's OK to put the device file in your current directory. Just make sure you place it in /dev for a production driver. The major number tells you which driver handles which device file. The minor number is used only by the driver itself to differentiate which device it's operating on, just in case the driver handles more than one device.
 
 Adding a driver to your system means registering it with the kernel. This is synonymous with assigning it a major number during the module's initialization. You do this by using the register\_chrdev function, defined by linux/fs.h.
@@ -911,7 +911,7 @@ Now the question is, how do you get a major number without hijacking one that's 
 If you pass a major number of 0 to register\_chrdev, the return value will be the dynamically allocated major number. The downside is that you can't make a device file in advance, since you don't know what the major number will be. There are a couple of ways to do this. First, the driver itself can print the newly assigned number and we can make the device file by hand. Second, the newly registered device will have an entry in \textbf{/proc/devices}, and we can either make the device file by hand or write a shell script to read the file in and make the device file. The third method is we can have our driver make the the device file using the \textbf{device\_create} function after a successful registration and \textbf{device\_destroy} during the call to cleanup\_module.
 
 \subsection{Unregistering A Device}
-\label{sec:orgc9d0894}
+\label{sec:org8b0d30c}
 We can't allow the kernel module to be rmmod'ed whenever root feels like it. If the device file is opened by a process and then we remove the kernel module, using the file would cause a call to the memory location where the appropriate function (read/write) used to be. If we're lucky, no other code was loaded there, and we'll get an ugly error message. If we're unlucky, another kernel module was loaded into the same location, which means a jump into the middle of another function within the kernel. The results of this would be impossible to predict, but are unlikely to be positive.
 
 Normally, when you don't want to allow something, you return an error code (a negative number) from the function which is supposed to do it. With cleanup\_module that's impossible because it's a void function. However, there's a counter which keeps track of how many processes are using your module. You can see what it's value is by looking at the 3rd field of \textbf{/proc/modules}. If this number isn't zero, rmmod will fail. Note that you don't have to check the counter from within cleanup\_module because the check will be performed for you by the system call sys\_delete\_module, defined in \textbf{linux/module.c}. You shouldn't use this counter directly, but there are functions defined in \textbf{linux/module.h} which let you increase, decrease and display this counter:
@@ -924,7 +924,7 @@ Normally, when you don't want to allow something, you return an error code (a ne
 It's important to keep the counter accurate; if you ever do lose track of the correct usage count, you'll never be able to unload the module; it's now reboot time, boys and girls. This is bound to happen to you sooner or later during a module's development.
 
 \subsection{chardev.c}
-\label{sec:org7fd5752}
+\label{sec:org495f13f}
 The next code sample creates a char driver named chardev. You can cat its device file.
 
 \begin{verbatim}
@@ -1086,7 +1086,7 @@ MODULE_DESCRIPTION("Demonstrates a read-only char device");
 \end{verbatim}
 
 \subsection{Writing Modules for Multiple Kernel Versions}
-\label{sec:orgeb56e3f}
+\label{sec:org1d85adb}
 The system calls, which are the major interface the kernel shows to the processes, generally stay the same across versions. A new system call may be added, but usually the old ones will behave exactly like they used to. This is necessary for backward compatibility -- a new kernel version is not supposed to break regular processes. In most cases, the device files will also remain the same. On the other hand, the internal interfaces within the kernel can and do change between versions.
 
 The Linux kernel versions are divided between the stable versions (n.\$<\(even number\)>\$.m) and the development versions (n.\$<\(odd number\)>\$.m). The development versions include all the cool new ideas, including those which will be considered a mistake, or reimplemented, in the next version. As a result, you can't trust the interface to remain the same in those versions (which is why I don't bother to support them in this book, it's too much work and it would become dated too quickly). In the stable versions, on the other hand, we can expect the interface to remain the same regardless of the bug fix version (the m number).
@@ -1098,12 +1098,12 @@ While previous versions of this guide showed how you can write backward compatib
 You might already have noticed that recent kernels look different. In case you haven't they look like 2.6.x.y now. The meaning of the first three items basically stays the same, but a subpatchlevel has been added and will indicate security fixes till the next stable patchlevel is out. So people can choose between a stable tree with security updates and use the latest kernel as developer tree. Search the kernel mailing list archives if you're interested in the full story.
 
 \section{The /proc File System}
-\label{sec:org124802d}
+\label{sec:orgf270ef1}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=100%]{./img/kreuzberg.jpg}
-\caption{\label{fig:org37990aa}Wall painting near Maybachufer in Berlin-Kreuzberg, Germany}
+\caption{\label{fig:org2bab6ad}Wall painting near Maybachufer in Berlin-Kreuzberg, Germany}
 \end{figure}
 
 In Linux, there is an additional mechanism for the kernel and kernel modules to send information to processes --- the \textbf{/proc} file system. Originally designed to allow easy access to information about processes (hence the name), it is now used by every bit of the kernel which has something interesting to report, such as \textbf{/proc/modules} which provides the list of modules and \textbf{/proc/meminfo} which stats memory usage statistics.
@@ -1200,7 +1200,7 @@ MODULE_DESCRIPTION("Demonstrates procfs");
 \end{verbatim}
 
 \subsection{Read and Write a /proc File}
-\label{sec:org851dc8e}
+\label{sec:org99005af}
 We have seen a simple example for a /proc file where we only read the file /proc/helloworld. It's also possible to write in a /proc file. It works the same way as read, a function is called when the /proc file is written. But there is a little difference with read, data comes from user, so you have to import data from user space to kernel space (with copy\_from\_user or get\_user)
 
 The reason for copy\_from\_user or get\_user is that Linux memory (on Intel architecture, it may be different under some other processors) is segmented. This means that a pointer, by itself, does not reference a unique location in memory, only a location in a memory segment, and you need to know which memory segment it is to be able to use it. There is one memory segment for the kernel, and one for each of the processes.
@@ -1308,7 +1308,7 @@ MODULE_DESCRIPTION("Demonstrates procfs");
 \end{verbatim}
 
 \subsection{Manage /proc file with standard filesystem}
-\label{sec:org757a708}
+\label{sec:org66acb0e}
 We have seen how to read and write a /proc file with the /proc interface. But it's also possible to manage /proc file with inodes. The main concern is to use advanced functions, like permissions.
 
 In Linux, there is a standard mechanism for file system registration. Since every file system has to have its own functions to handle inode and file operations, there is a special structure to hold pointers to all those functions, struct \textbf{inode\_operations}, which includes a pointer to struct file\_operations.
@@ -1437,7 +1437,7 @@ MODULE_DESCRIPTION("Demonstrates procfs");
 Still hungry for procfs examples? Well, first of all keep in mind, there are rumors around, claiming that procfs is on it's way out, consider using sysfs instead. Second, if you really can't get enough, there's a highly recommendable bonus level for procfs below linux/Documentation/DocBook/ . Use make help in your toplevel kernel directory for instructions about how to convert it into your favourite format. Example: make htmldocs . Consider using this mechanism, in case you want to document something kernel related yourself.
 
 \subsection{Manage /proc file with seq\_file}
-\label{sec:org3509310}
+\label{sec:org02de7e9}
 As we have seen, writing a /proc file may be "complex". So to help people writting /proc file, there is an API named seq\_file that helps formating a /proc file for output. It's based on sequence, which is composed of 3 functions: start(), next(), and stop(). The seq\_file API starts a sequence when a user read the /proc file.
 
 A sequence begins with the call of the function start(). If the return is a non NULL value, the function next() is called. This function is an iterator, the goal is to go thought all the data. Each time next() is called, the function show() is also called. It writes data values in the buffer read by the user. The function next() is called until it returns NULL. The sequence ends when next() returns NULL, then the function stop() is called.
@@ -1589,7 +1589,7 @@ If you want more information, you can read this web page:
 You can also read the code of fs/seq\_file.c in the linux kernel.
 
 \section{sysfs: Interacting with your module}
-\label{sec:orgcec6786}
+\label{sec:orgb9adebe}
 \emph{sysfs} allows you to interact with the running kernel from userspace by reading or setting variables inside of modules. This can be useful for debugging purposes, or just as an interface for applications or scripts. You can find sysfs directories and files under the \emph{sys} directory on your system.
 
 \begin{verbatim}
@@ -1702,12 +1702,12 @@ sudo rmmod hello_sysfs
 \end{verbatim}
 
 \section{Talking To Device Files}
-\label{sec:orgf0c2d61}
+\label{sec:org67a3c79}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=100%]{./img/luhansk.jpg}
-\caption{\label{fig:orgd4e9cd1}Lugansk, Ukraine}
+\caption{\label{fig:org1037c2f}Lugansk, Ukraine}
 \end{figure}
 
 Device files are supposed to represent physical devices. Most physical devices are used for output as well as input, so there has to be some mechanism for device drivers in the kernel to get the output to send to the device from processes. This is done by opening the device file for output and writing to it, just like writing to a file. In the following example, this is implemented by device\_write.
@@ -2228,11 +2228,11 @@ MODULE_DESCRIPTION("This is test_ioctl module");
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=100%]{./img/ximen.jpg}
-\caption{\label{fig:orgee1c9be}Street art in Ximen/Taipei, Taiwan}
+\caption{\label{fig:org54849d7}Street art in Ximen/Taipei, Taiwan}
 \end{figure}
 
 \section{System Calls}
-\label{sec:orge13277f}
+\label{sec:org2e1e405}
 So far, the only thing we've done was to use well defined kernel mechanisms to register \textbf{/proc} files and device handlers. This is fine if you want to do something the kernel programmers thought you'd want, such as write a device driver. But what if you want to do something unusual, to change the behaviour of the system in some way? Then, you're on your own.
 
 If you're not being sensible and using a virtual machine then this is where kernel programming can become hazardous. While writing the example below, I killed the \textbf{open()} system call. This meant I couldn't open any files, I couldn't run any programs, and I couldn't shutdown the system. I had to restart the virtual machine. No important files got anihilated, but if I was doing this on some live mission critical system then that could have been a possible outcome. To ensure you don't lose any files, even within a test environment, please run \textbf{sync} right before you do the \textbf{insmod} and the \textbf{rmmod}.
@@ -2416,16 +2416,16 @@ MODULE_DESCRIPTION("Demonstrates a read-only char device");
 \end{verbatim}
 
 \section{Blocking Processes and threads}
-\label{sec:orgd849534}
+\label{sec:orgb069a21}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=100%]{./img/berlinwall.jpg}
-\caption{\label{fig:org2673906}Berlin Wall, 1989}
+\caption{\label{fig:org74a9ca4}Berlin Wall, 1989}
 \end{figure}
 
 \subsection{Sleep}
-\label{sec:org5b97a87}
+\label{sec:org2f1319b}
 What do you do when somebody asks you for something you can't do right away? If you're a human being and you're bothered by a human being, the only thing you can say is: "\emph{Not right now, I'm busy. Go away!}". But if you're a kernel module and you're bothered by a process, you have another possibility. You can put the process to sleep until you can service it. After all, processes are being put to sleep by the kernel and woken up all the time (that's the way multiple processes appear to run on the same time on a single CPU).
 
 This kernel module is an example of this. The file (called \textbf{/proc/sleep}) can only be opened by a single process at a time. If the file is already open, the kernel module calls wait\_event\_interruptible. The easiest way to keep a file open is to open it with:
@@ -2761,7 +2761,7 @@ int main(int argc, char *argv[])
 \end{verbatim}
 
 \subsection{Completions}
-\label{sec:org3410628}
+\label{sec:org163bf98}
 Sometimes one thing should happen before another within a module having multiple threads. Rather than using \textbf{/proc/sleep} commands the kernel has another way to do this which allows timeouts or interrupts to also happen.
 
 In the following example two threads are started, but one needs to start before another.
@@ -2849,17 +2849,17 @@ So even though \emph{flywheel\_thread} is started first you should notice if you
 There are other variations upon the \emph{wait\_for\_completion} function, which include timeouts or being interrupted, but this basic mechanism is enough for many common situations without adding a lot of complexity.
 
 \section{Avoiding Collisions and Deadlocks}
-\label{sec:org4f2f4bb}
+\label{sec:orgbe061df}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=100%]{./img/badass.jpg}
-\caption{\label{fig:org480b993}Graffiti at a former roof felt factory in Santalahti, Tampere, Finland}
+\caption{\label{fig:org148a33d}Graffiti at a former roof felt factory in Santalahti, Tampere, Finland}
 \end{figure}
 
 If processes running on different CPUs or in different threads try to access the same memory then it's possible that strange things can happen or your system can lock up. To avoid this various types of mutual exclusion kernel functions are available. These indicate if a section of code is "locked" or "unlocked" so that simultaneous attempts to run it can't happen.
 \subsection{Mutex}
-\label{sec:org323afb0}
+\label{sec:org8a6609e}
 You can use kernel mutexes (mutual exclusions) in much the same manner that you might deploy them in userland. This may be all that's needed to avoid collisions in most cases.
 
 \begin{verbatim}
@@ -2905,12 +2905,12 @@ MODULE_AUTHOR("Bob Mottram");
 MODULE_DESCRIPTION("Mutex example");
 \end{verbatim}
 \subsection{Spinlocks}
-\label{sec:org7b1a3ae}
+\label{sec:orgc0f706d}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=100%]{./img/spin.jpg}
-\caption{\label{fig:orga3159b3}Graffiti from Spin}
+\caption{\label{fig:org4c67217}Graffiti from Spin}
 \end{figure}
 
 As the name suggests, spinlocks lock up the CPU that the code is running on, taking 100\% of its resources. Because of this you should only use the spinlock mechanism around code which is likely to take no more than a few milliseconds to run and so won't noticably slow anything down from the user's point of view.
@@ -2984,7 +2984,7 @@ MODULE_DESCRIPTION("Spinlock example");
 \end{verbatim}
 
 \subsection{Read and write locks}
-\label{sec:org68ab607}
+\label{sec:orga5a0de8}
 Read and write locks are specialised kinds of spinlocks so that you can exclusively read from something or write to something. Like the earlier spinlocks example the one below shows an "irq safe" situation in which if other functions were triggered from irqs which might also read and write to whatever you are concerned with then they wouldn't disrupt the logic. As before it's a good idea to keep anything done within the lock as short as possible so that it doesn't hang up the system and cause users to start revolting against the tyranny of your module.
 
 \begin{verbatim}
@@ -3046,7 +3046,7 @@ MODULE_DESCRIPTION("Read/Write locks example");
 Of course if you know for sure that there are no functions triggered by irqs which could possibly interfere with your logic then you can use the simpler  \emph{read\_lock(\&myrwlock)} and \emph{read\_unlock(\&myrwlock)} or the corresponding write functions.
 
 \subsection{Atomic operations}
-\label{sec:org9560f15}
+\label{sec:org54f5b19}
 If you're doing simple arithmetic: adding, subtracting or bitwise operations then there's another way in the multi-CPU and multi-hyperthreaded world to stop other parts of the system from messing with your mojo. By using atomic operations you can be confident that your addition, subtraction or bit flip did actually happen and wasn't overwritten by some other shenanigans. An example is shown below.
 
 \begin{verbatim}
@@ -3128,9 +3128,9 @@ MODULE_AUTHOR("Bob Mottram");
 MODULE_DESCRIPTION("Atomic operations example");
 \end{verbatim}
 \section{Replacing Print Macros}
-\label{sec:org35210fa}
+\label{sec:orga11ebee}
 \subsection{Replacement}
-\label{sec:orgf72e663}
+\label{sec:org1da7063}
 In Section 1.2.1.2, I said that X and kernel module programming don't mix. That's true for developing kernel modules, but in actual use, you want to be able to send messages to whichever tty the command to load the module came from.
 
 "tty" is an abbreviation of \emph{teletype}: originally a combination keyboard-printer used to communicate with a Unix system, and today an abstraction for the text stream used for a Unix program, whether it's a physical terminal, an xterm on an X display, a network connection used with ssh, etc.
@@ -3250,7 +3250,7 @@ module_exit(print_string_exit);
 \end{verbatim}
 
 \subsection{Flashing keyboard LEDs}
-\label{sec:orga4c3053}
+\label{sec:orgbf07d23}
 In certain conditions, you may desire a simpler and more direct way to communicate to the external world. Flashing keyboard LEDs can be such a solution: It is an immediate way to attract attention or to display a status condition. Keyboard LEDs are present on every hardware, they are always visible, they do not need any setup, and their use is rather simple and non-intrusive, compared to writing to a tty or a file.
 
 The following source code illustrates a minimal kernel module which, when loaded, starts blinking the keyboard LEDs until it is unloaded.
@@ -3347,13 +3347,13 @@ If none of the examples in this chapter fit your debugging needs there might yet
 While you have seen lots of stuff that can be used to aid debugging here, there are some things to be aware of. Debugging is almost always intrusive. Adding debug code can change the situation enough to make the bug seem to dissappear. Thus you should try to keep debug code to a minimum and make sure it does not show up in production code.
 
 \section{Scheduling Tasks}
-\label{sec:org7879c40}
+\label{sec:orgd5256dc}
 There are two main ways of running tasks: tasklets and work queues. Tasklets are a quick and easy way of scheduling a single function to be run, for example when triggered from an interrupt, whereas work queues are more complicated but also better suited to running multiple things in a sequence.
 
 It is possible that in future tasklets may be replaced by \emph{threaded irqs}. However, discussion about that has been ongoing since 2007 (\url{https://lwn.net/Articles/239633}), so don't hold your breath. See the section on interrupt handlers if you wish to avoid the tasklet debate.
 
 \subsection{Tasklets}
-\label{sec:org0ae2512}
+\label{sec:org7964038}
 Here's an example tasklet module. The \emph{tasklet\_fn} function runs for a few seconds and in the mean time execution of the \emph{example\_tasklet\_init} function continues to the exit point.
 
 \begin{verbatim}
@@ -3403,7 +3403,7 @@ Example tasklet init continues...
 Example tasklet ends
 \end{verbatim}
 \subsection{Work queues}
-\label{sec:org47a7811}
+\label{sec:org0cbfcef}
 To add a task to the scheduler we can use a workqueue. The kernel then uses the Completely Fair Scheduler (CFS) to execute work within the queue.
 
 \begin{verbatim}
@@ -3439,16 +3439,16 @@ MODULE_DESCRIPTION("Workqueue example");
 \end{verbatim}
 
 \section{Interrupt Handlers}
-\label{sec:orga7b13d4}
+\label{sec:org74c804f}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=100%]{./img/bucharest.jpg}
-\caption{\label{fig:org8b9a59d}Graffiti artist in Bucharest, Romania}
+\caption{\label{fig:orgf8baa4c}Graffiti artist in Bucharest, Romania}
 \end{figure}
 
 \subsection{Interrupt Handlers}
-\label{sec:org6f0d036}
+\label{sec:org8736877}
 Except for the last chapter, everything we did in the kernel so far we've done as a response to a process asking for it, either by dealing with a special file, sending an ioctl(), or issuing a system call. But the job of the kernel isn't just to respond to process requests. Another job, which is every bit as important, is to speak to the hardware connected to the machine.
 
 There are two types of interaction between the CPU and the rest of the computer's hardware. The first type is when the CPU gives orders to the hardware, the other is when the hardware needs to tell the CPU something. The second, called interrupts, is much harder to implement because it has to be dealt with when convenient for the hardware, not the CPU. Hardware devices typically have a very small amount of RAM, and if you don't read their information when available, it is lost.
@@ -3464,7 +3464,7 @@ In practice IRQ handling can be a bit more complex. Hardware is often designed i
 This function receives the IRQ number, the name of the function, flags, a name for /proc/interrupts and a parameter to pass to the interrupt handler. Usually there is a certain number of IRQs available. How many IRQs there are is hardware-dependent. The flags can include SA\_SHIRQ to indicate you're willing to share the IRQ with other interrupt handlers (usually because a number of hardware devices sit on the same IRQ) and SA\_INTERRUPT to indicate this is a fast interrupt. This function will only succeed if there isn't already a handler on this IRQ, or if you're both willing to share.
 
 \subsection{Detecting button presses}
-\label{sec:org07ffe8e}
+\label{sec:org2594de5}
 Many popular single board computers, such as Raspberry Pis or Beagleboards, have a bunch of GPIO pins. Attaching buttons to those and then having a button press do something is a classic case in which you might need to use interrupts so that instead of having the CPU waste time and battery power polling for a change in input state it's better for the input to trigger the CPU to then run a particular handling function.
 
 Here's an example where buttons are connected to GPIO numbers 17 and 18 and an LED is connected to GPIO 4. You can change those numbers to whatever is appropriate for your board.
@@ -3622,7 +3622,7 @@ MODULE_DESCRIPTION("Handle some GPIO interrupts");
 \end{verbatim}
 
 \subsection{Bottom Half}
-\label{sec:org9f19dc8}
+\label{sec:org27b9e85}
 Suppose you want to do a bunch of stuff inside of an interrupt routine. A common way to do that without rendering the interrupt unavailable for a significant duration is to combine it with a tasklet. This pushes the bulk of the work off into the scheduler.
 
 The example below modifies the previous example to also run an additional task when an interrupt is triggered.
@@ -3961,11 +3961,11 @@ MODULE_DESCRIPTION("Interrupt with top and bottom half using threaded irqs");
 \end{verbatim}
 
 \section{Crypto}
-\label{sec:org51cc444}
+\label{sec:org21c3543}
 At the dawn of the internet everybody trusted everybody completely\ldots{}but that didn't work out so well. When this guide was originally written it was a more innocent era in which almost nobody actually gave a damn about crypto - least of all kernel developers. That's certainly no longer the case now. To handle crypto stuff the kernel has its own API enabling common methods of encryption, decryption and your favourite hash functions.
 
 \subsection{Random numbers}
-\label{sec:org34c79dc}
+\label{sec:org8fd0066}
 Typically you may want a random number to use as a password salt or capabilities token. Random numbers can be created first by assigning a generator and then using \textbf{crypto\_rng\_get\_bytes} to obtain however many random bytes that you need.
 
 \begin{verbatim}
@@ -4026,7 +4026,7 @@ MODULE_DESCRIPTION("Random number generation");
 \end{verbatim}
 
 \subsection{Hash functions}
-\label{sec:orgb8e8935}
+\label{sec:orga7e4db0}
 
 Calculating and checking the hashes of things is a common operation. Here is a demonstration of how to calculate a sha256 hash within a kernel module.
 
@@ -4113,7 +4113,7 @@ sudo rmmod cryptosha256
 \end{verbatim}
 
 \subsection{Symmetric key encryption}
-\label{sec:org62ec1a9}
+\label{sec:orged19ca5}
 Here is an example of symmetrically encrypting a string using the AES algorithm and a password.
 
 \begin{verbatim}
@@ -4315,7 +4315,7 @@ MODULE_DESCRIPTION("Symmetric key encryption example");
 \end{verbatim}
 
 \section{Standardising the interfaces: The Device Model}
-\label{sec:org14b6fdb}
+\label{sec:orgb77a5cd}
 Up to this point we've seen all kinds of modules doing all kinds of things, but there was no consistency in their interfaces with the rest of the kernel. To impose some consistency such that there is at minimum a standardised way to start, suspend and resume a device a device model was added. An example is show below, and you can use this as a template to add your own suspend, resume or other interface functions.
 
 \begin{verbatim}
@@ -4417,9 +4417,9 @@ module_init(devicemodel_init);
 module_exit(devicemodel_exit);
 \end{verbatim}
 \section{Optimisations}
-\label{sec:org0f6f239}
+\label{sec:org8dbcd7d}
 \subsection{Likely and Unlikely conditions}
-\label{sec:org15a1e0d}
+\label{sec:org9f20913}
 Sometimes you might want your code to run as quickly as possible, especially if it's handling an interrupt or doing something which might cause noticible latency. If your code contains boolean conditions and if you know that the conditions are almost always likely to evaluate as either \emph{true} or \emph{false}, then you can allow the compiler to optimise for this using the \emph{likely} and \emph{unlikely} macros.
 
 For example, when allocating memory you're almost always expecting this to succeed.
@@ -4436,28 +4436,28 @@ if (unlikely(!bvl)) {
 When the \emph{unlikely} macro is used the compiler alters its machine instruction output so that it continues along the false branch and only jumps if the condition is true. That avoids flushing the processor pipeline. The opposite happens if you use the \emph{likely} macro.
 
 \section{Common Pitfalls}
-\label{sec:org0a288db}
+\label{sec:org6fb3f21}
 Before I send you on your way to go out into the world and write kernel modules, there are a few things I need to warn you about. If I fail to warn you and something bad happens, please report the problem to me for a full refund of the amount I was paid for your copy of the book.
 
 \subsection{Using standard libraries}
-\label{sec:orga72b636}
+\label{sec:orgd9dc2b0}
 You can't do that. In a kernel module you can only use kernel functions, which are the functions you can see in /proc/kallsyms.
 
 \subsection{Disabling interrupts}
-\label{sec:orgde17786}
+\label{sec:orga3157a6}
 You might need to do this for a short time and that is OK, but if you don't enable them afterwards, your system will be stuck and you'll have to power it off.
 
 \subsection{Sticking your head inside a large carnivore}
-\label{sec:org72ff109}
+\label{sec:org565d721}
 I probably don't have to warn you about this, but I figured I will anyway, just in case.
 
 \section{Where To Go From Here?}
-\label{sec:orgcb3856a}
+\label{sec:org4d07336}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=100%]{./img/planet.jpg}
-\caption{\label{fig:org9bb4922}Graffiti planet}
+\caption{\label{fig:org12c956e}Graffiti planet}
 \end{figure}
 
 I could easily have squeezed a few more chapters into this book. I could have added a chapter about creating new file systems, or about adding new protocol stacks (as if there's a need for that -- you'd have to dig underground to find a protocol stack not supported by Linux). I could have added explanations of the kernel mechanisms we haven't touched upon, such as bootstrapping or the disk interface.
