@@ -349,38 +349,36 @@
             for the first time, it will be smooth sailing thereafter.
 
          1. | Modversioning
+            | ::: {#text-1-8-0-1 .outline-text-5} A module compiled for
+              one kernel won't load if you boot a different kernel
+              unless you enable CONFIG_MODVERSIONS in the kernel. We
+              won't go into module versioning until later in this guide.
+              Until we cover modversions, the examples in the guide may
+              not work if you're running a kernel with modversioning
+              turned on. However, most stock Linux distro kernels come
+              with it turned on. If you're having trouble loading the
+              modules because of versioning errors, compile a kernel
+              with modversioning turned off.
 
-            .. container:: outline-text-5
-               :name: text-1-8-0-1
-
-               A module compiled for one kernel won't load if you boot a
-               different kernel unless you enable CONFIG_MODVERSIONS in
-               the kernel. We won't go into module versioning until
-               later in this guide. Until we cover modversions, the
-               examples in the guide may not work if you're running a
-               kernel with modversioning turned on. However, most stock
-               Linux distro kernels come with it turned on. If you're
-               having trouble loading the modules because of versioning
-               errors, compile a kernel with modversioning turned off.
+            :::
 
          2. | Using X
+            | ::: {#text-1-8-0-2 .outline-text-5} It is highly
+              recommended that you extract, compile and load all the
+              examples this guide discusses. It's also highly
+              recommended you do this from a console. You should not be
+              working on this stuff in X.
 
-            .. container:: outline-text-5
-               :name: text-1-8-0-2
+            Modules can't print to the screen like printf() can, but
+            they can log information and warnings, which ends up being
+            printed on your screen, but only on a console. If you insmod
+            a module from an xterm, the information and warnings will be
+            logged, but only to your systemd journal. You won't see it
+            unless you look through your journalctl. To have immediate
+            access to this information, do all your work from the
+            console.
 
-               It is highly recommended that you extract, compile and
-               load all the examples this guide discusses. It's also
-               highly recommended you do this from a console. You should
-               not be working on this stuff in X.
-
-               Modules can't print to the screen like printf() can, but
-               they can log information and warnings, which ends up
-               being printed on your screen, but only on a console. If
-               you insmod a module from an xterm, the information and
-               warnings will be logged, but only to your systemd
-               journal. You won't see it unless you look through your
-               journalctl. To have immediate access to this information,
-               do all your work from the console.
+            :::
 
    .. container:: outline-2
       :name: outline-container-org66075c4
@@ -631,60 +629,55 @@
             about in Section 2.1.1.
 
          1. | A point about coding style
+            | ::: {#text-4-1-0-1 .outline-text-5} Another thing which
+              may not be immediately obvious to anyone getting started
+              with kernel programming is that indentation within your
+              code should be using **tabs** and **not spaces**. It's one
+              of the coding conventions of the kernel. You may not like
+              it, but you'll need to get used to it if you ever submit a
+              patch upstream.
 
-            .. container:: outline-text-5
-               :name: text-4-1-0-1
-
-               Another thing which may not be immediately obvious to
-               anyone getting started with kernel programming is that
-               indentation within your code should be using **tabs** and
-               **not spaces**. It's one of the coding conventions of the
-               kernel. You may not like it, but you'll need to get used
-               to it if you ever submit a patch upstream.
+            :::
 
          2. | Introducing print macros
+            | ::: {#text-4-1-0-2 .outline-text-5} In the beginning there
+              was **printk**, usually followed by a priority such as
+              KERN_INFO or KERN_DEBUG. More recently this can also be
+              expressed in abbreviated form using a set of print macros,
+              such as **pr_info** and **pr_debug**. This just saves some
+              mindless keyboard bashing and looks a bit neater. They can
+              be found within **linux/printk.h**. Take time to read
+              through the available priority macros.
 
-            .. container:: outline-text-5
-               :name: text-4-1-0-2
-
-               In the beginning there was **printk**, usually followed
-               by a priority such as KERN_INFO or KERN_DEBUG. More
-               recently this can also be expressed in abbreviated form
-               using a set of print macros, such as **pr_info** and
-               **pr_debug**. This just saves some mindless keyboard
-               bashing and looks a bit neater. They can be found within
-               **linux/printk.h**. Take time to read through the
-               available priority macros.
+            :::
 
          3. | About Compiling
+            | ::: {#text-4-1-0-3 .outline-text-5} Kernel modules need to
+              be compiled a bit differently from regular userspace apps.
+              Former kernel versions required us to care much about
+              these settings, which are usually stored in Makefiles.
+              Although hierarchically organized, many redundant settings
+              accumulated in sublevel Makefiles and made them large and
+              rather difficult to maintain. Fortunately, there is a new
+              way of doing these things, called kbuild, and the build
+              process for external loadable modules is now fully
+              integrated into the standard kernel build mechanism. To
+              learn more on how to compile modules which are not part of
+              the official kernel (such as all the examples you'll find
+              in this guide), see file
+              **linux/Documentation/kbuild/modules.txt**.
 
-            .. container:: outline-text-5
-               :name: text-4-1-0-3
+            Additional details about Makefiles for kernel modules are
+            available in **linux/Documentation/kbuild/makefiles.txt**.
+            Be sure to read this and the related files before starting
+            to hack Makefiles. It'll probably save you lots of work.
 
-               Kernel modules need to be compiled a bit differently from
-               regular userspace apps. Former kernel versions required
-               us to care much about these settings, which are usually
-               stored in Makefiles. Although hierarchically organized,
-               many redundant settings accumulated in sublevel Makefiles
-               and made them large and rather difficult to maintain.
-               Fortunately, there is a new way of doing these things,
-               called kbuild, and the build process for external
-               loadable modules is now fully integrated into the
-               standard kernel build mechanism. To learn more on how to
-               compile modules which are not part of the official kernel
-               (such as all the examples you'll find in this guide), see
-               file **linux/Documentation/kbuild/modules.txt**.
+               Here's another exercise for the reader. See that comment
+               above the return statement in init_module()? Change the
+               return value to something negative, recompile and load
+               the module again. What happens?
 
-               Additional details about Makefiles for kernel modules are
-               available in
-               **linux/Documentation/kbuild/makefiles.txt**. Be sure to
-               read this and the related files before starting to hack
-               Makefiles. It'll probably save you lots of work.
-
-                  Here's another exercise for the reader. See that
-                  comment above the return statement in init_module()?
-                  Change the return value to something negative,
-                  recompile and load the module again. What happens?
+            :::
 
       .. container:: outline-3
          :name: outline-container-orgba41c95
@@ -1572,114 +1565,108 @@
             kind of sound card is installed.
 
          1. | Major and Minor Numbers
+            | ::: {#text-5-6-0-1 .outline-text-5} Let's look at some
+              device files. Here are device files which represent the
+              first three partitions on the primary master IDE hard
+              drive:
 
-            .. container:: outline-text-5
-               :name: text-5-6-0-1
+            .. container:: org-src-container
 
-               Let's look at some device files. Here are device files
-               which represent the first three partitions on the primary
-               master IDE hard drive:
+               .. code:: src
 
-               .. container:: org-src-container
+                  # ls -l /dev/hda[1-3]
+                  brw-rw----  1 root  disk  3, 1 Jul  5  2000 /dev/hda1
+                  brw-rw----  1 root  disk  3, 2 Jul  5  2000 /dev/hda2
+                  brw-rw----  1 root  disk  3, 3 Jul  5  2000 /dev/hda3
 
-                  .. code:: src
+            Notice the column of numbers separated by a comma? The first
+            number is called the device's major number. The second
+            number is the minor number. The major number tells you which
+            driver is used to access the hardware. Each driver is
+            assigned a unique major number; all device files with the
+            same major number are controlled by the same driver. All the
+            above major numbers are 3, because they're all controlled by
+            the same driver.
 
-                     # ls -l /dev/hda[1-3]
-                     brw-rw----  1 root  disk  3, 1 Jul  5  2000 /dev/hda1
-                     brw-rw----  1 root  disk  3, 2 Jul  5  2000 /dev/hda2
-                     brw-rw----  1 root  disk  3, 3 Jul  5  2000 /dev/hda3
+            The minor number is used by the driver to distinguish
+            between the various hardware it controls. Returning to the
+            example above, although all three devices are handled by the
+            same driver they have unique minor numbers because the
+            driver sees them as being different pieces of hardware.
 
-               Notice the column of numbers separated by a comma? The
-               first number is called the device's major number. The
-               second number is the minor number. The major number tells
-               you which driver is used to access the hardware. Each
-               driver is assigned a unique major number; all device
-               files with the same major number are controlled by the
-               same driver. All the above major numbers are 3, because
-               they're all controlled by the same driver.
+            Devices are divided into two types: character devices and
+            block devices. The difference is that block devices have a
+            buffer for requests, so they can choose the best order in
+            which to respond to the requests. This is important in the
+            case of storage devices, where it's faster to read or write
+            sectors which are close to each other, rather than those
+            which are further apart. Another difference is that block
+            devices can only accept input and return output in blocks
+            (whose size can vary according to the device), whereas
+            character devices are allowed to use as many or as few bytes
+            as they like. Most devices in the world are character,
+            because they don't need this type of buffering, and they
+            don't operate with a fixed block size. You can tell whether
+            a device file is for a block device or a character device by
+            looking at the first character in the output of ls -l. If
+            it's \`b' then it's a block device, and if it's \`c' then
+            it's a character device. The devices you see above are block
+            devices. Here are some character devices (the serial ports):
 
-               The minor number is used by the driver to distinguish
-               between the various hardware it controls. Returning to
-               the example above, although all three devices are handled
-               by the same driver they have unique minor numbers because
-               the driver sees them as being different pieces of
-               hardware.
+            .. container:: org-src-container
 
-               Devices are divided into two types: character devices and
-               block devices. The difference is that block devices have
-               a buffer for requests, so they can choose the best order
-               in which to respond to the requests. This is important in
-               the case of storage devices, where it's faster to read or
-               write sectors which are close to each other, rather than
-               those which are further apart. Another difference is that
-               block devices can only accept input and return output in
-               blocks (whose size can vary according to the device),
-               whereas character devices are allowed to use as many or
-               as few bytes as they like. Most devices in the world are
-               character, because they don't need this type of
-               buffering, and they don't operate with a fixed block
-               size. You can tell whether a device file is for a block
-               device or a character device by looking at the first
-               character in the output of ls -l. If it's \`b' then it's
-               a block device, and if it's \`c' then it's a character
-               device. The devices you see above are block devices. Here
-               are some character devices (the serial ports):
+               .. code:: src
 
-               .. container:: org-src-container
+                  crw-rw----  1 root  dial 4, 64 Feb 18 23:34 /dev/ttyS0
+                  crw-r-----  1 root  dial 4, 65 Nov 17 10:26 /dev/ttyS1
+                  crw-rw----  1 root  dial 4, 66 Jul  5  2000 /dev/ttyS2
+                  crw-rw----  1 root  dial 4, 67 Jul  5  2000 /dev/ttyS3
 
-                  .. code:: src
+            If you want to see which major numbers have been assigned,
+            you can look at /usr/src/linux/Documentation/devices.txt.
 
-                     crw-rw----  1 root  dial 4, 64 Feb 18 23:34 /dev/ttyS0
-                     crw-r-----  1 root  dial 4, 65 Nov 17 10:26 /dev/ttyS1
-                     crw-rw----  1 root  dial 4, 66 Jul  5  2000 /dev/ttyS2
-                     crw-rw----  1 root  dial 4, 67 Jul  5  2000 /dev/ttyS3
+            When the system was installed, all of those device files
+            were created by the mknod command. To create a new char
+            device named \`coffee' with major/minor number 12 and 2,
+            simply do mknod /dev/coffee c 12 2. You don't have to put
+            your device files into /dev, but it's done by convention.
+            Linus put his device files in /dev, and so should you.
+            However, when creating a device file for testing purposes,
+            it's probably OK to place it in your working directory where
+            you compile the kernel module. Just be sure to put it in the
+            right place when you're done writing the device driver.
 
-               If you want to see which major numbers have been
-               assigned, you can look at
-               /usr/src/linux/Documentation/devices.txt.
+            I would like to make a few last points which are implicit
+            from the above discussion, but I'd like to make them
+            explicit just in case. When a device file is accessed, the
+            kernel uses the major number of the file to determine which
+            driver should be used to handle the access. This means that
+            the kernel doesn't really need to use or even know about the
+            minor number. The driver itself is the only thing that cares
+            about the minor number. It uses the minor number to
+            distinguish between different pieces of hardware.
 
-               When the system was installed, all of those device files
-               were created by the mknod command. To create a new char
-               device named \`coffee' with major/minor number 12 and 2,
-               simply do mknod /dev/coffee c 12 2. You don't have to put
-               your device files into /dev, but it's done by convention.
-               Linus put his device files in /dev, and so should you.
-               However, when creating a device file for testing
-               purposes, it's probably OK to place it in your working
-               directory where you compile the kernel module. Just be
-               sure to put it in the right place when you're done
-               writing the device driver.
+            By the way, when I say *"hardware"*, I mean something a bit
+            more abstract than a PCI card that you can hold in your
+            hand. Look at these two device files:
 
-               I would like to make a few last points which are implicit
-               from the above discussion, but I'd like to make them
-               explicit just in case. When a device file is accessed,
-               the kernel uses the major number of the file to determine
-               which driver should be used to handle the access. This
-               means that the kernel doesn't really need to use or even
-               know about the minor number. The driver itself is the
-               only thing that cares about the minor number. It uses the
-               minor number to distinguish between different pieces of
-               hardware.
+            .. container:: org-src-container
 
-               By the way, when I say *"hardware"*, I mean something a
-               bit more abstract than a PCI card that you can hold in
-               your hand. Look at these two device files:
+               .. code:: src
 
-               .. container:: org-src-container
+                  % ls -l /dev/sda /dev/sdb
+                  brw-rw---- 1 root disk 8,  0 Jan  3 09:02 /dev/sda
+                  brw-rw---- 1 root disk 8, 16 Jan  3 09:02 /dev/sdb
 
-                  .. code:: src
+            By now you can look at these two device files and know
+            instantly that they are block devices and are handled by
+            same driver (block major 8). Sometimes two device files with
+            the same major but different minor number can actually
+            represent the same piece of physical hardware. So just be
+            aware that the word "hardware" in our discussion can mean
+            something very abstract.
 
-                     % ls -l /dev/sda /dev/sdb
-                     brw-rw---- 1 root disk 8,  0 Jan  3 09:02 /dev/sda
-                     brw-rw---- 1 root disk 8, 16 Jan  3 09:02 /dev/sdb
-
-               By now you can look at these two device files and know
-               instantly that they are block devices and are handled by
-               same driver (block major 8). Sometimes two device files
-               with the same major but different minor number can
-               actually represent the same piece of physical hardware.
-               So just be aware that the word "hardware" in our
-               discussion can mean something very abstract.
+            :::
 
    .. container:: outline-2
       :name: outline-container-org1a451a6
